@@ -34,6 +34,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\U}{\mathbb{U}}
 \renewcommand{\L}{\mathcal{L}}
 \newcommand{\im}{\emph{Im }}
 \DeclareMathOperator{\sgn}{sgn}
@@ -242,9 +243,9 @@
 		\item Soit $g\in G$ et \function{\tau_g}{G}{G}{x}{g\cdot x}
 		Montrer que \function{\tau}{G}{\Sigma(G)}{g}{\tau_g} 
 		(où $\Sigma(G)$ est le groupe des permutations de $G$) est un morphisme
-		injection. En déduire que $G$ est isomorphe à un sous-groupe de
+		injectif. En déduire que $G$ est isomorphe à un sous-groupe de
 		$(\Sigma_{n},\circ)$.
-		\item Montrer que $G$ est isomorphe ) un sous-groupe de $(GL_{n}(\C),\times)$.
+		\item Montrer que $G$ est isomorphe à un sous-groupe de $(GL_{n}(\C),\times)$.
 	\end{enumerate}
 \end{exercise}
 
@@ -279,7 +280,7 @@
 \end{exercise}
 
 \begin{exercise}
-	On note, pour $n\in\N^{*}$, $G_{n}=\{e^{\frac{2ik\pi}{n}},~k\wedge n=1\}$
+	On note, pour $n\in\N^{*}$, $G_{n}=\{e^{\frac{2\mathrm{i}k\pi}{n}},~k\wedge n=1\}$
 	l'ensemble des racines $n$-ièmes de l'unité, on définit $\mu(n)=\sum_{\xi\in
 	G_{n}}\xi$.
 	\begin{enumerate}
@@ -304,8 +305,8 @@
 \begin{exercise}
 	\phantom{}
 	\begin{enumerate}
-		\item Montrer que les sous-groupes finis de $(U,\times)$ sont cycliques
-		(où $U$ est le cercle unité).
+		\item Montrer que les sous-groupes finis de $(\U,\times)$ sont cycliques
+		(où $\U$ est le cercle unité).
 		\item Quels sont les sous-groupes finis de $SO_{2}(\R)$ ?
 		\item Soit $G$ un sous-groupe fini de $SL_{2}(\R)$. Montrer que 
 		\function{\varphi}{\R^2}{\R}{(X,Y)}{\sum_{M\in G}\langle MX,MY\rangle}
@@ -355,7 +356,7 @@
 	A\times A\setminus\{0\}$, il existe $(q,r)\in A^{2}$ tels que $a=bq+r$ et
 	$v(r)<v(b)$ ou $r=0$.
 	\begin{enumerate}
-		\item Montrer que $\Z[i]=\{a+ib,~(a,b)\in\Z^{2}\}$ est euclidien.
+		\item Montrer que $\Z[\mathrm{i}]=\{a+\mathrm{i}b,~(a,b)\in\Z^{2}\}$ est euclidien.
 		\item Montrer que tout anneau euclidien est principal.
 	\end{enumerate}
 \end{exercise}
@@ -364,7 +365,7 @@
 	\phantom{}
 	\begin{enumerate}
 		\item Soit $p$ premier plus grand que 3. Soit
-		$\bar{x}\in\Z/Z\setminus\{\bar{0}\}$. Montrer que $\bar{x}$ est un carré
+		$\bar{x}\in\Z/p\Z\setminus\{\bar{0}\}$. Montrer que $\bar{x}$ est un carré
 		dans $\Z/p\Z$ si et seulement $\bar{x}^{\frac{p-1}{2}}=\bar{1}$.
 		\item En déduire qu'il existe une infinité de nombres premiers congrus à
 		1 modulo 4.
@@ -422,5 +423,461 @@
 		possède une racine rationnelle.
 	\end{enumerate}
 \end{exercise}
+
+\cleardoublepage
+\section{Séries numériques et familles sommables}
+
+\begin{exercise}
+	Soit la suite définie par $a_{0}=1$ et pour tout $n\geqslant1$,
+	$$a_{n}=2a_{\lfloor n/3\rfloor}+3a_{\lfloor n/9\rfloor}$$
+	\begin{enumerate}
+		\item On pose pour $p\in\N$, $b_{p}=a_{3p}$. Calculer $b_{p}$ en
+		fonction de $p$.
+		\item Montrer que si $3^{p}\leqslant n<3^{p+1}$, alors $a_{n}=b_{p}$.
+		\item Déterminer l'ensemble des valeurs d'adhérence de
+		$(\frac{a_{n}}{n})_{n\geqslant 2}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $[a,b]\subset\in\R$ avec $a<b$ et $f:[a,b]\to[a,b]$ continue. Soit
+	$x_{0}\in[a,b]$ et pour tout $n\in\N$, $x_{n+1}=f(x_{n})$.
+	\begin{enumerate}
+		\item Montrer que $f$ admet au moins un point fixe $l\in[a,b]$.
+		\item Si $\lim\limits_{n\to+\infty}x_{n+1}-x_{n}=0$, montrer que
+		l'ensemble des valeurs d'adhérence de $(x_{n})_{n\in\N}$ est un segment.
+		\item En déduire que $(x_{n})_{n\in\N}$ converge si et seulement si
+		$\lim\limits_{n\to+\infty}x_{n+1}-x_{n}=0$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\theta\in[0,2\pi[$, on définit $u_{0}=e^{\mathrm{i}\theta}$ et pour
+	tout $n\in\N$, $u_{n+1}=u_{n}^{2}$. Peut-on avoir $(u_{n})_{n\in\N}$
+	\begin{itemize}
+		\item stationnaire ?
+		\item convergente ?
+		\item périodique ?
+		\item dense dans $\U$?
+	\end{itemize}
+	On pourra étudier le développement binaire de
+	$\frac{\theta}{2\pi}=\sum_{k=1}^{+\infty}\frac{a_{k}}{2^{k}}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(a,b)\in\R_{+}^{2}$, étudier $u_{n}=\Bigl(\frac{\sqrt[n]{a}+\sqrt[n]{b}}{2}\Bigr)^{n^{2}}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(x_{n})_{n\in\N}\in\R_{+}^{\N}$ telle que
+	$\lim\limits_{n\to+\infty}=0$ et $\sum_{n=0}^{+\infty}x_{n}=+\infty$.
+	\begin{enumerate}
+		\item Montrer qu'il existe $\varphi:\N\to\N$ bijective telle que
+		$(x_{\varphi(n)})$ est décroissante.
+		\item Montrer que pour tout $l\in\overline{\R_{+}}$, pour tout
+		$\varepsilon>0$, il existe un sous-ensemble $I\subset\N$ fini tel que
+		$$\Bigl\vert\sum_{k\in I}x_{k}-l\Bigr\vert\leqslant\varepsilon$$
+		ou si $l=+\infty$: $\forall A>0$, il existe un sous-ensemble $I$ fini
+		tel que $\sum_{k\in I}x_{k}\geqslant A$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(u_{n})_{n\in\N}\in\R_{+}^{\N}$ telle que
+	$\lim\limits_{n\to+\infty}u_{n}\times\sum_{k=0}^{n}u_{k}^{2}=1$.
+	Montrer que $u_{n}\sim\frac{1}{\sqrt[3]{3n}}$. Une telle suite existe-t-elle
+	?
+\end{exercise}
+
+\begin{exercise}
+	Étudier $x_{n}=n-\sum_{k=1}^{n}\cosh(\frac{1}{\sqrt[]{k+n}})$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(a_{n})_{n\in\N},(b_{n})_{n\in\N},(c_{n})_{n\in\N}$ des suites réelles
+	telles que 
+	\begin{enumerate}
+		\item [(i)] $\lim\limits_{n\to+\infty}a_{n}+b_{n}+c_{n}=0$,
+		\item [(ii)] $\lim\limits_{n\to+\infty}e^{a_{n}}+e^{b_{n}}+e^{c_{n}}=3$.
+	\end{enumerate}
+	Montrer que
+	$\lim\limits_{n\to+\infty}a_{n}=\lim\limits_{n\to+\infty}b_{n}=\lim\limits_{n\to+\infty}c_{n}=0$.
+	On pourra étudier $\varphi:x\mapsto e^{x}-x-1$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $u_{0}\in]0,1[$ et pour $n\in\N$, $u_{n+1}=u_{n}-u_{n}^{2}$. On pose
+	$v_{n}=\frac{1}{u_{n}}$.
+	\begin{enumerate}
+		\item Montrer que $(v_{n})_{n\in\N}$ est bien définie.
+		\item Montrer que $v_{n}=n+\ln(n)+O(1)$, en déduire un développement de $u_{n}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrer que pour tout $n\geqslant 2$, il existe un unique
+		$u_{n}\in\R_{+}$ tel que $u_{n}^{n}=u_{n}+n$.
+		\item Montrer que $(u_{n})_{n\geqslant 2}$ converge vers $\lambda\in\R_{+}$.
+		\item Donner un développement asymptotique à deux termes de $x_{n}-\lambda$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(u_{n})_{n\in\N}$ une suite de réels positifs non tous nuls. On
+	suppose que 
+	$$u_n=o\Biggl(\sum_{k=0}^{n}u_{k}\Biggr)$$ 
+	Soit
+	$(a_{n})_{n\in\N}\in\C^{\N}$ de limite $a$. En cas d'existence, évaluer
+	$$\lim\limits_{n\to+\infty}\frac{u_{n}a_{0}+u_{n-1}a_{1}+\dots+u_{0}a_{n}}{u_{0}+\dots+u_{n}}$$
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $x\in[0,1[$, montrer qu'il existe une unique suite
+		$(a_{n})_{n\geqslant 2}$ d'entiers naturels telle que 
+		\begin{enumerate}
+			\item [(i)] $0\leqslant a_{n}\leqslant n-1$ pour tout $n\geqslant2$,
+			\item [(ii)] il existe $m\geqslant n$ tel que $a_{m}<m-1$ pour tout $n\geqslant2$,
+			\item [(iii)] $x=\sum_{n=2}^{+\infty}\frac{a_{n}}{n}$.
+		\end{enumerate}
+		\item Donner une condition nécessaire et suffisante sur
+		$(a_{n})_{n\geqslant2}$ pour que $x\in\Q$.
+		\item Soit $l\in[-1,1]$, montrer qu'il existe $x\in[0,1[$ tel que $\lim\limits_{n\to+\infty}sin(n!2\pi x)=l$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $u_0>0,u_1>0$ et pour tout $n\geqslant 1$,
+	$$u_{n+1}=\ln(1+u_{n})+\ln(1+u_{n-1})$$
+	Étudier la suite $(u_{n})$. On pourra poser $M_{n}=\max(u_{n},u_{n-1},l)$,
+	$m_{n}=\min(u_{n},u_{n-1},l)$ où $l=2\ln(1+l)$ et $l>0$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(p,q)\in(\R^{*})^{2}$ avec $p/q\in\R\setminus\Q$. Soit
+	$(x_{n})_{n\in\N}$ une suite réelle bornée. On suppose que
+	$(e^{\mathrm{i}px_{n}})_{n\in\N}$ et $(e^{\mathrm{i}qx_{n}})_{n\in\N}$
+	convergent. Montrer que $(x_{n})_{n\in\N}$ converge. Et si
+	$(x_{n})_{n\in\N}$ n'est pas bornée ?
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrer que pour tout $n\geqslant1$, pour tout
+		$k\in\{0,\dots,n\}$, $\binom{n}{k}\leqslant\frac{n^{k}}{k!}$.
+		\item Soit $z\in\C$, montrer que 
+		$$\Biggl\vert\sum_{k=0}^{n}\frac{z^{k}}{k!}-\Bigl(1+\frac{z}{n}^{n}\Bigr)\Biggr\vert\leqslant\sum_{k=0}^{n}\frac{\vert
+		z\vert^{k}}{k!}-\Bigl(1+\frac{\vert z\vert}{n}\Bigr)^{n}$$
+		\item En déduire $\lim\limits_{n\to+\infty}\Bigl(1+\frac{z}{n}\Bigr)^{n}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $u_{n}=\prod_{k=2}^{n}\frac{\sqrt{k}-1}{\sqrt{k}+1}$ pour $n\geqslant
+	2$. Quelle est la limite de cette suite ? Quelle est la nature de la série
+	$\sum_{n\geqslant 2}u_{n}^{\alpha}$ pour $\alpha\in\R$ ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $(u_{n})_{n\in\N}\in\R_{+}^{\N}$ décroissante de limite nulle. Montrer
+	que si $\sum u_{n}$ converge, alors $u_{n}=o\Bigl(\frac{1}{n}\Bigr)$. On
+	pourra minorer $u_{n+1}+\dots+u_{2n}$. Montrer ensuite que si $\{p\in\N,
+	pu_{p}\geqslant1\}$ est infini, alors $\sum u_{n}$ diverge.
+\end{exercise}
+
+\begin{exercise}
+	Nature de $\sum u_{n}$ où $u_{n}=$
+	\begin{enumerate}
+		\item $n^{-1-\frac{1}{n}}$
+		\item $\int_{0}^{\frac{\pi}{2}}t^{n}\sin(t)dt$
+		\item $\sin(2\pi\frac{n!}{e})$
+		\item $\frac{(-1)^{n}}{n^{\alpha}+(-1)^{n}\ln(n)}$ où $\alpha\in\R$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Montrer la convergence et calculer la somme des différentes séries
+	suivantes:
+	\begin{enumerate}
+		\item $\sum_{n\geqslant1}\sum_{k\geqslant n}\frac{(-1)^{k}}{k}$
+		\item $\sum_{n\geqslant0}\frac{1}{(3n)!}$
+		\item
+		$\sum_{n\geqslant1}\frac{E(n^{\frac{1}{3}})-E(n-1)^{\frac{1}{3}}}{4n-n^{\frac{1}{3}}}$
+		où $E$ désigne la partie entière.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f:[1,+\infty[\to\R_{+}^{*}$ de classe $\mathcal{C}^{2}$ et telle que
+	$\lim\limits_{x\to+\infty}\frac{f'(x)}{f(x)}=a<0$. Montrer la convergence de
+	$\sum_{n\geqslant1}f(n)$. Donner un équivalent de
+	$R_{n}=\sum_{k=n}^{+\infty} f(k)$.
+\end{exercise}
+
+\begin{exercise}
+	Donner un équivalent de $S_{n}=\sum_{k=1}^{n}\frac{e^{k}}{k}$.
+\end{exercise}
+
+\begin{exercise}
+	Donner la nature de $\sum u_{n}$ quand $u_{n}$ vaut
+	\begin{enumerate}
+		\item $\Bigl(1-\frac{1}{n}\Bigr)^{n^{\alpha}}$ où $\alpha\in\R$
+		\item $\frac{1}{\sum_{k=1}^{n}\bigl(\frac{1}{k}\bigr)^{\frac{1}{k}}}$
+		\item $\frac{\sin(n!\pi e)}{\ln(n)}$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Montrer la convergence et calculer la somme de $\sum u_{n}$ où $u_{n}$ vaut
+	\begin{enumerate}
+		\item $a\ln(n)+b\ln(n+1)+c\ln(n+2)$ pour $n\geqslant1$ (on cherchera d'abord une condition
+		nécessaire et suffisante de convergence).
+		\item $\frac{2^{n}}{3^{2^{n-1}}+1}$ pour $n\geqslant 1$.
+		\item $\frac{k-n\lfloor\frac{k}{n}\rfloor}{k(k+1)}$.
+		\item $\arctan(\frac{1}{n^{2}+n+1})$ pour $n\geqslant0$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(u_{n})_{n\geqslant1}\in\R^{\N}$ et $v_{n}=n(u_{n}-u_{n+1})$. Montrer
+	que $\sum u_{n}$ et $\sum v_{n}$ ont même nature lorsque
+	\begin{enumerate}
+		\item [(i)] $(nu_{n})_{n\geqslant1}$ converge vers 0 OU
+		\item [(ii)] $(u_{n})_{n\geqslant 1}$ décroît et tend vers 0.
+	\end{enumerate}
+	Comparer alors les sommes respectives. En déduire, pour $p\geqslant1$ fixé,
+	$$\sum_{n=1}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $q\in\Z$ et $v_{n}=\frac{1}{(n+q)!}\sum_{k=1}^{n}k!$. Donner la nature
+	de $\sum v_{n}$. En cas de divergence, donner un équivalent des sommes partielles.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(a,b,c)\in (\N^{*})^{3}$, $z\in\C$, $\vert z\vert<1$. Montrer, en
+	justifiant l'existence:
+	$$\sum_{n=0}^{+\infty}\frac{z^{nb}}{1+z^{na+c}}=\sum_{n=0}^{+\infty}\frac{(-1)^{n}z^{nc}}{1-z^{na+b}}$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $\sum_{n\geqslant1} a_{n}$ une série complexe absolument convergente.
+	On pose pour $q\in\N^{*}$,
+	$b_q=\frac{1}{q(q+1)}(a_{1}+2a_{2}+\dots+qa_{q})$. Montrer que
+	$\sum_{q\geqslant1}b_{q}$ converge et évaluer sa somme en fonction de
+	$\sum_{n=1}^{+\infty}a_{n}$. On pourra poser $u_{n,q}=\frac{na_{n}}{q(q+1)}$
+	si $n\leqslant q$ et 0 sinon.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(u_{n})_{n\geqslant1}\in\R_{+}^{\N}$ telle que $\sum u_{n}<+\infty$.
+	On pose $v_{n}=\frac{1}{n(n+1)}(u_{1}+\dots+nu_{n})$ et
+	$w_{n}=\sqrt[n]{u_1\times u_2\times\dots\times u_n}$. On admet que pour tout
+	$n\in\N^{*}$, pour tout $(a_{1},\dots,a_{n})\in\R_{+}^{n}$, on a l'inégalité
+	entre la moyenne géométrique et arithmétique:
+	$$\sqrt[n]{a_{1}\dots a_{n}}\leqslant\frac{1}{n}(a_{1}+\dots+a_{n})$$
+	avec égalité si et seulement si $a_{1}=\dots=a_{n}$.
+
+	Montrer que $\sum w_{n}$ converge et que $\sum_{n=1}^{+\infty}w_{n}\leqslant
+	e\sum_{n=1}^{+\infty}u_{n}$. On pourra utiliser l'exercice précédent.
+	Montrer que $e$ est la "meilleure" constante possible, c'est-à-dire que si
+	$\forall (u_{n})_{n\geqslant1}\in(\R_{+}^{*})^{\N^{*}}$ telle que $\sum
+	u_{n}$ converge, on a $\sum w_{n}\leqslant C\sum u_{n}$ alors $C\geqslant e$.
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Trouver une condition nécessaire et suffisante sur $\alpha\in\R$
+		pour que
+		$\Bigl(\frac{1}{(p+q)^{\alpha}}\Bigr)_{(p,q)\in\N^{2}\setminus\{(0,0)\}}$
+		soit sommable et exprimer alors la somme en fonction de la fonction
+		$\zeta$ de Riemann.
+		\item Trouver une condition nécessaire et suffisante sur $\alpha\in\R$
+		pour que
+		$\Bigl(\frac{1}{(p^{2}+q^{2})^{\alpha}}\Bigr)_{(p,q)\in\N^{2}\setminus\{(0,0)\}}$
+		soit sommable.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Étudier la sommabilité de
+	$\Bigl(\frac{1}{(m+n^{2})(m+n^{2}+1)}\Bigr)_{(m,n)\in\N^{2}}$.\\
+	En déduire la
+	valeur de $\sum_{n=1}^{+\infty}\frac{E(\sqrt{n})}{n(n+1)}$.
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrer que pour tout $s\in]1,+\infty[$, le produit infini
+		$\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}$ converge (où les
+		$p_{k}$ sont les nombres premiers). Donner sa valeur en fonction de
+		$\zeta(s)$.
+		\item Généraliser ce résultat à $s\in\C$ avec $\Re(s)>1$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On note $\varphi(n)=\vert\{k\in\{1,\dots,n\},~k\wedge n=1\}\vert$. Pour quelles
+	valeurs de $\alpha\in\R$ la somme $\sum \frac{\varphi(n)}{n^{\alpha}}$
+	converge-t-elle ? Donner alors sa somme en fonction de $\zeta(\alpha)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(z_{n})_{n\in\N}\in(\C^{*})^{\N}$ telle que pour tout $n\neq m$,
+	$\vert z_{n}-z_{m}\vert\geqslant1$. Montrer que
+	$\sum_{n\in\N}\frac{1}{z_{n}^{3}}$ converge.
+\end{exercise}
+
+\begin{exercise}
+	Donner la nature de $\sum_{n\geqslant1}\frac{(-1)^{E(\sqrt{n})}}{n}$.
+\end{exercise}
+
+\begin{exercise}
+	Pour $(a,b)\in(\R\setminus\Z^{*})$, on définit
+	$u_{n}=\frac{a(a+1)\dots(a+n)}{b(b+1)\dots(b+n)}$....
+	\begin{enumerate}
+		\item Donner une condition nécessaire et suffisante pour que $\sum
+		u_{n}$ converge.
+		\item Dans ce cas, calculer sa somme.
+		\item Faire le cas où $a=-\frac{1}{2}$ et $b=1$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $u_{n}=\frac{\ln(n)}{n}$ et $v_{n}=(-1)^{n}u_{n}$ pour $n\geqslant1$.
+	\begin{enumerate}
+		\item Donner la nature de $\sum u_{n}$ et $\sum v_{n}$.
+		\item Soit $S_{N}=\sum_{n=1}^{N}u_{n}$. Donner un équivalent de $S_{N}$
+		puis développer jusqu'au o(1).
+		\item Exprimer $\sum_{n=2}^{+\infty}v_{n}$ en fonction de $\gamma$
+		(constante d'Euler) et $\ln(2)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit pour $n\in\N^{*}$, $q_{1}(n)$ la nombre de chiffres de l'écriture
+	décimale de $n$. On définit par récurrence $q_{k+1}(n)=q_{1}(q_{k}(n))$.
+	Étudier la convergence de 
+	$$\sum_{n\geqslant1}\frac{1}{nq_{1}(n)q_{2}(n)\dots q_{n}(n)}$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $P_{n}(X)=\sum_{k=0}^{n}\frac{X^{k}}{k!}$.
+	\begin{enumerate}
+		\item Montrer que pour tout $n\in\N$, $P_{2n}>0$ sur $\R$ et $P_{2n+1}$
+		s'annule une seule fois en $a_{2n+1}<0$.
+		\item Déterminer $\lim\limits_{n\to+\infty}a_{2n+1}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Montrer qu'il existe un unique $x_{n}\geqslant0$ tel que
+	$e^{x_{n}}=x_{n}+n$. Donne un développement asymptotique à deux termes de
+	$x_{n}$ pour $n\geqslant1$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(u_{n})_{n\in\N}\in(\R_{+}^{*})^{\N}$, on pose
+	$S_{n}=\sum_{k=0}^{n}u_{k}$. Soit $\alpha\in\R$ et
+	$v_{n}=\frac{u_{n}}{S_{n}^{\alpha}}$.
+	\begin{enumerate}
+		\item On suppose que $\sum u_{n}$ converge, étudier $\sum v_{n}$.
+		\item On suppose que $\sum u_{n}$ diverge. Pour $\alpha=1$, montrer que
+		pour tout $(n,p)\in\N^{2}$, $v_{n+1}+\dots+v_{n+p}\geqslant
+		1-\frac{S_{n}}{S_{n+p}}$. En déduire que $\sum v_{n}$ diverge.
+		\item On suppose que $\sum u_{n}$ diverge. Pour $\alpha>1$, on forme
+		$w_{n}=\int_{S_{n-1}}^{S_{n}}\frac{dt}{t^{\alpha}}$. Montrer que $\sum
+		v_{n}$ converge. Et si $\alpha<1 ?$
+		\item On suppose que $\sum u_{n}$ converge. On pose
+		$R_{n}=\sum_{k=n}^{+\infty}u_{k}$ et
+		$w_{n}=\frac{u_{n}}{R_{n}^{\alpha}}$. Étudier la nature de $\sum w_{n}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Principe des tiroirs de Dirichlet]
+	Soit $x\in\R\setminus\Q$.
+	\begin{enumerate}
+		\item Soit $n\in\N^{*}$, montrer qu'il existe
+		$(p,q)\in\Z\times\{1,\dots,n\}$ tel que $\bigl\vert
+		x-\frac{p}{q}\bigr\vert<\frac{1}{qn}$. On pourra étudier les $n+1$ réels
+		$(kx-\lfloor kx\rfloor)=(x_{k})_{0\leqslant k\leqslant n}$ et montrer
+		qu'il existe $k\neq k'$ avec $\vert x_{k}-x_{k'}\vert<\frac{1}{n}$.
+		\item Montrer qu'il existe
+		$(p_{n},q_{n})_{n\in\N}\in\Z^{\N}\times(\N^{*})^{\N}$ telles que $\bigl\vert
+		x-\frac{p_{n}}{q_{n}}\bigr\vert<\frac{1}{q_{n}^{2}}$ et
+		$\lim\limits_{n\to+\infty}q_{n}=+\infty$.
+		\item Étudier la convergence de la suite
+		$\Bigl(\frac{1}{n\sin(n)}\Bigr)_{n\geqslant1}$ (on admet que $\pi\notin\R\setminus\Q)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Sot $(a_{n,p})\in\C^{(\N^{*})^{2}}$ telle que 
+	\begin{enumerate}
+		\item [(i)] pour tout $p\in\N^{*}$, il existe $\lim\limits_{n\to+\infty}a_{n,p}=a_{p}\in\C$,
+		\item [(ii)] il existe une suite de réels positifs $(b_{p})$ donc la
+		série converge telle que pour tout $(n,p)\in(\N^{*})^{2}$, $\lvert
+		a_{n,p}\rvert\leqslant b_{p}$.	
+	\end{enumerate}
+	\begin{enumerate}
+		\item Évaluer $\lim\limits_{n\to+\infty}\sum_{p=1}^{n}a_{n,p}$.
+		\item Calculer $\lim\limits_{n\to+\infty}\Bigl(\bigl(\frac{1}{n}\bigr)^{n}+\bigl(\frac{2}{n}\bigr)^{n}+\dots+\bigl(\frac{n-1}{n}\bigr)^{n}\Bigr)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\sum_{n\geqslant1}u_{n}$ une série complexe absolument convergente.
+	\begin{enumerate}
+		\item Montrer que pour tout $k\geqslant1$, on peut définir $S_{k}=\sum_{n=1}^{+\infty}u_{kn}$.
+		\item On suppose que pour tout $k\geqslant1$, $S_{k}=0$. Montrer que
+		pour tout $n\geqslant1$, $u_{n}=0$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f:\R\to\R$ telle que pour toute suite $(u_{n})_{n\in\N}\in\R^{\N}$, si
+$\sum u_{n}$ converge, alors $\sum f(u_{n})$ converge.
+\begin{enumerate}
+	\item Montrer que $f(0)=0$ et que $f$ est continue en 0.
+	\item Montrer qu'il existe $\alpha>0$, $\forall x\in]-\alpha,\alpha[$,
+	$f(x)=-f(x)$ ($f$ est impaire au voisinage de 0).
+	\item Montrer qu'il existe $\beta>0$ $\forall(x,y)\in]-\beta,\beta[^{2}$,
+	$f(x+y)=f(x)+f(y)$ ($f$ est linéaire au voisinage de 0).
+	\item Montrer qu'il existe $\lambda\in\R$ et $\gamma>0$ tels que $\forall
+	x\in]-\gamma,\gamma[$, $f(x)=\lambda x$ ($f$ est une homothétie au voisinage
+	de 0).
+\end{enumerate}
+\end{exercise}
+
+\cleardoublepage
+\section{Probabilités sur un univers dénombrable}
+\cleardoublepage
+\section{Calcul matriciel}
+\cleardoublepage
+\section{Réduction des endomorphismes}
+\cleardoublepage
+\section{Espaces vectoriels normés}
+\cleardoublepage
+\section{Fonction d'une variable réelle}
+\cleardoublepage
+\section{Suites et séries de fonctions}
+\cleardoublepage
+\section{Séries entières}
+\cleardoublepage
+\section{Intégration}
+\cleardoublepage
+\section{Espaces préhilbertiens}
+\cleardoublepage
+\section{Espaces euclidiens}
+\cleardoublepage
+\section{Calcul différentiel}
+\cleardoublepage
+\section{\'Equation différentielles linéaires}
 
 \end{document}
