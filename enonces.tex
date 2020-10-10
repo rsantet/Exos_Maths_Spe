@@ -36,10 +36,14 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\U}{\mathbb{U}}
 \newcommand{\E}{\mathbb{E}}
+\newcommand{\M}{\mathcal{M}}
 \renewcommand{\L}{\mathcal{L}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\im}{\emph{Im }}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\Tr}{Tr}
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert{}#1 
 	\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
 \newcommand{\function}[5]{
@@ -50,6 +54,7 @@
 	\end{array}
 	$$
 }
+\newcommand{\bigzero}{\mbox{\normalfont\bfseries 0}}
 
 \begin{document}
 
@@ -1492,6 +1497,279 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 
 \cleardoublepage
 \section{Calcul matriciel}
+
+\begin{exercise}
+	Soit $M=\bigl(\omega^{(k-1)(l-1)}\bigr)_{1\leqslant k,l\leqslant n}$ où
+	$\omega=e^{\frac{2\mathrm{i}\pi}{n}}$. Montrer que $M\in GL_{n}(\C)$ et
+	calculer $M^{-1}$. Que vaut $\det(M)$ ?
+\end{exercise}
+
+\begin{exercise}
+	On dit que $A\in\M_{n,p}(\R)$ est positive et on note $A\geqslant0$ si et
+	seulement si tous ses coefficients le sont.
+	\begin{enumerate}
+		\item Soit $A\in\M_{n}(\R)$. Montrer que $A\geqslant0$ si et seulement
+		si pour tout $X\in\M_{n,1}(\R)$, si $X\geqslant0$ alors $AX\geqslant0$.
+		\item Quelles sont les matrices $A\in GL_{n}(\R)$ telles que
+		$A\geqslant0$ et $A^{-1}\geqslant0$?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=\Bigl(\binom{j-1}{i-1}\Bigr)_{1\leqslant i,j\leqslant n}$. Calculer
+	$A^{-1}$ et $A^{k}$ pour $k\in\Z$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $\K$ un corps de caractéristique non nulle ($\Q,\R,\C,\dots$).
+	Soit $A\in\M_{n}(\K)$ avec $\Tr(A)=0$.
+	\begin{enumerate}
+		\item Montrer que $A$ est semblable à une matrice dont tous les
+		coefficients diagonaux sont nuls. On pourra procéder par récurrence, en
+		distinguant selon qu'il existe $\lambda\in\K,~A=\lambda I_{n}$ ou non.
+		Dans le deuxième cas, pour $u\in\L(\K^{n})$ canoniquement associée à
+		$A$, on montrera qu'il existe $e_{1}\in\K^{n}$ telle que
+		$(e_{1},u(e_{1}))$ est libre.
+		\item Montrer qu'il existe $(X,Y)\in\M_{n}(\K)^{2}$ tel que
+		$A=[X,Y]=XY-YX$. On pourra considérer
+		\function{\varphi}{\M_{n}(\K)}{\M_{n}(\K)}{M}{DM-MD}
+		avec $D=\diag(1,2,\dots,n)$ et déterminer $\ker(\varphi)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(X,Y)\in\M_{n,1}(\K)^{2}$.
+	\begin{enumerate}
+		\item Pour quelles valeurs de $\lambda$, $I_{n}+\lambda XY^\mathsf{T}$ est
+		inversible ?
+		\item Soit $A\in GL_{n}(\R)$. A quelle condition nécessaire et
+		suffisante $A+\lambda XY^\mathsf{T}\in GL_{n}(\R)$ ? Montrer alors que 
+		$$(A+\lambda XY^\mathsf{T})^{-1}=A^{-1}-\frac{\lambda}{1+\lambda Y^{\mathsf{T}}A^{-1}X}A^{-1}XY^{\mathsf{T}}A^{-1}$$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant1$ et pour tout $j\in\{0,\dots ,n\}$,
+	$S_{j}=X^{j}(1-X)^{n-j}$. Montrer que c'est une base de $\R_{n}[X]$ et
+	exprimer $(1,X,\dots,X^{n})$ en fonction de $(S_{0},\dots,S_{n})$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $\K$ un corps et $H$ un hyperplan de $\M_{n}(\K)$. Montrer que $H\cap
+	GL_{n}(\K)\neq 0$ pour $n\geqslant2$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $N:\M_{n}(\C)\to\R_{+}$ telle que:
+	\begin{enumerate}
+		\item [(i)] $\forall \lambda\geqslant0,\forall A\in\M_{n}(\C),~N(\lambda
+		A)=\lambda N(A)$,
+		\item [(ii)] $\forall (A,B)\in\M_{n}(\C)^{2},~N(A+B)\leqslant N(A)+N(B)$,
+		\item [(iii)] $\forall (A,B)\in\M_{n}(\C)^{2},~N(AB)=N(BA)$.
+	\end{enumerate}
+	\begin{enumerate}
+		\item Calculer $N(0)$.
+		\item Évaluer $N(E_{i,j})$ pour $i\neq j$ (matrice élémentaire de la
+		base canonique de $\M_{n}(\C)$).
+		\item Montrer que si $A\in\M_{n}(\C)$ est telle que $\Tr(A)=0$, alors
+		$A$ est semblable à une matrice dont tous les
+		coefficients diagonaux sont nuls. On pourra procéder par récurrence, en
+		distinguant selon qu'il existe $\lambda\in\K,~A=\lambda I_{n}$ ou non.
+		Dans le deuxième cas, pour $u\in\L(\K^{n})$ canoniquement associée à
+		$A$, on montrera qu'il existe $e_{1}\in\K^{n}$ telle que
+		$(e_{1},u(e_{1}))$ est libre.
+		\item En déduire $N(A)$ si $\Tr(A)=0$.
+		\item Montrer qu'il existe $a\in\R^{+}$ telle que pour tout
+		$A\in\M_{n}(\C)$, $N(A)=a\vert\Tr(A)\vert$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace vectoriel de dimension $n$, $f\in GL(E)$ et $g$ un
+	endomorphisme de $E$ de rang 1. Montrer que $f+g\in GL(E)$ si et seulement
+	$\Tr(g\circ f^{-1})\neq 1$.
+\end{exercise}
+
+\begin{exercise}
+	On considère un carré dans $\Z^{2}$. Pour $n\in\N$, quel est le nombre de
+	chemins de longueur $n$ qui relient un sommet à un autre ? Généraliser à un cube dans $\Z^{3}$.
+\end{exercise}
+
+\begin{exercise}[Matrice à diagonale strictement dominante]
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\C)$ telle que pour
+	tout $i\in\{1,\dots,n\}$$\vert a_{i,i}\vert>\sum_{j\neq i}\vert
+	a_{i,j}\vert$. On dit que $A$ est à diagonale strictement dominante. Montrer
+	que $A\in GL_{n}(\C)$. Est-ce encore vrai si on a seulement l'inégalité large ?
+\end{exercise}
+
+\begin{exercise}
+	Calculer, pour $n\geqslant1$, $\det\Bigl((i\wedge j)\Bigr)_{1\leqslant
+	i,j\leqslant n}$. On pourra utiliser, pour tout $n\in\N^{*}
+	,~m=\sum_{k\mid n}\varphi(k)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\C)$. On pose, pour
+	$k\in\{1,\dots, n\}$,$A_{k}=(a_{i,j})_{1\leqslant i,j\leqslant k}$. On
+	suppose que pour tout $k\in\{1,\dots,n\},~A_{k}\in GL_{k}(\C)$. Montrer
+	qu'il existe une unique décomposition
+	$(L,U)\in\mathcal{T}_{n}^{-}(\C)\times\mathcal{T}_{n}^{+}(\C)$ (matrices
+	triangulaires inférieures et supérieures) où $L$ a des
+	$1$ sur la diagonale et $A=LU$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\in\N$ et $(a_{1},\dots,a_{2n+1})\in\R^{2n+1}$ tel que pour tout
+	$i\in\{1,\dots,2n+1\}$, il existe des parties disjointes $A_{i}$ et $B_{i}$
+	de $\{1,\dots,2n+1\}\setminus\{i\}$ avec $\vert A_{i}\vert=\vert
+	B_{i}\vert=n$ et $\sum_{k\in A_{i}}a_{k}=\sum_{k\in B_{i}}a_{k}$.
+
+	Monter que $a_{1}=\dots=a_{2n+1}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $M\in GL_{n}(\C)$, montrer qu'il existe une unique permutation
+	$\sigma\in\Sigma_{n}$ et il existe $(T,T')\in(\mathcal{T}_{n}^{+})^{2}$
+	telles que $M=TP_{\sigma}T'$ où
+	$P_{\sigma}=(\delta_{i,\sigma(j)})_{1\leqslant i,j\leqslant n}$ et $\delta$
+	est le symbole de Kronecker. Cette décomposition est-elle unique ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $\K$ un sous-corps de $\C$ et $J$ un idéal non nul de $M_{n}(\K)$.
+	\begin{enumerate}
+		\item Montrer que si $J\cap GL_{n}(\K)\neq\emptyset$, alors $J=M_{n}(\K)$.
+		\item Montrer que $J$ contient une matrice de rang 1.
+		\item Montrer que $J=\M_{n}(\K)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in\M_{n}(\C)$ et $\lambda\neq 0$ avec $\lambda AB+A+B=0$, montrer que $A$ et $B$ commutent.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(a_{2},\dots,a_{n})\in\R^{n-1}$. Inverser, si possible,
+	$$
+	A=
+	\begin{pmatrix}
+		1 		& -a_{2}	& \dots		& -a_{n}\\
+		a_{2} 	& \ddots 	& 0			& 0\\
+		\vdots 	& 0			& \ddots 	& 0\\
+		a_{n}	& 0			& 0			& 1
+	\end{pmatrix}
+	$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\R)$ telle que pour
+	tout $i\in\{1,\dots,n\}$, $a_{i,i}=0$ et pour tout $i\neq j$,
+	$a_{i,j}+a_{j,i}=1$. Soit $u\in\L(\R^{n})$ canoniquement associé à $A$. Soit
+	$H=\{(x_{1},\dots,x_{n})\in\R^{n}\mid\sum_{i=1}^{n}x_{i}=0\}$.
+	\begin{enumerate}
+		\item Déterminer $\ker(u)\cap H$. En déduire que $\rg(A)\in\{n-1,n\}$.
+		\item Est-il possible que toutes les matrices $A$ vérifiant ces
+		conditions soient de rang $n-1$ ?
+		\item Même question avec $n$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(M,N)\in\M_{n}(\C)^{2}$ tel que $\rg(M)=\rg(N)=1$. Montrer que $M$ et
+	$N$ sont semblables si et seulement si $\Tr(M)=\Tr(N)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $F$ un sous-espace vectoriel de $M_{n}(\K)$, on note
+	$r=\max\{\rg(M)\mid M\in F \}$.
+	\begin{enumerate}
+		\item Montrer qu'il existe $(P_{0},Q_{0})\in GL_{n}(\R)$ telle que 
+		$$
+		P_{0}^{-1}
+		\underbrace{
+			\left(
+				\begin{array}{@{}c|c@{}}
+					\lambda I_{r}
+					& \bigzero \\
+					\hline
+					\bigzero &
+					\bigzero
+				\end{array}\right)
+		}_{\displaystyle J_{r}}
+		Q_{0}\in F
+		$$
+		On note $F_{0}=\{P_{0}MQ_{0}^{-1}\mid M\in F\}$.
+		\item Montrer que $F_{0}$ est un sous-espace vectoriel de $M_{n}(\R)$
+		isomorphe à $F$, et que \\$r=\max\{\rg(M_{0})\mid M_{0}\in F_{0}\}$.
+		\item On définit 
+		$$G_{0}=
+		\left(
+				\begin{array}{@{}c|c@{}}
+					\bigzero
+					& B^{\mathsf{T}} \\
+					\hline
+					B &
+					C
+				\end{array}\right)
+		$$
+		où $B\in\M_{n-r,r}(\R)$ et $C\in\M_{n-r}(\R)$. Quelle est la dimension de l'espace vectoriel engendré par $G_{0}$ ?
+		\item Soit $M_{0}\in G_{0}\cap F_{0}$ avec 
+		$$
+			M_{0}=
+			\left(
+				\begin{array}{@{}c|c@{}}
+					\bigzero
+					& B^{\mathsf{T}} \\
+					\hline
+					B &
+					C
+				\end{array}
+			\right)
+			\in F_{0}
+		$$
+		Montrer que pour tout $\lambda\in\R$,
+		$$
+			\left(
+				\begin{array}{@{}c|c@{}}
+					\lambda I_{r}
+					& B^{\mathsf{T}} \\
+					\hline
+					B &
+					C
+				\end{array}
+			\right)
+			\in F_{0}
+		$$
+		En déduire que pour tout $(i,j)\in\{1,\dots, n-r\}^{2}$, pour tout $\lambda\neq0$,
+		$$
+		\det\left(
+				\begin{array}{@{}c|c@{}}
+					\lambda I_{r}
+					& \begin{matrix}
+						b_{j,1}\\
+						\vdots\\
+						b_{j,r}
+					\end{matrix} \\
+					\hline
+					\begin{matrix}
+						b_{i,1} & \dots & b_{i,r}
+					\end{matrix} &
+					c_{i,j}
+				\end{array}
+			\right)=0
+		$$
+		\item Montrer que $C=0$, puis que $B=0$.
+		\item Conclure.
+		\item Si $\dim(F)\geqslant n^{2}-n+1$, montrer que $F\cap GL_{n}(\R)=\neq\emptyset$.
+		\item Et sur $M_{n}(\C)$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f:\M_{n}(\C)\to\C$ non constante telle que pour tout $(A,B)\in\M_{n}(\C)^{2}$, $f(AB)=f(A)\times f(B)$. 
+	Montrer que $f(M)\neq0$ si et seulement si $M\in GL_{n}(\C)$.
+\end{exercise}
+
 \cleardoublepage
 \section{Réduction des endomorphismes}
 \cleardoublepage
