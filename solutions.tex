@@ -71,6 +71,35 @@
 \section{Calcul matriciel}
 \cleardoublepage
 \section{Réduction des endomorphismes}
+
+
+\begin{solution}
+	Pour le sens indirect, soit $\lambda\in\Sp_{\C}(M)$. Pour tout $p\in\N$, $\lambda\in\Sp_{\C}(M_{p})$ donc $\det(M_{p}-\lambda I_{n})=0$. Par continuité du déterminant, on a $0=\det(M_{p}-\lambda I_{n})\xrightarrow[p\to+\infty]{}\det(-\lambda I_{n})$. Donc $\lambda=0$ et $\Sp_{\C}(M)=\{0\}$ donc $M$ est nilpotente.
+
+	Pour le sens direct, soit $u\in\L(\C^{n})$ canoniquement associée à $M$. On trigonalise $u$ sur une base $\mathcal{B}=(\varepsilon_{1},\dots,\varepsilon_{n})$ avec $u(\varepsilon_{1})=0,u(\varepsilon_{2})=a_{1,2}\varepsilon_{1},\dots,u(\varepsilon_{n})=a_{1,n}\varepsilon_{1}+\dots+a_{n-1,n}\varepsilon_{n-1}$. Posons pour $i\in\{1,\dots,n\}$, $\varepsilon_{i,p}=\frac{\varepsilon_{i}}{p^{i-1}}$. On pose $\mathcal{B}_{p}=(\varepsilon_{1,p},\dots,\varepsilon_{n,p})$ et $M_{p}=\mat\limits_{B_{p}}(u)$, semblable à $M$ et $M_{p}\xrightarrow[p\to+\infty]{}0$ car $\Vert M_{p}\Vert\leqslant\frac{1}{p}\Vert M_{1}\Vert$.
+\end{solution}
+
+\begin{solution}
+	On pose $u\in\L(\C^{n})$ canoniquement associée à $M$. 
+
+	Pour le sens indirect, si $M$ n'est pas diagonalisable, il existe une base $B=(\varepsilon_{1},\dots,\varepsilon_{n})$ de $\C^{n}$ telle que 
+	$$\mat\limits_{\mathcal{B}}(u)=D+N$$
+	où $D$ est diagonale et $N$ est nilpotente (décomposition de Dunford). En reprenant les bases $\mathcal{B}_{p}$ définies à l'exercice précédent, on a
+	$$\mat\limits_{\mathcal{B}_{p}}(u)=D+N_{p}\xrightarrow[p\to+\infty]{}D$$
+	Si $D\in S_{M}$, alors $M$ est diagonalisable ce qui est exclu par hypothèse. Donc $S_{M}$ n'est pas fermé.
+
+	Pour le sens direct, si $M$ est diagonalisable, soit $(M_{p})_{p\in\N}\in(S_{M})^{\N}$ avec $M_{p}\xrightarrow[p\to+\infty]{}M'$. Soit $\lambda\in\C$. On a $\chi_{M_{p}}(\lambda)=\det(\lambda I_{n}-M_{p})=\chi_{M}(\lambda)$ car $M$ et $M_{p}$ sont semblables. Par continuité du déterminant, on a $\chi_{M'}(\lambda)=\chi_{M}(\lambda)$, donc $\chi_{M'}=\chi_{M}$. De plus, $A\mapsto\Pi_{M}(A)$ (polynôme minimal) est continue sur $\M_{n}(\C)$ et pour tout $p\in\N$, on a $\Pi_{M}(M_{p})=0$ donc $\Pi_{M}(M')=0$. $M'$ est donc annulée par $\Pi_{M}$, donc $M'$ est diagonalisable et comme $\chi_{M}=\chi_{M'}$, $M$ et $M'$ ont les mêmes valeurs propres avec les mêmes multiplicités. Donc $M'\in S_{M}$.
+\end{solution}
+
+\begin{remark}
+	Le polynôme caractéristique est une fonction continue de la matrice, mais c'est faux pour le polynôme minimal, par exemple pour 
+	$$M_{p}=\begin{pmatrix}
+		\frac{1}{p} &0\\
+		0 & \frac{2}{p}
+	\end{pmatrix}$$
+	On a $M_{p}\xrightarrow[p\to+\infty]{}0$ et $\Pi_{M_{p}}=(X-\frac{1}{p})(X-\frac{2}{p})\xrightarrow[p\to+\infty]{} X^{2}\neq X=\Pi_{M_{\infty}}$ donc $\lim\limits_{p\to+\infty}\Pi_{M_p}\neq\Pi_{\lim\limits_{p\to+\infty}M_{p}}$.
+\end{remark}
+
 \cleardoublepage
 \section{Espaces vectoriels normés}
 
