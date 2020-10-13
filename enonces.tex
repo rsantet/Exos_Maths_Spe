@@ -2372,7 +2372,7 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	$$
 	A=
 	\begin{pmatrix}
-		B & C &
+		B & C &\\
 		0_{n_{2},n_{1}} & D
 	\end{pmatrix}
 	$$
@@ -2437,8 +2437,92 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 
 \cleardoublepage
 \section{Espaces vectoriels normés}
+
+\begin{exercise}
+	On définit \function{N}{\R^{2}}{\R}{(x,y)}{\sup\limits_{t\in\R}\vert x\cos(t)+y\sin(2t)\vert}
+	\begin{enumerate}
+		\item Montrer que $N$ est une norme.
+		\item Montrer que $$\overline{B_{\Vert\cdot\Vert_{1}}(0,1)}\subset \overline{B_{N}(0,1)}\subset\overline{B_{\Vert\cdot\Vert_{\infty}}(0,1)}$$
+		\item Montrer que $$S_{N}(0,1)\bigcap(\R_{+})^{2}=\Biggl\{(x,y)\in\R^{2}\Biggm|\exists t\in[0,\frac{\pi}{4}]\colon x\cos(t)+y\sin(2t)=1\Biggr\}$$
+		En déduire que $$S_{N}(0,1)\bigcap(\R_{+})^{2}=\Biggl\{\Biggl(\frac{\cos(2t)}{\cos(t)^{3}},\frac{\sin(t)}{2\cos(t)^{3}}\Biggr)\Biggm| t\in\Bigl[0,\frac{\pi}{4}\Bigr]\Biggr\}$$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\mathcal{C}([0,1],\R)$ et \function{N}{E}{\R}{f}{\sqrt{f(0)^{2}+\int_{0}^{1}f'^{2}}}
+	\begin{enumerate}
+		\item Montrer que $N$ est une norme sur $E$ et que $\Vert\cdot\Vert_{\infty}\leqslant\sqrt{2}N$.
+		\item $N$ et $\Vert\cdot\Vert_{\infty}$ sont-elles équivalentes ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant p$ et $f\in\L(\R^{n},\R^{p})$. Montrer que $f$ est ouverte, c'est-à-dire que pour tout $\Theta$ ouvert de $\R^{n}$, $f(\Theta)$ est un ouvert de $\R^{p}$, si et seulement si $f$ est surjective.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\Bigl\{\text{fonctions lipschitziennes}\colon [0,1]\to\R\Bigr\}$. Pour $f\in E$, on pose 
+	$$\kappa(f)=\sup\Biggl\{\Biggl\lvert\frac{f(x)-f(y)}{x-y}\Biggr\rvert\Bigm|(x,y)\in[0,1]^{2},x\neq y\Biggr\}$$
+	\begin{enumerate}
+		\item Montrer que $N(f)=\vert f(0)\vert+\kappa(f)$ est une norme sur $E$.
+		\item Montrer que $N$ et $N_{\infty}$ ne sont pas équivalentes.
+		\item Montrer que $N'=N_{\infty}+\kappa$ est équivalente à $N$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ un sous-groupe de $GL_{n}(\C)$ tel que $G\in\mathcal{V}(I_{n})$ où $\mathcal{V}$ un voisinage de $I_{n}$, muni de la norme 
+	$$\Vert (a_{i,j})_{1\leqslant i,j\leqslant n}\Vert=\max\limits_{1\leqslant i,j\leqslant n}$$. Montrer que $G=GL_{n}(\C)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(E,\Vert\cdot\Vert)$ un $\K$-espace vectoriel normé et $f:E\to E$ une fonction telle que 
+	\begin{enumerate}
+		\item [(i)] $\forall(x,y)\in E^{2}$, $f(x+y)=f(x)+f(y)$
+		\item [(ii)] $\exists M\geqslant0,\forall x\in B_{\Vert\cdot\Vert}(0,1),\Vert f(x)\vert\leqslant M$.
+	\end{enumerate}
+	Montrer que $f$ est continue et linéaire.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace vectoriel normé. Pour $A\subset E$, on pose $\alpha(A)=\mathring{\overline{A}}$.
+	\begin{enumerate}
+		\item Montrer que $\alpha(\alpha(A))=\alpha(A)$.
+		\item Combien au plus de parties différentes obtient-on à partir de $A$ par itérations d'intérieur et d'adhérence ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A$ une partie non vide d'un $\R$-espace vectoriel normé $E$. On définit \function{d_A}{E}{\R}{x}{d(x,A)=\inf\{\Vert x-a\Vert\big| a\in A\}} avec $d_{\emptyset}(x)=+\infty$ pour tout $x\in E$.
+	\begin{enumerate}
+		\item Soit $A,B\subset E$. Montrer que $\overline{A}=\overline{B}$ si et seulement si $d_{A}=d_{B}$.
+		\item On pose $\rho(A,B)=\sup\limits_{x\in E}\vert d_{A}(x)-d_{B}(x)\vert$ (vaut $+\infty$ si non borné). Montrer que 
+		$$\rho(A,B)=\max\Bigl(\sup\limits_{x\in A}d_{B}(x),\sup\limits_{y\in B}d_{A}(y)\Bigr)\overset{def}{=}\alpha(A,B)$$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $P\in\C[X]$ non constant.
+	\begin{enumerate}
+		\item Montrer que si $F$ est un fermé de $\C$, alors $P(F)$ est un fermé de $\C$.
+		\item Si $\Theta$ est un ouvert non vide de $\C$, montrer que $P(\Theta)$ est un ouvert de $\C$.
+	\end{enumerate}
+\end{exercise}
+
 \cleardoublepage
 \section{Fonction d'une variable réelle}
+
+\begin{exercise}
+	Soit $\varphi:I=[a,b]\to\R$ continue. On lui associe 
+	\function{\omega_{\varphi}}{\R_+^*}{\R}{h}{\sup\{\vert\varphi(x)-\varphi(y)\vert\bigm| (x,y)\in I^2\text{ et }\vert x-y\vert <h\}}
+	\begin{enumerate}
+		\item Montrer que $\omega_{\varphi}$ est définie et croissante.
+		\item Soit $(h,h')\in(\R_{+}^{*})^{2}$, montrer que $\omega_{\varphi}(h+h')\leqslant\omega_{\varphi}(h)+\omega_{\varphi}(h')$.
+		\item Soit $(h,\lambda)\in(\R_{+}^{*})^{2}$ et $n\in\N^{*}$, montrer que $\omega_{\varphi}(nh)\leqslant n\omega_{\varphi}(h)$ et $\omega_{\varphi}(\lambda h)\leqslant (1+\lambda)\omega_{\varphi}(h)$.
+		\item Montrer que $\lim\limits_{h\to 0}\omega_{\varphi}(h)=0$. En déduire que $\omega_{\varphi}$ est continue.
+	\end{enumerate}
+\end{exercise}
+
 \cleardoublepage
 \section{Suites et séries de fonctions}
 \cleardoublepage

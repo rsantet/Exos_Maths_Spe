@@ -1,0 +1,271 @@
+\documentclass[12pt]{article}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\definecolor{persianplum}{rgb}{0.44, 0.11, 0.11}
+\usepackage{url}
+\usepackage[breaklinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=persianplum,
+	filecolor=blue,
+	citecolor=black,      
+	urlcolor=cyan,
+}
+
+\textwidth=18cm \textheight=23cm \oddsidemargin=-1.00cm
+\evensidemargin=-1.00cm
+\parindent=1cm
+\topmargin=-2cm
+
+\usepackage{amsthm}
+\newtheorem{solution}{Solution}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{Remarque}
+
+\newcommand{\K}{\mathbb{K}} \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}} \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}} \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\U}{\mathbb{U}} \newcommand{\E}{\mathbb{E}}
+\newcommand{\M}{\mathcal{M}} \renewcommand{\L}{\mathcal{L}}
+\renewcommand{\P}{\mathbb{P}} \newcommand{\im}{\emph{Im}}
+\DeclareMathOperator{\sgn}{sgn} \DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rg}{rg} \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\mat}{mat}
+\DeclareMathOperator{\com}{com}
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert{}#1
+\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+\newcommand{\function}[5]{
+	$$
+	\begin{array}{rccl}
+		#1: & #2 & \to & #3 \\
+		& #4 & \mapsto & #5
+	\end{array}
+	$$
+}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\vspace*{\fill}
+	\Huge \textit{\textbf{Solutions Exercices MP/MP$^*$}}
+	\vspace*{\fill}
+\end{titlepage}
+
+\cleardoublepage
+
+\tableofcontents
+
+\cleardoublepage
+
+\section{Algèbre Générale}
+\cleardoublepage
+\section{Séries numériques et familles sommables}
+\cleardoublepage
+\section{Probabilités sur un univers dénombrable}
+\cleardoublepage
+\section{Calcul matriciel}
+\cleardoublepage
+\section{Réduction des endomorphismes}
+\cleardoublepage
+\section{Espaces vectoriels normés}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item A $(x,y)\in\R^{2}$ fixé, la fonction \function{\varphi}{\R}{\R}{t}{x\cos(t)+y\sin(2t)}
+		est bornée, donc le $\sup$ sur $\R$ existe. Pour la séparation, prendre $t=0$ et $t=\frac{\pi}{4}$. Pour l'inégalité triangulaire, montrer l'inégalité à $t$ fixé puis passer au $\sup$ sur $\R$.
+		
+		\item Si $\vert x\vert+\vert y\vert\leqslant1$, alors $N(x,y)\leqslant 1$ donc on a la première inclusion. 
+		
+		Si $N(x,y)\leqslant 1$, utiliser $t=0$ pour avoir $\vert x\vert\leqslant1$ et $t=\frac{\pi}{4}$ puis $t=-\frac{\pi}{4}$ pour pouvoir justifier
+		$$\vert 2y\vert\leqslant \Biggl\vert x\frac{\sqrt{2}}{2}+y\Biggr\vert+\Biggl\vert y-x\frac{\sqrt{2}}{2}\Biggr\vert\leqslant 2$$
+		et donc $\vert y\vert\leqslant1$. D'où la deuxième inclusion. 
+
+		\item On fixe $(x,y)\in S_{N}(0,1)\cap(\R_{+})^{2}$. $\varphi$ est $2\pi$-périodique, $\varphi(\pi-t)=\varphi(t)$ et $\sup\limits_{t\in\R}\vert\varphi(t)\vert=1$. On peut donc se limite à un intervalle de longueur $2\pi$ pour l'étude de $\varphi$. 
+		
+		On note que si $t\in[-\pi,0]$, $\cos(t)$ et $\sin(2t)$ sont de signes opposés. Donc
+		$$\vert\varphi(t)\vert\leqslant x\vert\cos(t)\vert+y\vert\sin(2t)\vert=\vert\varphi(-t)\vert$$
+		et $-t\in[0,\pi]$. Donc le $\sup$ est atteint sur $[0,\pi]$.
+
+		On note maintenant, comme $\vert\varphi(\pi-t)\vert=\vert\varphi(t)\vert$ sur $[0,\frac{\pi}{2}]$, que si $t\in[\frac{\pi}{4},\frac{\pi}{2}]$,
+		$$0\leqslant\varphi(t)=x\underbrace{\cos(t)}_{\in[0,\frac{\sqrt{2}}{2}]}+y\sin(2t)\leqslant x\underbrace{\cos(\frac{\pi}{2}-t)}_{\in[\frac{\sqrt{2}}{2},1]}+y\sin(2\times (\frac{\pi}{2}-t))=\varphi(\frac{\pi}{2}-t)$$
+
+		Donc le $\sup$ est atteint sur $[0,\frac{\pi}{4}]$. Soit maintenant $t_{0}\in[0,\frac{\pi}{4}]$ tel que $\varphi(t_{0})$ réalise le $\sup$ (existe car $\varphi$ est continue sur un compact). Comme c'est aussi le $\sup$ sur $\R$ qui est ouvert, on a la condition d'Euler du premier ordre: $\varphi'(t_{0})=0$.
+
+		On a donc $x\cos(t_{0})+y\sin(2t_{0})=1$ et $-x\sin(t_{0})+2y\cos(2t_{0})=0$. On en déduit les valeurs de $x$ et $y$ en fonction de $t_{0}$, en faisant attention que $\cos(t_{0})\neq0$ sinon $\sin(t_{0})=0$ aussi ce qui n'est pas le cas, et au cas où $t_{0}=0$.
+
+		Réciproquement, s'il existe $t_{0}\in[0,\frac{\pi}{4}]$ tel que $x$ et $y$ s'écrivent de la façon demandée, alors $t_{0}$ est l'unique point satisfaisant $\varphi(t_{0})=1$ et $\varphi'(t_{0})=0$. Mais alors le $\sup$ de $\varphi$ sur $[0,\frac{\pi}{4}]$ est atteint en un point $t_{1}$ qui vérifie les mêmes choses, donc $t_{1}=t_{0}$ d'où $N(x,y)=1$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour l'inégalité triangulaire, introduire la forme bilinéaire symétrique positive sur $E$ \function{\varphi}{E\times E}{\R}{(f,g)}{f(0)g(0)+\int_{0}^{1}f'(t)g'(t)dt}
+		Alors $N(f)=\sqrt{\varphi(f,f)}$ et on utilise l'inégalité de Minkowski.
+		\item Pour $x\in[0,1]$, écrire $\vert f(x)\vert=\vert f(0)+f(x)-f(0)\vert$, $f(x)-f(0)=\int_{0}^{x}f'(t)dt$, utiliser Cauchy-Schwarz avec $f'$ et $1$ puis que $\sqrt{a}+\sqrt{b}\leqslant\sqrt{2}\sqrt{a+b}$, pour enfin passer au $\sup$ sur $x$.
+		\item Utiliser, pour $n\in\N^{*}$, la fonction \function{f_n}{[0,1]}{\R}{t}{t^n}
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Si $f$ est ouverte, $f(\R^{n})$ est un sous-espace vectoriel ouvert de $R^{p}$. Donc $f$ est surjective.
+
+	Si $f$ est surjective, on prend $F$ un supplémentaire de $\ker(f)$ dans $\R^{n}$ avec $\dim(\ker(f))=n-p$ et $\dim(F)=p$. Soit $(e_{1},\dots,e_{p})$ une base de $F$ et $(e_{p+1},\dots,e_{n})$ une base de $\ker(f)$. On vérifie que $(f(e_{1},\dots,f(e_{p}))$ est une base de $\R^{p}$. On définit \function{N_1}{\R^n}{\R}{\sum_{i}^{n}x_{i}e_{i}}{\max\limits_{1\leqslant i\leqslant n}\vert x_{i}\vert}
+	norme sur $\R^{n}$ et \function{N_2}{\R^p}{\R}{\sum_{i}^{p}y_{i}f(e_{i})}{\max\limits_{1\leqslant i\leqslant p}\vert y_{i}\vert}
+	norme sur $\R^{p}$.
+
+	Soit $\Theta$ un ouvert de $\R^{n}$, soit $y_{0}\in f(\Theta)$, il existe $x_{0}\in\Theta\colon y_{0}=f(x_{0})$. Si $x_{0}=\sum_{i=1}^{n}\alpha_{i}e_{i}$, alors $y_{0}=\sum_{i=1}^{p}\alpha_{i}f(e_{i})$. Comme $\Theta$ est un ouvert, il existe $r_{0}>0$ tel que 
+	$$B_{N_{1}}(x_{0},r_{0})\subset\Theta$$
+	Soit $y=\sum_{i=}^{p}\beta_{i}f(e_{i})\in\R^{p}$, si $N_{2}(y-y_{0})<r_{0}$, pour tout $i\in\{1,\dots,p\}$, $\vert\beta_{i}-\alpha_{i}\vert<r_{0}$ et 
+	$$y=f\Biggl(\sum_{i=1}^{p}\beta_{i}e_{i}+\sum_{i=p+1}^{n}\alpha_{i}e_{i}\Biggr)\overset{\text{def}}{=}f(x)$$
+	avec $N_{1}(x-x_{0})=\max\limits_{1\leqslant i\leqslant p}\vert\beta_{i}-\alpha_{i}\vert<r_{0}$. Ainsi $x\in\Theta$ et $y\in f(\Theta)$, donc $B_{N_{2}}(y_{0},r_{0})\subset f(\Theta)$ et $f(\Theta)$ est un ouvert.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Classique.
+		\item $$\vert f(x)\vert\leqslant\vert f(0)\vert+\vert f(x)-f(0)\vert\leqslant\vert f(0)\vert+\kappa(f)x\leqslant N(f)$$
+		car $x\leqslant 1$, donc $N_{\infty}\leqslant N$. Pour la non-équivalence, prendre \function{f_n}{[0,1]}{\R}{t}{t^n}
+		\item On a $\vert f(0)\vert\leqslant N_{\infty}(f)$ donc $N(f)\leqslant N'(f)$. Ensuite, $N_{\infty}\leqslant N$ donne $N'\leqslant N+\kappa\leqslant 2N$. Donc $N$ est $N'$ sont équivalentes.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Exemple de normes qui, en dimension infinie, ne se dominent pas mutuellement. On prend $(e_{i})_{i\in I}$ une base (de Hamel), $J=(i_{n})_{n\in\N}\subset I$ dénombrable. Si $x=\sum_{i\in I}x_{i}e_{i}$, on peut vérifier que 
+	$$N_{1}(x)=\sum_{n\in\N}\vert x_{i_{n}}\vert+\sum_{i\in I\setminus J}\vert x_{i}\vert$$
+	et
+	$$N_{2}(x)=\sum_{n\in\N}n\vert x_{i_{2n}}\vert+\sum_{n\in\N}\frac{1}{n+1}\bigl\lvert x_{i_{2n+1}}\bigr\rvert+\sum_{i\in I\setminus J}\vert x_{i}\vert$$
+	ne se dominent pas.
+\end{remark}
+
+\begin{solution}
+	Il existe $\alpha>0$ tel que $B_{\Vert\cdot\Vert_{\infty}}(I_{n},\alpha)\subset G$. Soient $i\neq j$ et $\lambda\in\C$. Il existe $p\in\N^{*}$ tel que $\frac{\vert\lambda\vert}{p}<\alpha$. Alors 
+	$$\Biggl\lVert T_{i,j}\Biggl(\frac{\lambda}{p}\Biggr)-I_{n}\Biggr\rVert_{\infty}=\Biggl\lvert\frac{\lambda}{p}\Biggr\rvert<\alpha$$
+	donc $T_{i,j}(\lambda)\in G$ ($T_{i,j}$ est la matrice de transvection: $T_{i,j}(\lambda)=I_{n}+\lambda E_{i,j}$).
+
+	Ainsi,
+	$$T_{i,j}(\lambda)=\Biggl(T_{i,j}\Biggl(\frac{\lambda}{p}\Biggr)\Biggr)^{p}\in G$$
+
+	Soit $\delta=\rho e^{\mathrm{i}\theta}\in\C^{*}$. On a $\lim\limits_{n\to+\infty}\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}}=1$ donc il existe $p\in\N^{*}$ tel que $\vert\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}}-1\vert<\alpha$.
+	
+	On a alors
+	$$\Biggl\lVert D_{n}\Bigl(\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}}\Bigr)-I_{n}\Biggr\rVert_{\infty}<\alpha$$
+	donc $D_{n}(\delta)=D_{n}(\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}})^{p}\in G$ (matrice de dilatation).
+
+	Comme les matrices de transvection et de dilatation engendrent $GL_{n}(\C)$, on a bien $G=GL_{n}(\C)$.
+\end{solution}
+
+\begin{remark}
+	C'est faux sur $\R$. Contre-exemple: matrices de déterminant positif.
+\end{remark}
+
+\begin{solution}
+	Si $f$ n'est pas continue en 0, il existe $\varepsilon_{0}>0$ tel que pour tout $\alpha>0$, il existe $h\in E$ avec $\Vert h\Vert\leqslant\alpha$ et $\Vert f(h)\Vert>\varepsilon_{0}$. On prends $\alpha_{n}=\frac{1}{n+1}$, d'où $\Vert nh_{n}\Vert\leqslant1$ mais $\underbrace{\Vert f(nh_{n})\Vert}_{\leqslant M}>n\varepsilon_{0}\xrightarrow[n\to+\infty]{}+\infty$. Donc $f$ est continue en $0$. Comme $f$ est linéaire, pour tout $x\in E$,
+	$$\lim\limits_{\Vert h\Vert\to0}f(x+h)=\lim\limits_{\Vert h\Vert\to0}f(x)+f(h)=f(x)$$
+	donc $f$ est continue.
+
+	On a $f(px)=p(fx)$ pour tout $p\in\Z$ puis $qf(\frac{p}{q}x)=f(px)=pf(x)$ pour tout $(p,q)\in\Z\times\N^{*}$ donc pour tout $r\in\Q$, $f(rx)=rf(x)$.
+	Soit $\lambda\in\E$, il existe une suite de rationnels telle que $\lim\limits_{n\to+\infty} r_{n}=\lambda$. Comme $f$ est continue, on a 
+	\begin{align*}
+		f(\lambda x)
+		&=\lim\limits_{n\to+\infty}f(r_{n}x)\\
+		&=\lim\limits_{n\to+\infty}r_{n}f(x)\\
+		&=\lambda f(x)
+	\end{align*}
+	Donc $f$ est linéaire.
+\end{solution}
+
+\begin{remark}
+	Soit $e_{0}=1$ et $e_{1}=\sqrt{2}$ et $(e_{i})_{i\in I}$ une $\Q$-base de $\R$ ($0\in I$). On définie 
+	$$f\Bigl(\sum_{i\in I}\lambda_{i} e_{i}\Bigr)=\lambda_{0}e_{0}+\sqrt{2}\sum_{i\in I\setminus\{0\}}\lambda_{i}e_{i}$$
+	$f$ vérifie $f(x+y)=f(x)+f(y)$, mais si $(r_{n})_{n\in\N}$ est une suite de rationnels tendant vers $\sqrt{2}$, $f(r_{n})=r_{n}\to\sqrt{2}\neq f(\sqrt{2})=2$.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $\alpha(A)\subset \overline{A}$ donc $\overline{\mathring{\overline{A}}}\subset\overline{A}$ donc $\alpha(\alpha(A))\subset\alpha(A)$. Comme $\alpha(A)$ est un ouvert inclus dans $\overline{\mathring{\overline{A}}}\subset\overline{A}$ donc $\alpha(A)\subset\alpha(\alpha(A))$.
+
+		\item Si $\beta(A)=\overline{\mathring{A}}$, on montre aussi que $\beta(\beta(A))=\beta(A)$. On a donc $A,\overline{A},\mathring{A},\overline{\mathring{A}},\mathring{\overline{A}},\overline{\mathring{\overline{A}}}$ et $\mathring{\overline{\mathring{A}}}$ et c'est tout.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $d_{A}=d_{B}$, 
+		$$\overline{A}=\{x\in E\bigm| d_{A}(x)=0\}=\{x\in E\bigm| d_{B}(x)=0\}=\overline{B}$$
+		Réciproquement, soit $x\in E$ et $\varepsilon>0$, il existe $a_{1}\in\overline{A}$, $\Vert x-a_{i}\Vert\leqslant d_{\overline{A}}(x)+\frac{\varepsilon}{2}$ (par définition de l'inf). Il existe $a_{2}\in A$, $\Vert a_{1}-a_{2}\Vert\leqslant\frac{\varepsilon}{2}$ (par définition de la fermeture). Ainsi,
+		$$d_{A}(x)\leqslant\Vert x-a_{2}\Vert\leqslant\Vert x-a_{1}\Vert+\Vert a_{1}-a_{2}\Vert\leqslant d_{\overline{A}}(x)+\varepsilon$$
+		Ceci valant pour tout $\varepsilon>0$, $d_{A}(x)\leqslant d_{\overline{A}}(x)$. Comme $A\subset\overline{A}$, $d_{\overline{A}}\leqslant d_{A}$, on a $d_{A}=d_{\overline{A}}=d_{\overline{B}}=d_{B}$.
+
+		\item Soit $x\in A$, on a $d_{B}(x)=\vert d_{B}(x)-d_{A}(x)\vert\leqslant\rho(A,B)$ donc $\sup\limits_{x\in A}d_{B}(x)\leqslant\rho(A,B)$, de même pour $\sup\limits_{y\in B}d_{A}(y)$ donc on on a un première inégalité.
+		
+		Réciproquement, soit $x\in E$ et $\varepsilon>0$, il existe $a\in A$ et $b\in B$ tel que $\Vert x-a\Vert\leqslant d_{A}(x)+\varepsilon$ et $\Vert x-b\Vert\leqslant d_{B}(x)+\varepsilon$.
+		On a alors
+		$$d_{A}(x)\leqslant\Vert x-a\Vert\leqslant\Vert a-b\Vert+\Vert x-b\Vert\leqslant d_{B}(x)+\varepsilon+\alpha(A,B)$$
+		Ceci vaut pour tout $\varepsilon>0$, donc $d_{A}(x)\leqslant d_{B}(x)+\alpha(A,B)$. De même, $d_{B}(x)\leqslant d_{A}(x)+\alpha(A,B)$ donc $\rho(A,B)\leqslant\alpha(A,B)$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $(y_{n})_{n\in\N}\in P(F)^{\N}$ qui converge vers $y\in\C$ donc il existe $(x_{n})\in F^{\N}$ telle que l'on ait pour tout $n\in\N$, $P(x_{n})=y_{n}$. $(x_{n})_{n\in\N}$ est bornée car $\lim\limits_{z\to+\infty}\vert P(z)\vert=+\infty$ (car $P$ est non constant), donc on peut extraire (Bolzano-Weierstrass) $x_{\sigma(n)}\to x$ et $x\in F$ car $F$ est fermé. Par continuité de $z\mapsto P(z)$ sur $\C$, on a $y=P(x)\in P(F)$.
+		
+		\item Soit $\Theta$ un ouvert de $\C$, soit $y\in P(\Theta),\exists x\in\Theta$ tel que $P(x)=y$ et il existe $r>0$, $B(x,r)\subset\Theta$. Soit $y'\in\C$, supposons que pour tout $x'\in\C$ tel que $P(x')=y'$, on a $\vert x-x'\vert>r$. Soit $Q(X)=P(X)-y'=a\prod_{i=1}^{n}(X-x_{i})$ non constant où $a$ est le coefficient dominatrice de $P$. Par hypothèse, pour tout $i\in\{1,\dots,n\}\colon\vert x_{i}-x\vert>r$ (car $P(x_{i})=y'$), ainsi 
+		$$\vert Q(x)\vert=\vert y-y'\vert\geqslant\vert a\vert r^{n}$$
+		Par contraposée, si $\vert y-y'\vert\leqslant\frac{\vert a\vert r^{n}}{2}$, alors il existe $x'\in\C$ tel que $P(x')=y'$ et $\vert x'-x\vert<r$.Ainsi, $x'\in B(x,r)\subset\Theta$ et $y'\in P(\Theta)$. Donc $B(y,\vert a\vert r^{n})\subset P(\Theta)$ et $P(\Theta)$ est un ouvert.
+	\end{enumerate}
+\end{solution}
+
+\cleardoublepage
+\section{Fonction d'une variable réelle}
+
+\begin{solution}
+	On note $A_{h}=\{\vert\varphi(x)-\varphi(y)\vert\bigm|(x,y)\in I^{2}\text{ et }\vert x-y\vert\leqslant h\}$.
+	\begin{enumerate}
+		\item $\omega_{\varphi}$ est bien défini car $\vert\varphi(x)-\varphi(y)\vert\leqslant 2\Vert\varphi\Vert_{\infty}$). Si $0<h\leqslant h'$, alors $A_{h}\subset A_{h'}$ donc $\sup(A_{h})\leqslant\sup(A_{h'})$ donc $\omega_{\varphi}(h)\leqslant\omega_{\varphi}(h')$.
+		\item Soit $(h,h')\in(\R_{+}^{*})^{2}$, soit $(x,y)\in I^{2}$ tel que $\vert x-y\vert\leqslant h+h'$ (où on peut supposer que $x\leqslant y$).
+		\begin{itemize}
+			\item Si $y\in[x,x+h]$, alors $\vert x-y\vert\leqslant h$ donc $\vert\varphi(x)-\varphi(y)\vert\leqslant\omega_{\varphi}(h)\leqslant\omega_\varphi(h)+\omega_{\varphi}(h')$
+			\item Si $y\in[x+h,x+h+h']$, $\vert\varphi(x)-\varphi(y)\vert\leqslant\vert\varphi(x)-\varphi(x+h)\vert+\vert\varphi(x+h)-\varphi(y)\vert\leqslant\omega_\varphi(h)+\omega_{\varphi}(h')$ car $\vert x-(x+h)\vert\leqslant h$ et $\vert x+h-y\vert\leqslant h'$.
+		\end{itemize}
+		Donc $\omega_{\varphi}(h+h')\leqslant\omega_\varphi(h)+\omega_\varphi(h')$.
+		\item Par récurrence sur $n\in\N$, on a $\omega_\varphi(nh)=n\omega_\varphi(h)$. Si $\lambda\in\R_{+}^{*}$, on a $\lambda h\leqslant(\lfloor \lambda\rfloor+1)h$ et par croissance et ce qui précède, on a 
+		$$\omega_\varphi(\lambda h)\leqslant(\lfloor\lambda\rfloor+1)\omega_\varphi(h)\leqslant(\lambda+1)\omega_\varphi(h)$$
+		\item Soit $\varepsilon>0$. $\varphi$ étant uniformément continue, il existe $\alpha>0$ tel que pour tout $(x,y)\in I^{2}$, si $\vert x-y\vert\alpha$ on a $\vert\varphi(x)-\varphi(y)\vert\leqslant\varepsilon$ et on a pour $h\leqslant\alpha$, $\omega_\varphi(h)\leqslant\varepsilon$ d'où $\lim\limits_{h\to0}\omega_\varphi(h)=0$.
+		
+		Soit alors $h_{0}>0$ fixé et $h>0$,
+		\begin{itemize}
+			\item si $h_{0}\leqslant h$, on a $0\leqslant\omega_\varphi(h)-\omega_\varphi(h_0)\leqslant\omega_\varphi(h-h_0)$.
+			\item si $h\leqslant h_{0}$, on a $0\leqslant\omega_\varphi(h_0)-\omega_\varphi(h)\leqslant\omega_\varphi(h_0-h)$.
+		\end{itemize}
+		Dans tous les cas, on a $\vert\omega_\varphi(h)-\omega_\varphi(h_{0})\vert\leqslant\omega_\varphi(\vert h_{0}-h\vert)$. Donc on a bien $\lim\limits_{h\to h_{0}}\omega_\varphi(h)=\omega_\varphi(h_{0})$. Donc $\omega_{\varphi}$ est continue (et même uniformément).
+	\end{enumerate}
+\end{solution}
+
+\cleardoublepage
+\section{Suites et séries de fonctions}
+\cleardoublepage
+\section{Séries entières}
+\cleardoublepage
+\section{Intégration}
+\cleardoublepage
+\section{Espaces préhilbertiens}
+\cleardoublepage
+\section{Espaces euclidiens}
+\cleardoublepage
+\section{Calcul différentiel}
+\cleardoublepage
+\section{\'Equation différentielles linéaires}
+
+
+\end{document}
