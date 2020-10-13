@@ -24,7 +24,7 @@
 \usepackage{amsthm}
 \newtheorem{solution}{Solution}[section]
 \theoremstyle{remark}
-\newtheorem{remark}{Remarque}
+\newtheorem{remark}{Remarque}[section]
 
 \newcommand{\K}{\mathbb{K}} \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}} \newcommand{\Q}{\mathbb{Q}}
@@ -252,6 +252,82 @@
 		\item Soit $\Theta$ un ouvert de $\C$, soit $y\in P(\Theta),\exists x\in\Theta$ tel que $P(x)=y$ et il existe $r>0$, $B(x,r)\subset\Theta$. Soit $y'\in\C$, supposons que pour tout $x'\in\C$ tel que $P(x')=y'$, on a $\vert x-x'\vert>r$. Soit $Q(X)=P(X)-y'=a\prod_{i=1}^{n}(X-x_{i})$ non constant où $a$ est le coefficient dominatrice de $P$. Par hypothèse, pour tout $i\in\{1,\dots,n\}\colon\vert x_{i}-x\vert>r$ (car $P(x_{i})=y'$), ainsi 
 		$$\vert Q(x)\vert=\vert y-y'\vert\geqslant\vert a\vert r^{n}$$
 		Par contraposée, si $\vert y-y'\vert\leqslant\frac{\vert a\vert r^{n}}{2}$, alors il existe $x'\in\C$ tel que $P(x')=y'$ et $\vert x'-x\vert<r$.Ainsi, $x'\in B(x,r)\subset\Theta$ et $y'\in P(\Theta)$. Donc $B(y,\vert a\vert r^{n})\subset P(\Theta)$ et $P(\Theta)$ est un ouvert.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $P\notin\mathcal{S}$, il existe $z_{0}\in\C\setminus\R$ tel que $P(z_{0})=0$ et $\vert\Im(z_{0})\vert^{n}>0=P(z_{0})$. Par contraposée, si pour tout $z\in\C$, $\vert P(z)\vert\geqslant\vert\Im(z_{})\vert^{n}$,alors $P\in\mathcal{S}$.
+
+		Réciproquement, si $P=\prod_{i=1}^{n}(X-\lambda_{i})\in\mathcal{S}$ avec $(\lambda_{i})_{1\leqslant i\leqslant n}$ réels, soit $z=a+ib\in\C$. On a
+		$$\vert P(z)\vert=\prod_{i=1}^{n}\vert a-\lambda_{i}+ib\vert\geqslant\vert b\vert^{n}$$
+		
+		\item Soit $(P_{p})_{p\in\N}\in\mathcal{S}^{\N}$ telle que $P_{p}\xrightarrow[p\to+\infty]{}P\in F$. Soit $z\in\C$, on a pour tout $p\in\N$, $\vert P_{p}(z)\vert\geqslant\vert\Im(z)\vert^{n}$ donc quand $p\to+\infty$, $\vert P(z)\vert\geqslant\vert\Im(z)\vert^{n}$ donc $P\in\mathcal{S}$ et $S$ est fermé.
+		
+		\item Soit $(M_{p})_{p\in\N}$ une suite de matrice trigonalisable sur $\R$ qui converge vers $M\in\M_{n}(\R)$. Ib bite $\chi_{p}$ le polynôme caractéristique de $M_{p}$. Pour tout $p\in\N$, $\chi_{p}\in\mathcal{S}$ et $\chi_{p}\xrightarrow[p\to+\infty]{}\chi_{M}$. Comme $\mathcal{S}$ est fermé, $\chi_{M}\in \mathcal{S}$ et $M$ est trigonalisable sur $\R$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\varphi$ est linéaire et $\dim(\K_{m-1}[X]\times\K_{n-1}[X])=m+n+=\dim(\K_{n+m-1}[X])$.
+		
+		Si $\varphi$ est bijective, elle est surjective et il existe $(U,V)\in\K[X]^{2}$ tel que $UA+BV=1$ et d'après le théorème de Bézout, on a $A\wedge B=1$.
+
+		Réciproquement, si $\varphi$ n'est pas surjective, il existe $(U,V)\in(\K_{m-1}[X]\times\K_{n-1}[X])\setminus\{(0,0)\}$ tel que $\varphi(U,V)=0$ d'où $AU=-BV$. Soit $\delta=A\wedge B$, on écrit $A=\delta A_{1}$ et $B=\delta B_{1}$ avec $A_{1}\wedge B_{1}=1$ et on a $A_{1}U=-B_{1}V$. D'après le théorème de Gauss, on a $A_{1}\mid V$ et $B_{1}\mid U$. Si $U=0$, on a $V=0$ et de même si $V=0$, on a $U=0$. On peut donc supposer $U\neq0$ et $V\neq 0$, et on a alors $\deg(A_{1})\leqslant\deg(V)\leqslant n-1<n=\deg(A)$ mais $A=\delta A_{1}$ donc $\deg(\delta)\geqslant1$ et $A\wedge B\neq 1$.
+
+		\item $\Phi$ est continue car $R_{A,B}$ est un polynôme en les coefficients de $A$ et $B$.
+		
+		\item Comme on est dans $\C$, $\Delta=\{P\in\C_{p}[X]\bigm| P\wedge P'=1\}=\{P\in\C_p[X]\bigm| R_{P,P'}\neq0\}$. $\Phi_{P,P'}$ est continue d'après la question précédente, $\delta=\Phi_{P,P'}^{-1}(\C^{*})$ donc $\Delta$ est ouvert.
+		
+		Sur $\R$, on n'a pas la caractérisation de scindé à racines simples si et seulement si $P\wedge P'=1$ (contre-exemple: $P=X^{2}+1$). Dans $\R_{3}[X]$, $X$ est scindé à racines simples et $X(1+\varepsilon X)^{2}\xrightarrow[\varepsilon\to0]{}X$ et $-\frac{1}{\varepsilon}$ est racine double, donc $\Delta$ n'est pas ouvert.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	On peut cependant considérer 
+	$$\Delta_{n}=\{P\in\C_{p}[X]\bigm| P\text{ scindé à racines simples sur }\R\text{ et }\deg(P)=n\}$$
+	Si $\lambda_{1}<\lambda_{2}<\dots<\lambda_{n}$ sont les racines (distinctes) de $R$ sur $\R$, on choisit $\alpha_{0}\in]-\infty,\lambda_{1}$, $\alpha_{n}\in]\lambda_{n},+\infty[$ et $\alpha_{i}\in]\lambda_{i},\lambda_{i+1}[$ si $i=1,\dots,n-1$. 
+
+	Pour tout $k\in\{0,\dots,n-1\}$, on a $P(\alpha_{k})P(\alpha_{k+1})<0$ (car les racines de $P$ provoquent des changements de signe). Soit \function{\Psi}{\R_n[X]}{\R^n}{Q}{(Q(\alpha_{k})Q(\alpha_{k+1}))_{0\leqslant k\leqslant n-1}}
+	$\Psi$ est continue sur $\R_{n}[X]$ et $\Psi(P)\in(\R_{-}^{*})^{n}$ qui est ouvert, donc il existe $r>0$ tel que si $\Vert P-Q\Vert<r$, alors $\Psi(Q)\in(\R_{-}^{*})^{n}$. Donc $Q$ change $n$ fois de signe, et admet au moins $n$ racines. Mais $\deg(Q)=n$, donc $Q$ est scindé à racines simples sur $\R$, donc $\Delta_{n}$ est ouvert dans $\{P\in\R[X]\bigm|\deg(P)=n\}$.
+\end{remark}
+
+\begin{remark}
+	$$\{M\in\M_{n}(\C)\bigm|M\text{ diagonalisable à racines simples}\}=\{M\in\M_{n}(\C)\bigm|\chi_M\text{ sciné à racines simples}\}$$
+	est un ouvert de $\M_{n}(\C)$ car $M\mapsto\chi_{M}$ est continue sur $\M_{n}(\C)$, et c'est aussi vrai sur $\R$.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit \function{f}{\M_n(\R)}{\M_n(\R)}{A}{A^{n}}
+		$f$ est continue et $F=f^{-1}(\{0\})$ donc $F=\overline{F}$.
+
+		Soit $M_{0}\in F$, $X^{n}$ annule $M_{0}$ donc $M_{0}$ est trigonalisable: on écrit $M_{0}$ dans une base où les coefficients diagonaux sont tous nuls. Soit alors $M_{\varepsilon}$ la même matrice dans la même base en rajoutant simplement $\varepsilon$ en première position de la diagonale. Alors $M_{\varepsilon}\xrightarrow[\varepsilon\to0]{}M_{0}$ et $M_{\varepsilon}\notin F$ donc $\mathring{F}=\emptyset$. Notons que cela signifie que $F$ est dense.
+
+		\item La norme dérive du produit scalaire $(A|B)\mapsto\Tr(A^{\mathsf{T}}B)$. Soit $M\in F$, on a $\Vert M-I_{n}\Vert^{2}=\Vert M\Vert^{2}+\Vert I_{n}\Vert^{2}-2(M|I_{n})$. On a $(M|I_{n})=\Tr(M)=0$ car $M$ est nilpotente. Donc $\Vert M-I_{n}\Vert^{2}$ est minimale pour $\Vert M\Vert^{2}$ minimale, donc pour $M=0\in F$. Donc $d(I_{n},F)=\Vert I_{n}\Vert=\sqrt{n}$ (et la distance est atteinte pour $0_{\M_n(\R)}$).
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $A\mapsto\det(A)$ est continue et $GL_{n}(\K)=\det^{-1}(\K^{*})$ est donc ouvert. Si $A\in\M_{n}(\K)$, pour $p\in\N$, on pose $A_{p}=A-\frac{1}{p+1}I_{n}$. Comme $\Sp(A)$ est fini, il existe $N\in\N$, tel que pour tout $p\geqslant N$, $\frac{1}{p+1}\notin\Sp(A)$. Donc pour tout $p\geqslant N$, $A_{p}\in GL_{n}(\K)$, et $A_{p}\xrightarrow[p\to+\infty]{}A$ donc $GL_{n}(\K)$ est dense dans $\M_{n}(\K)$.
+		\item On fixe $B\in\M_{n}(\K)$. Soit $A\in GL_{n}(\K)$. On écrit $BA=A^{-1}(AB)A$ donc $AB$ et $BA$ sont semblables donc $\chi_{AB}=\chi_{BA}$. Comme, à $B$ fixé, $A\mapsto\chi_{AB}$ et $A\mapsto\chi_{BA}$ sont continues sur $\M_{n}(\K)$, on a le résultat par densité.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $v_{p}\circ(id_{E}-u)=(id_{E}-u)\circ v_{p}=\frac{1}{p}(id_{E}-u^{p})$, donc $\Vert v_{p}\circ(id_{E}-u)\Vert\leqslant\frac{1}{p}(\Vert id_{E}\Vert+\Vert u^{p}\Vert)\xrightarrow[p\to+\infty]{}0$.
+		
+		Soit $x\in\ker(u-id_{E})\cap\im(u-id_{E})$, on a $u(x)=x$ et il existe $y\in E$, $x=(u-id_{E})(y)$. On a $v_{p}(x)=\frac{1}{p}(px)=x$ et $v_{p}(x)=v_{p}\circ(u-id_{E})(y)\xrightarrow[p\to+\infty]{}0$ d'où $x=0$. Le théorème du rang permet de conclure.
+
+		\item Soit $x\in E$, on écrit $x=x_{1}+x_{2}$ avec $\Pi(x)=x_{1}$ et $x_{2}=(u-id_{E})(y_{2})$. Alors $v_{p}(x)=x_{1}+v_{p}\circ(u-id_{E})(y_{2})\xrightarrow[p\to+\infty]{}x_{1}=\Pi(x)$.
 	\end{enumerate}
 \end{solution}
 

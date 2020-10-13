@@ -2517,6 +2517,54 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	\end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+	On définit $F=\{P\in\R_n[X]\bigm| P\text{ unitaire et }\deg(P)=n\}$. $F$ est fermé dans $\R_{n}[X]$. Notons $\mathcal{S}=\{P\in F\bigm| P\text{ est scindé sur }\R\}$.
+	\begin{enumerate}
+		\item Montrer que $P\in\mathcal{S}$ si et seulement si pour tout $z\in\C$, $\vert P(z)\vert\geqslant \vert\Im(z)\vert^{n}$.
+		\item En déduire que $\mathcal{S}$ est fermé.
+		\item Montrer que $\{M\in\M_{n}(\R)\bigm| M\text{ trigonalisable sur }\R\}$ est fermé.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(n,m)\in(\N^{*})^{2}$ et $A=\sum_{i=1}^{n}a_{i}X^{i}$, $B=\sum_{i=1}^{m}b_{i}X^{i}$ avec $a_{n}\neq 0$, $b_{m}\neq0$.
+	\begin{enumerate}
+		\item Montrer que \function{\varphi}{\K_{m-1}[X]\times\K_{n-1}[X]}{\K_{n+m-1}[X]}{(U,V)}{AU+BV}
+		est bijective si et seulement si $A\wedge B=1$.
+
+		On note $M_{A,B}$ la matrice de $\varphi$ dans la base canonique de $\K_{m-1}[X]\times\K_{n-1}[X]$ et on définit le résultant $R_{A,B}=\det(M_{A,B})$.
+		\item Pour $\K=\R$ ou $\C$, et $p\in\N$ fixé, on munit $\K_{p}[X]$ d'une norme quelconque. Montrer que \function{\Phi_{A,B}}{\K_{m-1}[X]\times\K_{n-1}[X]}{\K}{(A,B)}{R_{A,B}}
+		est continue.
+		\item En déduire que $\Delta=\{P\in\C_{p}[X]\bigm| P\text{ scindé à racines simples sur }\C\}$ est ouvert. Et sur $\R$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $F=\{M\in\M_{n}(\R)\bigm|M^{n}=0\}$. $F$ est donc l'ensemble des matrices nilpotentes.
+	\begin{enumerate}
+		\item Déterminer $\overline{F}$ et $\mathring{F}$.
+		\item On munit $\M_{n}(\R)$ de $\Vert M\Vert=\sqrt{\Tr(M^{\mathsf{T}}M)}$. Vérifier que c'est une norme et calculer $d(I_{n},F)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\K=\R$ ou $\C$. Montrer que $GL_{n}(\K)$ est un ouvert dense dans $M_{n}(\K)$.
+		\item En déduire que pour tout $(A,B)\in\M_{n}(\K),\chi_{AB}=\chi_{BA}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\K$-espace vectoriel de dimension finie, $u\in\L(E)$ telle que $(u^{p})_{p\in\N}$ est bornée (pour une norme quelconque). On pose $v_{p}=\frac{1}{p}\sum_{k=0}^{p-1}u^{p}$.
+	\begin{enumerate}
+		\item Montrer que 
+		$$E=\ker(u-id_{E})\oplus\im(u-id_{E})$$
+		On pourra évaluer $v_{p}\circ(id_{E}-u)=(id_{E}-u)$ et faire tendre $p$ vers $+\infty$.
+		\item Montrer que $(v_{p})_{p\in\N}$ converge vers $\Pi$, le projecteur sur $\ker(u-id_{E})$ parallèlement à $\im(u-id_{E})$.
+	\end{enumerate}
+\end{exercise}
+
 \cleardoublepage
 \section{Fonction d'une variable réelle}
 
