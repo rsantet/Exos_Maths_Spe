@@ -2641,6 +2641,25 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	Soit $E$ un $\C$-espace vectoriel de dimension finie $r\in\N^{*}$. Soit $(\alpha_{1},\dots,\alpha_{r})\in\C^{r}$ distincts et $P=(X-\alpha_{1})\dots(X-\alpha_{r})$. Déterminer les composantes connexes par arcs de $A_{P}\in\{u\in\L(E)\bigm| P(u)=0\}$.
 \end{exercise}
 
+\begin{exercise}[Théorème de Perron-Frobenius]
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\R)$ tel que pour tout $(i,j)\in\{1,\dots,n\}$, $a_{i,j}>0$. On note alors $A>0$, et on peut définir de même $A\geqslant0$. Pour $X\in\R^{n}$, on note $\Vert X\Vert_{1}=\sum_{i=1}^{n}\vert x_{i}\vert$. On pose, pour $X=(x_{1},\dots,x_{n})^{\mathsf{T}}$, $\vert X\vert=(\vert x_{1}\vert,\dots,\vert x_{n}\vert)^{\mathsf{T}}$. 
+	On définit $\rho(A)=\max\limits_{\lambda\in\Sp_{\C}(A)}\vert\lambda\vert$ le rayon spectral de $A$.
+	\begin{enumerate}
+		\item Montrer que si $X\geqslant0$ et $X\neq0$, on a $AX>0$.
+		\item Montrer que pour $X\in\M_{n,1}(\C)$, si $\vert AX\vert=A\vert X\vert$, alors il existe $\theta\in\R$, $e^{\mathrm{i}\theta}X\geqslant0$.
+		\item On définit 
+		$$K=\{X\in\M_{n,1}(\R)\Bigm| X\geqslant0\text{ et }\Vert X\Vert_{1}=1\}$$
+		et pour tout $x\in K$, 
+		$$I_{x}=\{t\geqslant0\Bigm|AX-tX\geqslant0\}$$
+		Montrer que $I_{x}$ est non vide, fermé et borné. On pose $\theta(x)=\max(I_{x})$.
+		\item Montrer que $\theta$ est borné sur $K$. On pose $r_{0}=\sup\limits_{x\in K}\theta(X)$. Établir qu'il existe $X^{+}\in K$ tel que $\theta(X^{+})=r_{0}$.
+		\item Montrer que $AX^{+}=r_{0}X^{+}$. On pourra poser $Y=AX^{+}-r_{0}X^{+}$ et on montrera que si $Y\neq0$, il existe $\varepsilon>0$ tel que $A(A^{+})-(r_{0}+\varepsilon)AX^{+}>0$.
+		\item Soit $\lambda\in\Sp_{\lambda}(A)$ et $V\in\M_{n,1}(\C)$ tel que $\Vert V\Vert_{1}=1$ et $AV=\lambda V$. Montrer que $\vert AV\vert\leqslant A\vert V\vert$, en déduire que $\vert\lambda\vert\leqslant r_{0}$.
+		\item Montrer que si $\vert\lambda\vert=r_{0}$, alors $A\vert V\vert=r_{0}\vert V\vert=\vert AV\vert$, en déduire que $\lambda=r_{0}$.
+		\item Montrer que $\dim(\ker(A-r_{0}I_{n}))=1$.
+	\end{enumerate}
+\end{exercise}
+
 \cleardoublepage
 \section{Fonction d'une variable réelle}
 

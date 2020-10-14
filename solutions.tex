@@ -524,6 +524,34 @@
 	\end{enumerate}
 \end{solution}
 
+\begin{solution}
+	Pour tout $u\in A_{p}$, $\Sp(u)\subset\{\alpha_{1},\dots,\alpha_{r}\}$ distincts et $u$ est diagonalisable. Réciproquement, si $u$ est diagonalisable et $\Sp(u)\subset\{\alpha_{1},\dots,\alpha_{r}\}$ alors dans une base la matrice de $u$ est diagonale avec des $\alpha_{i}$ (éventuellement plusieurs selon leur multiplicités), donc $u\in A_{p}$.
+
+	Si $u\in A_{p}$, on écrit donc le polynôme caractéristique de $u$
+	$$\chi_{u}=\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}$$
+	avec $0\leqslant m_{i}\leqslant\dim(E)=n$ et $\sum_{i=1}^{r}m_{i}=n$.
+	$u\mapsto\chi_{u}$ est continue. Pour $(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}$ tel que $\sum_{i=1}^{r}m_{i}=n$, notons 
+	$$A_{m_{1},\dots,m_{r}}=\Biggl\{u\in A_{p}\Bigm|\chi_{u}=\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}$$
+	et 
+	$$\Bigl[u\mapsto\chi_u(A_{p})\Bigr]=\Bigl\{\bigcup_{(m_{1},\dots,m_{r})\in D_{n,r}}\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Bigr\}\Biggr\}$$
+	où
+	$$D_{n,r}=\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\}$$
+
+	Donc d'après la contraposée du théorème des valeurs intermédiaires,\\si $(m_{1},\dots,m_{r})\neq(m'_{1},\dots,m'_{r})$, alors $A_{m_{1},\dots,m_{r}}$ et $A_{m'_{1},\dots,m'_{r}}$ ne sont pas dans la même composante connexe par arcs car
+	$$\Bigl[u\mapsto\chi_u\Bigl(A_{m_{1},\dots,m_{p}}\bigcup A_{m'_{1},\dots,m'_{r}}\Bigr)\Bigr]=\underbrace{\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Bigr\}\Biggr\}\bigcup\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m'_{i}}\Bigr\}\Biggr\}}_{\text{pas connexe par arcs}}$$
+	
+	Si $\gamma\colon[0,1]\to A_{p}$ est continue, $t\mapsto\chi_{\gamma(t)}=a_{0}(t)+a_{1}(t)X+\dots+a_{n-1}(t)X^{n-1}+X^{n}$ est continue sur $[0,1]$ et prend un nombre fini de valeurs donc est constante. $a_{i}\colon[0,1]\to\R$ continues et prend un nombre fini de valeurs donc est constante.
+
+	Soit $u_{0}\in A_{m_{1},\dots,m_{r}}$, soit $u\in A_{m_{1},\dots,m_{r}}$, alors il existe une base $\mathcal{B}_{0}$ base de $E$ telle que $\mat\limits_{\mathcal{B}_{0}}(u_{0})=M_{0}$ soit diagonale avec des $\alpha_{1}$ sur les $m_{1}$ premières lignes de la diagonale, $\alpha_{2}$ sur les $m_{2}$ lignes suivantes, etc. Soit $M=\mat\limits_{\mathcal{B}_{0}}(u)$. $M$ est semblable à $M_{0}$ donc il existe $P\in GL_{n}(\C)$ telle que $M=PM_{0}P^{-1}$.
+
+	Or $GL_{n}(\C)$ est connexe par arcs, donc il existe $\varphi\colon[0,1]\to GL_{n}(\C)$ continue telle que $\varphi(0)=P$ et $\varphi(1)=I_{n}$. On pose alors \function{\Phi}{[0,1]}{A_{m_{1},\dots,m_{r}}}{t}{\varphi(t)M_{0}\varphi^{-1}(t)}
+	Alors $A_{m_{1},\dots,m_{r}}$ est connexe par arcs.
+
+	Le nombre de composantes est donc égal au cardinal de 
+	$$D_{n,r}=\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\}$$
+	qui vaut $\binom{m+r-1}{r-1}$ possibilités (place $n$ points sur une droite et les séparer avec $r-1$ barres: le nombre de points dans chaque segment donne un $m_{i}$, il y a $m+r-1$ possibilités pour placer les $r-1$ barres).
+\end{solution}
+
 \cleardoublepage
 \section{Fonction d'une variable réelle}
 
