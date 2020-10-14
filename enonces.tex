@@ -32,7 +32,7 @@
 \DeclareMathOperator{\sgn}{sgn} \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\rg}{rg} \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\mat}{mat}
-\DeclareMathOperator{\com}{com}
+\DeclareMathOperator{\com}{com} \DeclareMathOperator{\conv}{conv}
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert{}#1
 \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
 \newcommand{\function}[5]{
@@ -2563,6 +2563,82 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 		On pourra évaluer $v_{p}\circ(id_{E}-u)=(id_{E}-u)$ et faire tendre $p$ vers $+\infty$.
 		\item Montrer que $(v_{p})_{p\in\N}$ converge vers $\Pi$, le projecteur sur $\ker(u-id_{E})$ parallèlement à $\im(u-id_{E})$.
 	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A$ compact convexe non vide d'un espace vectoriel normé, $f:A\to A$ 1-lipschitzienne.
+	\begin{enumerate}
+		\item Soit $x_{0}\in A$, et pour $n\geqslant1,\forall x\in A$, $f_{n}(x)=\frac{1}{n}f(x_{0})+(1-\frac{1}{n})f(x_{0})$. Montrer que $f$ possède un unique point fixe $x_{n}$.
+		\item Montrer que $f$ possède au moins un point fixe.
+		\item Si l'espace est euclidien, montrer que $F=\{x\in A\bigm| f(x)=x\}$ est convexe.
+		\item Contre-exemple dans le cas général.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soient $E$ et $F$ deux $\R$-espaces vectoriels normés avec $\dim(F)<+\infty$. Soit $f:E\to F$ continue telle qu'il existe $M\geqslant0$, pour tout $(x,y)\in E^{2}$, on a $\Vert f(x+y)-f(x)-f(y)\Vert\leqslant M$.
+	\begin{enumerate}
+		\item Si $M=0$, montrer que $f$ est linéaire (continue). Est-ce encore vrai si $\K=\C$ ?
+		\item On suppose $M>0$, soit pour tout $n\in\N$, \function{v_n}{E}{F}{x}{\frac{1}{2^{n}}f(2^{n}x)}
+		Montrer que pour tout $x\in E$, $(v_{n}(x))_{n\in\N}$ converge. On note $g(x)=\lim\limits_{n\to+\infty}v_{n}(x)$.
+		\item Montrer que $g$ est l'unique application linéaire continue telle que $g-f$ soit bornée.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\R$-espace vectoriel normé de dimension plus grande que 2 et $f:E\to\R$ continue telle que pour tout $t\in\R,f^{-1}(\{t\})$ est compact. Montrer que $f$ atteint son maximum ou son minimum sur $E$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant2$. Existe-t-il $f$ continue injective de $\R^{n}$ dans $\R$ ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $\varphi\colon l^{1}\to\R$ forme linéaire continue. On pose $K_{n}=\varphi(e_{n})\in\R$ où $e_{n}$ est la base canonique de $l^{1}$.
+	\begin{enumerate}
+		\item Montrer que $(K_{n})_{n\in\N}$ est bornée et que $\vertiii{\varphi}=\sup\limits_{n\in\N}\vert K_{n}\vert=\Vert(K_{n})_{n\in\N}\Vert_{\infty}$.
+		\item Montrer que \function{F}{\L_c(l^{1},\R)}{l^{\infty}}{\varphi}{(\varphi(e_{n}))_{n\in\N}}
+		est une isométrie bijective.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\R$-espace vectoriel normé et $H$ un hyperplan de $E$.
+	\begin{enumerate}
+		\item Montrer que si $H$ est dense, alors $E\setminus H$ est connexe par arc.
+		\item Et si $H$ est fermé ?
+		\item Et pour un $\C$-espace vectoriel normé ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\Gamma=\{(x,\sin(\frac{1}{x}))\bigm| x>0\}\subset\R^{2}$. Montrer que $\Gamma$ est connexe par arcs mais que $\overline{\Gamma}$ ne l'est pas.
+\end{exercise}
+
+\begin{exercise}
+	Soit $K$ compact convexe non vide d'un espace vectoriel normé $E$. Soit $T\in\L_{c}(E)$ tel que $T(K)\subset K$.
+	\begin{enumerate}
+		\item Soit $a\in K$ et pour tout $n\in\N$, $u_{n}=\frac{1}{n+1}\sum_{k=0}^{n}T^{k}(a)$. Montrer que $T$ admet au moins un point fixe dans $K$.
+		\item Soit $U\in\L_{c}(E)$ qui commute avec $T$ et tel que $U(K)\subset K$. Montrer que $U$ et $T$ ont un point fixe commun.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Théorème de Carathéodory]
+	Soit $E$ un $\R$-espace vectoriel normé de dimension $n$.
+	\begin{enumerate}
+		\item Soit $p\geqslant n+2$ et $(x_{1},\dots,x_{p})\in E^{p}$. Soit $(\lambda_{1},\dots,\lambda_{p})\in\R_{-}^{p}$ tel que $\sum_{i=1}^{p}\lambda_{i}=1$ et $x=\sum_{i=1}^{n}\lambda_{i}x_{i}$. Soit \function{u}{\R^p}{E}{(\alpha_{1},\dots,\alpha_{p})}{\sum_{i=1}^{p}\alpha_{i}x_{i}}
+		Montrer que $\dim(\ker(u))\geqslant 2$. En déduire qu'il existe $(\alpha_{1},\dots,\alpha_{p})\in\R^{p}\setminus\{0,\dots,0\}$ tel que $\sum_{i=1}^{p}\alpha_{i}x_{i}=0$ et $\sum_{i=1}^{p}\alpha_{i}=0$.
+		
+		\item Montrer que pour tout $t\in\R$, $x=\sum_{i=1}^{p}(\lambda_{i}+t\alpha_{i})x_{i}$ et que $\sum_{i=1}^{p}\lambda_{i}+t\alpha_{i}=1$. Prouver que l'on peut choisir $t$ tel que $\min\limits_{1\leqslant i\leqslant p}(\lambda_{i}+t\alpha_{i})=0$.
+		
+		\item En déduire que $x$ est barycentre à coefficients positifs de $n+1$ éléments $(x_{i},\dots,x_{p})$.
+		
+		\item Soit $K$ un compact de $E$. Montrer que $\conv(K)$ est compact.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\C$-espace vectoriel de dimension finie $r\in\N^{*}$. Soit $(\alpha_{1},\dots,\alpha_{r})\in\C^{r}$ distincts et $P=(X-\alpha_{1})\dots(X-\alpha_{r})$. Déterminer les composantes connexes par arcs de $A_{P}\in\{u\in\L(E)\bigm| P(u)=0\}$.
 \end{exercise}
 
 \cleardoublepage

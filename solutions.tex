@@ -35,7 +35,7 @@
 \DeclareMathOperator{\sgn}{sgn} \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\rg}{rg} \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\mat}{mat}
-\DeclareMathOperator{\com}{com}
+\DeclareMathOperator{\com}{com} \DeclareMathOperator{\conv}{conv}
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert{}#1
 \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
 \newcommand{\function}[5]{
@@ -328,6 +328,199 @@
 		Soit $x\in\ker(u-id_{E})\cap\im(u-id_{E})$, on a $u(x)=x$ et il existe $y\in E$, $x=(u-id_{E})(y)$. On a $v_{p}(x)=\frac{1}{p}(px)=x$ et $v_{p}(x)=v_{p}\circ(u-id_{E})(y)\xrightarrow[p\to+\infty]{}0$ d'où $x=0$. Le théorème du rang permet de conclure.
 
 		\item Soit $x\in E$, on écrit $x=x_{1}+x_{2}$ avec $\Pi(x)=x_{1}$ et $x_{2}=(u-id_{E})(y_{2})$. Alors $v_{p}(x)=x_{1}+v_{p}\circ(u-id_{E})(y_{2})\xrightarrow[p\to+\infty]{}x_{1}=\Pi(x)$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $x\in A$, $f_{n}(x)\in A$ car $A$ est convexe. Soit $(x,y)\in A^{2}$, on a
+		$$\Vert f_{n}(x)-f_{n}(y)\Vert=\Bigl(1-\frac{1}{n}\Bigr)\Vert f(x)-f(y)\Vert\leqslant\Bigl(1-\frac{1}{n}\Bigr)\Vert x-y\Vert$$
+		Donc $f_{n}$ est $(1-\frac{1}{n})$-lipschitzienne. On forme \function{g_n}{A}{\R}{x}{\Vert f_n(x)-x\Vert}
+		qui est continue. Soit $x_{n}\in A$ telle que $g_{n}(x_{n})=\min\limits_{x\in A}g_{n}(x)$ (existe car $A$ est compact et $g_{n}$ continue). On a $x_{n}\in A$, d'où $f_{n}(x_{n})\in A$ et 
+		$$g_{n}(f_{n}(x_{n}))=\Vert f_{n}(f_{n}(x_{n}))-f_{n}(x_{n})\Vert\leqslant\Bigl(1-\frac{1}{n}\Bigr)\Vert f_{n}(x_{n})-x_{n}\Vert=\Bigl(1-\frac{1}{n}\Bigr)g_{n}(x_{n})$$
+		Si $g_{n}(x_{n})\neq0$, alors on aurait $g_{n}(f(x_{n}))<g_{n}(x_{n})$ ce qui n'est pas possible. Donc $g_{n}(x_{n})=0$ et $f_{n}(x_{n})=x_{n}$.
+
+		Soit $y_{n}$ un autre point fixe, on a 
+		$$\Vert f_{n}(x_{n})-f_{n}(y_{n})\Vert=\Vert x_{n}-y_{n}\Vert\leqslant\Bigl(1-\frac{1}{n}\Bigr)\Vert x_{n}-y_{n}\Vert$$
+		donc $x_{n}=y_{n}$.
+
+		\item On a $(x_{n})_{n\in\N}\in A^{\N}$ et on extrait (car $A$ est compact) et on a 
+		$$x_{\sigma(n)}\xrightarrow[n\to+\infty]{}x\in A$$
+		On a 
+		$$f_{\sigma(n)}(x_{\sigma(n)})=x_{\sigma(n)}=\underbrace{\frac{1}{\sigma(n)}f(x_{0})}_{\xrightarrow[n\to+\infty]{}0}+\underbrace{\Bigl(1-\frac{1}{\sigma(n)}\Bigr)f(x_{\sigma(n)})}_{\xrightarrow[n\to+\infty]{}f(x)}$$
+		par continuité de $f$. Donc $f(x)=x$.
+
+		\item Soit $(x,y)\in A^{2}$, points fixes de $f$, et $t\in[0,1]$, on pose $z=tx+(1-t)y$. On a 
+		\begin{align*}
+			\Vert x-y\Vert
+			&=\Vert f(x)-f(y)\Vert\\
+			&\leqslant \Vert f(x)-f(z)\Vert+\Vert f(z)-f(y)\Vert\\
+			&\leqslant\Vert x-z\Vert+\Vert z-y\Vert\\
+			&=(1-t)\Vert x-y\Vert+t\Vert x-y\Vert\\
+			&=\Vert x-y\Vert
+		\end{align*}
+		On a donc égalité partout: $\Vert f(x)-f(y)\Vert=\Vert f(x)-f(z)\Vert+\Vert f(z)-f(y)\Vert$ et $\Vert f(x)-f(z)\Vert=\Vert x-z\Vert$, $\Vert f(z)-f(y)\Vert=\Vert z-y\Vert$ car $f$ est $1$-lipschitzienne.
+
+		Comme la norme est euclidienne, il existe $\lambda\in\R_{+}$ tel que $f(x)-f(z)=\lambda(f(z)-f(y))$ d'où $f(x)+\lambda f(y)=(\lambda+1)f(z)$ d'où $f(z)=\frac{x+\lambda y}{\lambda+1}=t'x+(1-t')y$ avec $t'=\frac{1}{\lambda+1}\in[0,1]$. En reportant, on a 
+		$$\Vert f(x)-f(z))\Vert=\Vert x-t'x-(1-t')y\Vert=(1-t')\Vert x-y\Vert=\Vert x-z\Vert=(1-t)\Vert x-y\Vert$$
+		Si $x\neq y$, alors $t=t'$ et $f(z)=tx+(1-t)y=z$.
+
+		\item Soit dans $\R^{2}$, $\overline{B_{\Vert\cdot\Vert}(0,1)}=[-1,1]^{2}=A$. Soit \function{f}{A}{A}{(x,y)}{(x,\vert x\vert)}
+		On a 
+		\begin{align*}
+			\Vert f(x_{1},y_{1})-f(x_{2},y_{2})\Vert_{\infty}
+			&= \Vert (x_{1},\vert x_{1}\vert)(x_{2},\vert x_{2}\vert)\Vert_{\infty}\\
+			&=\max\{\vert x_{1}-x_{2}\vert, \bigl\vert\vert x_{1}\vert-\vert x_{2}\vert\bigr\vert\}\\
+			&=\vert x_{1}-x_{2}\vert\\
+			&\leqslant\Vert (x_{1},y_{1})-(x_{2},y_{2})\Vert_{\infty}
+		\end{align*}
+		Donc $f$ est 1-lipschitzienne, on a $f(x,y)=(y,x)$ si et seulement si $y=\vert x\vert$. Donc ici, $F$ n'est pas convexe.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a pour tout $(x,y)\in E^{2}$, $f(x+y)=f(x)+f(y)$ et par récurrence, pour tout $n\in\Z$, $f(nx)=nf(x)$. Pour $r=\frac{p}{q}\in\Q$, on a $f(qrx)=qf(rx)=f(px)=pf(x)$ donc $f(rx)=rf(x)$. Par densité de $\Q$ dans $\R$ et continuité de $f$, on a pour tout $\lambda\in\R$, $f(\lambda x)=\lambda f(x)$. Donc $f$ est linéaire.
+		
+		Pour $\K=\C$, cela ne marche pas. Contre-exemple: la conjugaison dans $\C$.
+
+		\item On étudie la série, pour $x$ fixé de terme général 
+		$$\Vert v_{n+1}(x)-v_{n}(x)\Vert=\frac{1}{2^{n}}\Vert f(2^{n+1}x)-2f(2^{n}x)\Vert\leqslant\frac{M}{2^{n+1}}$$
+		qui est donc convergente. Donc $(v_{n})_{n\in\N}$ converge.
+
+		\item On a $v_{0}(x)=f(x)$, donc $\sum_{n=0}^{+\infty}v_{n+1}(x)-v_{n}(x)=g(x)-f(x)$. $f$ étant continue, $v_{n}$ l'est aussi, et pour tout $n\in\N$, comme pour tout $x\in E$, $\Vert (v_{n+1}-v_{n})(x)\Vert\leqslant\frac{M}{2^{n+1}}$, donc $g$ est continue.
+		
+		\item On a, pour tout $(x,y)\in E^{2}$,
+		$$\Vert v_{n}(x+y)-v_{n}(x)-v_{n}(y)\Vert=\Vert \frac{1}{2^{n}}f(2^{n}(x+y))-\frac{1}{2^{n}}(f(2^{n}x)+f(2^{n}y))\Vert\leqslant\frac{M}{2^{n}}$$
+		Donc quand $n\to+\infty$, $g(x+y)=g(x)+g(y)$.
+
+		On a pour tout $x\in E$, 
+		$$\Vert g(x)-f(x)\Vert=\Bigl\lVert\sum_{n=0}^{+\infty}v_{n+1}(x)-v_{n}(x)\Bigr\Vert\rVert\leqslant\sum_{n=0}^{+\infty}\Vert v_{n+1}(x)-v_{n}(x)\Vert\leqslant\sum_{n=0}^{\infty}\frac{M}{2^{n}}=M$$
+
+		Soit maintenant $h$ linéaire continue telle que $h-f$ soit bornée, soit $M'=\sup\limits_{x\in E}\Vert h(x)-f(x)\Vert$. On a donc 
+		$$\Vert v_{n}(x)-h(x)\Vert=\Bigl\Vert\frac{1}{2^{n}}f(2^{n}x)-\frac{1}{2^{n}}h(2^{n}x)\Bigr\Vert\leqslant\frac{M'}{2^{n}}$$
+		car $h$ est linéaire. Donc quand $n\to+\infty$, $g(x)=h(x)$ car $\lim\limits_{n\to+\infty}v_{n}(x)=g(x)$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	En particulier, pour $t=f(0)$, $f^{-1}(\{f(0)\})=\{x\in E\bigm| f(x)=f(0)\}$ est borné (car compact). Donc il existe $A$ tel que $f^{-1}(\{f(0)\})\subset\overline{B(0,A)}$. Par contraposée, pour tout $x\in E$, si $\Vert x\Vert>A$, alors $f(x)\neq f(0)$.
+
+	On montre alors que $E\setminus\overline{B(0,A)}$ est connexe par arcs (faire le tour de la boule par l'extérieur).
+
+	$f$ étant continue, d'après le théorème des valeurs intermédiaires, on a soit pour tout $x\in E\setminus\overline{B(0,A)}$, $f(x)>f(0)$ soit $f(x)<f(0)$. Quitte à remplacer $f$ par $-f$, on se place dans le cas $f(x)>f(0)$. Comme on est en dimension finie sur $\overline{B(0,A)}$ compact, $f$ atteint son minimum et ce minimum est plus petit que $f(0)$, c'est donc un minimum global.
+\end{solution}
+
+\begin{remark}
+	C'est faux pour $n=1$. Contre-exemple: $f=id_{\R}$.
+\end{remark}
+
+\begin{solution}
+	Si c'était le cas, on prend un cercle $\mathcal{C}$ compact (et connexe par arcs). $f(\mathcal{C})$ est compact connexe par arc dans $\R$. On note $f(\mathcal{C})=[a,b]$ (avec $a<b$ car $f$ injective). Si $x\in\mathcal{C}$ est tel que $f(x)=\frac{a+b}{2}$, on $\underbrace{f(\mathcal{C}\setminus\{x\})}_{\text{connexe par arc}}=\underbrace{[a,b]\setminus\Bigl\{\frac{a+b}{2}\Bigr\}}_{\text{pas connexe par arc}}$ donc une telle fonction n'existe pas.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $n\in\N$, $\Vert e_{n}\Vert_{l^{1}}=1$ et $\vert K_{n}\vert=\vert\varphi(e_{n})\vert\leqslant\vertiii{\varphi}$ donc $(K_{n})_{n\in\N}$ est bornée. On note $M=\sup\vert K_{n}\vert\leqslant\vertiii{\varphi}$.
+		
+		Soit maintenant $u=(u_{n})_{n\in\N}\in l^{1}$. On a, pour $N\in\N$, 
+		$$\Biggl\lVert u-\sum_{n=0}^{N}u_{n}e_{n}\Biggr\rVert_{1}=\sum_{n=N+1}^{\infty}\vert u_{n}\vert\xrightarrow[N\to+\infty]{}0$$
+		(reste d'une série convergente). Par continuité de $\varphi$, on a donc 
+		$$\vert \varphi(u)\vert\leqslant\sum_{n=0}^{\infty}\vert u_{n}\vert \vert K_{n}\vert\leqslant M\Vert u\Vert_{1}$$
+
+		Ainsi, $\vertiii{\varphi}\leqslant M$ et donc $\vertiii{\varphi}=M$.
+
+		\item $F$ est linéaire et une isométrie d'après la question précédente, donc injective. Soit $(K_{n})_{n\in\N}\in l^{\infty}$. On définit \function{\varphi}{l^1}{\R}{u=(u_n)_{n\in\N}}{\sum_{n=0}^{\infty}u_{n}K_{n}}
+		Elle est bien définie car $\sum_{n=0}^{+\infty}\vert u_{n}\vert<+\infty$ et $(K_{n})_{n\in\N}$ est bornée. Elle est linéaire, et continue car $\vert\varphi(u)\vert\leqslant\Vert(K_{n})_{n\in\N}\Vert_{\infty}\Vert u\Vert_{1}$.
+
+		Enfin, pour tout $n\in\N,\varphi(e_{n})=K_{n}$. Donc $F(\varphi)=(K_{n})_{n\in\N}$ et $F$ est surjective. Donc $F$ est une isométrie bijective et le dual topologique de $l^{1}$ est équivalent à $l^{\infty}$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\varphi$ une forme linéaire non nulle telle que $K=\ker(\varphi)$/ Si $F$ est dense, $\varphi$ est discontinue. Soit $(a,b)\in(E\setminus H)^{2}$ et $(x_{n})_{n\in\N}\in H^{\N}$ qui converge vers $b-a$ (existe car $H$ est dense). La suite $(a+x_{n})_{n\in\N}$ converge vers $b$. Pour $n\in\N$, on a $\varphi(a+x_{n})=\varphi(a)\neq0$, et pour $t\in[0,1]$, $\varphi(t(a+x_{n})+(1-t)(a+x_{n+1}))=\varphi(a)\neq0$. Donc $[a+x_{n},a+x_{n+1}]\subset E\setminus H$.
+		
+		Soit $\gamma:[0,1]\to E\setminus H$ telle que 
+		$$
+		\left\{
+			\begin{array}[]{rcll}
+				\gamma(t) & = &\alpha_{n}t+\beta_{n}\in[a+x_{n},a+x_{n+1}]\subset E\setminus H &\text{si }t\in[1-\frac{1}{n},1-\frac{1}{n+1}]\\
+				\gamma(1) & = &b&\\
+				\gamma(t) &= & a+tx_{0}&\text{si }t\in[0,\frac{1}{2}]
+			\end{array}
+		\right.
+		$$
+
+		On cherche à définir $\alpha_{n}$ et $\beta_{n}$: on veut $\gamma(1-\frac{1}{n})=a+x_{n}$ et $\gamma(1-\frac{1}{n+1})=a+x_{n+1}$ (pour la continuité en se raccordant au $x_{n}$). En résolvant le système, on trouve $\alpha_{n}=n(n+1)(x_{n}-x_{n+1})$ et $\beta_{n}=a+x_{n}-(n-1)(n+1)(x_{n}-x_{n+1})$.
+
+		Soit alors $\varepsilon>0$, il existe $N\in\N$ tel que pour tout $n\geqslant N\colon\Vert x_{n}+a-b\Vert<\varepsilon$ et pour tout $n\geqslant N$, pour tout $t\in[1-\frac{1}{n},1-\frac{1}{n+1}[$, $\gamma(t)\in[a+x_{n},a+x_{n+1}]\subset B(b,\varepsilon)$ par convexité de la boule. Donc $\lim\limits_{t\to 1}\gamma(t)=b$ et $\gamma$ est continue. Donc $E\setminus H$ est connexe par arcs.
+
+		\item Soit $\varphi$ une forme linéaire telle que $\ker(f)=H$ est fermé. Alors $\varphi$ est continue (à redémontrer). Soit $x\in E\setminus H$, on a $\varphi(x)\varphi(-x)<0$ et d'après le théorème des valeurs intermédiaires, si $E\setminus H$ était connexe par arcs, $\varphi$ s'annulerait sur $E\setminus H$ ce qui n'est pas vrai. Donc $E\setminus H$ n'est pas connexe par arcs.
+		
+		\item Si $\K=\C$, si $H$ est dense alors $E\setminus H$ est connexe par arc d'après la première question. Si $H$ est fermé, soit $\varphi$ une forme linéaire continue telle que $\ker(f)=H$. Soit $(x_{1},x_{2})\in(E\setminus H)^{2}$. 
+		
+		\begin{itemize}
+			\item Si $\frac{\varphi(x_{1})}{\varphi(x_{2})}\notin\R_{-}^{*}$, alors pour tout $t\in[0,1]$, $\varphi(\underbrace{tx_{1}+(1-t)x_{2}}_{\in E\setminus H})\neq0$ et on peut relier directement $x_{1}$ et $x_{2}$.
+			\item Sinon, il existe $\theta\in\R,(\rho,\rho')\in(\R_{+}^{*})^{2}$ avec $\varphi(x_{1})=\rho e^{\mathrm{i}\theta}$ et $\varphi(x_{2})=\rho'e^{\mathrm{i}(\theta+\pi)}$. Alors $x_{3}=ix_{1}$ est tel que $[x_{1},x_{3}]\subset E\setminus H$ et $[x_{2},x_{3}]\subset E\setminus H$ (on contourne l'origine par une rotation de l'angle $\frac{\pi}{2}$). Par conséquent, on peut utiliser $x_{3}$ pour relier $x_{1}$ et $x_{2}$ donc $E\setminus H$ est connexe par arcs.
+		\end{itemize}
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Soit \function{\varphi}{\R_{+}^{*}}{\R}{x}{((x,\sin(\frac{1}{x})))}
+	$\varphi$ est continue et $\Gamma)\varphi(\R_{+}^{*})$ est connexe par arcs.
+
+	On a $\overline{\Gamma}=\Gamma\cup\Gamma'$ avec $\Gamma'=\{(0,y)\bigm| y\in[-1,1]\}$. En effet, pour tout $y\in[-1,1]$, on pose $x_{k}=\frac{1}{\arcsin(y)+2k\pi}$. On a $\sin(\frac{1}{x_{k}})=y\xrightarrow[k\to+\infty]{}y$ donc $(0,y)=\lim\limits_{k\to=+\infty}(x_{k},\sin(\frac{1}{x_{k}}))\in\overline{\Gamma}$.
+
+	Réciproquement, si $(x,y)\in\overline{\Gamma}$, il existe $(x_{k})\in(\R_{+}^{*})^{\N}$ avec $x=\lim\limits_{k\to+\infty}x_{k}$ et $y=\lim\limits_{k\to+\infty}\sin(\frac{1}{x_{k}})$. Si $x>0$, par continuité, $y=\sin(\frac{1}{x})$ et $(x,y)\in\Gamma$. Si $x=0$, $y\in[-1,1]$ donc $(x,y)\in\Gamma'$.
+
+	Si $\overline{\Gamma}$ est connexe par arcs, il existe \function{\gamma}{[0,1]}{\overline{\Gamma}}{t}{(x(t),y(t))}
+	continue telle que $\gamma(0)=(0,0)$ et $\gamma(1)=(\frac{1}{\pi},0)$. La première projection $t\mapsto x(t)$ est continue avec $x(0)=0$ et $x(1)=\frac{1}{\pi}$. On définit maintenant $t_{1}=\sup\{t\in[0,1]\bigm| x(t)=0\}$. Par continuité, $x(t_{1})=0$ et donc $t_{1}<1$. Donc pour tout $t>t_{1}$, $x(t)>0$ et $\gamma(t)=(x(t),\sin(\frac{1}{x(t)}))$ pour $t>t_{1}$ et $\gamma(t_{1})=(0,y_{1})$ avec $y_{1}\in[-1,1]$.
+
+	Or, -1 et 1 n'appartiennent pas simultanément à $]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$. On peut supposer que $1\notin]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$. Comme $\gamma$ est continue, il existe $t_{2}>t_{1}$ tel que pour tout $t\in]t_{1},t_{2}]$, $\sin(\frac{1}{x(t)})\in]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$. Or $x(t_{2})>0$ et $x(t_{1})=0$ donc il existe $k\in\N^{*}$, $t_{0}\in]t_{1},t_{2}]$ tel que $x(t_{0})=\frac{1}{2k\pi+\frac{\pi}{2}}$ (théorème des valeurs intermédiaires). Mais alors $\sin(\frac{1}{x(t_{0})})=1\notin]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$ ce qui contredit ce qui précède.
+
+	Donc $\overline{\Gamma}$ n'est pas connexe par arcs.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $n\in\N$, $u_{n}\in K$ car $u_{n}$ est le barycentre de $(a,T(a),\dots,T^{n}(a))$ et $K$ est convexe. Comme $K$ est compact, on peut extraire $u_{\sigma(n)}\xrightarrow[n\to+\infty]{}u\in K$. Alors
+		$$(id_{E}-T)(u_{\sigma(n)})=\frac{1}{\sigma(n)+1}(id_{E}-T^{\sigma(n)+1})(a)$$
+		d'où 
+		$$\rVert(id_{E}-T)(u_{\sigma(n)})\lVert\leqslant\frac{1}{\sigma(n)+1}\times 2M\xrightarrow[n\to+\infty]{}0$$
+		avec $M=\sup\limits_{x\in K}\Vert x\Vert$ (existe car $K$ est compact donc borné). Par continuité de $T$, on a $T(u)=u$.
+
+		\item Posons $F'=\{u\in K\bigm| T(u)=u\}$ fermé car $K'=K\cap\Bigl((\underbrace{id_{E}-T}_{\text{continu}})^{-1}\{0\}\Bigr)$.
+		Donc $K'$ est compact et non vide d'après la première question. De plus, pour tout $(u_{1},u_{2})\in K'^{2}$, pour tout $t\in[0,1]$, par linéarité de $T$, on a 
+		$$T(tu_{1}+(1-t)u_{2})=tu_{1}+(1-t)u_{2}$$
+		donc $K'$ convexe. De plus, comme $U\circ T=T\circ U$, pour tout $u\in K'$, on a $T(U(u))=U(T(u))=U(u)$ donc $U(u)\in K'$. On applique alors la question 1 à $K'$ est il existe $y\in K'\colon U(y)=y$ et $T(y)=y$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item C'est le théorème du rang car $\rg(u)\leqslant n\leqslant p-2$, et $H=\{(\alpha_{1},\dots,\alpha_{p})\bigm|\sum_{i=1}^{p}\alpha_{i}=\}$ est de dimension $p-1$ donc $H\cap\ker(u)\neq\{0\}$ (formule de Grassmann).
+		
+		\item On a 
+		$$\sum_{i=1}^{p}(\lambda_{i}+t\alpha_{i})x_{i}=\sum_{i=1}^{p}\lambda_{i}x_{i}+t\sum_{i=1}^{p}\alpha_{i}x_{i}=x$$
+		et
+		$$\sum_{i=1}^{p}(\lambda_{i}+t\alpha_{i})=\sum_{i=1}^{p}\lambda_{i}+t\sum_{i=1}^{p}\alpha_{i}=1$$
+
+		Soit $I_{+}=\{i\in\{1,\dots,p\}\bigm|\alpha_{i}>0\}$ et $I_{-}=\{i\in\{1,\dots,p\}\bigm|\alpha_{i}<0\}$. On a $I_{+}\neq\emptyset$ et $I_{-}\neq\emptyset$ car $\sum_{i=1}^{p}\alpha_{i}=0$ et $(\alpha_{1},\dots,\alpha_{p})\neq(0,\dots,0)$. Soit $t\geqslant0$. Pour tout $i\in I_{+}$, $\lambda_{i}+t\alpha_{i}\geqslant0$. Pour $i\in I_{-}$, $\lambda_{i}+t\underbrace{\alpha_{i}}_{<0}\geqslant 0$ si et seulement si $t\leqslant-\frac{\lambda_{i}}{\alpha_{i}}$. Prenons alors 
+		$$t=\min\limits_{i\in I_{-}}\Bigl(-\frac{\lambda_{i}}{\alpha_{i}}\Bigr)$$
+		On au aussi pour tout $i\in I_{-}$, $\lambda_{i}+t\alpha_{i}\geqslant 0$ et il existe $i_{0}\in I_{-}$ tel que $\lambda_{i_{0}}+t\alpha_{i_{0}}=0$.
+
+		\item Par récurrence descendante, on se ramène à n+1 points car si $x$ est barycentre de $p$ points avec $p\geqslant n+2$, alors il est barycentre de $p-1$ points.
+		
+		\item Soit $A=\{(\lambda_{1},\dots,\lambda_{n+1})\in\R_{+}^{n+1}\bigm|\sum_{i=1}^{n+1}\lambda_{i}=1\}$ fermé et borné en dimension finie donc compact. Soit \function{f}{A\times K^{n+1}}{\conv(K)}{((\lambda_{1},\dots,\lambda_{n}),(x_{1},\dots,x_{n+1}))}{\sum_{i=1}^{n+1}\lambda_{i}x_{i}}
+		$f$ est surjective et continue, donc $\conv(K)$ est l'image continue d'un compact donc $\conv(K)$ est compact.
 	\end{enumerate}
 \end{solution}
 
