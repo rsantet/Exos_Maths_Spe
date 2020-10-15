@@ -2480,7 +2480,7 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 
 \begin{exercise}
 	Soit $G$ un sous-groupe de $GL_{n}(\C)$ tel que $G\in\mathcal{V}(I_{n})$ où $\mathcal{V}$ un voisinage de $I_{n}$, muni de la norme 
-	$$\Vert (a_{i,j})_{1\leqslant i,j\leqslant n}\Vert=\max\limits_{1\leqslant i,j\leqslant n}$$. Montrer que $G=GL_{n}(\C)$.
+	$$\Vert (a_{i,j})_{1\leqslant i,j\leqslant n}\Vert=\max\limits_{1\leqslant i,j\leqslant n}\vert a_{i,j}\vert$$. Montrer que $G=GL_{n}(\C)$.
 \end{exercise}
 
 \begin{exercise}
@@ -2649,14 +2649,48 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 		\item Montrer que pour $X\in\M_{n,1}(\C)$, si $\vert AX\vert=A\vert X\vert$, alors il existe $\theta\in\R$, $e^{\mathrm{i}\theta}X\geqslant0$.
 		\item On définit 
 		$$K=\{X\in\M_{n,1}(\R)\Bigm| X\geqslant0\text{ et }\Vert X\Vert_{1}=1\}$$
-		et pour tout $x\in K$, 
-		$$I_{x}=\{t\geqslant0\Bigm|AX-tX\geqslant0\}$$
-		Montrer que $I_{x}$ est non vide, fermé et borné. On pose $\theta(x)=\max(I_{x})$.
+		et pour tout $X\in K$, 
+		$$I_{X}=\{t\geqslant0\Bigm|AX-tX\geqslant0\}$$
+		Montrer que $I_{X}$ est non vide, fermé et borné. On pose $\theta(X)=\max(I_{X})$.
 		\item Montrer que $\theta$ est borné sur $K$. On pose $r_{0}=\sup\limits_{x\in K}\theta(X)$. Établir qu'il existe $X^{+}\in K$ tel que $\theta(X^{+})=r_{0}$.
 		\item Montrer que $AX^{+}=r_{0}X^{+}$. On pourra poser $Y=AX^{+}-r_{0}X^{+}$ et on montrera que si $Y\neq0$, il existe $\varepsilon>0$ tel que $A(A^{+})-(r_{0}+\varepsilon)AX^{+}>0$.
-		\item Soit $\lambda\in\Sp_{\lambda}(A)$ et $V\in\M_{n,1}(\C)$ tel que $\Vert V\Vert_{1}=1$ et $AV=\lambda V$. Montrer que $\vert AV\vert\leqslant A\vert V\vert$, en déduire que $\vert\lambda\vert\leqslant r_{0}$.
+		\item Soit $\lambda\in\Sp_{\C}(A)$ et $V\in\M_{n,1}(\C)$ tel que $\Vert V\Vert_{1}=1$ et $AV=\lambda V$. Montrer que $\vert AV\vert\leqslant A\vert V\vert$, en déduire que $\vert\lambda\vert\leqslant r_{0}$.
 		\item Montrer que si $\vert\lambda\vert=r_{0}$, alors $A\vert V\vert=r_{0}\vert V\vert=\vert AV\vert$, en déduire que $\lambda=r_{0}$.
 		\item Montrer que $\dim(\ker(A-r_{0}I_{n}))=1$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace vectoriel normé, $U$ et $V$ deux compacts disjoints. Montrer qu'il existe $U'$ et $V'$ des ouverts disjoints tels que $U\subset U'$ et $V\subset V'$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $K$ un compact non vide d'un espace vectoriel normé $E$. Soit $f\colon K\to K$ tel que pour tout $x\neq y\in K^{2}$, $\Vert f(x)-v(y)\Vert<\Vert x-y\Vert$.
+	\begin{enumerate}
+		\item Montrer qu'il existe un unique $a\in K$ tel que $f(a)=a$.
+		\item Soit $u_{0}\in K$ et pour tout $n\in\N$, $u_{n+1}=f(u_{n})$. Montrer que $\lim\limits_{n\to+\infty}u_{n}=a$.
+		\item Étudier $f(x)=\sqrt{1+x^{2}}$ pour $x\in\R$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soient $K_{1},K_{2},K_{3}$ trois compacts non vides du plan tels qu'il n'existe pas de droite coupant $K_{1},K_{2}$ et $K_{3}$ simultanément. Montrer qu'il existe un cercle de rayon minimal les coupant tous les trois.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\mathcal{C}^{0}([0,1],\R)$ muni de $\Vert\cdot\Vert_{\infty}$. On définit pour tout $f\in E$, pour tout $x\in[0,1]$, 
+	$$T(f)(x)=\int_{0}^{x}f(t)dt$$
+	\begin{enumerate}
+		\item Montrer que $T\in\L_{c}(E)$ et calculer $\vertiii{T}$.
+		\item Montrer que $id_{E}-T$ est un homéomorphisme.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f:\R^{n}\to\R^{p}$ continue, montrer l'équivalence:
+	\begin{enumerate}
+		\item [(i)] $\lim\limits_{\Vert x\Vert\to+\infty}\Vert f(x)\Vert=+\infty$,
+		\item [(ii)] pour tout compact $K$ de $\R^{p}$, $f^{-1}(K)$ est un compact de $\R^{n}$.
 	\end{enumerate}
 \end{exercise}
 

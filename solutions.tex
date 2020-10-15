@@ -427,7 +427,7 @@
 		\item Pour tout $n\in\N$, $\Vert e_{n}\Vert_{l^{1}}=1$ et $\vert K_{n}\vert=\vert\varphi(e_{n})\vert\leqslant\vertiii{\varphi}$ donc $(K_{n})_{n\in\N}$ est bornée. On note $M=\sup\vert K_{n}\vert\leqslant\vertiii{\varphi}$.
 		
 		Soit maintenant $u=(u_{n})_{n\in\N}\in l^{1}$. On a, pour $N\in\N$, 
-		$$\Biggl\lVert u-\sum_{n=0}^{N}u_{n}e_{n}\Biggr\rVert_{1}=\sum_{n=N+1}^{\infty}\vert u_{n}\vert\xrightarrow[N\to+\infty]{}0$$
+		$$\Biggl\lVert u-\sum_{n=0}^{N}u_{n}e_{n}\Biggr\rVert_{1}\leqslant\sum_{n=N+1}^{\infty}\vert u_{n}\vert\xrightarrow[N\to+\infty]{}0$$
 		(reste d'une série convergente). Par continuité de $\varphi$, on a donc 
 		$$\vert \varphi(u)\vert\leqslant\sum_{n=0}^{\infty}\vert u_{n}\vert \vert K_{n}\vert\leqslant M\Vert u\Vert_{1}$$
 
@@ -551,6 +551,160 @@
 	$$D_{n,r}=\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\}$$
 	qui vaut $\binom{m+r-1}{r-1}$ possibilités (place $n$ points sur une droite et les séparer avec $r-1$ barres: le nombre de points dans chaque segment donne un $m_{i}$, il y a $m+r-1$ possibilités pour placer les $r-1$ barres).
 \end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $i\in\{1,\dots,n\}$, $\vert AX\vert_{i}=\sum_{j=1}^{n}\underbrace{a_{i,j}x_{j}}_{>0}\geqslant0$. Si $\vert AX\vert_{i}=0$ alors pour tout $j\in\{1,\dots,n\}$, $\underbrace{a_{i,j}}_{>0}x_{j}=0$ donc $x_{j}=0$, impossible car $X\neq 0$.
+		
+		\item Si $\vert AX\vert=A\vert X\vert$. On a pour tout $i\in\{1,\dots,n\}$,
+		$$\Bigl\lvert\sum_{j=1}^{n}a_{i,j}x_{j}\Bigr\rvert=\sum_{j=1}^{n}a_{i,j}\lvert x_{j}\rvert$$
+		donc les $(a_{i,j}x_{j})_{1\leqslant j\leqslant n}$ ont tous même argument. On prend $\theta=\arg(x_{j})$.
+
+		\item $K$ est fermé et borné en dimension finie: c'est un compact. On a $I_{x}\neq\emptyset$ car $AX\geqslant0$ donc $0\in I_{x}$. Soit $(t_{n})_{n\in\N}\in I_{x}^{\N}$ convergeant vers $t\in\R$. Pour tout $k\in\N$, $AX-t_{k}X\geqslant0$ donc pour tout $i\in\{1,\dots,n\}$, $(AX-t_{k}X)_{i}\geqslant0$ et par passage à la limite, $AX-tX\geqslant0$ donc $I_{x}$ est fermé.
+		
+		Si $t\in I_{x}$, 
+		$$\vert tX\vert_{1}=t=\sum_{i=1}^{n}t\underbrace{x_{i}}_{\geqslant0}\leqslant\sum_{i=1}^{n}\underbrace{\sum_{j=1}^{n}a_{i,j}x_{j}}_{=(AX)_{i}}\leqslant n\max\limits_{1\leqslant i,j\leqslant n}\vert a_{i,j}\vert$$
+		car $\sum_{j=1}^{n}x_{j}=1$.
+		On note $M=n\max\limits_{1\leqslant i,j\leqslant n}\vert a_{i,j}\vert$.
+
+		\item Pour tout $x\in K$, $\theta(X)\leqslant M$ donc $\theta$ est bien borné sur $K$. Par définition de $r_{0}$, il existe $(X_{k})_{k\in\N}\in K^{\N}$ tel que $\lim\limits_{k\to+\infty}\theta(X_k)=r_{0}$. On note $\theta(X_{k})=t_{k}$. Comme $K$ est compact, il existe $\sigma\colon\N\to\N$ strictement croissante telle que $X_{\sigma(k)}$ converge vers $X^{+}\in K$. A priori, $\theta(X^{+})\leqslant r_{0}$. On a $AX_{\sigma(k)}-t_{\sigma(k)}X_{\sigma(k)}\geqslant0$ pour tout $k\in\N$ donc par passage à la limite, $AX^{+}-r_{0}X^{+}\geqslant0$ et donc $r_{0}\leqslant\theta(X^{+})$ donc $r_{0}=\theta(X^{+})$.
+		
+		\item Soit $Y=A^{+}-r_{0}X^{+}\geqslant0$. Si $Y\neq0$, alors $AY>0$ d'après la question 1 donc 
+		$$AY=A\underbrace{(AX^{+})}_{>0}-r_{0}\underbrace{(AX^{+})_{>0}}>0$$
+		On a $AY>\varepsilon AX^{+}$ si et seulement si pour tout $i\in\{1,\dots,n\}$, $\vert AY\vert_{i}>\varepsilon\vert AX^{+}\vert_{i}$ (car $AY>0$). On pose alors 
+		$$\varepsilon=\frac{1}{2}\min\limits_{1\leqslant i\leqslant n}\frac{\vert AY\vert_{i}}{\vert AX^{+}\vert_{i}}$$
+		On a alors $AY-\varepsilon AX^{+}>0$ d'où 
+		$$A\underbrace{\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}}_{\in K}-(r_{0}+\varepsilon)\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}>0$$
+		donc $r_{0}+\varepsilon\in I_{\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}}$ c'est-à-dire 
+		$$r_{0}+\varepsilon\leqslant\theta\Bigl(\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}\Bigr)\leqslant r_{0}$$
+		ce qui est impossible. Nécessairement $Y=0$.
+
+		\item Pour tout $i\in\{1,\dots,n\}$, on a 
+		$$\vert AV\vert_{i}=\Bigl\lvert\sum_{j=1}^{n}a_{i,j}v_{j}\Bigr\rvert\leqslant\sum_{i=1}^{n}a_{i,j}\vert v_{j}\vert=(A\vert V\vert)_{i}$$
+		donc $\vert\lambda\vert=\vert AV\vert\leqslant A\vert V\vert$. De plus, $\vert V\vert\in K$ donc $\vert\lambda\vert\leqslant\theta(\vert V\vert)\leqslant r_{0}$. Notons que cela implique que le rayon spectral de $A$ est $\rho(A)$ est plus petit que $r_{0}$ et que l'on a même égalité.
+
+		\item Si $\vert\lambda\vert=r_{0}$, on a $\vert\lambda\vert=\theta(\vert V\vert)=r_{0}$ et d'après la question 5 on a $A\vert V\vert=r_{0}\vert V\vert=\vert AV\vert$.
+		
+		D'après la question 2, il existe $\theta\in\R$ tel que $V=e^{\mathrm{i}\theta}\vert V\vert$. Or 
+		$$AV=\lambda V=e^{\mathrm{i}\theta}A\vert V\vert=e^{\mathrm{i}\theta}r_{0}\vert V\vert$$
+		et comme $\vert K\vert\in K, \vert V\vert\neq0$ et on a donc $\lambda=r_{0}$.
+
+		\item Soit $V\in\M_{n,1}(\C)$ tel que $\Vert V\Vert_{1}=1$ et $AV=r_{0}V$. D'après la question précédente, on a $V=e^{\mathrm{i}\theta}\vert V\vert$ et $A\vert V\vert=r_{0}\vert V\vert$. Soit alors $t\in\R$, on a 
+		$$A(X^{+}+t\vert V\vert)=r_{0}(X^{+}+t\vert V\vert)$$
+		Notons maintenant que si $Y\geqslant0$ avec $Y\neq0$ vérifie $AY=r_{0}Y$, alors $Y>0$. En effet, d'après la première question, $AY>0$. On a $r_{0}\neq0$ car sinon $\Sp_{\C}=\{0\}$ et $A^{n}=0$ ce qui est impossible car ses coefficients sont strictement positifs. D'où $Y>0$.
+
+		Ainsi, par définition de $X^{+}$, on a $X^{+}>0$ et $\vert V\vert>0$. On a alors 
+		$$(X^{+})_{i}+t\vert v_{i}\vert\geqslant0$$
+		si et seulement si
+		$$t\geqslant -\frac{\vert X^{+}\vert_{i}}{\vert v_{i}\vert}$$
+		On prend 
+		$$t=\min\limits_{1\leqslant i\leqslant n}-\frac{\vert X^{+}\vert_{i}}{\vert v_{i}\vert}$$
+		Finalement, on a $X^{+}+t\vert V\vert\geqslant0$ et une de ses coordonnées vaut 0 (car on a pris le minimum sur les $i$). Nécessairement, $X^{+}+t\vert V\vert=0$ (car $A(X^{+}+t\vert V\vert)=r_{0}(X^{+}+t\vert V\vert)$) et donc $\vert V\vert\in\R X^{+}$. Donc $V=e^{\mathrm{i}\theta}\vert V\vert\in\C X^{+}$ et ainsi 
+		$$\dim(\ker(A-r_{0}I_{n}))=1$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Soit \function{\varphi}{U\times V}{\R}{(x,y)}{\Vert x-y\Vert}
+	On a 
+	$$\vert\varphi(x,y)-\varphi(x',y')=\vert\Vert x-y\Vert-\Vert x'-y'\Vert\vert\leqslant\Vert (x-y)-(x'-y')\Vert\leqslant\Vert x-x'\Vert+\Vert y-y'\Vert\leqslant2\Vert(x,y)-(x',y')\Vert_{\infty}$$
+	donc $\varphi$ est continue.
+
+	$U\times V$ est compact, donc il existe $(x_{1},y_{1})\in(U\times V)$ telle que $\varphi(x_{1},y_{1})=\min\limits_{(x,y)\in U\times V}\varphi(x,y)$. Comme $U$ et $V$ sont disjoints, $x_{1}\neq y_{1}$ et $\varphi(x_{1},y_{1}))d(U,V)>0$.
+
+	Soit $\alpha=\frac{d(U,V)}{3}$. On pose $U'=\{x\in E\Bigm|d(x,U)<\alpha\}$ et $V'=\{x\in E\Bigm|d(x,V)<\alpha\}$. $x\mapsto\Vert x\Vert$ est continue car $1$-lipschitzienne donc $U'$ est $V'$ sont des ouverts et on a bien $U\subset U'$ et $V\subset V'$. Soit ensuite $x\in U'\cap V'$, on a $d(x,U)<\alpha$ et $d(x,V)<\alpha$ donc il existe $(u,v)\in U\times V$, $d(x,u)<\alpha$ et $d(x,v)<\alpha$. Alors $d(u,v)\leqslant2\alpha$ ce qui est absurde. Donc $U'\cap V'=\emptyset$.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $f$ est 1-lipschitzienne donc est continue. On forme \function{g}{K}{\R}{x}{\Vert x-f(x)\Vert}
+		$g$ est continue, $K$ est compact donc il existe $a\in K$ tel que $g(a)=\min_{x\in K}g(x)$. Si $a\neq f(a)$, alors $\Vert f(a)-f^{2}(a)\Vert=g(f(a))<\Vert a-f(a)\Vert=g(a)$ ce qui est impossible par définition de $a$. Donc $f(a)=a$. S'il existe $a'\neq a$ tel que $f(a')=a'$, alors $\Vert f(a)-f(a')\Vert=\Vert a-a'\Vert<\Vert a-a'\Vert$ ce qui est impossible. Donc $a$ est unique.
+
+		\item S'il existe $n_{0}\in\N$ tel que $u_{n_{0}}=a$ alors pour tout $n\geqslant n_{0}$, $u_{n}=a$ et $\lim\limits_{n\to+\infty}u_{n}=a$. Si pour tout $n\in\N$, $u_{n}\neq a$, alors pour tout $n\in\N$, on a
+		$$\Vert u_{n+1}-a\Vert=\Vert f(u_{n})-f(a)\Vert<\Vert u_{n}-a\Vert$$
+		donc la suite $(\Vert u_{n}-a\Vert)_{n\in\N}$ est strictement décroissante dans $\R_{+}$ donc elle converge vers $l\geqslant0$. Par compacité de $K$, il existe une extraction $\sigma$ telle que $\lim\limits_{n\to+\infty}u_{\sigma(n)}=\alpha\in K$. Par continuité, $$\lim\limits_{n\to+\infty}\Vert u_{\sigma(n)}-a\Vert=\Vert\alpha-a\Vert=l$$ 
+		et
+		$$\lim\limits_{n\to+\infty}\Vert \underbrace{u_{\sigma(n)+1}}_{f(u_{\sigma(n)}}-f(a)\Vert=\Vert f(\alpha)-f(a)\Vert=l=\Vert\alpha-a\Vert$$
+		par continuité de $f$.
+		Ainsi, on a $\alpha=a$ et $l=0$ donc $\lim\limits_{n\to+\infty}u_{n}=a$.
+
+		\item $f$ est $\mathcal{C}^{1}$ sur $\R$. Soit $x<y\in\R^{2}$, il existe $z\in]x,y[$ tel que (égalité des accroissements finis)
+		$$\Bigl\lvert\frac{f(x)-f(y)}{x-y}\Bigr\rvert=\vert f'(z)\vert=\Bigl\lvert\frac{z}{\sqrt{z^{2}+1}}\Bigr\rvert<1$$
+		donc $f$ vérifie bien l'hypothèse de contraction. Cependant, pour tout $a\in\R$, on a $\sqrt{a^{2}+1}>a$ donc pas de point fixe. La démonstration tombe en défaut car $\R$ n'est pas compact.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	La condition est équivalente à pour tout $(M_{1},M_{2},M_{3})\in K_{1}\times K_{2}\times K_{3}$, $M_{1},M_{2}$ et $M_{3}$ ne sont pas alignés.\\
+	On forme alors \function{f}{K_1\times K_2\times K_3}{\R_+}{(M_1,M_2,M_3)}{R(M_1,M_2,M_3)}
+	où $R(M_{1},R_{2},M_{3})$ est le rayon du cercle circonscrit au triangle formé par $M_{1},M_{2}$ et $M_{3}$.
+
+	On note $M_{i}=(x_{i},y_{i})$ et $\Delta_{i}$ la médiatrice de $[M_{j}M_{k}]$. Établissons une équation de $\Delta_{i}$. On a $M=(x,y)\in\Delta_{i}$ si et seulement si $\Vert \vec{MM_{j}}\Vert_{2}^{2}=\Vert\vec{MM_{k}}\Vert_{2}^{2}$ si et seulement si $(\vec{MM_{j}}+\vec{MM_{k}}\bigm|\vec{MM_{j}}-\vec{MM_{k}})=0$ (produit scalaire), si et seulement si $(\vec{MC_{i}}\bigm|\vec{M_{j}M_{k}})=0$ où $C_{i}$ est le milieu de $[M_{j}M_{k}]$, si et seulement si (calculer le produit scalaire)
+	$$\Bigl(\frac{x_{j}+x_{k}}{2}-x\Bigr)(x_{k}-x_{j})+\Bigl(\frac{y_{j}+y_{k}}{2}-y\Bigr)(y_{k}-y_{j})=0$$
+	Soit alors $M_{0}=(x_{0},y_{0})$ le centre du cercle circonscrit. $M_{0}\in\Delta_{i}\cap\Delta_{j}$ avec $i\neq j$. Par exemple, $M_{0}\in\Delta_{3}\cap\Delta_{1}$ si et seulement si
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			\Bigl(\dfrac{x_{2}+x_{1}}{2}-x_{0}\Bigr)(x_{2}-x_{1})+\Bigl(\dfrac{y_{2}+y_{1}}{2}-y_{0}\Bigr)(y_{2}-y_{1}) &= &0\\[0.5cm]
+			\Bigl(\dfrac{x_{3}+x_{2}}{2}-x_{0}\Bigr)(x_{3}-x_{2})+\Bigl(\dfrac{y_{3}+y_{2}}{2}-y_{0}\Bigr)(y_{3}-y_{2}) &= &0
+		\end{array}	
+	\right.
+	$$
+	si et seulement si ($L_{2}\leftarrow L_{1}(x_{3}-x_{2})+L_{2}(x_{1}-x_{2})$)
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			x_{0}(x_{1}-x_{2})+y_{0}(y_{1}-y_{2})&=&\dfrac{x_{1}^{2}-x_{2}^{2}+y_{1}^{2}-y_{2}^{2}}{2}\\[0.5cm]
+			x_{0}(x_{2}-x_{3})+y_{0}(y_{2}-y_{3})&=&\dfrac{x_{2}^{2}-x_{3}^{2}+y_{2}^{2}-y_{3}^{2}}{2}
+		\end{array}	
+	\right.
+	$$
+	si et seulement si ($L_{1}\leftarrow L_{2}(y_{2}-y_{1})+L_{1}(y_{2}-y_{3})$)
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			x_{0} &= & \dfrac{\frac{x_{1}^{2}-x_{2}^{2}+y_{1}^{2}-y_{2}^{2}}{2}(y_{2}-y_{3})-(y_{1}-y_{2})\frac{x_{2}^{2}-x_{3}^{2}+y_{2}^{2}-y_{3}^{2}}{2}}{(x_{1}-x_{2})(y_{2}-y_{3})-(x_{2}-x_{3})(y_{1}-y_{2})}\\[0.5cm]
+			y_{0} &= & \dfrac{\frac{x_{2}^{2}-x_{3}^{2}+y_{2}^{2}-y_{3}^{2}}{2}(x_{1}-x_{2})-(x_{2}-x_{3})\frac{x_{1}^{2}-x_{2}^{2}+y_{1}^{2}-y_{2}^{2}}{2}}{(x_{1}-x_{2})(y_{2}-y_{3})-(x_{2}-x_{3})(y_{1}-y_{2})}
+		\end{array}	
+	\right.
+	$$
+	et $R(M_{1},M_{2},M_{3})=\sqrt{(x_{0}-x_{3})^{2}+(y_{0}-y_{3})^{2}}$. En reportant, $f$ est continue sur $K_{1}\times K_{2}\times K_{3}$ compact donc $f$ atteint son minimum.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $f\in E$, $T(f)$ est $\mathcal{C}^{1}$ et $(T(f))'=f$, $T(f)(0)=0$. $T$ est clairement linéaire, soit ensuite $x\in[0,1]$, on a 
+		$$\vert T(f)(x)\vert=\Bigl\lvert\int_{0}^{x}f(t)dt\Bigr\rvert\leqslant\int_{0}^{x}\vert f(t)\vert dt\leqslant x\Vert f\Vert_{\infty}\leqslant\Vert f\Vert_{\infty}$$
+		Donc $\Vert T(f)\Vert_{\infty}\leqslant\Vert f\Vert_{\infty}$ donc $T$ est continue et $\vertiii{T}\leqslant1$. Pour $f=1$, on a $\Vert f\Vert_{\infty}=1$ et pour tout $x\in[0,1]$, $T(f)(x)=x$ donc $\Vert T(1)\Vert_{\infty}=1$. Ainsi, $\vertiii{T}=1$.
+
+		\item $id_{E}-T$ est continue. Soit $(f,g)\in E^{2}$, on a $g=f-T(f)$ si et seulement si $g=y'-y$ et $y(0)=0$. 
+		On a $g(x)e^{-x}=\underbrace{e^{-x}(y'(x)-y(x))}_{(e^{-x}y(x))'}$ donc en intégrant de 0 à $x$ on a 
+		$$y(x)=e^{x}\int_{0}^{x}e^{-t}g(t)dt$$
+		Donc $T(f)$ vérifie le problème de Cauchy si et seulement si pour tout $x\in\R$, $T(f)(x)=e^{x}\int_{0}^{x}e^{-t}g(t)dt$ si et seulement si pour tout $x\in[0,1]$, 
+		$$f(x)=g(x)+e^{x}\int_{0}^{x}e^{-t}g(t)dt$$
+		Donc $id_{E}-T$ est bijective. 
+		Enfin, on a pour tout $x\in[0,1]$, 
+		$$\vert f(x)\vert\leqslant\vert g(x)\vert+\Bigl\lvert\int_{0}^{x}g(t)e^{x-t}dt\Bigr\rvert\leqslant\Vert g\Vert_{\infty}(1+xe^{x})\leqslant\Vert g\Vert_{\infty}(1+e)$$
+		Ainsi, 
+		$$\Vert f\Vert_{\infty}=\Vert(id_{E}-T)^{-1}(g)\Vert_{\infty}\leqslant\Vert g\Vert_{\infty}(1+e)$$
+		donc $(id_{E}-T)^{-1}$ est continue. Ainsi, $id_{E}-T$ est un homéomorphisme.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item [(i)$\Rightarrow$ (ii)] $f^{-1}(K)$ est ferlé car $f$ est continue. $K$ est borné, donc il existe $M>0$, tel que pour tout $y\in K$, $\Vert y\Vert\leqslant M$. Donc pour tout $x\in f^{-1}(K)$, $\Vert f(x)\Vert\leqslant M$. Par contraposée de (i) pour $A=M+1$, il existe $B>0$ tel que $\Vert f(x)\Vert<A\Rightarrow\Vert x\Vert<B$. Donc pour $x\in f^{-1}(K)$, $\Vert x\Vert<B$ donc $f^{-1}(K)$ est borné. C'est donc un compact.
+		\item [(ii)$\Rightarrow$ (i)] Soit $A\geqslant0$. Soit $K=\overline{B(0,A)}$ compact car fermé et borné en dimension finie. D'après (ii), $f^{-1}(K)$ est compact donc borné: il existe $B>0$ tel que pour tout $x\in f^{-1}(K)$, $\Vert x\Vert\leqslant B$. Par contraposée, si $\Vert x\Vert>B$ alors $x\notin f^{-1}(K)$ et $f(x)\notin K$ donc $\Vert f(x)\Vert >A$. Ainsi, $\lim\limits_{\Vert x\Vert\to+\infty}\Vert f(x)\Vert=+\infty$.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Exemple pour l'exercice précédent: les fonctions polynômiales non constantes.
+\end{remark}
 
 \cleardoublepage
 \section{Fonction d'une variable réelle}
