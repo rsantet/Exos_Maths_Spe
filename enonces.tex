@@ -624,8 +624,8 @@
 	\begin{enumerate}
 		\item
 		Montrer que $A$ est stable par produit. On note alors $P_{1}=\{p
-		\text{premier}\mid p=2\text{ou}p\equiv 1[4]\}$ et
-		$P_{2}=\{p\text{premier}\mid p\equiv3[4]\}$.
+		\text{ premier}\mid p=2\text{ou}p\equiv 1[4]\}$ et
+		$P_{2}=\{p\text{ premier}\mid p\equiv3[4]\}$.
 		\item
 		Soit $n\in\N^{*}$. On suppose que pour tout $p\in P_{2}$, $\nu_{p}(n)$ est
 		pair (où $\nu_{p}(n)$ la puissance de $p$ dans la décomposition en produit
@@ -2691,6 +2691,126 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	\begin{enumerate}
 		\item [(i)] $\lim\limits_{\Vert x\Vert\to+\infty}\Vert f(x)\Vert=+\infty$,
 		\item [(ii)] pour tout compact $K$ de $\R^{p}$, $f^{-1}(K)$ est un compact de $\R^{n}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace vectoriel normé et $K$ un compact non vide de $E$ et $f:K\to K$ tel que pour tout $(x,y)\in K^{2}$, $d(f(x),f(y))\geqslant d(x,y)$.
+	\begin{enumerate}
+		\item Montrer que pour tout $(x,y)\in K^{2}$, pour tout $\varepsilon>0$, il existe $p\in\N^{*}$,
+		$$
+		\left\{
+			\begin{array}[]{l}
+				d(x,f^{p}(x))<\varepsilon\\
+				d(y,f^{p}(y))<\varepsilon
+			\end{array}
+		\right.
+		$$
+		On pourra former $(f^{n}(x),f^{n}(y))_{n\in\N}$.
+		\item Montrer que $f$ est isométrie.
+		\item Montrer que $f$ est surjective.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in(\R^{2})^{2}$ avec $A\neq B$, et $K$ un compact ne coupant pas $(AB)$. Soit 
+	$$F=\{r\geqslant0,\text{ il existe un cercle de centre r, passant par A et B et rencontrant K}\}$$
+	Montrer que $F$ est compact.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\R[X]$ et $\tau\in\L(E)\colon\tau(P)(X)=P(X+1)$.
+	\begin{enumerate}
+		\item Déterminer $\Sp(\tau)$.
+		\item Vérifier que $\Vert P=\Vert=\sup\limits_{x\geqslant0}\vert P(x))e^{-x}\vert$ est une norme sur $E$.
+		\item Montrer que $\tau$ est continue pour cette norme et vérifie $\vertiii{\tau}\leqslant e$.
+		\item Calculer $\vertiii{\tau}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	$E=\mathcal{C}^{0}([0,1],\R)$ muni de $\Vert\cdot\Vert_{\infty}$. Soit $\varphi\colon[0,1]\to[0,1]$ continue strictement croissante. Pour $f\in E$ et $x\in[0,1]$, soit 
+	$$T(f)(x)=\int_{0}^{1}\min(x,\varphi(t))f(t)dt$$
+	\begin{enumerate}
+		\item $T$ définit-il un endomorphisme de $E$ ?
+		\item Est-il continue ?
+		\item Calculer $\vertiii{T}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\C[X]$ muni de $\Vert\sum_{k\in\N} a_{k}X^{k}\Vert_{\infty}=\max\limits_{k\in\N}\vert a_{k}\vert$. Soit \function{\varphi}{E}{\C}{\sum_{k\in\N}a_{k}X^{k}}{\sum_{k\in\N}\frac{a_k}{2^{k}}}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrer que $\ker(\varphi)$ est fermé.
+		\item Soit $P=\sum_{k\in\N}a_{k}X^{k}\in\ker(\varphi)$. Montrer que $\Vert P-1\Vert_{\infty}>\frac{1}{2}$.
+		\item Évaluer $d(1,\ker(\varphi))$. Cette distance est-elle atteinte ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $K$ un compact non vide de $\R^{n}$ (muni de $\Vert\cdot\Vert_{2}$). Montrer qu'il existe une unique boule fermée de rayon minimal contenant $K$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\mathcal{C}^{0}([0,1],\R)$ muni de $\Vert\cdot\Vert_{\infty}$ et \function{\varphi}{E}{\R}{f}{\int_{0}^{\frac{1}{2}}f-\int_{\frac{1}{2}}^{1}f}
+	Montrer que $\varphi$ est une forme linéaire continue. Calculer $\vertiii{\varphi}$. Est-elle atteinte ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $(E,\Vert\cdot\Vert)$ un espace vectoriel normé et $(u,v)\in\L(E)$. On suppose que $u\circ v-v\circ u=id$.
+	\begin{enumerate}
+		\item Cette hypothèse sur $u$ et $v$ est-elle possible en dimension finie ?
+		\item Montrer que pour tout $n\in\N$, $u\circ v^{n+1}-v^{n+1}\circ u=(n+1)v^{n}$.
+		\item En utilisant la norme, mettre en évidente une contradiction.
+		\item Soit $E=\R[X]$ et \function{T}{E}{E}{P}{XP(X)} et \function{D}{E}{E}{P}{P'}
+		Montrer que $T$ et $D$ ne sont pas simultanément continues pour aucune norme.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\Vert\cdot\Vert$ une norme sur $\C^{n}$ et $\vertiii{\cdot}$ la norme subordonnée sur $\M_{n}(\C)$. Soit $(\alpha,\beta)\in[0,1[^{2}$, $A\neq I_{n}$ et $B\in\M_{n}(\C)$ tel que
+	$$
+	\left\{
+		\begin{array}[]{l}
+			\vertiii{A-I_{n}}\leqslant\alpha\\
+			\vertiii{B-I_{n}}\leqslant\beta
+		\end{array}
+	\right.
+	$$
+	\begin{enumerate}
+		\item Montrer que $A$ et $B$ sont inversibles et que 
+		$$\vertiii{ABA^{-1}B^{-1}-I_{n}}\leqslant\frac{2\vertiii{A-I_{n}}\vertiii{B-I_{n}}}{(1-\alpha)(1-\beta)}$$
+		\item Montrer que si $\alpha$ et $\beta$ sont suffisamment petits, 
+		$$\vertiii{ABA^{-1}B^{-1}-I_{n}}<\vertiii{A-I_{n}}$$
+		\item Soit $G=gr\{A,B\}$ (sous-groupe de $GL_{n}(\C)$ engendré par $A$ et $B$). Montrer que si $G$ est discret, alors il existe $C\in G\setminus\{I_{n}\}$, qui commute avec toutes les matrices de $G$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $A\in\M_{n}(\C)$, montrer que $\exp(A)\in\C_{n-1}[A]$ : il existe $P\in\C_{n-1}[X]$ tel que $\exp(A)=P(A)$.
+		\item Montrer que $A$ est diagonalisable sur $\C$ si et seulement si $\exp(A)$ l'est.
+		\item Résoudre $\exp(A)=I_{n}$.
+		\item Le résultat de la question 2 est-il valable sur $\R$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On pose, pour $n\geqslant1$,
+	$$
+	\left\{
+		\begin{array}[]{l}
+			P(X)=X-\frac{X^{2}}{2}+\frac{X^{3}}{3}+\dots+(-1)^{n}\frac{X^{n-1}}{n-1}\\
+			Q(Y)=1+Y+\frac{Y^{2}}{2}+\dots+\frac{Y^{n-1}}{(n-1)!}
+		\end{array}
+	\right.
+	$$
+	\begin{enumerate}
+		\item Montrer qu'il existe $A\in\R[X]$ tel que $Q(P(X))=1+X+X^{n}A(X)$. On pourra écrire les développements limités à l'ordre 1 de $\exp$ et $\ln$.
+		\item Soit $N\in\M_{n}(\C)$ nilpotente, montrer que $\exp(P(N))=Q(P(N))=I_{n}+N$.
+		\item En déduire que $\exp\colon\M_{n}(\C)\to GL_{n}(\C)$ est surjective.
 	\end{enumerate}
 \end{exercise}
 

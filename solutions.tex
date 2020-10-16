@@ -697,14 +697,301 @@
 \begin{solution}
 	\phantom{}
 	\begin{enumerate}
-		\item [(i)$\Rightarrow$ (ii)] $f^{-1}(K)$ est ferlé car $f$ est continue. $K$ est borné, donc il existe $M>0$, tel que pour tout $y\in K$, $\Vert y\Vert\leqslant M$. Donc pour tout $x\in f^{-1}(K)$, $\Vert f(x)\Vert\leqslant M$. Par contraposée de (i) pour $A=M+1$, il existe $B>0$ tel que $\Vert f(x)\Vert<A\Rightarrow\Vert x\Vert<B$. Donc pour $x\in f^{-1}(K)$, $\Vert x\Vert<B$ donc $f^{-1}(K)$ est borné. C'est donc un compact.
-		\item [(ii)$\Rightarrow$ (i)] Soit $A\geqslant0$. Soit $K=\overline{B(0,A)}$ compact car fermé et borné en dimension finie. D'après (ii), $f^{-1}(K)$ est compact donc borné: il existe $B>0$ tel que pour tout $x\in f^{-1}(K)$, $\Vert x\Vert\leqslant B$. Par contraposée, si $\Vert x\Vert>B$ alors $x\notin f^{-1}(K)$ et $f(x)\notin K$ donc $\Vert f(x)\Vert >A$. Ainsi, $\lim\limits_{\Vert x\Vert\to+\infty}\Vert f(x)\Vert=+\infty$.
+		\item [(i) $\Rightarrow$ (ii)] $f^{-1}(K)$ est fermé car $f$ est continue. $K$ est borné, donc il existe $M>0$, tel que pour tout $y\in K$, $\Vert y\Vert\leqslant M$. Donc pour tout $x\in f^{-1}(K)$, $\Vert f(x)\Vert\leqslant M$. Par contraposée de (i) pour $A=M+1$, il existe $B>0$ tel que $\Vert f(x)\Vert<A\Rightarrow\Vert x\Vert<B$. Donc pour $x\in f^{-1}(K)$, $\Vert x\Vert<B$ donc $f^{-1}(K)$ est borné. C'est donc un compact.
+		\item [(ii) $\Rightarrow$ (i)] Soit $A\geqslant0$. Soit $K=\overline{B(0,A)}$ compact car fermé et borné en dimension finie. D'après (ii), $f^{-1}(K)$ est compact donc borné: il existe $B>0$ tel que pour tout $x\in f^{-1}(K)$, $\Vert x\Vert\leqslant B$. Par contraposée, si $\Vert x\Vert>B$ alors $x\notin f^{-1}(K)$ et $f(x)\notin K$ donc $\Vert f(x)\Vert >A$. Ainsi, $\lim\limits_{\Vert x\Vert\to+\infty}\Vert f(x)\Vert=+\infty$.
 	\end{enumerate}
 \end{solution}
 
 \begin{remark}
-	Exemple pour l'exercice précédent: les fonctions polynômiales non constantes.
+	Exemple pour l'exercice précédent: les fonctions polynômiales non constantes. Contre-exemple: l'exponentielle, cf $\exp([0,1])=\R_{-}$ non compact.
 \end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item 
+		Soit $(x,y)\in K^{2}$ compact. Soit $\sigma$ un extraction telle que 
+		$$(f^{\sigma(n)}(x),f^{\sigma(n)}(y))\xrightarrow[n\to+\infty]{}(l,l')\in K^{2}$$
+		On a 
+		$$f^{\sigma(n+1)}(x)-f^{\sigma(n)}(x)\xrightarrow[n\to+\infty]{}0$$
+		de même pour $y$. Soit $\varepsilon>0$,
+		$$
+		\left\{
+			\begin{array}[]{l}
+				\exists N_{1}\in\N,\forall n\geqslant N_{1},\Vert f^{\sigma(n+1)}(x)-f^{\sigma(n)}(x)\Vert\leqslant\varepsilon\\
+			\exists N_{1}\in\N,\forall n\geqslant N_{1},\Vert f^{\sigma(n+1)}(y)-f^{\sigma(n)}(y)\Vert\leqslant\varepsilon
+		\end{array}
+		\right.
+		$$
+		Pour $N=\max(N_{1},N_{2})$ et $p=\sigma(N+1)-\sigma(N)\in\N^{*}$, on a 
+		\begin{equation*}
+			d(x,f^{p}(x))\leqslant d(f^{\sigma(n+1)}(x),f^{\sigma(n)}(x))\leqslant\varepsilon
+		\end{equation*}
+		et de même pour $y$ avec le même $p$.
+	
+		\item On a 
+		$$d(x,y)\leqslant d(f(x),f(y))\leqslant d(f^{p}(x),f^{p}(y))\leqslant d(f^{p}(x),x)+d(x,y)+d(y,f^{p}(y))\leqslant2\varepsilon+d(x,y)$$
+
+		Ceci valant pour tout $\varepsilon>0$, on a égalité tout du long. On a donc notamment, $\Vert x-y\Vert=\Vert f(x)-f(y)\Vert$ et donc $f$ est une isométrie.
+
+		\item $f$ est 1-lipschitzienne donc continue. Donc $f(K)$ est compact donc fermé. Il suffit donc de montrer que $f(K)$ est dense dans $K$. Soit $x\in K$ et $\varepsilon>0$, il existe $p\in\N^{*}$ tel que $\Vert x-\underbrace{f^{p}(x)}_{\in f(K)}\Vert\leqslant\varepsilon$ d'après la première question. Donc $f(K)$ est dense dans $K$ et $f(K)=\overline{f(K)}=K$.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Exemple pour l'exercice précédent: une rotation sur la sphère unité.
+\end{remark}
+
+\begin{solution}
+	Soit \function{f}{K}{\R}{M}{f(M)=\text{rayon du cercle circonscrit au triangle MAB}}
+	On a $F=f(K)$. Soit $(C,i,j)$ un repère orthonormé où $C$ est le milieu de $[AB]$ et $A(-\alpha,0)$ et $B(\alpha,0)$ avec $\alpha>0$. La médiatrice $\Delta$ de $[A,B]$ a pour équation $x=0$. Si $M(x,y)$, soit $\varphi(M)$ le centre du cercle circonscrit. On a $\varphi(M)\in\Delta$ donc $\varphi(M)(0,y_{1})$ et $\varphi(M)$ appartient à la médiatrice de $[MA]$. On a $y_{1}\neq0$ car $M\notin(AB)$.
+
+	Notons $M'$ le milieu de $[MA]$. On a $M'(\frac{x-\alpha}{2},\frac{y}{2})$ d'où $\vec{M'\varphi(M)}\cdot\vec{MA}=0$ d'où (en développant le produit scalaire),
+	$$y_{1}=\Bigl((\alpha+x)\Bigl(\frac{\alpha-x}{2}\Bigr)-\frac{y^{2}}{2}\Bigr)\Bigl(-\frac{1}{y}\Bigr)$$
+	$\varphi$ est donc continue donc $f$ également et $f(K)=F$ est compact.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\lambda\in\Sp(\tau)$ et $P\in\R[X]\setminus\{0\}$ avec $\tau(P)=\lambda P$. Si $P$ n'est pas constant, notons $\alpha\in\C$ alors $P(\alpha)=0$. Alors $P(\alpha+1)=0$. En itérant, pour tout $n\in\N$, $P(\alpha+n)=0$, impossible car $P$ n'est pas constant donc pas nul. Finalement, $P$ est constant et $\lambda=1$: $\Sp(\tau)=\{1\}$.
+		\item $f\colon x\mapsto P(x)e^{-x}$ est continue et $\lim\limits_{x\to+\infty}f(x)=0$ donc le $\sup$ est bien défini. Il est ensuite facile de vérifier que $\Vert P\Vert$ est une norme.
+		\item On a 
+		$$\Vert\tau(P)\Vert=\sup\limits_{x\geqslant0}\vert P(x+1)e^{-x}\vert=\sup\limits_{x'\geqslant1}\vert P(x')e^{-x'}e\vert\leqslant\sup\limits_{x'\geqslant0}\vert P(x')e^{-x'}e\vert\leqslant e\Vert P\Vert$$
+		\item Utiliser $P=X$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour $x$ fixé, $\min(x,\varphi(t))=\frac{x+\varphi(t)-\vert x-\varphi(t)\vert}{2}$ est continue. Donc $T(f)$ est définie.
+		
+		Si $x\leqslant\varphi(0)$, $T(f)(x)=\int_{0}^{1}xf(t)dt=x\int_{0}^{1}f(t)dt$ et si $x\geqslant\varphi(1)$, $T(f)(x)=\int_{0}^{1}\varphi(t)f(t)dt=x\int_{0}^{1}f(t)dt$ et si $\varphi(0)\leqslant x\leqslant\varphi(1)$, il existe un unique $t_{1}=\varphi^{-1}(x)$ (car $\varphi$ induit un homéomorphisme de $[0,1]$ dans $\varphi([0,1])$). Si $t\leqslant t_{1}$, on a $\varphi(t)\leqslant x$, donc $\min(x,\varphi(t))=\varphi(t)$. Si $t\geqslant t_{1}$, on a $\min(x,\varphi(t))=x$. On a donc 
+		\begin{align*}
+			T(f)(x)
+			&=\int_{0}^{t_{1}}\varphi(t)f(t)dt+\int_{t_{1}}^{1}xf(t)dt\\
+			&=\underbrace{\int_{0}^{\varphi^{-1}(x)}\varphi(t)f(t)dt}_{=F_{1}(\varphi^{-1}(x))}+x\underbrace{\int_{\varphi^{-1}(x)}^{1}f(t)dt}_{=F_{2}(\varphi^{-1}(x))}
+		\end{align*}
+		et $f$ et $\varphi$ étant continues, $F_{1}$ et $F_{2}$ sont continues.
+
+		Donc $T(f)$ continue et $T$ linéaire, c'est un endomorphisme de $E$.
+
+		\item On a 
+		\begin{equation*}
+			\vert T(f)(x)\vert\leqslant\Vert f\Vert_{\infty}\underbrace{\int_{0}^{1}\min(x,\varphi(t))dt}_{=A(x)}
+		\end{equation*}
+		donc 
+		$$\Vert T(f)\Vert_{\infty}\leqslant\Vert f\Vert_{\infty}\Vert A\Vert_{\infty}$$
+		donc $T$ est continue et $\vertiii{T}\leqslant\Vert A\Vert_{\infty}$. De plus pour $f=1$, on a $\vertiii{T}=\Vert A\Vert_{\infty}$.
+
+		\item On a 
+		$$
+		A(x)=\int_{0}^{1}\min(x,\varphi(t))dt=
+		\left\{
+			\begin{array}[]{lll}
+				x & \text{si} & x\leqslant\varphi(0)\\
+				\int_{0}^{1}\varphi(t)dt & \text{si} & x\geqslant\varphi(1)
+			\end{array}
+		\right.
+		$$
+		Dans tous les cas, 
+		$$\Vert A\Vert_{\infty}\leqslant\int_{0}^{1}\varphi(t)dt$$
+		donc 
+		$$\Vert A\Vert_{\infty}=\int_{0}^{1}\varphi(t)dt$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\varphi$ est une forme linéaire. et on a 
+		$$\vert\varphi(P)\vert\leqslant\sum_{k\in\N}\Bigl\vert\frac{a_k}{2^{k}}\Bigr\vert\leqslant2\Vert P\vert_{\infty}$$
+		donc $\varphi$ est continue et $\vertiii{\varphi}\leqslant2$. Pour $p\neq0$, $\vert\varphi(P)\vert<2\Vert P\Vert_{\infty}$ : pour avoir égalité, il faudrait pour tout $k\in\N$, $a_{k}=\text{constante}\neq0$ ce qui n'est pas possible. Pour $P_{n}=\sum_{k=0}^{n}X^{k}$, on a $\Vert P_{n}\Vert_{\infty}=1$ et $\lim\limits_{n\to+\infty}\vert\varphi(P_{n})\vert\xrightarrow[n\to+\infty]{}2$ donc $\vertiii{\varphi}=2$. De plus, $\ker(\varphi)=\varphi^{-1}(\{0\})$ est fermé.
+
+		\item Soit $P=\sum_{k\in\N}a_{k}X^{k}\in\ker(\varphi)$. On a $\varphi(P)=0$ d'où $a_{0}=-\sum_{k=1}^{+\infty}\frac{a_{k}}{2^{k}}$ (et il existe $N_{0}\in\N,\forall n\geqslant N_{0},a_{n}=0$). On a donc 
+		$$P(X)-1=(a_{0}-1)+\sum_{k\in\N^{*}}a_{k}X^{k}$$
+		et si $\Vert P-1\Vert_{\infty}\leqslant\frac{1}{2}$, on a 
+		$$
+		\left\{
+			\begin{array}[]{l}
+				\vert a_{0}-1\vert\leqslant\frac{1}{2}\\
+				\forall k\in\N^{*},\vert a_{k}\vert\leqslant\frac{1}{2}
+			\end{array}
+		\right.
+		$$
+		et 
+		$$\vert a_{0}\vert=\Biggl\vert\sum_{k=1}^{+\infty}\frac{a_{k}}{2^{k}}\Biggr\vert\leqslant\sum_{k=1}^{+\infty}\frac{\vert a_{k}\vert}{2^{k}}\leqslant\sum_{k=1}^{+\infty}\frac{1}{2^{k+1}}=\frac{1}{2}$$
+
+		Et $\frac{1}{2}\leqslant 1-\vert a_{0}\vert\leqslant\vert 1-a_{0}\vert\leqslant\frac{1}{2}$. Donc $\vert a_{0}\vert=\frac{1}{2}$ et $\vert 1-a_{0}\vert=\frac{1}{2}$.
+		\begin{align*}
+			a_{0}=\frac{1}{2}e^{\mathrm{i}\theta}
+			&\Rightarrow \Bigl\vert 1-\frac{1}{2}e^{\mathrm{i}\theta}\Bigr\vert^{2}=\frac{1}{4}\\
+			&\Rightarrow \Bigl(1-\frac{1}{2}\cos(\theta)\Bigr)^{2}+\Bigl(\frac{1}{2}\sin(\theta)\Bigr)^{2}=\frac{1}{4}\\
+			&\Rightarrow 1-\cos(\theta)+\frac{1}{4}=\frac{1}{4}\\
+			&\Rightarrow \cos(\theta)=1
+		\end{align*}
+		et donc $a_{0}=\frac{1}{2}$.
+
+		Par ailleurs, on a 
+		$$\frac{1}{2}=\sum_{k=1}^{+\infty}\frac{\vert a_{k}\vert}{2^{k}}=\sum_{k=1}^{+\infty}\frac{1}{2^{k+1}}$$
+		Donc pour tout $k\in\N$, $\vert a_{k}\vert=\frac{1}{2}$, impossible car $P\in\C[X]$, ainsi $\Vert P-1\Vert_{\infty}>\frac{1}{2}$.
+
+		\item On définit, pour $n\geqslant1$, $P_{n}=\frac{1}{2}+\sum_{k=1}^{n}(-\frac{1}{2}+\varepsilon_{n})X^{k}$ avec $\varepsilon_{n}\in\R$ tel que $P_{n}\in\ker(\varphi)$. On a 
+		\begin{align*}
+			P_{n}\in\ker(\varphi)
+			&\Rightarrow\frac{1}{2}+\sum_{k=1}^{n}\Bigl(-\frac{1}{2}+\varepsilon_{n}\Bigr)\frac{1}{2^{k}}=0\\
+			&\Rightarrow\varepsilon_{n}=-\frac{1}{2^{n+1}}\times \frac{1}{1-\frac{1}{2^{n}}}
+		\end{align*}
+		et donc $\varepsilon_{n}\xrightarrow[n\to+\infty]{}0$ (et $\varepsilon_{n}<0$). On a donc $\Vert P_{n}-1\Vert_{\infty}=\frac{1}{2}-\varepsilon_{n}\xrightarrow[n\to+\infty]{}\frac{1}{2}$.
+
+		Donc $d(1,\ker(\varphi))=\frac{1}{2}$ et cette distance n'est pas atteinte.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Prouvons d'abord l'existence. Soit $M\in\R^{n}$, on définit $r(M)=\sup\{\Vert M-A\Vert\bigm| A\in K\}$ et $\varphi\colon A\mapsto\Vert M-A\Vert$ est continue sur $K$ compact donc le sup est en fait un max. On a notamment $r(M)=\{R>0\bigm| K\subset B(M,R)\}$. Soit \function{r}{\R^n}{\R}{M}{r(M)}
+	Soit $(M,M')\in(\R^{n})^{2}$. Pour tout $A\in K$, on a 
+	$$\Vert M-A\Vert\leqslant\Vert M-M'\Vert+\Vert M'-A\Vert\leqslant\Vert M-M'\Vert +r(M')$$
+	En particulier, on a
+	$$r(M)\leqslant\Vert M-M'\Vert+r(M')$$
+	et en échangeant $M$ et $M'$, on a $\vert r(M)-r(M')\vert\leqslant\Vert M-M'\Vert$. Donc $r$ est 1-lipschitzienne donc continue. Soit $A_{0}\in K$, $R(M)\geqslant\Vert M-A_{0}\Vert\geqslant\Vert M\Vert-\Vert A_{0}\Vert\xrightarrow[\Vert M\Vert\to+\infty]{}+\infty$. Donc il existe $M_{0}\in\R^{n}$ tel que $r(M_{0})=\min\limits_{M\in\R^{n}}r(M)=r_{0}$, d'où l'existence d'une boule fermée de rayon minimal.
+
+	Pour l'unicité, soit $(M_{1},M_{2})\in(\R^{n})^{2}$ tel que $r(M_{1})=r(M_{2})=r_{0}$. On suppose que $\Vert M_{1}-M_{2}\Vert=\varepsilon>0$. Soit $M_{3}$ le milieu de $[M_{1}M_{2}]$. On a $K\subset B_{M_{1},r_{0}}\cap B_{M_{2},r_{0}}$. On prend $r^{2}+\bigl(\frac{\varepsilon}{2}\bigr)^{2}=r_{0}^{2}$ d'où 
+	$$r=\sqrt{r_{0}^{2}-\frac{\varepsilon^{2}}{4}}<r_{0}$$
+	Soit $M\in B(M_{1},r_{0})\cap B(M_{2},r_{0})$, on a 
+	\begin{align*}
+		\Vert M-M_{3}\Vert^{2}
+		&=\frac{1}{4}\Bigl(\Vert M-M_{1}+M-M_{2}\Vert^{2}\Bigr)\\
+		&=\frac{1}{4}\Bigl(2\Vert M-M_{1}\Vert^{2}+2\Vert M-M_{2}\Vert^{1}-\underbrace{\Vert M_{1}-M_{2}\Vert^{2}}_{=\varepsilon^{2}}\Bigr)\\
+		&\leqslant\frac{1}{4}(2r_{0}^{2}+2r_{0}^{2}-\varepsilon^{2})\\
+		&\leqslant r_{0}^{2}-\frac{\varepsilon^{2}}{4}=r^{2}
+	\end{align*}
+	Donc $B_{1}\cap B_{2}\subset\overline{B(M_{3},r)}$ d'où $K\subset\overline{B(M_{3},r)}$, ce qui est absurde car $r<r_{0}$. Donc $M_{1}=M_{2}$.
+\end{solution}
+
+\begin{solution}
+	$\varphi$ est évidemment définie et linéaire. Soit $f\in\mathcal{C}^{0}([0,1],\R)$.
+	\begin{align*}
+		\vert\varphi(f)\vert
+		&=\Biggl\vert\int_{0}^{\frac{1}{2}}f-\int_{\frac{1}{2}}^{1}f\Biggr\vert\\
+		&\leqslant\Biggl\vert\int_{0}^{\frac{1}{2}}f\Biggr\vert+\Biggl\vert\int_{\frac{1}{2}}^{1}f\Biggr\vert\\
+		&\leqslant\int_{0}^{\frac{1}{2}}\vert f\vert+\int_{\frac{1}{2}}^{1}\vert f\vert\\
+		&\leqslant\int_{0}^{1}\Vert f\Vert_{\infty}=\Vert f\Vert_{\infty}
+	\end{align*}
+\end{solution}
+
+Donc $\varphi$ est continue et $\vertiii{\varphi}\leqslant1$. Notons que si l'on a $\vert\varphi(f)\vert=\Vert f\Vert_{\infty}$, alors on a égalité partout au-dessus et pour tout $t\in[0,1]$, $\vert f(t)\vert=\Vert f\Vert_{\infty}$ et comme $\Bigl\vert\int f\Bigr\vert=\int\vert f\vert$ implique que $f$ est de signe constant sur l'intervalle d'intégration, si l'on a $\vert\varphi(f)\vert=\Vert f\Vert_{\infty}$, alors $f$ est de signe constant sur $[0,\frac{1}{2}]$ et sur $[\frac{1}{2},1]$.  Or $\vert\int_{0}^{\frac{1}{2}}f-\int_{\frac{1}{2}}^{1}f\vert=\vert\int_{0}^{\frac{1}{2}}f\vert+\vert\int_{\frac{1}{2}}^{1}\vert$, $f$ est de signe opposé sur les deux segments. Or $f$ est continue en $\frac{1}{2}$, donc $f$ est nulle. Donc pour $f$ non nulle, on a $\vert\varphi(f)\vert<\Vert f\Vert_{\infty}$ donc la norme triple n'est pas atteinte. Enfin, pour montrer que $\vertiii{\varphi}=1$, on utilise pour $n\geqslant1$,
+$$
+f_{n}(t)=
+\left\{
+	\begin{array}[]{lll}
+		1 & \text{si} & t\in[0,\frac{1}{2}-\frac{1}{n}]\\[0.3cm]
+		(\frac{1}{2}-t)n & \text{si} & t\in[\frac{1}{2}-\frac{1}{n},\frac{1}{2}+\frac{1}{n}]\\[0.3cm]
+		-1 & \text{si} & t\in[\frac{1}{2}+\frac{1}{n},1]
+	\end{array}
+\right.
+$$
+On a bien $\Vert f_{n}\Vert_{\infty}=1$.
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Non car on applique l'application trace.
+		\item On a le résultat par récurrence.
+		\item On a 
+		$$(n+1)\vertiii{v^{n}}=\vertiii{u\circ v^{n}\circ v-v^{n}\circ v\circ r}\leqslant 2\vertiii{u}\vertiii{v}\vertiii{v^{n}}$$
+		Si pour tout $n\in\N$, on a $v^{n}=0$, alors pour tout $n\in\N$,
+		$$n+1\leqslant 2\vertiii{u}\vertiii{v}$$
+		ce qui est impossible. Donc il existe $n\in\N^{*}$ tel que $v^{n}=0$. Alors $u\circ v^{n}-v^{n}\circ u=nv^{n-1}=0$ donc $v^{n-1}=0$ et de proche en proche $v=0$: contradiction.
+		\item Pour tout $P\in\R[X]$, 
+		$$(D\circ T-T\circ D)(P)=(XP)'-XP'=P$$
+		donc $D\circ T-T\circ D=id$. D'après ce qui précède, $T$ et $D$ ne peuvent pas être continus simultanément.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\sum_{k\geqslant0}(A-I_{n})^{k}$ converge absolument car $\vertiii{A-I_{n}}^{k}\leqslant\alpha_{k}$ et $\alpha<$.
+		
+		Si $AX=0$, $\Vert (A-I_{n})X\Vert=\Vert X\Vert\leqslant\alpha\Vert X\Vert$ donc $\Vert X\Vert=0$ et $X=0$ donc $A\in GL_{n}(\C)$, idem pour $B$. On a alors
+		\begin{equation*}
+			A\sum_{k=0}^{+\infty}(I_{n}-A)^{k}=((A-I_{n})+I_{n})\sum_{k=0}^{+\infty}(I_{n}-A)^{k}=I_{n}
+		\end{equation*}
+		par téléscopage. Donc 
+		$$A^{-1}=\sum_{k=0}^{+\infty}(I_{n}-A)^{k}$$
+		et
+		$$\vertiii{A^{-1}}\leqslant\sum_{k=0}^{+\infty}\alpha^{k}=\frac{1}{1-\alpha}$$
+		et de même pour $B$. On écrit alors
+		$$ABA^{-1}B^{-1}-I_{n}=(AB-BA)A^{-1}B^{-1}=((A-I_{n})(B-I_{n})-(B-I_{n})(A-I_{n}))A^{-1}B^{-1})$$
+		d'où
+		$$\vertiii{ABA^{-1}B^{-1}-I_{n}}\leqslant\frac{2\vertiii{A-I_{n}}\vertiii{B-I_{n}}}{(1-\alpha)(1-\beta)}$$
+
+		\item On prend $\alpha=\beta=\frac{1}{4}$.
+		\item Pour tout $M\in G$, il existe $r>0$ tel que $B(M,r)\cap G=\{M\}$. Montrons que $G$ est discret si et seulement si $I_{n}$ est isolé. En effet, si $I_{n}$ est isolé, il existe $r_{0}>0$ tel que $B(I_{n},r_{0})\cap G=\{I_{n}\}$. Soit $M\in G$, alors pour tout $M'\in G$, $M-M'=M(I_{n}-M^{-1}M')$ d'où $I_{n}-M^{-1}M'=M^{-1}(M-M')$. Si 
+		$$\vertiii{M-M'}<\frac{r_{0}}{\vertiii{M^{-1}}}$$
+		on a $\vertiii{I_{n}-M^{-1}M'}<r_{0}$ et donc $M'=M$ et $M$ est isolé. Ainsi $G$ est isolé. La réciproque est évidente.
+
+		$C$ est dans le commutant si et seulement si $C$ commute avec $A$ et $B$ si et seulement si
+		$$
+		\left\{
+			\begin{array}[]{l}
+				ACA^{-1}C^{-1}=I_{n}\\
+				BCB^{-1}C^{-1}=I_{n}
+			\end{array}
+		\right.
+		$$
+
+		Notons maintenant que 
+		$$\overline{B_{\Vert\cdot\Vert}(I_{n},\frac{1}{4})}\cap G=\mathcal{A}$$
+		est fini. En effet, si cet ensemble était infini, il existerait $(M_{p})_{p\in\N}$ une suite injective dans $\mathcal{A}$. La suite étant bornée, on peut extraite $(M_{\sigma(p)})_{p\in\N}$ qui converge et alors pour tout $p\in I_{n}$
+		$$\underbrace{M_{\sigma(p)}M_{\sigma(p+1)}^{-1}}_{\xrightarrow[pto+\infty]{}I_{n}}\in G\setminus\{I_{n}\}$$
+		ce qui est impossible car $I_{n}$ est isolé.
+
+		Comme $A\in \mathcal{A}\setminus\{I_{n}\}$, il existe $C\in\mathcal{A}\setminus\{I_{n}\}$ telle que $\vertiii{C-I_{n}}$ soit minimale et $\vertiii{c-I_{n}}\leqslant\frac{1}{4}$. D'après la question 2 on a 
+		$$\vertiii{ACA^{-1}C^{-1}-I_{n}}<\vertiii{C-I_{n}}$$
+		et même chose pour $B$. Donc nécessairement, $ACA^{-1}C^{-1}=I_{n}$ et de même pour $B$. Ainsi, $C$ commute avec toutes les matrices de $G$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\C_{n-1}[A]$ est un sous-espace vectoriel de dimension finie donc c'est un fermé. Par division euclidienne par $\chi_{A}$, d'après le théorème de Cayley-Hamilton, $\C[A]=\C_{n-1}[A]$. Comme 
+		$$\exp(A)=\lim\limits_{n\to+\infty}\sum_{k=0}^{n}\frac{A^{k}}{k!}$$
+		$\exp(A)\in \C[A]=\C_{n-1}[A]$.
+
+		\item Si $A$ est diagonalisable, il existe $P\in GL_{n}(\C)$ tel que 
+		$$A=P^{-1}\diag(\lambda_{1},\dots,\lambda_{n})P$$
+		et donc 
+		$$\exp(A)=P^{-1}\diag(e^{\lambda_{1}},\dots,e^{\lambda_{n}})P$$
+		et $\exp(A)$ est diagonalisable.
+
+		Si $\exp(A)$ est diagonalisable, on utilise la décomposition de Dunford: $A=D+N$ avec $DN=ND$, $D$ diagonalisable et $N$ nilpotente. On a donc 
+		$$\exp(A)=\exp(D)\underbrace{\exp(N)}_{=\sum_{k=0}^{n-1}\frac{N^{k}}{k!}}=\exp(D)+\exp(D)\Bigl(\sum_{k=1}^{n-1}\frac{N^{k}}{k!}\Bigr)=\exp(D)+N'$$
+		avec $N'$ nilpotente et $\exp(D)$ est diagonalisable d'après le sens direct. $N'$ commute avec $\exp(D)$. Par unicité de la décomposition de Dunford, $\exp(A)$ étant diagonalisable, on a $N'=0$. Comme $\exp(D)$ est inversible, 
+		$$N\times\underbrace{\sum_{k=1}^{n-1}\frac{N^{k-1}}{k!}}_{=I_{n}+N''}=0$$
+		avec $N''$ nilpotente. $I_{n}+N''$ est donc inversible et ainsi $N=0$ et $A$ est diagonalisable.
+
+		\item D'après ce qui précède, $\exp(A)=I_{n}$ est diagonalisable et 
+		$$\Sp_{\C}(\exp(A))=\{e^{\lambda}\bigm|\lambda\in\Sp_{\lambda}(\C)\}=\{I_{n}\}$$
+		Donc $\Sp_{\C}(A)\subset 2i\pi\Z$.
+
+		Réciproquement, si $A$ est diagonalisable avec $\Sp(A)\subset 2i\pi\Z$, en diagonalisant, on a bien $\exp(A)=I_{n}$.
+
+		\item Sur $\R$, si $A$ est diagonalisable, $\exp(A)$ l'est aussi. Cependant, la réciproque n'est pas vrai, par exemple
+		$$M=\begin{pmatrix}
+			2\mathrm{i}\pi & 0\\
+			0 & -2\mathrm{i}\pi
+		\end{pmatrix}\text{  semblable à }
+		\begin{pmatrix}
+			0 & -4\pi^{2}\\
+			1 & 0
+		\end{pmatrix}=A$$
+		On a $\chi_{M}=X^{2}+4\pi^{2}$, $\exp(A)=I_{2}$ et $A$ n'est pas diagonalisable sur $\C$.
+	\end{enumerate}
+\end{solution}
 
 \cleardoublepage
 \section{Fonction d'une variable réelle}
