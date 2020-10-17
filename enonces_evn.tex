@@ -1,0 +1,434 @@
+\section{Espaces vectoriels normés}
+\begin{exercise}
+	On définit \function{N}{\R^{2}}{\R}{(x,y)}{\sup\limits_{t\in\R}\vert x\cos(t)+y\sin(2t)\vert}
+	\begin{enumerate}
+		\item Montrer que $N$ est une norme.
+		\item Montrer que $$\overline{B_{\Vert\cdot\Vert_{1}}(0,1)}\subset \overline{B_{N}(0,1)}\subset\overline{B_{\Vert\cdot\Vert_{\infty}}(0,1)}$$
+		\item Montrer que $$S_{N}(0,1)\bigcap(\R_{+})^{2}=\Biggl\{(x,y)\in\R^{2}\Biggm|\exists t\in[0,\frac{\pi}{4}]\colon x\cos(t)+y\sin(2t)=1\Biggr\}$$
+		En déduire que $$S_{N}(0,1)\bigcap(\R_{+})^{2}=\Biggl\{\Biggl(\frac{\cos(2t)}{\cos(t)^{3}},\frac{\sin(t)}{2\cos(t)^{3}}\Biggr)\Biggm| t\in\Bigl[0,\frac{\pi}{4}\Bigr]\Biggr\}$$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\mathcal{C}([0,1],\R)$ et \function{N}{E}{\R}{f}{\sqrt{f(0)^{2}+\int_{0}^{1}f'^{2}}}
+	\begin{enumerate}
+		\item Montrer que $N$ est une norme sur $E$ et que $\Vert\cdot\Vert_{\infty}\leqslant\sqrt{2}N$.
+		\item $N$ et $\Vert\cdot\Vert_{\infty}$ sont-elles équivalentes ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant p$ et $f\in\L(\R^{n},\R^{p})$. Montrer que $f$ est ouverte, c'est-à-dire que pour tout $\Theta$ ouvert de $\R^{n}$, $f(\Theta)$ est un ouvert de $\R^{p}$, si et seulement si $f$ est surjective.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\Bigl\{\text{fonctions lipschitziennes}\colon [0,1]\to\R\Bigr\}$. Pour $f\in E$, on pose 
+	$$\kappa(f)=\sup\Biggl\{\Biggl\lvert\frac{f(x)-f(y)}{x-y}\Biggr\rvert\Bigm|(x,y)\in[0,1]^{2},x\neq y\Biggr\}$$
+	\begin{enumerate}
+		\item Montrer que $N(f)=\vert f(0)\vert+\kappa(f)$ est une norme sur $E$.
+		\item Montrer que $N$ et $N_{\infty}$ ne sont pas équivalentes.
+		\item Montrer que $N'=N_{\infty}+\kappa$ est équivalente à $N$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ un sous-groupe de $GL_{n}(\C)$ tel que $G\in\mathcal{V}(I_{n})$ où $\mathcal{V}$ un voisinage de $I_{n}$, muni de la norme 
+	$$\Vert (a_{i,j})_{1\leqslant i,j\leqslant n}\Vert=\max\limits_{1\leqslant i,j\leqslant n}\vert a_{i,j}\vert$$. Montrer que $G=GL_{n}(\C)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(E,\Vert\cdot\Vert)$ un $\K$-espace vectoriel normé et $f:E\to E$ une fonction telle que 
+	\begin{enumerate}
+		\item [(i)] $\forall(x,y)\in E^{2}$, $f(x+y)=f(x)+f(y)$
+		\item [(ii)] $\exists M\geqslant0,\forall x\in B_{\Vert\cdot\Vert}(0,1),\Vert f(x)\vert\leqslant M$.
+	\end{enumerate}
+	Montrer que $f$ est continue et linéaire.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace vectoriel normé. Pour $A\subset E$, on pose $\alpha(A)=\mathring{\overline{A}}$.
+	\begin{enumerate}
+		\item Montrer que $\alpha(\alpha(A))=\alpha(A)$.
+		\item Combien au plus de parties différentes obtient-on à partir de $A$ par itérations d'intérieur et d'adhérence ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A$ une partie non vide d'un $\R$-espace vectoriel normé $E$. On définit \function{d_A}{E}{\R}{x}{d(x,A)=\inf\{\Vert x-a\Vert\big| a\in A\}} avec $d_{\emptyset}(x)=+\infty$ pour tout $x\in E$.
+	\begin{enumerate}
+		\item Soit $A,B\subset E$. Montrer que $\overline{A}=\overline{B}$ si et seulement si $d_{A}=d_{B}$.
+		\item On pose $\rho(A,B)=\sup\limits_{x\in E}\vert d_{A}(x)-d_{B}(x)\vert$ (vaut $+\infty$ si non borné). Montrer que 
+		$$\rho(A,B)=\max\Bigl(\sup\limits_{x\in A}d_{B}(x),\sup\limits_{y\in B}d_{A}(y)\Bigr)\overset{def}{=}\alpha(A,B)$$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $P\in\C[X]$ non constant.
+	\begin{enumerate}
+		\item Montrer que si $F$ est un fermé de $\C$, alors $P(F)$ est un fermé de $\C$.
+		\item Si $\Theta$ est un ouvert non vide de $\C$, montrer que $P(\Theta)$ est un ouvert de $\C$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On définit $F=\{P\in\R_n[X]\bigm| P\text{ unitaire et }\deg(P)=n\}$. $F$ est fermé dans $\R_{n}[X]$. Notons $\mathcal{S}=\{P\in F\bigm| P\text{ est scindé sur }\R\}$.
+	\begin{enumerate}
+		\item Montrer que $P\in\mathcal{S}$ si et seulement si pour tout $z\in\C$, $\vert P(z)\vert\geqslant \vert\Im(z)\vert^{n}$.
+		\item En déduire que $\mathcal{S}$ est fermé.
+		\item Montrer que $\{M\in\M_{n}(\R)\bigm| M\text{ trigonalisable sur }\R\}$ est fermé.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(n,m)\in(\N^{*})^{2}$ et $A=\sum_{i=1}^{n}a_{i}X^{i}$, $B=\sum_{i=1}^{m}b_{i}X^{i}$ avec $a_{n}\neq 0$, $b_{m}\neq0$.
+	\begin{enumerate}
+		\item Montrer que \function{\varphi}{\K_{m-1}[X]\times\K_{n-1}[X]}{\K_{n+m-1}[X]}{(U,V)}{AU+BV}
+		est bijective si et seulement si $A\wedge B=1$.
+
+		On note $M_{A,B}$ la matrice de $\varphi$ dans la base canonique de $\K_{m-1}[X]\times\K_{n-1}[X]$ et on définit le résultant $R_{A,B}=\det(M_{A,B})$.
+		\item Pour $\K=\R$ ou $\C$, et $p\in\N$ fixé, on munit $\K_{p}[X]$ d'une norme quelconque. Montrer que \function{\Phi_{A,B}}{\K_{m-1}[X]\times\K_{n-1}[X]}{\K}{(A,B)}{R_{A,B}}
+		est continue.
+		\item En déduire que $\Delta=\{P\in\C_{p}[X]\bigm| P\text{ scindé à racines simples sur }\C\}$ est ouvert. Et sur $\R$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $F=\{M\in\M_{n}(\R)\bigm|M^{n}=0\}$. $F$ est donc l'ensemble des matrices nilpotentes.
+	\begin{enumerate}
+		\item Déterminer $\overline{F}$ et $\mathring{F}$.
+		\item On munit $\M_{n}(\R)$ de $\Vert M\Vert=\sqrt{\Tr(M^{\mathsf{T}}M)}$. Vérifier que c'est une norme et calculer $d(I_{n},F)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\K=\R$ ou $\C$. Montrer que $GL_{n}(\K)$ est un ouvert dense dans $M_{n}(\K)$.
+		\item En déduire que pour tout $(A,B)\in\M_{n}(\K),\chi_{AB}=\chi_{BA}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\K$-espace vectoriel de dimension finie, $u\in\L(E)$ telle que $(u^{p})_{p\in\N}$ est bornée (pour une norme quelconque). On pose $v_{p}=\frac{1}{p}\sum_{k=0}^{p-1}u^{p}$.
+	\begin{enumerate}
+		\item Montrer que 
+		$$E=\ker(u-id_{E})\oplus\im(u-id_{E})$$
+		On pourra évaluer $v_{p}\circ(id_{E}-u)=(id_{E}-u)$ et faire tendre $p$ vers $+\infty$.
+		\item Montrer que $(v_{p})_{p\in\N}$ converge vers $\Pi$, le projecteur sur $\ker(u-id_{E})$ parallèlement à $\im(u-id_{E})$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A$ compact convexe non vide d'un espace vectoriel normé, $f:A\to A$ 1-lipschitzienne.
+	\begin{enumerate}
+		\item Soit $x_{0}\in A$, et pour $n\geqslant1,\forall x\in A$, $f_{n}(x)=\frac{1}{n}f(x_{0})+(1-\frac{1}{n})f(x_{0})$. Montrer que $f$ possède un unique point fixe $x_{n}$.
+		\item Montrer que $f$ possède au moins un point fixe.
+		\item Si l'espace est euclidien, montrer que $F=\{x\in A\bigm| f(x)=x\}$ est convexe.
+		\item Contre-exemple dans le cas général.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soient $E$ et $F$ deux $\R$-espaces vectoriels normés avec $\dim(F)<+\infty$. Soit $f:E\to F$ continue telle qu'il existe $M\geqslant0$, pour tout $(x,y)\in E^{2}$, on a $\Vert f(x+y)-f(x)-f(y)\Vert\leqslant M$.
+	\begin{enumerate}
+		\item Si $M=0$, montrer que $f$ est linéaire (continue). Est-ce encore vrai si $\K=\C$ ?
+		\item On suppose $M>0$, soit pour tout $n\in\N$, \function{v_n}{E}{F}{x}{\frac{1}{2^{n}}f(2^{n}x)}
+		Montrer que pour tout $x\in E$, $(v_{n}(x))_{n\in\N}$ converge. On note $g(x)=\lim\limits_{n\to+\infty}v_{n}(x)$.
+		\item Montrer que $g$ est l'unique application linéaire continue telle que $g-f$ soit bornée.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\R$-espace vectoriel normé de dimension plus grande que 2 et $f:E\to\R$ continue telle que pour tout $t\in\R,f^{-1}(\{t\})$ est compact. Montrer que $f$ atteint son maximum ou son minimum sur $E$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant2$. Existe-t-il $f$ continue injective de $\R^{n}$ dans $\R$ ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $\varphi\colon l^{1}\to\R$ forme linéaire continue. On pose $K_{n}=\varphi(e_{n})\in\R$ où $e_{n}$ est la base canonique de $l^{1}$.
+	\begin{enumerate}
+		\item Montrer que $(K_{n})_{n\in\N}$ est bornée et que $\vertiii{\varphi}=\sup\limits_{n\in\N}\vert K_{n}\vert=\Vert(K_{n})_{n\in\N}\Vert_{\infty}$.
+		\item Montrer que \function{F}{\L_c(l^{1},\R)}{l^{\infty}}{\varphi}{(\varphi(e_{n}))_{n\in\N}}
+		est une isométrie bijective.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\R$-espace vectoriel normé et $H$ un hyperplan de $E$.
+	\begin{enumerate}
+		\item Montrer que si $H$ est dense, alors $E\setminus H$ est connexe par arc.
+		\item Et si $H$ est fermé ?
+		\item Et pour un $\C$-espace vectoriel normé ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\Gamma=\{(x,\sin(\frac{1}{x}))\bigm| x>0\}\subset\R^{2}$. Montrer que $\Gamma$ est connexe par arcs mais que $\overline{\Gamma}$ ne l'est pas.
+\end{exercise}
+
+\begin{exercise}
+	Soit $K$ compact convexe non vide d'un espace vectoriel normé $E$. Soit $T\in\L_{c}(E)$ tel que $T(K)\subset K$.
+	\begin{enumerate}
+		\item Soit $a\in K$ et pour tout $n\in\N$, $u_{n}=\frac{1}{n+1}\sum_{k=0}^{n}T^{k}(a)$. Montrer que $T$ admet au moins un point fixe dans $K$.
+		\item Soit $U\in\L_{c}(E)$ qui commute avec $T$ et tel que $U(K)\subset K$. Montrer que $U$ et $T$ ont un point fixe commun.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Théorème de Carathéodory]
+	Soit $E$ un $\R$-espace vectoriel normé de dimension $n$.
+	\begin{enumerate}
+		\item Soit $p\geqslant n+2$ et $(x_{1},\dots,x_{p})\in E^{p}$. Soit $(\lambda_{1},\dots,\lambda_{p})\in\R_{-}^{p}$ tel que $\sum_{i=1}^{p}\lambda_{i}=1$ et $x=\sum_{i=1}^{n}\lambda_{i}x_{i}$. Soit \function{u}{\R^p}{E}{(\alpha_{1},\dots,\alpha_{p})}{\sum_{i=1}^{p}\alpha_{i}x_{i}}
+		Montrer que $\dim(\ker(u))\geqslant 2$. En déduire qu'il existe $(\alpha_{1},\dots,\alpha_{p})\in\R^{p}\setminus\{0,\dots,0\}$ tel que $\sum_{i=1}^{p}\alpha_{i}x_{i}=0$ et $\sum_{i=1}^{p}\alpha_{i}=0$.
+		
+		\item Montrer que pour tout $t\in\R$, $x=\sum_{i=1}^{p}(\lambda_{i}+t\alpha_{i})x_{i}$ et que $\sum_{i=1}^{p}\lambda_{i}+t\alpha_{i}=1$. Prouver que l'on peut choisir $t$ tel que $\min\limits_{1\leqslant i\leqslant p}(\lambda_{i}+t\alpha_{i})=0$.
+		
+		\item En déduire que $x$ est barycentre à coefficients positifs de $n+1$ éléments $(x_{i},\dots,x_{p})$.
+		
+		\item Soit $K$ un compact de $E$. Montrer que $\conv(K)$ est compact.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\C$-espace vectoriel de dimension finie $r\in\N^{*}$. Soit $(\alpha_{1},\dots,\alpha_{r})\in\C^{r}$ distincts et $P=(X-\alpha_{1})\dots(X-\alpha_{r})$. Déterminer les composantes connexes par arcs de $A_{P}\in\{u\in\L(E)\bigm| P(u)=0\}$.
+\end{exercise}
+
+\begin{exercise}[Théorème de Perron-Frobenius]
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\R)$ tel que pour tout $(i,j)\in\{1,\dots,n\}$, $a_{i,j}>0$. On note alors $A>0$, et on peut définir de même $A\geqslant0$. Pour $X\in\R^{n}$, on note $\Vert X\Vert_{1}=\sum_{i=1}^{n}\vert x_{i}\vert$. On pose, pour $X=(x_{1},\dots,x_{n})^{\mathsf{T}}$, $\vert X\vert=(\vert x_{1}\vert,\dots,\vert x_{n}\vert)^{\mathsf{T}}$. 
+	On définit $\rho(A)=\max\limits_{\lambda\in\Sp_{\C}(A)}\vert\lambda\vert$ le rayon spectral de $A$.
+	\begin{enumerate}
+		\item Montrer que si $X\geqslant0$ et $X\neq0$, on a $AX>0$.
+		\item Montrer que pour $X\in\M_{n,1}(\C)$, si $\vert AX\vert=A\vert X\vert$, alors il existe $\theta\in\R$, $e^{\mathrm{i}\theta}X\geqslant0$.
+		\item On définit 
+		$$K=\{X\in\M_{n,1}(\R)\Bigm| X\geqslant0\text{ et }\Vert X\Vert_{1}=1\}$$
+		et pour tout $X\in K$, 
+		$$I_{X}=\{t\geqslant0\Bigm|AX-tX\geqslant0\}$$
+		Montrer que $I_{X}$ est non vide, fermé et borné. On pose $\theta(X)=\max(I_{X})$.
+		\item Montrer que $\theta$ est borné sur $K$. On pose $r_{0}=\sup\limits_{x\in K}\theta(X)$. Établir qu'il existe $X^{+}\in K$ tel que $\theta(X^{+})=r_{0}$.
+		\item Montrer que $AX^{+}=r_{0}X^{+}$. On pourra poser $Y=AX^{+}-r_{0}X^{+}$ et on montrera que si $Y\neq0$, il existe $\varepsilon>0$ tel que $A(A^{+})-(r_{0}+\varepsilon)AX^{+}>0$.
+		\item Soit $\lambda\in\Sp_{\C}(A)$ et $V\in\M_{n,1}(\C)$ tel que $\Vert V\Vert_{1}=1$ et $AV=\lambda V$. Montrer que $\vert AV\vert\leqslant A\vert V\vert$, en déduire que $\vert\lambda\vert\leqslant r_{0}$.
+		\item Montrer que si $\vert\lambda\vert=r_{0}$, alors $A\vert V\vert=r_{0}\vert V\vert=\vert AV\vert$, en déduire que $\lambda=r_{0}$.
+		\item Montrer que $\dim(\ker(A-r_{0}I_{n}))=1$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace vectoriel normé, $U$ et $V$ deux compacts disjoints. Montrer qu'il existe $U'$ et $V'$ des ouverts disjoints tels que $U\subset U'$ et $V\subset V'$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $K$ un compact non vide d'un espace vectoriel normé $E$. Soit $f\colon K\to K$ tel que pour tout $x\neq y\in K^{2}$, $\Vert f(x)-v(y)\Vert<\Vert x-y\Vert$.
+	\begin{enumerate}
+		\item Montrer qu'il existe un unique $a\in K$ tel que $f(a)=a$.
+		\item Soit $u_{0}\in K$ et pour tout $n\in\N$, $u_{n+1}=f(u_{n})$. Montrer que $\lim\limits_{n\to+\infty}u_{n}=a$.
+		\item Étudier $f(x)=\sqrt{1+x^{2}}$ pour $x\in\R$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soient $K_{1},K_{2},K_{3}$ trois compacts non vides du plan tels qu'il n'existe pas de droite coupant $K_{1},K_{2}$ et $K_{3}$ simultanément. Montrer qu'il existe un cercle de rayon minimal les coupant tous les trois.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\mathcal{C}^{0}([0,1],\R)$ muni de $\Vert\cdot\Vert_{\infty}$. On définit pour tout $f\in E$, pour tout $x\in[0,1]$, 
+	$$T(f)(x)=\int_{0}^{x}f(t)dt$$
+	\begin{enumerate}
+		\item Montrer que $T\in\L_{c}(E)$ et calculer $\vertiii{T}$.
+		\item Montrer que $id_{E}-T$ est un homéomorphisme.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f:\R^{n}\to\R^{p}$ continue, montrer l'équivalence:
+	\begin{enumerate}
+		\item [(i)] $\lim\limits_{\Vert x\Vert\to+\infty}\Vert f(x)\Vert=+\infty$,
+		\item [(ii)] pour tout compact $K$ de $\R^{p}$, $f^{-1}(K)$ est un compact de $\R^{n}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace vectoriel normé et $K$ un compact non vide de $E$ et $f:K\to K$ tel que pour tout $(x,y)\in K^{2}$, $d(f(x),f(y))\geqslant d(x,y)$.
+	\begin{enumerate}
+		\item Montrer que pour tout $(x,y)\in K^{2}$, pour tout $\varepsilon>0$, il existe $p\in\N^{*}$,
+		$$
+		\left\{
+			\begin{array}[]{l}
+				d(x,f^{p}(x))<\varepsilon\\
+				d(y,f^{p}(y))<\varepsilon
+			\end{array}
+		\right.
+		$$
+		On pourra former $(f^{n}(x),f^{n}(y))_{n\in\N}$.
+		\item Montrer que $f$ est isométrie.
+		\item Montrer que $f$ est surjective.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in(\R^{2})^{2}$ avec $A\neq B$, et $K$ un compact ne coupant pas $(AB)$. Soit 
+	$$F=\{r\geqslant0,\text{ il existe un cercle de centre r, passant par A et B et rencontrant K}\}$$
+	Montrer que $F$ est compact.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\R[X]$ et $\tau\in\L(E)\colon\tau(P)(X)=P(X+1)$.
+	\begin{enumerate}
+		\item Déterminer $\Sp(\tau)$.
+		\item Vérifier que $\Vert P\Vert=\sup\limits_{x\geqslant0}\vert P(x))e^{-x}\vert$ est une norme sur $E$.
+		\item Montrer que $\tau$ est continue pour cette norme et vérifie $\vertiii{\tau}\leqslant e$.
+		\item Calculer $\vertiii{\tau}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	$E=\mathcal{C}^{0}([0,1],\R)$ muni de $\Vert\cdot\Vert_{\infty}$. Soit $\varphi\colon[0,1]\to[0,1]$ continue strictement croissante. Pour $f\in E$ et $x\in[0,1]$, soit 
+	$$T(f)(x)=\int_{0}^{1}\min(x,\varphi(t))f(t)dt$$
+	\begin{enumerate}
+		\item $T$ définit-il un endomorphisme de $E$ ?
+		\item Est-il continue ?
+		\item Calculer $\vertiii{T}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\C[X]$ muni de $\Vert\sum_{k\in\N} a_{k}X^{k}\Vert_{\infty}=\max\limits_{k\in\N}\vert a_{k}\vert$. Soit \function{\varphi}{E}{\C}{\sum_{k\in\N}a_{k}X^{k}}{\sum_{k\in\N}\frac{a_k}{2^{k}}}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrer que $\ker(\varphi)$ est fermé.
+		\item Soit $P=\sum_{k\in\N}a_{k}X^{k}\in\ker(\varphi)$. Montrer que $\Vert P-1\Vert_{\infty}>\frac{1}{2}$.
+		\item Évaluer $d(1,\ker(\varphi))$. Cette distance est-elle atteinte ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $K$ un compact non vide de $\R^{n}$ (muni de $\Vert\cdot\Vert_{2}$). Montrer qu'il existe une unique boule fermée de rayon minimal contenant $K$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\mathcal{C}^{0}([0,1],\R)$ muni de $\Vert\cdot\Vert_{\infty}$ et \function{\varphi}{E}{\R}{f}{\int_{0}^{\frac{1}{2}}f-\int_{\frac{1}{2}}^{1}f}
+	Montrer que $\varphi$ est une forme linéaire continue. Calculer $\vertiii{\varphi}$. Est-elle atteinte ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $(E,\Vert\cdot\Vert)$ un espace vectoriel normé et $(u,v)\in\L(E)$. On suppose que $u\circ v-v\circ u=id$.
+	\begin{enumerate}
+		\item Cette hypothèse sur $u$ et $v$ est-elle possible en dimension finie ?
+		\item Montrer que pour tout $n\in\N$, $u\circ v^{n+1}-v^{n+1}\circ u=(n+1)v^{n}$.
+		\item En utilisant la norme, mettre en évidente une contradiction.
+		\item Soit $E=\R[X]$ et \function{T}{E}{E}{P}{XP(X)} et \function{D}{E}{E}{P}{P'}
+		Montrer que $T$ et $D$ ne sont pas simultanément continues pour aucune norme.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\Vert\cdot\Vert$ une norme sur $\C^{n}$ et $\vertiii{\cdot}$ la norme subordonnée sur $\M_{n}(\C)$. Soit $(\alpha,\beta)\in[0,1[^{2}$, $A\neq I_{n}$ et $B\in\M_{n}(\C)$ tel que
+	$$
+	\left\{
+		\begin{array}[]{l}
+			\vertiii{A-I_{n}}\leqslant\alpha\\
+			\vertiii{B-I_{n}}\leqslant\beta
+		\end{array}
+	\right.
+	$$
+	\begin{enumerate}
+		\item Montrer que $A$ et $B$ sont inversibles et que 
+		$$\vertiii{ABA^{-1}B^{-1}-I_{n}}\leqslant\frac{2\vertiii{A-I_{n}}\vertiii{B-I_{n}}}{(1-\alpha)(1-\beta)}$$
+		\item Montrer que si $\alpha$ et $\beta$ sont suffisamment petits, 
+		$$\vertiii{ABA^{-1}B^{-1}-I_{n}}<\vertiii{A-I_{n}}$$
+		\item Soit $G=gr\{A,B\}$ (sous-groupe de $GL_{n}(\C)$ engendré par $A$ et $B$). Montrer que si $G$ est discret, alors il existe $C\in G\setminus\{I_{n}\}$, qui commute avec toutes les matrices de $G$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $A\in\M_{n}(\C)$, montrer que $\exp(A)\in\C_{n-1}[A]$ : il existe $P\in\C_{n-1}[X]$ tel que $\exp(A)=P(A)$.
+		\item Montrer que $A$ est diagonalisable sur $\C$ si et seulement si $\exp(A)$ l'est.
+		\item Résoudre $\exp(A)=I_{n}$.
+		\item Le résultat de la question 2 est-il valable sur $\R$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On pose, pour $n\geqslant1$,
+	$$
+	\left\{
+		\begin{array}[]{l}
+			P(X)=X-\frac{X^{2}}{2}+\frac{X^{3}}{3}+\dots+(-1)^{n}\frac{X^{n-1}}{n-1}\\
+			Q(Y)=1+Y+\frac{Y^{2}}{2}+\dots+\frac{Y^{n-1}}{(n-1)!}
+		\end{array}
+	\right.
+	$$
+	\begin{enumerate}
+		\item Montrer qu'il existe $A\in\R[X]$ tel que $Q(P(X))=1+X+X^{n}A(X)$. On pourra écrire les développements limités à l'ordre n de $\exp$ et $\ln$.
+		\item Soit $N\in\M_{n}(\C)$ nilpotente, montrer que $\exp(P(N))=Q(P(N))=I_{n}+N$.
+		\item En déduire que $\exp\colon\M_{n}(\C)\to GL_{n}(\C)$ est surjective.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$A=\Biggl\{\Biggl(\frac{1}{n}+\frac{1}{p}\Biggr)^{n+p}\Biggm|(n,p)\in(\N^{*})^{2}\Biggr\}$$
+	Déterminer $\overline{A}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$H=\Biggl\{M\in\M_{n}(\C)\Biggm|\exists m\in\N^{*}\colon M^{m}=I_{n}\Biggr\}$$
+	Montrer que 
+	$$\overline{H}=\Biggl\{A\in\M_{n}(\C)\Biggm|\Sp_{\C}(A)\subset\U\Biggr\}$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $(a_{n})_{n\in\N}\in\C^{\N}$, on définit \function{N_{a}}{\C[X]}{\R^{+}}{P=\sum_{k=0}^{+\infty}p_{k}X^{k}}{\sum_{k=0}^{+\infty}\vert a_{k}p_{k}\vert}
+	\begin{enumerate}
+		\item Donner une condition nécessaire et suffisante pour que $N_{a}$ soit une norme.
+		\item Si $a$ et $b$ vérifient cette condition nécessaire et suffisante, à quelle condition nécessaire et suffisante $N_{a}$ et $N_{b}$ sont-elles équivalentes ?
+		\item Existe-t-il $(a,b)\in(\C^{\N})^{2}$ tel que \function{\Delta}{\C[X]}{\C[X]}{P}{P'} soit continue pour $N_{a}$ et discontinue pour $N_{b}$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\K$-espace vectoriel normé et $A\subset E$ non vide.
+	\begin{enumerate}
+		\item Montrer que pour tout $x\in E$, $d(x,A)=0$ si et seulement si $x\in\overline{A}$ et que $d(x,A)=d(x,\overline{A})$.
+		\item Soit $B$ non vide, montrer que $d(A,B)=d(\overline{A},\overline{B})$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On munit $\C[X]$ de $\Vert\sum_{k\in\N}a_{k}X^{k}\Vert_{\infty}=\max\limits_{k\in\N}\vert a_{k}\vert$. Soit $x_{0}\in\C$ et \function{\varphi_{x_0}}{\C[X]}{\C}{P}{P(x_{0})}
+	Pour quelles valeurs de $x_{0}$, $\varphi_{x_{0}}$ est-elle continue ? Dans ce cas, calculer $\vertiii{\varphi_{x_{0}}}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $M\in\M_{n}(\C)$. Montrer que $M$ est nilpotente si et seulement s'il existe $(M_{p})_{p\in\N}\in(\M_{n}(\C))^{\N}$ telle que pour tout $p\in\N$, $M_{p}$ est semblable à $M$ et $M_{p}\xrightarrow[p\to+\infty]{}0$.
+\end{exercise}
+
+\begin{exercise}
+	Montrer que $M\in\M_{n}(\C)$ est diagonalisable si et seulement si $S_{M}=\{P^{-1}MP\bigm| P\in GL_{n}(\C)\}$ est fermé. Pour le sens indirect, on pourra utiliser la décomposition de Dunford et l'exercice précédent.
+\end{exercise}
+
+\begin{exercise}
+	Soit $\varphi:I=[a,b]\to\R$ continue. On lui associe 
+	\function{\omega_{\varphi}}{\R_+^*}{\R}{h}{\sup\{\vert\varphi(x)-\varphi(y)\vert\bigm| (x,y)\in I^2\text{ et }\vert x-y\vert <h\}}
+	\begin{enumerate}
+		\item Montrer que $\omega_{\varphi}$ est définie et croissante.
+		\item Soit $(h,h')\in(\R_{+}^{*})^{2}$, montrer que $\omega_{\varphi}(h+h')\leqslant\omega_{\varphi}(h)+\omega_{\varphi}(h')$.
+		\item Soit $(h,\lambda)\in(\R_{+}^{*})^{2}$ et $n\in\N^{*}$, montrer que $\omega_{\varphi}(nh)\leqslant n\omega_{\varphi}(h)$ et $\omega_{\varphi}(\lambda h)\leqslant (1+\lambda)\omega_{\varphi}(h)$.
+		\item Montrer que $\lim\limits_{h\to 0}\omega_{\varphi}(h)=0$. En déduire que $\omega_{\varphi}$ est continue.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\Vert\cdot\Vert$ une norme sur $\C^{n}$ et $\vertiii{\cdot}$ la norme subordonnée sur $\M_{n}(\C)$. Soit $G$ un sous-groupe de $GL_{n}(\C)$ tel qu'il existe $\mu\in[0,2[$,
+	$$G\subset\overline{B_{\vertiii{\cdot}}(I_{n},\mu)}$$
+	Montrer qu'il existe $\in\N^{*}$ tel que pour tout $M\in G$, $M^{m}=I_{n}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant1$ et $q\in\N^{*}$. On forme 
+	$$\mathcal{G}_{q}=\Bigl\{M\in\M_{n}(\C)\Bigm| M^{q}=I_{n}\Bigr\}$$
+	Déterminer les points isolés de $\mathcal{G}_{q}$.
+\end{exercise}

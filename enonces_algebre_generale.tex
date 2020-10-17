@@ -1,0 +1,577 @@
+\section{Algèbre Générale}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe tel que $\exists p\in\N$ tel que
+	$f_p,f_{p+1},f_{p+2}$ soient des morphismes où
+	\function{f_p}{G}{G}{x}{x^p}
+	Montrer que $G$ est un groupe abélien.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe fini. Soit $A=\{x\in G,~\omega(x)\text{est
+	impair}\}$ où $\omega(x)$ désigne l'ordre de $x$. Montrer que $A$ est non
+	vide, et que $x\mapsto x^2$ est une permutation de $A$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $\sigma\in\Sigma_n$. On note $\theta(\sigma)$ le nombre d'orbite de
+	$\sigma$. Montrer que le nombre minimal de transposition dont $\sigma$ est le
+	produit est $n-\theta(\sigma)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(n,m)\in(\N^*)^2$. Combien y a-t-il de morphismes de groupe de
+	$\Bigl(\Z/n\Z, +\Bigr)\to\Bigl(\Z/m\Z, +\Bigr)$ ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe abélien fini. Soit $P=\prod_{x\in G}x$. Montrer que
+	$P=e_{G}$ (élément neutre de $G$) sauf dans un cas très particulier.
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ un sous-groupe additif de $\R$. On suppose qu'il existe un nombre
+	fini $n$ d'ensembles de la forme $(x+G)_{x\in\R}$ avec $x+G=\{x+y,~y\in G\}$.
+	Montrer que $G=\R$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\in\N^*$. Combien y a-t-il d'automorphismes de $\Bigl(\Z/n\Z, +\Bigr)$?
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe fini et $\varphi$ un morphisme de $G\to G$. Montrer
+	que $\vert G\vert=\vert\im\varphi\vert\times\vert\ker\varphi\vert$. En déduire
+	que $\ker\varphi=\ker\varphi^2$ si et seulement si $\im\varphi=\im\varphi^2$.
+	
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe fini d'ordre $n$, et $m\in\N$ tel que $n\wedge
+	m=1$. Montrer que pour tout $y\in G$, il existe un unique $x\in G$ tel que
+	$x^m=y$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe fini. Pour $g\in G$, on note 
+	$$C(g)=\{hgh^{-1},~h\in G\}$$ et 
+	$$S_{g}=\{x\in G,~xg=gx\}$$
+	\begin{enumerate}
+		\item
+		Montrer que $S_{g}$ est un sous-groupe de $G$.
+		\item
+		Montrer que $\vert G\vert=\vert S_{g}\vert\times\vert C(g)\vert$.
+		\item
+		On note $Z(G)=\{x\in G,~\forall y\in G,~xy=yx\}$. Montrer que $Z(G)$ est
+		un sous-groupe de $G$, et que pour tout $g\in G$, $Z(G)\subset S_{g}$.
+		\item
+		On suppose que $\vert G\vert=p^{\alpha}$ où $p$ est premier et
+		$\alpha\geqslant1$. Montrer que $\vert Z(G)\vert\neq1$. On pourra utiliser
+		le fait que $x\mathcal{R}y$ si et seulement si il existe $h\in G$ tel que
+		$y=hxh^{-1}$ est une relation d'équivalence.
+		\item
+		On suppose que $\vert G\vert=p^{2}$. Montrer que $G$ est abélien et qu'il
+		est isomorphe à $\Z/p^2\Z$ ou à $\Bigl(\Z/p\Z\Bigr)^2$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Trouver tous les morphismes de $(\Z,+)$ (respectivement $(\Q,+)$) dans
+	$(\Q_{+}^*,\times)$. On pourra poser, pour $p$ premier et $n\in\Z$,
+	$\nu_{p}(n)$ la puissance de $p$ dans la décomposition en produit de facteurs
+	premiers de $n$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ un groupe engendré par deux éléments $x,y\neq e_{G}$ tels que
+	$x^5=e_{G}$ et $xy=y^2x$. Montrer que $\vert G\vert=155=5\times31$ et qu'il
+	est unique à un isomorphisme près.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe abélien fini. On note $N=\vee_{x\in G}\omega(x)$
+	(ppcm des ordres des éléments de $G$) appelé exposant de $G$, caractérise par
+	$\forall k\in\Z, (\forall x\in G,x^{k}=e)$ si et seulement si $(\forall x\in
+	G,~\omega(x)\mid k)$ si et seulement si $(N\vert k)$. En particulier,
+	$N\mid\vert G\vert$.
+
+	On pose $N=p_{1}^{\alpha_{1}}\dots p_{r}^{\alpha_{r}}$ la décomposition en
+	nombres premiers de $N$.
+	\begin{enumerate}
+		\item
+		Soit $i\in\{1,\dots,r\}$. Justifier qu'il existe $y_{i}\in G$, tel que
+		$p_{i}^{\alpha_{i}}\mid \omega(y_{i})$.
+		\item
+		Soit $i\in\{1,\dots,r\}$. Justifier qu'il existe $x_{i}\in G$, tel que
+		$\omega(x_{i})=p_{i}^{\alpha_{i}}$.
+		\item
+		Montrer qu'il existe $x\in G$ tel que $\omega(x)=N$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\K$ un corps fini commutatif, $(\K^*,\times)$ est un groupe abélien
+	fini. Soit $N=\vee_{x\in \K^*}\omega(x)$ (ordre multiplicatif). On sait
+	d'après l'exercice précédent qu'il existe $x_{0}\in\K^*$ tel que
+	$\omega(x_{0})=N$. En étudiant le polynôme $X^{N}-1_{K}$, montrer que
+	$(\K^*,\times)$ est cyclique.
+	
+	En exemple, soit $\Bigl(\Z/13\Z,+,\times\Bigr)$ (c'est un corps).\\
+	Trouver un générateur du groupe $\Bigl(\Z/13\Z^*,\times\Bigr)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe tel que $\forall x\in G,~x^2=e_{G}$.
+	\begin{enumerate}
+		\item
+		Montrer que $G$ est abélien.
+		\item
+		Montrer que si $G$ est fini, il existe $n\in\N$ tel que $G$ soit isomorphe
+		à $\Bigl(\bigl(\Z/2\Z\bigr)^n,+\Bigr)$. On pourra considérer une famille
+		génératrice minimale.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe, on appelle groupe dérivé de $G$ et on note
+	$$D(G)=\{xyx^{-1}y^{-1},~(x,y)\in G^{2}\}$$.
+	\begin{enumerate}
+		\item
+		Si $G$ est abélien, que vaut $D(G)$?
+		\item
+		Montrer que pour $n\geqslant3$, les 3-cycles engendrent $\mathcal{A}_{n}$
+		(groupe des permutations de signature égale à 1).
+		\item
+		Montrer que deux 3-cycles $(a_{1},a_{2},a_{3})$ et $(b_{1},b_{2},b_{3})$
+		sont conjugués dans $\Sigma_{n}$ (c'est-à-dire qu'il existe
+		$\sigma\in\Sigma_{n}$ telle que
+		$(b_{1},b_{2},b_{3})=\sigma\circ(a_{1},a_{2},a_{3})\circ\sigma^{-1})$.
+		Est-ce encore vrai dans $\mathcal{A}_{n}$?
+		\item
+		En déduire $D(\Sigma_{n})$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe fini de cardinal $n$.
+	\begin{enumerate}
+		\item
+		Soit $g\in G$ et \function{\tau_g}{G}{G}{x}{g\cdot x} Montrer que
+		\function{\tau}{G}{\Sigma(G)}{g}{\tau_g}
+		(où $\Sigma(G)$ est le groupe des permutations de $G$) est un morphisme
+		injectif. En déduire que $G$ est isomorphe à un sous-groupe de
+		$(\Sigma_{n},\circ)$.
+		\item
+		Montrer que $G$ est isomorphe à un sous-groupe de $(GL_{n}(\C),\times)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Montrer qu'il n'existe pas $(x,y,z,t,n)\in \N^{5}$ tel que
+	$x^{2}+y^{2}+z^{2}=(8t+7)\times 4^{n}$.
+\end{exercise}
+
+\begin{exercise}
+	Montrer que $10^{10^{n}}\equiv 4 [7]$ pour tout $n\in\N^{*}$.
+\end{exercise}
+
+\begin{exercise}
+	Pour $n\in\N$, on pose $F_{n}=2^{2^{n}}+1$.
+	\begin{enumerate}
+		\item
+		Montrer que pour tout $n\geqslant1$, $F_{n}=2+\prod_{k=0}^{n-1}F_{k}$.
+		\item
+		En déduire qu'il existe une infinité de nombres premiers.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $U$ le groupe des inversibles de $\Z/32\Z$.
+	\begin{enumerate}
+		\item
+		Quel est l'ordre de $\bar{5}$?
+		\item
+		Montrer que $U=gr\{\bar{-1},\bar{5}\}$ (groupe engendré) et qu'il est
+		isomorphe à un groupe produit.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On note, pour $n\in\N^{*}$, $G_{n}=\{e^{\frac{2\mathrm{i}k\pi}{n}},~k\wedge
+	n=1\}$ l'ensemble des racines $n$-ièmes de l'unité, on définit
+	$\mu(n)=\sum_{\xi\in G_{n}}\xi$.
+	\begin{enumerate}
+		\item
+		Montrer que si $n\wedge m=1$, alors $\mu(nm)=\mu(m)\mu(n)$.
+		\item
+		Calculer $\mu(1)$. Que vaut $\mu(n)$ si $n=p_{1}^{\alpha_{1}}\dots
+		p_{r}^{\alpha_{r}}$ (décomposition en nombres premiers)?
+		\item
+		Soit $\C^{\N^{*}}$ muni de \function{f\star g}{\N^*}{\C}{n}{(f\star
+		g)(n)=\sum_{d\mid n}f(d)g(n/d)} Montrer que $\star$ est une loi
+		associative et commutative, qu'elle admet un élément neutre noté $e$.
+		Déterminer l'inverse de $\mu$ pour $\star$. On pourra calculer, pour
+		$n\geqslant2$, $\sum_{d\mid n}\mu(d)$.
+		\item
+		Que vaut pour $n\in\N^{*}$, $\sum_{d\mid n}d\mu(d/n)$?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $p$ premier. Montrer que
+	$$\sum_{k=0}^{p}\binom{p}{k}\binom{p+k}{k}\equiv 2^{p}+1[p^{2}]$$
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item
+		Montrer que les sous-groupes finis de $(\U,\times)$ sont cycliques (où
+		$\U$ est le cercle unité).
+		\item
+		Quels sont les sous-groupes finis de $SO_{2}(\R)$?
+		\item
+		Soit $G$ un sous-groupe fini de $SL_{2}(\R)$. Montrer que
+		\function{\varphi}{\R^2}{\R}{(X,Y)}{\sum_{M\in G}\langle MX,MY\rangle} où
+		$\langle\cdot,\cdot\rangle$ est le produit scalaire canonique de $\R$.
+		Montrer que $\varphi$ est un produit scalaire pour lequel les matrices de
+		$M$ sont des isométries. En déduire que $G$ est cyclique.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\{x+y\sqrt{2},~x\in\N^{*},~y\in\Z,\text{et}x^{2}-2y=1\}$.
+	\begin{enumerate}
+		\item
+		Montrer que $E$ est un sous-groupe de $(\R_{+}^{*},\times)$.
+		\item
+		Montrer que $E=\{(x_{0}+y_{0}\sqrt{2})^{n},~n\in\Z\}$ où
+		$x_{0}+y_{0}\sqrt{2}=\min E\cap]1,+\infty[$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Déterminer les entiers $n\in\N^{*}$ tels que $7\mid n^{n}-3$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $p$ premier plus grand que 5. Soit $a\in\N$ tel que
+	$1+\frac{1}{2}+\dots+\frac{1}{p-1}=\frac{a}{(p-1)!}$. Montrer que $p^{2}\mid
+	a$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $P\in \R[X]$ tel que $\forall x\in\R$, $P(x)\geqslant0$. Montrer qu'il
+	existe $(A,B)\in\R[X]^{2}$ tel que $P=A^{2}+B^{2}$.
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item
+		Soit $\alpha\in\R$ tel que $\frac{\alpha}{\pi}\notin\Q$. Montrer que
+		$(\sin(n\alpha))_{n\in\N}$ est dense dans $[-1,1]$.
+		\item
+		Montrer qu'il y a une infinité de puissance de 2 qui commencent par 7 en
+		base 10.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A$ un anneau commutatif intègre, on dit que $A$ est euclidien si et
+	seulement s'il existe $v:A\setminus\{0\}\to\N$ tels que pour tout $(a,b)\in
+	A\times A\setminus\{0\}$, il existe $(q,r)\in A^{2}$ tels que $a=bq+r$ et
+	$v(r)<v(b)$ ou $r=0$.
+	\begin{enumerate}
+		\item
+		Montrer que $\Z[\mathrm{i}]=\{a+\mathrm{i}b,~(a,b)\in\Z^{2}\}$ est
+		euclidien.
+		\item
+		Montrer que tout anneau euclidien est principal.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item
+		Soit $p$ premier plus grand que 3. Soit
+		$\bar{x}\in\Z/p\Z\setminus\{\bar{0}\}$. Montrer que $\bar{x}$ est un carré
+		dans $\Z/p\Z$ si et seulement $\bar{x}^{\frac{p-1}{2}}=\bar{1}$.
+		\item
+		En déduire qu'il existe une infinité de nombres premiers congrus à 1
+		modulo 4.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $P=\sum_{i=0}^{n}r_{i}X^{i}\in\Q[X]\setminus\{0\}$. On pose
+	$$c(P)=\prod_{p\in\mathcal{P}}p^{\min\limits_{0\leqslant i\leqslant
+	n}(\nu_{p}(r_{i}))}$$ où $\mathcal{P}$ est l'ensemble des nombres premiers. On
+	écrit $P=c(P)\times P_{1}$.
+	\begin{enumerate}
+		\item
+		Montrer que $P_{1}\in\Z[X]$, que ses coefficients sont premiers entre eux
+		dans leur ensemble et qu'une telle écriture est unique.
+		\item
+		Soit $(P,Q)\in \Bigl(\Q[X]\setminus\{0\}\Bigr)^{2}$. Montrer que
+		$c(PQ)=c(P)c(Q)$. On justifiera en passant dans $\Z/p\Z[X]$ que si $p$
+		premier divise tous les coefficients de $P_{1}\times Q_{1}$, alors il
+		divise tous les coefficients de $P_{1}$ ou tous ceux que $Q_{1}$ [Lemme de
+		Gauss].
+		\item
+		En déduire que si $P\in\Z[X]$ est irréductible sur $\Z[X]$, alors il l'est
+		aussi sur $\Q[X]$. La réciproque est-elle vraie ?
+		\item
+		Trouver tous les $\theta\in[0,2\pi[$ tels que $\frac{\theta}{\pi}\in\Q$ et
+		$\cos(\theta)\in\Q$. Si $\theta\not\equiv0[\pi]$ et si $\theta=2\pi p/q$
+		avec $p\wedge q=1$, on appliquera ce qui précède à $A=X^{q}-1$ et
+		$P=X^{2}-(2\cos(\theta))X+1$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $P\in\R[X]$ scindé sur $\R$.
+	\begin{enumerate}
+		\item
+		Montrer que pour tout $\alpha\in\R$, $P+\alpha P'$ est scindé sur $\R$.
+		\item
+		Soit $R=\sum_{i=0}^{r}a_{i}X^{i}$ scindé sur $\R$. Montrer que
+		$\sum_{i=0}^{r}a_{i}P^{(i)}$ l'est aussi.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $P\in\R[X]$ de degré $n\geqslant1$, scindé sur $\R$. Montrer que pour
+	tout $x\in\R$, $(n-1)(P'^{2})(x)\geqslant nP(x)P''(x)$.
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item
+		Soit $P\in\Q[X]$ irréductible sur $\Q[X]$, montrer que $R$ n'a que des
+		racines simples sur $\C$. On pourra évaluer $P\wedge P'$ sur $\Q[X]$.
+		\item
+		Soit $A\in\Q[X]$ et $\alpha\in\C$ une racine de $A$ de multiplicité
+		$m(\alpha)>d(A)/2$ où $d(A)$ est le degré de $A$. Montrer que
+		$\alpha\in\Q$.
+		\item
+		Soit $A\in\Q[X]$ de degré $2m+1$. On suppose que $A$ admet une racine
+		complexe de multiplicité plus grande que $m$. Montrer que $A$ possède une
+		racine rationnelle.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un groupe et $A$ une partie finie de $G$ stable pour $\cdot$.
+	Montrer que $A$ est en fait un sous-groupe de $G$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $p$ premier plus grand que 3. Montrer que pour tout $\alpha\in\N$,
+	$$(1+p)^{p^{\alpha}}\equiv 1+p^{\alpha+1}[p^{\alpha+2}]$$
+\end{exercise}
+
+\begin{exercise}
+	Soit pour $n\in\N^{*}$, $\mu(n)=\sum_{\substack{k=1\\k\wedge
+	n}}^{n}e^{\frac{2\mathrm{i}k\pi}{n}}=\sum_{\xi\in\Xi_{n}}\xi$ où $\Xi_{n}$
+	sont les racines primitives $n$-ièmes de l'unité. On a notamment
+	$\vert\Xi_{n}\vert=\varphi(n)$ (fonction d'Euler).
+	\begin{enumerate}
+		\item
+		Montrer que si $m\wedge n=1$, $\mu(m\times n)=\mu(m)\times\mu(n)$.
+		\item
+		Si $n=p_{1}^{\alpha_{1}}\dots p_{r}^{\alpha_{r}}$ (décomposition en
+		facteurs premiers), que vaut $\mu(n)$?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Montrer que pour tout $(x,y)\in\Z^{2}$, $7\neq 2x^{2}-5y^{2}$.
+\end{exercise}
+
+\begin{exercise}
+	Résoudre $x^{3}=1$ dans $\Z/19\Z$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant 3$.
+	\begin{enumerate}
+		\item
+		Combien y a-t-il d'inversibles dans $\Bigl(\Z/2^{n}\Z,+,\times\Bigr)$? On
+		note $\Bigl(\Z/2^{n}\Z\Bigr)^{\times}$ le groupe (multiplicatif) de ses
+		inversibles.
+		\item
+		Montrer que $5^{2^{n-3}}\equiv 1+2^{n-1}[2^{n}]$.
+		\item
+		Évaluer l'ordre de 5 dans $\Bigl(\Z/2^{n}\Z\Bigr)^{\times}$.
+		\item
+		Montrer que $gr\{-1\}\cap gr\{5\}=\{1\}$ où $gr$ indique le groupe
+		engendré par l'ensemble. En déduire que
+		$\Biggl(\Bigl(\Z/2^{n}\Z\Bigr)^{\times},\times\Biggr)$ est isomorphe à
+		$\Bigl(\Z/2\Z\times\Z/2^{n-1}\Z,+\Bigr)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(G,\cdot)$ un ensemble non vide muni d'une loi interne associative. On
+	suppose que
+	\begin{enumerate}
+		\item
+		[(i)] $\exists e\in G,\forall x\in G,~x\cdot e=x$,
+		\item
+		[(ii)] $\forall x\in G,\exists x'\in G,~x\cdot x'=e$.
+	\end{enumerate}
+	Montrer que $(G,\cdot)$ est un groupe.
+\end{exercise}
+
+\begin{exercise}
+	Montrer qu'il existe une infinité de multiples de 21 qui s'écrivent avec
+	uniquement des 1 en base 10.
+\end{exercise}
+
+\begin{exercise}
+	Soit $\K$ un corps commutatif fini. Soit $n=\vert \K^{*}\vert$.
+	\begin{enumerate}
+		\item
+		Soit $d$ un diviseur de $n$, on suppose qu'il existe $x_{0}\in \K^{*}$
+		d'ordre (multiplicatif) $d$ dans le groupe $(\K^{*},\times)$. Montrer
+		qu'il existe exactement $\varphi(d)$ éléments d'ordre $d$ dans
+		$(\K^{*},\times)$ ($\varphi$ indique la fonction d'Euler). On pourra
+		s'intéresser au polynôme $X^{d}-1_{\K}$.
+		\item
+		En utilisant $n=\sum_{d\mid n}\varphi(d)$, montrer que $(\K^{*},\times)$
+		est cyclique.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $p$ premier plus grand que 5. et $M=\Z/p\Z\setminus\{0,1\}$.
+	\begin{enumerate}
+		\item
+		Montrer que \function{f}{M}{M}{x}{1-x^{-1}} est bien définie et calculer
+		$f^{3}$.
+		\item
+		Montrer que -3 est un carré dans $\Z/p\Z$ si et seulement si $f$ admet un
+		point fixe.
+		\item
+		Montrer que -3 est un carré dans $\Z/p\Z$ si et seulement si $p\equiv
+		1[3]$ (on pourra décomposer $f$ en produit de cycles de supports
+		disjoints).
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $x\in\R$ avec $x=\pm b_{m}b_{m-1}\dots b_{0},a_{1}a_{2}\dots a_{n}\dots$
+	(écriture décimale). Montrer que $x\in\Q$ si et seulement si $\exists
+	n_{0}\in\N,\exists T\in\N^{*},\forall n\geqslant n_{0},~a_{n+T}=a_{n}$ (la
+	suite des décimales et périodique à partir du rang $n_{0}$).
+\end{exercise}
+
+\begin{exercise}
+	On définit $H_{0}=1$ et pour tout $n\geqslant1$,
+	$H_{n}=\frac{X(X-1)\dots(X-n+1)}{n!}$.
+	\begin{enumerate}
+		\item
+		Montrer que $H_{n}(\Z)\subset\Z$.
+		\item
+		Soit $P\in\C[X]$. Montrer que $P(\Z)\subset\Z$ et et seulement si $\exists
+		n\in\N,\exists(a_{0},\dots,a_{n})\in\Z^{n+1}$ avec
+		$P=\sum_{k=0}^{n}a_{k}H_{k}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $P\in\Q[X]$ irréductible sur $\Q[X]$, $\alpha\in\C$ racine de $P$.
+	Montrer que $\alpha$ est racine simple de $P$. On pourra se demander, si le
+	degré de $P$ est $n$ et $P=(X-\alpha)(a_{0}+a_{1}X+\dots+a_{n-1}X^{n-1})$,
+	quels sont les coefficients $a_{k}$ de $\Q$ tels que $a_{k}\in\Q$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $P\in\Q[X]$ de degré 5 tel que $P$ admette une racine complexe $\alpha$
+	d'ordre plus grand que 2. Montrer que $P$ admet au moins une racine
+	rationnelle. Quels sont les entiers $n\in\N$ tels que si $P\in\Q[X]$ est de
+	degré $n$ admette une racine complexe multiple, alors $P$ a une racine
+	rationnelle?
+\end{exercise}
+
+\begin{exercise}
+	On définit $\Z[\mathrm{i}]=\{a+\mathrm{i}b\mid(a,b)\in\Z^{2}\}$.
+	\begin{enumerate}
+		\item
+		Montrer que c'est le plus petit sous-anneau de $\C$ contenant $i$.
+		\item
+		On définit, pour $z=a+\mathrm{i}b\in\Z[\mathrm{i}]$, $\vert
+		z\vert^{2}=a^{2}+b^{2}$. Montrer que $z$ est inverse dans $\Z[\mathrm{i}]$
+		si et seulement si $\vert z\vert^{2}=1$. En déduire l'ensemble $U$ des
+		inversibles.
+		\item
+		\begin{enumerate}
+					\item
+					Montrer que pour tout $z_{0}=x_{0}+\mathrm{i}y_{0}\in\C$, il
+					existe $z=a+\mathrm{i}b\in\Z[\mathrm{i}]$, $\vert
+					z-z_{0}\vert^{2}\leqslant\frac{1}{2}$.
+					\item
+					Soit $(z_{1},z_{2})\in\Z[\mathrm{i}]^{2}$ avec $z_{2}\neq 0$.
+					Montrer qu'il existe $(q,r)\in\Z[\mathrm{i}]^{2}$ tel que
+					$z_{1}=qz_{2}+r$ et $\vert r\vert<\vert z_{1}\vert$. A-t-on
+					unicité?
+					\item
+					En déduire que $\Z[\mathrm{i}]$ est principal.
+				\end{enumerate}
+		\item
+		Montrer que tout élément $z\in\Z[\mathrm{i}]\setminus\{0\}$ peut se
+		décomposer en
+		$z=u\times\prod_{\rho\in\mathcal{P}_{0}}\rho^{\nu_{\rho}(z)}$ où $u\in U$
+		et $\mathcal{P}_{0}$ est un ensemble d'irréductibles tel que tout élément
+		de $\mathcal{P}$ (irréductibles de $\Z[\mathrm{i}]$) est associé à un
+		unique élément de $\mathcal{P}_{0}$ (on pourra raisonner par récurrence
+		sur $\vert z\vert^{2}\in\N)$. Montrer l'unicité de cette décomposition.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $p$ premier plus grand que 3. On note $\mathbb{F}_{p}$ le corps
+	$\Bigl(\Z/p\Z,+,\times\Bigr)$. On dit que $x\in\mathbb{F}_{p}^{*}$ est un
+	résidu quadratique si et seulement si il existe $y\in\mathbb{F}_{p}^{*}$ tel
+	que $x=y^{2}$. On note $R$ l'ensemble des résidus quadratiques.
+	\begin{enumerate}
+		\item
+		Montrer que $R$ est un sous-groupe de $(\mathbb{F}_{p},\times)$ de
+		cardinal $\frac{p-1}{2}$ et $a\in R$ si et seulement si
+		$a^{\frac{p-1}{2}}=1$.
+		\item
+		Montrer que si $p=a^{2}+b^{2}$ avec $(a,b)\in\N^{2}$, alors $p\equiv
+		1[4]$.
+		\item
+		Montrer que, pour $k\in\{1,\dots,p-1\}$, \function{f}{\{0,\dots
+		E(\sqrt{p})\}^{2}}{\mathbb{F}_p}{(a,b)}{a-kb} n'est pas injective. En
+		déduire qu'il existe $(a_{0},b_{0})\in\{1,\dots E(\sqrt{p})\}^{2}$ tel que
+		$k=a_{0}\times b_{0}^{-1}$.
+		\item
+		Soit $p$ premier tel qe $p\equiv 1[4]$. Montrer que $p$ est somme de deux
+		carrés.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Fermat]
+	Soit $p$ premier. On sait, d'après l'exercice précédent, que $p$ est somme de
+	deux carrés si et seulement si $p=2$ ou $p\equiv 1[4]$. On note
+	$A=\{n\in\N^{*}\mid\exists(a,b)\in\N^{2},~n=a^{2}+b^{2}\}$.
+	\begin{enumerate}
+		\item
+		Montrer que $A$ est stable par produit. On note alors $P_{1}=\{p
+		\text{ premier}\mid p=2\text{ou}p\equiv 1[4]\}$ et
+		$P_{2}=\{p\text{ premier}\mid p\equiv3[4]\}$.
+		\item
+		Soit $n\in\N^{*}$. On suppose que pour tout $p\in P_{2}$, $\nu_{p}(n)$ est
+		pair (où $\nu_{p}(n)$ la puissance de $p$ dans la décomposition en produit
+		de facteurs premiers de $n$). Montrer que $n\in A$.
+		\item
+		Montrer la réciproque (pour $n\in A$, pour $p\in P_{1}\cup P_{2})$ tel que
+		$\nu_{p}(n)$ est impair, on montrera que $-1$ est un carré dans
+		$\mathbb{F}_{p}$.
+	\end{enumerate}
+\end{exercise}

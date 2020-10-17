@@ -1,0 +1,447 @@
+\section{Réduction des endomorphismes}
+
+\begin{exercise}
+	Soit $E=\M_{n}(\C)$ et pour $(A,B)\in E^{2}$ et \function{f}{E}{E}{M}{AM} et \function{g}{E}{E}{M}{MB} et $h=f\circ g$.
+	\begin{enumerate}
+		\item Montrer que $f$ (respectivement $g$) est diagonalisable si et seulement si $A$ (respectivement $B$) l'est.
+		\item Soient $(X_{1},\dots,X_{n})$ et $(Y_{1},\dots,Y_{n})$ deux bases de $\C^{n}=\M_{n,1}(\C)$.
+		
+		Montrer que $(X_{i}Y_{i}^{\mathsf{T}})_{1\leqslant i,j\leqslant n}$ est une base de $E$.
+		\item On suppose que $A$ et $B$ sont diagonalisables. Montrer que $h$ l'est. A-t-on la réciproque ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(P,Q)\in\K[X]^{2}$ unitaires. Soient $D=P\wedge Q$, $M=P\vee Q$ et $f\in\L(E)$ où $E$ est un $\K$-espace vectoriel.
+	Montrer les différentes assertions suivantes:
+	\begin{enumerate}
+		\item $\ker D(f)=\ker P(f)\cap \ker Q(f)$.
+		\item $\ker M(f)=\ker P(f)+ \ker Q(f)$.
+		\item $\im D(f)=\im P(f)+\im Q(f)$.
+		\item $\im M(f)=\im P(f)\cap\im Q(f)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A\in\M_{n}(\R)$ telle que $A^{2}-4A+5I_{n}=0$. $A$ est-elle inversible ? Que dire de $A$ ? Que dire de $n$ ?
+	Calculer les puissances de $A$ ? 
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\R)$ est dite stochastique si et seulement si
+	$$
+	\left\{
+		\begin{array}[]{c}
+			\forall(i,j)\in\{1,\dots,n\}^{2},~a_{i,j}\geqslant0\\
+			\forall
+			i\in\{1,\dots,n\},~\sum_{j=1}^{n}a_{i,j}=1
+		\end{array}
+	\right.
+	$$
+	\begin{enumerate}
+		\item Montrer que $1\in\Sp_{\R}(A)$.
+		\item Soit $\lambda\in\Sp_{\C}(A)$, montrer que $\vert\lambda\vert\leqslant1$.
+		\item Soit $\lambda\in\Sp_{\C}(A)$ et $x$ un vecteur propre associé.\\
+		Montrer que si pour tout $i\in\{1,\dots,n\}, a_{i,i}>0$ alors $\lambda=1$.
+		\item Soit $\lambda\in\Sp_{\C}(A)$ telle que $\vert \lambda\vert=1$. Montrer que $\lambda$ est une racine de l'unité.
+		\item Reconnaître les matrices stochastiques dont toutes les valeurs sont de module 1.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in\M_{n}(\C)^{2}$ et \function{\Phi_{A,B}}{\M_n(\C)}{\M_n(\C)}{M}{AM-MB}
+	\begin{enumerate}
+		\item Déterminer $\Sp(\Phi_{A,B})$ en fonction de $\Sp(A)$ et $\Sp(B)$.
+		\item Montrer que si $A$ et $B$ sont diagonalisables, $\Phi_{A,B}$ l'est aussi.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A\in\M_{n}(\C)$ et $\theta\in\C$. Soit $F=\{M\in\M_{n}(\C)\mid AM=\theta MA\}$.
+	\begin{enumerate}
+		\item Montrer que pour tout $P\in\C[X]$, pour tout $M\in F$, on a $P(A)M=MP(\theta A)$. Établir une relation analogue portant sur $P(M)$.
+		\item On suppose $A$ diagonalisable. Quelle est l'action de $F$ sur les sous-espaces propres de $A$ ? Donner une condition nécessaire et suffisante sur $\Sp_{\C}(A)$ pour que $F=\{0\}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Réduire sur $\C$
+	$$
+	A=
+	\begin{pmatrix}
+		1 & 1 & 0 & 1\\
+		1 & 1 & 1 & 0\\
+		1 & 0 & 1 & 1\\
+		0 & 1 & 1 & 1
+	\end{pmatrix}
+	$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $0<a_{1}<\dots<a_{n}$ et $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\R)$ telle que pour tout $i\in\{1,\dots,n\}$, $a_{i,i}=0$ et si $i\neq j$, $a_{i,j}=a_{j}$.
+	\begin{enumerate}
+		\item Montrer que $\lambda\in\Sp_{\R}(A)$ si et seulement si 
+		$$\sum_{k=i}^{n}\frac{a_{k}}{\lambda+a_{k}}=1$$
+		\item $A$ est-elle diagonalisable ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ le sous-groupe de $GL_{n}(\R)$ engendré par les matrices diagonalisables inversibles. Montrer que $G=GL_{n}(\R)$/ 
+\end{exercise}
+
+\begin{exercise}
+	Soit $u\in\L(\C)$ et $p\geqslant2$. Montrer que $u^{p}$ est diagonalisable si et seulement si $u$ est diagonalisable et $\ker(u)=\ker(u^{2})$.
+\end{exercise}
+
+\begin{exercise}[Matrice circulante]
+	Soit $n\geqslant 1$, $(a_{0},\dots,a_{n-1})\in\C^{n}$ et 
+	$$
+	A(a_{0},\dots,a_{n-1})=
+	\begin{pmatrix}
+		a_{0} & a_{1} & \dots & \dots & a_{n-1}\\
+		a_{n-1} & \ddots & \ddots & \ddots & a_{n-2}\\
+		\vdots & \ddots & \ddots & \ddots & \vdots\\
+		a_{1} & \dots & \dots & a_{n-1} & a_{0}
+	\end{pmatrix}
+	$$
+	Donner les éléments propres de $A(a_{0},\dots,a_{n-1})$. Est-elle diagonalisable ? Calculer son déterminant.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\K$-espace vectoriel de dimension $n\geqslant1$. Soit $f\in\L(E)$ nilpotent tel que $\dim(\ker(f))=1$. Montrer que $f^{n-1}\neq 0$ et qu'il existe $x\in E\setminus\{0\}$, $(x,f(x),\dots,f^{n-1}(x))$ est une base de $E$.
+\end{exercise}
+
+\begin{exercise}[Endomorphisme cyclique]
+	Soit $V$ un $\C$-espace vectoriel de dimension finie $n$. Soit $u\in\L(V)$. Montrer qu'il existe $x\in V$ tel que $(x,u(x),\dots,u^{n-1}(x))$ soit une base de $V$ si et seulement si les sous-espaces propres de $u$ sont de dimension 1.
+\end{exercise}
+
+\begin{exercise}
+	Soit $V$ un $\C$-espace vectoriel de dimension $d$.
+	\begin{enumerate}
+		\item Pour $f\in\L(V)$, montrer qu'il existe $r(f)=\lim\limits_{n\to+\infty}\rg(f^{n})$.
+		\item Si $f$ et $g$ commutent, montrer que $r(f+g)\leqslant r(f)+r(g)$. Et si $f$ et $g$ ne commutent pas ?
+		\item Exprimer $r(f)$ en fonction du degré du polynôme caractéristique de $f$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $q\in\N^{*}$ et $\mathcal{G}_{q}=\{A\in\M_{n}(\C)\mid A^{q}=I_{n}\}$. Quels sont les points isolés de $\mathcal{G}_{q}$ ?
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$
+	M=
+	\begin{pmatrix}
+		1 & -1 & 0\\
+		-1 & 2 & 1\\
+		1& 0 & 1
+	\end{pmatrix}
+	$$
+	Soit $u\in\L(R^{3})$ canoniquement associée à $M$. Trouver tous les sous-espaces de $\R^{3}$ stables par $u$.
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$
+	A=
+	\left(
+		\begin{array}{@{}c|c@{}}
+		I_{n} &
+		\begin{matrix}
+			a_{1}\\
+			\vdots\\
+			a_{n}
+			\end{matrix}
+			\\
+		\hline
+		\begin{matrix}
+			a_{1} &
+			\dots
+			& a_{n}
+			\end{matrix}
+			& 0
+		\end{array}
+		\right)
+	$$
+	\begin{enumerate}
+		\item $A$ est-elle diagonalisable ?
+		\item Donner ses éléments propres.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ un sous-groupe borné de $\M_{n}(\C)$. Montrer que pour tout $M\in G$, $\Sp_{\C}(M)\subset \U$ et $M$ est diagonalisable. Montrer qu'il existe $\alpha>0$ tel que si $\vertiii{M-I_{n}}<\alpha$ alors $G=\{I_{n}\}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$
+	A=
+	\begin{pmatrix}
+		2 & 1 & 0\\
+		-3 & -1 & 1\\
+		1 & 0 & -1
+	\end{pmatrix}
+	$$
+	et $u\in\L(\R^{3})$ canoniquement associée à $A$.
+	\begin{enumerate}
+		\item Trouver tous les sous-espaces de $\R^{3}$ stables par $u$.
+		\item Existe-t-il $B\in\M_{3}(\R)$ telle que $B^{2}=A$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A\in\M_{3}(\R)$ tel que $A^{3}+A^{2}+A+I_{3}=0$ et $A\neq -I_{3}$. Montrer que $A$ est semblable à
+	$$
+	\begin{pmatrix}
+		0 & -1 & 0\\
+		1 & 0 & 0\\
+		0 & 0 & -1
+	\end{pmatrix}
+	$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\K$-espace vectoriel de dimension $n$, $f\in\L(E)$ et $x\in E$.
+	\begin{enumerate}
+		\item Montrer qu'il existe un unique $P_{x}$ unitaire tel que pour tout $A\in P_{x}\K$, $A(f)(x)=0$.
+		\item Montrer que $\mu_{f}$ (polynôme minimal de $f$) est égal à 
+		$$\mu_{f}=\underset{x\in E}{\vee}P_{x}$$
+		\item Soit $(x,y)\in E^{2}$, montrer que si $P_{x}\vee P_{y}=1$ alors $P_{x+y}=P_{x}P_{y}$.
+		\item Montrer qu'il existe $x\in E$ tel que $P_{x}=\mu_{f}$.
+		\item Montrer qu'il existe $v\in E$, tel que $(v,f(v),\dots f^{n-1}(v))$ est une base de $E$ si et seulement si $\deg(\mu_{f})=n$ (donc le polynôme minimal est égal au polynôme caractéristique).
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $S=\R^{\N^{*}}$, pour $s=(s_{n})_{n\geqslant1}\in S$, on définit 
+	$$s^{*}=\Biggl(\frac{1}{n}\sum_{k=1}^{n}s_{k}\Biggr)_{n\geqslant1}$$
+	\begin{enumerate}
+		\item Montrer que \function{\varphi}{S}{S}{s}{s^{*}} est un automorphisme.
+		\item Déterminer les éléments propres de $\varphi$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Disques de Gershgorin]
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\M_{n}(\C)$. On note, pour tout $1\leqslant i,j\leqslant n$, $L_{i}=\sum_{k\neq i}\vert a_{i,k}\vert$ et $C_{j}=\sum_{k\neq j}\vert a_{k,j}\vert$. Soit $D_{i}=\{z\in\C\mid\vert z-a_{i,i}\vert\leqslant L_{i}\}$ et $S_{j}=\{z\in\C\mid\vert z-a_{j,j}\vert\leqslant C_{j}\}$.
+	\begin{enumerate}
+		\item Montrer que $\Sp_{\C}(A)\subset\Biggl[\biggl(\bigcup_{i=1}^{n}D_{i}\biggr)\bigcap \biggl(\bigcup_{j=1}^{n}S_{j}\biggr)\Biggr]$
+		\item Montrer que si $\lambda\in\Sp_{\C}(A)$, il existe $i_{1}\neq i_{2}\in\{1,\dots,n\}^{2}$ tels que 
+		$$\vert\lambda-a_{i_{1},i_{1}}\vert\times\vert\lambda-a_{i_{2},i_{2}}\vert\leqslant L_{i_{1}}\times L_{i_{2}}$$
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$
+	A=
+	\left(
+		\begin{array}{@{}c|c@{}}
+		0_{n} &
+		\begin{matrix}
+			a_{1}\\
+			\vdots\\
+			a_{n}
+			\end{matrix}
+			\\
+		\hline
+		\begin{matrix}
+			a_{1} &
+			\dots
+			& a_{n}
+			\end{matrix}
+			& 0
+		\end{array}
+		\right)\in \M_{n+1}(\R)
+	$$
+	Réduire $A$.
+\end{exercise}
+
+\begin{exercise}
+	Soient $f$ et $g$ dans $\L(\K^{n})$ diagonalisables. Montrer que $f$ et $g$ ont les mêmes sous-espaces propres si et seulement s'il existe $(P,Q)\in\K_{n-1}[X]$ tels que $f=P(g)$ et $g=Q(f)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ un sous-groupe fini abélien de $GL_{2}(\Z)$. Montrer que $\vert G\vert\in\{1,2,3,4,6\}$ et donner un exemple d'un tel sous-groupe dans chaque cas.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\C$-espace vectoriel de dimension finie et $u\in\L(E)$. Montrer que $u$ est diagonalisable si et seulement si tout sous-espace stable admet un supplémentaire stable.
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$
+	A=
+	\begin{pmatrix}
+		1 & -1\\
+		1 & -1
+	\end{pmatrix}
+	$$
+	et 
+	$$
+	M=
+	\begin{pmatrix}
+		0 & 0 & A\\
+		0 & A & 0\\
+		A & 0 & 0
+	\end{pmatrix}
+	$$
+	$M$ est-elle diagonalisable ?
+\end{exercise}
+
+\begin{exercise}
+	Soit
+	$$
+	A=
+	\left(
+		\begin{array}{@{}c|c@{}}
+		I_{n} &
+		\begin{matrix}
+			a_{1}\\
+			\vdots\\
+			a_{n}
+			\end{matrix}
+			\\
+		\hline
+		\begin{matrix}
+			a_{1} &
+			\dots
+			& a_{n}
+			\end{matrix}
+			& 1
+		\end{array}
+		\right)
+	$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant1$ et $(x_{1},\dots,x_{n})\in\C^{n}$.
+	\begin{enumerate}
+		\item
+		$$
+		A=
+		\begin{pmatrix}
+			0 & \dots & 0 & x_{n}\\
+			\vdots &  & x_{n-1} & 0\\
+			0 & \reflectbox{$\ddots$} & & \vdots\\
+			x_{1}& 0 &\dots & 0
+		\end{pmatrix}
+		$$
+		est-elle diagonalisable ?
+		\item La suite $(A^{p})_{p\in\N}$ converger-t-elle ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Donner les valeurs propres et vecteurs propres de \function{\varphi}{\R_n[X]}{\R_n[X]}{P}{XP'-nP}
+		\item Donner les valeurs propres et vecteurs propres de \function{\varphi}{\R_n[X]}{\R_n[X]}{P}{XP'-nP''}
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$
+	A=
+	\begin{pmatrix}
+		a & b & c\\
+		c & a & b\\
+		b & c & a
+	\end{pmatrix}
+	$$
+	avec $a+b+c=1$ pour $(a,b,c)\in\R_{+}^{3}$.
+	\begin{enumerate}
+		\item Donner le $\Sp_{\C}(A)$.
+		\item La suite $(A^{n})_{n\in\N}$ converge-t-elle ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(n_{1},n_{2})\in(\N^{*})^{2}$ et
+	$$
+	A=
+	\begin{pmatrix}
+		B & C &\\
+		0_{n_{2},n_{1}} & D
+	\end{pmatrix}
+	$$
+	avec $B\in\M_{n_{1}}(\C)$, $C\in\M_{n_{1},n_{2}}\in\M_{n}(\C)^{2}$ et $D\in\M_{n_{2}}(\C)$.
+	\begin{enumerate}
+		\item Donner une formule pour $A^{p}$ pour $p\in\N$.
+		\item Comparer, du point de vue de la divisibilité $\mu_{A}$, $\mu_{B}\vee\mu_{D}$ et $\mu_{B}\times\mu_{D}$ (polynômes minimaux).
+		\item Que dire si $C=0$ ?
+		\item Que dire si $B=D$ et $C=I_{n_{1}}$ ?
+		\item Trouver une matrice $A$ telle que $\mu_{A}\neq \mu_{B}\vee\mu_{D}$ et $\mu_{A}\neq \mu_{B}\times\mu_{D}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\C$-espace vectoriel de dimension finie $n\geqslant1$. Soit $f\in\L(E)$ et \function{\Phi_f}{\L(E)}{\L(E)}{g}{f\circ g-g\circ f}
+	\begin{enumerate}
+		\item Montrer que si $f$ est nilpotente, $\Phi_{f}$ l'est aussi. A-t-on la réciproque ?
+		\item Montrer que $f$ est diagonalisable si et seulement si $\Phi_{f}$ l'est.
+		\item Déterminer $\Sp(\Phi_{f})$ en fonction de celui de $f$.
+		\item Montrer que si $g$ est vecteur propre de $\Phi_{f}$, il existe une base $\mathcal{B}$ de $E$ telle que $\mat(f,\mathcal{B})$ et $\mat(g,\mathcal{B})$ sont triangulaires supérieures.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\C$-espace vectoriel de dimension quelconque et $f\in\L(E)$ et $P\in\C[X]$. On pose $g=P(f)$. Soit $\lambda\in\C$ tel que $g-\lambda id_{E}$ n'est pas inversible. Montrer qu'il existe $\mu\in\C$ tel que $\lambda=P(\mu)$ et $f-\mu id_{E}$ n'est pas inversible. Si $\lambda\in\Sp(g)$, montrer qu'il existe $\mu\in\C$ tel que $\lambda=P(\mu)$ et $\mu\in\Sp(f)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\K$-espace vectoriel de dimension finie, $V$ un sous-espace vectoriel de $\L(E)$ tel que $V\{0\}\subset GL(E)$.
+	\begin{enumerate}
+		\item Montrer que $\dim(V)\leqslant\dim(E)$.
+		\item Trouver tous les $V$ possibles pour $\K=\C$.
+		\item Trouver tous les $V$ possibles pour $\K=\R$ et $E=\R^{2}$.
+		\item Si $\K=\R$ et $\dim(V)\geqslant2$, montrer qu'il existe $(f,g)\in V^{2}$ tel que si $\mathcal{B}$ est une base de $E$, $A=\mat(f,\mathcal{B})$ et $B=\mat(g,\mathcal{B})$ alors $i\in\Sp_{\C}(AB^{-1})$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $GL_{2}(\Z)=\{M\in\M_2(\Z)\text{ inversibles }\mid M^{-1}\in\M_{2}(\Z)\}$.
+	\begin{enumerate}
+		\item Soit $M\in\M_{2}(\Z)$, montrer que $M\in GL_{2}(\Z)$ si et seulement si $\det(M)=\pm1$.
+		\item Soit $G$ un sous-groupe abélien fini de $GL_{2}(\Z)$, montrer que $\vert G\vert\in\{1,2,3,4,6\}$ et décrire $G$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\K$ un corps quelconque, $n\geqslant1$ et $A\in\M_{n}(\K)$. On a $\chi_{A}=a_{0}+a_{1}X+\dots+a_{n-1}X^{n-1}+X^{n}$ (polynôme caractéristique).
+	\begin{enumerate}
+		\item Montrer qu'il existe $(M_{0},\dots,M_{n-1})\in\M_{n}(\K)^{n}$ tel que pour tout $\lambda\in\K$, $\com(\lambda I_{n}-A)^{\mathsf{T}}=M_{0}+\lambda M_{1}+\dots+\lambda^{n-1}M_{n-1}$ (où $\com$ indique la comatrice.)
+		\item En formant $(\lambda I_{n}-A)\com(\lambda I_{n}-A)^{\mathsf{T}}$, calculer $(M_{0},\dots,M_{n-1})$ en fonction de \\$A,A^{2},\dots,A^{n}$. En déduire le théorème de Cayley-Hamilton.
+		\item Pour les questions suivantes, on suppose que la caractéristique de $\K$ est 0. Montrer que pour tout $\lambda\in\K$, $\chi_{A}'(\lambda)=\Tr(\com(\lambda I_{n}-A)^{\mathsf{T}})$.
+		\item En déduire qu'il existe $f:\K^{n}\to\K^{n}$ telle que pour tout $A\in\M_{n}(\K)$, $(a_{0},\dots,a_{n-1}) = f(\Tr(A),\dots,\Tr(A^{n}))$.
+		\item Soit $B\in\M_{n}(\K)$, montrer que si pour tout $k\in\{1,\dots,n\}$ $\Tr(A^{k})=\Tr(B^{k})$ alors $\chi_{A}=\chi_{B}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On admet que si $P\in\K[X]$ (avec $\K$ un corps), il existe $\mathbb{L}$ sur-corps de $\K$ tel que $P$ soit scindé sur $\L$ avec la caractéristique de $\mathbb{L}$ égale à la caractéristique de $\K$.
+
+	Soit $A\in\M_{n}(\Z)$ et $p$ premier, montrer que $\Tr(A^{p})\equiv\Tr(A)[p]$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\C$-espace vectoriel de dimension finie et $u\in\L(E)$. On note $\rho(u)=\max\limits_{\lambda\in\Sp(u)}\vert \lambda\vert$. Montrer l'équivalence
+	\begin{enumerate}
+		\item [(i)] il existe une norme sur $E$ telle que $\vertiii{u}<1$,
+		\item [(ii)] $\rho(u)<1$,
+		\item [(iii)] $\lim\limits_{p\to+\infty}u^{p}=0$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in\M_{n}(C)^{2}$ avec $A$ diagonalisable sur $\C$. Montrer l'équivalence
+	\begin{enumerate}
+		\item [(i)] $\forall Y\in\C^{n}\setminus\{0\},\exists h\in\{0,\dots,n-1\}$, $BA^{k}Y\neq0$,
+		\item [(ii)] $\forall Y$ vecteur propre de $A$, $BY\neq0$,
+		\item [(iii)] $\forall Y\in\C^{n}\{0\}$, \function{\varphi}{\R}{\C^{n}}{t}{B\exp(tA)Y} n'est pas l'application nulle.
+	\end{enumerate}
+\end{exercise}

@@ -1,0 +1,1136 @@
+\section{Espaces vectoriels normés}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item A $(x,y)\in\R^{2}$ fixé, la fonction \function{\varphi}{\R}{\R}{t}{x\cos(t)+y\sin(2t)}
+		est bornée, donc le $\sup$ sur $\R$ existe. Pour la séparation, prendre $t=0$ et $t=\frac{\pi}{4}$. Pour l'inégalité triangulaire, montrer l'inégalité à $t$ fixé puis passer au $\sup$ sur $\R$.
+		
+		\item Si $\vert x\vert+\vert y\vert\leqslant1$, alors $N(x,y)\leqslant 1$ donc on a la première inclusion. 
+		
+		Si $N(x,y)\leqslant 1$, utiliser $t=0$ pour avoir $\vert x\vert\leqslant1$ et $t=\frac{\pi}{4}$ puis $t=-\frac{\pi}{4}$ pour pouvoir justifier
+		$$\vert 2y\vert\leqslant \Biggl\vert x\frac{\sqrt{2}}{2}+y\Biggr\vert+\Biggl\vert y-x\frac{\sqrt{2}}{2}\Biggr\vert\leqslant 2$$
+		et donc $\vert y\vert\leqslant1$. D'où la deuxième inclusion. 
+
+		\item On fixe $(x,y)\in S_{N}(0,1)\cap(\R_{+})^{2}$. $\varphi$ est $2\pi$-périodique, $\varphi(\pi-t)=\varphi(t)$ et $\sup\limits_{t\in\R}\vert\varphi(t)\vert=1$. On peut donc se limite à un intervalle de longueur $2\pi$ pour l'étude de $\varphi$. 
+		
+		On note que si $t\in[-\pi,0]$, $\cos(t)$ et $\sin(2t)$ sont de signes opposés. Donc
+		$$\vert\varphi(t)\vert\leqslant x\vert\cos(t)\vert+y\vert\sin(2t)\vert=\vert\varphi(-t)\vert$$
+		et $-t\in[0,\pi]$. Donc le $\sup$ est atteint sur $[0,\pi]$.
+
+		On note maintenant, comme $\vert\varphi(\pi-t)\vert=\vert\varphi(t)\vert$ sur $[0,\frac{\pi}{2}]$, que si $t\in[\frac{\pi}{4},\frac{\pi}{2}]$,
+		$$0\leqslant\varphi(t)=x\underbrace{\cos(t)}_{\in[0,\frac{\sqrt{2}}{2}]}+y\sin(2t)\leqslant x\underbrace{\cos(\frac{\pi}{2}-t)}_{\in[\frac{\sqrt{2}}{2},1]}+y\sin(2\times (\frac{\pi}{2}-t))=\varphi(\frac{\pi}{2}-t)$$
+
+		Donc le $\sup$ est atteint sur $[0,\frac{\pi}{4}]$. Soit maintenant $t_{0}\in[0,\frac{\pi}{4}]$ tel que $\varphi(t_{0})$ réalise le $\sup$ (existe car $\varphi$ est continue sur un compact). Comme c'est aussi le $\sup$ sur $\R$ qui est ouvert, on a la condition d'Euler du premier ordre: $\varphi'(t_{0})=0$.
+
+		On a donc $x\cos(t_{0})+y\sin(2t_{0})=1$ et $-x\sin(t_{0})+2y\cos(2t_{0})=0$. On en déduit les valeurs de $x$ et $y$ en fonction de $t_{0}$, en faisant attention que $\cos(t_{0})\neq0$ sinon $\sin(t_{0})=0$ aussi ce qui n'est pas le cas, et au cas où $t_{0}=0$.
+
+		Réciproquement, s'il existe $t_{0}\in[0,\frac{\pi}{4}]$ tel que $x$ et $y$ s'écrivent de la façon demandée, alors $t_{0}$ est l'unique point satisfaisant $\varphi(t_{0})=1$ et $\varphi'(t_{0})=0$. Mais alors le $\sup$ de $\varphi$ sur $[0,\frac{\pi}{4}]$ est atteint en un point $t_{1}$ qui vérifie les mêmes choses, donc $t_{1}=t_{0}$ d'où $N(x,y)=1$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour l'inégalité triangulaire, introduire la forme bilinéaire symétrique positive sur $E$ \function{\varphi}{E\times E}{\R}{(f,g)}{f(0)g(0)+\int_{0}^{1}f'(t)g'(t)dt}
+		Alors $N(f)=\sqrt{\varphi(f,f)}$ et on utilise l'inégalité de Minkowski.
+		\item Pour $x\in[0,1]$, écrire $\vert f(x)\vert=\vert f(0)+f(x)-f(0)\vert$, $f(x)-f(0)=\int_{0}^{x}f'(t)dt$, utiliser Cauchy-Schwarz avec $f'$ et $1$ puis que $\sqrt{a}+\sqrt{b}\leqslant\sqrt{2}\sqrt{a+b}$, pour enfin passer au $\sup$ sur $x$.
+		\item Utiliser, pour $n\in\N^{*}$, la fonction \function{f_n}{[0,1]}{\R}{t}{t^n}
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Si $f$ est ouverte, $f(\R^{n})$ est un sous-espace vectoriel ouvert de $R^{p}$. Donc $f$ est surjective.
+
+	Si $f$ est surjective, on prend $F$ un supplémentaire de $\ker(f)$ dans $\R^{n}$ avec $\dim(\ker(f))=n-p$ et $\dim(F)=p$. Soit $(e_{1},\dots,e_{p})$ une base de $F$ et $(e_{p+1},\dots,e_{n})$ une base de $\ker(f)$. On vérifie que $(f(e_{1},\dots,f(e_{p}))$ est une base de $\R^{p}$. On définit \function{N_1}{\R^n}{\R}{\sum_{i}^{n}x_{i}e_{i}}{\max\limits_{1\leqslant i\leqslant n}\vert x_{i}\vert}
+	norme sur $\R^{n}$ et \function{N_2}{\R^p}{\R}{\sum_{i}^{p}y_{i}f(e_{i})}{\max\limits_{1\leqslant i\leqslant p}\vert y_{i}\vert}
+	norme sur $\R^{p}$.
+
+	Soit $\Theta$ un ouvert de $\R^{n}$, soit $y_{0}\in f(\Theta)$, il existe $x_{0}\in\Theta\colon y_{0}=f(x_{0})$. Si $x_{0}=\sum_{i=1}^{n}\alpha_{i}e_{i}$, alors $y_{0}=\sum_{i=1}^{p}\alpha_{i}f(e_{i})$. Comme $\Theta$ est un ouvert, il existe $r_{0}>0$ tel que 
+	$$B_{N_{1}}(x_{0},r_{0})\subset\Theta$$
+	Soit $y=\sum_{i=}^{p}\beta_{i}f(e_{i})\in\R^{p}$, si $N_{2}(y-y_{0})<r_{0}$, pour tout $i\in\{1,\dots,p\}$, $\vert\beta_{i}-\alpha_{i}\vert<r_{0}$ et 
+	$$y=f\Biggl(\sum_{i=1}^{p}\beta_{i}e_{i}+\sum_{i=p+1}^{n}\alpha_{i}e_{i}\Biggr)\overset{\text{def}}{=}f(x)$$
+	avec $N_{1}(x-x_{0})=\max\limits_{1\leqslant i\leqslant p}\vert\beta_{i}-\alpha_{i}\vert<r_{0}$. Ainsi $x\in\Theta$ et $y\in f(\Theta)$, donc $B_{N_{2}}(y_{0},r_{0})\subset f(\Theta)$ et $f(\Theta)$ est un ouvert.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Classique.
+		\item $$\vert f(x)\vert\leqslant\vert f(0)\vert+\vert f(x)-f(0)\vert\leqslant\vert f(0)\vert+\kappa(f)x\leqslant N(f)$$
+		car $x\leqslant 1$, donc $N_{\infty}\leqslant N$. Pour la non-équivalence, prendre \function{f_n}{[0,1]}{\R}{t}{t^n}
+		\item On a $\vert f(0)\vert\leqslant N_{\infty}(f)$ donc $N(f)\leqslant N'(f)$. Ensuite, $N_{\infty}\leqslant N$ donne $N'\leqslant N+\kappa\leqslant 2N$. Donc $N$ est $N'$ sont équivalentes.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Exemple de normes qui, en dimension infinie, ne se dominent pas mutuellement. On prend $(e_{i})_{i\in I}$ une base (de Hamel), $J=(i_{n})_{n\in\N}\subset I$ dénombrable. Si $x=\sum_{i\in I}x_{i}e_{i}$, on peut vérifier que 
+	$$N_{1}(x)=\sum_{n\in\N}\vert x_{i_{n}}\vert+\sum_{i\in I\setminus J}\vert x_{i}\vert$$
+	et
+	$$N_{2}(x)=\sum_{n\in\N}n\vert x_{i_{2n}}\vert+\sum_{n\in\N}\frac{1}{n+1}\bigl\lvert x_{i_{2n+1}}\bigr\rvert+\sum_{i\in I\setminus J}\vert x_{i}\vert$$
+	ne se dominent pas.
+\end{remark}
+
+\begin{solution}
+	Il existe $\alpha>0$ tel que $B_{\Vert\cdot\Vert_{\infty}}(I_{n},\alpha)\subset G$. Soient $i\neq j$ et $\lambda\in\C$. Il existe $p\in\N^{*}$ tel que $\frac{\vert\lambda\vert}{p}<\alpha$. Alors 
+	$$\Biggl\lVert T_{i,j}\Biggl(\frac{\lambda}{p}\Biggr)-I_{n}\Biggr\rVert_{\infty}=\Biggl\lvert\frac{\lambda}{p}\Biggr\rvert<\alpha$$
+	donc $T_{i,j}(\lambda)\in G$ ($T_{i,j}$ est la matrice de transvection: $T_{i,j}(\lambda)=I_{n}+\lambda E_{i,j}$).
+
+	Ainsi,
+	$$T_{i,j}(\lambda)=\Biggl(T_{i,j}\Biggl(\frac{\lambda}{p}\Biggr)\Biggr)^{p}\in G$$
+
+	Soit $\delta=\rho e^{\mathrm{i}\theta}\in\C^{*}$. On a $\lim\limits_{n\to+\infty}\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}}=1$ donc il existe $p\in\N^{*}$ tel que $\vert\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}}-1\vert<\alpha$.
+	
+	On a alors
+	$$\Biggl\lVert D_{n}\Bigl(\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}}\Bigr)-I_{n}\Biggr\rVert_{\infty}<\alpha$$
+	donc $D_{n}(\delta)=D_{n}(\rho^{\frac{1}{p}}e^{\mathrm{i}\frac{\theta}{p}})^{p}\in G$ (matrice de dilatation).
+
+	Comme les matrices de transvection et de dilatation engendrent $GL_{n}(\C)$, on a bien $G=GL_{n}(\C)$.
+\end{solution}
+
+\begin{remark}
+	C'est faux sur $\R$. Contre-exemple: matrices de déterminant positif.
+\end{remark}
+
+\begin{solution}
+	Si $f$ n'est pas continue en 0, il existe $\varepsilon_{0}>0$ tel que pour tout $\alpha>0$, il existe $h\in E$ avec $\Vert h\Vert\leqslant\alpha$ et $\Vert f(h)\Vert>\varepsilon_{0}$. On prends $\alpha_{n}=\frac{1}{n+1}$, d'où $\Vert nh_{n}\Vert\leqslant1$ mais $\underbrace{\Vert f(nh_{n})\Vert}_{\leqslant M}>n\varepsilon_{0}\xrightarrow[n\to+\infty]{}+\infty$. Donc $f$ est continue en $0$. Comme $f$ est linéaire, pour tout $x\in E$,
+	$$\lim\limits_{\Vert h\Vert\to0}f(x+h)=\lim\limits_{\Vert h\Vert\to0}f(x)+f(h)=f(x)$$
+	donc $f$ est continue.
+
+	On a $f(px)=p(fx)$ pour tout $p\in\Z$ puis $qf(\frac{p}{q}x)=f(px)=pf(x)$ pour tout $(p,q)\in\Z\times\N^{*}$ donc pour tout $r\in\Q$, $f(rx)=rf(x)$.
+	Soit $\lambda\in\E$, il existe une suite de rationnels telle que $\lim\limits_{n\to+\infty} r_{n}=\lambda$. Comme $f$ est continue, on a 
+	\begin{align*}
+		f(\lambda x)
+		&=\lim\limits_{n\to+\infty}f(r_{n}x)\\
+		&=\lim\limits_{n\to+\infty}r_{n}f(x)\\
+		&=\lambda f(x)
+	\end{align*}
+	Donc $f$ est linéaire.
+\end{solution}
+
+\begin{remark}
+	Soit $e_{0}=1$ et $e_{1}=\sqrt{2}$ et $(e_{i})_{i\in I}$ une $\Q$-base de $\R$ ($0\in I$). On définie 
+	$$f\Bigl(\sum_{i\in I}\lambda_{i} e_{i}\Bigr)=\lambda_{0}e_{0}+\sqrt{2}\sum_{i\in I\setminus\{0\}}\lambda_{i}e_{i}$$
+	$f$ vérifie $f(x+y)=f(x)+f(y)$, mais si $(r_{n})_{n\in\N}$ est une suite de rationnels tendant vers $\sqrt{2}$, $f(r_{n})=r_{n}\to\sqrt{2}\neq f(\sqrt{2})=2$.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $\alpha(A)\subset \overline{A}$ donc $\overline{\mathring{\overline{A}}}\subset\overline{A}$ donc $\alpha(\alpha(A))\subset\alpha(A)$. Comme $\alpha(A)$ est un ouvert inclus dans $\overline{\mathring{\overline{A}}}\subset\overline{A}$ donc $\alpha(A)\subset\alpha(\alpha(A))$.
+
+		\item Si $\beta(A)=\overline{\mathring{A}}$, on montre aussi que $\beta(\beta(A))=\beta(A)$. On a donc $A,\overline{A},\mathring{A},\overline{\mathring{A}},\mathring{\overline{A}},\overline{\mathring{\overline{A}}}$ et $\mathring{\overline{\mathring{A}}}$ et c'est tout.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $d_{A}=d_{B}$, 
+		$$\overline{A}=\{x\in E\bigm| d_{A}(x)=0\}=\{x\in E\bigm| d_{B}(x)=0\}=\overline{B}$$
+		Réciproquement, soit $x\in E$ et $\varepsilon>0$, il existe $a_{1}\in\overline{A}$, $\Vert x-a_{i}\Vert\leqslant d_{\overline{A}}(x)+\frac{\varepsilon}{2}$ (par définition de l'inf). Il existe $a_{2}\in A$, $\Vert a_{1}-a_{2}\Vert\leqslant\frac{\varepsilon}{2}$ (par définition de la fermeture). Ainsi,
+		$$d_{A}(x)\leqslant\Vert x-a_{2}\Vert\leqslant\Vert x-a_{1}\Vert+\Vert a_{1}-a_{2}\Vert\leqslant d_{\overline{A}}(x)+\varepsilon$$
+		Ceci valant pour tout $\varepsilon>0$, $d_{A}(x)\leqslant d_{\overline{A}}(x)$. Comme $A\subset\overline{A}$, $d_{\overline{A}}\leqslant d_{A}$, on a $d_{A}=d_{\overline{A}}=d_{\overline{B}}=d_{B}$.
+
+		\item Soit $x\in A$, on a $d_{B}(x)=\vert d_{B}(x)-d_{A}(x)\vert\leqslant\rho(A,B)$ donc $\sup\limits_{x\in A}d_{B}(x)\leqslant\rho(A,B)$, de même pour $\sup\limits_{y\in B}d_{A}(y)$ donc on on a un première inégalité.
+		
+		Réciproquement, soit $x\in E$ et $\varepsilon>0$, il existe $a\in A$ et $b\in B$ tel que $\Vert x-a\Vert\leqslant d_{A}(x)+\varepsilon$ et $\Vert x-b\Vert\leqslant d_{B}(x)+\varepsilon$.
+		On a alors
+		$$d_{A}(x)\leqslant\Vert x-a\Vert\leqslant\Vert a-b\Vert+\Vert x-b\Vert\leqslant d_{B}(x)+\varepsilon+\alpha(A,B)$$
+		Ceci vaut pour tout $\varepsilon>0$, donc $d_{A}(x)\leqslant d_{B}(x)+\alpha(A,B)$. De même, $d_{B}(x)\leqslant d_{A}(x)+\alpha(A,B)$ donc $\rho(A,B)\leqslant\alpha(A,B)$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $(y_{n})_{n\in\N}\in P(F)^{\N}$ qui converge vers $y\in\C$ donc il existe $(x_{n})\in F^{\N}$ telle que l'on ait pour tout $n\in\N$, $P(x_{n})=y_{n}$. $(x_{n})_{n\in\N}$ est bornée car $\lim\limits_{z\to+\infty}\vert P(z)\vert=+\infty$ (car $P$ est non constant), donc on peut extraire (Bolzano-Weierstrass) $x_{\sigma(n)}\to x$ et $x\in F$ car $F$ est fermé. Par continuité de $z\mapsto P(z)$ sur $\C$, on a $y=P(x)\in P(F)$.
+		
+		\item Soit $\Theta$ un ouvert de $\C$, soit $y\in P(\Theta),\exists x\in\Theta$ tel que $P(x)=y$ et il existe $r>0$, $B(x,r)\subset\Theta$. Soit $y'\in\C$, supposons que pour tout $x'\in\C$ tel que $P(x')=y'$, on a $\vert x-x'\vert>r$. Soit $Q(X)=P(X)-y'=a\prod_{i=1}^{n}(X-x_{i})$ non constant où $a$ est le coefficient dominatrice de $P$. Par hypothèse, pour tout $i\in\{1,\dots,n\}\colon\vert x_{i}-x\vert>r$ (car $P(x_{i})=y'$), ainsi 
+		$$\vert Q(x)\vert=\vert y-y'\vert\geqslant\vert a\vert r^{n}$$
+		Par contraposée, si $\vert y-y'\vert\leqslant\frac{\vert a\vert r^{n}}{2}$, alors il existe $x'\in\C$ tel que $P(x')=y'$ et $\vert x'-x\vert<r$.Ainsi, $x'\in B(x,r)\subset\Theta$ et $y'\in P(\Theta)$. Donc $B(y,\vert a\vert r^{n})\subset P(\Theta)$ et $P(\Theta)$ est un ouvert.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $P\notin\mathcal{S}$, il existe $z_{0}\in\C\setminus\R$ tel que $P(z_{0})=0$ et $\vert\Im(z_{0})\vert^{n}>0=P(z_{0})$. Par contraposée, si pour tout $z\in\C$, $\vert P(z)\vert\geqslant\vert\Im(z_{})\vert^{n}$,alors $P\in\mathcal{S}$.
+
+		Réciproquement, si $P=\prod_{i=1}^{n}(X-\lambda_{i})\in\mathcal{S}$ avec $(\lambda_{i})_{1\leqslant i\leqslant n}$ réels, soit $z=a+ib\in\C$. On a
+		$$\vert P(z)\vert=\prod_{i=1}^{n}\vert a-\lambda_{i}+ib\vert\geqslant\vert b\vert^{n}$$
+		
+		\item Soit $(P_{p})_{p\in\N}\in\mathcal{S}^{\N}$ telle que $P_{p}\xrightarrow[p\to+\infty]{}P\in F$. Soit $z\in\C$, on a pour tout $p\in\N$, $\vert P_{p}(z)\vert\geqslant\vert\Im(z)\vert^{n}$ donc quand $p\to+\infty$, $\vert P(z)\vert\geqslant\vert\Im(z)\vert^{n}$ donc $P\in\mathcal{S}$ et $S$ est fermé.
+		
+		\item Soit $(M_{p})_{p\in\N}$ une suite de matrice trigonalisable sur $\R$ qui converge vers $M\in\M_{n}(\R)$. Ib bite $\chi_{p}$ le polynôme caractéristique de $M_{p}$. Pour tout $p\in\N$, $\chi_{p}\in\mathcal{S}$ et $\chi_{p}\xrightarrow[p\to+\infty]{}\chi_{M}$. Comme $\mathcal{S}$ est fermé, $\chi_{M}\in \mathcal{S}$ et $M$ est trigonalisable sur $\R$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\varphi$ est linéaire et $\dim(\K_{m-1}[X]\times\K_{n-1}[X])=m+n+=\dim(\K_{n+m-1}[X])$.
+		
+		Si $\varphi$ est bijective, elle est surjective et il existe $(U,V)\in\K[X]^{2}$ tel que $UA+BV=1$ et d'après le théorème de Bézout, on a $A\wedge B=1$.
+
+		Réciproquement, si $\varphi$ n'est pas surjective, il existe $(U,V)\in(\K_{m-1}[X]\times\K_{n-1}[X])\setminus\{(0,0)\}$ tel que $\varphi(U,V)=0$ d'où $AU=-BV$. Soit $\delta=A\wedge B$, on écrit $A=\delta A_{1}$ et $B=\delta B_{1}$ avec $A_{1}\wedge B_{1}=1$ et on a $A_{1}U=-B_{1}V$. D'après le théorème de Gauss, on a $A_{1}\mid V$ et $B_{1}\mid U$. Si $U=0$, on a $V=0$ et de même si $V=0$, on a $U=0$. On peut donc supposer $U\neq0$ et $V\neq 0$, et on a alors $\deg(A_{1})\leqslant\deg(V)\leqslant n-1<n=\deg(A)$ mais $A=\delta A_{1}$ donc $\deg(\delta)\geqslant1$ et $A\wedge B\neq 1$.
+
+		\item $\Phi$ est continue car $R_{A,B}$ est un polynôme en les coefficients de $A$ et $B$.
+		
+		\item Comme on est dans $\C$, $\Delta=\{P\in\C_{p}[X]\bigm| P\wedge P'=1\}=\{P\in\C_p[X]\bigm| R_{P,P'}\neq0\}$. $\Phi_{P,P'}$ est continue d'après la question précédente, $\delta=\Phi_{P,P'}^{-1}(\C^{*})$ donc $\Delta$ est ouvert.
+		
+		Sur $\R$, on n'a pas la caractérisation de scindé à racines simples si et seulement si $P\wedge P'=1$ (contre-exemple: $P=X^{2}+1$). Dans $\R_{3}[X]$, $X$ est scindé à racines simples et $X(1+\varepsilon X)^{2}\xrightarrow[\varepsilon\to0]{}X$ et $-\frac{1}{\varepsilon}$ est racine double, donc $\Delta$ n'est pas ouvert.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	On peut cependant considérer 
+	$$\Delta_{n}=\{P\in\C_{p}[X]\bigm| P\text{ scindé à racines simples sur }\R\text{ et }\deg(P)=n\}$$
+	Si $\lambda_{1}<\lambda_{2}<\dots<\lambda_{n}$ sont les racines (distinctes) de $R$ sur $\R$, on choisit $\alpha_{0}\in]-\infty,\lambda_{1}$, $\alpha_{n}\in]\lambda_{n},+\infty[$ et $\alpha_{i}\in]\lambda_{i},\lambda_{i+1}[$ si $i=1,\dots,n-1$. 
+
+	Pour tout $k\in\{0,\dots,n-1\}$, on a $P(\alpha_{k})P(\alpha_{k+1})<0$ (car les racines de $P$ provoquent des changements de signe). Soit \function{\Psi}{\R_n[X]}{\R^n}{Q}{(Q(\alpha_{k})Q(\alpha_{k+1}))_{0\leqslant k\leqslant n-1}}
+	$\Psi$ est continue sur $\R_{n}[X]$ et $\Psi(P)\in(\R_{-}^{*})^{n}$ qui est ouvert, donc il existe $r>0$ tel que si $\Vert P-Q\Vert<r$, alors $\Psi(Q)\in(\R_{-}^{*})^{n}$. Donc $Q$ change $n$ fois de signe, et admet au moins $n$ racines. Mais $\deg(Q)=n$, donc $Q$ est scindé à racines simples sur $\R$, donc $\Delta_{n}$ est ouvert dans $\{P\in\R[X]\bigm|\deg(P)=n\}$.
+\end{remark}
+
+\begin{remark}
+	$$\{M\in\M_{n}(\C)\bigm|M\text{ diagonalisable à racines simples}\}=\{M\in\M_{n}(\C)\bigm|\chi_M\text{ sciné à racines simples}\}$$
+	est un ouvert de $\M_{n}(\C)$ car $M\mapsto\chi_{M}$ est continue sur $\M_{n}(\C)$, et c'est aussi vrai sur $\R$.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit \function{f}{\M_n(\R)}{\M_n(\R)}{A}{A^{n}}
+		$f$ est continue et $F=f^{-1}(\{0\})$ donc $F=\overline{F}$.
+
+		Soit $M_{0}\in F$, $X^{n}$ annule $M_{0}$ donc $M_{0}$ est trigonalisable: on écrit $M_{0}$ dans une base où les coefficients diagonaux sont tous nuls. Soit alors $M_{\varepsilon}$ la même matrice dans la même base en rajoutant simplement $\varepsilon$ en première position de la diagonale. Alors $M_{\varepsilon}\xrightarrow[\varepsilon\to0]{}M_{0}$ et $M_{\varepsilon}\notin F$ donc $\mathring{F}=\emptyset$. Notons que cela signifie que $F$ est dense.
+
+		\item La norme dérive du produit scalaire $(A|B)\mapsto\Tr(A^{\mathsf{T}}B)$. Soit $M\in F$, on a $\Vert M-I_{n}\Vert^{2}=\Vert M\Vert^{2}+\Vert I_{n}\Vert^{2}-2(M|I_{n})$. On a $(M|I_{n})=\Tr(M)=0$ car $M$ est nilpotente. Donc $\Vert M-I_{n}\Vert^{2}$ est minimale pour $\Vert M\Vert^{2}$ minimale, donc pour $M=0\in F$. Donc $d(I_{n},F)=\Vert I_{n}\Vert=\sqrt{n}$ (et la distance est atteinte pour $0_{\M_n(\R)}$).
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $A\mapsto\det(A)$ est continue et $GL_{n}(\K)=\det^{-1}(\K^{*})$ est donc ouvert. Si $A\in\M_{n}(\K)$, pour $p\in\N$, on pose $A_{p}=A-\frac{1}{p+1}I_{n}$. Comme $\Sp(A)$ est fini, il existe $N\in\N$, tel que pour tout $p\geqslant N$, $\frac{1}{p+1}\notin\Sp(A)$. Donc pour tout $p\geqslant N$, $A_{p}\in GL_{n}(\K)$, et $A_{p}\xrightarrow[p\to+\infty]{}A$ donc $GL_{n}(\K)$ est dense dans $\M_{n}(\K)$.
+		\item On fixe $B\in\M_{n}(\K)$. Soit $A\in GL_{n}(\K)$. On écrit $BA=A^{-1}(AB)A$ donc $AB$ et $BA$ sont semblables donc $\chi_{AB}=\chi_{BA}$. Comme, à $B$ fixé, $A\mapsto\chi_{AB}$ et $A\mapsto\chi_{BA}$ sont continues sur $\M_{n}(\K)$, on a le résultat par densité.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $v_{p}\circ(id_{E}-u)=(id_{E}-u)\circ v_{p}=\frac{1}{p}(id_{E}-u^{p})$, donc $\Vert v_{p}\circ(id_{E}-u)\Vert\leqslant\frac{1}{p}(\Vert id_{E}\Vert+\Vert u^{p}\Vert)\xrightarrow[p\to+\infty]{}0$.
+		
+		Soit $x\in\ker(u-id_{E})\cap\im(u-id_{E})$, on a $u(x)=x$ et il existe $y\in E$, $x=(u-id_{E})(y)$. On a $v_{p}(x)=\frac{1}{p}(px)=x$ et $v_{p}(x)=v_{p}\circ(u-id_{E})(y)\xrightarrow[p\to+\infty]{}0$ d'où $x=0$. Le théorème du rang permet de conclure.
+
+		\item Soit $x\in E$, on écrit $x=x_{1}+x_{2}$ avec $\Pi(x)=x_{1}$ et $x_{2}=(u-id_{E})(y_{2})$. Alors $v_{p}(x)=x_{1}+v_{p}\circ(u-id_{E})(y_{2})\xrightarrow[p\to+\infty]{}x_{1}=\Pi(x)$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $x\in A$, $f_{n}(x)\in A$ car $A$ est convexe. Soit $(x,y)\in A^{2}$, on a
+		$$\Vert f_{n}(x)-f_{n}(y)\Vert=\Bigl(1-\frac{1}{n}\Bigr)\Vert f(x)-f(y)\Vert\leqslant\Bigl(1-\frac{1}{n}\Bigr)\Vert x-y\Vert$$
+		Donc $f_{n}$ est $(1-\frac{1}{n})$-lipschitzienne. On forme \function{g_n}{A}{\R}{x}{\Vert f_n(x)-x\Vert}
+		qui est continue. Soit $x_{n}\in A$ telle que $g_{n}(x_{n})=\min\limits_{x\in A}g_{n}(x)$ (existe car $A$ est compact et $g_{n}$ continue). On a $x_{n}\in A$, d'où $f_{n}(x_{n})\in A$ et 
+		$$g_{n}(f_{n}(x_{n}))=\Vert f_{n}(f_{n}(x_{n}))-f_{n}(x_{n})\Vert\leqslant\Bigl(1-\frac{1}{n}\Bigr)\Vert f_{n}(x_{n})-x_{n}\Vert=\Bigl(1-\frac{1}{n}\Bigr)g_{n}(x_{n})$$
+		Si $g_{n}(x_{n})\neq0$, alors on aurait $g_{n}(f(x_{n}))<g_{n}(x_{n})$ ce qui n'est pas possible. Donc $g_{n}(x_{n})=0$ et $f_{n}(x_{n})=x_{n}$.
+
+		Soit $y_{n}$ un autre point fixe, on a 
+		$$\Vert f_{n}(x_{n})-f_{n}(y_{n})\Vert=\Vert x_{n}-y_{n}\Vert\leqslant\Bigl(1-\frac{1}{n}\Bigr)\Vert x_{n}-y_{n}\Vert$$
+		donc $x_{n}=y_{n}$.
+
+		\item On a $(x_{n})_{n\in\N}\in A^{\N}$ et on extrait (car $A$ est compact) et on a 
+		$$x_{\sigma(n)}\xrightarrow[n\to+\infty]{}x\in A$$
+		On a 
+		$$f_{\sigma(n)}(x_{\sigma(n)})=x_{\sigma(n)}=\underbrace{\frac{1}{\sigma(n)}f(x_{0})}_{\xrightarrow[n\to+\infty]{}0}+\underbrace{\Bigl(1-\frac{1}{\sigma(n)}\Bigr)f(x_{\sigma(n)})}_{\xrightarrow[n\to+\infty]{}f(x)}$$
+		par continuité de $f$. Donc $f(x)=x$.
+
+		\item Soit $(x,y)\in A^{2}$, points fixes de $f$, et $t\in[0,1]$, on pose $z=tx+(1-t)y$. On a 
+		\begin{align*}
+			\Vert x-y\Vert
+			&=\Vert f(x)-f(y)\Vert\\
+			&\leqslant \Vert f(x)-f(z)\Vert+\Vert f(z)-f(y)\Vert\\
+			&\leqslant\Vert x-z\Vert+\Vert z-y\Vert\\
+			&=(1-t)\Vert x-y\Vert+t\Vert x-y\Vert\\
+			&=\Vert x-y\Vert
+		\end{align*}
+		On a donc égalité partout: $\Vert f(x)-f(y)\Vert=\Vert f(x)-f(z)\Vert+\Vert f(z)-f(y)\Vert$ et $\Vert f(x)-f(z)\Vert=\Vert x-z\Vert$, $\Vert f(z)-f(y)\Vert=\Vert z-y\Vert$ car $f$ est $1$-lipschitzienne.
+
+		Comme la norme est euclidienne, il existe $\lambda\in\R_{+}$ tel que $f(x)-f(z)=\lambda(f(z)-f(y))$ d'où $f(x)+\lambda f(y)=(\lambda+1)f(z)$ d'où $f(z)=\frac{x+\lambda y}{\lambda+1}=t'x+(1-t')y$ avec $t'=\frac{1}{\lambda+1}\in[0,1]$. En reportant, on a 
+		$$\Vert f(x)-f(z))\Vert=\Vert x-t'x-(1-t')y\Vert=(1-t')\Vert x-y\Vert=\Vert x-z\Vert=(1-t)\Vert x-y\Vert$$
+		Si $x\neq y$, alors $t=t'$ et $f(z)=tx+(1-t)y=z$.
+
+		\item Soit dans $\R^{2}$, $\overline{B_{\Vert\cdot\Vert}(0,1)}=[-1,1]^{2}=A$. Soit \function{f}{A}{A}{(x,y)}{(x,\vert x\vert)}
+		On a 
+		\begin{align*}
+			\Vert f(x_{1},y_{1})-f(x_{2},y_{2})\Vert_{\infty}
+			&= \Vert (x_{1},\vert x_{1}\vert)(x_{2},\vert x_{2}\vert)\Vert_{\infty}\\
+			&=\max\{\vert x_{1}-x_{2}\vert, \bigl\vert\vert x_{1}\vert-\vert x_{2}\vert\bigr\vert\}\\
+			&=\vert x_{1}-x_{2}\vert\\
+			&\leqslant\Vert (x_{1},y_{1})-(x_{2},y_{2})\Vert_{\infty}
+		\end{align*}
+		Donc $f$ est 1-lipschitzienne, on a $f(x,y)=(y,x)$ si et seulement si $y=\vert x\vert$. Donc ici, $F$ n'est pas convexe.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a pour tout $(x,y)\in E^{2}$, $f(x+y)=f(x)+f(y)$ et par récurrence, pour tout $n\in\Z$, $f(nx)=nf(x)$. Pour $r=\frac{p}{q}\in\Q$, on a $f(qrx)=qf(rx)=f(px)=pf(x)$ donc $f(rx)=rf(x)$. Par densité de $\Q$ dans $\R$ et continuité de $f$, on a pour tout $\lambda\in\R$, $f(\lambda x)=\lambda f(x)$. Donc $f$ est linéaire.
+		
+		Pour $\K=\C$, cela ne marche pas. Contre-exemple: la conjugaison dans $\C$.
+
+		\item On étudie la série, pour $x$ fixé de terme général 
+		$$\Vert v_{n+1}(x)-v_{n}(x)\Vert=\frac{1}{2^{n}}\Vert f(2^{n+1}x)-2f(2^{n}x)\Vert\leqslant\frac{M}{2^{n+1}}$$
+		qui est donc convergente. Donc $(v_{n})_{n\in\N}$ converge.
+
+		\item On a $v_{0}(x)=f(x)$, donc $\sum_{n=0}^{+\infty}v_{n+1}(x)-v_{n}(x)=g(x)-f(x)$. $f$ étant continue, $v_{n}$ l'est aussi, et pour tout $n\in\N$, comme pour tout $x\in E$, $\Vert (v_{n+1}-v_{n})(x)\Vert\leqslant\frac{M}{2^{n+1}}$, donc $g$ est continue.
+		
+		\item On a, pour tout $(x,y)\in E^{2}$,
+		$$\Vert v_{n}(x+y)-v_{n}(x)-v_{n}(y)\Vert=\Vert \frac{1}{2^{n}}f(2^{n}(x+y))-\frac{1}{2^{n}}(f(2^{n}x)+f(2^{n}y))\Vert\leqslant\frac{M}{2^{n}}$$
+		Donc quand $n\to+\infty$, $g(x+y)=g(x)+g(y)$.
+
+		On a pour tout $x\in E$, 
+		$$\Vert g(x)-f(x)\Vert=\Bigl\lVert\sum_{n=0}^{+\infty}v_{n+1}(x)-v_{n}(x)\Bigr\Vert\rVert\leqslant\sum_{n=0}^{+\infty}\Vert v_{n+1}(x)-v_{n}(x)\Vert\leqslant\sum_{n=0}^{\infty}\frac{M}{2^{n}}=M$$
+
+		Soit maintenant $h$ linéaire continue telle que $h-f$ soit bornée, soit $M'=\sup\limits_{x\in E}\Vert h(x)-f(x)\Vert$. On a donc 
+		$$\Vert v_{n}(x)-h(x)\Vert=\Bigl\Vert\frac{1}{2^{n}}f(2^{n}x)-\frac{1}{2^{n}}h(2^{n}x)\Bigr\Vert\leqslant\frac{M'}{2^{n}}$$
+		car $h$ est linéaire. Donc quand $n\to+\infty$, $g(x)=h(x)$ car $\lim\limits_{n\to+\infty}v_{n}(x)=g(x)$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	En particulier, pour $t=f(0)$, $f^{-1}(\{f(0)\})=\{x\in E\bigm| f(x)=f(0)\}$ est borné (car compact). Donc il existe $A$ tel que $f^{-1}(\{f(0)\})\subset\overline{B(0,A)}$. Par contraposée, pour tout $x\in E$, si $\Vert x\Vert>A$, alors $f(x)\neq f(0)$.
+
+	On montre alors que $E\setminus\overline{B(0,A)}$ est connexe par arcs (faire le tour de la boule par l'extérieur).
+
+	$f$ étant continue, d'après le théorème des valeurs intermédiaires, on a soit pour tout $x\in E\setminus\overline{B(0,A)}$, $f(x)>f(0)$ soit $f(x)<f(0)$. Quitte à remplacer $f$ par $-f$, on se place dans le cas $f(x)>f(0)$. Comme on est en dimension finie sur $\overline{B(0,A)}$ compact, $f$ atteint son minimum et ce minimum est plus petit que $f(0)$, c'est donc un minimum global.
+\end{solution}
+
+\begin{remark}
+	C'est faux pour $n=1$. Contre-exemple: $f=id_{\R}$.
+\end{remark}
+
+\begin{solution}
+	Si c'était le cas, on prend un cercle $\mathcal{C}$ compact (et connexe par arcs). $f(\mathcal{C})$ est compact connexe par arc dans $\R$. On note $f(\mathcal{C})=[a,b]$ (avec $a<b$ car $f$ injective). Si $x\in\mathcal{C}$ est tel que $f(x)=\frac{a+b}{2}$, on $\underbrace{f(\mathcal{C}\setminus\{x\})}_{\text{connexe par arc}}=\underbrace{[a,b]\setminus\Bigl\{\frac{a+b}{2}\Bigr\}}_{\text{pas connexe par arc}}$ donc une telle fonction n'existe pas.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $n\in\N$, $\Vert e_{n}\Vert_{l^{1}}=1$ et $\vert K_{n}\vert=\vert\varphi(e_{n})\vert\leqslant\vertiii{\varphi}$ donc $(K_{n})_{n\in\N}$ est bornée. On note $M=\sup\vert K_{n}\vert\leqslant\vertiii{\varphi}$.
+		
+		Soit maintenant $u=(u_{n})_{n\in\N}\in l^{1}$. On a, pour $N\in\N$, 
+		$$\Biggl\lVert u-\sum_{n=0}^{N}u_{n}e_{n}\Biggr\rVert_{1}\leqslant\sum_{n=N+1}^{\infty}\vert u_{n}\vert\xrightarrow[N\to+\infty]{}0$$
+		(reste d'une série convergente). Par continuité de $\varphi$, on a donc 
+		$$\vert \varphi(u)\vert\leqslant\sum_{n=0}^{\infty}\vert u_{n}\vert \vert K_{n}\vert\leqslant M\Vert u\Vert_{1}$$
+
+		Ainsi, $\vertiii{\varphi}\leqslant M$ et donc $\vertiii{\varphi}=M$.
+
+		\item $F$ est linéaire et une isométrie d'après la question précédente, donc injective. Soit $(K_{n})_{n\in\N}\in l^{\infty}$. On définit \function{\varphi}{l^1}{\R}{u=(u_n)_{n\in\N}}{\sum_{n=0}^{\infty}u_{n}K_{n}}
+		Elle est bien définie car $\sum_{n=0}^{+\infty}\vert u_{n}\vert<+\infty$ et $(K_{n})_{n\in\N}$ est bornée. Elle est linéaire, et continue car $\vert\varphi(u)\vert\leqslant\Vert(K_{n})_{n\in\N}\Vert_{\infty}\Vert u\Vert_{1}$.
+
+		Enfin, pour tout $n\in\N,\varphi(e_{n})=K_{n}$. Donc $F(\varphi)=(K_{n})_{n\in\N}$ et $F$ est surjective. Donc $F$ est une isométrie bijective et le dual topologique de $l^{1}$ est équivalent à $l^{\infty}$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\varphi$ une forme linéaire non nulle telle que $K=\ker(\varphi)$/ Si $F$ est dense, $\varphi$ est discontinue. Soit $(a,b)\in(E\setminus H)^{2}$ et $(x_{n})_{n\in\N}\in H^{\N}$ qui converge vers $b-a$ (existe car $H$ est dense). La suite $(a+x_{n})_{n\in\N}$ converge vers $b$. Pour $n\in\N$, on a $\varphi(a+x_{n})=\varphi(a)\neq0$, et pour $t\in[0,1]$, $\varphi(t(a+x_{n})+(1-t)(a+x_{n+1}))=\varphi(a)\neq0$. Donc $[a+x_{n},a+x_{n+1}]\subset E\setminus H$.
+		
+		Soit $\gamma:[0,1]\to E\setminus H$ telle que 
+		$$
+		\left\{
+			\begin{array}[]{rcll}
+				\gamma(t) & = &\alpha_{n}t+\beta_{n}\in[a+x_{n},a+x_{n+1}]\subset E\setminus H &\text{si }t\in[1-\frac{1}{n},1-\frac{1}{n+1}]\\
+				\gamma(1) & = &b&\\
+				\gamma(t) &= & a+tx_{0}&\text{si }t\in[0,\frac{1}{2}]
+			\end{array}
+		\right.
+		$$
+
+		On cherche à définir $\alpha_{n}$ et $\beta_{n}$: on veut $\gamma(1-\frac{1}{n})=a+x_{n}$ et $\gamma(1-\frac{1}{n+1})=a+x_{n+1}$ (pour la continuité en se raccordant au $x_{n}$). En résolvant le système, on trouve $\alpha_{n}=n(n+1)(x_{n}-x_{n+1})$ et $\beta_{n}=a+x_{n}-(n-1)(n+1)(x_{n}-x_{n+1})$.
+
+		Soit alors $\varepsilon>0$, il existe $N\in\N$ tel que pour tout $n\geqslant N\colon\Vert x_{n}+a-b\Vert<\varepsilon$ et pour tout $n\geqslant N$, pour tout $t\in[1-\frac{1}{n},1-\frac{1}{n+1}[$, $\gamma(t)\in[a+x_{n},a+x_{n+1}]\subset B(b,\varepsilon)$ par convexité de la boule. Donc $\lim\limits_{t\to 1}\gamma(t)=b$ et $\gamma$ est continue. Donc $E\setminus H$ est connexe par arcs.
+
+		\item Soit $\varphi$ une forme linéaire telle que $\ker(f)=H$ est fermé. Alors $\varphi$ est continue (à redémontrer). Soit $x\in E\setminus H$, on a $\varphi(x)\varphi(-x)<0$ et d'après le théorème des valeurs intermédiaires, si $E\setminus H$ était connexe par arcs, $\varphi$ s'annulerait sur $E\setminus H$ ce qui n'est pas vrai. Donc $E\setminus H$ n'est pas connexe par arcs.
+		
+		\item Si $\K=\C$, si $H$ est dense alors $E\setminus H$ est connexe par arc d'après la première question. Si $H$ est fermé, soit $\varphi$ une forme linéaire continue telle que $\ker(f)=H$. Soit $(x_{1},x_{2})\in(E\setminus H)^{2}$. 
+		
+		\begin{itemize}
+			\item Si $\frac{\varphi(x_{1})}{\varphi(x_{2})}\notin\R_{-}^{*}$, alors pour tout $t\in[0,1]$, $\varphi(\underbrace{tx_{1}+(1-t)x_{2}}_{\in E\setminus H})\neq0$ et on peut relier directement $x_{1}$ et $x_{2}$.
+			\item Sinon, il existe $\theta\in\R,(\rho,\rho')\in(\R_{+}^{*})^{2}$ avec $\varphi(x_{1})=\rho e^{\mathrm{i}\theta}$ et $\varphi(x_{2})=\rho'e^{\mathrm{i}(\theta+\pi)}$. Alors $x_{3}=ix_{1}$ est tel que $[x_{1},x_{3}]\subset E\setminus H$ et $[x_{2},x_{3}]\subset E\setminus H$ (on contourne l'origine par une rotation de l'angle $\frac{\pi}{2}$). Par conséquent, on peut utiliser $x_{3}$ pour relier $x_{1}$ et $x_{2}$ donc $E\setminus H$ est connexe par arcs.
+		\end{itemize}
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Soit \function{\varphi}{\R_{+}^{*}}{\R}{x}{((x,\sin(\frac{1}{x})))}
+	$\varphi$ est continue et $\Gamma)\varphi(\R_{+}^{*})$ est connexe par arcs.
+
+	On a $\overline{\Gamma}=\Gamma\cup\Gamma'$ avec $\Gamma'=\{(0,y)\bigm| y\in[-1,1]\}$. En effet, pour tout $y\in[-1,1]$, on pose $x_{k}=\frac{1}{\arcsin(y)+2k\pi}$. On a $\sin(\frac{1}{x_{k}})=y\xrightarrow[k\to+\infty]{}y$ donc $(0,y)=\lim\limits_{k\to=+\infty}(x_{k},\sin(\frac{1}{x_{k}}))\in\overline{\Gamma}$.
+
+	Réciproquement, si $(x,y)\in\overline{\Gamma}$, il existe $(x_{k})\in(\R_{+}^{*})^{\N}$ avec $x=\lim\limits_{k\to+\infty}x_{k}$ et $y=\lim\limits_{k\to+\infty}\sin(\frac{1}{x_{k}})$. Si $x>0$, par continuité, $y=\sin(\frac{1}{x})$ et $(x,y)\in\Gamma$. Si $x=0$, $y\in[-1,1]$ donc $(x,y)\in\Gamma'$.
+
+	Si $\overline{\Gamma}$ est connexe par arcs, il existe \function{\gamma}{[0,1]}{\overline{\Gamma}}{t}{(x(t),y(t))}
+	continue telle que $\gamma(0)=(0,0)$ et $\gamma(1)=(\frac{1}{\pi},0)$. La première projection $t\mapsto x(t)$ est continue avec $x(0)=0$ et $x(1)=\frac{1}{\pi}$. On définit maintenant $t_{1}=\sup\{t\in[0,1]\bigm| x(t)=0\}$. Par continuité, $x(t_{1})=0$ et donc $t_{1}<1$. Donc pour tout $t>t_{1}$, $x(t)>0$ et $\gamma(t)=(x(t),\sin(\frac{1}{x(t)}))$ pour $t>t_{1}$ et $\gamma(t_{1})=(0,y_{1})$ avec $y_{1}\in[-1,1]$.
+
+	Or, -1 et 1 n'appartiennent pas simultanément à $]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$. On peut supposer que $1\notin]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$. Comme $\gamma$ est continue, il existe $t_{2}>t_{1}$ tel que pour tout $t\in]t_{1},t_{2}]$, $\sin(\frac{1}{x(t)})\in]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$. Or $x(t_{2})>0$ et $x(t_{1})=0$ donc il existe $k\in\N^{*}$, $t_{0}\in]t_{1},t_{2}]$ tel que $x(t_{0})=\frac{1}{2k\pi+\frac{\pi}{2}}$ (théorème des valeurs intermédiaires). Mais alors $\sin(\frac{1}{x(t_{0})})=1\notin]y_{1}-\frac{1}{2},y_{1}+\frac{1}{2}[$ ce qui contredit ce qui précède.
+
+	Donc $\overline{\Gamma}$ n'est pas connexe par arcs.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $n\in\N$, $u_{n}\in K$ car $u_{n}$ est le barycentre de $(a,T(a),\dots,T^{n}(a))$ et $K$ est convexe. Comme $K$ est compact, on peut extraire $u_{\sigma(n)}\xrightarrow[n\to+\infty]{}u\in K$. Alors
+		$$(id_{E}-T)(u_{\sigma(n)})=\frac{1}{\sigma(n)+1}(id_{E}-T^{\sigma(n)+1})(a)$$
+		d'où 
+		$$\rVert(id_{E}-T)(u_{\sigma(n)})\lVert\leqslant\frac{1}{\sigma(n)+1}\times 2M\xrightarrow[n\to+\infty]{}0$$
+		avec $M=\sup\limits_{x\in K}\Vert x\Vert$ (existe car $K$ est compact donc borné). Par continuité de $T$, on a $T(u)=u$.
+
+		\item Posons $F'=\{u\in K\bigm| T(u)=u\}$ fermé car $K'=K\cap\Bigl((\underbrace{id_{E}-T}_{\text{continu}})^{-1}\{0\}\Bigr)$.
+		Donc $K'$ est compact et non vide d'après la première question. De plus, pour tout $(u_{1},u_{2})\in K'^{2}$, pour tout $t\in[0,1]$, par linéarité de $T$, on a 
+		$$T(tu_{1}+(1-t)u_{2})=tu_{1}+(1-t)u_{2}$$
+		donc $K'$ convexe. De plus, comme $U\circ T=T\circ U$, pour tout $u\in K'$, on a $T(U(u))=U(T(u))=U(u)$ donc $U(u)\in K'$. On applique alors la question 1 à $K'$ est il existe $y\in K'\colon U(y)=y$ et $T(y)=y$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item C'est le théorème du rang car $\rg(u)\leqslant n\leqslant p-2$, et $H=\{(\alpha_{1},\dots,\alpha_{p})\bigm|\sum_{i=1}^{p}\alpha_{i}=0\}$ est de dimension $p-1$ donc $H\cap\ker(u)\neq\{0\}$ (formule de Grassmann).
+		
+		\item On a 
+		$$\sum_{i=1}^{p}(\lambda_{i}+t\alpha_{i})x_{i}=\sum_{i=1}^{p}\lambda_{i}x_{i}+t\sum_{i=1}^{p}\alpha_{i}x_{i}=x$$
+		et
+		$$\sum_{i=1}^{p}(\lambda_{i}+t\alpha_{i})=\sum_{i=1}^{p}\lambda_{i}+t\sum_{i=1}^{p}\alpha_{i}=1$$
+
+		Soit $I_{+}=\{i\in\{1,\dots,p\}\bigm|\alpha_{i}>0\}$ et $I_{-}=\{i\in\{1,\dots,p\}\bigm|\alpha_{i}<0\}$. On a $I_{+}\neq\emptyset$ et $I_{-}\neq\emptyset$ car $\sum_{i=1}^{p}\alpha_{i}=0$ et $(\alpha_{1},\dots,\alpha_{p})\neq(0,\dots,0)$. Soit $t\geqslant0$. Pour tout $i\in I_{+}$, $\lambda_{i}+t\alpha_{i}\geqslant0$. Pour $i\in I_{-}$, $\lambda_{i}+t\underbrace{\alpha_{i}}_{<0}\geqslant 0$ si et seulement si $t\leqslant-\frac{\lambda_{i}}{\alpha_{i}}$. Prenons alors 
+		$$t=\min\limits_{i\in I_{-}}\Bigl(-\frac{\lambda_{i}}{\alpha_{i}}\Bigr)$$
+		On au aussi pour tout $i\in I_{-}$, $\lambda_{i}+t\alpha_{i}\geqslant 0$ et il existe $i_{0}\in I_{-}$ tel que $\lambda_{i_{0}}+t\alpha_{i_{0}}=0$.
+
+		\item Par récurrence descendante, on se ramène à n+1 points car si $x$ est barycentre de $p$ points avec $p\geqslant n+2$, alors il est barycentre de $p-1$ points.
+		
+		\item Soit $A=\{(\lambda_{1},\dots,\lambda_{n+1})\in\R_{+}^{n+1}\bigm|\sum_{i=1}^{n+1}\lambda_{i}=1\}$ fermé et borné en dimension finie donc compact. Soit \function{f}{A\times K^{n+1}}{\conv(K)}{((\lambda_{1},\dots,\lambda_{n}),(x_{1},\dots,x_{n+1}))}{\sum_{i=1}^{n+1}\lambda_{i}x_{i}}
+		$f$ est surjective et continue, donc $\conv(K)$ est l'image continue d'un compact donc $\conv(K)$ est compact.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Pour tout $u\in A_{p}$, $\Sp(u)\subset\{\alpha_{1},\dots,\alpha_{r}\}$ distincts et $u$ est diagonalisable. Réciproquement, si $u$ est diagonalisable et $\Sp(u)\subset\{\alpha_{1},\dots,\alpha_{r}\}$ alors dans une base la matrice de $u$ est diagonale avec des $\alpha_{i}$ (éventuellement plusieurs selon leur multiplicités), donc $u\in A_{p}$.
+
+	Si $u\in A_{p}$, on écrit donc le polynôme caractéristique de $u$
+	$$\chi_{u}=\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}$$
+	avec $0\leqslant m_{i}\leqslant\dim(E)=n$ et $\sum_{i=1}^{r}m_{i}=n$.
+	$u\mapsto\chi_{u}$ est continue. Pour $(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}$ tel que $\sum_{i=1}^{r}m_{i}=n$, notons 
+	$$A_{m_{1},\dots,m_{r}}=\Biggl\{u\in A_{p}\Bigm|\chi_{u}=\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}$$
+	et 
+	$$\Bigl[u\mapsto\chi_u(A_{p})\Bigr]=\Bigl\{\bigcup_{(m_{1},\dots,m_{r})\in D_{n,r}}\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Bigr\}\Biggr\}$$
+	où
+	$$D_{n,r}=\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\}$$
+
+	Donc d'après la contraposée du théorème des valeurs intermédiaires,\\si $(m_{1},\dots,m_{r})\neq(m'_{1},\dots,m'_{r})$, alors $A_{m_{1},\dots,m_{r}}$ et $A_{m'_{1},\dots,m'_{r}}$ ne sont pas dans la même composante connexe par arcs car
+	$$\Bigl[u\mapsto\chi_u\Bigl(A_{m_{1},\dots,m_{p}}\bigcup A_{m'_{1},\dots,m'_{r}}\Bigr)\Bigr]=\underbrace{\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Bigr\}\Biggr\}\bigcup\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m'_{i}}\Bigr\}\Biggr\}}_{\text{pas connexe par arcs}}$$
+	
+	Si $\gamma\colon[0,1]\to A_{p}$ est continue, $t\mapsto\chi_{\gamma(t)}=a_{0}(t)+a_{1}(t)X+\dots+a_{n-1}(t)X^{n-1}+X^{n}$ est continue sur $[0,1]$ et prend un nombre fini de valeurs donc est constante. $a_{i}\colon[0,1]\to\R$ continues et prend un nombre fini de valeurs donc est constante.
+
+	Soit $u_{0}\in A_{m_{1},\dots,m_{r}}$, soit $u\in A_{m_{1},\dots,m_{r}}$, alors il existe une base $\mathcal{B}_{0}$ base de $E$ telle que $\mat\limits_{\mathcal{B}_{0}}(u_{0})=M_{0}$ soit diagonale avec des $\alpha_{1}$ sur les $m_{1}$ premières lignes de la diagonale, $\alpha_{2}$ sur les $m_{2}$ lignes suivantes, etc. Soit $M=\mat\limits_{\mathcal{B}_{0}}(u)$. $M$ est semblable à $M_{0}$ donc il existe $P\in GL_{n}(\C)$ telle que $M=PM_{0}P^{-1}$.
+
+	Or $GL_{n}(\C)$ est connexe par arcs, donc il existe $\varphi\colon[0,1]\to GL_{n}(\C)$ continue telle que $\varphi(0)=P$ et $\varphi(1)=I_{n}$. On pose alors \function{\Phi}{[0,1]}{A_{m_{1},\dots,m_{r}}}{t}{\varphi(t)M_{0}\varphi^{-1}(t)}
+	Alors $A_{m_{1},\dots,m_{r}}$ est connexe par arcs.
+
+	Le nombre de composantes est donc égal au cardinal de 
+	$$D_{n,r}=\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\}$$
+	qui vaut $\binom{m+r-1}{r-1}$ possibilités (place $n$ points sur une droite et les séparer avec $r-1$ barres: le nombre de points dans chaque segment donne un $m_{i}$, il y a $m+r-1$ possibilités pour placer les $r-1$ barres).
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $i\in\{1,\dots,n\}$, $\vert AX\vert_{i}=\sum_{j=1}^{n}\underbrace{a_{i,j}x_{j}}_{>0}\geqslant0$. Si $\vert AX\vert_{i}=0$ alors pour tout $j\in\{1,\dots,n\}$, $\underbrace{a_{i,j}}_{>0}x_{j}=0$ donc $x_{j}=0$, impossible car $X\neq 0$.
+		
+		\item Si $\vert AX\vert=A\vert X\vert$. On a pour tout $i\in\{1,\dots,n\}$,
+		$$\Bigl\lvert\sum_{j=1}^{n}a_{i,j}x_{j}\Bigr\rvert=\sum_{j=1}^{n}a_{i,j}\lvert x_{j}\rvert$$
+		donc les $(a_{i,j}x_{j})_{1\leqslant j\leqslant n}$ ont tous même argument. On prend $\theta=\arg(x_{j})$.
+
+		\item $K$ est fermé et borné en dimension finie: c'est un compact. On a $I_{x}\neq\emptyset$ car $AX\geqslant0$ donc $0\in I_{x}$. Soit $(t_{n})_{n\in\N}\in I_{x}^{\N}$ convergeant vers $t\in\R$. Pour tout $k\in\N$, $AX-t_{k}X\geqslant0$ donc pour tout $i\in\{1,\dots,n\}$, $(AX-t_{k}X)_{i}\geqslant0$ et par passage à la limite, $AX-tX\geqslant0$ donc $I_{x}$ est fermé.
+		
+		Si $t\in I_{x}$, 
+		$$\vert tX\vert_{1}=t=\sum_{i=1}^{n}t\underbrace{x_{i}}_{\geqslant0}\leqslant\sum_{i=1}^{n}\underbrace{\sum_{j=1}^{n}a_{i,j}x_{j}}_{=(AX)_{i}}\leqslant n\max\limits_{1\leqslant i,j\leqslant n}\vert a_{i,j}\vert$$
+		car $\sum_{j=1}^{n}x_{j}=1$.
+		On note $M=n\max\limits_{1\leqslant i,j\leqslant n}\vert a_{i,j}\vert$.
+
+		\item Pour tout $x\in K$, $\theta(X)\leqslant M$ donc $\theta$ est bien borné sur $K$. Par définition de $r_{0}$, il existe $(X_{k})_{k\in\N}\in K^{\N}$ tel que $\lim\limits_{k\to+\infty}\theta(X_k)=r_{0}$. On note $\theta(X_{k})=t_{k}$. Comme $K$ est compact, il existe $\sigma\colon\N\to\N$ strictement croissante telle que $X_{\sigma(k)}$ converge vers $X^{+}\in K$. A priori, $\theta(X^{+})\leqslant r_{0}$. On a $AX_{\sigma(k)}-t_{\sigma(k)}X_{\sigma(k)}\geqslant0$ pour tout $k\in\N$ donc par passage à la limite, $AX^{+}-r_{0}X^{+}\geqslant0$ et donc $r_{0}\leqslant\theta(X^{+})$ donc $r_{0}=\theta(X^{+})$.
+		
+		\item Soit $Y=A^{+}-r_{0}X^{+}\geqslant0$. Si $Y\neq0$, alors $AY>0$ d'après la question 1 donc 
+		$$AY=A\underbrace{(AX^{+})}_{>0}-r_{0}\underbrace{(AX^{+})_{>0}}>0$$
+		On a $AY>\varepsilon AX^{+}$ si et seulement si pour tout $i\in\{1,\dots,n\}$, $\vert AY\vert_{i}>\varepsilon\vert AX^{+}\vert_{i}$ (car $AY>0$). On pose alors 
+		$$\varepsilon=\frac{1}{2}\min\limits_{1\leqslant i\leqslant n}\frac{\vert AY\vert_{i}}{\vert AX^{+}\vert_{i}}$$
+		On a alors $AY-\varepsilon AX^{+}>0$ d'où 
+		$$A\underbrace{\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}}_{\in K}-(r_{0}+\varepsilon)\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}>0$$
+		donc $r_{0}+\varepsilon\in I_{\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}}$ c'est-à-dire 
+		$$r_{0}+\varepsilon\leqslant\theta\Bigl(\frac{AX^{+}}{\Vert AX^{+}\Vert_{1}}\Bigr)\leqslant r_{0}$$
+		ce qui est impossible. Nécessairement $Y=0$.
+
+		\item Pour tout $i\in\{1,\dots,n\}$, on a 
+		$$\vert AV\vert_{i}=\Bigl\lvert\sum_{j=1}^{n}a_{i,j}v_{j}\Bigr\rvert\leqslant\sum_{i=1}^{n}a_{i,j}\vert v_{j}\vert=(A\vert V\vert)_{i}$$
+		donc $\vert\lambda\vert=\vert AV\vert\leqslant A\vert V\vert$. De plus, $\vert V\vert\in K$ donc $\vert\lambda\vert\leqslant\theta(\vert V\vert)\leqslant r_{0}$. Notons que cela implique que le rayon spectral de $A$ est $\rho(A)$ est plus petit que $r_{0}$ et que l'on a même égalité.
+
+		\item Si $\vert\lambda\vert=r_{0}$, on a $\vert\lambda\vert=\theta(\vert V\vert)=r_{0}$ et d'après la question 5 on a $A\vert V\vert=r_{0}\vert V\vert=\vert AV\vert$.
+		
+		D'après la question 2, il existe $\theta\in\R$ tel que $V=e^{\mathrm{i}\theta}\vert V\vert$. Or 
+		$$AV=\lambda V=e^{\mathrm{i}\theta}A\vert V\vert=e^{\mathrm{i}\theta}r_{0}\vert V\vert$$
+		et comme $\vert K\vert\in K, \vert V\vert\neq0$ et on a donc $\lambda=r_{0}$.
+
+		\item Soit $V\in\M_{n,1}(\C)$ tel que $\Vert V\Vert_{1}=1$ et $AV=r_{0}V$. D'après la question précédente, on a $V=e^{\mathrm{i}\theta}\vert V\vert$ et $A\vert V\vert=r_{0}\vert V\vert$. Soit alors $t\in\R$, on a 
+		$$A(X^{+}+t\vert V\vert)=r_{0}(X^{+}+t\vert V\vert)$$
+		Notons maintenant que si $Y\geqslant0$ avec $Y\neq0$ vérifie $AY=r_{0}Y$, alors $Y>0$. En effet, d'après la première question, $AY>0$. On a $r_{0}\neq0$ car sinon $\Sp_{\C}=\{0\}$ et $A^{n}=0$ ce qui est impossible car ses coefficients sont strictement positifs. D'où $Y>0$.
+
+		Ainsi, par définition de $X^{+}$, on a $X^{+}>0$ et $\vert V\vert>0$. On a alors 
+		$$(X^{+})_{i}+t\vert v_{i}\vert\geqslant0$$
+		si et seulement si
+		$$t\geqslant -\frac{\vert X^{+}\vert_{i}}{\vert v_{i}\vert}$$
+		On prend 
+		$$t=\min\limits_{1\leqslant i\leqslant n}-\frac{\vert X^{+}\vert_{i}}{\vert v_{i}\vert}$$
+		Finalement, on a $X^{+}+t\vert V\vert\geqslant0$ et une de ses coordonnées vaut 0 (car on a pris le minimum sur les $i$). Nécessairement, $X^{+}+t\vert V\vert=0$ (car $A(X^{+}+t\vert V\vert)=r_{0}(X^{+}+t\vert V\vert)$) et donc $\vert V\vert\in\R X^{+}$. Donc $V=e^{\mathrm{i}\theta}\vert V\vert\in\C X^{+}$ et ainsi 
+		$$\dim(\ker(A-r_{0}I_{n}))=1$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Soit \function{\varphi}{U\times V}{\R}{(x,y)}{\Vert x-y\Vert}
+	On a 
+	$$\vert\varphi(x,y)-\varphi(x',y')=\vert\Vert x-y\Vert-\Vert x'-y'\Vert\vert\leqslant\Vert (x-y)-(x'-y')\Vert\leqslant\Vert x-x'\Vert+\Vert y-y'\Vert\leqslant2\Vert(x,y)-(x',y')\Vert_{\infty}$$
+	donc $\varphi$ est continue.
+
+	$U\times V$ est compact, donc il existe $(x_{1},y_{1})\in(U\times V)$ telle que $\varphi(x_{1},y_{1})=\min\limits_{(x,y)\in U\times V}\varphi(x,y)$. Comme $U$ et $V$ sont disjoints, $x_{1}\neq y_{1}$ et $\varphi(x_{1},y_{1}))d(U,V)>0$.
+
+	Soit $\alpha=\frac{d(U,V)}{3}$. On pose $U'=\{x\in E\Bigm|d(x,U)<\alpha\}$ et $V'=\{x\in E\Bigm|d(x,V)<\alpha\}$. $x\mapsto\Vert x\Vert$ est continue car $1$-lipschitzienne donc $U'$ est $V'$ sont des ouverts et on a bien $U\subset U'$ et $V\subset V'$. Soit ensuite $x\in U'\cap V'$, on a $d(x,U)<\alpha$ et $d(x,V)<\alpha$ donc il existe $(u,v)\in U\times V$, $d(x,u)<\alpha$ et $d(x,v)<\alpha$. Alors $d(u,v)\leqslant2\alpha$ ce qui est absurde. Donc $U'\cap V'=\emptyset$.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $f$ est 1-lipschitzienne donc est continue. On forme \function{g}{K}{\R}{x}{\Vert x-f(x)\Vert}
+		$g$ est continue, $K$ est compact donc il existe $a\in K$ tel que $g(a)=\min_{x\in K}g(x)$. Si $a\neq f(a)$, alors $\Vert f(a)-f^{2}(a)\Vert=g(f(a))<\Vert a-f(a)\Vert=g(a)$ ce qui est impossible par définition de $a$. Donc $f(a)=a$. S'il existe $a'\neq a$ tel que $f(a')=a'$, alors $\Vert f(a)-f(a')\Vert=\Vert a-a'\Vert<\Vert a-a'\Vert$ ce qui est impossible. Donc $a$ est unique.
+
+		\item S'il existe $n_{0}\in\N$ tel que $u_{n_{0}}=a$ alors pour tout $n\geqslant n_{0}$, $u_{n}=a$ et $\lim\limits_{n\to+\infty}u_{n}=a$. Si pour tout $n\in\N$, $u_{n}\neq a$, alors pour tout $n\in\N$, on a
+		$$\Vert u_{n+1}-a\Vert=\Vert f(u_{n})-f(a)\Vert<\Vert u_{n}-a\Vert$$
+		donc la suite $(\Vert u_{n}-a\Vert)_{n\in\N}$ est strictement décroissante dans $\R_{+}$ donc elle converge vers $l\geqslant0$. Par compacité de $K$, il existe une extraction $\sigma$ telle que $\lim\limits_{n\to+\infty}u_{\sigma(n)}=\alpha\in K$. Par continuité, $$\lim\limits_{n\to+\infty}\Vert u_{\sigma(n)}-a\Vert=\Vert\alpha-a\Vert=l$$ 
+		et
+		$$\lim\limits_{n\to+\infty}\Vert \underbrace{u_{\sigma(n)+1}}_{f(u_{\sigma(n)}}-f(a)\Vert=\Vert f(\alpha)-f(a)\Vert=l=\Vert\alpha-a\Vert$$
+		par continuité de $f$.
+		Ainsi, on a $\alpha=a$ et $l=0$ donc $\lim\limits_{n\to+\infty}u_{n}=a$.
+
+		\item $f$ est $\mathcal{C}^{1}$ sur $\R$. Soit $x<y\in\R^{2}$, il existe $z\in]x,y[$ tel que (égalité des accroissements finis)
+		$$\Bigl\lvert\frac{f(x)-f(y)}{x-y}\Bigr\rvert=\vert f'(z)\vert=\Bigl\lvert\frac{z}{\sqrt{z^{2}+1}}\Bigr\rvert<1$$
+		donc $f$ vérifie bien l'hypothèse de contraction. Cependant, pour tout $a\in\R$, on a $\sqrt{a^{2}+1}>a$ donc pas de point fixe. La démonstration tombe en défaut car $\R$ n'est pas compact.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	La condition est équivalente à pour tout $(M_{1},M_{2},M_{3})\in K_{1}\times K_{2}\times K_{3}$, $M_{1},M_{2}$ et $M_{3}$ ne sont pas alignés.\\
+	On forme alors \function{f}{K_1\times K_2\times K_3}{\R_+}{(M_1,M_2,M_3)}{R(M_1,M_2,M_3)}
+	où $R(M_{1},R_{2},M_{3})$ est le rayon du cercle circonscrit au triangle formé par $M_{1},M_{2}$ et $M_{3}$.
+
+	On note $M_{i}=(x_{i},y_{i})$ et $\Delta_{i}$ la médiatrice de $[M_{j}M_{k}]$. Établissons une équation de $\Delta_{i}$. On a $M=(x,y)\in\Delta_{i}$ si et seulement si $\Vert \vec{MM_{j}}\Vert_{2}^{2}=\Vert\vec{MM_{k}}\Vert_{2}^{2}$ si et seulement si $(\vec{MM_{j}}+\vec{MM_{k}}\bigm|\vec{MM_{j}}-\vec{MM_{k}})=0$ (produit scalaire), si et seulement si $(\vec{MC_{i}}\bigm|\vec{M_{j}M_{k}})=0$ où $C_{i}$ est le milieu de $[M_{j}M_{k}]$, si et seulement si (calculer le produit scalaire)
+	$$\Bigl(\frac{x_{j}+x_{k}}{2}-x\Bigr)(x_{k}-x_{j})+\Bigl(\frac{y_{j}+y_{k}}{2}-y\Bigr)(y_{k}-y_{j})=0$$
+	Soit alors $M_{0}=(x_{0},y_{0})$ le centre du cercle circonscrit. $M_{0}\in\Delta_{i}\cap\Delta_{j}$ avec $i\neq j$. Par exemple, $M_{0}\in\Delta_{3}\cap\Delta_{1}$ si et seulement si
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			\Bigl(\dfrac{x_{2}+x_{1}}{2}-x_{0}\Bigr)(x_{2}-x_{1})+\Bigl(\dfrac{y_{2}+y_{1}}{2}-y_{0}\Bigr)(y_{2}-y_{1}) &= &0\\[0.5cm]
+			\Bigl(\dfrac{x_{3}+x_{2}}{2}-x_{0}\Bigr)(x_{3}-x_{2})+\Bigl(\dfrac{y_{3}+y_{2}}{2}-y_{0}\Bigr)(y_{3}-y_{2}) &= &0
+		\end{array}	
+	\right.
+	$$
+	si et seulement si ($L_{2}\leftarrow L_{1}(x_{3}-x_{2})+L_{2}(x_{1}-x_{2})$)
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			x_{0}(x_{1}-x_{2})+y_{0}(y_{1}-y_{2})&=&\dfrac{x_{1}^{2}-x_{2}^{2}+y_{1}^{2}-y_{2}^{2}}{2}\\[0.5cm]
+			x_{0}(x_{2}-x_{3})+y_{0}(y_{2}-y_{3})&=&\dfrac{x_{2}^{2}-x_{3}^{2}+y_{2}^{2}-y_{3}^{2}}{2}
+		\end{array}	
+	\right.
+	$$
+	si et seulement si ($L_{1}\leftarrow L_{2}(y_{2}-y_{1})+L_{1}(y_{2}-y_{3})$)
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			x_{0} &= & \dfrac{\frac{x_{1}^{2}-x_{2}^{2}+y_{1}^{2}-y_{2}^{2}}{2}(y_{2}-y_{3})-(y_{1}-y_{2})\frac{x_{2}^{2}-x_{3}^{2}+y_{2}^{2}-y_{3}^{2}}{2}}{(x_{1}-x_{2})(y_{2}-y_{3})-(x_{2}-x_{3})(y_{1}-y_{2})}\\[0.5cm]
+			y_{0} &= & \dfrac{\frac{x_{2}^{2}-x_{3}^{2}+y_{2}^{2}-y_{3}^{2}}{2}(x_{1}-x_{2})-(x_{2}-x_{3})\frac{x_{1}^{2}-x_{2}^{2}+y_{1}^{2}-y_{2}^{2}}{2}}{(x_{1}-x_{2})(y_{2}-y_{3})-(x_{2}-x_{3})(y_{1}-y_{2})}
+		\end{array}	
+	\right.
+	$$
+	et $R(M_{1},M_{2},M_{3})=\sqrt{(x_{0}-x_{3})^{2}+(y_{0}-y_{3})^{2}}$. En reportant, $f$ est continue sur $K_{1}\times K_{2}\times K_{3}$ compact donc $f$ atteint son minimum.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $f\in E$, $T(f)$ est $\mathcal{C}^{1}$ et $(T(f))'=f$, $T(f)(0)=0$. $T$ est clairement linéaire, soit ensuite $x\in[0,1]$, on a 
+		$$\vert T(f)(x)\vert=\Bigl\lvert\int_{0}^{x}f(t)dt\Bigr\rvert\leqslant\int_{0}^{x}\vert f(t)\vert dt\leqslant x\Vert f\Vert_{\infty}\leqslant\Vert f\Vert_{\infty}$$
+		Donc $\Vert T(f)\Vert_{\infty}\leqslant\Vert f\Vert_{\infty}$ donc $T$ est continue et $\vertiii{T}\leqslant1$. Pour $f=1$, on a $\Vert f\Vert_{\infty}=1$ et pour tout $x\in[0,1]$, $T(f)(x)=x$ donc $\Vert T(1)\Vert_{\infty}=1$. Ainsi, $\vertiii{T}=1$.
+
+		\item $id_{E}-T$ est continue. Soit $(f,g)\in E^{2}$, on a $g=f-T(f)$ si et seulement si $g=y'-y$ et $y(0)=0$. 
+		On a $g(x)e^{-x}=\underbrace{e^{-x}(y'(x)-y(x))}_{(e^{-x}y(x))'}$ donc en intégrant de 0 à $x$ on a 
+		$$y(x)=e^{x}\int_{0}^{x}e^{-t}g(t)dt$$
+		Donc $T(f)$ vérifie le problème de Cauchy si et seulement si pour tout $x\in\R$, $T(f)(x)=e^{x}\int_{0}^{x}e^{-t}g(t)dt$ si et seulement si pour tout $x\in[0,1]$, 
+		$$f(x)=g(x)+e^{x}\int_{0}^{x}e^{-t}g(t)dt$$
+		Donc $id_{E}-T$ est bijective. 
+		Enfin, on a pour tout $x\in[0,1]$, 
+		$$\vert f(x)\vert\leqslant\vert g(x)\vert+\Bigl\lvert\int_{0}^{x}g(t)e^{x-t}dt\Bigr\rvert\leqslant\Vert g\Vert_{\infty}(1+xe^{x})\leqslant\Vert g\Vert_{\infty}(1+e)$$
+		Ainsi, 
+		$$\Vert f\Vert_{\infty}=\Vert(id_{E}-T)^{-1}(g)\Vert_{\infty}\leqslant\Vert g\Vert_{\infty}(1+e)$$
+		donc $(id_{E}-T)^{-1}$ est continue. Ainsi, $id_{E}-T$ est un homéomorphisme.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item [(i) $\Rightarrow$ (ii)] $f^{-1}(K)$ est fermé car $f$ est continue. $K$ est borné, donc il existe $M>0$, tel que pour tout $y\in K$, $\Vert y\Vert\leqslant M$. Donc pour tout $x\in f^{-1}(K)$, $\Vert f(x)\Vert\leqslant M$. Par contraposée de (i) pour $A=M+1$, il existe $B>0$ tel que $\Vert f(x)\Vert<A\Rightarrow\Vert x\Vert<B$. Donc pour $x\in f^{-1}(K)$, $\Vert x\Vert<B$ donc $f^{-1}(K)$ est borné. C'est donc un compact.
+		\item [(ii) $\Rightarrow$ (i)] Soit $A\geqslant0$. Soit $K=\overline{B(0,A)}$ compact car fermé et borné en dimension finie. D'après (ii), $f^{-1}(K)$ est compact donc borné: il existe $B>0$ tel que pour tout $x\in f^{-1}(K)$, $\Vert x\Vert\leqslant B$. Par contraposée, si $\Vert x\Vert>B$ alors $x\notin f^{-1}(K)$ et $f(x)\notin K$ donc $\Vert f(x)\Vert >A$. Ainsi, $\lim\limits_{\Vert x\Vert\to+\infty}\Vert f(x)\Vert=+\infty$.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Exemple pour l'exercice précédent: les fonctions polynômiales non constantes. Contre-exemple: l'exponentielle, cf $\exp([0,1])=\R_{-}$ non compact.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item 
+		Soit $(x,y)\in K^{2}$ compact. Soit $\sigma$ un extraction telle que 
+		$$(f^{\sigma(n)}(x),f^{\sigma(n)}(y))\xrightarrow[n\to+\infty]{}(l,l')\in K^{2}$$
+		On a 
+		$$f^{\sigma(n+1)}(x)-f^{\sigma(n)}(x)\xrightarrow[n\to+\infty]{}0$$
+		de même pour $y$. Soit $\varepsilon>0$,
+		$$
+		\left\{
+			\begin{array}[]{l}
+				\exists N_{1}\in\N,\forall n\geqslant N_{1},\Vert f^{\sigma(n+1)}(x)-f^{\sigma(n)}(x)\Vert\leqslant\varepsilon\\
+			\exists N_{1}\in\N,\forall n\geqslant N_{1},\Vert f^{\sigma(n+1)}(y)-f^{\sigma(n)}(y)\Vert\leqslant\varepsilon
+		\end{array}
+		\right.
+		$$
+		Pour $N=\max(N_{1},N_{2})$ et $p=\sigma(N+1)-\sigma(N)\in\N^{*}$, on a 
+		\begin{equation*}
+			d(x,f^{p}(x))\leqslant d(f^{\sigma(n+1)}(x),f^{\sigma(n)}(x))\leqslant\varepsilon
+		\end{equation*}
+		et de même pour $y$ avec le même $p$.
+	
+		\item On a 
+		$$d(x,y)\leqslant d(f(x),f(y))\leqslant d(f^{p}(x),f^{p}(y))\leqslant d(f^{p}(x),x)+d(x,y)+d(y,f^{p}(y))\leqslant2\varepsilon+d(x,y)$$
+
+		Ceci valant pour tout $\varepsilon>0$, on a égalité tout du long. On a donc notamment, $\Vert x-y\Vert=\Vert f(x)-f(y)\Vert$ et donc $f$ est une isométrie.
+
+		\item $f$ est 1-lipschitzienne donc continue. Donc $f(K)$ est compact donc fermé. Il suffit donc de montrer que $f(K)$ est dense dans $K$. Soit $x\in K$ et $\varepsilon>0$, il existe $p\in\N^{*}$ tel que $\Vert x-\underbrace{f^{p}(x)}_{\in f(K)}\Vert\leqslant\varepsilon$ d'après la première question. Donc $f(K)$ est dense dans $K$ et $f(K)=\overline{f(K)}=K$.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Exemple pour l'exercice précédent: une rotation sur la sphère unité.
+\end{remark}
+
+\begin{solution}
+	Soit \function{f}{K}{\R}{M}{f(M)=\text{rayon du cercle circonscrit au triangle MAB}}
+	On a $F=f(K)$. Soit $(C,i,j)$ un repère orthonormé où $C$ est le milieu de $[AB]$ et $A(-\alpha,0)$ et $B(\alpha,0)$ avec $\alpha>0$. La médiatrice $\Delta$ de $[A,B]$ a pour équation $x=0$. Si $M(x,y)$, soit $\varphi(M)$ le centre du cercle circonscrit. On a $\varphi(M)\in\Delta$ donc $\varphi(M)(0,y_{1})$ et $\varphi(M)$ appartient à la médiatrice de $[MA]$. On a $y_{1}\neq0$ car $M\notin(AB)$.
+
+	Notons $M'$ le milieu de $[MA]$. On a $M'(\frac{x-\alpha}{2},\frac{y}{2})$ d'où $\vec{M'\varphi(M)}\cdot\vec{MA}=0$ d'où (en développant le produit scalaire),
+	$$y_{1}=\Bigl((\alpha+x)\Bigl(\frac{\alpha-x}{2}\Bigr)-\frac{y^{2}}{2}\Bigr)\Bigl(-\frac{1}{y}\Bigr)$$
+	$\varphi$ est donc continue donc $f$ également et $f(K)=F$ est compact.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\lambda\in\Sp(\tau)$ et $P\in\R[X]\setminus\{0\}$ avec $\tau(P)=\lambda P$. Si $P$ n'est pas constant, notons $\alpha\in\C$ alors $P(\alpha)=0$. Alors $P(\alpha+1)=0$. En itérant, pour tout $n\in\N$, $P(\alpha+n)=0$, impossible car $P$ n'est pas constant donc pas nul. Finalement, $P$ est constant et $\lambda=1$: $\Sp(\tau)=\{1\}$.
+		\item $f\colon x\mapsto P(x)e^{-x}$ est continue et $\lim\limits_{x\to+\infty}f(x)=0$ donc le $\sup$ est bien défini. Il est ensuite facile de vérifier que $\Vert P\Vert$ est une norme.
+		\item On a 
+		$$\Vert\tau(P)\Vert=\sup\limits_{x\geqslant0}\vert P(x+1)e^{-x}\vert=\sup\limits_{x'\geqslant1}\vert P(x')e^{-x'}e\vert\leqslant\sup\limits_{x'\geqslant0}\vert P(x')e^{-x'}e\vert\leqslant e\Vert P\Vert$$
+		\item Utiliser $P=X$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour $x$ fixé, $\min(x,\varphi(t))=\frac{x+\varphi(t)-\vert x-\varphi(t)\vert}{2}$ est continue. Donc $T(f)$ est définie.
+		
+		Si $x\leqslant\varphi(0)$, $T(f)(x)=\int_{0}^{1}xf(t)dt=x\int_{0}^{1}f(t)dt$ et si $x\geqslant\varphi(1)$, $T(f)(x)=\int_{0}^{1}\varphi(t)f(t)dt=x\int_{0}^{1}f(t)dt$ et si $\varphi(0)\leqslant x\leqslant\varphi(1)$, il existe un unique $t_{1}=\varphi^{-1}(x)$ (car $\varphi$ induit un homéomorphisme de $[0,1]$ dans $\varphi([0,1])$). Si $t\leqslant t_{1}$, on a $\varphi(t)\leqslant x$, donc $\min(x,\varphi(t))=\varphi(t)$. Si $t\geqslant t_{1}$, on a $\min(x,\varphi(t))=x$. On a donc 
+		\begin{align*}
+			T(f)(x)
+			&=\int_{0}^{t_{1}}\varphi(t)f(t)dt+\int_{t_{1}}^{1}xf(t)dt\\
+			&=\underbrace{\int_{0}^{\varphi^{-1}(x)}\varphi(t)f(t)dt}_{=F_{1}(\varphi^{-1}(x))}+x\underbrace{\int_{\varphi^{-1}(x)}^{1}f(t)dt}_{=F_{2}(\varphi^{-1}(x))}
+		\end{align*}
+		et $f$ et $\varphi$ étant continues, $F_{1}$ et $F_{2}$ sont continues.
+
+		Donc $T(f)$ continue et $T$ linéaire, c'est un endomorphisme de $E$.
+
+		\item On a 
+		\begin{equation*}
+			\vert T(f)(x)\vert\leqslant\Vert f\Vert_{\infty}\underbrace{\int_{0}^{1}\min(x,\varphi(t))dt}_{=A(x)}
+		\end{equation*}
+		donc 
+		$$\Vert T(f)\Vert_{\infty}\leqslant\Vert f\Vert_{\infty}\Vert A\Vert_{\infty}$$
+		donc $T$ est continue et $\vertiii{T}\leqslant\Vert A\Vert_{\infty}$. De plus pour $f=1$, on a $\vertiii{T}=\Vert A\Vert_{\infty}$.
+
+		\item On a 
+		$$
+		A(x)=\int_{0}^{1}\min(x,\varphi(t))dt=
+		\left\{
+			\begin{array}[]{lll}
+				x & \text{si} & x\leqslant\varphi(0)\\
+				\int_{0}^{1}\varphi(t)dt & \text{si} & x\geqslant\varphi(1)
+			\end{array}
+		\right.
+		$$
+		Dans tous les cas, 
+		$$\Vert A\Vert_{\infty}\leqslant\int_{0}^{1}\varphi(t)dt$$
+		donc 
+		$$\Vert A\Vert_{\infty}=\int_{0}^{1}\varphi(t)dt$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\varphi$ est une forme linéaire. et on a 
+		$$\vert\varphi(P)\vert\leqslant\sum_{k\in\N}\Bigl\vert\frac{a_k}{2^{k}}\Bigr\vert\leqslant2\Vert P\vert_{\infty}$$
+		donc $\varphi$ est continue et $\vertiii{\varphi}\leqslant2$. Pour $p\neq0$, $\vert\varphi(P)\vert<2\Vert P\Vert_{\infty}$ : pour avoir égalité, il faudrait pour tout $k\in\N$, $a_{k}=\text{constante}\neq0$ ce qui n'est pas possible. Pour $P_{n}=\sum_{k=0}^{n}X^{k}$, on a $\Vert P_{n}\Vert_{\infty}=1$ et $\lim\limits_{n\to+\infty}\vert\varphi(P_{n})\vert\xrightarrow[n\to+\infty]{}2$ donc $\vertiii{\varphi}=2$. De plus, $\ker(\varphi)=\varphi^{-1}(\{0\})$ est fermé.
+
+		\item Soit $P=\sum_{k\in\N}a_{k}X^{k}\in\ker(\varphi)$. On a $\varphi(P)=0$ d'où $a_{0}=-\sum_{k=1}^{+\infty}\frac{a_{k}}{2^{k}}$ (et il existe $N_{0}\in\N,\forall n\geqslant N_{0},a_{n}=0$). On a donc 
+		$$P(X)-1=(a_{0}-1)+\sum_{k\in\N^{*}}a_{k}X^{k}$$
+		et si $\Vert P-1\Vert_{\infty}\leqslant\frac{1}{2}$, on a 
+		$$
+		\left\{
+			\begin{array}[]{l}
+				\vert a_{0}-1\vert\leqslant\frac{1}{2}\\
+				\forall k\in\N^{*},\vert a_{k}\vert\leqslant\frac{1}{2}
+			\end{array}
+		\right.
+		$$
+		et 
+		$$\vert a_{0}\vert=\Biggl\vert\sum_{k=1}^{+\infty}\frac{a_{k}}{2^{k}}\Biggr\vert\leqslant\sum_{k=1}^{+\infty}\frac{\vert a_{k}\vert}{2^{k}}\leqslant\sum_{k=1}^{+\infty}\frac{1}{2^{k+1}}=\frac{1}{2}$$
+
+		Et $\frac{1}{2}\leqslant 1-\vert a_{0}\vert\leqslant\vert 1-a_{0}\vert\leqslant\frac{1}{2}$. Donc $\vert a_{0}\vert=\frac{1}{2}$ et $\vert 1-a_{0}\vert=\frac{1}{2}$.
+		\begin{align*}
+			a_{0}=\frac{1}{2}e^{\mathrm{i}\theta}
+			&\Rightarrow \Bigl\vert 1-\frac{1}{2}e^{\mathrm{i}\theta}\Bigr\vert^{2}=\frac{1}{4}\\
+			&\Rightarrow \Bigl(1-\frac{1}{2}\cos(\theta)\Bigr)^{2}+\Bigl(\frac{1}{2}\sin(\theta)\Bigr)^{2}=\frac{1}{4}\\
+			&\Rightarrow 1-\cos(\theta)+\frac{1}{4}=\frac{1}{4}\\
+			&\Rightarrow \cos(\theta)=1
+		\end{align*}
+		et donc $a_{0}=\frac{1}{2}$.
+
+		Par ailleurs, on a 
+		$$\frac{1}{2}=\sum_{k=1}^{+\infty}\frac{\vert a_{k}\vert}{2^{k}}=\sum_{k=1}^{+\infty}\frac{1}{2^{k+1}}$$
+		Donc pour tout $k\in\N$, $\vert a_{k}\vert=\frac{1}{2}$, impossible car $P\in\C[X]$, ainsi $\Vert P-1\Vert_{\infty}>\frac{1}{2}$.
+
+		\item On définit, pour $n\geqslant1$, $P_{n}=\frac{1}{2}+\sum_{k=1}^{n}(-\frac{1}{2}+\varepsilon_{n})X^{k}$ avec $\varepsilon_{n}\in\R$ tel que $P_{n}\in\ker(\varphi)$. On a 
+		\begin{align*}
+			P_{n}\in\ker(\varphi)
+			&\Rightarrow\frac{1}{2}+\sum_{k=1}^{n}\Bigl(-\frac{1}{2}+\varepsilon_{n}\Bigr)\frac{1}{2^{k}}=0\\
+			&\Rightarrow\varepsilon_{n}=-\frac{1}{2^{n+1}}\times \frac{1}{1-\frac{1}{2^{n}}}
+		\end{align*}
+		et donc $\varepsilon_{n}\xrightarrow[n\to+\infty]{}0$ (et $\varepsilon_{n}<0$). On a donc $\Vert P_{n}-1\Vert_{\infty}=\frac{1}{2}-\varepsilon_{n}\xrightarrow[n\to+\infty]{}\frac{1}{2}$.
+
+		Donc $d(1,\ker(\varphi))=\frac{1}{2}$ et cette distance n'est pas atteinte.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Prouvons d'abord l'existence. Soit $M\in\R^{n}$, on définit $r(M)=\sup\{\Vert M-A\Vert\bigm| A\in K\}$ et $\varphi\colon A\mapsto\Vert M-A\Vert$ est continue sur $K$ compact donc le sup est en fait un max. On a notamment $r(M)=\{R>0\bigm| K\subset B(M,R)\}$. Soit \function{r}{\R^n}{\R}{M}{r(M)}
+	Soit $(M,M')\in(\R^{n})^{2}$. Pour tout $A\in K$, on a 
+	$$\Vert M-A\Vert\leqslant\Vert M-M'\Vert+\Vert M'-A\Vert\leqslant\Vert M-M'\Vert +r(M')$$
+	En particulier, on a
+	$$r(M)\leqslant\Vert M-M'\Vert+r(M')$$
+	et en échangeant $M$ et $M'$, on a $\vert r(M)-r(M')\vert\leqslant\Vert M-M'\Vert$. Donc $r$ est 1-lipschitzienne donc continue. Soit $A_{0}\in K$, $R(M)\geqslant\Vert M-A_{0}\Vert\geqslant\Vert M\Vert-\Vert A_{0}\Vert\xrightarrow[\Vert M\Vert\to+\infty]{}+\infty$. Donc il existe $M_{0}\in\R^{n}$ tel que $r(M_{0})=\min\limits_{M\in\R^{n}}r(M)=r_{0}$, d'où l'existence d'une boule fermée de rayon minimal.
+
+	Pour l'unicité, soit $(M_{1},M_{2})\in(\R^{n})^{2}$ tel que $r(M_{1})=r(M_{2})=r_{0}$. On suppose que $\Vert M_{1}-M_{2}\Vert=\varepsilon>0$. Soit $M_{3}$ le milieu de $[M_{1}M_{2}]$. On a $K\subset B_{M_{1},r_{0}}\cap B_{M_{2},r_{0}}$. On prend $r^{2}+\bigl(\frac{\varepsilon}{2}\bigr)^{2}=r_{0}^{2}$ d'où 
+	$$r=\sqrt{r_{0}^{2}-\frac{\varepsilon^{2}}{4}}<r_{0}$$
+	Soit $M\in B(M_{1},r_{0})\cap B(M_{2},r_{0})$, on a 
+	\begin{align*}
+		\Vert M-M_{3}\Vert^{2}
+		&=\frac{1}{4}\Bigl(\Vert M-M_{1}+M-M_{2}\Vert^{2}\Bigr)\\
+		&=\frac{1}{4}\Bigl(2\Vert M-M_{1}\Vert^{2}+2\Vert M-M_{2}\Vert^{1}-\underbrace{\Vert M_{1}-M_{2}\Vert^{2}}_{=\varepsilon^{2}}\Bigr)\\
+		&\leqslant\frac{1}{4}(2r_{0}^{2}+2r_{0}^{2}-\varepsilon^{2})\\
+		&\leqslant r_{0}^{2}-\frac{\varepsilon^{2}}{4}=r^{2}
+	\end{align*}
+	Donc $B_{1}\cap B_{2}\subset\overline{B(M_{3},r)}$ d'où $K\subset\overline{B(M_{3},r)}$, ce qui est absurde car $r<r_{0}$. Donc $M_{1}=M_{2}$.
+\end{solution}
+
+\begin{solution}
+	$\varphi$ est évidemment définie et linéaire. Soit $f\in\mathcal{C}^{0}([0,1],\R)$.
+	\begin{align*}
+		\vert\varphi(f)\vert
+		&=\Biggl\vert\int_{0}^{\frac{1}{2}}f-\int_{\frac{1}{2}}^{1}f\Biggr\vert\\
+		&\leqslant\Biggl\vert\int_{0}^{\frac{1}{2}}f\Biggr\vert+\Biggl\vert\int_{\frac{1}{2}}^{1}f\Biggr\vert\\
+		&\leqslant\int_{0}^{\frac{1}{2}}\vert f\vert+\int_{\frac{1}{2}}^{1}\vert f\vert\\
+		&\leqslant\int_{0}^{1}\Vert f\Vert_{\infty}=\Vert f\Vert_{\infty}
+	\end{align*}
+\end{solution}
+
+Donc $\varphi$ est continue et $\vertiii{\varphi}\leqslant1$. Notons que si l'on a $\vert\varphi(f)\vert=\Vert f\Vert_{\infty}$, alors on a égalité partout au-dessus et pour tout $t\in[0,1]$, $\vert f(t)\vert=\Vert f\Vert_{\infty}$ et comme $\Bigl\vert\int f\Bigr\vert=\int\vert f\vert$ implique que $f$ est de signe constant sur l'intervalle d'intégration, si l'on a $\vert\varphi(f)\vert=\Vert f\Vert_{\infty}$, alors $f$ est de signe constant sur $[0,\frac{1}{2}]$ et sur $[\frac{1}{2},1]$.  Or $\vert\int_{0}^{\frac{1}{2}}f-\int_{\frac{1}{2}}^{1}f\vert=\vert\int_{0}^{\frac{1}{2}}f\vert+\vert\int_{\frac{1}{2}}^{1}\vert$, $f$ est de signe opposé sur les deux segments. Or $f$ est continue en $\frac{1}{2}$, donc $f$ est nulle. Donc pour $f$ non nulle, on a $\vert\varphi(f)\vert<\Vert f\Vert_{\infty}$ donc la norme triple n'est pas atteinte. Enfin, pour montrer que $\vertiii{\varphi}=1$, on utilise pour $n\geqslant1$,
+$$
+f_{n}(t)=
+\left\{
+	\begin{array}[]{lll}
+		1 & \text{si} & t\in[0,\frac{1}{2}-\frac{1}{n}]\\[0.3cm]
+		(\frac{1}{2}-t)n & \text{si} & t\in[\frac{1}{2}-\frac{1}{n},\frac{1}{2}+\frac{1}{n}]\\[0.3cm]
+		-1 & \text{si} & t\in[\frac{1}{2}+\frac{1}{n},1]
+	\end{array}
+\right.
+$$
+On a bien $\Vert f_{n}\Vert_{\infty}=1$.
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Non car on applique l'application trace.
+		\item On a le résultat par récurrence.
+		\item On a 
+		$$(n+1)\vertiii{v^{n}}=\vertiii{u\circ v^{n}\circ v-v^{n}\circ v\circ r}\leqslant 2\vertiii{u}\vertiii{v}\vertiii{v^{n}}$$
+		Si pour tout $n\in\N$, on a $v^{n}=0$, alors pour tout $n\in\N$,
+		$$n+1\leqslant 2\vertiii{u}\vertiii{v}$$
+		ce qui est impossible. Donc il existe $n\in\N^{*}$ tel que $v^{n}=0$. Alors $u\circ v^{n}-v^{n}\circ u=nv^{n-1}=0$ donc $v^{n-1}=0$ et de proche en proche $v=0$: contradiction.
+		\item Pour tout $P\in\R[X]$, 
+		$$(D\circ T-T\circ D)(P)=(XP)'-XP'=P$$
+		donc $D\circ T-T\circ D=id$. D'après ce qui précède, $T$ et $D$ ne peuvent pas être continus simultanément.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\sum_{k\geqslant0}(A-I_{n})^{k}$ converge absolument car $\vertiii{A-I_{n}}^{k}\leqslant\alpha_{k}$ et $\alpha<$.
+		
+		Si $AX=0$, $\Vert (A-I_{n})X\Vert=\Vert X\Vert\leqslant\alpha\Vert X\Vert$ donc $\Vert X\Vert=0$ et $X=0$ donc $A\in GL_{n}(\C)$, idem pour $B$. On a alors
+		\begin{equation*}
+			A\sum_{k=0}^{+\infty}(I_{n}-A)^{k}=((A-I_{n})+I_{n})\sum_{k=0}^{+\infty}(I_{n}-A)^{k}=I_{n}
+		\end{equation*}
+		par téléscopage. Donc 
+		$$A^{-1}=\sum_{k=0}^{+\infty}(I_{n}-A)^{k}$$
+		et
+		$$\vertiii{A^{-1}}\leqslant\sum_{k=0}^{+\infty}\alpha^{k}=\frac{1}{1-\alpha}$$
+		et de même pour $B$. On écrit alors
+		$$ABA^{-1}B^{-1}-I_{n}=(AB-BA)A^{-1}B^{-1}=((A-I_{n})(B-I_{n})-(B-I_{n})(A-I_{n}))A^{-1}B^{-1})$$
+		d'où
+		$$\vertiii{ABA^{-1}B^{-1}-I_{n}}\leqslant\frac{2\vertiii{A-I_{n}}\vertiii{B-I_{n}}}{(1-\alpha)(1-\beta)}$$
+
+		\item On prend $\alpha=\beta=\frac{1}{4}$.
+		\item Pour tout $M\in G$, il existe $r>0$ tel que $B(M,r)\cap G=\{M\}$. Montrons que $G$ est discret si et seulement si $I_{n}$ est isolé. En effet, si $I_{n}$ est isolé, il existe $r_{0}>0$ tel que $B(I_{n},r_{0})\cap G=\{I_{n}\}$. Soit $M\in G$, alors pour tout $M'\in G$, $M-M'=M(I_{n}-M^{-1}M')$ d'où $I_{n}-M^{-1}M'=M^{-1}(M-M')$. Si 
+		$$\vertiii{M-M'}<\frac{r_{0}}{\vertiii{M^{-1}}}$$
+		on a $\vertiii{I_{n}-M^{-1}M'}<r_{0}$ et donc $M'=M$ et $M$ est isolé. Ainsi $G$ est isolé. La réciproque est évidente.
+
+		$C$ est dans le commutant si et seulement si $C$ commute avec $A$ et $B$ si et seulement si
+		$$
+		\left\{
+			\begin{array}[]{l}
+				ACA^{-1}C^{-1}=I_{n}\\
+				BCB^{-1}C^{-1}=I_{n}
+			\end{array}
+		\right.
+		$$
+
+		Notons maintenant que 
+		$$\overline{B_{\Vert\cdot\Vert}(I_{n},\frac{1}{4})}\cap G=\mathcal{A}$$
+		est fini. En effet, si cet ensemble était infini, il existerait $(M_{p})_{p\in\N}$ une suite injective dans $\mathcal{A}$. La suite étant bornée, on peut extraite $(M_{\sigma(p)})_{p\in\N}$ qui converge et alors pour tout $p\in I_{n}$
+		$$\underbrace{M_{\sigma(p)}M_{\sigma(p+1)}^{-1}}_{\xrightarrow[pto+\infty]{}I_{n}}\in G\setminus\{I_{n}\}$$
+		ce qui est impossible car $I_{n}$ est isolé.
+
+		Comme $A\in \mathcal{A}\setminus\{I_{n}\}$, il existe $C\in\mathcal{A}\setminus\{I_{n}\}$ telle que $\vertiii{C-I_{n}}$ soit minimale et $\vertiii{c-I_{n}}\leqslant\frac{1}{4}$. D'après la question 2 on a 
+		$$\vertiii{ACA^{-1}C^{-1}-I_{n}}<\vertiii{C-I_{n}}$$
+		et même chose pour $B$. Donc nécessairement, $ACA^{-1}C^{-1}=I_{n}$ et de même pour $B$. Ainsi, $C$ commute avec toutes les matrices de $G$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $\C_{n-1}[A]$ est un sous-espace vectoriel de dimension finie donc c'est un fermé. Par division euclidienne par $\chi_{A}$, d'après le théorème de Cayley-Hamilton, $\C[A]=\C_{n-1}[A]$. Comme 
+		$$\exp(A)=\lim\limits_{n\to+\infty}\sum_{k=0}^{n}\frac{A^{k}}{k!}$$
+		$\exp(A)\in \C[A]=\C_{n-1}[A]$.
+
+		\item Si $A$ est diagonalisable, il existe $P\in GL_{n}(\C)$ tel que 
+		$$A=P^{-1}\diag(\lambda_{1},\dots,\lambda_{n})P$$
+		et donc 
+		$$\exp(A)=P^{-1}\diag(e^{\lambda_{1}},\dots,e^{\lambda_{n}})P$$
+		et $\exp(A)$ est diagonalisable.
+
+		Si $\exp(A)$ est diagonalisable, on utilise la décomposition de Dunford: $A=D+N$ avec $DN=ND$, $D$ diagonalisable et $N$ nilpotente. On a donc 
+		$$\exp(A)=\exp(D)\underbrace{\exp(N)}_{=\sum_{k=0}^{n-1}\frac{N^{k}}{k!}}=\exp(D)+\exp(D)\Bigl(\sum_{k=1}^{n-1}\frac{N^{k}}{k!}\Bigr)=\exp(D)+N'$$
+		avec $N'$ nilpotente et $\exp(D)$ est diagonalisable d'après le sens direct. $N'$ commute avec $\exp(D)$. Par unicité de la décomposition de Dunford, $\exp(A)$ étant diagonalisable, on a $N'=0$. Comme $\exp(D)$ est inversible, 
+		$$N\times\underbrace{\sum_{k=1}^{n-1}\frac{N^{k-1}}{k!}}_{=I_{n}+N''}=0$$
+		avec $N''$ nilpotente. $I_{n}+N''$ est donc inversible et ainsi $N=0$ et $A$ est diagonalisable.
+
+		\item D'après ce qui précède, $\exp(A)=I_{n}$ est diagonalisable et 
+		$$\Sp_{\C}(\exp(A))=\{e^{\lambda}\bigm|\lambda\in\Sp_{\lambda}(\C)\}=\{I_{n}\}$$
+		Donc $\Sp_{\C}(A)\subset 2i\pi\Z$.
+
+		Réciproquement, si $A$ est diagonalisable avec $\Sp(A)\subset 2i\pi\Z$, en diagonalisant, on a bien $\exp(A)=I_{n}$.
+
+		\item Sur $\R$, si $A$ est diagonalisable, $\exp(A)$ l'est aussi. Cependant, la réciproque n'est pas vrai, par exemple
+		$$M=\begin{pmatrix}
+			2\mathrm{i}\pi & 0\\
+			0 & -2\mathrm{i}\pi
+		\end{pmatrix}\text{  semblable à }
+		\begin{pmatrix}
+			0 & -4\pi^{2}\\
+			1 & 0
+		\end{pmatrix}=A$$
+		On a $\chi_{M}=X^{2}+4\pi^{2}$, $\exp(A)=I_{2}$ et $A$ n'est pas diagonalisable sur $\C$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $\ln(1-x)=P(x)+x^{2}O(1)$ et $\exp(y)=Q(y)+y^{n}O(1)$ d'où 
+		$$\exp(\ln(1+x))=1+x=Q(\ln(1+x))+\underbrace{\ln(1+x)^{n}O(1)}_{O(x^{n})}$$
+		alors $1+x=Q(P(x)+O(x^{n}))+O(x^{n})=Q(P(x))+O(x^{n})$. Soit $B(X)=Q(P(X))+O(x^{n})\in\R[X]$, on a $\frac{B(x)}{x^{n}}=O(1)$ donc $X^{n}\mid B$ et $$Q(P(X))=1+X+B(X)=1+X+X^{n}A(X)$$
+
+		\item On a $N^{n}=0$ donc $P(N)$ est aussi nilpotente et on a 
+		$$\exp(P(N))=\sum_{k=0}^{n-1}\frac{P(N)^{k}}{k!}=Q(P(N))=I_{n}+N+0$$
+
+		\item Soit $M\in GL_{n}(\C)$ et sa décomposition de Dunford: $M=D+N$ avec $D$ diagonalisable, $N$ nilpotente et $DN=ND$. On a $\Sp(D)=\Sp(M)\subset\C^{*}$ et on écrit
+		$$M=D\underbrace{(I_{n}+\underbrace{D^{-1}N}_{\text{nilpotente}})}_{=\exp(P(D^{-1}N))}$$
+		si $D=P_{1}\diag(\lambda_{1},\dots,\lambda_{n})P_{1}^{-1}$, pour tout $k\in\{1,\dots,n\}$ il existe $\mu_{k}\in\C$ tel que $\lambda_{k}=\exp(\mu_{k})$ (car $\exp$ est surjectif sur $\C^{*}$). Alors 
+		$$
+		D=\exp(P_{1}\diag(\mu_{1},\dots,\mu_{n})P_{1}^{-1})\in\C[D]
+		$$
+		puis 
+		\begin{align*}
+			M
+			&=\exp\Bigl(P_{1}\diag(\mu_{1},\dots,\mu_{n})P_{1}^{-1}\Bigr)\exp\Bigl(P(D^{-1}N)\Bigr)\\
+			&=\exp\Bigl(P_{1}\diag(\mu_{1},\dots,\mu_{n})P_{1}^{-1}+P(D^{-1}N)\Bigr)
+		\end{align*}
+		car les matrices commutent.
+
+		Donc $\exp$ est surjective.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	On a $A\subset\overline{A}$, $0=\lim\limits_{n\to+\infty}(\frac{2}{n})^{2n}\in\overline{A}$ et $e=\lim\limits_{n\to+\infty}(1+\frac{1}{n})^{n+1}\in\overline{A}$.
+
+	Si $n\geqslant2$ et $p\geqslant2$, $(\frac{1}{n}+\frac{1}{p})^{n+p}\leqslant1$. Donc si $(\frac{1}{n}+\frac{1}{p})^{n+p}\geqslant1$, alors $n=1$ ou $p=1$.
+
+	Si $x>e$, à partir d'un certain rang, on a $(1+\frac{1}{n})^{n+1}\leqslant\frac{e+x}{2}$ et si $x\notin A$, $x\notin\overline{A}$.
+	Si $1\leqslant x<e$, à partir d'un certain rang, on a $(1+\frac{1}{n})^{n+1}>x$ donc si $x\notin A$, $x\notin\overline{A}$.
+
+	Soit $x<1$, si $n\geqslant2$ et $p\geqslant3$ ou $n\geqslant3$ et $p\geqslant2$, on a $\frac{1}{n}+\frac{1}{p}\leqslant\frac{5}{6}$ et 
+	\begin{align*}
+		\Biggl(\frac{1}{n}+\frac{1}{p}\Biggr)^{n+p}
+		&=\exp\Biggl((n+p)\ln\Bigl(\frac{1}{n}+\frac{1}{p}\Bigr)\Biggr)\\
+		&\leqslant\exp\Biggl((n+p)\ln\Bigl(\frac{5}{6}\Bigr)\Biggr)\\
+		&\leqslant\max\Biggl(\underbrace{\Bigl(\frac{5}{6}\Bigr)^{n}}_{\xrightarrow[n\to+\infty]{}0},\underbrace{\Bigl(\frac{5}{6}\Bigr)^{p}}_{\xrightarrow[p\to+\infty]{}0}\Biggr)
+	\end{align*}
+	Il existe $N_{0}$ tel que pour tout $n\geqslant N_{0}$, $(\frac{5}{6})^{n}\leqslant\frac{x}{2}$. Si $n$ ou $p$ est plus grand que $N_{0}$, on a donc 
+	$$\Biggl(\frac{1}{n}+\frac{1}{p}\Biggr)^{n+p}\leqslant\frac{x}{2}$$
+	Donc il n'y a qu'un nombre fini d'éléments de $A$ plus grand que $\frac{x}{2}$. Ainsi,
+	$$\overline{A}=A\cup\{e,0\}$$
+\end{solution}
+
+\begin{solution}
+	On note 
+	$$\mathbb{V}=\bigcup_{m\geqslant1}\U_{m}=\Biggl\{e^{\frac{2\mathrm{i}k\pi}{m}}\Biggm| m\geqslant1,k\in\{0,\dots,m-1\}\Biggr\}$$
+	Soit $M\in H$. $X^{m}-1$ est scindé à racines simples sur $\C$ donc $M$ est diagonalisable sur $\C$ avec ses valeurs propres dans $\mathbb{V}$. Réciproquement, si $M$ est diagonalisable sur $\C$ et $\Sp_{\C}(M)\subset\mathbb{V}$. Alors pour tout $\lambda\in\Sp_{\C}(M),\exists m_{\lambda}\in\N^{*},\lambda\in\U_{m_{\lambda}}$ et soit $m=\ppcm\limits_{\lambda\in\Sp_{\C}(M)}(m_{\lambda})$. Alors $M^{m}=I_{n}$.
+
+	Soit $A\in\overline{H}$, il existe $(M_{p})_{p\in\N}\in H^{\N}$ telle que $\lim\limits_{p\to+\infty}M_{p}=A$. Comme le polynôme caractéristique est une fonction continue des coefficients, pour tout $\lambda\in\Sp_{\C}(A)$, on a 
+	$$\lim\limits_{p\to+\infty}\chi_{M_{p}}(\lambda)=\chi_{A}(\lambda)=0$$
+	Or 
+	$$\vert\chi_{M_{p}}(\lambda)\vert=\vert\lambda-\lambda_{1,p}\vert\dots\vert\lambda-\lambda_{n,p}\vert\geqslant d(\lambda,\U)^{n}$$
+	avec $\lambda_{i,p}\in\mathbb{V}$ pour tout $i\in\{1,\dots,n\}$. Donc $d(\lambda,\U)=0$ et comme $\U$ est fermé, $\lambda\in\U$.
+
+	Réciproquement, soit $A\in\M_{n}(\C)$ tel que $\Sp_{\C}(A)\subset\U$. Soit 
+	$$\bigl\{e^{\mathrm{i}\theta_1},\dots,e^{\mathrm{i}\theta_r}\bigr\}$$
+	les valeurs propres distinctes de $A$ de multiplicités $m_{1},\dots,m_{r}$. Il existe $Q\in GL_{n}(\C)$ tel que 
+	$$A=Q\diag(\underbrace{e^{\mathrm{i}\theta_{1}},\dots,e^{\mathrm{i}\theta_1}}_{m_{1}\text{ fois}},\dots,\underbrace{e^{\mathrm{i}\theta_r},\dots,e^{\mathrm{i}\theta_r}}_{m_{r}\text{ fois}})Q^{-1}$$
+	On a 
+	$$\theta=\lim\limits_{k\to+\infty}\frac{2\pi}{k}\lfloor k\frac{\theta}{2\pi}\rfloor$$
+	donc on peut former, pour $p\in\N^{*}$,
+	$$A=Q\diag(\underbrace{e^{\mathrm{i}\theta_{1,p}},\dots,e^{\mathrm{i}\theta_{1,p}}}_{m_{1}\text{ fois}},\dots,\underbrace{e^{\mathrm{i}\theta_{r,p}},\dots,e^{\mathrm{i}\theta_{r,p}}}_{m_{r}\text{ fois}})Q^{-1}$$
+	avec $\theta_{i,p}=\frac{2\pi}{p}\lfloor p\frac{\theta_{j}}{2\pi}\rfloor+\frac{2 j\pi}{p}$. Pour $p$ suffisamment gand, les $(\theta_{j,p})$ sont deux à deux distincts donc $A_{p}$ est diagonalisable et $A_{p}\in H$, et donc $A\in \overline{H}$.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a l'inégalité triangulaire et l'homogénéité. On a cependant $N_{a}(X^{k})=\vert a_{k}\vert$ et pour tout $k\in\N$, $X^{k}\neq0$. Donc $N_{a}$ est une norme implique que $a$ ne s'annule pas sur $\N$. Réciproquement, si pour tout $k\in\N$, $a_{k}\neq0$, si $P\neq0$, il existe $k\in\N$ avec $p_{k}$ et donc $N_{a}(P)>0$. Donc $N_{a}$ est une norme si et seulement si pour tout $k\in\N$, $a_{k}\neq0$.
+		
+		\item Si $N_{a}$ et $N_{b}$ sont équivalentes, alors il existe $(\alpha,\beta)\in(\R_{+}^{*})^{2}$ tel que pour tout $k\in\N$,
+		$$\beta N_{b}(X^{k})\leqslant N_{a}(X^{k})\leqslant\alpha N_{b}(X^{k})$$
+		d'où
+		$$\beta \vert b_{k}\vert\leqslant N_{a}(X^{k})\leqslant\alpha \vert b_{k}\vert$$
+		Donc $a=O(b)$ et $b=O(a)$.
+
+		Réciproquement, si $a=O(b)$ et $b=O(a)$, alors on a l'inégalité précédente sur les $a_{k}$ et $b_{k}$, d'où
+		$$\beta\sum_{k=0}^{+\infty}\vert p_{k}b_{k}\vert\leqslant\sum_{k=0}^{+\infty}\vert p_{k}a_{k}\vert\leqslant\alpha\sum_{k=0}^{+\infty}\vert p_{k} b_{k}\vert$$
+		et donc pour tout $P\in\C[X]$
+		$$\beta N_{b}(P)\leqslant N_{a}(P)\leqslant\alpha N_{b}(P)$$
+		et $N_{a}$ et $N_{b}$ sont équivalentes.
+
+		\item $\Delta$ est continue pour $N_{a}$ si et seulement s'il existe $c\geqslant0$ tel que pour tout $P\in\C[X]$, $N_{a}(\Delta P)\leqslant CN_{a}(P)$. Si $\Delta$ est continue alors il existe $c\geqslant0$ tel que $N_{a}(kX^{k})\leqslant cN_{a}(X^{k})$ alors pour tout $k\in\N^{*}$,
+		\begin{equation}
+			\label{eq:6.1}
+			\vert ka_{k-1}\vert\leqslant c\vert a_{k}\vert
+		\end{equation}
+		Réciproquement, si on a \eqref{eq:6.1}, pour tout $P\in\C[X]=N_{a}(\Delta P)\leqslant cN_{a}(P)$. Pour tout $k\in\N,a_{k}=k!$, \eqref{eq:6.1} est vérifiée pour $c=1$. Si $b_{k}=1$ pour tout $k\in\N$, \eqref{eq:6.1} n'est pas vérifiée donc $\Delta$ n'est pas continue pour $N_{b}$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $d(x,A)=0$ si et seulement si $\inf\limits_{a\in A}\Vert x-a\Vert=0$ si et seulement si $\varepsilon>0,\exists a\in A\colon\Vert x-a\Vert<\varepsilon$ si et seulement si $x\in\overline{A}$.
+
+		On a $A\subset\overline{A}$ donc $d(x,\overline{A})\leqslant d(x,A)$. Soit $\varepsilon>0$, il existe $a'\in \overline{A}$ tel que $\Vert x-a'\Vert<d(x,\overline{A})+\varepsilon$ et il existe $a\in A$ tel que $\Vert a-a'\Vert<\varepsilon$. Ainsi, 
+		$$d(x,A)\leqslant\Vert x-a\Vert\leqslant d(x,\overline{A})+2\varepsilon$$
+		Ceci calant pour tout $\varepsilon>0$, on a $d(x,A)\leqslant d(x,\overline{A})$ et donc on a égalité.
+
+		\item $A\times B\subset\overline{A}\times\overline{B}$ donc $d(A,B)\geqslant d(\overline{A},\overline{B})$. De plus, pour tout $\varepsilon>0$, il existe $(a',b')\in\overline{A}\times\overline{B}$ tel que $\Vert a'-b'\Vert<d(\overline{A},\overline{B})+\varepsilon$ et il existe $(a,b)\in A\times B$ tel que $\Vert a-a'\Vert<\varepsilon$ et $\Vert b-b'\Vert\varepsilon$. En utilisant l'inégalité triangulaire, on a donc 
+		$$d(A,B)\leqslant\Vert a-b\Vert<d(\overline{A},\overline{B})+3\varepsilon$$
+		Ceci valant pour tout $\varepsilon>0$, on a bien l'égalité.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	$\varphi_{x_{0}}$ est une forme linéaire. Elle est continue si et seulement $C>0$ tel que pour tout $P\in\C[X]$,
+	$$\vert P(x_{0})\vert\leqslant C\Vert P\Vert_{\infty}$$
+	Si $P=\sum_{k=0}^{n}a_{k}X^{k}$, on a 
+	$$\vert P(x_{0})\vert\leqslant \Vert P\Vert_{\infty}\sum_{k=0}^{n}\vert x_{0}\vert^{k}$$
+	Si $\vert x_{0}\vert<1$, on a 
+	$$\vert P(x_{0})\vert\leqslant \Vert P\Vert_{\infty}\frac{1}{1-\vert x_{0}\vert}$$
+	donc $\varphi_{x_{0}}$ est continue et si $x_{0}=\vert x_{0}\vert e^{\mathrm{i}\theta_{0}}$, soit $n\in\N$ et $P_{n}=\sum_{k=0}^{n}e^{-\mathrm{i}k\theta_{0}}X^{k}$, on a $\Vert P_{n}\Vert_{\infty}=1$ et 
+	$$\vert \varphi_{x_{0}}(P_{n})=\sum_{k=0}^{n}\vert x_{0}\vert^{k}\xrightarrow[n\to+\infty]{}\frac{1}{1-\vert x_{0}\vert}$$
+	donc $\vertiii{\varphi_{x_{0}}}=\frac{1}{1-\vert x_{0}\vert}$.
+
+	Si $\vert x_{0}\vert\geqslant1$, 
+	$$\vert\varphi_{x_0}(P_{n})\vert=\sum_{k=0}^{n}\vert x_{0}\vert^{k}\xrightarrow[n\to+\infty]{}+\infty$$
+	donc $\varphi_{x_{0}}$ n'est pas continue.
+\end{solution}
+
+\begin{solution}
+	Pour le sens indirect, soit $\lambda\in\Sp_{\C}(M)$. Pour tout $p\in\N$, $\lambda\in\Sp_{\C}(M_{p})$ donc $\det(M_{p}-\lambda I_{n})=0$. Par continuité du déterminant, on a $0=\det(M_{p}-\lambda I_{n})\xrightarrow[p\to+\infty]{}\det(-\lambda I_{n})$. Donc $\lambda=0$ et $\Sp_{\C}(M)=\{0\}$ donc $M$ est nilpotente.
+
+	Pour le sens direct, soit $u\in\L(\C^{n})$ canoniquement associée à $M$. On trigonalise $u$ sur une base $\mathcal{B}=(\varepsilon_{1},\dots,\varepsilon_{n})$ avec $u(\varepsilon_{1})=0,u(\varepsilon_{2})=a_{1,2}\varepsilon_{1},\dots,u(\varepsilon_{n})=a_{1,n}\varepsilon_{1}+\dots+a_{n-1,n}\varepsilon_{n-1}$. Posons pour $i\in\{1,\dots,n\}$, $\varepsilon_{i,p}=\frac{\varepsilon_{i}}{p^{i-1}}$. On pose $\mathcal{B}_{p}=(\varepsilon_{1,p},\dots,\varepsilon_{n,p})$ et $M_{p}=\mat\limits_{B_{p}}(u)$, semblable à $M$ et $M_{p}\xrightarrow[p\to+\infty]{}0$ car $\Vert M_{p}\Vert\leqslant\frac{1}{p}\Vert M_{1}\Vert$.
+\end{solution}
+
+\begin{solution}
+	On pose $u\in\L(\C^{n})$ canoniquement associée à $M$. 
+
+	Pour le sens indirect, si $M$ n'est pas diagonalisable, il existe une base $B=(\varepsilon_{1},\dots,\varepsilon_{n})$ de $\C^{n}$ telle que 
+	$$\mat\limits_{\mathcal{B}}(u)=D+N$$
+	où $D$ est diagonale et $N$ est nilpotente (décomposition de Dunford). En reprenant les bases $\mathcal{B}_{p}$ définies à l'exercice précédent, on a
+	$$\mat\limits_{\mathcal{B}_{p}}(u)=D+N_{p}\xrightarrow[p\to+\infty]{}D$$
+	Si $D\in S_{M}$, alors $M$ est diagonalisable ce qui est exclu par hypothèse. Donc $S_{M}$ n'est pas fermé.
+
+	Pour le sens direct, si $M$ est diagonalisable, soit $(M_{p})_{p\in\N}\in(S_{M})^{\N}$ avec $M_{p}\xrightarrow[p\to+\infty]{}M'$. Soit $\lambda\in\C$. On a $\chi_{M_{p}}(\lambda)=\det(\lambda I_{n}-M_{p})=\chi_{M}(\lambda)$ car $M$ et $M_{p}$ sont semblables. Par continuité du déterminant, on a $\chi_{M'}(\lambda)=\chi_{M}(\lambda)$, donc $\chi_{M'}=\chi_{M}$. De plus, $A\mapsto\Pi_{M}(A)$ (polynôme minimal) est continue sur $\M_{n}(\C)$ et pour tout $p\in\N$, on a $\Pi_{M}(M_{p})=0$ donc $\Pi_{M}(M')=0$. $M'$ est donc annulée par $\Pi_{M}$, donc $M'$ est diagonalisable et comme $\chi_{M}=\chi_{M'}$, $M$ et $M'$ ont les mêmes valeurs propres avec les mêmes multiplicités. Donc $M'\in S_{M}$.
+\end{solution}
+
+\begin{remark}
+	Le polynôme caractéristique est une fonction continue de la matrice, mais c'est faux pour le polynôme minimal, par exemple pour 
+	$$M_{p}=\begin{pmatrix}
+		\frac{1}{p} &0\\
+		0 & \frac{2}{p}
+	\end{pmatrix}$$
+	On a $M_{p}\xrightarrow[p\to+\infty]{}0$ et $\Pi_{M_{p}}=(X-\frac{1}{p})(X-\frac{2}{p})\xrightarrow[p\to+\infty]{} X^{2}\neq X=\Pi_{M_{\infty}}$ donc $\lim\limits_{p\to+\infty}\Pi_{M_p}\neq\Pi_{\lim\limits_{p\to+\infty}M_{p}}$.
+\end{remark}
+
+\begin{solution}
+	On note $A_{h}=\{\vert\varphi(x)-\varphi(y)\vert\bigm|(x,y)\in I^{2}\text{ et }\vert x-y\vert\leqslant h\}$.
+	\begin{enumerate}
+		\item $\omega_{\varphi}$ est bien défini car $\vert\varphi(x)-\varphi(y)\vert\leqslant 2\Vert\varphi\Vert_{\infty}$). Si $0<h\leqslant h'$, alors $A_{h}\subset A_{h'}$ donc $\sup(A_{h})\leqslant\sup(A_{h'})$ donc $\omega_{\varphi}(h)\leqslant\omega_{\varphi}(h')$.
+		\item Soit $(h,h')\in(\R_{+}^{*})^{2}$, soit $(x,y)\in I^{2}$ tel que $\vert x-y\vert\leqslant h+h'$ (où on peut supposer que $x\leqslant y$).
+		\begin{itemize}
+			\item Si $y\in[x,x+h]$, alors $\vert x-y\vert\leqslant h$ donc $\vert\varphi(x)-\varphi(y)\vert\leqslant\omega_{\varphi}(h)\leqslant\omega_\varphi(h)+\omega_{\varphi}(h')$
+			\item Si $y\in[x+h,x+h+h']$, $\vert\varphi(x)-\varphi(y)\vert\leqslant\vert\varphi(x)-\varphi(x+h)\vert+\vert\varphi(x+h)-\varphi(y)\vert\leqslant\omega_\varphi(h)+\omega_{\varphi}(h')$ car $\vert x-(x+h)\vert\leqslant h$ et $\vert x+h-y\vert\leqslant h'$.
+		\end{itemize}
+		Donc $\omega_{\varphi}(h+h')\leqslant\omega_\varphi(h)+\omega_\varphi(h')$.
+		\item Par récurrence sur $n\in\N$, on a $\omega_\varphi(nh)=n\omega_\varphi(h)$. Si $\lambda\in\R_{+}^{*}$, on a $\lambda h\leqslant(\lfloor \lambda\rfloor+1)h$ et par croissance et ce qui précède, on a 
+		$$\omega_\varphi(\lambda h)\leqslant(\lfloor\lambda\rfloor+1)\omega_\varphi(h)\leqslant(\lambda+1)\omega_\varphi(h)$$
+		\item Soit $\varepsilon>0$. $\varphi$ étant uniformément continue, il existe $\alpha>0$ tel que pour tout $(x,y)\in I^{2}$, si $\vert x-y\vert\alpha$ on a $\vert\varphi(x)-\varphi(y)\vert\leqslant\varepsilon$ et on a pour $h\leqslant\alpha$, $\omega_\varphi(h)\leqslant\varepsilon$ d'où $\lim\limits_{h\to0}\omega_\varphi(h)=0$.
+		
+		Soit alors $h_{0}>0$ fixé et $h>0$,
+		\begin{itemize}
+			\item si $h_{0}\leqslant h$, on a $0\leqslant\omega_\varphi(h)-\omega_\varphi(h_0)\leqslant\omega_\varphi(h-h_0)$.
+			\item si $h\leqslant h_{0}$, on a $0\leqslant\omega_\varphi(h_0)-\omega_\varphi(h)\leqslant\omega_\varphi(h_0-h)$.
+		\end{itemize}
+		Dans tous les cas, on a $\vert\omega_\varphi(h)-\omega_\varphi(h_{0})\vert\leqslant\omega_\varphi(\vert h_{0}-h\vert)$. Donc on a bien $\lim\limits_{h\to h_{0}}\omega_\varphi(h)=\omega_\varphi(h_{0})$. Donc $\omega_{\varphi}$ est continue (et même uniformément).
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	$G$ est borné car si $M\in G$, $\vertiii{M}\leqslant \vertiii{I_{n}}+\mu=1+\mu$. Montrons donc que si $G_{0}$ est un sous-groupe borné de $GL_{n}(\C)$, alors les valeurs propres de ses éléments sont de module 1, et ceux-ci sont diagonalisables.
+
+	En effet, soit $M\in G$ et $\lambda\in\Sp(M)$, soit $X$ un vecteur propre associé. On a 
+	$\Vert MX\Vert=\vert\lambda\vert\Vert X\Vert\leqslant\vertiii{M}\Vert X\Vert$ donc $\vert\lambda\vert\leqslant\vertiii{M}\leqslant\sup\limits_{M\in G}\vertiii{M}$. Pour tout $k\in\Z$, $M^{k}\in G$ et $\lambda^{k}\in\Sp(M^{k})$, donc si $\vert\lambda\vert>1$, on a $\lim\limits_{k\to+\infty}\vert\lambda\vert^{k}=+\infty$, et si $\vert\lambda\vert^{\lambda}<1$, on a $\lim\limits_{k\to-\infty}\vert\lambda\vert^{k}=+\infty$. Comme 
+	G est borné, $\vert\lambda\vert=1$.
+
+	On utilise ensuite la décomposition de Dunford pour $M$: $M=D+N$ avec $DN=ND$, $D$ diagonalisable et $N$ nilpotente. Grâce au binôme de Newton, pour $k\geqslant r$ p* $r$ est l'indice de nilpotence de $N$, on a
+	$$M^{k}=\sum_{p=0}^{k}\binom{k}{p}N^{p}D^{k-p}=\underbrace{D^{k}}_{\text{borné}}+kND+\sum_{p=2}^{r-1}\underbrace{\binom{k}{p}}_{\underset{k\to+\infty}{\sim}\frac{k^{p}}{p!}}N^{p}\underbrace{D^{k-p}}_{\text{borné car }\Sp(D)\subset\U}$$
+	Donc
+	$$M^{k}\underset{k\to+\infty}{\sim}\underbrace{\frac{k^{r-1}}{(r-1)!}\underbrace{N^{r-1}}_{\neq0}D^{k-r+1}}_{\text{non borné si }N\neq0}$$
+	Donc $N=0$ et $M=D$ est diagonalisable.
+
+	Revenons donc à l'exercice. Soit $M\in G$ et $\lambda=e^{\mathrm{i}\theta}\in\Sp(M)$ avec $\theta\in]-\pi,pi]$. Si $X$ est un vecteur propre associé à $\lambda$, on a 
+	$$(\lambda-1)\Vert X\Vert=\Vert(M-I_{n})X\Vert\leqslant\mu\Vert X\Vert$$
+	donc $\vert\lambda-1\vert=2\vert\underbrace{\sin(\frac{\theta}{2})}_{\geqslant0}\vert\leqslant\mu$.
+	Donc $\theta\in[-\theta_{0},\theta_{0}]$ où $\theta_{0}=\arcsin(\frac{\mu}{2})\in[0,\pi[$.
+
+	Si $\frac{\theta}{\pi}\notin\Q$, $e^{\mathrm{i}k\pi}\in\Sp(M^{k})$, $\vert e^{\mathrm{i}k\theta}-1\vert\leqslant\mu$. Alors $\{k\theta+2l\pi\bigm| (k,l)\in\Z^{2}\}$ est un sous-groupe de $(\R,+)$ non monogène et donc dense, et alors $(e^{\mathrm{i}k\theta})_{k\in\Z}$ est dense dans $\U$, donc il existe $k_{0}\in\Z$ tel que $\vert e^{\mathrm{i}k_{0}\theta}+1\vert=\vert 2-(1-e^{\mathrm{i}k_{0}\theta_{0}})\vert<2-\mu$, ce qui est impossible car $\vert 2-(1-e^{\mathrm{i}k_{0\theta}})\vert\geqslant2-\vert 1-e^{\mathrm{i}k_{0}\theta_{0}}\vert\geqslant2-\mu$.
+
+	Ainsi, $\frac{\theta}{\pi}\in\Q$ et il existe $m\in\N^{*}$ tel que $\lambda=e^{\mathrm{i}\theta}\in\U_{m}$. Ce n'est pas forcément le même $m$ pour tout les M dans G. Notons alors pour 
+	$$\lambda\in\bigcup_{M\in G}\Sp(M)=\mathcal{A}$$
+	$\omega(\lambda)$ l'ordre (multiplicatif) de $\lambda$ dans $\U$.
+
+	Si $\omega(\lambda)=m$, on a $gr(\lambda)=\U_{m}$ donc il existe $k\in\Z$ tel que $\lambda^{k}=e^{\frac{2\mathrm{i}\pi}{m}}\in\mathcal{A}$ (car $\lambda^{k}\in\Sp(M^{k})$). Supposons que $\{\omega(\lambda)\bigm| \lambda\in\mathcal{A}\}$ non borné. Alors il existe $(m_{k})_{k\in\N}$ tel que $m_{k}\xrightarrow[k\to+\infty]{}+\infty$ et $e^{\frac{2\mathrm{i}\pi}{m_{k}}}\in\mathcal{A}$. Alors 
+	$$\underbrace{e^{2\mathrm{i}\lfloor\frac{m_{k}}{2}\rfloor \frac{\pi}{m_{k}}}}_{\xrightarrow[k\to+\infty]{} e^{i\pi}=-1}\in\mathcal{A}$$
+	ce qui est impossible car $\vert\lambda+1\vert\geqslant2-\mu>0$. On peut donc noter
+	$$m=\underset{\lambda\in\mathcal{A}}{\vee}\omega(\lambda)$$
+	et pour tout $M\in G$, pour tout $\lambda\in\Sp(M)$, $\lambda^{m}=1$. Or $M$ est diagonalisable, donc $M^{m}=I_{n}$.
+\end{solution}
+
+\begin{solution}
+	Si $M\in\mathcal{G}_{q}$, $P(X)=X^{q}-1$ annule $M$ donc $M$ est diagonalisable à valeurs propres dans $\U_{q}$. Réciproquement, si $M$ est diagonalisable et $\Sp_{\C}(M)\subset\U_{q}$ alors il existe $P\in GL_{n}(\C)$ avec 
+	$$M=P\diag(\lambda_{1},\dots,\lambda_{n})P^{-1}$$
+	et donc 
+	$$M^{q}=P\diag(\lambda_{1}^{q},\dots,\lambda_{n}^{q})P^{-1}=I_{n}$$
+
+	Si $M\in\mathcal{G}_{q}$ n'est pas une homothétie, il existe $\lambda\neq\mu\in\Sp_{\C}(M)^{2}$ et $P\in GL_{n}(\C)$ tel que 
+	$$M=P\begin{pmatrix}
+		\lambda & &\\
+		& \mu & &\\
+		& & \ddots
+	\end{pmatrix}P^{-1}$$
+	Soit $k\in\N^{*}$ tel que 
+	$$M=P\begin{pmatrix}
+		\lambda & \frac{1}{k}&\\
+		& \mu & &\\
+		& & \ddots
+	\end{pmatrix}P^{-1}\xrightarrow[k\to+\infty]{}M$$
+	Or 
+	$$\begin{pmatrix}
+		\lambda & \frac{1}{k}\\
+		0 & \lambda
+	\end{pmatrix}\text{  est semblable }\begin{pmatrix}
+		\lambda & 0\\
+		0 & \mu
+	\end{pmatrix}$$
+	car $\chi_{A}=(X-\lambda)(X-\mu)$ donc est diagonalisable. Donc $M_{k}\sim M$ et $M_{k}\in\mathcal{G}_{q}$ et $M$ n'est pas isolé.
+
+	Montrons le petit lemme suivante: soit $\Vert\cdot\Vert$ une norme sur $\C^{n}$ et $\vertiii{\cdot}$ la norme subordonnée, soit $\lambda\in\C$ et $M\in\M_{n}(\C)$ et $\varepsilon>0$. Si $\vertiii{M-\lambda I_{n}}\leqslant\varepsilon$ alors $\Sp_{\C}(M)\subset\overline{B(\lambda,\varepsilon)}$. En effet, soit $X$ un vecteur propre de $M$ associé à $\mu\in\Sp_{\C}(M)$. On a 
+	$$\Vert (M-\lambda I_{n})X\Vert=\vert\mu-\lambda \vert \Vert X\Vert\leqslant\vertiii{M-\lambda I_{n}}\Vert X\Vert\leqslant\varepsilon\Vert X\Vert$$
+	donc $\vert\mu-\lambda\vert\leqslant\varepsilon$.
+
+	Pour $\varepsilon=\sin(\frac{\pi}{q})>0$ et $\lambda\in\U_{q}$; si $M\in B_{\vertiii{\cdot}}(\lambda I_{n},\varepsilon)\cap \mathcal{G}_{q}$ alors pour tout $\mu\in\Sp_{\C}(M)$, on a $\vert\lambda-\mu\vert\leqslant\sin(\frac{\pi}{q})$ donc $\lambda=\mu$. Donc si $M=\lambda I_{n}$
+	 alors $M$ est isolé (avec $\lambda\in\U_{q}$). Donc les matrices scalaires sont isolées.
+\end{solution}
