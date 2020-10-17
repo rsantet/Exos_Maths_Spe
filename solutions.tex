@@ -1208,6 +1208,73 @@ On a bien $\Vert f_{n}\Vert_{\infty}=1$.
 	\end{enumerate}
 \end{solution}
 
+\begin{solution}
+	$G$ est borné car si $M\in G$, $\vertiii{M}\leqslant \vertiii{I_{n}}+\mu=1+\mu$. Montrons donc que si $G_{0}$ est un sous-groupe borné de $GL_{n}(\C)$, alors les valeurs propres de ses éléments sont de module 1, et ceux-ci sont diagonalisables.
+
+	En effet, soit $M\in G$ et $\lambda\in\Sp(M)$, soit $X$ un vecteur propre associé. On a 
+	$\Vert MX\Vert=\vert\lambda\vert\Vert X\Vert\leqslant\vertiii{M}\Vert X\Vert$ donc $\vert\lambda\vert\leqslant\vertiii{M}\leqslant\sup\limits_{M\in G}\vertiii{M}$. Pour tout $k\in\Z$, $M^{k}\in G$ et $\lambda^{k}\in\Sp(M^{k})$, donc si $\vert\lambda\vert>1$, on a $\lim\limits_{k\to+\infty}\vert\lambda\vert^{k}=+\infty$, et si $\vert\lambda\vert^{\lambda}<1$, on a $\lim\limits_{k\to-\infty}\vert\lambda\vert^{k}=+\infty$. Comme 
+	G est borné, $\vert\lambda\vert=1$.
+
+	On utilise ensuite la décomposition de Dunford pour $M$: $M=D+N$ avec $DN=ND$, $D$ diagonalisable et $N$ nilpotente. Grâce au binôme de Newton, pour $k\geqslant r$ p* $r$ est l'indice de nilpotence de $N$, on a
+	$$M^{k}=\sum_{p=0}^{k}\binom{k}{p}N^{p}D^{k-p}=\underbrace{D^{k}}_{\text{borné}}+kND+\sum_{p=2}^{r-1}\underbrace{\binom{k}{p}}_{\underset{k\to+\infty}{\sim}\frac{k^{p}}{p!}}N^{p}\underbrace{D^{k-p}}_{\text{borné car }\Sp(D)\subset\U}$$
+	Donc
+	$$M^{k}\underset{k\to+\infty}{\sim}\underbrace{\frac{k^{r-1}}{(r-1)!}\underbrace{N^{r-1}}_{\neq0}D^{k-r+1}}_{\text{non borné si }N\neq0}$$
+	Donc $N=0$ et $M=D$ est diagonalisable.
+
+	Revenons donc à l'exercice. Soit $M\in G$ et $\lambda=e^{\mathrm{i}\theta}\in\Sp(M)$ avec $\theta\in]-\pi,pi]$. Si $X$ est un vecteur propre associé à $\lambda$, on a 
+	$$(\lambda-1)\Vert X\Vert=\Vert(M-I_{n})X\Vert\leqslant\mu\Vert X\Vert$$
+	donc $\vert\lambda-1\vert=2\vert\underbrace{\sin(\frac{\theta}{2})}_{\geqslant0}\vert\leqslant\mu$.
+	Donc $\theta\in[-\theta_{0},\theta_{0}]$ où $\theta_{0}=\arcsin(\frac{\mu}{2})\in[0,\pi[$.
+
+	Si $\frac{\theta}{\pi}\notin\Q$, $e^{\mathrm{i}k\pi}\in\Sp(M^{k})$, $\vert e^{\mathrm{i}k\theta}-1\vert\leqslant\mu$. Alors $\{k\theta+2l\pi\bigm| (k,l)\in\Z^{2}\}$ est un sous-groupe de $(\R,+)$ non monogène et donc dense, et alors $(e^{\mathrm{i}k\theta})_{k\in\Z}$ est dense dans $\U$, donc il existe $k_{0}\in\Z$ tel que $\vert e^{\mathrm{i}k_{0}\theta}+1\vert=\vert 2-(1-e^{\mathrm{i}k_{0}\theta_{0}})\vert<2-\mu$, ce qui est impossible car $\vert 2-(1-e^{\mathrm{i}k_{0\theta}})\vert\geqslant2-\vert 1-e^{\mathrm{i}k_{0}\theta_{0}}\vert\geqslant2-\mu$.
+
+	Ainsi, $\frac{\theta}{\pi}\in\Q$ et il existe $m\in\N^{*}$ tel que $\lambda=e^{\mathrm{i}\theta}\in\U_{m}$. Ce n'est pas forcément le même $m$ pour tout les M dans G. Notons alors pour 
+	$$\lambda\in\bigcup_{M\in G}\Sp(M)=\mathcal{A}$$
+	$\omega(\lambda)$ l'ordre (multiplicatif) de $\lambda$ dans $\U$.
+
+	Si $\omega(\lambda)=m$, on a $gr(\lambda)=\U_{m}$ donc il existe $k\in\Z$ tel que $\lambda^{k}=e^{\frac{2\mathrm{i}\pi}{m}}\in\mathcal{A}$ (car $\lambda^{k}\in\Sp(M^{k})$). Supposons que $\{\omega(\lambda)\bigm| \lambda\in\mathcal{A}\}$ non borné. Alors il existe $(m_{k})_{k\in\N}$ tel que $m_{k}\xrightarrow[k\to+\infty]{}+\infty$ et $e^{\frac{2\mathrm{i}\pi}{m_{k}}}\in\mathcal{A}$. Alors 
+	$$\underbrace{e^{2\mathrm{i}\lfloor\frac{m_{k}}{2}\rfloor \frac{\pi}{m_{k}}}}_{\xrightarrow[k\to+\infty]{} e^{i\pi}=-1}\in\mathcal{A}$$
+	ce qui est impossible car $\vert\lambda+1\vert\geqslant2-\mu>0$. On peut donc noter
+	$$m=\underset{\lambda\in\mathcal{A}}{\vee}\omega(\lambda)$$
+	et pour tout $M\in G$, pour tout $\lambda\in\Sp(M)$, $\lambda^{m}=1$. Or $M$ est diagonalisable, donc $M^{m}=I_{n}$.
+\end{solution}
+
+\begin{solution}
+	Si $M\in\mathcal{G}_{q}$, $P(X)=X^{q}-1$ annule $M$ donc $M$ est diagonalisable à valeurs propres dans $\U_{q}$. Réciproquement, si $M$ est diagonalisable et $\Sp_{\C}(M)\subset\U_{q}$ alors il existe $P\in GL_{n}(\C)$ avec 
+	$$M=P\diag(\lambda_{1},\dots,\lambda_{n})P^{-1}$$
+	et donc 
+	$$M^{q}=P\diag(\lambda_{1}^{q},\dots,\lambda_{n}^{q})P^{-1}=I_{n}$$
+
+	Si $M\in\mathcal{G}_{q}$ n'est pas une homothétie, il existe $\lambda\neq\mu\in\Sp_{\C}(M)^{2}$ et $P\in GL_{n}(\C)$ tel que 
+	$$M=P\begin{pmatrix}
+		\lambda & &\\
+		& \mu & &\\
+		& & \ddots
+	\end{pmatrix}P^{-1}$$
+	Soit $k\in\N^{*}$ tel que 
+	$$M=P\begin{pmatrix}
+		\lambda & \frac{1}{k}&\\
+		& \mu & &\\
+		& & \ddots
+	\end{pmatrix}P^{-1}\xrightarrow[k\to+\infty]{}M$$
+	Or 
+	$$\begin{pmatrix}
+		\lambda & \frac{1}{k}\\
+		0 & \lambda
+	\end{pmatrix}\text{  est semblable }\begin{pmatrix}
+		\lambda & 0\\
+		0 & \mu
+	\end{pmatrix}$$
+	car $\chi_{A}=(X-\lambda)(X-\mu)$ donc est diagonalisable. Donc $M_{k}\sim M$ et $M_{k}\in\mathcal{G}_{q}$ et $M$ n'est pas isolé.
+
+	Montrons le petit lemme suivante: soit $\Vert\cdot\Vert$ une norme sur $\C^{n}$ et $\vertiii{\cdot}$ la norme subordonnée, soit $\lambda\in\C$ et $M\in\M_{n}(\C)$ et $\varepsilon>0$. Si $\vertiii{M-\lambda I_{n}}\leqslant\varepsilon$ alors $\Sp_{\C}(M)\subset\overline{B(\lambda,\varepsilon)}$. En effet, soit $X$ un vecteur propre de $M$ associé à $\mu\in\Sp_{\C}(M)$. On a 
+	$$\Vert (M-\lambda I_{n})X\Vert=\vert\mu-\lambda \vert \Vert X\Vert\leqslant\vertiii{M-\lambda I_{n}}\Vert X\Vert\leqslant\varepsilon\Vert X\Vert$$
+	donc $\vert\mu-\lambda\vert\leqslant\varepsilon$.
+
+	Pour $\varepsilon=\sin(\frac{\pi}{q})>0$ et $\lambda\in\U_{q}$; si $M\in B_{\vertiii{\cdot}}(\lambda I_{n},\varepsilon)\cap \mathcal{G}_{q}$ alors pour tout $\mu\in\Sp_{\C}(M)$, on a $\vert\lambda-\mu\vert\leqslant\sin(\frac{\pi}{q})$ donc $\lambda=\mu$. Donc si $M=\lambda I_{n}$
+	 alors $M$ est isolé (avec $\lambda\in\U_{q}$). Donc les matrices scalaires sont isolées.
+\end{solution}
+
 \cleardoublepage
 \section{Fonction d'une variable réelle}
 \cleardoublepage
