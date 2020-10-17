@@ -81,7 +81,60 @@
 \begin{solution}
 	Si on a (i), soit $x$ un vecteur propre associé à $\rho(u)=\rho e^{\mathrm{i}\theta}$. On a $\Vert u(x)\Vert=\Vert\rho(u) x\Vert=\rho(u)\Vert x\Vert$ et comme $x\neq0$, on a $\rho(u)\leqslant\vertiii{\rho(u)}<1$ d'où (ii).
 
-	Si (ii),
+	Si (ii), on utilise la décomposition de Dunford $u=n+d$ avec $n$ nilpotent, $d$ diagonalisable et $dn=nd$. Soit $m=\dim(E)$. Pour tout $p\geqslant m$, on a 
+	$$u^{p})\sum_{k=0}^{p}\binom{p}{k}n^{k}d^{p-k}=\sum_{k=0}^{m-1}\binom{p}{k}n^{k}\underbrace{d^{p-k}}_{\xrightarrow[p\to+\infty]{}0}$$
+	En effet, on a $k\geqslant m-1$ fixé, il existe une base $\mathcal{B}$ de $E$ telle que 
+	$$\binom{p}{k}\mat\limits_{\mathcal{B}}(d^{p})=\binom{p}{k}\diag(\lambda_{1}^{p},\dots,\lambda_{m}^{p})\xrightarrow[p\to+\infty]{}0$$
+	car $\vert\lambda_{i}\vert<1$ pour tout $i\in\{1,\dots,m\}$ et 
+	$$\binom{p}{k}\underset{p\to+\infty}{\sim}\frac{p^{k}}{k!}=\underset{p\to+\infty}{o}\Bigl(\frac{1}{\rho(u)^{p}}\Bigr)$$
+	donc on a (iii).
+
+	Si (iii), soit $x$ un vecteur propré associé à $\lambda\in\C$, on a $u^{p}\xrightarrow[p\to+\infty]{}0$ donc en particulier, $u^{p}(x)=\lambda^{p}\xrightarrow[p\to+\infty]{}0$, donc $\rho(u)^{p}\xrightarrow[p\to+\infty]{}0$ et $\rho(u)\geqslant0$ donc $\rho(u)<1$. Posons encore $u=d+n$ la décomposition de Dunford de $u$. Soit $\varepsilon>0$, il existe $\mathcal{B}_{0}=(e_{1},\dots,e_{n})$ base de $E$ dans laquelle les coefficients de $\mat\limits_{\mathcal{B}_{0}}(n)$ sont en module $\leqslant\varepsilon$. Définissons sur $E$ 
+	$$\Biggl\Vert\sum_{i=1}^{m}x_{i}e_{i}\Biggr\Vert_{\infty}=\max\limits_{1\leqslant i\leqslant m}\vert x_{i}\vert$$
+	Soit $M=\mat\limits_{\mathcal{B}_{0}}(u)=(m_{i,j})_{1\leqslant i,j\leqslant m}$ triangulaire supérieure avec $m_{ii}=\lambda_{i}$ et pour tout $j\neq i$, $\vert m_{i,j}\vert<\varepsilon$. Soit donc $x=\sum_{i=1}^{m}x_{i}e_{i}\in\C^{m}$, on a 
+	$$
+	\Vert Mx\Vert_{\infty}=\max\limits_{1\leqslant i\leqslant n}\underbrace{\Biggl\vert\sum_{j=1}^{m}m_{i,j}x_{j}\Biggr\vert}_{(\vert\lambda_{i}\vert+(m-1)\varepsilon)\Vert x\Vert_{\infty}}
+	$$
+	donc 
+	$$\vertiii{u}\leqslant\underbrace{\rho(u)}_{<1}+(m-1)\varepsilon$$
+	et on choisit
+	$$\varepsilon<\frac{1-\rho(u)}{\underbrace{m-1}_{>0}}$$
+	d'où $\vertiii{u}<1$ et donc on a (i) et finalement on a bien l'équivalence.
+\end{solution}
+
+\begin{remark}
+	$u\mapsto\rho(u)$ n'est pas une norme car pour $u$ nilpotente non nulle, $\rho(u)=0$.
+\end{remark}
+
+\begin{solution}
+	Supposons (i), soit $Y$ un vecteur propre de $A$ avec $AY=\lambda Y$ pour $\lambda\in\C$. Pour tout $k\in\N,BA^{k}Y=\lambda^{k}BY$ et il existe $k_{0}\in\N$ tel que $\lambda^{k_{0}}BY\neq0$ et $BY\neq0$ donc on a (ii).
+
+	Si (ii), supposons qu'il existe $Y\in\C^{n}\setminus\{0\}$ tel que $\varphi=0$. On note 
+	$$\chi_{A}=\prod_{i=1}^{r}(X-\lambda_{i})^{m_{i}}$$ avec les $\lambda_{i}$ distincts. Alors $Y=\sum_{i=1}^{r}Y_{i}$ où $Y_{i}\in\ker(A-\lambda_{i}I_{n})$. Il existe $i_{0}\in\{1,\dots,n\}$ tel que $Y_{i_{0}}\neq0$ car $Y\neq0$. On a alors, pour $t\in\R$,
+	$$B\exp(tA)Y=\sum_{i=1}^{r}B\exp(t\lambda_{i})Y_{i}=0$$
+	Pour tout $k\in\{0,\dots,r-1\}$, on a $\varphi^{(k)}(t)=\sum_{i=1}^{r}B\lambda_{i}^{k}\exp(t\lambda_{i})Y_{i}=0$. Pour $t=0$ on a $\sum_{i=1}^{r}\lambda_{i}^{k}BY_{i}=0$ ce qui, pour $t=0$, donne le système 
+	$$
+	\left\{
+		\begin{array}[]{lll}
+			BY_{1}+\dots+BY_{r} &= &0\\
+			\lambda_{1}BY_{1}+\dots+\lambda_{r}BY_{r}=0\\
+			&\vdots&\\
+			\lambda_{1}^{r-1}BY_{1}+\dots+\lambda_{r}^{r-1}BY_{r} &= &0
+		\end{array}
+	\right.
+	$$
+	Pour tout $P\in\C_{r-1}[X]$, on a donc $\sum_{i=1}^{r}P(\lambda_{i})BY_{i}=0$. Pour $i\in\{0,\dots,r-1\}$ et $P=\prod_{i\neq j}\frac{(X-\lambda_{j})}{\lambda_{i}-\lambda_{j}}$, on obtient pour tout $i\in\{1,\dots, r\}, BY_{i}=0$. En particulier, $BY_{i_{0}}=0$ et $Y_{i_{0}}$ est un vecteur propre de $A$ car non nul. C'est une contradiction. On a donc (iii).
+
+	\item Soit $Y\in\C^{n}\setminus\{0\}$, supposons que pour tout $k\in\{0,\dots,n-1\}$, $BA^{k}Y=0$. Soit $k\geqslant n$, il existe $(Q_{k},R_{k})\in\C[X]\times\C_{n-1}[X]$ tel que 
+	$$X^{k}=Q_{k}\chi_{A}+R_{k}$$
+	et le théorème de Cayley-Hamilton donne donc $A^{k}=R_{k}(A)$ d'où $BA^{k}Y=BR_{k}(A)Y=0$. Alors pour tout $t\in\R$,
+	\begin{align*}
+		B\exp(tA)Y
+		&=B\sum_{k=0}^{+\infty}\frac{t^{k}A^{k}}{k!}Y\\
+		&=\sum_{k=0}^{+\infty}\frac{t^{k}(BA^{k}Y)}{k!}\\
+		&=0
+	\end{align*}
+	Par contraposée, on a bien ce qu'il faut, d'où l'équivalence.
 \end{solution}
 
 \cleardoublepage

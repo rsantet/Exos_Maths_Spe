@@ -2016,7 +2016,8 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	Soit $E=\M_{n}(\C)$ et pour $(A,B)\in E^{2}$ et \function{f}{E}{E}{M}{AM} et \function{g}{E}{E}{M}{MB} et $h=f\circ g$.
 	\begin{enumerate}
 		\item Montrer que $f$ (respectivement $g$) est diagonalisable si et seulement si $A$ (respectivement $B$) l'est.
-		\item Soient $(X_{1},\dots,X_{n})$ et $(Y_{1},\dots,Y_{n})$ deux bases de $\C^{n}=\M_{n,1}(\C)$. 
+		\item Soient $(X_{1},\dots,X_{n})$ et $(Y_{1},\dots,Y_{n})$ deux bases de $\C^{n}=\M_{n,1}(\C)$.
+		
 		Montrer que $(X_{i}Y_{i}^{\mathsf{T}})_{1\leqslant i,j\leqslant n}$ est une base de $E$.
 		\item On suppose que $A$ et $B$ sont diagonalisables. Montrer que $h$ l'est. A-t-on la réciproque ?
 	\end{enumerate}
@@ -2426,7 +2427,7 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	Soit $\K$ un corps quelconque, $n\geqslant1$ et $A\in\M_{n}(\K)$. On a $\chi_{A}=a_{0}+a_{1}X+\dots+a_{n-1}X^{n-1}+X^{n}$ (polynôme caractéristique).
 	\begin{enumerate}
 		\item Montrer qu'il existe $(M_{0},\dots,M_{n-1})\in\M_{n}(\K)^{n}$ tel que pour tout $\lambda\in\K$, $\com(\lambda I_{n}-A)^{\mathsf{T}}=M_{0}+\lambda M_{1}+\dots+\lambda^{n-1}M_{n-1}$ (où $\com$ indique la comatrice.)
-		\item En formant $(\lambda I_{n}-A)\com(\lambda I_{n}-A)^{\mathsf{T}}$, calculer $(M_{0},\dots,M_{n-1})$ en fonction de $A,A^{2},\dots,A^{n}$. En déduire le théorème de Cayley-Hamilton.
+		\item En formant $(\lambda I_{n}-A)\com(\lambda I_{n}-A)^{\mathsf{T}}$, calculer $(M_{0},\dots,M_{n-1})$ en fonction de \\$A,A^{2},\dots,A^{n}$. En déduire le théorème de Cayley-Hamilton.
 		\item Pour les questions suivantes, on suppose que la caractéristique de $\K$ est 0. Montrer que pour tout $\lambda\in\K$, $\chi_{A}'(\lambda)=\Tr(\com(\lambda I_{n}-A)^{\mathsf{T}})$.
 		\item En déduire qu'il existe $f:\K^{n}\to\K^{n}$ telle que pour tout $A\in\M_{n}(\K)$, $(a_{0},\dots,a_{n-1}) = f(\Tr(A),\dots,\Tr(A^{n}))$.
 		\item Soit $B\in\M_{n}(\K)$, montrer que si pour tout $k\in\{1,\dots,n\}$ $\Tr(A^{k})=\Tr(B^{k})$ alors $\chi_{A}=\chi_{B}$.
@@ -2445,6 +2446,15 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 		\item [(i)] il existe une norme sur $E$ telle que $\vertiii{u}<1$,
 		\item [(ii)] $\rho(u)<1$,
 		\item [(iii)] $\lim\limits_{p\to+\infty}u^{p}=0$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in\M_{n}(C)^{2}$ avec $A$ diagonalisable sur $\C$. Montrer l'équivalence
+	\begin{enumerate}
+		\item [(i)] $\forall Y\in\C^{n}\setminus\{0\},\exists h\in\{0,\dots,n-1\}$, $BA^{k}Y\neq0$,
+		\item [(ii)] $\forall Y$ vecteur propre de $A$, $BY\neq0$,
+		\item [(iii)] $\forall Y\in\C^{n}\{0\}$, \function{\varphi}{\R}{\C^{n}}{t}{B\exp(tA)Y} n'est pas l'application nulle.
 	\end{enumerate}
 \end{exercise}
 
