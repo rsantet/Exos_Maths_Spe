@@ -21,6 +21,10 @@
 \parindent=1cm
 \topmargin=-2cm
 
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
 \usepackage{amsthm}
 \newtheorem{solution}{Solution}[section]
 \theoremstyle{remark}
@@ -36,6 +40,7 @@
 \DeclareMathOperator{\rg}{rg} \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\mat}{mat}
 \DeclareMathOperator{\com}{com} \DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\ppcm}{ppcm}
 \newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert{}#1
 \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
 \newcommand{\function}[5]{
@@ -46,6 +51,7 @@
 	\end{array}
 	$$
 }
+\numberwithin{equation}{section}
 
 \begin{document}
 
@@ -72,33 +78,11 @@
 \cleardoublepage
 \section{Réduction des endomorphismes}
 
-
 \begin{solution}
-	Pour le sens indirect, soit $\lambda\in\Sp_{\C}(M)$. Pour tout $p\in\N$, $\lambda\in\Sp_{\C}(M_{p})$ donc $\det(M_{p}-\lambda I_{n})=0$. Par continuité du déterminant, on a $0=\det(M_{p}-\lambda I_{n})\xrightarrow[p\to+\infty]{}\det(-\lambda I_{n})$. Donc $\lambda=0$ et $\Sp_{\C}(M)=\{0\}$ donc $M$ est nilpotente.
+	Si on a (i), soit $x$ un vecteur propre associé à $\rho(u)=\rho e^{\mathrm{i}\theta}$. On a $\Vert u(x)\Vert=\Vert\rho(u) x\Vert=\rho(u)\Vert x\Vert$ et comme $x\neq0$, on a $\rho(u)\leqslant\vertiii{\rho(u)}<1$ d'où (ii).
 
-	Pour le sens direct, soit $u\in\L(\C^{n})$ canoniquement associée à $M$. On trigonalise $u$ sur une base $\mathcal{B}=(\varepsilon_{1},\dots,\varepsilon_{n})$ avec $u(\varepsilon_{1})=0,u(\varepsilon_{2})=a_{1,2}\varepsilon_{1},\dots,u(\varepsilon_{n})=a_{1,n}\varepsilon_{1}+\dots+a_{n-1,n}\varepsilon_{n-1}$. Posons pour $i\in\{1,\dots,n\}$, $\varepsilon_{i,p}=\frac{\varepsilon_{i}}{p^{i-1}}$. On pose $\mathcal{B}_{p}=(\varepsilon_{1,p},\dots,\varepsilon_{n,p})$ et $M_{p}=\mat\limits_{B_{p}}(u)$, semblable à $M$ et $M_{p}\xrightarrow[p\to+\infty]{}0$ car $\Vert M_{p}\Vert\leqslant\frac{1}{p}\Vert M_{1}\Vert$.
+	Si (ii),
 \end{solution}
-
-\begin{solution}
-	On pose $u\in\L(\C^{n})$ canoniquement associée à $M$. 
-
-	Pour le sens indirect, si $M$ n'est pas diagonalisable, il existe une base $B=(\varepsilon_{1},\dots,\varepsilon_{n})$ de $\C^{n}$ telle que 
-	$$\mat\limits_{\mathcal{B}}(u)=D+N$$
-	où $D$ est diagonale et $N$ est nilpotente (décomposition de Dunford). En reprenant les bases $\mathcal{B}_{p}$ définies à l'exercice précédent, on a
-	$$\mat\limits_{\mathcal{B}_{p}}(u)=D+N_{p}\xrightarrow[p\to+\infty]{}D$$
-	Si $D\in S_{M}$, alors $M$ est diagonalisable ce qui est exclu par hypothèse. Donc $S_{M}$ n'est pas fermé.
-
-	Pour le sens direct, si $M$ est diagonalisable, soit $(M_{p})_{p\in\N}\in(S_{M})^{\N}$ avec $M_{p}\xrightarrow[p\to+\infty]{}M'$. Soit $\lambda\in\C$. On a $\chi_{M_{p}}(\lambda)=\det(\lambda I_{n}-M_{p})=\chi_{M}(\lambda)$ car $M$ et $M_{p}$ sont semblables. Par continuité du déterminant, on a $\chi_{M'}(\lambda)=\chi_{M}(\lambda)$, donc $\chi_{M'}=\chi_{M}$. De plus, $A\mapsto\Pi_{M}(A)$ (polynôme minimal) est continue sur $\M_{n}(\C)$ et pour tout $p\in\N$, on a $\Pi_{M}(M_{p})=0$ donc $\Pi_{M}(M')=0$. $M'$ est donc annulée par $\Pi_{M}$, donc $M'$ est diagonalisable et comme $\chi_{M}=\chi_{M'}$, $M$ et $M'$ ont les mêmes valeurs propres avec les mêmes multiplicités. Donc $M'\in S_{M}$.
-\end{solution}
-
-\begin{remark}
-	Le polynôme caractéristique est une fonction continue de la matrice, mais c'est faux pour le polynôme minimal, par exemple pour 
-	$$M_{p}=\begin{pmatrix}
-		\frac{1}{p} &0\\
-		0 & \frac{2}{p}
-	\end{pmatrix}$$
-	On a $M_{p}\xrightarrow[p\to+\infty]{}0$ et $\Pi_{M_{p}}=(X-\frac{1}{p})(X-\frac{2}{p})\xrightarrow[p\to+\infty]{} X^{2}\neq X=\Pi_{M_{\infty}}$ donc $\lim\limits_{p\to+\infty}\Pi_{M_p}\neq\Pi_{\lim\limits_{p\to+\infty}M_{p}}$.
-\end{remark}
 
 \cleardoublepage
 \section{Espaces vectoriels normés}
@@ -993,8 +977,160 @@ On a bien $\Vert f_{n}\Vert_{\infty}=1$.
 	\end{enumerate}
 \end{solution}
 
-\cleardoublepage
-\section{Fonction d'une variable réelle}
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $\ln(1-x)=P(x)+x^{2}O(1)$ et $\exp(y)=Q(y)+y^{n}O(1)$ d'où 
+		$$\exp(\ln(1+x))=1+x=Q(\ln(1+x))+\underbrace{\ln(1+x)^{n}O(1)}_{O(x^{n})}$$
+		alors $1+x=Q(P(x)+O(x^{n}))+O(x^{n})=Q(P(x))+O(x^{n})$. Soit $B(X)=Q(P(X))+O(x^{n})\in\R[X]$, on a $\frac{B(x)}{x^{n}}=O(1)$ donc $X^{n}\mid B$ et $$Q(P(X))=1+X+B(X)=1+X+X^{n}A(X)$$
+
+		\item On a $N^{n}=0$ donc $P(N)$ est aussi nilpotente et on a 
+		$$\exp(P(N))=\sum_{k=0}^{n-1}\frac{P(N)^{k}}{k!}=Q(P(N))=I_{n}+N+0$$
+
+		\item Soit $M\in GL_{n}(\C)$ et sa décomposition de Dunford: $M=D+N$ avec $D$ diagonalisable, $N$ nilpotente et $DN=ND$. On a $\Sp(D)=\Sp(M)\subset\C^{*}$ et on écrit
+		$$M=D\underbrace{(I_{n}+\underbrace{D^{-1}N}_{\text{nilpotente}})}_{=\exp(P(D^{-1}N))}$$
+		si $D=P_{1}\diag(\lambda_{1},\dots,\lambda_{n})P_{1}^{-1}$, pour tout $k\in\{1,\dots,n\}$ il existe $\mu_{k}\in\C$ tel que $\lambda_{k}=\exp(\mu_{k})$ (car $\exp$ est surjectif sur $\C^{*}$). Alors 
+		$$
+		D=\exp(P_{1}\diag(\mu_{1},\dots,\mu_{n})P_{1}^{-1})\in\C[D]
+		$$
+		puis 
+		\begin{align*}
+			M
+			&=\exp\Bigl(P_{1}\diag(\mu_{1},\dots,\mu_{n})P_{1}^{-1}\Bigr)\exp\Bigl(P(D^{-1}N)\Bigr)\\
+			&=\exp\Bigl(P_{1}\diag(\mu_{1},\dots,\mu_{n})P_{1}^{-1}+P(D^{-1}N)\Bigr)
+		\end{align*}
+		car les matrices commutent.
+
+		Donc $\exp$ est surjective.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	On a $A\subset\overline{A}$, $0=\lim\limits_{n\to+\infty}(\frac{2}{n})^{2n}\in\overline{A}$ et $e=\lim\limits_{n\to+\infty}(1+\frac{1}{n})^{n+1}\in\overline{A}$.
+
+	Si $n\geqslant2$ et $p\geqslant2$, $(\frac{1}{n}+\frac{1}{p})^{n+p}\leqslant1$. Donc si $(\frac{1}{n}+\frac{1}{p})^{n+p}\geqslant1$, alors $n=1$ ou $p=1$.
+
+	Si $x>e$, à partir d'un certain rang, on a $(1+\frac{1}{n})^{n+1}\leqslant\frac{e+x}{2}$ et si $x\notin A$, $x\notin\overline{A}$.
+	Si $1\leqslant x<e$, à partir d'un certain rang, on a $(1+\frac{1}{n})^{n+1}>x$ donc si $x\notin A$, $x\notin\overline{A}$.
+
+	Soit $x<1$, si $n\geqslant2$ et $p\geqslant3$ ou $n\geqslant3$ et $p\geqslant2$, on a $\frac{1}{n}+\frac{1}{p}\leqslant\frac{5}{6}$ et 
+	\begin{align*}
+		\Biggl(\frac{1}{n}+\frac{1}{p}\Biggr)^{n+p}
+		&=\exp\Biggl((n+p)\ln\Bigl(\frac{1}{n}+\frac{1}{p}\Bigr)\Biggr)\\
+		&\leqslant\exp\Biggl((n+p)\ln\Bigl(\frac{5}{6}\Bigr)\Biggr)\\
+		&\leqslant\max\Biggl(\underbrace{\Bigl(\frac{5}{6}\Bigr)^{n}}_{\xrightarrow[n\to+\infty]{}0},\underbrace{\Bigl(\frac{5}{6}\Bigr)^{p}}_{\xrightarrow[p\to+\infty]{}0}\Biggr)
+	\end{align*}
+	Il existe $N_{0}$ tel que pour tout $n\geqslant N_{0}$, $(\frac{5}{6})^{n}\leqslant\frac{x}{2}$. Si $n$ ou $p$ est plus grand que $N_{0}$, on a donc 
+	$$\Biggl(\frac{1}{n}+\frac{1}{p}\Biggr)^{n+p}\leqslant\frac{x}{2}$$
+	Donc il n'y a qu'un nombre fini d'éléments de $A$ plus grand que $\frac{x}{2}$. Ainsi,
+	$$\overline{A}=A\cup\{e,0\}$$
+\end{solution}
+
+\begin{solution}
+	On note 
+	$$\mathbb{V}=\bigcup_{m\geqslant1}\U_{m}=\Biggl\{e^{\frac{2\mathrm{i}k\pi}{m}}\Biggm| m\geqslant1,k\in\{0,\dots,m-1\}\Biggr\}$$
+	Soit $M\in H$. $X^{m}-1$ est scindé à racines simples sur $\C$ donc $M$ est diagonalisable sur $\C$ avec ses valeurs propres dans $\mathbb{V}$. Réciproquement, si $M$ est diagonalisable sur $\C$ et $\Sp_{\C}(M)\subset\mathbb{V}$. Alors pour tout $\lambda\in\Sp_{\C}(M),\exists m_{\lambda}\in\N^{*},\lambda\in\U_{m_{\lambda}}$ et soit $m=\ppcm\limits_{\lambda\in\Sp_{\C}(M)}(m_{\lambda})$. Alors $M^{m}=I_{n}$.
+
+	Soit $A\in\overline{H}$, il existe $(M_{p})_{p\in\N}\in H^{\N}$ telle que $\lim\limits_{p\to+\infty}M_{p}=A$. Comme le polynôme caractéristique est une fonction continue des coefficients, pour tout $\lambda\in\Sp_{\C}(A)$, on a 
+	$$\lim\limits_{p\to+\infty}\chi_{M_{p}}(\lambda)=\chi_{A}(\lambda)=0$$
+	Or 
+	$$\vert\chi_{M_{p}}(\lambda)\vert=\vert\lambda-\lambda_{1,p}\vert\dots\vert\lambda-\lambda_{n,p}\vert\geqslant d(\lambda,\U)^{n}$$
+	avec $\lambda_{i,p}\in\mathbb{V}$ pour tout $i\in\{1,\dots,n\}$. Donc $d(\lambda,\U)=0$ et comme $\U$ est fermé, $\lambda\in\U$.
+
+	Réciproquement, soit $A\in\M_{n}(\C)$ tel que $\Sp_{\C}(A)\subset\U$. Soit 
+	$$\bigl\{e^{\mathrm{i}\theta_1},\dots,e^{\mathrm{i}\theta_r}\bigr\}$$
+	les valeurs propres distinctes de $A$ de multiplicités $m_{1},\dots,m_{r}$. Il existe $Q\in GL_{n}(\C)$ tel que 
+	$$A=Q\diag(\underbrace{e^{\mathrm{i}\theta_{1}},\dots,e^{\mathrm{i}\theta_1}}_{m_{1}\text{ fois}},\dots,\underbrace{e^{\mathrm{i}\theta_r},\dots,e^{\mathrm{i}\theta_r}}_{m_{r}\text{ fois}})Q^{-1}$$
+	On a 
+	$$\theta=\lim\limits_{k\to+\infty}\frac{2\pi}{k}\lfloor k\frac{\theta}{2\pi}\rfloor$$
+	donc on peut former, pour $p\in\N^{*}$,
+	$$A=Q\diag(\underbrace{e^{\mathrm{i}\theta_{1,p}},\dots,e^{\mathrm{i}\theta_{1,p}}}_{m_{1}\text{ fois}},\dots,\underbrace{e^{\mathrm{i}\theta_{r,p}},\dots,e^{\mathrm{i}\theta_{r,p}}}_{m_{r}\text{ fois}})Q^{-1}$$
+	avec $\theta_{i,p}=\frac{2\pi}{p}\lfloor p\frac{\theta_{j}}{2\pi}\rfloor+\frac{2 j\pi}{p}$. Pour $p$ suffisamment gand, les $(\theta_{j,p})$ sont deux à deux distincts donc $A_{p}$ est diagonalisable et $A_{p}\in H$, et donc $A\in \overline{H}$.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a l'inégalité triangulaire et l'homogénéité. On a cependant $N_{a}(X^{k})=\vert a_{k}\vert$ et pour tout $k\in\N$, $X^{k}\neq0$. Donc $N_{a}$ est une norme implique que $a$ ne s'annule pas sur $\N$. Réciproquement, si pour tout $k\in\N$, $a_{k}\neq0$, si $P\neq0$, il existe $k\in\N$ avec $p_{k}$ et donc $N_{a}(P)>0$. Donc $N_{a}$ est une norme si et seulement si pour tout $k\in\N$, $a_{k}\neq0$.
+		
+		\item Si $N_{a}$ et $N_{b}$ sont équivalentes, alors il existe $(\alpha,\beta)\in(\R_{+}^{*})^{2}$ tel que pour tout $k\in\N$,
+		$$\beta N_{b}(X^{k})\leqslant N_{a}(X^{k})\leqslant\alpha N_{b}(X^{k})$$
+		d'où
+		$$\beta \vert b_{k}\vert\leqslant N_{a}(X^{k})\leqslant\alpha \vert b_{k}\vert$$
+		Donc $a=O(b)$ et $b=O(a)$.
+
+		Réciproquement, si $a=O(b)$ et $b=O(a)$, alors on a l'inégalité précédente sur les $a_{k}$ et $b_{k}$, d'où
+		$$\beta\sum_{k=0}^{+\infty}\vert p_{k}b_{k}\vert\leqslant\sum_{k=0}^{+\infty}\vert p_{k}a_{k}\vert\leqslant\alpha\sum_{k=0}^{+\infty}\vert p_{k} b_{k}\vert$$
+		et donc pour tout $P\in\C[X]$
+		$$\beta N_{b}(P)\leqslant N_{a}(P)\leqslant\alpha N_{b}(P)$$
+		et $N_{a}$ et $N_{b}$ sont équivalentes.
+
+		\item $\Delta$ est continue pour $N_{a}$ si et seulement s'il existe $c\geqslant0$ tel que pour tout $P\in\C[X]$, $N_{a}(\Delta P)\leqslant CN_{a}(P)$. Si $\Delta$ est continue alors il existe $c\geqslant0$ tel que $N_{a}(kX^{k})\leqslant cN_{a}(X^{k})$ alors pour tout $k\in\N^{*}$,
+		\begin{equation}
+			\label{eq:6.1}
+			\vert ka_{k-1}\vert\leqslant c\vert a_{k}\vert
+		\end{equation}
+		Réciproquement, si on a \eqref{eq:6.1}, pour tout $P\in\C[X]=N_{a}(\Delta P)\leqslant cN_{a}(P)$. Pour tout $k\in\N,a_{k}=k!$, \eqref{eq:6.1} est vérifiée pour $c=1$. Si $b_{k}=1$ pour tout $k\in\N$, \eqref{eq:6.1} n'est pas vérifiée donc $\Delta$ n'est pas continue pour $N_{b}$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $d(x,A)=0$ si et seulement si $\inf\limits_{a\in A}\Vert x-a\Vert=0$ si et seulement si $\varepsilon>0,\exists a\in A\colon\Vert x-a\Vert<\varepsilon$ si et seulement si $x\in\overline{A}$.
+
+		On a $A\subset\overline{A}$ donc $d(x,\overline{A})\leqslant d(x,A)$. Soit $\varepsilon>0$, il existe $a'\in \overline{A}$ tel que $\Vert x-a'\Vert<d(x,\overline{A})+\varepsilon$ et il existe $a\in A$ tel que $\Vert a-a'\Vert<\varepsilon$. Ainsi, 
+		$$d(x,A)\leqslant\Vert x-a\Vert\leqslant d(x,\overline{A})+2\varepsilon$$
+		Ceci calant pour tout $\varepsilon>0$, on a $d(x,A)\leqslant d(x,\overline{A})$ et donc on a égalité.
+
+		\item $A\times B\subset\overline{A}\times\overline{B}$ donc $d(A,B)\geqslant d(\overline{A},\overline{B})$. De plus, pour tout $\varepsilon>0$, il existe $(a',b')\in\overline{A}\times\overline{B}$ tel que $\Vert a'-b'\Vert<d(\overline{A},\overline{B})+\varepsilon$ et il existe $(a,b)\in A\times B$ tel que $\Vert a-a'\Vert<\varepsilon$ et $\Vert b-b'\Vert\varepsilon$. En utilisant l'inégalité triangulaire, on a donc 
+		$$d(A,B)\leqslant\Vert a-b\Vert<d(\overline{A},\overline{B})+3\varepsilon$$
+		Ceci valant pour tout $\varepsilon>0$, on a bien l'égalité.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	$\varphi_{x_{0}}$ est une forme linéaire. Elle est continue si et seulement $C>0$ tel que pour tout $P\in\C[X]$,
+	$$\vert P(x_{0})\vert\leqslant C\Vert P\Vert_{\infty}$$
+	Si $P=\sum_{k=0}^{n}a_{k}X^{k}$, on a 
+	$$\vert P(x_{0})\vert\leqslant \Vert P\Vert_{\infty}\sum_{k=0}^{n}\vert x_{0}\vert^{k}$$
+	Si $\vert x_{0}\vert<1$, on a 
+	$$\vert P(x_{0})\vert\leqslant \Vert P\Vert_{\infty}\frac{1}{1-\vert x_{0}\vert}$$
+	donc $\varphi_{x_{0}}$ est continue et si $x_{0}=\vert x_{0}\vert e^{\mathrm{i}\theta_{0}}$, soit $n\in\N$ et $P_{n}=\sum_{k=0}^{n}e^{-\mathrm{i}k\theta_{0}}X^{k}$, on a $\Vert P_{n}\Vert_{\infty}=1$ et 
+	$$\vert \varphi_{x_{0}}(P_{n})=\sum_{k=0}^{n}\vert x_{0}\vert^{k}\xrightarrow[n\to+\infty]{}\frac{1}{1-\vert x_{0}\vert}$$
+	donc $\vertiii{\varphi_{x_{0}}}=\frac{1}{1-\vert x_{0}\vert}$.
+
+	Si $\vert x_{0}\vert\geqslant1$, 
+	$$\vert\varphi_{x_0}(P_{n})\vert=\sum_{k=0}^{n}\vert x_{0}\vert^{k}\xrightarrow[n\to+\infty]{}+\infty$$
+	donc $\varphi_{x_{0}}$ n'est pas continue.
+\end{solution}
+
+\begin{solution}
+	Pour le sens indirect, soit $\lambda\in\Sp_{\C}(M)$. Pour tout $p\in\N$, $\lambda\in\Sp_{\C}(M_{p})$ donc $\det(M_{p}-\lambda I_{n})=0$. Par continuité du déterminant, on a $0=\det(M_{p}-\lambda I_{n})\xrightarrow[p\to+\infty]{}\det(-\lambda I_{n})$. Donc $\lambda=0$ et $\Sp_{\C}(M)=\{0\}$ donc $M$ est nilpotente.
+
+	Pour le sens direct, soit $u\in\L(\C^{n})$ canoniquement associée à $M$. On trigonalise $u$ sur une base $\mathcal{B}=(\varepsilon_{1},\dots,\varepsilon_{n})$ avec $u(\varepsilon_{1})=0,u(\varepsilon_{2})=a_{1,2}\varepsilon_{1},\dots,u(\varepsilon_{n})=a_{1,n}\varepsilon_{1}+\dots+a_{n-1,n}\varepsilon_{n-1}$. Posons pour $i\in\{1,\dots,n\}$, $\varepsilon_{i,p}=\frac{\varepsilon_{i}}{p^{i-1}}$. On pose $\mathcal{B}_{p}=(\varepsilon_{1,p},\dots,\varepsilon_{n,p})$ et $M_{p}=\mat\limits_{B_{p}}(u)$, semblable à $M$ et $M_{p}\xrightarrow[p\to+\infty]{}0$ car $\Vert M_{p}\Vert\leqslant\frac{1}{p}\Vert M_{1}\Vert$.
+\end{solution}
+
+\begin{solution}
+	On pose $u\in\L(\C^{n})$ canoniquement associée à $M$. 
+
+	Pour le sens indirect, si $M$ n'est pas diagonalisable, il existe une base $B=(\varepsilon_{1},\dots,\varepsilon_{n})$ de $\C^{n}$ telle que 
+	$$\mat\limits_{\mathcal{B}}(u)=D+N$$
+	où $D$ est diagonale et $N$ est nilpotente (décomposition de Dunford). En reprenant les bases $\mathcal{B}_{p}$ définies à l'exercice précédent, on a
+	$$\mat\limits_{\mathcal{B}_{p}}(u)=D+N_{p}\xrightarrow[p\to+\infty]{}D$$
+	Si $D\in S_{M}$, alors $M$ est diagonalisable ce qui est exclu par hypothèse. Donc $S_{M}$ n'est pas fermé.
+
+	Pour le sens direct, si $M$ est diagonalisable, soit $(M_{p})_{p\in\N}\in(S_{M})^{\N}$ avec $M_{p}\xrightarrow[p\to+\infty]{}M'$. Soit $\lambda\in\C$. On a $\chi_{M_{p}}(\lambda)=\det(\lambda I_{n}-M_{p})=\chi_{M}(\lambda)$ car $M$ et $M_{p}$ sont semblables. Par continuité du déterminant, on a $\chi_{M'}(\lambda)=\chi_{M}(\lambda)$, donc $\chi_{M'}=\chi_{M}$. De plus, $A\mapsto\Pi_{M}(A)$ (polynôme minimal) est continue sur $\M_{n}(\C)$ et pour tout $p\in\N$, on a $\Pi_{M}(M_{p})=0$ donc $\Pi_{M}(M')=0$. $M'$ est donc annulée par $\Pi_{M}$, donc $M'$ est diagonalisable et comme $\chi_{M}=\chi_{M'}$, $M$ et $M'$ ont les mêmes valeurs propres avec les mêmes multiplicités. Donc $M'\in S_{M}$.
+\end{solution}
+
+\begin{remark}
+	Le polynôme caractéristique est une fonction continue de la matrice, mais c'est faux pour le polynôme minimal, par exemple pour 
+	$$M_{p}=\begin{pmatrix}
+		\frac{1}{p} &0\\
+		0 & \frac{2}{p}
+	\end{pmatrix}$$
+	On a $M_{p}\xrightarrow[p\to+\infty]{}0$ et $\Pi_{M_{p}}=(X-\frac{1}{p})(X-\frac{2}{p})\xrightarrow[p\to+\infty]{} X^{2}\neq X=\Pi_{M_{\infty}}$ donc $\lim\limits_{p\to+\infty}\Pi_{M_p}\neq\Pi_{\lim\limits_{p\to+\infty}M_{p}}$.
+\end{remark}
 
 \begin{solution}
 	On note $A_{h}=\{\vert\varphi(x)-\varphi(y)\vert\bigm|(x,y)\in I^{2}\text{ et }\vert x-y\vert\leqslant h\}$.
@@ -1019,6 +1155,8 @@ On a bien $\Vert f_{n}\Vert_{\infty}=1$.
 	\end{enumerate}
 \end{solution}
 
+\cleardoublepage
+\section{Fonction d'une variable réelle}
 \cleardoublepage
 \section{Suites et séries de fonctions}
 \cleardoublepage

@@ -16,6 +16,10 @@
 \textwidth=18cm \textheight=23cm \oddsidemargin=-1.00cm \evensidemargin=-1.00cm
 \parindent=1cm \topmargin=-2cm
 
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
 \usepackage{amsthm}
 \newtheorem{exercise}{Exercice}[section]
 \theoremstyle{remark}
@@ -2436,11 +2440,12 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 \end{exercise}
 
 \begin{exercise}
-	Soit $M\in\M_{n}(\C)$. Montrer que $M$ est nilpotente si et seulement s'il existe $(M_{p})_{p\in\N}\in(\M_{n}(\C))^{\N}$ telle que pour tout $p\in\N$, $M_{p}$ est semblable à $M$ et $M_{p}\xrightarrow[p\to+\infty]{}0$.
-\end{exercise}
-
-\begin{exercise}
-	Montrer que $M\in\M_{n}(\C)$ est diagonalisable si et seulement si $S_{M}=\{P^{-1}MP\bigm| P\in GL_{n}(\C)\}$ est fermé. Pour le sens indirect, on pourra utiliser la décomposition de Dunford et l'exercice précédent.
+	Soit $E$ un $\C$-espace vectoriel de dimension finie et $u\in\L(E)$. On note $\rho(u)=\max\limits_{\lambda\in\Sp(u)}\vert \lambda\vert$. Montrer l'équivalence
+	\begin{enumerate}
+		\item [(i)] il existe une norme sur $E$ telle que $\vertiii{u}<1$,
+		\item [(ii)] $\rho(u)<1$,
+		\item [(iii)] $\lim\limits_{p\to+\infty}u^{p}=0$.
+	\end{enumerate}
 \end{exercise}
 
 \cleardoublepage
@@ -2808,14 +2813,54 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	\right.
 	$$
 	\begin{enumerate}
-		\item Montrer qu'il existe $A\in\R[X]$ tel que $Q(P(X))=1+X+X^{n}A(X)$. On pourra écrire les développements limités à l'ordre 1 de $\exp$ et $\ln$.
+		\item Montrer qu'il existe $A\in\R[X]$ tel que $Q(P(X))=1+X+X^{n}A(X)$. On pourra écrire les développements limités à l'ordre n de $\exp$ et $\ln$.
 		\item Soit $N\in\M_{n}(\C)$ nilpotente, montrer que $\exp(P(N))=Q(P(N))=I_{n}+N$.
 		\item En déduire que $\exp\colon\M_{n}(\C)\to GL_{n}(\C)$ est surjective.
 	\end{enumerate}
 \end{exercise}
 
-\cleardoublepage
-\section{Fonction d'une variable réelle}
+\begin{exercise}
+	Soit 
+	$$A=\Biggl\{\Biggl(\frac{1}{n}+\frac{1}{p}\Biggr)^{n+p}\Biggm|(n,p)\in(\N^{*})^{2}\Biggr\}$$
+	Déterminer $\overline{A}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit 
+	$$H=\Biggl\{M\in\M_{n}(\C)\Biggm|\exists m\in\N^{*}\colon M^{m}=I_{n}\Biggr\}$$
+	Montrer que 
+	$$\overline{H}=\Biggl\{A\in\M_{n}(\C)\Biggm|\Sp_{\C}(A)\subset\U\Biggr\}$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $(a_{n})_{n\in\N}\in\C^{\N}$, on définit \function{N_{a}}{\C[X]}{\R^{+}}{P=\sum_{k=0}^{+\infty}p_{k}X^{k}}{\sum_{k=0}^{+\infty}\vert a_{k}p_{k}\vert}
+	\begin{enumerate}
+		\item Donner une condition nécessaire et suffisante pour que $N_{a}$ soit une norme.
+		\item Si $a$ et $b$ vérifient cette condition nécessaire et suffisante, à quelle condition nécessaire et suffisante $N_{a}$ et $N_{b}$ sont-elles équivalentes ?
+		\item Existe-t-il $(a,b)\in(\C^{\N})^{2}$ tel que \function{\Delta}{\C[X]}{\C[X]}{P}{P'} soit continue pour $N_{a}$ et discontinue pour $N_{b}$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un $\K$-espace vectoriel normé et $A\subset E$ non vide.
+	\begin{enumerate}
+		\item Montrer que pour tout $x\in E$, $d(x,A)=0$ si et seulement si $x\in\overline{A}$ et que $d(x,A)=d(x,\overline{A})$.
+		\item Soit $B$ non vide, montrer que $d(A,B)=d(\overline{A},\overline{B})$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On munit $\C[X]$ de $\Vert\sum_{k\in\N}a_{k}X^{k}\Vert_{\infty}=\max\limits_{k\in\N}\vert a_{k}\vert$. Soit $x_{0}\in\C$ et \function{\varphi_{x_0}}{\C[X]}{\C}{P}{P(x_{0})}
+	Pour quelles valeurs de $x_{0}$, $\varphi_{x_{0}}$ est-elle continue ? Dans ce cas, calculer $\vertiii{\varphi_{x_{0}}}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $M\in\M_{n}(\C)$. Montrer que $M$ est nilpotente si et seulement s'il existe $(M_{p})_{p\in\N}\in(\M_{n}(\C))^{\N}$ telle que pour tout $p\in\N$, $M_{p}$ est semblable à $M$ et $M_{p}\xrightarrow[p\to+\infty]{}0$.
+\end{exercise}
+
+\begin{exercise}
+	Montrer que $M\in\M_{n}(\C)$ est diagonalisable si et seulement si $S_{M}=\{P^{-1}MP\bigm| P\in GL_{n}(\C)\}$ est fermé. Pour le sens indirect, on pourra utiliser la décomposition de Dunford et l'exercice précédent.
+\end{exercise}
 
 \begin{exercise}
 	Soit $\varphi:I=[a,b]\to\R$ continue. On lui associe 
@@ -2828,6 +2873,8 @@ $$\E(X)=\sum_{n=0}^{+\infty}\P(X>n)$$
 	\end{enumerate}
 \end{exercise}
 
+\cleardoublepage
+\section{Fonction d'une variable réelle}
 \cleardoublepage
 \section{Suites et séries de fonctions}
 \cleardoublepage
