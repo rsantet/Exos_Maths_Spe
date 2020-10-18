@@ -330,7 +330,9 @@
 
 		Ainsi, $\vertiii{\varphi}\leqslant M$ et donc $\vertiii{\varphi}=M$.
 
-		\item $F$ est linéaire et une isométrie d'après la question précédente, donc injective. Soit $(K_{n})_{n\in\N}\in l^{\infty}$. On définit \function{\varphi}{l^1}{\R}{u=(u_n)_{n\in\N}}{\sum_{n=0}^{\infty}u_{n}K_{n}}
+		\item $F$ est linéaire et une isométrie d'après la question précédente, donc injective. 
+		
+		Soit $(K_{n})_{n\in\N}\in l^{\infty}$. On définit \function{\varphi}{l^1}{\R}{u=(u_n)_{n\in\N}}{\sum_{n=0}^{\infty}u_{n}K_{n}}
 		Elle est bien définie car $\sum_{n=0}^{+\infty}\vert u_{n}\vert<+\infty$ et $(K_{n})_{n\in\N}$ est bornée. Elle est linéaire, et continue car $\vert\varphi(u)\vert\leqslant\Vert(K_{n})_{n\in\N}\Vert_{\infty}\Vert u\Vert_{1}$.
 
 		Enfin, pour tout $n\in\N,\varphi(e_{n})=K_{n}$. Donc $F(\varphi)=(K_{n})_{n\in\N}$ et $F$ est surjective. Donc $F$ est une isométrie bijective et le dual topologique de $l^{1}$ est équivalent à $l^{\infty}$.
@@ -627,7 +629,13 @@
 		et de même pour $y$ avec le même $p$.
 	
 		\item On a 
-		$$d(x,y)\leqslant d(f(x),f(y))\leqslant d(f^{p}(x),f^{p}(y))\leqslant d(f^{p}(x),x)+d(x,y)+d(y,f^{p}(y))\leqslant2\varepsilon+d(x,y)$$
+		\begin{align*}
+			d(x,y)
+			&\leqslant d(f(x),f(y))\\
+			&\leqslant d(f^{p}(x),f^{p}(y))\\
+			&\leqslant d(f^{p}(x),x)+d(x,y)+d(y,f^{p}(y))\\
+			&\leqslant 2\varepsilon+d(x,y)
+		\end{align*}
 
 		Ceci valant pour tout $\varepsilon>0$, on a égalité tout du long. On a donc notamment, $\Vert x-y\Vert=\Vert f(x)-f(y)\Vert$ et donc $f$ est une isométrie.
 
@@ -664,7 +672,13 @@
 	\begin{enumerate}
 		\item Pour $x$ fixé, $\min(x,\varphi(t))=\frac{x+\varphi(t)-\vert x-\varphi(t)\vert}{2}$ est continue. Donc $T(f)$ est définie.
 		
-		Si $x\leqslant\varphi(0)$, $T(f)(x)=\int_{0}^{1}xf(t)dt=x\int_{0}^{1}f(t)dt$ et si $x\geqslant\varphi(1)$, $T(f)(x)=\int_{0}^{1}\varphi(t)f(t)dt=x\int_{0}^{1}f(t)dt$ et si $\varphi(0)\leqslant x\leqslant\varphi(1)$, il existe un unique $t_{1}=\varphi^{-1}(x)$ (car $\varphi$ induit un homéomorphisme de $[0,1]$ dans $\varphi([0,1])$). Si $t\leqslant t_{1}$, on a $\varphi(t)\leqslant x$, donc $\min(x,\varphi(t))=\varphi(t)$. Si $t\geqslant t_{1}$, on a $\min(x,\varphi(t))=x$. On a donc 
+		Si $x\leqslant\varphi(0)$,
+		$$T(f)(x)=\int_{0}^{1}xf(t)dt=x\int_{0}^{1}f(t)dt$$
+		et si $x\geqslant\varphi(1)$,
+		$$T(f)(x)=\int_{0}^{1}\varphi(t)f(t)dt$$ 
+		et si $\varphi(0)\leqslant x\leqslant\varphi(1)$, il existe un unique $t_{1}=\varphi^{-1}(x)$ (car $\varphi$ induit un homéomorphisme de $[0,1]$ dans $\varphi([0,1])$). 
+		
+		Si $t\leqslant t_{1}$, on a $\varphi(t)\leqslant x$, donc $\min(x,\varphi(t))=\varphi(t)$. Si $t\geqslant t_{1}$, on a $\min(x,\varphi(t))=x$. On a donc 
 		\begin{align*}
 			T(f)(x)
 			&=\int_{0}^{t_{1}}\varphi(t)f(t)dt+\int_{t_{1}}^{1}xf(t)dt\\

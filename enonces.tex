@@ -122,8 +122,36 @@
 	\begin{enumerate}
 		\item Montrer que $\lim\limits_{x\to+\infty}\frac{f(x)}{x}=l\in\overline{\R}$ existe.
 		\item Montrer que si $l\geqslant0$, $f$ est décroissante.
-		\item Montrer que si $l\in\R$, $\lim\limits_{x\to+\infty}f(x)-x$ existe dans $\overline{\R}$.
+		\item Montrer que si $l\in\R$, $\lim\limits_{x\to+\infty}f(x)-lx$ existe dans $\overline{\R}$.
 	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $p\in\N^{*}$.
+	\begin{enumerate}
+		\item Calculer 
+		$$l_{p}=\lim\limits_{n\to+\infty}\sum_{k=0}^{np}\frac{1}{n+k}$$
+		\item Soit $f\colon\R_{+}\to\R$, $f$ de classe $\mathcal{C}^{1}$ avec $f(0)=0$. Montrer que 
+		$$v_{n}=\sum_{k=0}^{np}f\Bigl(\frac{1}{k+n}\Bigr)$$
+		\item Si on suppose seulement $f$ continue et $f(0)=0$, montrer que l'on peut avoir $(v_{n})_{n\in\N}$ divergente.
+		\item Si $f$ est de classe $\mathcal{C}^{2}$ avec $f(0)=f'(0)=0$ et $f''(0)\neq0$, trouver un équivalent de $v_{n}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f\in\mathcal{C}^{1}(\R_{+},\R)$, $\lim\limits_{x\to+\infty}f(x)=m$ existe et $f'$ est uniformément continue. Montrer que $\lim\limits_{x\to+\infty}f'(x)=0$. Et si $f\in\mathcal{C}^{1}(\R_{+},\C)$ ? Et si $f$ est seulement $\mathcal{C}^{1}$ sans $f'$ uniformément continue ?
+\end{exercise}
+
+\begin{exercise}
+	Trouver toutes les fonctions $f$ et $g$ continues de $\R\to\R$ telles que pour tout $(x,y)\in\R^{2}$,
+	$$f(x+y)-f(x-y)=2yg(x)$$
+\end{exercise}
+
+\begin{exercise}
+	Soit $f\colon]0,+\infty[\to\R$ convexe de classe $\mathcal{C}^{1}$. Soit 
+	$$S_{n}=\frac{1}{2}f(1)+f(2)+\dots+f(n-1)+\frac{1}{2}f(n)-\int_{1}^{n}f(t)dt$$
+	Montrer que pour tout $n\geqslant2$, 
+	$$0\leqslant S_{n}\leqslant\frac{1}{8}(f'(n)-f'(1))$$
 \end{exercise}
 
 \section{Suites et séries de fonctions}

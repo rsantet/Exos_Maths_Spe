@@ -192,6 +192,98 @@
 	\end{enumerate}
 \end{solution}
 
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On forme \function{g}{[0,1]}{\R}{x}{\frac{1}{\frac{1}{p}+x}}
+		Alors 
+		$$\sum_{k=0}^{np}\frac{1}{n+k}=\frac{1}{np}\sum_{k=0}^{np}\frac{1}{\frac{1}{p}+\frac{k}{np}}\xrightarrow[n\to+\infty]{}\int_{0}^{1}\frac{dx}{\frac{1}{p}+x}=\ln(p+1)=l_{p}$$
+
+		\item On note $f(x)=f(0)+xf'(0)+x\varepsilon(x)$ avec $\varepsilon(x)\xrightarrow[\varepsilon\to0]{}0$. 
+		
+		Soit $\varepsilon_{0}>0$. Il existe $\alpha_{0}>0$ tel que si $0<x<\alpha_{0}$, alors $\vert\varepsilon(x_{0})\vert\leqslant\varepsilon_{0}$, et il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, $\frac{1}{n}\leqslant\alpha_{0}$. Alors pour tout $n\geqslant N_{0}$, pour tout $k\in\{0,\dots,np\}$, 
+		$$\frac{1}{k+n}\Rightarrow \Biggl\vert\varepsilon\Bigl(\frac{1}{k+n}\Bigr)\Biggr\vert\leqslant\frac{\varepsilon_{0}}{p}$$
+		et
+		$$\Biggl\vert\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{k+n})}{k+n}\Biggr\vert\leqslant\sum_{k=0}^{np}\frac{\frac{\varepsilon_{0}}{p}}{k+n}\leqslant\frac{\varepsilon_{0}}{p}\frac{np+1}{n+1}\leqslant\varepsilon_{0}$$
+
+		On a donc
+		$$v_{n}=\sum_{k=0}^{np}\frac{1}{n+k}f'(0)+\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{n+k}\xrightarrow[n\to+\infty]{}\ln(p+1)f'(0)$$
+
+		\item On peut penser à $f\colon x\mapsto\sqrt{x}$ continue et $f(0)=0$. De plus,
+		$$\sum_{k=0}^{np}\frac{1}{\sqrt{n+k}}\geqslant\frac{np+1}{\sqrt{n(p+1)}}\xrightarrow[n\to+\infty]{}+\infty$$
+		donc $v_{n}$ diverge.
+
+		\item On écrit $f(x)=f(0)+xf'(0)+\frac{x^{2}}{2!}f''(0)+x^{2}\varepsilon(x)$ avec $\varepsilon(x)\xrightarrow[\varepsilon\to+\infty]{}0$. Ainsi, 
+		$$v_{n}=\sum_{k=0}^{np}\frac{f''(0)}{2(n+k)^{2}}+\sum_{k=0}^{bp}\frac{\varepsilon(\frac{1}{k+n})}{(k+n)^{2}}$$
+		Soit $\varepsilon>0$, il existe $N\in\N$ tel que pour tout $n\geqslant N$, pour tout $k\in\{0,\dots,np\}$, $\vert\varepsilon(\frac{1}{n+k})\vert\leqslant\varepsilon$ et donc 
+		$$\Biggl\vert\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{(n+k)^{2}}\Biggr\vert\leqslant\sum_{k=0}^{np}\frac{\varepsilon}{(n+k)^{2}}$$
+		donc 
+		$$\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{(n+k)^{2}}=O\Biggl(\sum_{k=0}^{np}\frac{f''(0)}{2}\times\frac{1}{(n+k)^{2}}\Biggr)$$
+		puis
+		$$v_{n}\underset{n\to+\infty}{\sim}\sum_{k=0}^{np}\frac{f''(0)}{2(n+k)^{2}}$$
+		Or 
+		\begin{align*}
+			\sum_{k=0}^{np}\frac{1}{(n+k)^{2}}
+			&=\frac{1}{(np)^{2}}\sum_{k=0}^{np}\frac{1}{(\frac{1}{p}+\frac{k}{np})^{2}}\\
+			&=\frac{1}{np}\times \underbrace{\frac{1}{np}\sum_{k=0}^{np}\frac{1}{(\frac{1}{p}+\frac{k}{np})^{2}}}_{\xrightarrow[n\to+\infty]{}\int_{0}^{1}\frac{dx}{(\frac{1}{p}+x)^{2}}}
+		\end{align*}
+		donc 
+		$$v_{n}\underset{n\to+\infty}{\sim}\frac{f''(0)p}{n(p+1)}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Supposons que $f'$ ne tend pa vers 0 en $+\infty$: il existe $\varepsilon_{0}>0,\forall A>0,\exists x_{A}\geqslant A,\vert f'(x_{A})\vert\geqslant\varepsilon_{0}>0$. Par continuité uniforme, il existe $\alpha_{0}\geqslant0$, $\forall(x,y)\in(\R_{+})^{2}$, si $\vert x-y\vert\leqslant\alpha_{0}$ alors $\vert f'(x)-f'(y)\vert\leqslant\frac{\varepsilon_{0}}{2}$. Alors pour tout $t\in[x_{A}-\alpha,x_{A}+\alpha]$, on a 
+	$$\vert f'(t)\vert\geqslant \vert f'(x_{A})\vert-\vert f'(x_{A})-f'(t)\vert\geqslant\varepsilon_{0}-\frac{\varepsilon_{0}}{2}\geqslant\frac{\varepsilon_{0}}{2}$$
+	et pour $A=n$, pour tout $n\in\N,\exists x_{n}\geqslant n,\forall t\in[x_{n}-\alpha,x_{n}+\alpha],\vert f'(t)\vert\geqslant\frac{\varepsilon_{0}}{n}$. D'après le théorème des valeurs intermédiaires, $f'$ est de signe constant sur $[x_{n}-\alpha,x_{n}+\alpha]$. Quitte à changer $f$ en $-f$, on peut supposer qu'il existe une infinité de $n\in\N$ tels que $f'>0$ sur les $[x_{n}-\alpha,x_{n}+\alpha]$. Alors
+	$$f(x_{n}+\alpha_{0})-f(x_{n}-\alpha_{0})=\int_{x_{n}-\alpha_{0}}^{x_{n}+\alpha_{0}}f'(t)dt\geqslant\varepsilon_{0}\alpha_{0}>0$$
+	mais comme $\lim\limits_{x\to+\infty}f(x)\in\R$, on a 
+	$$\lim\limits_{n\to+\infty}f(x_{n}+\alpha_{0})-f(x_{n}-\alpha_{0})=0$$
+	d'où la contradiction.
+
+	Si $f\in\mathcal{C}^{1}(\R_{+},\C)$, on applique ce qui précède à $\Im(f)$ et $\Re(f)$. 
+
+	Si $f'$ n'est pas uniformément continue, ce n'est plus valable, par exemple 
+	$$f(x)=\frac{\sin(x^{2})}{x}\xrightarrow[x\to+\infty]{}0$$
+	car $\vert f(x)\vert\leqslant\frac{1}{x}$ et 
+	$$f'(x)=\underbrace{-\frac{1}{x^{2}}\sin(x^{2})}_{\xrightarrow[x\to+\infty]{}0}+\underbrace{\frac{2x\cos(x^{2})}{x}}_{\text{n'a pas de limite en }+\infty}$$
+\end{solution}
+
+\begin{solution}
+	Soit $x\in\R$ et $h\neq0$, on a 
+	$$\frac{f(x+h)-f(x)}{h}=g(x+\frac{h}{2})\xrightarrow[h\to0]{}g(x)$$
+	par continuité de $g$. Donc $f$ est dérivable et $f'=g$. Par ailleurs, pour $y=\frac{1}{2}$, on a 
+	$$f'(x)=f(x+\frac{1}{2})-f(x-\frac{1}{2})$$
+	par récurrence $f$ est $\mathcal{C}^{\infty}$.
+
+	En outre, en fixant $x$ et en dérivant la relation de départ deux fois par rapport à $y$, on a 
+	$$f''(x+y)-f''(x-y)=0$$
+	Donc $f''$ est constante donc $f$ est un polynôme de degré plus petit que 2.
+
+	Réciproquement, on vérifie que ces fonctions marchent (avec $f'=g$).
+\end{solution}
+
+\begin{solution}
+	On a 
+	$$S_{n}=\sum_{k=1}^{n-1}\frac{1}{2}(f(k)+f(k+1))-\int_{k}^{k+1}f(t)dt$$
+	On note $F(x)=\int_{1}^{x}f(t)dt$ de classe $\mathcal{C}^{2}$.
+
+	On a
+	$$F(b)=F(a)+F'(a)(b-a)+\int_{a}^{b}F''(t)(b-t)dt$$
+	Pour $a=k$ et $b=k+\frac{1}{2}$, on a 
+	$$F(k+\frac{1}{2})=F(k)+\frac{1}{2}F'(k)+\int_{k}^{k+\frac{1}{2}}(k+\frac{1}{2}-t)f'(t)dt=F(k)+\frac{1}{2}F'(k)+\int_{0}^{\frac{1}{2}}uf'(k+\frac{1}{2}-u)du$$
+	et pour $a=k+1,b=k+\frac{1}{2}$,
+	$$F(k+\frac{1}{2})=F(k+1)-\frac{1}{2}F'(k+1)+\int_{k+1}^{k+\frac{1}{2}}(k+\frac{1}{2}-t)f'(t)dt=F(k+1)-\frac{1}{2}F'(k+1)+\int_{0}^{\frac{1}{2}}uf'(k+\frac{1}{2}+u)du$$
+
+	On a donc
+	$$\frac{1}{2}(f(k)-f(k+1))-\int_{k}^{k+1}f(t)dt=\int_{0}^{\frac{1}{2}}u(f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u))du$$
+	d'où
+	$$S_{n}=\int_{0}^{\frac{1}{2}}u\sum_{k=1}^{n-1}\underbrace{f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u)}_{\geqslant0\text{ car }u\geqslant0\text{ et }f'\text{ croissante}}du$$
+	et 
+	$f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u)\leqslant f'(k+1)-f'(k)$ d'où 
+	$$S_{n}\leqslant\underbrace{\int_{0}^{\frac{1}{2}}udu}_{=\frac{1}{8}}(f'(n)-f'(1))$$
+\end{solution}
+
 \section{Suites et séries de fonctions}
 \section{Séries entières}
 \section{Intégration}
