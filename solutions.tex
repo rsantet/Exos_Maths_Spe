@@ -284,6 +284,134 @@
 	$$S_{n}\leqslant\underbrace{\int_{0}^{\frac{1}{2}}udu}_{=\frac{1}{8}}(f'(n)-f'(1))$$
 \end{solution}
 
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item D'après l'inégalité de Taylor-Lagrange, on a 
+		$$
+		\left\{
+			\begin{array}[]{l}
+				\Vert A\Vert\leqslant\frac{h^{2}}{2}M_{2}\\
+				\Vert B\Vert\leqslant\frac{h^{2}}{2}M_{2}
+			\end{array}
+		\right.
+		$$
+		On a $B-A-f(x-h)+f(x+h)=2hf'(x)$ d'où 
+		$$\Vert f'(x)\Vert\leqslant\frac{hM_{2}}{2}+\frac{M_{0}}{h}$$
+		Donc $f'$ est bornée sur $\R$. On a ensuite un majorant qui dépend de $h$ que l'on peut optimiser, et on trouve la borne demandée.
+
+		\item L'inégalité de Taylor-Lagrange donne à nouveau
+		$$\forall k\in\{1,\dots,n-1\},\Vert A_{k}\Vert\leqslant\frac{k^{n}}{n!}M_{n}$$
+		On forme alors
+		$$
+		\begin{pmatrix}
+			A_{1}-f(x+1)\\
+			\vdots\\
+			A_{k}-f(x+k)\\
+			\vdots\\
+			A_{n}-f(x+n)
+		\end{pmatrix}
+		=
+		\underbrace{
+		\begin{pmatrix}
+			-1 & -1 & \dots & \frac{-1}{(n-1)!}\\
+			\vdots & \vdots & & \vdots\\
+			-1 & -k & \dots & \frac{-k^{n-1}}{(n-1)!}\\
+			\vdots & \vdots & & \vdots\\
+			-1 & -n & \dots & \frac{-n^{n-1}}{(n-1)!}\\
+		\end{pmatrix}}_{=M}
+		\begin{pmatrix}
+			f(x)\\
+			\vdots\\
+			f^{(k)}(x)\\
+			\vdots\\
+			f^{(n-1)}(x)
+		\end{pmatrix}
+		$$
+
+		On a 
+		$$\det(M)=\frac{(-1)^{n}}{1!\times 2!\times\dots\times (n-1)!}V(1,\dots,n)$$
+		où $V$ est le déterminant de Vandermonde. Donc $\det(M)\neq0$. On peut former les $f^{(j)}(x)$ en fonction des $(A_{i}-f(x+i))_{1\leqslant i\leqslant n}$: il existe $(\alpha_{1},\dots,\alpha_{n})\in\R^{n}$ tel que pour tout $x\in\R$, $f^{(j)}(x)=\sum_{i=1}^{n}\alpha_{i}(A_{i}-f(x+i))$. Donc 
+		$$\Vert f^{(j)}(x)\Vert\leqslant\sum_{i=1}^{n}\vert\alpha_{i}\vert\Bigl(\frac{n}{n!}M_{n}+M_{0}\Bigr)$$
+		Donc $f^{(j)}$ est bornée pour tout $j\in\{1,\dots,n-1\}$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item 
+		$$l_{\sigma,\gamma}=\sum_{i=0}^{n-1}\Bigl\Vert\int_{a_{i}}^{a_{i+1}}\gamma'(t)dt\Bigr\Vert\leqslant\sum_{i=0}^{n-1}\int_{a_{i}}^{a_{i+1}}\Vert\gamma'(t)\Vert dt=\int_{a}^{b}\Vert\gamma'(t)\Vert dt$$
+
+		\item On a 
+		\begin{align*}
+			\Bigl\vert l_{\sigma,\gamma}-\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})\Bigr\vert
+			&=\Bigl\vert\sum_{i=0}^{n-1}\Vert\gamma(a_{i+1})-\gamma(a_{i})\Vert-\Vert\underbrace{(a_{i+1}-a_{i})}_{>0}\gamma'(a_{i})\Vert\Bigr\vert\\
+			&\leqslant\sum_{i=0}^{n-1}\Vert\gamma(a_{i+1})-\gamma(a_{i})-(a_{i+1}-a_{i})\gamma'(a_{i})\Vert\\
+			&\leqslant\sum_{i=0}^{n-1}\int_{a_{i}}^{a_{i+1}}\Vert\gamma'(t)-\gamma'(a_{i})\Vert dt
+		\end{align*}
+
+		\item $\Vert\gamma'\Vert$ est continue donc 
+		$$\int_{a}^{b}\Vert\gamma'(t)\Vert dt=\lim\limits_{\delta(\sigma)\to0}\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})$$
+		Donc $\alpha_{0}$ existe.
+
+		$\gamma'$ est continue sur $[a,b]$ donc uniformément continue sur $[a,b]$, et il existe $\alpha_{1}>0$ tel que pour tout $(x,y)\in[a,b]^{2}$, on a 
+		$$\vert x-y\vert\leqslant\alpha_{}\Rightarrow\Vert\gamma'(x)-\gamma'(y)\Vert\leqslant\frac{\varepsilon}{2(b-a)}$$
+		Alors si $\delta(\sigma)\leqslant\alpha_{1}$, pour tout $i\in\{0,\dots,n-1\}$, pour tout $t\in[a_{i},a_{i+1}]$, on a
+		$$\vert t-a_{i}\vert\leqslant(a_{i+1}-a_{i})\leqslant\alpha_{1}$$
+		d'où 
+		$$\Vert \gamma'(a_{i})-\gamma'(t)\Vert\leqslant\frac{\varepsilon}{2(b-a)}$$
+		et d'après la question 2, on a donc 
+		$$\Bigl\vert l_{\sigma,\gamma}-\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})\Bigr\vert\leqslant\frac{\varepsilon}{2}$$
+
+		Finalement, si $@d(\sigma)\leqslant\min(\alpha_{0},\alpha_{1})$, on a 
+		$$\Bigl\vert l_{\sigma,\gamma}-\int_{a}^{b}\Vert\gamma'(t)\Vert dt\Bigr\vert\leqslant\varepsilon$$
+		Donc 
+		$$l(\gamma)=\int_{a}^{b}\Vert\gamma'(t)\Vert dt$$
+
+		\item On a 
+		$$\gamma'(t)=\begin{pmatrix}
+			-R\sin(t)\\
+			R\cos(t)
+		\end{pmatrix}$$
+		donc $\Vert\gamma'(t)\Vert=R$ et $l(\gamma)=2\pi R$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $t\in I$, on a 
+		$$\gamma(t)=\vert\gamma(t)\vert e^{\mathrm{i}\theta_{1}(t)}=\vert\gamma(t)\vert e^{\mathrm{i}\theta_{2}(t)}$$
+		donc 
+		$$e^{\mathrm{i}(\theta_{1}(t)-\theta_{2}(t))}=1$$
+
+		Ainsi, pour tout $t\in I$, il existe $k(t)\in\Z$ telle que $\theta_{2}(t)-\theta_{1}(t)=2k(t)\pi$. On a 
+		$$k(t)=\frac{\theta_{2}(t)-\theta_{1}(t)}{2\pi}$$
+		qui est continue et à valeurs entières, donc constante égale à $k_{0}$ d'après le théorème des valeurs intermédiaires.
+
+		\item Si $\gamma(t)=x(t)+\mathrm{i}y(t)$, 
+		$$\vert\gamma(t)\vert=\sqrt{x(t)^{2}+y(t)^{2}}$$
+		Comme $\sqrt{\cdot}$ est $\mathcal{C}^{\infty}$ sur $\R_{+}^{*}$, par composition, $f$ est $\mathcal{C}^{k}$. On a alors
+		$$f(t)=e^{\mathrm{i}\theta(t)}\Rightarrow f'(t)=\mathrm{i}\theta'(t)e^{\mathrm{i\theta(t)}}=\mathrm{i}\theta'(t)f(t)$$
+		Donc 
+		$$\theta(t)=-\mathrm{i}\frac{f'(t)}{f(t)}$$
+
+		De plus, on a 
+		$$\theta(t)=\theta(t_{0})-\mathrm{i}\int_{t_{0}}^{t}\frac{f'(u)}{f(u)}du$$
+		pour $t_{0}\in I$.
+
+		\item On fixe $t_{0}\in I$. Soit $\theta_{0}$ un argument de $\gamma(t_{0})$, on pose 
+		$$\theta(t)=\theta_{0}-\mathrm{i}\int_{t_{0}}^{t}\frac{f'(u)}{f(u)}du$$
+		
+		Comme $\frac{f'}{f}$ est $\mathcal{C}^{k-1}$, $\theta$ est bien $\mathcal{C}^{k}$. On forme $g(t)=e^{\mathrm{i}\theta(t)}$ qui est de classe $\mathcal{C}^{k}$. On a 
+		$$g'(t)=\mathrm{i}\theta'(t)g(t)=\frac{f'(t)}{f(t)}g(t)$$
+		donc $\Bigl(\frac{g}{f}\Bigr)'=0$, donc $\frac{g}{f}$ est constante sur $I$ et $g(t_{0})=e^{\mathrm{i}\theta_{0}}=f(t_{0})$ donc $g=f$ sur $I$. Ainsi, pour tout $t\in I$, on a $\vert f(t)\vert=\vert e^{\mathrm{i}\theta(t)}\vert=1$ et si $\theta(t)=a(t)+\mathrm{i}(t)$, on a donc 
+		$$e^{\mathrm{i}\theta(t)}=e^{-b(t)}e^{\mathrm{i}a(t)}$$
+		donc $b(t)=0$ et $\theta(t)\in\R$.
+	\end{enumerate}
+\end{solution}
+
 \section{Suites et séries de fonctions}
 \section{Séries entières}
 \section{Intégration}
