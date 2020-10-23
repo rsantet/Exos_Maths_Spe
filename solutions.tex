@@ -53,7 +53,7 @@
 }
 \numberwithin{equation}{section}
 
-\includeonly{solutions_fonctions_variable_reelle}
+%\includeonly{}
 
 \begin{document}
 
@@ -405,6 +405,83 @@
 \begin{remark}
 	Si $n\neq m$ alors $F_{n}\wedge F_{m}=1$.
 \end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On teste uniquement les puissances qui divisent 32: 2,4,8,16,32. On a $\overline{5}^{2}=\overline{-7},\overline{5}^{4}=\overline{-15},\overline{5}^{8}=\overline{1}$. Donc $\omega(\overline{5})=8$.
+		\item On note \function{\psi}{\Z/2\Z\times\Z/8\Z}{U}{(\dot{k},\tilde{l})}{\overline{-1}^{k}\times\overline{5}^{l}}
+		\item On a $\omega(\overline{-1})=2$ et $\gamma(\overline{5})=8$ donc $\psi$ est bien définie. $\psi$ est bien un morphisme de groupes. Soit $(\dot{k},\tilde{l})\in\ker(\psi)$, on a $\overline{-1}^{k}\times \overline{5}^{l}=\overline{1}$. Si $\dot{k}=\dot{1}$, alors $\overline{-1}^{k}=\overline{-1}=\overline{5}^{-l}=\overline{5}^{l}\in gr\{\overline{5}\}$. Donc $\overline{5}^{2l}=\overline{1}$ et ainsi $8\mid 2l$ d'où $4\mid l$. Mais alors $l\in\{0,4\}$ ce qui est impossible. Donc $\dot{k}\neq\dot{1}$. De ce fait, $\dot{k}\neq\dot{1}$. Ainsi, $\overline{5}^{l}=\overline{1}$ donc $\tilde{l}=\tilde{0}$. Ainsi, $\ker(\psi)=\{(\dot{0},\tilde{0})\}$ donc $\psi$ est injective, puis bijective car $\vert\Z/2\Z\times\Z/8\Z\vert=\vert U\vert$.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	$U$ n'est pas cyclique car, par isomorphisme, ses éléments ont un ordre qui divise 8.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit \function{f}{G_{n}\times G_{m}}{U_{nm}}{(\xi,\xi')}{\xi\times\xi'}
+		Soit $(\xi,\xi')\in G_{n}\times G_{m}$, Soit $k\in\Z$ tel que $(\xi\times\xi')^{k}=1$. Alors $(\xi\times\xi')^{km}=1$ d'où $\xi^{km}=1$ donc $n\mid km$ et $n\mid k$ d'après le théorème de Gauss. De même pour $n$, on a $m\mid k$ et donc $nm\mid k$. La réciproque est immédiate: $\xi\times\xi'\in G_{nm}$. Donc $f(G_{n}\times G_{m})\subset G_{nm}$ et $\vert G_{n}\times G_{m}\vert=\varphi(n)\times\varphi(m)=\varphi(nm)=\vert G_{nm}\vert$ où $\varphi$ est l'indicatrice d'Euler.
+
+		Montrons que $f$ est injective: soit $(x,y,x',y')\in G_{n}^{2}\times G_{m}^{2}$ tel que $xx'=yy'$. On a alors $x^{m}=y^{m}$ et $x'^{n}=y'^{n}$ d'où $(xy^{-1})^{m}=1$ d'où $\omega(xy^{-1})\mid m$ et $\omega(xy^{-1})\mid n$. Donc $\omega(xy^{-1})=1$ donc $x=y$ et en reportant, on a $x'=y'$. Donc $f$ est injective puis bijective (égalité des cardinaux).
+
+		On a alors 
+		\begin{align*}
+			\mu(n)\mu(m)
+			&=\sum_{\xi\in G_{n}}\xi\times\sum_{\xi'\in G_{m}}\xi'\\
+			&=\sum_{(\xi,\xi')\in G_{n}\times G_{m}}\xi\xi'\\
+			&=\sum_{\xi\in G_{nm}}\xi\text{ [f est bijective]}\\
+			&=\mu(nm)
+		\end{align*}
+
+		\item On a $\mu(1)=1$. Soit $p$ premier. On a 
+		$$\sum_{k=0}^{p-1}e^{\frac{2\mathrm{i}k\pi}{p}}=0$$ 
+		donc 
+		$$\mu(p)\sum_{k=1}^{p-1}e^{\frac{2\mathrm{i}k\pi}{p}}=-1$$. Soit alors $\alpha\in\N$ avec $\alpha\geqslant2$, on a 
+		$$\mu(p^{\alpha})=\sum_{\substack{k=1\\ k\wedge p=1}}^{p^{\alpha}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha}}}=\sum_{k=1}^{p^{\alpha}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha}}}-\sum_{k=1}^{p^{\alpha-1}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha-1}}}=0$$
+
+		Si $n=p_{1}^{\alpha_{1}}\dots p_{r}^{\alpha_{r}}$, s'il existe $i\in\{1,\dots,r\}$ tel que $\alpha_{i}\geqslant2$ alors $\mu(n)=0$. Sinon, on a 
+		$$\mu(n)=\prod_{i=1}^{r}\mu(p_{i})=(-1)^{r}$$
+
+		\item Soit $(f,g)\in(\C^{\N^{*}})^{2}$, on a 
+		\begin{align*}
+			(f\star g)(n)
+			&=\sum_{d_{1}d_{2}=n}f(d_{1})g(d_{2})\\
+			&=\sum_{d_{1}d_{2}=n}g(d_{1})f(d_{2})\\
+			&=(g\star f)(n)
+		\end{align*}
+		Donc $\star$ est commutative. 
+
+		Soit $(f,g,h)\in(\C^{\N^{*}})^{3}$, on a 
+		\begin{align*}
+			(f\star (g\star h))(n)
+			&=\sum_{d_{1}d=n}f(d_{1})(g\star h)(d)\\
+			&=\sum_{d_{1}d=n}\Biggl[f(d_{1})\times \sum_{d_{2}d_{3}=d}g(d_{2})h(d_{3})\Biggr]\\
+			&=\sum_{d_{1}d_{2}d_{3}=n}f(g_{1})g(d_{2})h(d_{3})\\
+			&=((f\star g)\star h)(n)
+		\end{align*}
+		donc $\star$ est associative. 
+
+		On vérifie maintenant que l'élément neutre est $e:\N^{*}\to\C$ qui à $1$ associe $1$ et 0 si $n\geqslant2$.
+		Soit \function{\psi}{\N}{\Z}{n}{\sum_{d\mid n}\mu(d)}
+		On a $\psi(1)=1$. Soit $n\geqslant2$ avec $n=\prod_{i=1}^{r}p_{i}^{\alpha_{r}}$. Les diviseurs de $n$ sont dans $D=\{\prod_{i=1}^{r}p_{i}^{\beta_{i}}\Bigm| \beta_{i}\leqslant\alpha_{i}\}$. Ainsi, $\psi(n)=\sum_{d\in D}\mu(d)$. Or $\mu(d)$ vaut 0 s'il existe $\beta_{i}\geqslant2$ et $(-1)^{k}$ si $k$ $\beta_{i}$ valent 1 et les autres 0. Il y a $\binom{r}{k}$ choix possibles pour que $k$ $\beta_{i}$ valent $1$. Ainsi,
+		$$\psi(n)=\sum_{k=0}^{r}1^{r-k}(-1)^{k}\binom{r}{k}=0$$
+		Donc $\mu\star 1=e$, et $\mu^{-1}=1\colon n\mapsto 1$ pour tout $n\in\N$.
+
+		\item On note \function{id}{\N^{*}}{\N^{*}}{n}{n}
+		Alors 
+		\begin{align*}
+			\sum_{d\mid n}d\mu(\frac{n}{d})
+			&=(\mu\star id)(n)\\
+			&=(id\star \mu)(n)\\
+			&=(1\star (\varphi\star \mu))(n)\\
+			&=\varphi(n)
+		\end{align*}
+		la troisième égalité venant du fait que $id=1\star\varphi$ car $n=\sum_{d\mid n}\varphi(d)$.
+	\end{enumerate}
+\end{solution}
 
 \section{Séries numériques et familles sommables}
 \section{Probabilités sur un univers dénombrable}
