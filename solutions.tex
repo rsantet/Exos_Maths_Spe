@@ -53,7 +53,7 @@
 }
 \numberwithin{equation}{section}
 
-%\includeonly{}
+\includeonly{solutions_fonctions_variable_reelle}
 
 \begin{document}
 
@@ -157,21 +157,21 @@
 \end{solution}
 
 \begin{solution}
-	On note par $\bar{k}$ les éléments de $\Z/n\Z$ et par $\tilde{l}$ les éléments de $\Z/m\Z$.
+	On note par $\overline{k}$ les éléments de $\Z/n\Z$ et par $\widetilde{l}$ les éléments de $\Z/m\Z$.
 
-	Soit $f$ un morphisme. On pose $f(\bar{1})=\tilde{x}$ où $x\in\{0,\dots,m-1\}$. On a donc $nf(\bar{1})=f(\bar{0})=\tilde{0}$.
+	Soit $f$ un morphisme. On pose $f(\overline{1})=\widetilde{x}$ où $x\in\{0,\dots,m-1\}$. On a donc $nf(\overline{1})=f(\overline{0})=\widetilde{0}$.
 
-	On a donc $\tilde{nx}=\tilde{0}$ donc $m\mid nx$. On écrit $m=m_{1}(m\wedge n)$ et $n=n_{1}(m\wedge n)$. D'après le théorème de Gauss, on a donc $m_{1}\mid x$. Donc $x=km_{1}$ avec $k\in\{0,\dots,(n\wedge m)-1\}$.
+	On a donc $\widetilde{nx}=\widetilde{0}$ donc $m\mid nx$. On écrit $m=m_{1}(m\wedge n)$ et $n=n_{1}(m\wedge n)$. D'après le théorème de Gauss, on a donc $m_{1}\mid x$. Donc $x=km_{1}$ avec $k\in\{0,\dots,(n\wedge m)-1\}$.
 
 	Réciproquement, soit $k\in\{0,\dots,(n\wedge m)-1\}$. On définit 
-	\function{f_k}{\Z/n\Z}{\Z/m\Z}{\bar{l}}{\tilde{lkm_{1}}}
-	Si $\bar{l}=\bar{l'}$, alors $n\mid l-l'$ et donc $nm_{1}\mid (l-l')km_{1}$ puis $n_{1}(n\wedge m)m_{1}\mid (l-l')km_{1}$ donc $m\mid (l-l')km_{1}$ d'où $\tilde{lkm_{1}}=\tilde{l'km_{1}}$ donc $f$ est bien définie et c'est évidemment un morphisme. 
+	\function{f_k}{\Z/n\Z}{\Z/m\Z}{\overline{l}}{\widetilde{lkm_{1}}}
+	Si $\overline{l}=\overline{l'}$, alors $n\mid l-l'$ et donc $nm_{1}\mid (l-l')km_{1}$ puis $n_{1}(n\wedge m)m_{1}\mid (l-l')km_{1}$ donc $m\mid (l-l')km_{1}$ d'où $\widetilde{lkm_{1}}=\widetilde{l'km_{1}}$ donc $f$ est bien définie et c'est évidemment un morphisme. 
 	
-	Soit $k,k'\in\{0,\dots,n\wedge m-1\}$ avec $k\neq k'$. Si $\tilde{km_{1}}=\tilde{k'm_{1}}$ alors $m\mid (k-k')m_{1}$ et donc $n\wedge m\mid k-k'$ et $\vert k-k'\vert< n\wedge m$ donc $k=k'$ ce qui est absurde. Ainsi, les $f_{k}$ sont distincts, on a donc $n\wedge m$ morphismes.
+	Soit $k,k'\in\{0,\dots,n\wedge m-1\}$ avec $k\neq k'$. Si $\widetilde{km_{1}}=\widetilde{k'm_{1}}$ alors $m\mid (k-k')m_{1}$ et donc $n\wedge m\mid k-k'$ et $\vert k-k'\vert< n\wedge m$ donc $k=k'$ ce qui est absurde. Ainsi, les $f_{k}$ sont distincts, on a donc $n\wedge m$ morphismes.
 \end{solution}
 
 \begin{remark}
-	Exemple pour l'exercice précédent: morphisme de $\Z/4\Z$ dans $\Z/6\Z$. On a $f(\bar{1})=\tilde{x}$ d'où $\tilde{4x}=\tilde{0}$ donc $3\mid x$ d'où $x\in\{0,3\}$. On a donc le morphisme trivial $f_{0}\colon \bar{l}\mapsto\tilde{0}$ et $f_{1}\colon\bar{l}\mapsto\tilde{3l}$.
+	Exemple pour l'exercice précédent: morphisme de $\Z/4\Z$ dans $\Z/6\Z$. On a $f(\overline{1})=\widetilde{x}$ d'où $\widetilde{4x}=\widetilde{0}$ donc $3\mid x$ d'où $x\in\{0,3\}$. On a donc le morphisme trivial $f_{0}\colon \overline{l}\mapsto\widetilde{0}$ et $f_{1}\colon\overline{l}\mapsto\widetilde{3l}$.
 \end{remark}
 
 \begin{solution}
@@ -187,15 +187,231 @@
 \end{solution}
 
 \begin{solution}
-	Soit $x_{0}\in\R$. $(\bar{kx_{0}})_{0\leqslant k\leqslant n}$ ne sont pas deux à deux distincts. Donc il existe $l\neq l'\in\{0,\dots,n\}^{2}$ tel que $\bar{lx_{0}}=\bar{l'x_{0}}$ d'où $0<\vert l-l'\leqslant n$. Donc il existe $j\in\{1,\dots, n\}$ avec $jx_{0}\in G$. Ainsi, $n!x_{0}\in G$ (itéré de $jx_{0}$). Ce raisonnement est vrai pour $x=\frac{x_{0}}{n!}$ donc $x_{0}\in G$. Ainsi, $G=\R$.
+	Soit $x_{0}\in\R$. $(\overline{kx_{0}})_{0\leqslant k\leqslant n}$ ne sont pas deux à deux distincts. Donc il existe $l\neq l'\in\{0,\dots,n\}^{2}$ tel que $\overline{lx_{0}}=\overline{l'x_{0}}$ d'où $0<\vert l-l'\vert\leqslant n$. Donc il existe $j\in\{1,\dots, n\}$ avec $jx_{0}\in G$. Ainsi, $n!x_{0}\in G$ (itéré de $jx_{0}$). Ce raisonnement est vrai pour $x=\frac{x_{0}}{n!}$ donc $x_{0}\in G$. Ainsi, $G=\R$.
 \end{solution}
+
+\begin{solution}
+	Soit $f$ un isomorphisme de $\Z/n\Z$ dans lui-même. Soit $k\in\{0,\dots,n-1\}$, on a $f(\overline{k})=kf\overline{1})$. Par isomorphisme, $\omega(f(\overline{1}))=\omega(\overline{1})=n$. Notons alors $\overline{x}=f(\overline{1})$ avec $x\in\{0,dots,n-1\}$.
+
+	Si $x\wedge n=1$, il existe $(u,v)\in\Z^{2}$ tel que $ux+vn=1$, donc $u\overline{x}=\overline{1}\in gr\{\overline{x}\}$. Ainsi, $Z\/n\Z=gr\{\overline{x}\}$ (car les éléments de $\Z/n\Z$ sont des itérés de $\overline{1}$) donc $\omega(\overline{x})=n$.
+
+	Réciproquement, si $\omega(\overline{x})=n$, $\overline{1}\in gr\{\overline{x}\}$ donc il existe $u\in\Z$ tel que $u\overline{x}=1=\overline{ux}$. Donc $n\mid ux-1$, c'est-à-dire qu'il existe $v\in\Z$ tel que $ux-1=vn$, d'où $ux+vn=1$. D'après Bézout, on a $x\wedge n=1$. Finalement, on a $\omega(\overline{x})=n$ si et seulement si $x\wedge n=1$.
+
+	Ainsi, les isomorphismes sont nécessairement de la forme \function{f_{x}}{\Z/n\Z}{\Z/n\Z}{\overline{k}}{\overline{kx}}
+	où $x\in\{0,\dots,n-1\}$ et $x\wedge n=1$.
+
+	Réciproquement, si $x\in\{0,\dots,n-1\}$ est tel que $x\wedge n=1$, $f_{x}$ est évidemment un morphisme. Si $\overline{k}\in\ker(f_{x})$, on a $f_{x}(\overline{k})=\overline{0}$ si et seulement si $\overline{kx}=\overline{0}$ si et seulement si $n\mid kx$ et comme $n\wedge x=1$, d'après le théorème de Gauss, on a $n\mid k$ donc $\overline{k}=\overline{0}$ donc $\ker(f_{x})=\{\overline{0}\}$. Donc $f_{x}$ est injective, donc bijective car $\Bigl\vert\Z/n\Z\Bigr\vert=\Bigl\vert\Z/n\Z\Bigr\vert=n$.
+\end{solution}
+
+\begin{solution}
+	Si $y\in \im\varphi$, $y$ possède $\vert\ker\varphi\vert$ antécédents. En effet, il existe $x_{0}\in G$ tel que $y=\varphi(x_{0})$. Pour tout $x\in G$, on a $\varphi(x)=y$ si et seulement si $\varphi(x)=\varphi(x_{0})$ si et seulement si $\varphi(x_{0}^{-1}\cdot x)=e_{G}$ si et seulement si $x_{0}^{-1}\cdot x\in\ker\varphi$ si et seulement si $x\in x_{0}\ker\varphi$. Comme \function{g}{\ker\varphi}{x_{0}\ker\varphi}{x}{x\cdot x_{0}}
+	est bijective, on a $\vert\ker\varphi\vert=\vert x_{0}\varphi\vert$. Ainsi, on a $\vert G\vert=\vert\im\varphi\vert\times\vert\ker\varphi\vert$.
+
+	Dans tous les cas, on a $\ker\varphi\subset\ker\varphi^{2}$ et $\im\varphi^{2}\subset\im\varphi$. On a ensuite 
+	\begin{align*}
+		\im\varphi^{2}=\im\varphi
+		&\Longleftrightarrow \vert\im\varphi^{2}\vert=\vert\im\varphi\vert\\
+		&\Longleftrightarrow \vert\ker\varphi^{2}\vert\vert\im\varphi^{2}\vert=\vert\ker\varphi^{2}\vert\vert\im\varphi\vert=\vert G\vert=\vert\ker\varphi\vert\vert\im\varphi\vert\\
+		&\Longleftrightarrow \vert\ker\varphi^{2}\vert=\vert\ker\varphi\vert\\
+		&\Longleftrightarrow \ker\varphi^{2}=\ker\varphi
+	\end{align*}
+\end{solution}
+
+\begin{solution}
+	On considère \function{f}{G}{G}{x}{x^{m}}
+	l'exercice revient à montrer que $f$ est bijective. D'après le théorème de Bézout, il existe $(a,b)\in\Z^{2}$ tel que $am+bn=1$. Soit $y\in G$, on a 
+	$$y^{1}=y=y^{am+bn}=y^{am}\cdot \underbrace{y^{bn}}_{=e_{G}}=y^{am}=(y^{a})^{m}$$
+	Donc $f$ est surjective et comme $G$ est fini, $f$ est bijective.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $e_{G}\in S_{g}$, si $(x,y)\in S_{g}^{2}$ alors $x\cdot y\cdot g=x\cdot g\cdot y=g\cdot x\cdot y$ donc $x\cdot y\in S_{g}$ et si $x\in S_{g}$ alors $x\cdot g=g\cdot x$ implique $g\cdot x^{-1}=x^{-1}\cdot g$ en multipliant par l'inverse de $x$ à gauche et à droite donc $x^{-1}\in S_{g}$.
+		
+		\item Soit $(h,h')\in G^{2}$. On a $h\cdot g\cdot h^{-1}=h'\cdot g\cdot h'^{-1}$ si et seulement si $g\cdot h^{-1}\cdot h'=h^{-1}\cdot h\cdot g$ si et seulement si $h^{-1}\cdot h\in S_{g}$ si et seulement si $h'\in hS_{g}$. Or $\vert hS_{g}\vert=\vert S_{g}\vert$ car \function{I_{h}}{S_{g}}{hS_{g}}{x}{h\cdot x} est bijective de réciproque $I_{h^{-1}}$. Soit la relation d'équivalence $\mathcal{R}_{0}$ sur $G$ définie par $h\mathcal{R}_{0}h'$ si et seulement si $h\cdot g\cdot h^{-1}=h'\cdot g\cdot h'^{-1}$. Chaque classe à $\vert S_{g}\vert$ éléments et il y y a $\vert C(g)\vert$ classes dans $G$ d'où $\vert G\vert=\vert S_{g}\vert\vert C(g)\vert$.
+		
+		\item On a $Z(G)=\cap_{g\in G}S_{g}$ donc $Z(G)$ est un sous-groupe et pour tout $g\in G$, $Z(G)\subset S_{g}$.
+		
+		\item Pour $x\in G$, on note $\overline{x}=\{h\cdot x\cdot h^{-1}\bigm| h\in G\}=C(x)$. 
+		
+		On a $\vert\overline{x}\vert=1$ si et seulement si pour tout $h\in G$, $h\cdot x\cdot h^{-1}=x$ si et seulement si $x\in Z(G)$.
+		
+		Soit $\mathcal{A}$ une partie de $G$ telle que $(\overline{x})_{x\in\mathcal{A}}$ forme une partition de $G\setminus Z(G)$. On a 
+		$$\vert G\vert=p^{\alpha}=\vert Z(G)\vert+\sum_{x\in\mathcal{A}}\vert C(x)\vert$$
+		Si $x\in\mathcal{A}$, $x\notin Z(G)$ donc $\vert S_{x}\vert <\vert G\vert$ (car $x\in Z(G)$ si et seulement si $S_{x}=G$) et donc 
+		$$\vert C(x)\vert=\frac{\vert G\vert}{\vert S_{x}\vert}$$
+		d'après 2. Donc $\vert C(x)\vert=p^{\beta}$ avec $\beta\in\{1,\dots,\alpha\}$ car $\vert C(x)\vert\neq 1$. Donc 
+		$$p\Bigm|\sum_{x\in\mathcal{A}}\vert C(x)\vert$$
+		d'où 
+		$$p\bigm|\vert Z(G)\vert$$
+		donc $\vert Z(G)\vert\neq1$.
+
+		\item On a 
+		$$p^{2}=\vert Z(G)\vert+\sum_{x\in\mathcal{A}}\vert C(x)\vert$$
+		D'après la question 4, on a $\vert Z(G)\vert\neq1$ et $\vert Z(G)\vert\bigm|\vert G\vert$.
+
+		Si $Z(G)\neq G$, alors $\vert Z(G)\vert=p$. Pour $x\in\mathcal{A}$, $Z(G)\subset S_{x}\neq G$ donc $\vert S_{x}\vert= p$ (car $\vert S_{x}\vert\bigm|\vert G\vert$) et donc $Z(G)=S_{x}$. Or $x\in S_{x}$ et $x\notin Z(G)$ ce qui n'est pas possible, donc $\vert Z(G)\vert=p^{2}$ et $Z(G)=G$. Donc $G$ est abélien.
+
+		S'il existe un élément d'ordre $p^{2}$. $G$ est cyclique et est isomorphe à $\Z/p^{2}\Z$. Sinon, pour tout $x\in G\setminus\{e_{G}\}$, on a $\omega(x)=p$. Soit $x_{1}\in G\setminus\{e_{G}\}$ et $x_{2}\in G\setminus gr\{x_{1}\}$.
+		Soit \function{f}{\Bigl(\Z/p\Z\Bigr)^{2}}{G}{(\overline{k},\overline{l})}{x_{1}^{k}\cdot x_{2}^{l}}
+		$f$ est bien définie car si $\overline{k}=\overline{k'}$ et $\overline{l}=\overline{l'}$, on a $p\mid k-k'$ et $p\mid l-l'$ donc $x_{1}^{k}\cdot x_{2}^{l}=x_{1}^{k'}\cdot x_{2}^{l'}$. Comme $G$ est abélien, $f$ est un morphisme. 
+		
+		Montrons que $f$ est injective. Soit $(\overline{k},\overline{l})\in\ker(f)$ avec $(k,l)\in\{0,\dots,p-1\}^{2}$, on a $x_{1}^{k}\cdot x_{2}^{l}=e_{G}$ donc $x_{2}^{l}=x_{1}^{-k}$. Si $l\in\{1,\dots,p-1\}$ or $p$ est premier donc $l\wedge p=1$ donc il existe $(u,v)\in\Z^{2}$ tel que $lu+pv=1$. Alors on a 
+		$$x_{2}=x_{2}^{lu+pv}=x_{2}^{lu}\cdot x_{2}^{pv}=x_{2}^{lu}=x_{1}^{-k}\in gr\{x_{1}\}$$ ce qui n'est pas possible. Donc $\overline{l}=\overline{0}$ et de même $\overline{k}=\overline{0}$ donc $f$ est injective et ainsi 
+		$\vert\Z/p^{2}\Z\vert=\vert G\vert$ donc $f$ est un isomorphisme.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Les groupes de cardinal $p^{3}$ ne sont pas nécessairement abélien, par exemple le groupe des isométries du carré $\mathcal{D}_{4}$ de cardinal 8.
+\end{remark}
+
+\begin{solution}
+	Soit $f$ un morphisme de $(\Z,+)$ dans $(\Q_{+}^{*},\times)$. Pour tout $n\in\Z$, $f(n)=f(1)^{n}$ donc il existe $r_{0}\in\Q_{+}^{*}$ tel que $f(1)=r_{0}$ donc $f\colon n\mapsto r_{0}^{n}$.
+
+	Soit $f$ un morphisme de $(\Q,+)$ dans $(\Q_{+}^{*},\times)$. Pour tout $a\in\N^{*}$, $f(1)=f(\frac{1}{a})^{a}$. Pour tout $p$ premier, on a $\nu_{p}(f(1))=a\nu_{p}(f(\frac{1}{a}))$ donc pour tout $a\in\N^{*}$, $a\mid\nu_{p}(f(1))$ donc $\nu_{p}(f(1))=0$ pour tout $p$ premier, donc $f(1)=1$. Ainsi, pour tout $n\in\Z$, $f(n)=f(1)^{n}=1$ et $f(b\times\frac{a}{b})=f(a)=1=f(\frac{a}{b})^{b}$ donc $f(\frac{a}{b})=1$. Donc $f\colon r\mapsto 1$.
+\end{solution}
+
+\begin{solution}
+	On a $xy=y^{2}x$, $x^{2}y=xy^{2}x=y^{4}x^{2}$, $x^{3}y=x^{2}y^{2}x=xy^{4}x^{2}=y^{8}x^{3}$, $x^{5}y=y^{32}x^{5}$ donc $y^{31}=e_{G}$ et $\omega(y)=31$. Tout élément de $G$ peut s'écrire $y^{\lambda}x^{\mu}$ avec $(\lambda,\mu)\in\{0,\dots,30\}\times\{0,\times 4\}$. Soit \function{f}{\{0,\dots,30\}\times\{0,\times 4\}}{G}{(\lambda,\mu)}{y^{\lambda}x^{\mu}} est surjective par construction. Soit $((\lambda,\mu),(\lambda',\mu'))\in(\{0,\dots,30\}\times\{0,\times 4\})^{2}$ tel que $y^{\lambda}x^{\mu}=y^{\lambda'}x^{\mu'}$ donc $y^{\lambda-\lambda'}=x^{p'-p}$ d'où $y^{5(\lambda-\lambda')}=x^{5(\mu'-\mu)}=e_{G}$. Or $\omega(y)=31$ donc $31\mid 5(\lambda-\lambda')$ et d'après le théorème de Gauss, $31\mid \lambda-\lambda'$. Or $(\lambda,\lambda')\in\{0,\dots,30\}^{2}$ donc $\lambda=\lambda'$ et de même $\mu=\mu'$ donc $f$ est injective donc bijective et $\vert G\vert=155$. Soit $G'$ un autre tel groupe engendré par $x'$ et $y'$, on forme \function{g}{G}{G}{y^{p}x^{\mu}}{y'^{\lambda}x'^{\mu}}
+	et on vérifie que $g$ est un isomorphisme.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $i\in\{1,\dots,r\}$, il existe nécessairement $y_{i}\in G$ tel que $\nu_{p_{i}}(\omega(y_{i}))=p_{i}^{\alpha_{i}}$ (où $\nu_{p}$ est la valuation $p$-adique), sinon on ne pourrait pas avoir ce terme dans le $\ppcm$. Donc $p_{i}^{\alpha_{i}}\mid \omega(y_{i})$.
+		
+		\item Il existe $n\in\N$ tel que $\omega(y_{i})=p_{i}^{\alpha_{i}}n$. Posons $x_{i}=y_{i}^{n}\in G$. Alors pour $k\in\N$,
+		$$x_{i}^{k}=e_{G}\Longleftrightarrow y_{i}^{nk}=e_{G}\Longleftrightarrow \omega(y_{i})\mid nk\Longleftrightarrow p_{i}^{\alpha_{i}}\mid k$$
+		Donc $\omega(x_{i})=p_{i}^{\alpha_{i}}$.
+
+		\item On pose $x=\prod_{i=1}^{r}x_{i}$. Soit $k\in\N$, alors 
+		$$x^{k}=e_{G}\Longleftrightarrow \prod_{i=1}^{r}x_{i}^{k}=e_{G}$$
+		Pour $i\in\{1,\dots,r\}$, on met le tout à la puissance $M_{i}=\prod_{\substack{j=1\\j\neq i}}^{r}p_{j}^{\alpha_{j}}$. On a alors, pour tout $i\in\{1,\dots,r\}$,
+		$$x_{i}^{kM_{i}}=e_{G}\Longleftrightarrow p_{i}^{\alpha_{i}}\mid kM_{i}\Longleftrightarrow p_{i}^{\alpha_{i}}\mid k$$
+		la dernière équivalence venant du théorème de Gauss. Donc pour tout $i\in\{1,\dots,r\}$, $p_{i}^{\alpha_{i}}\mid k$, ce qui équivaut donc à $N\mid k$ et donc $\omega(x)=N$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Sur un corps commutatif, un polynôme de degré $n$ admet au plus $n$ racines. Montrons qu'il existe $x_{1}\in\K^{*}$ tel que $\omega(x_{i})=\vert\K^{*}\vert$. Par définition de $N$, pour tout $x\in\K^{*}$, $\omega(x)\mid N$. D'où $x^{N}=1_{\K}$. Donc $x$ est racine de $X^{N}-1$. Ainsi, $\vert\K^{*}\vert\leqslant N$. Par ailleurs, $N\mid\vert\K^{*}\vert$ car pour tout $x\in\K^{*}$, $x^{\vert\K^{*}\vert}=1_{\K^{*}}$. Donc $\vert\K^{*}\vert=N$ et donc $\K^{*}=gr\{x_{1}\}$.
+
+	On a $\vert\Z/13\Z^{*}\vert=12$ donc pour tout $\overline{x}\in(\Z/13\Z)^{*}$, $\omega(\overline{x})\in\{1,2,3,4,6,12\}$. On a $\overline{2}^{2}=\overline{4}$, $\overline{2}^{3}=\overline{8}$, $\overline{2}^{4}=\overline{16}=\overline{3}$, $\overline{2}^{6}=\overline{12}$ donc $\omega(\overline{2})=12$ et 
+	$$\Z/13\Z^{*}=gr\{\overline{2}\}=\Bigl\{\overline{2}^{k}\bigm| k\in\{0,\dots,11\}\Bigr\}$$
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $(x,y)\in G^{2}$, on a $(x\cdot y)^{2}=(x\cdot y)\cdot (x\cdot y)=e_{G}$ donc $x\cdot y=y^{-1}\cdot x^{-1}$ et comme $x^{2}=e_{G}$, $x^{-1}=x$ d'où $xy=yx$ et $G$ est abélien.
+		
+		\item Soit $(x_{1},\dots,x_{n})$ une famille génératrice minimale de $G$: pour tout $x\in G$, il existe$(\varepsilon_{i})\in\{0,1\}^{n}$ tel que $x=\prod_{i=1}^{n}x_{i}^{\varepsilon_{i}}$ (car $G$ est abélien).
+		Soit \function{f}{(\Z/2\Z)^{n}}{G}{(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})}{\prod_{i=1}^{n}x_{i}^{\varepsilon_{i}}}
+		Si pour tout $i\in\{1,\dots,n\}$ on a $\overline{\varepsilon_{i}}=\overline{\varepsilon_{i}'}$, alors $x^{\varepsilon_{i}}=x^{\varepsilon_{i}'}$ car $x_{i}^{2}=e_{G}$ et $2\mid\varepsilon_{i}-\varepsilon_{i}'$. Donc $f$ est bien définie.
+
+		$f$ est clairement un morphisme (car $G$ est abélien). D'après la première question, $f$ est surjective. Montrons que $f$ est injective. Soit $(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})$ tel que $\prod_{i=1}^{n}x_{i}^{\varepsilon_{i}}=e_{G}$. Soit $i\in\{1,\dots,n\}$, supposons $\varepsilon_{i}$ impair, on a alors $x_{i}=\varepsilon_{i}=x_{i}$. D'où $x_{i}=\prod_{j=1}^{n}x_{j}^{-\varepsilon_{j}}=\prod_{j=1}^{n}x_{j}^{\varepsilon_{j}}$ car $x^{2}=e_{G}$. Donc $x_{i}\in gr(x_{j},j\in\{1,\dots,n\}, j\neq i)$, ce qui contredit le caractère minimal de $(x_{1},\dots,x_{n})$. Ainsi, $f$ est injective donc est un isomorphisme.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	En notant $+$ la loi sur $G$, on peut définir \function{f}{\Z/2\Z\times G}{G}{(\varepsilon,x)}{x^{\varepsilon}}. Alors $(G,+,\cdot)$ est un $\Z/2\Z$-espace vectoriel, de dimension finie $n$ car $G$ est fini, et le choix d'une base réalise un isomorphisme de $((\Z/2\Z)^{n},+)$ dans $(G,+)$.
+\end{remark}
+
+\begin{remark}
+	Par isomorphisme, on a 
+	$$\prod_{x\in G}x=f(\sum_{(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})\in(\Z/2\Z)^{n}}(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}}))$$
+
+	Pour $n=1$, on a $\overline{0}+\overline{1}=\overline{1}$, pour $n=2$, on a $(\overline{0},\overline{0})+(\overline{0},\overline{1})+(\overline{1},\overline{0})+(\overline{1},\overline{1})=(\overline{0},\overline{0})$. Pour $n>2$, $\overline{1}$ apparaît $2^{n+1}$ fois sur chaque coordonnée (donc un nombre pair de fois), donc la somme fait $(\overline{0},\dots,\overline{0})$.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $G$ est abélien, on a $D(G)=\{e_{G}\}$.
+		\item Soit $\sigma\in\mathcal{A}_{n}$, $\sigma$ se décompose en un produit d'un nombre pair de transpositions. Soient $[a,b]$ et $[c,d]$ deux transpositions.
+		\begin{itemize}
+			\item Si $\{a,b\}=\{c,d\}$, alors $[a,b]\circ[c,d]=id$.
+			\item Si $a\in\{c,d\}$, supposons par exemple $a=c$ et $b\neq d$. On a alors $[a,b]\circ[c,d]=[a,b]\circ[a,d]=[b,a,d]$.
+			\item Si $\{a,b\}\cap\{c,d\}=\emptyset$, on a 
+			$$[a,b]\circ[c,d]=[a,b]\circ\underbrace{[b,c]\circ[b,c]}_{=id}\circ[c,d]=[a,b,c]\circ[b,c,d]$$
+		\end{itemize}
+		Donc les $3$-cycles engendrent $\mathcal{A}_{n}$.
+
+		\item On a 
+		$$\sigma\circ(a_{1},a_{2},a_{3})\circ\sigma^{-1}=(\sigma(a_{1}),\sigma(a_{2}),\sigma(a_{3}))$$
+		On peut trouver $\sigma\colon\{1,\dots,n\}\to\{1,\dots,n\}$ telle que $a_{i}$ soit envoyé sur $b_{i}$ pour $i\in\{1,2,3\}$ et les éléments $\{1,\dots,n\}\setminus\{a_{1},a_{2},a_{3}\}$ dans $\{1,\dots,n\}\setminus\{b_{1},b_{2}b_{3}\}$.
+		Donc les 3-cycles sont conjugués dans $\Sigma_{n}$.
+
+		Si $n\geqslant5$ et $\sigma$ impair, soit $(c_{1},c_{2})\in\{1,\dots,n\}\setminus\{a_{1},a_{2},a_{3}\}$. $\sigma'=\sigma\circ[c_{1},c_{2}]$ est pair et $\sigma'(a_{i})=b_{i}$. Donc les trois cycles sont conjugués dans $\mathcal{A}_{n}$ pour $n\geqslant5$. C'est cependant faux pour $n=3$ et $n=4$.
+
+		\item Soit $(\sigma,\sigma')\in\Sigma_{n}^{2}$. En notant $\mathcal{E}$ la signature d'une permutation (morphisme de $(\Sigma_{n},\circ)$ dans $(\{-1,1\},\times)$), on a
+		$$\mathcal{E}(\sigma\circ\sigma^{-1}\circ\sigma'\circ\sigma'^{-1})=1$$
+		donc $\sigma\circ\sigma^{-1}\circ\sigma'\circ\sigma'^{-1}\in\mathcal{A}_{n}$. Donc $D(\Sigma_{n})\subset\mathcal{A}_{n}$.
+
+		Soit ensuite $(a_{1},a_{2},a_{3})$ un 3-cycle. On a $(a_{1},a_{3},a_{2})^{2}=(a_{1},a_{2},a_{3})$ et $(a_{1},a_{3},a_{2})^{-1}=(a_{1},a_{2},a_{3})$. Ainsi, on a 
+		$$\sigma\circ(a_{1},a_{3},a_{2})\circ\sigma^{-1}\circ(a_{1},a_{2},a_{3})=(a_{1},a_{3},a_{2})^{2}=(a_{1},a_{2},a_{3})$$
+		On pose $\sigma=[a_{2},a_{3}]$, et alors $(a_{1},a_{2},a_{3})$ est un commutateur. Ainsi, $(a_{1},a_{2},a_{3})\in D(\Sigma_{n})$ et donc $\mathcal{A}_{n}\subset D(\Sigma_{n})$ (d'après la première question).
+
+		Finalement, on a $D(\Sigma_{n})=\mathcal{A}_{n}$.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Pour $n\geqslant5$, on a $D(\mathcal{A}_{n})=\mathcal{A}_{n}$.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour $g\in G$, $\tau_{g}$ est bijective de réciproque $\tau_{g^{-1}}$. On a notamment $\tau_{g\cdot g'}=\tau_{g}\circ\tau_{g'}$ donc $\tau$ est un morphisme. Si $g\in G$ est tel que $\tau_{g}=id$, pour tout $x\in G$, on a $gx=x$ donc $g=e_{G}$. Donc $\tau$ est un morphisme injectif et $G$ est isomorphe à $\im\tau=\tau(G)$, sous-groupe de $\Sigma(G)$, lui-même isomorphe à $\Sigma_{n}$.
+		
+		\item Soit \function{f}{\Sigma_{n}}{GL_{n}(\C)}{\sigma}{(\delta_{i,\sigma(j)})_{1\leqslant i,j\leqslant n}=P_{\sigma}}
+		$P_{\sigma}$ est la matrice de permutation associée à $\sigma$. $f$ est un morphisme, et est injectif, donc $G$ est isomorphe à un sous-groupe de $GL_{n}(\C)$.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Soit $(x,y,z,t)\in\N^{4}$ tel que $x^{2}+y^{2}+z^{2}=8t+7$. Dans $\Z/8\Z$, on a $\overline{0}^{2}=\overline{0}$, $\overline{1}^{2}=\overline{1}$, $\overline{2}^{2}=\overline{4}$, $\overline{3}^{2}=\overline{1}$, $\overline{4}^{2}=\overline{0}$, $\overline{5}^{2}=\overline{1}$, $\overline{6}^{2}=\overline{4}$ et $\overline{7}^{2}=\overline{1}$. Donc la somme de 3 de ces classes ne donnent pas $\overline{7}$.
+
+	Par récurrence, prouvons la propriété. Soit $(x,y,z,t)\in\N^{4}$ tel que $x^{2}+y^{2}+z^{2}=(8t+7)4^{n+1}$. Parmi $x,y,z$ les trois sont pairs ou deux d'entre eux sont impairs. Si $x,y$ impairs et $z$ pair, on écrit $x=2x'+1,y=2y'+1,z=2z'$, alors $x^{2}+y^{2}+z^{2}\equiv 2[4]$ mais $(8t+7)4^{n+1}\equiv 0[4]$: contradiction. Nécessairement, $x,y$ et $z$ sont pairs. En divisant par $4$, on se ramène donc à l'hypothèse de récurrence.
+\end{solution}
+
+\begin{solution}
+	On raisonne sur $\Z/7\Z$. On a $\overline{10^{10^{n}}}=\overline{3^{10^{n}}}$. Dans le groupe $((\Z/7\Z)^{*},\times)$, $\overline{3}$ a un ordre qui divise $\vert \Z/7\Z^{*}\vert=6$. On a $\overline{3}^{2}=\overline{2}$, $\overline{3}^{3}=\overline{-1}$ et $\overline{3}^{6}=\overline{1}$. Donc $\overline{3}^{6k}=\overline{1}, \overline{3}^{6k+1}=\overline{3},\overline{3}^{6k+2}=\overline{2},\overline{3}^{6k+3}=\overline{-1}, 3^{6k+4}=\overline{4}$ et $3^{6k+5}=\overline{5}$..
+
+	On se place maintenant dans $\Z/6\Z$: $\overline{10}=\overline{4},\overline{10}^{2}=\overline{4}$ et donc par récurrence sur $n\in\N^{*}$, $\overline{10}^{n}=\overline{4}$. Donc il existe $k\in\Z$ tel que $10^{n}=6k+4$. Ainsi, $\overline{10^{10^{n}}}=\overline{4}$.
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $F_{1}=5$ et $2+\prod_{k=0}^{0}F_{k}=2+3=5$. Soit $n\geqslant1$, supposons que $F_{n}=2+\prod_{k=0}^{n-1}F_{k}$. Alors 
+		\begin{align*}
+			F_{n+1}-2=2^{2^{n+1}}-1
+			&=(2^{2^{n}})^{2}-1\\
+			&=(2^{2^{n}}+1)(2^{2^{n}}-1)\\
+			&=F_{n}(F_{n}-2)\\
+			=F_{n}\times\prod_{k=0}^{n-1}F_{k}\\
+			&=\prod_{k=0}^{n}F_{k}
+		\end{align*}
+		d'où le résultat par récurrence.
+
+		\item Soit $p$ un facteur premier de $F_{n}$. S'il existe $k\in\{0,\dots,n-1\}$ tel que $p\mid F_{k}$, alors d'après la première question on a $p\mid F_{n}-\prod_{k=0}^{n-1}F_{k}=2$. Donc $p=2$. Or $F_{n}$ est impair, donc non divisible par deux, ce qui est absurde. Donc $p$ ne divise aucun $F_{k}$ pour $k\in\{0,n-1\}$ et il existe donc une infinité de nombres premiers (car les $F_{n}$ sont tous différents deux à deux).
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Si $n\neq m$ alors $F_{n}\wedge F_{m}=1$.
+\end{remark}
 
 \section{Séries numériques et familles sommables}
 \section{Probabilités sur un univers dénombrable}
 \section{Calcul matriciel}
 \include{solutions_reduction}
 \include{solutions_evn}
-\include{solutions_fonctions_variable_reelle.tex}
+\include{solutions_fonctions_variable_reelle}
 
 \section{Suites et séries de fonctions}
 \section{Séries entières}
