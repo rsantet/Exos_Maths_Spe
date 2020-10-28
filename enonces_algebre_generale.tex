@@ -240,7 +240,7 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit $E=\{x+y\sqrt{2},~x\in\N^{*},~y\in\Z,\text{et}x^{2}-2y=1\}$.
+	Soit $E=\{x+y\sqrt{2},~x\in\N^{*},~y\in\Z,\text{ et }x^{2}-2y=1\}$.
 	\begin{enumerate}
 		\item
 		Montrer que $E$ est un sous-groupe de $(\R_{+}^{*},\times)$.
@@ -268,8 +268,9 @@
 \begin{exercise}
 	\phantom{}
 	\begin{enumerate}
+		\item Soit $\alpha\in\R$ tel que $\alpha\notin\Q$. Montrer que $\Z+\alpha\Z$ est dense dans $\R$. En déduire que $\Z+\alpha\N$ est dense dans $\R$.
 		\item
-		Soit $\alpha\in\R$ tel que $\frac{\alpha}{\pi}\notin\Q$. Montrer que
+		Soit $\alpha\in\R$ tel que $\frac{\alpha}{\pi}\notin\Q$. Montrer que 
 		$(\sin(n\alpha))_{n\in\N}$ est dense dans $[-1,1]$.
 		\item
 		Montrer qu'il y a une infinité de puissance de 2 qui commencent par 7 en
@@ -277,7 +278,7 @@
 	\end{enumerate}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}[Anneau euclidien]
 	Soit $A$ un anneau commutatif intègre, on dit que $A$ est euclidien si et
 	seulement s'il existe $v:A\setminus\{0\}\to\N$ tels que pour tout $(a,b)\in
 	A\times A\setminus\{0\}$, il existe $(q,r)\in A^{2}$ tels que $a=bq+r$ et
@@ -317,7 +318,7 @@
 		Soit $(P,Q)\in \Bigl(\Q[X]\setminus\{0\}\Bigr)^{2}$. Montrer que
 		$c(PQ)=c(P)c(Q)$. On justifiera en passant dans $\Z/p\Z[X]$ que si $p$
 		premier divise tous les coefficients de $P_{1}\times Q_{1}$, alors il
-		divise tous les coefficients de $P_{1}$ ou tous ceux que $Q_{1}$ [Lemme de
+		divise tous les coefficients de $P_{1}$ ou tous ceux de $Q_{1}$ [Lemme de
 		Gauss].
 		\item
 		En déduire que si $P\in\Z[X]$ est irréductible sur $\Z[X]$, alors il l'est
@@ -350,16 +351,12 @@
 	\phantom{}
 	\begin{enumerate}
 		\item
-		Soit $P\in\Q[X]$ irréductible sur $\Q[X]$, montrer que $R$ n'a que des
+		Soit $P\in\Q[X]$ irréductible sur $\Q[X]$, montrer que $P$ n'a que des
 		racines simples sur $\C$. On pourra évaluer $P\wedge P'$ sur $\Q[X]$.
 		\item
 		Soit $A\in\Q[X]$ et $\alpha\in\C$ une racine de $A$ de multiplicité
 		$m(\alpha)>d(A)/2$ où $d(A)$ est le degré de $A$. Montrer que
 		$\alpha\in\Q$.
-		\item
-		Soit $A\in\Q[X]$ de degré $2m+1$. On suppose que $A$ admet une racine
-		complexe de multiplicité plus grande que $m$. Montrer que $A$ possède une
-		racine rationnelle.
 	\end{enumerate}
 \end{exercise}
 
@@ -371,20 +368,6 @@
 \begin{exercise}
 	Soit $p$ premier plus grand que 3. Montrer que pour tout $\alpha\in\N$,
 	$$(1+p)^{p^{\alpha}}\equiv 1+p^{\alpha+1}[p^{\alpha+2}]$$
-\end{exercise}
-
-\begin{exercise}
-	Soit pour $n\in\N^{*}$, $\mu(n)=\sum_{\substack{k=1\\k\wedge
-	n}}^{n}e^{\frac{2\mathrm{i}k\pi}{n}}=\sum_{\xi\in\Xi_{n}}\xi$ où $\Xi_{n}$
-	sont les racines primitives $n$-ièmes de l'unité. On a notamment
-	$\vert\Xi_{n}\vert=\varphi(n)$ (fonction d'Euler).
-	\begin{enumerate}
-		\item
-		Montrer que si $m\wedge n=1$, $\mu(m\times n)=\mu(m)\times\mu(n)$.
-		\item
-		Si $n=p_{1}^{\alpha_{1}}\dots p_{r}^{\alpha_{r}}$ (décomposition en
-		facteurs premiers), que vaut $\mu(n)$?
-	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -483,10 +466,10 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit $P\in\Q[X]$ irréductible sur $\Q[X]$, $\alpha\in\C$ racine de $P$.
+	Soit $P\in\Q[X]$ irréductible sur $\Q[X]$, $\alpha\in\C\setminus\Q$ racine de $P$.
 	Montrer que $\alpha$ est racine simple de $P$. On pourra se demander, si le
 	degré de $P$ est $n$ et $P=(X-\alpha)(a_{0}+a_{1}X+\dots+a_{n-1}X^{n-1})$,
-	quels sont les coefficients $a_{k}$ de $\Q$ tels que $a_{k}\in\Q$.
+	quels sont les coefficients $a_{k}$ tels que $a_{k}\in\Q$.
 \end{exercise}
 
 \begin{exercise}
@@ -534,9 +517,9 @@
 
 \begin{exercise}
 	Soit $p$ premier plus grand que 3. On note $\mathbb{F}_{p}$ le corps
-	$\Bigl(\Z/p\Z,+,\times\Bigr)$. On dit que $x\in\mathbb{F}_{p}^{*}$ est un
-	résidu quadratique si et seulement si il existe $y\in\mathbb{F}_{p}^{*}$ tel
-	que $x=y^{2}$. On note $R$ l'ensemble des résidus quadratiques.
+	$\Bigl(\Z/p\Z,+,\times\Bigr)$. On dit que $\overline{x}\in\mathbb{F}_{p}^{*}$ est un
+	résidu quadratique si et seulement si il existe $\overline{y}\in\mathbb{F}_{p}^{*}$ tel
+	que $\overline{x}=\overline{y}^{2}$. On note $R$ l'ensemble des résidus quadratiques.
 	\begin{enumerate}
 		\item
 		Montrer que $R$ est un sous-groupe de $(\mathbb{F}_{p},\times)$ de
@@ -544,7 +527,7 @@
 		$a^{\frac{p-1}{2}}=1$.
 		\item
 		Montrer que si $p=a^{2}+b^{2}$ avec $(a,b)\in\N^{2}$, alors $p\equiv
-		1[4]$.
+		1[4]$. On pourra montrer que $\overline{-1}\in R$.
 		\item
 		Montrer que, pour $k\in\{1,\dots,p-1\}$, \function{f}{\{0,\dots
 		E(\sqrt{p})\}^{2}}{\mathbb{F}_p}{(a,b)}{a-kb} n'est pas injective. En
