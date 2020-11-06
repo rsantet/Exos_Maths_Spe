@@ -430,11 +430,11 @@
 	$$\chi_{u}=\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}$$
 	avec $0\leqslant m_{i}\leqslant\dim(E)=n$ et $\sum_{i=1}^{r}m_{i}=n$.
 	$u\mapsto\chi_{u}$ est continue. Pour $(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}$ tel que $\sum_{i=1}^{r}m_{i}=n$, notons 
-	$$A_{m_{1},\dots,m_{r}}=\Biggl\{u\in A_{p}\Bigm|\chi_{u}=\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}$$
+	$$A_{m_{1},\dots,m_{r}}=\Biggl\{u\in A_{p}\Bigm|\chi_{u}=\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Biggr\}$$
 	et 
-	$$\Bigl[u\mapsto\chi_u(A_{p})\Bigr]=\Bigl\{\bigcup_{(m_{1},\dots,m_{r})\in D_{n,r}}\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Bigr\}\Biggr\}$$
+	$$\Bigl[u\mapsto\chi_u(A_{p})\Bigr]=\Biggl\{\bigcup_{(m_{1},\dots,m_{r})\in D_{n,r}}\Bigr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Bigr\}\Biggr\}$$
 	où
-	$$D_{n,r}=\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\}$$
+	$$D_{n,r}=\Bigl\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\Bigr\}$$
 
 	Donc d'après la contraposée du théorème des valeurs intermédiaires,\\si $(m_{1},\dots,m_{r})\neq(m'_{1},\dots,m'_{r})$, alors $A_{m_{1},\dots,m_{r}}$ et $A_{m'_{1},\dots,m'_{r}}$ ne sont pas dans la même composante connexe par arcs car
 	$$\Bigl[u\mapsto\chi_u\Bigl(A_{m_{1},\dots,m_{p}}\bigcup A_{m'_{1},\dots,m'_{r}}\Bigr)\Bigr]=\underbrace{\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m_{i}}\Bigr\}\Biggr\}\bigcup\Biggr\{\prod_{i=1}^{r}(X-\alpha_{i})^{m'_{i}}\Bigr\}\Biggr\}}_{\text{pas connexe par arcs}}$$
@@ -447,7 +447,7 @@
 	Alors $A_{m_{1},\dots,m_{r}}$ est connexe par arcs.
 
 	Le nombre de composantes est donc égal au cardinal de 
-	$$D_{n,r}=\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\}$$
+	$$D_{n,r}=\Bigl\{(m_{1},\dots,m_{r})\in\{0,\dots,n\}^{r}\Bigm|\sum_{i=1}^{r}m_{i}=n\Bigr\}$$
 	qui vaut $\binom{m+r-1}{r-1}$ possibilités (place $n$ points sur une droite et les séparer avec $r-1$ barres: le nombre de points dans chaque segment donne un $m_{i}$, il y a $m+r-1$ possibilités pour placer les $r-1$ barres).
 \end{solution}
 
