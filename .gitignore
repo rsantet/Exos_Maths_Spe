@@ -6,4 +6,7 @@
 *.out
 *.synctex.gz
 *.toc
-figs/
+*.lof
+*.auxlock
+figs/*.md5
+figs/*.dpth
