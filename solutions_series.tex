@@ -576,3 +576,124 @@
 	Si on veut $x_{n}$ divergente dans $\overline{\R}$, on peut prendre 
 	$$\boxed{x_{n}=(-1)^{n}n!}$$
 \end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $$\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)\dots(n-k+1)}{k!}\leqslant\boxed{\frac{n^{k}}{k!}}$$
+		\item On a 
+		$$\left(1+\frac{z}{n}\right)^{n}=\sum_{k=0}^{n}\binom{n}{k}\left(\frac{z}{n}\right)^{k}$$
+		donc 
+		\begin{align*}
+			\left|\sum_{k=0}^{n}\frac{z^{k}}{k!}-\binom{n}{k}\frac{z^{k}}{n^{k}}\right|
+			&\leqslant\sum_{k=0}^{n}\vert z\vert^{k}\underbrace{\left|\frac{1}{k!}-\binom{n}{k}\frac{1}{n^{k}}\right|}_{\geqslant0}\\
+			&\leqslant\sum_{k=0}^{n}\frac{\left|z\right|^{k}}{k!}-\sum_{k=0}^{n}\binom{k}{n}\frac{\left|z\right|^{k}}{n^{k}}\\
+			&\boxed{=\sum_{k=0}^{n}\frac{\left|z\right|^{k}}{k!}-\left(1+\frac{\left|z\right|}{n}\right)^{n}}
+		\end{align*}
+
+		\item On sait que 
+		$$\sum_{k=0}^{n}\frac{\left|z\right|^{k}}{k!}\xrightarrow[k\to+\infty]{}e^{\left|z\right|}$$
+		et 
+		$$\left(1+\frac{\left|z\right|}{n}\right)^{n}=e^{n\ln\left(1+\frac{\left|z\right|}{n}\right)}=e^{n\left(\frac{\left|z\right|}{n}+o\left(\frac{\left|z\right|}{n}\right)\right)}=e^{\left|z\right|}e^{o\left(1\right)}\xrightarrow[n\to+\infty]{}e^{\left|z\right|}$$
+		
+		En reportant dans la question précédente, on a donc 
+		$$\boxed{\lim\limits_{n\to+\infty}\left(1+\frac{z}{n}\right)^{n}=\sum_{k=0}^{+\infty}\frac{z^{k}}{k!}=e^{z}}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Une autre méthode est d'écrire, pour $z=a+\i b$, 
+	$$1+\frac{z+\i b}{n}=1+\frac{a}{n}+\i\frac{b}{n}=\rho_{n}e^{\i\theta_{n}}$$.
+	On a alors 
+	$$\left|1+\frac{a+\i b}{n}\right|=\sqrt{\left(1+\frac{a}{n}\right)^{2}+\frac{b^{2}}{n^{2}}}=\rho_{n}$$
+	et alors 
+	\begin{align*}
+		\rho_{n}^{n}
+		&=\left|\left(1+\frac{z}{n}\right)\right|^{n}\\
+		&=e^{\frac{n}{2}\ln\left(\left(1+\frac{a}{n}\right)^{2}+\frac{b^{2}}{n^{2}}\right)}\\
+		&=e^{\frac{n}{2}\ln\left(1+\frac{2a}{n}+o\left(\frac{1}{n}\right)\right)}\\
+		&=e^{a+o\left(1\right)}\xrightarrow[n\to+\infty]{}e^{a}=\left|e^{z}\right|
+	\end{align*}
+
+	On écrit ensuite 
+	$$1+\frac{a+\i b}{n}=\rho_{n}\Bigl(\underbrace{\frac{1+\frac{a}{n}}{\rho_{n}}}_{=~\cos(\theta_{n})}+\i\underbrace{\frac{b}{n\rho_{n}}}_{=~\sin(\theta_{n})}\Bigr)$$
+	On a alors
+	$$\lim\limits_{n\to+\infty}\frac{b}{n\rho_{n}}=0\text{ et }\lim\limits_{n\to+\infty}\frac{1+\frac{a}{n}}{\rho_{n}}=1$$
+	On peut imposer $\theta_{n}\in]-\pi,\pi]$ et il existe alors $N\in\N$ tel que pour tout $n\geqslant N$, $\cos(\theta_{n})\geqslant0$. Pour $n\geqslant N$, on a alors $\theta_{n}\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ donc 
+	$$\theta_{n}=\arcsin\left(\frac{b}{n\rho_{n}}\right)$$
+	et $n\theta_{n}=n\arcsin\left(\frac{b}{n\rho_{n}}\right)\underset{n\to+\infty}{\sim}b$. Finalement, on a bien 
+	$$\left(1+\frac{z}{n}\right)^{n}=\rho_{n}^{n}e^{\i\theta_{n}}\xrightarrow[n\to+\infty]{}e^{a}e^{\i b}=e^{z}$$
+\end{remark}
+
+\begin{solution}
+	Pour tout $n\geqslant2$, $u_{n}>0$. On a 
+	$$u_{n+1}=\underbrace{\frac{\sqrt{n+1}-1}{\sqrt{n+1}+1}}_{<1}u_{n}$$
+	donc $(u_{n})_{n\in\N}$ est décroissante donc converge. On a 
+	$$\ln(u_{n})=\sum_{k=2}^{n}\underbrace{\ln\Bigl(1-\frac{1}{\sqrt{k}}\Bigr)-\ln\Bigl(1+\frac{1}{\sqrt{k}}\Bigr)}_{=~v_{k}}<0$$
+	Ensuite, 
+	$$v_{k}=-\frac{1}{\sqrt{k}}-\frac{1}{\sqrt{k}}+o\left(\frac{1}{\sqrt{k}}\right)\underset{k\to+\infty}{\sim}-\frac{2}{\sqrt{k}}$$
+
+	Comme $\sum_{k\geqslant2}\frac{1}{\sqrt{k}}$ diverge, on a $\lim\limits_{n\to+\infty}\ln(u_{n})=-\infty$.
+
+	Ainsi, 
+	$$\boxed{\lim\limits_{n\to+\infty}u_{n}=0}$$
+
+	On a ensuite 
+	$$u_{n}=\exp\left(\sum_{k=2}^{n}\left[\ln\left(1-\frac{1}{\sqrt{k}}\right)-\ln\left(1+\frac{1}{\sqrt{k}}\right)\right]\right)$$
+	et 
+	$$\ln\left(1\pm\frac{1}{\sqrt{k}}\right)=\pm\frac{1}{\sqrt{k}}-\frac{1}{2k}+O\left(\frac{1}{k^{\frac{3}{2}}}\right)$$
+	Donc 
+	$$v_{k}=-\frac{2}{\sqrt{k}}+O\left(\frac{1}{k^{\frac{3}{2}}}\right)$$
+	Le terme dans le $O$ est le terme générale d'une série absolument convergent donc convergent, on note ce terme $\alpha_{k}$. On a alors 
+	$$\sum_{k=2}^{n}v_{k}=\sum_{k=2}^{n}\left(-\frac{2}{\sqrt{k}}+\alpha_{k}\right)=-2\sum_{k=2}^{n}\frac{1}{\sqrt{k}}+\underbrace{\sum_{k=2}^{+\infty}\alpha_{k}}_{=~C}+o\left(1\right)$$
+	Par comparaison série-intégrale, on a 
+	$$\sum_{k=2}^{n}\frac{1}{\sqrt{k}}\underset{k\to+\infty}{\sim}\int_{2}^{n}\frac{dt}{\sqrt{t}}\underset{k\to+\infty}{\sim}2\sqrt{n}$$
+
+	Posons 
+	$$w_{n}=\sum_{k=2}^{n}\frac{1}{\sqrt{k}}-2\sqrt{n}$$
+	On étudie la série de terme général $w_{n}-w_{n-1}$. On a 
+	\begin{align*}
+		w_{n}-w_{n-1}
+		&=\frac{1}{\sqrt{n}}-2\left(\sqrt{n}-\sqrt{n-1}\right)\\
+		&=\frac{1}{\sqrt{n}}-2\left(1-\sqrt{1-\frac{1}{n}}\right)\\
+		&=\frac{1}{\sqrt{n}}-2\left(1-\left(1-\frac{1}{2n}+O\left(\frac{1}{n^{2}}\right)\right)\right)\\
+		&=\frac{1}{\sqrt{n}}-\frac{\sqrt{n}}{n}+O\left(\frac{1}{n^{\frac{3}{2}}}\right)\\
+		&=O\left(\frac{1}{n^{\frac{3}{2}}}\right)
+	\end{align*}
+
+	Donc la série de terme général $w_{n}-w_{n-1}$ converge et ainsi $(w_{n})_{n\geqslant2}$ converge: il existe $C'\in\R$ tel que 
+	$$\sum_{k=2}^{n}\frac{1}{\sqrt{n}}=2\sqrt{n}+C'+o\left(1\right)$$
+
+	On a donc 
+	$$\ln(u_{n})=\sum_{k=2}^{n}v_{k}=-4\sqrt{n}-2C'+C+o\left(1\right)$$
+	Ainsi, 
+	$$u_{n}=\exp\left(-4\sqrt{n}-2C'+C+o\left(1\right)\right)\underset{n\to+\infty}{\sim}Ke^{-4\sqrt{n}}$$
+	où $K=e^{-2C'+C}>0$.
+
+	Donc 
+	$$u_{n}^{\alpha}\underset{n\to+\infty}{\sim}K^{\alpha}e^{-4\alpha\sqrt{n}}$$
+
+	Si $\alpha\leqslant0$, $\lim\limits_{n\to+\infty}u_{n}^{\alpha}\not\to 0$
+	donc 
+	$$\boxed{\sum u_{n}^{\alpha}\text{ diverge.}}$$
+
+	Si $\alpha>0$, $u_{n}^{\alpha}=o\left(\frac{1}{n^{2}}\right)$ donc d'après le critère de Riemann, 
+	$$\boxed{\sum u_{n}^{\alpha}\text{ converge.}}$$
+\end{solution}
+
+\begin{solution}
+	Soit $S_{n}=\sum_{k=0}^{n}u_{k}$. On a 
+	$$u_{n+1}+\dots+u_{2n}\geqslant nu_{2n}\geqslant0$$
+
+	Si $(S_{n})$ converge alors $S_{2n}-S_{n}\xrightarrow[n\to+\infty]{}0$. Alors $\lim\limits_{n\to+\infty}nu_{2n}=0$ et $\lim\limits_{n\to+\infty}2n u_{2n}=0$.
+
+	Comme on a $(2n+1)u_{2n}\geqslant (2n+1)u_{2n+1}\geqslant0$, on a aussi $\lim\limits_{n\to+\infty}(2n+1) u_{2n}=0$. Finalement, on a bien 
+	$$\boxed{\lim\limits_{n\to+\infty}nu_{n}=0\text{ et donc }u_{n}=o\left(\frac{1}{n}\right)}$$
+
+	Si $\left\{p\in\N \middle|pu_{p}\geqslant1 \right\}$ est infini, alors $u_{p}\neq o\left(\frac{1}{p}\right)$ donc 
+	$$\boxed{\sum u_{p}\text{ diverge.}}$$
+\end{solution}
+
+\begin{remark}
+	Ce n'est pas vrai si $(u_{n})_{n\in\N}$ n'est pas décroissante, par exemple si $u_{n}=\frac{1}{n}$ si $n$ est un carré et 0 sinon.
+\end{remark}
