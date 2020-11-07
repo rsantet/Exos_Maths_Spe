@@ -405,3 +405,174 @@
 	et donc pour tout $n\geqslant\max(N,N')$, on a $\vert v_{n}-a\vert\leqslant\frac{\varepsilon}{2}$ et ainsi 
 	$$\boxed{\lim\limits_{n\to+\infty}v_{n}=a}$$
 \end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour $n\geqslant2$, (iii) donne 
+		$$x-\frac{a_{2}}{2}-\dots-\frac{a_{n}}{n!}=\sum_{k=n+1}^{+\infty}\frac{a_{k}}{k!}$$
+		Ainsi,
+		$$0\leqslant x-\frac{a_{2}}{2}-\dots-\frac{a_{n}}{n!}<\sum_{k=n+1}^{+\infty}\frac{k-1}{k!}=\sum_{k=n+1}^{+\infty}\frac{1}{(k-1)!}-\frac{1}{k!}=\frac{1}{n!}$$
+		où l'inégalité est stricte d'après (ii). Pour $n\geqslant2$, on a 
+		$$x-\frac{a_{2}}{2}<\frac{1}{2!}$$
+		donc 
+		$$0\leqslant 2x-\underbrace{a_{2}}_{\in\N}<1$$
+		Donc $a_{2}=\lfloor 2x\rfloor$.
+		On a ensuite 
+		$$0\leqslant n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)-\underbrace{a_{n}}_{\in\N}<1$$
+		donc 
+		$$\boxed{a_{n}=\Biggl\lfloor n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)\Biggr\rfloor}$$
+
+		On a donc bien unicité.
+
+		Soit maintenant $(a_{n})_{n\in\N}$ définie comme ci-dessus. On a, pour tout $n\geqslant2$, on a 
+		$$0\leqslant n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)-\underbrace{a_{n}}_{\in\N}<1$$
+		Or 
+		$$0-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\leqslant\frac{1}{(n-1)!}$$
+		donc 
+		$$a_{n}\in\{0,\dots,n-1\}$$
+		et (i) est vérifié.
+
+		On a 
+		$$0\leqslant x-\sum_{k=2}^{n}\frac{a_{k}}{k!}<\frac{1}{n!}\xrightarrow[n\to+\infty]{}0$$
+		donc (iii) est vérifié, et supposons qu'il existe $n_{0}\geqslant2$ tel que pour tout $m\geqslant n_{0}+1$, on a $a_{m}=m-1$.
+		Alors 
+		$$x=\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!}+\sum_{k=n_{0}+1}^{+\infty}\frac{k-1}{k!}$$
+		et
+		$$x-\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!} = \sum_{k=n_{0}+1}^{+\infty}\frac{k-1}{k!}=\frac{1}{n_{0}!}$$
+		donc 
+		$$n_{0}!\Bigl(x-\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!}\Bigr)=1$$
+		et 
+		$$n_{0}!\Bigl(x-\sum_{k=0}^{n_{0}-1}\frac{a_{n_{0}-1}}{(n_{0}-1)!}\Bigr)-a_{n_{0}}=1$$
+		En prenant la partie entière, on a donc $0=1$ ce qui est absurde.
+
+		Donc (ii) est vérifié.
+	
+		\item S'il existe $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$, $a_{n}=0$ alors $x\in\Q$.
+		
+		Si $x=\frac{p}{q}\in\Q$, on a 
+		$$x=\frac{a_{2}}{2}+\dots+\frac{a_{n}}{n!}$$
+		si et seulement si 
+		$$a_{n}=n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)$$
+		si et seulement si 
+		$$n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)\in\N$$
+		ce qui est vrai dès que $n\geqslant q$. Donc pour tout $n > q$, on a $a_{n}=0$ par unicité.
+
+		\item Soit $l\in[-1,1]$. Soit $x\in[0,1[$ avec 
+		$$x=\sum_{k=2}^{+\infty}\frac{a_{k}}{k!}$$
+		On a alors 
+		$$n!2\pi x=\underbrace{\sum_{k=2}^{n}\frac{2\pi a_{k}n!}{k!}}_{\in 2\pi\Z}+\frac{2\pi a_{n+1}}{n+1}+\underbrace{\sum_{k\geqslant n+2}\frac{2\pi a_{k}n!}{k!}}_{=~\varepsilon_{n}}$$
+		On a 
+		$$0\leqslant \varepsilon_{n} < \frac{2\pi n!}{(n+1)!}=\frac{2\pi}{n+1}\xrightarrow[n\to+\infty]{}0$$
+		Donc 
+		$$\sin(n!2\pi x)=\sin\Bigl(\frac{2\pi a_{n+1}}{n+1}+\varepsilon_{n}\Bigr)$$
+		et il suffit d'avoir, comme $\varepsilon_{n}\xrightarrow[n\to+\infty]{}0$,
+		$$\frac{a_{n}}{n}\xrightarrow[n\to+\infty]{}\frac{\arcsin(l)}{2\pi}\in\Bigl[0,\frac{1}{4}\Bigr]$$
+		On pose alors 
+		$$\boxed{a_{n}=\Biggl\lfloor\frac{n\arcsin(l)}{2\pi}\Biggr\rfloor}$$
+		pour $n\geqslant2$ et on a $0\leqslant a_{n}\leqslant \frac{n}{4}<n-1$ pour tout $n\geqslant2$. On a donc le résultat.
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Il n'y a pas unicité. Par exemple, pour $l=0$, $x=0$ ou $x=\frac{1}{2}$ convient. Plus généralement, pour tout $\frac{p}{q}\in\Q$, pour tout $n\geqslant q$, on a
+	$$\sin\Biggl(n!2\pi\Bigl(x+\frac{p}{q}\Bigr)\Biggr)=\sin(n!2\pi x)$$
+\end{remark}
+
+\begin{solution}
+	Par récurrence, on a $u_{n}>0$ pour tout $n\in\N$.
+	Soit \function{g}{\R_{+}}{\R}{x}{2\ln(1+x)-x}
+	et \function{f}{\R_{+}}{\R}{x}{2\ln(1+x)}
+	$g$ est dérivable est 
+	$$g'(x)=\frac{1-x}{1+x}$$
+	donc $g$ est croissante sur $[0,1]$ et décroissante sur $[1,+\infty[$. Comme $g(0)=0$ et $\lim\limits_{x\to+\infty}g(x)=-\infty$, d'après le théorème des valeurs intermédiaires, il existe un unique réel $l\in]0,+\infty[$ tel que $g(l)=0$ d'où $f(l)=l$.
+
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xmin=-0.5, xmax=5,
+				ymin=-0.5, ymax=5,
+				axis lines=center,
+				axis on top=true,
+				xlabel=$x$,
+				samples=100,
+				legend pos=outer north east
+			]
+			\addplot[blue, ultra thick] {2*ln(1+x)};
+			\addplot[color=red, ultra thick] {x};
+			\addplot[green, dashed, domain=0:2.5128] {2.5128};
+			\addplot[green, dashed, domain=0:2.5128] coordinates {(2.5128,0)(2.5128,2.5128)};
+			\node[anchor=north, color=green] at (axis cs: 2.5128,0) {$l$};
+			\legend{$f(x)$,$y=x$}
+			\end{axis}
+		\end{tikzpicture}
+		\caption{$x\mapsto 2\ln(1+x)$ admet un unique point fixe sur $\R_{+}^{*}$.}
+	\end{figure}
+
+	Pour tout $x\in]0,l]$, on a $x\leqslant f(x)\leqslant l$ et pour tout $x>l$, on a $l\leqslant f(x)\leqslant x$.
+
+	Soit $n\geqslant1$. Si $u_{n}\geqslant l$ et $u_{n-1}\geqslant l$, on a $m_{n}=l$ et $M_{n}\in\{u_{n},u_{n-1}\}$. Il vient donc 
+	$$u_{n+1}=\frac{1}{2}(f(u_{n})+f(u_{n-1}))\geqslant f(l)=l$$
+	et 
+	$$u_{n+1}\leqslant\frac{1}{2}(u_{n}+u_{n-1})\leqslant M_{n}$$
+	Donc $m_{n+1}=l=m_{n}$ et $M_{n+1}\leqslant M_{n}$.
+
+	Par récurrence, on a pour tout $k\geqslant n$, $u_{k}\geqslant l$ et $(M_{k})_{k\geqslant n}$ converge vers $\lambda\geqslant l$ (car décroissante et plus grande que $l$) et $m_{k}=l$ pour tout $k\geqslant n$.
+
+	De plus pour tout $k\geqslant n$, on a 
+	$$u_{k+1}=\frac{1}{2}(f(u_{k})+f(u_{k-1}))\leqslant f(M_{k})$$
+	car $f$ est croissante et donc 
+	$$u_{k+2}\leqslant f(M_{k+1})\leqslant f(M_{k})$$
+	Par passage à la limite, on a $\lambda\leqslant f(\lambda)$ donc $\lambda=f(\lambda)$ et donc $\lambda=l$. Or pout tout $k\geqslant n$, on a 
+	$$\underbrace{m_{k}}_{=~l}\leqslant u_{k}\leqslant M_{k}\xrightarrow[k\to+\infty]{}l$$
+	donc 
+	$$\boxed{u_{k}\xrightarrow[k\to+\infty]{}l}$$
+
+	S'il existe $n_{0}\in\N^{*}$ tel que $u_{n_{0}-1}\geqslant l$ et $u_{n_{0}}\geqslant l$ alors $\lim\limits_{n\to+\infty}u_{n}=l$. Or même s'il existe $n_{1}\in\N^{*}$ tel que $u_{n_{1}-1}\leqslant l$ et $u_{n_{1}}\leqslant l$, alors on inverse les rôles de $M_{n_{1}}$ et $m_{n_{1}}$.
+
+	Si pour tout $n\in\N$,
+	$$(u_{n}-l)(u_{n+1}-l)\leqslant 0$$
+	Supposons par exemple $u_{0}\geqslant l$ et $u_{1}\leqslant l$. Alors 
+	$$0\leqslant u_{2}-l\leqslant\frac{u_{0}-l}{2}$$
+	et par récurrence, pour tout $k\in\N$, on a $0\leqslant u_{2k}-l\leqslant\frac{u_{0}-l}{2^{k}}$.
+	Donc $u_{2k}\xrightarrow[k\to+\infty]{}l$ et de même $u_{2k+1}\xrightarrow[k\to+\infty]{}l$ (par valeurs inférieures). Donc 
+	$$\boxed{u_{k}\xrightarrow[k\to+\infty]{}l}$$
+\end{solution}
+
+\begin{solution}
+	Soit $(\theta,\theta')\in[2,2\pi[^{2}$ tel que 
+	$$\lim\limits_{k\to+\infty}e^{\i px_{n}}=e^{\i \theta}$$ et 
+	$$\lim\limits_{k\to+\infty}e^{\i qx_{n}}=e^{\i \theta'}$$
+	Soient $x,x'$ deux valeurs d'adhérence de $(x_{n})_{n\in\N}$ distinctes. On a 
+	$$
+	\left\{
+		\begin{array}[]{l}
+			e^{\i px}=e^{\i \theta}=e^{\i px'}\\
+			e^{\i qx}=e^{\i \theta'}=e^{\i qx'}
+		\end{array}
+	\right.
+	$$
+
+	Il existe $(k,k')\in\Z^{2}$ tel que 
+	$$
+	\left\{
+		\begin{array}[]{l}
+			px=px'+2k\pi\\
+			qx=qx'+2k\pi
+		\end{array}
+	\right.
+	$$
+	et donc $p(x-x')=2k\pi$ et $q(x-x')=2k'\pi$ et alors $\frac{p}{q}\in\Q$ ce qui contredit l'hypothèse. Donc $(u_{n})_{n\in\N}$ possède une unique valeur d'adhérence. Comme elle est bornée,
+	$$\boxed{(x_{n})_{n\in\N}\text{ converge.}}$$
+
+	Si $(x_{n})_{n\in\N}$ n'est pas bornée, on peut prendre 
+	$$\boxed{x_{n}=n!}$$
+	On a 
+	$$e^{2\i \pi n!}=1$$
+	et 
+	$$n!e=n!\sum_{k=0}^{+\infty}\frac{1}{k!}=\underbrace{\sum_{k=0}^{n}\frac{n!}{k!}}_{\in\N}+\underbrace{\sum_{k=n+1}^{+\infty}\frac{n!}{k!}}_{\xrightarrow[k\to+\infty]{}0}$$
+	
+	Si on veut $x_{n}$ divergente dans $\overline{\R}$, on peut prendre 
+	$$\boxed{x_{n}=(-1)^{n}n!}$$
+\end{solution}
