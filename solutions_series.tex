@@ -697,3 +697,303 @@
 \begin{remark}
 	Ce n'est pas vrai si $(u_{n})_{n\in\N}$ n'est pas décroissante, par exemple si $u_{n}=\frac{1}{n}$ si $n$ est un carré et 0 sinon.
 \end{remark}
+
+\begin{solution}
+	\begin{enumerate}
+		\item C'est une série à termes positifs. On a 
+		$$n^{\frac{1}{n}}=e^{\frac{1}{n}\ln\left(n\right)}\xrightarrow[n\to+\infty]{}1$$
+		Ainsi
+		$$n^{-1-\frac{1}{n}}\underset{n\to+\infty}{\sim}\frac{1}{n}$$
+		et donc 
+		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+
+		\item C'est une série à termes positifs. On a 
+		$$u_{n}\geqslant \int_{1}^{\frac{\pi}{2}}t^{n}\sin(1)dt=\frac{\sin(1)}{n+1}\times\left(\left(\frac{\pi}{2}\right)^{n+1}-1\right)\xrightarrow[n\to+\infty]{}+\infty$$
+		donc 
+		$$\boxed{\sum u_{n}\text{ diverge grossièrement.}}$$
+
+		\item On écrit 
+		$$\frac{n!}{e}=\sum_{k=0}^{+\infty}\frac{n!}{k!}(-1)^{k}=\underbrace{\sum_{k=0}^{n}\frac{n!}{k!}(-1)^{k}}_{\in\Z}+\frac{(-1)^{n+1}}{n+1}+\sum_{k=n+2}^{+\infty}\frac{n!}{k!}(-1)^{k}$$
+		et
+		$$\left\vert\sum_{k=n+2}^{+\infty}\frac{n!}{k!}(-1)^{k}\right\vert<\frac{1}{(n+1)(n+2)}$$
+		d'après le critère spécial des séries alternées.
+
+		Donc 
+		\begin{align*}
+			\sin\left(2\pi\frac{n!}{e}\right)
+			&=\sin\left(\frac{2\pi(-1)^{n+1}}{n+1}+O\left(\frac{1}{n^{2}}\right)\right)\\
+			&=\underbrace{\frac{2\pi(-1)^{n+1}}{n+1}}_{\substack{\text{terme général}\\\text{d'une série alternée}\\\text{convergente}}}+\underbrace{O\left(\frac{1}{n^{2}}\right)}_{\substack{\text{terme général}\\\text{d'une série absolument}\\\text{convergente}}}
+		\end{align*}
+		
+		Donc
+		$$\boxed{\sum u_{n}\text{ converge.}}$$
+
+		\item Si $\alpha\leqslant0$, $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{\ln(n)}$ et comme $\frac{1}{n}=O\left(\frac{1}{\ln(n)}\right)$, 
+		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+
+		Si $\alpha>1$, $\vert u_{n}\vert\underset{n\to+\infty}{\sim}\frac{1}{n^{\alpha}}$ donc d'après le critère de Riemann,
+		$$\boxed{\sum u_{n}\text{ convegre absolument donc converge.}}$$
+
+		Si $\alpha\in]0,1]$, on écrit 
+		\begin{align*}
+			u_{n}
+			&=\frac{(-1)^{n}}{n^{\alpha}}\times\frac{1}{1+\underbrace{(-1)^{n}\frac{\ln(n)}{n^{\alpha}}}_{\xrightarrow[n\to+\infty]{}0}}\\
+			&=\frac{(-1)^{n}}{n^{\alpha}}\left(1-(-1)^{n}\frac{\ln(n)}{n^{\alpha}}+o\left(\frac{\ln(n)}{n^{\alpha}}\right)\right)\\
+			&=\underbrace{\frac{(-1)^{n}}{n^{\alpha}}}_{\substack{\text{terme général}\\\text{d'une série alternée}\\\text{convergente}}}\underbrace{-\frac{\ln(n)}{n^{2\alpha}}+o\left(\frac{\ln(n)}{n^{2\alpha}}\right)}_{\substack{\underset{n\to+\infty}{\sim}-\frac{\ln(n)}{n^{2\alpha}}<0\\\text{terme général}\\\text{d'une série convergente}\\\text{ssi }\alpha>\frac{1}{2}}}
+		\end{align*}
+
+		$$\boxed{\sum u_{n}\text{ converge si et seulement si }\alpha>\frac{1}{2}\text{.}}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	Soit $\alpha\in[0,1]$ et 
+	$$u_{n}=\int_{0}^{\alpha}t^{n}\sin(t)dt\geqslant0$$
+	Si $\alpha<1$, $u_{n}\leqslant\alpha^{n+1}$, terme général d'une série convergente donc $\sum u_{n}$ converge.
+
+	Si $\alpha=1$, on utilise
+	$$\forall t\in\left[0,\frac{\pi}{2}\right],\sin(t)\geqslant\frac{2}{\pi}t$$
+	Alors $u_{n}\geqslant\frac{2}{\pi (n+2)}$, terme générale d'une série divergente donc $\sum u_{n}$ diverge.
+\end{remark}
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin=-0.5, xmax=2,
+			ymin=-0.5, ymax=2,
+			axis lines=center,
+			axis on top=true,
+			xlabel=$t$,
+			samples=100,
+			legend pos=outer north east
+		]
+		\addplot[blue, ultra thick] {sin(deg(x))};
+		\addplot[color=red, ultra thick, restrict y to domain=-0.5:2] {2*x/pi};
+		\node[anchor=south west, color=green] at (axis cs: 1.5708,0) {$\frac{\pi}{2}$};
+		\addplot[green, dashed, domain=0:2] coordinates {(1.5708,0)(1.5708,1)};
+		\legend{$sin(t)$,$\frac{2}{\pi}t$}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{$\sin(t)\geqslant\frac{2}{\pi}t$ pour $t\in\left[0,\frac{\pi}{2}\right]$.}
+\end{figure}
+
+\begin{solution}
+	\item On a 
+	$$u_{n}=\sum_{k=n}^{+\infty}\frac{(-1)^{k}}{k}$$
+	$u_{n}$ est le reste d'ordre $n$ d'une série alternée, donc $u_{n}$ est du signe de $\frac{(-1)^{n}}{n}$. Donc on a 
+	$$u_{n+1}\times u_{n}\leqslant0$$
+	Par ailleurs,
+	$$\vert u_{n}\vert=\underbrace{\frac{1}{n}-\frac{1}{n+1}}_{=~\frac{1}{n(n+1)}}+\underbrace{\frac{1}{n+2}-\frac{1}{n+3}}_{=~\frac{1}{(n+2)(n+3)}}+\dots=\sum_{p=0}^{+\infty}\frac{1}{(n+2p)(n+2p+1)}$$
+	Donc $(\vert u_{n}\vert)_{n\geqslant1}$ est décroissante.
+
+	D'après le critère des séries alternées, 
+	$$\boxed{\sum u_{n}\text{ converge.}}$$
+
+	Pour calculer la somme, on peut chercher si la famille $(u_{n,p})_{\substack{n\geqslant1\\p\in\N}}$ est sommable où
+	$$u_{n,p}=\frac{(-1)^{n}}{(n+2p)(n+2p+1)}$$ 
+	Soit $p\geqslant0$, on a 
+	$$\sum_{n=1}^{+\infty}\frac{1}{(n+2p)(n+2p+1)}=\sum_{n=1}^{+\infty}\left(\frac{1}{n+2p}-\frac{1}{n+2p+1}\right)=\frac{1}{2p+1}$$
+	Donc 
+	$$\sum_{p\in\N}\sum_{n\geqslant1}\vert u_{n,p}\vert=+\infty$$
+	Ainsi, cette famille n'est pas sommable. Essayons plutôt de calculer $u_{n}$ d'abord: soit $n\geqslant1$ fixé et $N\geqslant n$. On a 
+	\begin{align*}
+		\sum_{k=n}^{N}\frac{(-1)^{k}}{k}
+		&=\sum_{k=n}^{N}(-1)^{k}\int_{0}^{1}t^{k-1}dt\\
+		&=-\sum_{k=n}^{N}\int_{0}^{1}(-t)^{k-1}dt\\
+		&=-\int_{0}^{1}\sum_{k=n}^{N}(-t)^{k-1}dt\\
+		&=\int_{0}^{1}(-t)^{n}\frac{1-(-t)^{N-n+1}}{1+t}dt
+	\end{align*}
+
+	Ainsi, 
+	$$\sum_{k=n}^{N}\frac{(-1)^{k}}{k}=-\int_{0}^{1}\frac{(-t)^{n}}{1+t}dt+\int_{0}^{1}\frac{(-t)^{N+1}}{1+t}dt$$
+	et 
+	$$\left\vert\int_{0}^{1}\frac{(-t)^{N+1}}{1+t}dt\right\vert\leqslant\int_{0}^{1}t^{N+1}dt=\frac{1}{N+2}$$
+
+	Donc 
+	$$u_{n}=-\int_{0}^{1}\frac{(-t)^{n}}{1+t}dt$$
+	Soit alors $M\geqslant1$. On a 
+	\begin{align*}
+		\sum_{n=1}^{M}u_{n}
+		&=\sum_{n=1}^{M}\left(-\int_{0}^{1}\frac{(-t)^{n}}{t+1}dt\right)\\
+		&=-\int_{0}^{1}\frac{1}{1+t}\sum_{n=1}^{M}(-t)^{n}dt\\
+		&=-\int_{0}^{1}\frac{-t}{1+t}\frac{1-(-t)^{M}}{1+t}dt\\
+		&=\int_{0}^{1}\frac{t}{(1+t)^{2}}dt+\int_{0}^{1}\frac{(-t)^{M+1}}{(1+t)^{2}}dt
+	\end{align*}
+	Comme 
+	$$\left\vert\int_{0}^{1}\frac{(-t)^{M+1}}{(1+t)^{2}}dt\right\vert\leqslant\int_{0}^{1}t^{M+1}dt=\frac{1}{M+2}\xrightarrow[M\to+\infty]{}0$$
+	on a 
+	\begin{align*}
+		\sum_{n=1}^{+\infty}u_{n}
+		&=\int_{0}^{1}\frac{t}{(1+t)^{2}}dt\\
+		&=\int_{0}^{1}\frac{(t+1)-1}{(1+t)^{2}}dt\\
+		&=\int_{0}^{1}\frac{1}{1+t}dt-\int_{0}^{1}\frac{1}{(1+t)^{2}}dt\\
+		&=\left[\ln\left(1+t\right)\right]_{0}^{1}+\left[\frac{1}{2}-1\right]\\
+		&=\ln(2)-\frac{1}{2}
+	\end{align*}
+
+	Finalement, 
+	$$\boxed{\sum_{n=1}^{+\infty} u_{n}=\ln(2)-\frac{1}{2}}$$
+
+	\item $$\frac{1}{(3n)!}=\left(\frac{1}{n^{2}}\right)$$
+	donc d'après le critère de Riemann, 
+	$$\boxed{\sum u_{n}\text{ converge.}}$$
+	Posons 
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			S_{0} &= &\sum_{n=0}^{+\infty}\frac{1}{(3n)!}\\
+			S_{1} &= &\sum_{n=0}^{+\infty}\frac{1}{(3n+1)!}\\
+			S_{2} &= &\sum_{n=0}^{+\infty}\frac{1}{(3n+2)!}
+		\end{array}
+	\right.
+	$$
+	On a 
+	$$
+	\left\{
+		\begin{array}[]{rcl}
+			S_{0} + S_{1} + S_{2} &= & e\\
+			S_{0} + jS_{1} + j^{2}S_{2} &= &\exp(j)\\
+			S_{0} + j^{2}S_{1} + jS_{2} &= &\exp(j^{2})
+		\end{array}
+	\right.
+	$$
+	où $j=\exp\left(\frac{2\i \pi}{3}\right)$.
+	En sommant les trois lignes, on a 
+	$$3S_{0}=e+\exp(j)+\exp(j^{2})=e+e^{-\frac{1}{2}}\left(2\cos\left(\frac{\sqrt{3}}{2}\right)\right)$$
+
+	Donc 
+	$$\boxed{\sum_{n=0}^{+\infty} u_{n}=\frac{1}{3}\left(e+e^{-\frac{1}{2}}\left(2\cos\left(\frac{\sqrt{3}}{2}\right)\right)\right)}$$
+
+	\item S'il existe $p\geqslant0$ tel que $n=p^{3}$, alors 
+	$$\left\lfloor n^{\frac{1}{3}}\right\rfloor=p$$
+	et 
+	$$\left\lfloor \left(n-1\right)^{\frac{1}{3}}\right\rfloor=\left\lfloor \left(p^{3}-1\right)^{\frac{1}{3}}\right\rfloor=p-1$$
+
+	Sinon, $n^{\frac{1}{3}}\notin\N$. Soit $k=\left\lfloor n^{\frac{1}{3}}\right\rfloor$. Alors $k^{3}<n\leqslant (k+1)^{3}$ donc $k^{3}\leqslant n-1<(k+1)^{3}$ d'où $k\leqslant (n-1)^{\frac{1}{3}}<k+1$. Donc $\left\lfloor(n-1)^{\frac{1}{3}}\right\rfloor=k$.
+
+	Donc $\sum u_{n}$ est une série lacunaire. Comme $u_{p^{3}}=O\left(\frac{1}{p^{3}}\right)$, d'après le critère de Riemann,
+	$$\boxed{\sum u_{n}\text{ converge.}}$$
+
+	Sa somme vaut 
+	$$\sum_{n=1}^{+\infty}u_{n}=\sum_{p=1}^{+\infty}\frac{1}{4p^{3}-p}$$
+	On décompose en éléments simples:
+	$$\frac{1}{4x^{3}-x}=\frac{1}{x(4x^{2}-1)}=\frac{-1}{x}+\frac{1}{2x-1}+\frac{1}{2x+1}$$
+
+	Donc la somme partielle jusqu'au rang $n$ vaut
+	\begin{align*}
+		S_{n}
+		&=-\underbrace{\sum_{p=1}^{n}\frac{1}{p}}_{=~H_{n}}+\sum_{p=1}^{n}\frac{1}{2p-1}+\sum_{p=1}^{n}\frac{1}{2p+1}\\
+		&=-H_{n}+1+\frac{1}{2n+1}+2\sum_{p=1}^{n-1}\frac{1}{2p+1}\\
+		&=-H_{n}+1+\frac{1}{2n+1}+2\left(\underbrace{\sum_{k=1}^{2n-1}\frac{1}{k}}_{=~H_{2n-1}}-1-\underbrace{\sum_{k=1}^{n-1}\frac{1}{2k}}_{=~\frac{1}{2}H_{n-1}}\right)\\
+		&=-H_{n}+2H_{2n-1}-H_{n-1}-1+\frac{1}{2n+1}\\
+		&=-\ln(n)+2\ln(2n-1)-\ln(n-1)-1+\underbrace{\frac{1}{2n+1}}_{=~o\left(1\right)}+o\left(1\right)\\
+		&=\ln\left(\frac{(2n-1)^{2}}{n(n-1)}\right)-1+o\left(1\right)\xrightarrow[n\to+\infty]{}\ln(4)-1
+	\end{align*}
+
+	Donc 
+	$$\boxed{\sum_{n=1}^{+\infty}u_{n}=\ln(4)-1}$$
+\end{solution}
+
+\begin{solution}
+	Soit $\varepsilon>0$ tel que $a+\varepsilon<0$. Il existe $A>0$ tel que pour tout $x>A$, 
+	$$a-\varepsilon\leqslant\frac{f'(x)}{f(x)}\leqslant a+\varepsilon$$
+	Alors
+	$$(a-\varepsilon)f(x)\leqslant f'(x)\leqslant (+\varepsilon)f(x)$$
+
+	On voit donc que 
+	$$f'(x)-f(x)(a+\varepsilon)\leqslant0$$
+	On pose alors (sorte d'inéquation différentielle) 
+	$$g_{1}(x)=f(x)e^{-(a+\varepsilon)x}$$
+	On a 
+	$$g_{1}'(x)=e^{-(a+\varepsilon)x}\left(f'(x)-f(x)(a+\varepsilon)\right)\leqslant 0$$
+	pour tout $x\geqslant A$. Donc $g_{1}$ est décroissante sur $[A,+\infty[$. Alors 
+	$$0<g_{1}(x)\leqslant g_{1}(A)=f(A)e^{-(a+\varepsilon)A}$$
+	Alors 
+	$$0<f(x)\leqslant \left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a+\varepsilon)x}$$
+
+	De même, pour $x\geqslant A$, 
+	$$\left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a-\varepsilon)x}\leqslant f(x)$$
+	car $g_{2}(x)=f(x)e^{-(a-\varepsilon)x}$ est croissante sur $[A,+\infty[$.
+
+	Donc 
+	$$f(n)\leqslant\left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a+\varepsilon)n}$$
+	Comme $a+\varepsilon<0$, 
+	$$\boxed{\sum_{n\geqslant1}f(n)\text{ converge.}}$$
+	
+	De plus
+	$$f(A)e^{-(a-\varepsilon)A}\frac{e^{(a-\varepsilon)N}}{1-e^{a-\varepsilon}}\leqslant R_{N}=\sum_{n=N}^{+\infty}f(n)\leqslant f(A)e^{-(a+\varepsilon)A}\frac{e^{(a+\varepsilon)N}}{1+e^{a+\varepsilon}}$$
+
+	Donc 
+	$$\boxed{R_{N}=\underset{n\to+\infty}{O}\left(e^{aN}\right)\text{ et }e^{aN}=\underset{n\to+\infty}{O}\left(R_{N}\right)}$$
+\end{solution}
+
+\begin{solution}
+	On a 
+	$$S_{n}=\sum_{k=1}^{n}\underbrace{\frac{e^{k}}{k}}_{\xrightarrow[k\to+\infty]{}+\infty}\xrightarrow[n\to+\infty]{}+\infty$$
+	On utilise la règle d'Abel: on écrit $e^{k}=B_{k}-B_{k-1}$ avec 
+	$$
+	\left\{
+		\begin{array}[]{ll}
+			B_{k}=\sum_{j=0}^{k}e^{j}=\frac{e^{k+1}-1}{e-1}\\
+			B_{-1}=0
+		\end{array}	
+	\right.
+	$$
+	Alors 
+	$$S_{n}=\sum_{k=1}^{n}\frac{B_{k}}{k}-\sum_{k=0}^{n-1}\frac{B_{k}}{k+1}=\underbrace{-1+\sum_{k=1}^{n-1}\underbrace{\frac{B_{k}}{k(k+1)}}_{\underset{k\to+\infty}{\sim}\frac{e^{k+1}}{(e-1)k^{2}}}}_{=~\underset{n\to+\infty}{o}(S_{n})}+\underbrace{\frac{B_{n}}{n}}_{\underset{n\to+\infty}{\sim}\frac{e^{n}e}{n(e-1)}}$$
+
+	Donc 
+	$$\boxed{S_{n}\underset{n\to+\infty}{\sim}\frac{e^{n+1}}{n(e-1)}}$$
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $u_{n}>0$ et 
+		$$u_{n}=e^{n^{\alpha}\ln\left(1-\frac{1}{n}\right)}=e^{n^{\alpha}\left(-\frac{1}{n}+O\left(\frac{1}{n^{2}}\right)\right)}=e^{-n^{\alpha-1}}+O\left(n^{\alpha-2}\right)$$
+
+		Si $\alpha<1$, $u_{n}\xrightarrow[n\to+\infty]{}1$ donc 
+		$$\boxed{\sum u_{n}\text{ diverge grossièrement.}}$$
+
+		Si $\alpha=1$, $u_{n}\xrightarrow[n\to+\infty]{}\frac{1}{2}$ donc 
+		$$\boxed{\sum u_{n}\text{ diverge grossièrement.}}$$
+
+		Si $\alpha>1$, on a 
+		$$-n^{\alpha-1}+O\left(n^{\alpha-2}\right)\underset{n\to+\infty}{\sim}-n^{\alpha-1}$$
+		donc il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$,
+		$$-n^{\alpha-1}+O\left(n^{\alpha-1}\right)\leqslant\frac{-n^{\alpha-1}}{2}$$
+		d'où 
+		$$u_{n}\leqslant e^{-\frac{n^{\alpha-1}}{2}}=\underset{n\to+\infty}{o}\left(\frac{1}{n^{2}}\right)$$
+		donc 
+		$$\boxed{\sum u_{n}\text{ converge.}}$$
+
+		\item On a $u_{n}>0$ et 
+		$$\left(\frac{1}{k}\right)^{\frac{1}{k}}e^{-\frac{1}{k}\ln(k)}\xrightarrow[k\to+\infty]{}1$$
+		donc par comparaison des sommes partielles, on a 
+		$$\sum_{k=1}^{n}\left(\frac{1}{k}\right)^{\frac{1}{k}}\underset{n\to+\infty}{\sim}n$$
+		Donc $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{n}$ et 
+		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+
+		\item On écrit $n!e=\left\lfloor n!e\right\rfloor+\alpha_{n}$.
+		Alors 
+		$$\sin(n!\pi e)=(-1)^{\left\lfloor n!e\right\rfloor}\sin(\alpha_{n}\pi)$$
+		On écrit 
+		$$n!e=\sum_{k=0}^{n-2}\frac{n!}{k!}+n+1+\frac{1}{n+1}+\sum_{k=n+1}^{+\infty}\frac{n!}{k!}$$
+
+		On pose $v_{n}=\sum_{k=0}^{n}\frac{1}{k!}$ et $w_{n}=v_{n}+\frac{1}{n\times n!}$. On a 
+		$$v_{n}\leqslant e\leqslant w_{n}$$
+		donc 
+		$$0\leqslant e-v_{n}\leqslant\frac{1}{n\times n!}$$
+		d'où
+		$$0\leqslant \sum_{k=n+1}^{+\infty}\frac{n!}{k!}\leqslant\frac{n!}{(n+1)(n+1)!}=\frac{1}{(n+1)^{2}}$$
+		Donc 
+		$$n!e\pi = \underbrace{\sum_{k=0}^{n-2}\frac{n!}{k!}}_{\text{pair}}\pi+(n+1)\pi+\frac{\pi}{n+1}+O\left(\frac{1}{n^{2}}\right)$$
+
+		Finalement,a
+		$$\frac{\sin(n!e\pi)}{\ln(n)}=(-1)^{n+1}\frac{\sin\left(\frac{\pi}{n+1}+O\left(\frac{1}{n^{2}}\right)\right)}{\ln(n)}=\underbrace{\frac{(-1)^{n+1}\pi}{\ln(n)(n+1)}}_{\substack{\text{terme général}\\\text{d'une série alternée}\\\text{convergente}}}+\underbrace{O\left(\frac{1}{n^{2}\ln(n)}\right)}_{\substack{\text{terme général}\\\text{d'une série absolument}\\\text{convergente}}}$$
+
+		Donc 
+		$$\boxed{\sum u_{n}\text{ converge.}}$$
+	\end{enumerate}
+\end{solution}
