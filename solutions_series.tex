@@ -997,3 +997,255 @@
 		$$\boxed{\sum u_{n}\text{ converge.}}$$
 	\end{enumerate}
 \end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a 
+		$$u_{n}=(a+b+c)\ln(n)+b\ln\left(1+\frac{1}{n}\right)+c\ln\left(1+\frac{2}{n}\right)=(a+b+c)\ln(n)+\frac{b+2c}{n}+O\left(\frac{1}{n^{2}}\right)$$
+		Donc $\sum u_{n}$ converge si et seulement si 
+		$$
+		\left\{
+			\begin{array}[]{lcr}
+				a+b+c &= &0\\
+				b+2c &= &0
+			\end{array}
+		\right.
+		$$
+		si et seulement si 
+		$$
+		\left\{
+			\begin{array}[]{lcr}
+				a &= &c\\
+				b &= &-2c
+			\end{array}
+		\right.
+		$$
+
+		Donc 
+		$$\boxed{\sum u_{n}\text{ converge si et seulement si} a=b\text{ et }b=-2c\text{ avec }c\in\R}$$
+
+		Prenons $c=1$ pour calculer la somme. On a 
+		\begin{align*}
+			\sum_{n=1}^{N}u_{n}
+			&=\sum_{n=1}^{N}\ln(n)-2\ln(n+1)+\ln(n+2)\\
+			&=\sum_{n=1}^{N}\ln(n)-\ln(n+1)+\sum_{n=1}^{N}\ln(n+2)-\ln(n+1)\\
+			&=-\ln(N+1)-\ln(2)+\ln(N+2)\\
+			&=\ln\left(\frac{N+2}{N+1}\right)-\ln(2)\xrightarrow[n\to+\infty]{}-\ln(2)
+		\end{align*}
+
+		Donc 
+		$$\boxed{\sum_{n=1}^{+\infty}u_{n}=-\ln(2)}$$
+
+		\item On a $u_{n}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$ donc d'après le critère de Riemann,
+		$$\boxed{\sum u_{n}\text{ converge.}}$$
+
+		On écrit 
+		$$u_{n}=\frac{2^{n}\left(3^{2^{n-1}}-1\right)}{\left(3^{2^{-1}}+1\right)\left(3^{2^{n}}-1\right)}=\frac{2^{n}\left(3^{2^{n-1}}+1-2\right)}{3^{2^{n}}-1}=\underbrace{\frac{2^{n}}{3^{2^{n-1}}-1}}_{=~v_{n}}-\underbrace{\frac{2^{n+1}}{3^{2^{n}}-1}}_{=~v_{n+1}}$$
+
+		Donc 
+		$$\boxed{\sum_{n=1}^{+\infty}u_{n}=v_{1}=1}$$
+
+		\item On remarque que $k-n\left\lfloor\frac{k}{n}\right\rfloor$ est le reste de la division euclidienne de $k$ par $n$. Donc ce reste est borné par $k-1$. Donc $u_{n}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$. D'après le critère de Riemann,
+		$$\boxed{\sum u_{n}\text{ converge.}}$$
+
+		On note alors 
+		$$J_{r}=\left\{n\in\N^{*}\middle| n\equiv r[k]\right\}$$
+		$(J_{r})_{r\in\{0,\dots,k-1\}}$ forme une partition de $\N^{*}$. On a 
+		$$\sum_{n\in J_{r}}\frac{r}{n(n+1)}=0$$
+		si $r=0$. Si $r\in\{1,\dots,k-1\}$, on a 
+		$$S_{r}=r\sum_{p=0}^{+\infty}\frac{1}{(kp+r)(kp+r+1)}$$
+		et par sommabilité on a 
+		$$S=\sum_{k=1}^{+\infty}\frac{n-k\left\lfloor\frac{n}{k}\right\rfloor}{n(n+1)}=\sum_{r=1}^{k-1}S_{r}=\sum_{p=0}^{+\infty}\sum_{r=1}^{k-1}\frac{1}{(kp+r)(kp+r+1)}$$
+
+		Soit $p\in\N$ fixé. On a 
+		\begin{align*}
+			v_{p}
+			&=\sum_{r=1}^{k-1}\frac{r}{(kp+r)(kp+r+1)}\\
+			&=\sum_{r=1}^{k-1}\frac{r}{kp+r}-\sum_{r=1}^{k-1}\frac{r}{kp+r+1}\\
+			&=\sum_{r=1}^{k-1}\frac{r}{kp+r}-\sum_{r=2}^{k}\frac{r-1}{kp+r}\\
+			&=\frac{1}{kp+1}+\sum_{r=2}^{k-1}\frac{1}{kp+r}-\frac{k-1}{k(p+1)}\\
+			&=\sum_{r=1}^{k}\frac{1}{kp+r}-\frac{1}{p+1}
+		\end{align*}
+
+		Ainsi, 
+		$$\sum_{p=0}^{N}v_{p}=\sum_{n=1}^{k(N+1)}\frac{1}{n}-\sum_{n=1}^{N+1}\frac{1}{n}=\ln\left(\frac{k(N+1)}{N+1}\right)+\underset{n\to+\infty}{o}\left(1\right)=\ln(k)+\underset{n\to+\infty}{o}\left(1\right)$$
+
+		Donc 
+		$$\boxed{\sum_{n=1}^{+\infty}u_{n}=\ln(k)}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	On a 
+	$$\sum_{k=1}^{n}v_{k}=\sum_{k=1}^{n}ku_{k}-\sum_{k=2}^{n+1}(k-1)u_{k}=u_{1}-nu_{n+1}+\sum_{k=2}^{n}u_{k}=\sum_{k=1}^{n}u_{k}-nu_{n+1}$$
+
+	Si $(nu_{n})_{n\geqslant1}$, on a donc évidemment d'après ce qui précède
+	$$\boxed{\sum_{k=1}^{+\infty}v_{k}=\sum_{k=1}^{+\infty}u_{k}}$$
+
+	Si $(u_{n})_{n\geqslant1}$ décroît, $v_{n}\geqslant0$ et on a 
+	$$\frac{v_{k}}{k}=u_{k}-u_{k+1}$$
+	et donc 
+	$$\sum_{k=n}^{+\infty}\frac{v_{k}}{k}=u_{n}=\sum_{k=1}^{+\infty}w_{k,n}$$
+	en définissant $w_{n,k}=\frac{v_{k}}{k}$ si $k\geqslant n$ et 0 sinon. On a $w_{k,n}\geqslant0$ car $(u_{n})_{n\geqslant1}$ est décroissante.
+
+	Ainsi, $\sum_{n\geqslant1}u_{n}$ converge si et seulement si $(u_{n})_{n\in\N^{*}}$ sommable si et seulement si $(w_{n,k})_{k\in\N^{*}}$ si et seulement si (d'après le théorème de Fubini) 
+	$$\sum_{k=1}^{+\infty}\underbrace{\sum_{n=1}^{+\infty}w_{n,k}}_{\sum_{n=1}^{k}\frac{v_{k}}{k}=v_{k}}<+\infty$$
+
+	Et dans ce cas (toujours d'après le théorème de Fubini), 
+	$$\sum_{n=1}^{+\infty}\underbrace{\sum_{k=1}^{+\infty}w_{n,k}}_{=~u_{n}}=\sum_{k=1}^{+\infty}\underbrace{\sum_{n=1}^{+\infty}w_{n,k}}_{=~v_{k}}<+\infty$$
+
+	donc 
+	$$\boxed{\sum_{k=1}^{+\infty}v_{k}=\sum_{k=1}^{+\infty}u_{k}}$$
+
+	On pose
+	$$u_{n}=\frac{1}{n(n+1)\dots(n+p)}$$
+	et 
+	$$v_{n}=\frac{1}{(n+1)\dots(n+p)}-\frac{n}{(n+1)\dots(n+p+1)}=\frac{p+1}{(n+1)\dots(n+p+1)}$$
+
+	Soit 
+	$$S_{p}=\sum_{n=1}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}=(p+1)\sum_{n=2}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}=(p+1)\left(S_{p}-\frac{1}{p!}\right)$$
+	Ainsi, 
+	$$\boxed{\sum_{n=1}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}}=\frac{p+1}{p(p!)}$$
+\end{solution}
+
+\begin{solution}
+	Montrons d'une manière générale que si $(u_{k})_{k\in\N}\in\left(\R_{+}^{*}\right)^{\N}$ est telle que $u_{k}=\underset{k\to+\infty}{o}(u_{k+1})$, alors $\sum u_{k}$ diverge et $\sum_{k=0}^{n}u_{k}\underset{n\to+\infty}{\sim}u_{n}$.
+
+	En effet, on a alors $\lim\limits_{k\to+\infty}\frac{u_{k+1}}{u_{k}}=+\infty$ et d'après la règle de d'Alembert, $\sum u_{k}$ diverge. Soit ensuite $\varepsilon>0$. Il existe $N\in\N$ tel que pour tout $k\geqslant N$, 
+	$$0\leqslant \frac{u_{k}}{u_{k+1}}\leqslant\varepsilon$$
+	Soit $n\geqslant N$. Pour $k\geqslant N+1$, on a 
+	$$u_{k}\leqslant \varepsilon u_{k+1}\leqslant\dots\leqslant \varepsilon^{n-k}u_{n}$$
+	pour $k\leqslant n-1$.
+
+	Alors 
+	$$0\leqslant\sum_{k=0}^{n-1}u_{k}\leqslant\sum_{k=0}^{N}u_{k}+\sum_{k=N+1}^{n-1}u_{k}\leqslant\left(\varepsilon+\varepsilon^{2}+\dots+\varepsilon^{n-N-1}u_{n}\right)$$
+
+	On peut supposer que $\varepsilon<\frac{1}{2}$ et alors 
+	$$0\leqslant\sum_{k=0}^{n-1}u_{k}\leqslant\frac{\varepsilon}{1-\varepsilon}u_{n}\leqslant2\varepsilon u_{n}$$
+	Donc on a bien le résultat voulu.
+
+	Pour revenir à l'exercice, on a alors 
+	$$v_{n}\underset{n\to+\infty}{\sim}\frac{n!}{(n+q)!}\underset{n\to+\infty}{\sim}\frac{1}{n^{q}}$$
+	qui est le terme général d'une série absolument convergente.
+	Donc 
+	$$\boxed{\sum v_{n}\text{ converge.}}$$
+\end{solution}
+
+\begin{solution}
+	On a 
+	$$\left\vert\frac{z^{nb}}{z^{na+c}+1}\right\vert=\frac{\left\vert z\right\vert^{nb}}{\left\vert1+z^{na+c}\right\vert}\underset{n\to+\infty}{\sim}\left\vert z\right\vert^{nb}$$
+	car $\vert z\vert<1$. $\vert z\vert^{nb}$ est le terme général d'une série absolument convergente.
+
+	Pour $n$ fini, on a 
+	$$\frac{1}{1+z^{na+c}}=\sum_{k=0}^{+\infty}(-z^{na+c})^{k}$$
+
+	Montrons donc que $\left(z^{nb}\left(\left(-z^{na+c}\right)^{k}\right)\right)_{(k,n)\in\N^{2}}$ est sommable. On a 
+	$$\sum_{n=0}^{+\infty}\sum_{k=0}^{+\infty}\vert z\vert^{nb}\vert z\vert^{k(na+c)}=\sum_{n=0}^{+\infty}\frac{\vert z\vert^{nb}}{1-\vert z\vert^{na+c}}<+\infty$$
+	d'après ce qui précède. On a sommabilité, donc d'après le théorème de Fubini,
+	\begin{align*}
+		\sum_{n=0}^{+\infty}\frac{z^{nb}}{1+z^{na+c}}
+		&=\sum_{k=0}^{+\infty}\sum_{n=0}^{+\infty}z^{nb}(-z^{na+c})^{k}\\
+		&=\sum_{k=0}^{+\infty}(-1)^{k}z^{ck}\left(\sum_{n=0}^{+\infty}z^{n(b+ak)}\right)\\
+		&=\sum_{k=0}^{+\infty}\frac{(-1)^{k}z^{ck}}{1-z^{b+ak}}
+	\end{align*}
+
+	Ainsi, on a bien 
+	$$\boxed{\sum_{n=0}^{+\infty}\frac{z^{nb}}{1+z^{na+c}}=\sum_{k=0}^{+\infty}\frac{(-1)^{k}z^{ck}}{1-z^{b+ak}}}$$
+\end{solution}
+
+\begin{solution}
+	On a 
+	$$b_{q}=\sum_{n=1}^{q}u_{n,q}=\sum_{n=1}^{+\infty}u_{n,q}$$
+
+	Montrons donc que la famille des $(u_{n,q})_{(n,q)\in(\N^{*})^{2}}$ est sommable. On a 
+	\begin{align*}
+		\sum_{n=1}^{+\infty}\sum_{q=1}^{+\infty}\vert u_{n,q}\vert
+		&=\sum_{n=1}^{+\infty}\sum_{q=n}^{+\infty}\frac{n\vert a_{n}\vert}{q(q+1)}\\
+		&=\sum_{n=1}^{+\infty}n\vert a_{n}\vert\left(\sum_{q=n}^{+\infty}\frac{1}{q}-\frac{1}{q+1}\right)\\
+		&=\sum_{n=1}^{+\infty}\vert a_{n}\vert<+\infty
+	\end{align*}
+
+	Donc le théorème de Fubini s'applique et on a 
+	$$\sum_{q=1}^{+\infty}\sum_{n=1}^{+\infty}u_{n,q}=\sum_{q=1}^{+\infty}b_{q}=\sum_{n=1}^{+\infty}\sum_{q=1}^{+\infty}u_{n,q}=\sum_{n=1}^{+\infty}a_{n}$$
+
+	Donc 
+	$$\boxed{\sum_{q=1}^{+\infty}b_{q}=\sum_{n=1}^{+\infty}a_{n}}$$
+\end{solution}
+
+\begin{solution}
+	D'après l'exercice précédent, $\sum v_{n}$ converge et 
+	$$\sum_{n=1}^{+\infty}v_{n}=\sum_{n=1}^{+\infty}u_{n}$$
+	On applique l'inégalité de la moyenne géométrique et arithmétique à $(u_{1},2u_{2},\dots,nu_{n})$:
+	$$\sqrt[n]{u_{1}\times 2u_{2}\times\dots\times nu_{n}}=w_{n}\sqrt[n]{n!}\leqslant\frac{1}{n}(u_{1}+2u_{2}+\dots+nu_{n})=(n+1)v_{n}$$
+	Donc on a 
+	$$w_{n}\leqslant\frac{(n+1)v_{n}}{\sqrt[n]{n!}}$$
+
+	On étudie donc $\sqrt[n]{n!}$:
+	\begin{align*}
+		\sqrt[n]{n!}
+		&=\exp\left(\frac{1}{n}\ln(n!)\right)\\
+		&=\exp\left(\frac{1}{n}\ln\left(n^{n}e^{-n}\sqrt{2\pi n}\left(1+\underset{n\to+\infty}{o}\left(1\right)\right)\right)\right)\\
+		&=\exp\left(\frac{1}{n}\left(n\ln\left(n\right)-n+\frac{1}{2}\ln\left(\pi n\right)+\ln\left(1+\underset{n\to+\infty}{o}\left(1\right)\right)\right)\right)\\
+		&=n\exp\left(-1+\underset{n\to+\infty}{o}\left(1\right)\right)\\
+		&\underset{n\to+\infty}{\sim}\frac{n}{e}
+	\end{align*}
+
+	Donc $$\lim\limits_{n\to+\infty}\frac{n+1}{\sqrt[n]{n!}}=e$$
+
+	Ainsi, $w_{n}=\underset{n\to+\infty}{O}(v_{n})$ donc 
+	$$\boxed{\sum w_{n}\text{ converge.}}$$
+
+	Montrons que pour tout $n\geqslant1$, 
+	$$\frac{n+1}{\sqrt[n]{n!}}\leqslant e$$
+	Cela équivaut à $(n+1)^{n}\leqslant e^{n}n!$ si et seulement si 
+	$$\sum_{k=0}^{n}\binom{n}{k}n^{k}\leqslant n!e^{n}$$
+	ce qui est vrai car pour tout $k\in\{0,\dots,n\}$ on a $\frac{1}{(n-k)!}\leqslant1$.
+	Donc $w_{n}\leqslant ev_{n}$ pour tout $n\geqslant1$ et donc 
+	$$\boxed{\sum_{n=1}^{+\infty}w_{n}\leqslant e\sum_{n=1}^{+\infty}v_{n}=e\sum_{n=1}^{+\infty}u_{n}}$$
+
+	Pour montrer que $e$ est la meilleure constante possible, on forme pour $N\in\N^{*}$, $u_{n,N}=\frac{1}{n}$ si $n\leqslant N$ et 0 sinon.
+	On a 
+	$$\sum_{n=1}^{+\infty}=H_{n}<+\infty$$
+	Dans ce cas, on a 
+	$$w_{n,N}=\sqrt[n]{u_{1,N}\dots w_{n,N}}=\frac{1}{\sqrt[n]{n!}}=\frac{n+1}{\sqrt[n]{n!}}v_{n}$$
+	pour $n\leqslant N$ et 0 sinon.
+	On a alors 
+	$$\sum_{n=1}^{+\infty}w_{n,N}=\sum_{n=1}^{N}w_{n,N}=\sum_{n=1}^{N}\frac{n+1}{\sqrt[n]{n!}}v_{n}$$
+	En divisant par $\sum_{n=1}^{+\infty}u_{n}=\sum_{n=1}^{+\infty}v_{n}$, on a donc 
+	$$\frac{\sum_{n=1}^{+\infty}w_{n,N}}{\sum_{n=1}^{+\infty}u_{n,N}}=\frac{\sum_{n=1}^{N}v_{n,N}\times\frac{n+1}{\sqrt[n]{n!}}}{\sum_{n=1}^{+\infty}v_{n,N}}\xrightarrow[n\to+\infty]{}e$$
+	d'après le théorème de Césaro.
+
+	On a trouvé une suite donc la constante $C$ est égale à $e$. D'après ce qui précède, 
+	$$\boxed{e\text{ est la meilleure constante possible.}}$$
+\end{solution}
+
+\begin{remark}
+	Pour la fin de l'exercice précédent, on peut utiliser le fait que $H_{N}\underset{N\to+\infty}{\sim}\ln(N)$ et alors 
+	$$\sum_{n=1}^{N}w_{n,N}\sum_{n=1}^{N}\underbrace{\frac{n+1}{\sqrt[n]{n!}}\times\frac{1}{n+1}}_{\underset{n\to+\infty}{\sim}\frac{e}{n}}\underset{N\to+\infty}{\sim}e\sum_{n=1}^{N}\frac{1}{n}\underset{N\to+\infty}{\sim}e\ln(N)$$
+	par le théorème de sommation des relations de comparaison.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $n\in\N^{*}$ et 
+		$$I_{n}=\left\{(p,q)\in\N^{2}\setminus\{(0,0)\}\middle| p+q=n\right\}$$
+		On a alors 
+		$$\Sigma_{n}=\sum_{(p,q)\in I_{n}}\frac{1}{(p+q)^{\alpha}}=\sum_{(p,q)\in I_{n}}\frac{1}{n^{\alpha}}=\frac{n+1}{n^{\alpha}}\underset{n\to+\infty}{\sim}\frac{1}{n^{\alpha-1}}$$
+
+		$$\boxed{\text{Donc la condition nécessaire et suffisante est }\alpha>2\text{.}}$$
+
+		Dans ce cas, par le théorème des sommation par paquets, on a 
+		$$\boxed{\sum_{(p,q)\in\N^{2}\setminus\{(0,0)\}}\frac{1}{(p+q)^{\alpha}}=\sum_{n=0}^{+\infty}\frac{1}{n^{\alpha-1}}+\frac{1}{n^{\alpha}}=\zeta(\alpha-1)+\zeta(\alpha)}$$
+
+		\item Pour tout $(p,q)\in\N^{2}\setminus\{(0,0)\}$, on a 
+		$$\frac{(p+q)^{2}}{2}\leqslant p^{2}+q^{2}\leqslant (p+q)^{2}$$
+
+		Pour $\alpha\leqslant0$, il est clair que l'on a divergence. Pour $\alpha>0$, on a donc 
+		$$\frac{1}{(p+q)^{2\alpha}}\leqslant\frac{1}{(p^{2}+q^{2})^{\alpha}}\leqslant\frac{2^{\alpha}}{(p+q)^{2\alpha}}$$
+		
+		$$\boxed{\text{Donc la condition nécessaire et suffisante est }\alpha>1\text{.}}$$
+		d'après le 1.
+	\end{enumerate}
+\end{solution}

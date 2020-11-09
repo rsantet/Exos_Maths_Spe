@@ -246,12 +246,11 @@
 	Montrer la convergence et calculer la somme de $\sum u_{n}$ où $u_{n}$ vaut
 	\begin{enumerate}
 		\item
-		$a\ln(n)+b\ln(n+1)+c\ln(n+2)$ pour $n\geqslant1$ (on cherchera d'abord une
-		condition nécessaire et suffisante de convergence).
+		$a\ln(n)+b\ln(n+1)+c\ln(n+2)$ pour $n\geqslant1$.
 		\item
 		$\frac{2^{n}}{3^{2^{n-1}}+1}$ pour $n\geqslant 1$.
 		\item
-		$\frac{k-n\lfloor\frac{k}{n}\rfloor}{k(k+1)}$.
+		$\frac{n-k\lfloor\frac{n}{k}\rfloor}{n(n+1)}$ avec $k\in\N^{*}$ est fixé.
 		\item
 		$\arctan(\frac{1}{n^{2}+n+1})$ pour $n\geqslant0$.
 	\end{enumerate}
@@ -271,7 +270,7 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit $q\in\Z$ et $v_{n}=\frac{1}{(n+q)!}\sum_{k=1}^{n}k!$. Donner la nature de
+	Soit $q\geqslant2$ et $v_{n}=\frac{1}{(n+q)!}\sum_{k=1}^{n}k!$. Donner la nature de
 	$\sum v_{n}$. En cas de divergence, donner un équivalent des sommes
 	partielles.
 \end{exercise}
@@ -290,7 +289,7 @@
 	$u_{n,q}=\frac{na_{n}}{q(q+1)}$ si $n\leqslant q$ et 0 sinon.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}[Inégalité de Carleman]
 	Soit $(u_{n})_{n\geqslant1}\in\R_{+}^{\N}$ telle que $\sum u_{n}<+\infty$. On
 	pose $v_{n}=\frac{1}{n(n+1)}(u_{1}+\dots+nu_{n})$ et $w_{n}=\sqrt[n]{u_1\times
 	u_2\times\dots\times u_n}$. On admet que pour tout $n\in\N^{*}$, pour tout
