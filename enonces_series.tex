@@ -322,17 +322,23 @@
 
 \begin{exercise}
 	Étudier la sommabilité de
-	$\Bigl(\frac{1}{(m+n^{2})(m+n^{2}+1)}\Bigr)_{(m,n)\in\N^{2}}$.\\
-	En déduire la valeur de $\sum_{n=1}^{+\infty}\frac{E(\sqrt{n})}{n(n+1)}$.
+	$\Bigl(\frac{1}{(m+n^{2})(m+n^{2}+1)}\Bigr)_{(m,n)\in\N\times\N^{*}}$.\\
+	En déduire la valeur de $\sum_{n=1}^{+\infty}\frac{\left\lfloor\sqrt{n}\right\rfloor}{n(n+1)}$.
 \end{exercise}
 
 \begin{exercise}
 	\phantom{}
 	\begin{enumerate}
+		\item Montrer que 
+		$$\prod_{k\geqslant1}\frac{1}{1-\frac{1}{p_{k}}}$$ 
+		converge si et seulement si 
+		$$\sum_{k\geqslant 1}\frac{1}{p_{k}}$$ 
+		converge (où les $p_{k}$ sont les nombres premiers). En déduire la nature de 
+		$$\sum_{k\geqslant1}\frac{1}{p_{k}}$$
 		\item
 		Montrer que pour tout $s\in]1,+\infty[$, le produit infini
-		$\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}$ converge (où les
-		$p_{k}$ sont les nombres premiers). Donner sa valeur en fonction de
+		$$\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}$$ 
+		converge. Donner sa valeur en fonction de
 		$\zeta(s)$.
 		\item
 		Généraliser ce résultat à $s\in\C$ avec $\Re(s)>1$.
@@ -340,7 +346,7 @@
 \end{exercise}
 
 \begin{exercise}
-	On note $\varphi(n)=\vert\{k\in\{1,\dots,n\},~k\wedge n=1\}\vert$ (fonction
+	On note $\varphi(n)=\left\vert\left\{k\in\left\{1,\dots,n\right\},~k\wedge n=1\right\}\right\vert$ (fonction
 	d'Euler). Pour quelles valeurs de $\alpha\in\R$ la somme $\sum
 	\frac{\varphi(n)}{n^{\alpha}}$ converge-t-elle? Donner alors sa somme en
 	fonction de $\zeta(\alpha)$.
@@ -353,12 +359,12 @@
 \end{exercise}
 
 \begin{exercise}
-	Donner la nature de $\sum_{n\geqslant1}\frac{(-1)^{E(\sqrt{n})}}{n}$.
+	Donner la nature de $\sum_{n\geqslant1}\frac{(-1)^{\left\lfloor\sqrt{n}\right\rfloor}}{n}$.
 \end{exercise}
 
 \begin{exercise}
 	Pour $(a,b)\in(\R\setminus\Z^{*})$, on définit
-	$u_{n}=\frac{a(a+1)\dots(a+n)}{b(b+1)\dots(b+n)}$....
+	$u_{n}=\frac{a(a+1)\dots(a+n)}{b(b+1)\dots(b+n)}$
 	\begin{enumerate}
 		\item
 		Donner une condition nécessaire et suffisante pour que $\sum u_{n}$

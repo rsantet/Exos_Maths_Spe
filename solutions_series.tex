@@ -1073,6 +1073,12 @@
 
 		Donc 
 		$$\boxed{\sum_{n=1}^{+\infty}u_{n}=\ln(k)}$$
+
+		\item On a 
+		$$\arctan(u)+\arctan(v)=\arctan\left(\frac{u+v}{1-uv}\right)$$
+		donc $$\arctan\left(\frac{1}{n^{2}+n+1}\right)=\arctan(n+1)-\arctan(n)$$
+		Ainsi,
+		$$\boxed{\sum_{n=0}^{+\infty}\arctan\left(\frac{1}{n^{2}+n+1}\right)=\frac{\pi}{2}}$$
 	\end{enumerate}
 \end{solution}
 
@@ -1247,5 +1253,262 @@
 		
 		$$\boxed{\text{Donc la condition nécessaire et suffisante est }\alpha>1\text{.}}$$
 		d'après le 1.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	On fixe $n\in\N^{*}$. On a 
+	$$\sum_{m=0}^{+\infty}\frac{1}{(m+n^{2})(m+n^{2}+1)}=\sum_{m=0}^{+\infty}\frac{1}{m+n^{2}}-\frac{1}{m+n^{2}-1}=\frac{1}{n^{2}}=\Sigma_{n}$$
+	par téléscopage.
+	$\sum_{n\geqslant1}\Sigma_{n}$ converge et 
+	$$\sum_{n\geqslant1}\Sigma_{n}=\frac{\pi^{2}}{6}$$
+
+	$$\boxed{\text{Donc }\left(\frac{1}{\left(m+n^{2}\right)\left(m+n^{2}+1\right)}\right)_{(m,n)\in\N\times\N^{*}}\text{ est sommable et la somme vaut }\frac{\pi^{2}}{6}\text{.}}$$
+
+	Posons, pour $k\geqslant1$, 
+	$$I_{k}=\left\{(m,n)\in\N\times\N^{*}\middle| m+n^{2}=k\right\}$$
+	On a $n^{2}\in\{1,\dots,k\}$ si et seulement si $n\in\{1,\dots,\left\lfloor \sqrt{k}\right\rfloor\}$ et $(m,n)\in I_{k}$ si et seulement si $m=k-n^{2}$.
+
+	On a $\left\vert I_{k}\right\vert=\left\lfloor\sqrt{k}\right\rfloor$ et par sommation par paquets,
+	$$\boxed{\frac{\pi^{2}}{6}=\sum_{k=1}^{+\infty}\sum_{(m,n)\in I_{k}}\frac{1}{(m+n^{2})(m+n^{2}+1)}=\sum_{k=1}^{+\infty}\frac{\left\lfloor k\right\rfloor}{k(k+1)}}$$
+\end{solution}
+
+\begin{remark}
+	Grâce à une transformation d'Abel, on a aussi, pour $N\geqslant1$,
+	\begin{align*}
+		\sum_{k=1}^{N}\frac{\left\lfloor k\right\rfloor}{k(k+1)}
+		&=\sum_{k=1}^{N}\frac{\left\lfloor k\right\rfloor}{k}-\sum_{k=1}^{N}\frac{\left\lfloor k\right\rfloor}{k+1}\\
+		&=1+\sum_{k=2}^{N}\underbrace{\frac{\left\lfloor k\right\rfloor-\left\lfloor k-1\right\rfloor}{k}}_{\neq0\text{ ssi }k=p^{2}}+\underbrace{\frac{\left\lfloor N\right\rfloor}{N+1}}_{\xrightarrow[N\to+\infty]{}0}
+	\end{align*}
+	et on retrouve le résultat.
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $$\prod_{k\geqslant1}\frac{1}{1-\frac{1}{p_{k}}}$$
+		converge si et seulement si 
+		$$\sum_{k\geqslant1}-\ln\left(\frac{1}{1-\frac{1}{p_{k}}}\right)$$
+		converge si et seulement si 
+		$$\sum_{k\geqslant1}-\ln\left(1--\frac{1}{p_{k}}\right)$$
+		converge si et seulement si (car $-\ln\left(1-\frac{1}{p_{k}}\right)\underset{k\to+\infty}{\sim}p_{k}>0$ vu que $p_{k}\geqslant k$ pour tout $k\geqslant1$)
+		$$\sum_{k\geqslant1}\frac{1}{p_{k}}$$
+		converge.
+
+		Donc 
+		$$\boxed{\prod_{k\geqslant1}\frac{1}{1-\frac{1}{p_{k}}}\text{ converge si et seulement si }\sum_{k\geqslant 1}\frac{1}{p_{k}}\text{ converge.}}$$
+
+		Fixons alors $N\in\N^{*}$. On a 
+		$$\prod_{k=1}^{N}\frac{1}{1-\frac{1}{p_{k}}}=\prod_{k=1}^{N}\left(\sum_{n_{k}=0}^{+\infty}\frac{1}{p_{k}^{n_{k}}}\right)$$
+		où la série est à termes positifs et est convergent. Par produit de Cauchy,
+		$$\left(\frac{1}{p_{1}^{n_{1}}\dots p_{N}^{n_{N}}}\right)_{n_{1},\dots,n_{N}\in\N^{N}}$$
+		est sommable et on a
+		\begin{align*}
+			\prod_{k=1}^{N}\frac{1}{1-\frac{1}{p_{k}}}
+			&=\sum_{(n_{1},\dots,n_{N})\in\N^{N}}\frac{1}{p_{1}^{n_{1}}\dots p_{N}^{n_{N}}}\\
+			&\geqslant \sum_{k=1}^{p_{N+1}-1}\frac{1}{k}\xrightarrow[N\to+\infty]{}+\infty
+		\end{align*}
+		car dans la première somme, tous les inverses (et une seule fois) des nombres dont les facteurs premiers sont dans $\{p_{1},\dots,p_{N}\}$ apparaissent.
+
+		Donc 
+		$$\boxed{\sum_{k\geqslant1}\frac{1}{p_{k}}\text{ diverge.}}$$
+
+		\item Posons 
+		$$\Pi_{n}=\prod_{k=1}^{n}\frac{1}{1-\frac{1}{p_{k}^{s}}}$$
+		On a 
+		$$\ln\left(\Pi_{n}\right)=\sum_{k=1}^{n}\underbrace{-\ln\left(1-\frac{1}{1-\frac{1}{p_{k}^{s}}}\right)}_{\underset{k\to+\infty}{\sim}\frac{1}{p_{k}^{s}}=\underset{k\to+\infty}{O}\left(\frac{1}{k^{s}}\right)}$$
+		car $p_{k}\geqslant k$. 
+		Donc 
+		$$\boxed{\left(\Pi_{n}\right)\text{ converge dans }\R_{+}^{*}\text{.}}$$
+		
+		Par produit de Cauchy,
+		$$\left(\frac{1}{\left(p_{1}^{s}\right)^{j_{1}}\dots\left(p_{n}^{s}\right)^{j_{n}}}\right)_{(j_{1},\dots,j_{n})\in\N^{n}}$$
+		
+		Ainsi, on a 
+		\begin{align*}
+			\Pi_{n}=\sum_{(j_{1},\dots,j_{n})\in\N^{n}}\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{s}
+			&\leqslant\sum_{k=1}^{+\infty}\frac{1}{k^{s}}\\
+			&=\zeta(s)
+		\end{align*}
+		car dans la première somme, par unicité de la décomposition en facteurs premiers, chaque $k$ n'apparaît qu'une unique fois.
+		Comme on a 
+		$$\sum_{k=1}^{p_{n+1}-1}\frac{1}{k^{s}}\leqslant \Pi_{n}$$
+		Donc $\Pi_{n}\xrightarrow[n\to+\infty]{}\zeta(s)$ et ainsi 
+		$$\boxed{\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}=\zeta(s)}$$
+
+		\item Soit $z=a+\i b\in\C$. Si $a>1$, on a 
+		$$\left\vert\frac{1}{n^{z}}\right\vert=\frac{1}{n^{a}}$$
+		Donc $\sum \frac{1}{n^{z}}$ converge absolument. On peut donc prolonger $\zeta$ à $\left\{z\in\C\middle|\Re(z)>1\right\}$.
+
+		De même que précédemment, puisque 
+		$$\left\vert\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}\right\vert=\frac{1}{\left(p_{1}^{j_{1}}\dots p_{n}^{j_{n}}\right)^{a}}$$
+		la famille 
+		$$\left(\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}\right)_{(j_{1},\dots,j_{n})\in\N^{n}}$$
+		est sommable. On peut aussi développer et 
+		$$\Pi_{n}=\prod_{k=1}^{n}\frac{1}{1-\frac{1}{p_{k}^{z}}}=\sum_{(j_{1},\dots,j_{n})\in\N^{n}}\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}$$
+		
+		On a 
+		\begin{align*}
+			\left\vert\Pi_{n}-\zeta(z)\right\vert
+			&=\left\vert\sum_{(j_{1},\dots,j_{n})\in\N^{n}}\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}-\sum_{k=1}^{+\infty}\frac{1}{k^{z}}\right\vert\\
+			&=\left\vert\sum_{k\in\N\setminus J_{n}}\frac{1}{k^{z}}\right\vert\\
+			&\leqslant \sum_{k\in\N\setminus J_{n}}\frac{1}{k^{a}}\xrightarrow[n\to+\infty]{}0
+		\end{align*}
+		où l'on a noté $J_{n}=\{k\geqslant 1|\text{ les facteurs premiers de }k\text{ sont dans }\{p_{1},\dots,p_{n}\}\}$ et où l'on a appliqué l'inégalité triangulaire et le résultat de 2. pour conclure.
+
+		Ainsi, on a bien 
+		$$\boxed{\zeta(z)=\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Pour $\alpha>2$, puisque $\varphi(n)\geqslant n$, on a 
+	$$\frac{\varphi(n)}{n^{\alpha}}\leqslant \frac{1}{n^{\alpha-1}}$$
+	qui est le terme général d'une série absolument convergente. 
+
+	Pour $\alpha=2$, si $n=p_{k}$ est premier, on a $\varphi(p_{k})=p_{k}-1$ et 
+	$$\frac{\varphi(p_{k})}{p_{k}^{2}}=\frac{p_{k}-1}{p_{k}^{2}}\underset{k\to+\infty}{\sim}\frac{1}{p_{k}}$$
+	et $\sum_{k\geqslant1}\frac{1}{p_{k}}$ diverge.
+
+	De même pour $\alpha<2$, $\sum\frac{\varphi(n)}{n^{\alpha}}$ diverge car $\frac{\varphi(n)}{n^{2}}=\underset{n\to+\infty}{O}\left(\frac{\varphi(n)}{n^{\alpha}}\right)$.
+
+	Donc 
+	$$\boxed{\sum \frac{\varphi(n)}{n^{\alpha}}\text{ converge si et seulement si }\alpha>2\text{.}}$$
+
+	Pour $\alpha>1$, on calcule 
+	$$S=\sum_{n_{1}=1}^{+\infty}\frac{\varphi(n_{1})}{n_{1}^{\alpha}}\times \sum_{n_{2}=1}^{+\infty}\frac{1}{n_{2}^{\alpha}}=\sum_{(n_{1},n_{2})\in\N^{2}}\frac{\varphi(n_{1})}{(n_{1}n_{2})^{\alpha}}$$
+	ce qui est légitime car il s'agit de deux séries à termes positifs convergentes. Soit, pour $n\geqslant1$, $D_{n}=\left\{(n_{1},n_{2})\in\left(\N^{*}\right)^{2}\middle| n=n_{1}n_{2}\right\}$. Par sommation par paquets, on a, 
+	$$S=\sum_{n=1}^{+\infty}\sum_{(n_{1},n_{2})\in D_{n}}\frac{\varphi(n_{1})}{n^{\alpha}}=\sum_{n=1}^{+\infty}\frac{1}{n^{\alpha}}\left(\sum_{n_{1}\mid n}\varphi(n_{1})\right)$$
+	et grâce à la formule d'Euler-Möbius, on a 
+	$$\sum_{n_{1}\mid n}\varphi(n_{1})=n$$
+	Ainsi, $S=\zeta(\alpha-1)$ et donc 
+	$$\boxed{\sum_{n\geqslant1}\frac{\varphi(n)}{n^{\alpha}}=\frac{\zeta(\alpha-1)}{\zeta(\alpha)}}$$
+\end{solution}
+
+\begin{solution}
+	Soit $A\in \C$ et $R>0$. S'il y a $n$ indices $k\in\N$ tels que $z_{k}\in B(A,R)$, alors pour ces indices $k$, on a $B(z_{k},\frac{1}{2})\subset B(A,R+\frac{1}{2})$. Donc (faire un dessin !), on a 
+	$$n\frac{\pi}{4}\leqslant \pi\left(R+\frac{1}{2}\right)^{2}$$
+
+	On pose, pour tout $n\in\N$, $B_{n}=\left\{i\in\N\middle| z_{i}\in B(0,n)\right\}$. De l'inégalité précédente, pour tout $n\in\N$, $D_{n}$ est fini. Il existe $\sigma\colon\N\to\N$ bijective qui permet d'ordonner les $z_{n}$ par module croissante et à même module par indice croissant.
+
+	Pour $n\in\N$ et $R=\left\vert z_{\sigma(n)}\right\vert$, on a pour tout $k\leqslant n$, $z_{\sigma(k)}\in B(0,R)$.
+
+	Donc 
+	$$n\frac{\pi}{4}\leqslant\pi\left(\left\vert z_{\sigma(n)}\right\vert+\frac{1}{2}\right)^{2}$$
+	d'où 
+	$$\left\vert z_{\sigma(n)}\right\vert\geqslant\left\vert z_{\sigma(n)}+\frac{1}{2}\right\vert-\frac{1}{2}\geqslant\frac{\sqrt{n}}{2}-\frac{1}{2}$$
+	Donc 
+	$$\left\vert\frac{1}{z_{\sigma(n)}}\right\vert^{3}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)$$
+
+	Donc
+	$$\boxed{\sum \frac{1}{z_{\sigma(n)}^{3}}\text{ est absolument convergente.}}$$
+\end{solution}
+
+\begin{solution}
+	On a $k=\left\lfloor n\right\rfloor$ si et seulement si $k^{2}\leqslant n<(k+1)^{2}$. Il y a $(k+1)^{2}-k^{2}=2k+1$ entiers.
+
+	Posons
+	$$B_{p}=\sum_{n=1}^{p}(-1)^{\left\lfloor n\right\rfloor}$$
+	et $B_{-1}=0$.
+	Si $k^{2}\leqslant p\leqslant(k+1)^{2}$, on a 
+	$$B_{p}=\underbrace{B_{k}^{2}}_{\text{signe de }(-1)^{k}}+(-1)^{k}\underbrace{(p-k)^{2}}_{\left\vert \cdot\right\vert\leqslant 2k+1}$$
+
+	Par récurrence, pour tout $p\in\N$,
+	$$\left\vert B_{p}\right\vert\leqslant2\left\lfloor p\right\rfloor+1$$
+	Donc avec une transformation d'Abel, on a 
+	\begin{align*}
+		\sum_{n=1}^{N}\frac{(-1)^{\left\lfloor n\right\rfloor}}{n}
+		&=\sum_{n=1}^{N}\frac{\left(B_{n}-B_{n-1}\right)}{n}\\
+		&=\sum_{n=1}^{N}\frac{B_{n}}{n}-\sum_{n=0}^{N-1}\frac{B_{n}}{n+1}\\
+		&=\underbrace{\frac{B_{N}}{N}}_{=\underset{N\to+\infty}{O}\left(\frac{1}{\sqrt{N}}\right)}-B_{0}+\underbrace{\sum_{n=1}^{N-1}\frac{B_{n}}{n(n+1)}}_{=\underset{N\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}
+	\end{align*}
+
+	D'après le critère de Riemann, la dernière somme converge absolument et donc 
+	$$\boxed{\sum_{n\geqslant1}\frac{(-1)^{\left\lfloor n\right\rfloor}}{n}\text{ converge.}}$$
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $n\in\N$, on a $u_{n}\neq 0$. Il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, $u_{n}u_{n+1}>0$. On a 
+		$$\ln\left(\frac{u_{n}}{u_{N_{0}}}\right)=\sum_{k=N_{0}+1}^{n}\ln\left(\frac{a+k}{n+k}\right)=\sum_{k=N_{0}+1}\ln\left(1+\frac{a}{k}\right)-\ln\left(1+\frac{b}{k}\right)$$
+
+		Alors 
+		$$\ln\left(\frac{u_{n}}{u_{N_{0}}}\right)=\sum_{k=N_{0}+1}^{n}\frac{a-b}{k}+\underbrace{\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right)}_{\text{terme général d'une série convergente}}=(a-b)\ln(n)+\underbrace{C}_{\in\R}+\underset{n\to+\infty}{o}(1)$$
+
+		Ainsi,
+		$$u_{n}=u_{N_{0}}n^{a-b}\underbrace{k^{1+\underset{n\to+\infty}{o}(1)}}_{>0}\underset{n\to+\infty}{\sim}U_{N_{0}}n^{a-b}k$$
+
+		Donc 
+		$$\boxed{\sum u_{n}\text{ converge si et seulement si }b-a>1}$$
+
+		\item On a 
+		$$u_{n+1}(b+n+1)=u_{n}(a+n+1)$$
+		donc 
+		$$(a+1)u_{n}=bu_{n+1}+(n+1)u_{n+1}-nu_{n}$$
+		En sommant sur $\N$, on a 
+		$$(a+1)\sum_{n=0}^{+\infty}u_{n}=b\sum_{n=1}^{+\infty}u_{n}+u_{1}=b\sum_{n=1}^{+\infty}+\underbrace{u_{1}-bu_{0}}_{=~\frac{a(a+1)}{b(b+1)}-a}$$
+
+		Ainsi, 
+		$$\boxed{\sum_{n=0}^{+\infty}u_{n}=\frac{a\left(a+1-b\left(b+1\right)\right)}{b\left(b+1\right)\left(a+1-b\right)}=a\left(\frac{1}{b(b+1)}-\frac{b}{(b+1)(a+1-b)}\right)}$$
+
+		\item Pour $a=-\frac{1}{2}$ et $b=1$, on a 
+		$$\boxed{u_{n}=\frac{\left(-\frac{1}{2}\right)\left(\frac{1}{2}\right)\dots\left(n-\frac{1}{2}\right)}{(n+1)!}=\frac{-\frac{(2n)!}{2^{2n+1}n!}}{(n+1)!}=-\frac{1}{2^{2n+1}(n+1)}\binom{2n}{n}}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item $u_{n}$ est une série à termes positifs et 
+		$$\frac{1}{n}=\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n}\right)$$
+		donc 
+		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+
+		$\sum v_{n}$ est une série alternée. On a $\lim\limits_{n\to+\infty}v_{n}=0$ et en formant \function{f}{[2,\infty[}{\R}{x}{\frac{\ln(x)}{x}}
+		On a $f'(x)=\frac{1-\ln(x)}{x^{2}}$ qui est négatif dès que $x>e$. Donc $(v_{n})_{n\geqslant3}$ décroît. D'après le critère des séries alternées, 
+		$$\boxed{\sum v_{n}\text{ converge.}}$$
+
+		\item $f$ décroît sur $[,+\infty[$ donc pour tout $k\geqslant4$, on a 
+		$$\int_{k}^{k+1}\frac{\ln(x)}{x}dx\leqslant\frac{\ln(k)}{k}\leqslant\int_{k-1}^{k}\frac{\ln(x)}{x}dx$$
+		d'où 
+		$$\underbrace{\int_{4}^{N+1}\frac{\ln(x)}{x}dx}_{=~\frac{1}{2}\left[\ln^{2}\left(N+1\right)-\ln^{2}\left(4\right)\right]}\leqslant\sum_{k=4}^{N}\frac{\ln(k)}{k}\leqslant\underbrace{\int_{3}^{N}\frac{\ln(x)}{x}dx}_{=~\frac{1}{2}\left[\ln^{2}\left(N\right)-\ln^{2}\left(3\right)\right]}$$
+
+		Donc 
+		$$\boxed{S_{N}\underset{N\to+\infty}{\sim}\frac{1}{2}\ln^{2}\left(N\right)}$$
+
+		Formons $w_{n}=S_{n}-\frac{\ln^{2}(n)}{2}$. $(w_{n})_{n\in\N}$ converge si et seulement si $\sum_{n\in\N^{*}}w_{n}-w_{n-1}$ converge.
+		On a 
+		$$w_{n}-w_{n-1}=\frac{\ln(n)}{n}-\frac{\ln^{2}(n)}{2}+\frac{\ln^{2}(n-1)}{2}$$
+
+		On a 
+		$$\ln(n-1)=\ln(n)+\ln\left(1-\frac{1}{n}\right)=\ln(n)-\frac{1}{n}+\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$$
+		et 
+		$$\ln^{2}(n-1)=\ln^{2}(n)-\frac{2\ln(n)}{n}+\underbrace{\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n^{2}}\right)}_{=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}$$
+
+		Donc 
+		$$w_{n}-w_{n-1}=\underbrace{\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}_{\text{terme général d'une série absolument convergente}}$$
+
+		Donc il existe $L\in\R$ tel que 
+		$$\boxed{S_{n}=\frac{\ln^{2}(n)}{2}+L+\underset{n\to+\infty}{o}(1)}$$
+		
+		\item On a 
+		$$\sum_{n=2}^{2N}v_{n}=\underbrace{\sum_{k=1}^{N}\frac{\ln(2k)}{2k}}_{=~I_{N}}-\underbrace{\sum_{k=1}^{N-1}}\frac{\ln(2k+1)}{2k+1}_{=~J_{N}}$$
+
+		Donc
+		$$\sum_{n=2}^{2N}v_{n}=I_{N}-(S_{2N}-I_{N})$$
+		On a 
+		$$S_{2N}=\frac{\ln^{2}(2N)}{2}+L+\underset{N\to+\infty}{o}(1)=\frac{\ln^{2}(2)}{2}+\frac{\ln^{2}(N)}{2}+\ln(2)\ln(N)+L+\underset{N\to+\infty}{o}(1)$$
+		De plus, 
+		$$I_{N}=\underbrace{\sum_{k=1}^{N}\frac{\ln(2)}{2k}}_{=\frac{\ln(2)}{2}\left(\ln(N)+\gamma+\underset{N\to+\infty}{o}(1)\right)}+\underbrace{\sum_{k=1}^{N}\frac{\ln(k)}{2k}}_{=~\frac{1}{2}S_{N}=\frac{\ln^{2}(N)}{4}+\frac{L}{2}+\underset{N\to+\infty}{o}(1)}$$
+
+		Finalement, on a bien 
+		\begin{align*}
+			\sum_{n=2}^{2N}v_{n}
+			&=2I_{n}-S_{2N}\\
+			&=\ln(2)\gamma-\frac{\ln^{2}(2)}{2}+\underset{N\to+\infty}{o}(1)
+		\end{align*}
+		Donc 
+		$$\boxed{\sum_{n=2}^{+\infty}v_{n}=\ln(2)\gamma-\frac{\ln^{2}(2)}{2}}$$
 	\end{enumerate}
 \end{solution}
