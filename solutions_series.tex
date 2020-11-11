@@ -1267,7 +1267,7 @@
 
 	Posons, pour $k\geqslant1$, 
 	$$I_{k}=\left\{(m,n)\in\N\times\N^{*}\middle| m+n^{2}=k\right\}$$
-	On a $n^{2}\in\{1,\dots,k\}$ si et seulement si $n\in\{1,\dots,\left\lfloor \sqrt{k}\right\rfloor\}$ et $(m,n)\in I_{k}$ si et seulement si $m=k-n^{2}$.
+	On a $n^{2}\in\{1,\dots,k\}$ si et seulement si $n\in\left\{1,\dots,\left\lfloor \sqrt{k}\right\rfloor\right\}$ et $(m,n)\in I_{k}$ si et seulement si $m=k-n^{2}$.
 
 	On a $\left\vert I_{k}\right\vert=\left\lfloor\sqrt{k}\right\rfloor$ et par sommation par paquets,
 	$$\boxed{\frac{\pi^{2}}{6}=\sum_{k=1}^{+\infty}\sum_{(m,n)\in I_{k}}\frac{1}{(m+n^{2})(m+n^{2}+1)}=\sum_{k=1}^{+\infty}\frac{\left\lfloor k\right\rfloor}{k(k+1)}}$$
@@ -1510,5 +1510,169 @@
 		\end{align*}
 		Donc 
 		$$\boxed{\sum_{n=2}^{+\infty}v_{n}=\ln(2)\gamma-\frac{\ln^{2}(2)}{2}}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	Si $\alpha_{0}=2$ et $\alpha_{n+1}=10^{\alpha_{n}-1}$. Alors $q_{1}(\alpha_{n+1})=\alpha_{n}$, $q_{k}(\alpha_{n})=\alpha_{n-k}$, $q_{n}(\alpha_{n})=2$ et $q_{n+1}(\alpha_{n})=1$.
+
+	Si $k<\alpha_{n}$, $q_{n}(k)=1$. Soit 
+	$$S_{n}=\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}u_{k}$$
+	Comme c'est une série à termes positifs, $\sum_{k\geqslant1}u_{k}$ converge si et seulement $\sum_{n\geqslant0}S_{n}$ converge.
+
+	Par définition, pour tout $k\in\{\alpha_{n},\dots,\alpha_{n+1}-1\}$, on a $q_{n+1}(k)=1$ et pour tout $p\geqslant n+1$, $q_{p}(k)=1$. Donc 
+	$$S_{n}=\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}\frac{1}{kq_{1}(k)\dots \underbrace{q_{n}(k)}_{\geqslant 2}}$$
+
+	Posons \function{f}{\R_{+}^{*}}{\R}{t}{\log_{10}(t)=\frac{\ln(t)}{\ln(10)}}
+
+	Il vient $q_{1}(t)=\left\lfloor f(t)\right\rfloor+1>f(t)$. Par récurrence, on a
+	$$q_{n}(t)\geqslant f^{n}(t)$$
+	défini pour $t\geqslant \alpha_{n}$. On a donc 
+	$$S_{n}\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}	\frac{1}{k(f(k))\dots f^{n}(k)}$$
+
+	On forme \function{g_n}{[\alpha_{n},\alpha_{n+1}-1}{\R}{t}{\frac{1}{tf(t)\dots f^{n}(t)}}
+	qui est décroissante. Ainsi, pour tout $k\in\{\alpha_{n},\alpha_{n+1}-1\}$, on a 
+	$$\int_{k}^{k+1}g_{n}(t)\leqslant u_{k}\leqslant\int_{k-1}^{k}g_{n}(t)$$
+	d'où en faisant le changement de variables $u=\log_{10}(t)$, on a
+	$$\int_{\alpha_{n-1}-1}^{\alpha_{n}-1}g_{n-1}(u)du(\ln(10))\leqslant S_{n}\leqslant\int_{\alpha_{n}-1}^{\alpha_{n+1}-1}g_{n}(t)dt$$
+
+	On obtient donc une minoration par $C\times(\ln(10))^{n}$ donc 
+	$$\boxed{\text{la série diverge.}}$$
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrons le résultat par récurrence sur $n\in\N^{*}$. On a $P_{0}=1>0$ et $P_{1}(x)=1+x$ s'annule en -1. Soit $n\in\N^{*}$, supposons le résultat au rang $n$. On a $P_{2n+2}'(x)=P_{2n+1}(x)$, par hypothèse $P_{2n+1}$ s'annule uniquement en $\alpha_{2n+1}<0$. Donc $P_{2n+2}	(\alpha_{2n+1})=\frac{\left(\alpha_{2n+1}\right)^{2n+2}}{(2n+2)!}>0$ donc $P_{2n+2}>0$.
+		Comme $P_{2n+3}'=P_{2n+2}>0$ donc $P_{2n+3}$ est strictement croissante sur $\R$. On a $\lim\limits_{x\to\pm\infty}P_{2n+3}=\pm\infty$. Donc il existe un unique $\alpha_{2n+3}\in\R$ tel que $P_{2n+3}(\alpha_{2n+3})=0$. Comme $P_{2n+3}(0)=1\geqslant1$, $\alpha_{2n+3}<0$.
+		$$\boxed{\text{D'où le résultat par récurrence.}}$$
+
+		\item Soit $x<0$, on a $\lim\limits_{n\to+\infty}P_{n}(x)=e^{x}>0$. Donc il existe $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$, $P_{2n+1}(x)>0$. En particulier, $\alpha_{2n+1}<x$ donc 
+		$$\boxed{\lim\limits_{n\to+\infty}\alpha_{2n+1}=-\infty}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	On pose $f_{n}(x)=e^{x}-x-n$, on a $f'_{n}(x)=e^{x}-1$. Donc $x_{1}=0$ et ainsi 
+	$$\boxed{\forall n\geqslant 2,\exists! x_n\geqslant0\colon e^{x_{n}}=x_{n}+n}$$
+
+	Pour tout $x\geqslant0$, on a $f_{n+1}(x)-f_{n}(x)=-1<0$ donc $f_{n+1}(x)<f_{n}(x)$ et ainsi $f_{n+1}(x_{n})<0$ et $x_{n}<x_{n+1}$.
+
+	$(x_{n})_{n\in\N}$ est strictement croissante, de plus $e^{x_{n}}=x_{n}+n\geqslant n$ donc $x_{n}\geqslant \ln(n)$ et donc 
+	$$\boxed{\lim\limits_{n\to+\infty}x_{n}=+\infty}$$
+
+	De plus, $x_{n}=\ln(x_{n}+n)$ et $f_{n}(n)=e^{n}-2n>0$ (par récurrence), donc $x_{n}<n$ par stricte croissante de $f_{n}$ donc 
+	$$x_{n}=\ln(x_{n}+n)\leqslant \ln(2n)=\ln(n)+\ln(2)$$
+	Ainsi, $x_{n}=\underset{n\to+\infty}{O}(\ln(n))$. En reportant, on a 
+	$$x_{n}=\ln(n+\underset{n\to+\infty}{O}(\ln(n)))=\ln(n)+\ln(1+\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n}\right))=\ln(n)+\underset{n\to+\infty}{o}(1)$$
+	donc 
+	$$\boxed{n\underset{n\to+\infty}{\sim}\ln(n)}$$
+
+	En reportant, on a 
+	$$\boxed{x_{n}=\ln(n)+\frac{\ln(n)}{n}+\underset{n\to+\infty}{o}\left(\frac{\ln(n)}{n}\right)}$$
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $S_{n}\xrightarrow[n\to+\infty]{}S\in\R^{+}_{+}$, on a $$v_{n}\underset{n\to+\infty}{\sim}\frac{u_{n}}{S^{\alpha}}$$
+		Comme $u_{n}$ est le terme générale d'une série convergente donc 
+		$$\boxed{\sum v_{n}\text{ converge.}}$$
+
+		\item On a $\alpha=1$ donc $v_{n}=\frac{u_{n}}{S_{n}}$, soit $(n,p)\in\N^{2}$. On a 
+		$$\sum_{i=n+1}^{n+p}v_{i}=\sum_{i=1}^{n+p}\frac{u_{i}}{S_{i}}$$
+		où $(S_{i})_{i\in\N}$ est croissante donc pour tout $i\in\{n+1,n+p\}$, $S_{i}\leqslant S_{n+p}$
+		donc 
+		$$\sum_{i=n+1}^{n+p}v_{i}\geqslant\frac{1}{S_{n+p}}\sum_{i=n+1}^{n+p}u_{i}=\frac{1}{S_{n+p}}\left(S_{n+p}-S_{n}\right)=1-\frac{S_{n}}{S_{p+n}}$$
+		et ainsi,
+		$$\boxed{\sum_{i=n+1}^{n+p}v_{i}\geqslant 1-\frac{S_{n}}{S_{n+p}}}$$
+
+		Supposons que $\sum v_{n}$ converge. Pour $n$ fixé, on a $\lim\limits_{p\to+\infty}S_{n+p}=+\infty$ (car $\sum u_{n}$ diverge). Donc lorsque $p\to+\infty$, on a pour tout $n\in\N$,
+		$$\sum_{i=n+1}^{+\infty}v_{i}\geqslant1$$
+		ce qui est absurde puisque la limite en $+\infty$ du reste est 0.
+		Ainsi,
+		$$\boxed{\sum v_{n}\text{ diverge.}}$$
+
+		\item On a $\lim\limits_{n\to+\infty}S_{n}=+\infty$ et 
+		$$v_{n}=\frac{1}{\alpha-1}\left(S_{n-1}^{1-\alpha}-S_{n}^{1-\alpha}\right)$$
+		avec $(S_{n}^{1-\alpha})_{n\in\N}$ tend vers $0$ quand $n\to+\infty$.
+		Donc $\sum w_{n}$ est une série télescopique convergente. Comme $t\mapsto\frac{1}{t^{\alpha}}$ est décroissante, on a 
+		$$\frac{u_{n}}{S_{n}^{\alpha}}\leqslant w_{n}\leqslant \frac{u_{n}}{S_{n-1}^{\alpha}}$$
+		car $u_{n}=S_{n}-S_{n-1}$. Comme $\sum w_{n}$ converge, 
+		$$\boxed{\sum \frac{u_{n}}{S_{n}^{\alpha}}\text{ converge.}}$$
+
+		Si $\alpha<1$, comme $\lim\limits_{n\to+\infty}S_{n}^{\alpha-1}=0$,
+		$$\frac{u_{n}}{S_{n}}=\underset{n\to+\infty}{o}\left(\frac{u_{n}}{S_{n}^{\alpha}}\right)$$
+		donc 
+		$$\boxed{\sum v_{n}\text{ diverge.}}$$
+
+		\item On a $\lim\limits_{n\to+\infty}R_{n}=0$ par convergence et $\lim\limits_{n\to+\infty}u_{n}=0$ et de plus $u_{n}=R_{n}-R_{n+1}$. On pose 
+		$$\alpha_{n}=\int_{R_{n+1}}^{R_{n}}\frac{dt}{t^{\alpha}}=\frac{1}{\alpha-1}\left(R_{n+1}^{1-\alpha}-R_{n}^{1-\alpha}\right)$$
+		si $\alpha\neq1$.
+
+		Si $0<\alpha<1$, $\lim\limits_{n\to+\infty}R_{n}^{1-\alpha}=0$ donc $\sum \alpha_{n}$ est une série télescopique convergente et de même que précédemment, on a 
+		$$\frac{u_{n}}{R_{n}^{\alpha}}\leqslant\alpha_{n}$$
+		donc $w_{n}\leqslant \alpha_{n}$ et 
+		$$\boxed{\sum w_{n}\text{ converge.}}$$
+
+		Si $\alpha=1$, on a 
+		$$\alpha_{n}=\ln(R_{n})-\ln(R_{n+1})$$
+		où $\ln(R_{n})\xrightarrow[n\to+\infty]{}-\infty$. Donc $\sum \alpha_{n}$ est une série télescopique divergente. De plus 
+		$$\frac{u_{n}}{R_{n}}=\frac{R_{n}-R_{n+1}}{R_{n}}=1-\frac{R_{n+1}}{R_{n}}$$
+		donc 
+		$$\ln\left(\frac{R_{n+1}}{R_{n}}\right)=\ln\left(1-\frac{u_{n}}{R_{n}}\right)\underset{n\to+\infty}{\sim}\frac{-u_{n}}{R_{n}}$$
+
+		On a donc $$\frac{u_{n}}{R_{n}}\underset{n\to+\infty}{\sim}\alpha_{n}$$
+		donc 
+		$$\boxed{\sum w_{n}\text{ diverge.}}$$
+
+		Si $\alpha>1$, on a $$\frac{u_{n}}{R_{n}}=\underset{n\to+\infty}{o}\left(\frac{u_{n}}{R_{n}^{\alpha}}\right)$$
+		donc 
+		$$\boxed{\sum w_{n}\text{ diverge.}}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $x\in[0,1[$ il existe un unique $q_{x}\in\{0,\dots,n-1\}$ tel que $x\in[\frac{q_{x}}{n},\frac{q_{x}+1}{n}]$ avec $q_{x}=\left\rfloor nx\right\rfloor$ et \function{h}{\{0,\dots,n\}}{\{0,\dots,n-1\}}{k}{q_{x_{k}}=\left\lfloor nx_{k}\right\rfloor}
+		n'est pas injective donc il existe $k>k'$ tel que $\vert x_{k}-x_{k'}\vert<\frac{1}{n}$ avec $(k,k')\in\{0,\dots,n\}^{2}$ d'où
+		$$\left\vert kx-\left\lfloor kx\right\rfloor-\left(k'x-\left\lfloor k'x\right\rfloor\right)\right\vert<\frac{1}{n}$$
+		d'où 
+		$$\left\vert (k-k')x-p\right\vert<\frac{1}{n}$$
+		avec $p\in\Z$ et pour $q=(k-k')\in\{1,\dots,n\}$, on a 
+		$$\boxed{\left\vert x-\frac{p}{q}\right\vert<\frac{1}{qn}}$$
+
+		\item D'après ce qui précède, pour tout $n\geqslant1$, il existe $(p_{n},q_{n})\in\Z\times\{1,\dots,n\}$ tels que 
+		$$\left\vert x-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{nq_{n}}\leqslant\frac{1}{q_{n}^{2}}$$
+		car $n\geqslant q_{n}$.
+		Donc 
+		$$\boxed{\left\vert x-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{q_{n}^{2}}}$$
+
+		On a donc $\frac{p_{n}}{q_{n}}\xrightarrow[n\to+\infty]{}x\in\R\setminus\Q$. Si $q_{n}$ ne tend pas vers $+\infty$, il existe $A>0$ tel que pour tout $N\in\N$ il existe $n>N$ avec $q_{n}<A$. Donc $\{n\in\N|q_{n}<A\}$ est infini: on peut extraire $(q_{\sigma(n)})$ telle que pour tout $n\in\N$, on a $q_{\sigma(n)}<A$. D'après le théorème de Bolzano-Weierstrass, on peut extraire $(q_{\varphi(n)})$ qui converge vers $q\in\R$. Notons que toute suite d'entiers relatifs qui converge est stationnaire à partir d'un certain rang donc $q\in\N^{*}$. Or pour tout $n\in\N$, on a $p_{\varphi(n)}=\frac{p_{\varphi(n)}}{q_{\varphi(n)}}q_{\varphi(n)}\xrightarrow[n\to+\infty]{}\alpha q$. $(p_{\varphi(n)})_{n\in\N}$ est une suite convergente d'entiers relatifs stationnaire, donc $\alpha q\in\Z$ et $\alpha\in\Q$ ce qui est absurde.
+
+		Donc 
+		$$\boxed{\lim\limits_{n\to+\infty}q_{n}=+\infty}$$
+
+		\item On sait qu'il existe $\sigma\colon\N\to\N$ croissante telle que $\sin\left(\sigma(n)\right)\xrightarrow[n\to+\infty]{}1$ alors 
+		$$\lim\limits_{n\to+\infty}\frac{1}{\sigma(n)\sin(\sigma(n))}=0$$
+		donc si la suite converge, alors elle converge vers 0.
+
+		Appliquons ce qui précède à $\alpha=\frac{1}{\pi}\notin\Q$. Il existe $(p_{n},q_{n})\in\Z^{\N}\times(\N^{*})^{\N}$ avec $\lim\limits_{n\to+\infty}q_{n}=0$ et 
+		$$\left\vert\frac{1}{\pi}-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{q_{n}^{2}}$$
+		Alors 
+		$$\left\vert q_{n}-\pi p_{n}\right\vert<\frac{\pi}{q_{n}}\leqslant\frac{\pi}{2}$$
+		pour $n$ suffisamment grand. Quitte à extraire, on peut supposer que $(q_{n})_{n\in\N}$ est croissante. On a
+		$$\left\vert\sin(x)\right\vert=\left\vert\sin(q_n-\pi q_n)\right\vert$$
+		donc 
+		$$\left\vert\sin(q_n)\right\vert\leqslant\left\vert\sin\left(\frac{\pi}{q_n}\right)\right\vert\leqslant\frac{\pi}{q_n}$$
+		car $\sin$ est croissant sur $\left[0,\frac{\pi}{2}\right]$ et $\vert\sin(x)\vert\leqslant\vert x\vert$.
+
+		Donc 
+		$$\underbrace{\frac{1}{\vert q_n\sin(q_n)\vert}}_{\xrightarrow[n\to+\infty]{}0}\geqslant\frac{1}{\pi}$$
+		ce qui est absurde.
+
+		Donc 
+		$$\boxed{\left(\frac{1}{n\sin(n)}\right)_{n\geqslant1}\text{ ne converge pas.}}$$
 	\end{enumerate}
 \end{solution}
