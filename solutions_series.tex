@@ -172,7 +172,7 @@
 	Avec l'inégalité de Taylor-Lagrange à l'ordre 4 sur $f$, on a
 	$$0\leqslant\cosh(x)-1-\frac{x^{2}}{2}\leqslant\frac{x^{4}}{24}\times\underbrace{\sup\limits_{t\in[0,1]}\vert\cosh^{(4)}(t)\vert}_{\leqslant\cosh(1)}\leqslant x^{4}$$
 
-	\begin{figure}
+	\begin{figure}[ht!]
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
@@ -487,7 +487,7 @@
 	$$g'(x)=\frac{1-x}{1+x}$$
 	donc $g$ est croissante sur $[0,1]$ et décroissante sur $[1,+\infty[$. Comme $g(0)=0$ et $\lim\limits_{x\to+\infty}g(x)=-\infty$, d'après le théorème des valeurs intermédiaires, il existe un unique réel $l\in]0,+\infty[$ tel que $g(l)=0$ d'où $f(l)=l$.
 
-	\begin{figure}
+	\begin{figure}[ht!]
 		\centering
 		\begin{tikzpicture}
 			\begin{axis}[
@@ -756,7 +756,7 @@
 	Alors $u_{n}\geqslant\frac{2}{\pi (n+2)}$, terme générale d'une série divergente donc $\sum u_{n}$ diverge.
 \end{remark}
 
-\begin{figure}
+\begin{figure}[ht!]
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
@@ -1674,5 +1674,197 @@
 
 		Donc 
 		$$\boxed{\left(\frac{1}{n\sin(n)}\right)_{n\geqslant1}\text{ ne converge pas.}}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On a 
+		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert=\left\lvert\sum_{p=1}^{n}\left(a_{n,p}-a_{p}\right)-\sum_{p=n+1}^{+\infty}a_{p}\right\rvert=\leqslant\sum_{p=1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert+\sum_{p=n+1}^{+\infty}\left\lvert a_{p}\right\rvert$$
+
+		Soit $N\in\N^{*}$. Si $n\geqslant N$, on a 
+		$$\sum_{p=1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert=\sum_{p=1}^{N}\left\lvert a_{n,p}-a_{p}\right\rvert+\sum_{p=N+1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert$$
+
+		Pour $p$ fixé, on a $\left\lvert a_{p}\right\rvert\leqslant b_{p}$ donc 
+		$$\sum_{p=N+1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert\leqslant 2\sum_{p=N+1}^{n} b_{p}$$
+
+		Ainsi, 
+		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert\leqslant\sum_{p=1}^{N}\left\lvert a_{n,p}-a_{p}\right\rvert+3\sum_{p=N+1}^{+\infty}b_{p}$$
+
+		Soit $\varepsilon>0$. Comme $\sum_{p\geqslant1}b_{p}$ converge, il existe $N_{1}\in\N$ tel que 
+		$$3\sum_{p=N_{1}+1}^{+\infty}b_{p}\leqslant\frac{\varepsilon}{2}$$
+		donc pour tout $n\geqslant N_{1}$, on a 
+		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert<\frac{\varepsilon}{2}+\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert$$
+
+		$N_{1}$ étant fixé, il existe $N_{2}\in\N$ tel que pour tout $n\geqslant N_{2}$, on a 
+		$$\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert<\frac{\varepsilon}{2}$$
+		car 
+		$$\lim\limits_{n\to+\infty}\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert=0$$
+
+		Donc pour tout $n\geqslant\max\left(N_{1},N_{2}\right)$, on a 
+		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert<\varepsilon$$
+		Ainsi,
+
+		$$\boxed{\lim\limits_{n\to+\infty}\sum_{p=1}^{+\infty}a_{n,p}=\sum_{p=1}^{+\infty}a_{p}}$$
+
+		\item On fixe $p\in\N$, on a 
+		$$\lim\limits_{n\to+\infty}\left(1-\frac{p}{n}\right)^{n}=e^{-p}$$
+		Pour $x\geqslant -1$, on a $\ln\left(1+x\right)\leqslant x$ donc $\ln\left(1-\frac{p}{n}\right)\leqslant -\frac{p}{n}$ et $a_{n,p}=e^{n\ln\left(1-\frac{p}{n}\right)}\leqslant e^{-p}=b_{p}$
+		Donc d'après ce qui précède, 
+		
+		$$\boxed{\lim\limits_{n\to+\infty\left(\left(\frac{1}{n}\right)^{n}+\dots+\left(\frac{n-1}{n}\right)^{n}\right)}=\frac{1}{e-1}}$$
+		
+		\begin{figure}[ht!]
+			\centering
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-2, xmax=2,
+					ymin=-2, ymax=2,
+					axis lines=center,
+					axis on top=true,
+					xlabel=$x$,
+					samples=100,
+					legend pos=outer north east
+				]
+				\addplot[blue, ultra thick, restrict y to domain=-2:2] {ln(1+x)};
+				\addplot[color=red, ultra thick, restrict y to domain=-2:2] {x};
+				\legend{$\ln\left(1+x\right)$,$y=x$}
+				\end{axis}
+			\end{tikzpicture}
+			\caption{$\ln\left(1+x\right)\leqslant x$ pour $x>-1$.}
+		\end{figure}
+	\end{enumerate}
+\end{solution}
+
+\begin{remark}
+	C'est faux si on n'a pas l'hypothèse (ii). Par exemple, 
+	$$a_{n,p}=\frac{1}{\sqrt{n}}\xrightarrow[n\to+\infty]{}0$$
+	pour $p$ fixé mais 
+	$$\sum_{p=1}^{n}\frac{1}{\sqrt{n}}=\sqrt{n}\xrightarrow[n\to+\infty]{}+\infty$$
+\end{remark}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $k\geqslant1$, $\left(u_{kn}\right)_{n\geqslant1}$ est une sous-famille de $\left(u_{n}\right)_{n\geqslant1}$ sommable, donc $\left(u_{kn}\right)_{n\geqslant1}$ est sommable.
+		$$\boxed{\text{Donc }S_{k}\text{ existe.}}$$
+
+		\item On a 
+		$$
+		\left\{
+			\begin{array}[]{lllll}
+				S_{1}-S_{2} &= &u_{1}+u_{3}+\dots+u_{2n+1}+\dots &= &0\\
+				S_{1}-S_{2}-S_{3}+S_{6} &= &u_{1}+u_{5}+u_{7}+u_{11}+\dots &= &0\\
+				S_{1}-S_{2}-S_{3}-S_{5}+S_{6}+S_{10}+S_{15}-S_{10} &= &u_{1}+u_{7}+u_{11}+\dots &= &0
+			\end{array}
+		\right.
+		$$
+		A la première ligne on enlève les multiples de 2, à la deuxième ligne on enlève les multiples de 2 et 3, à la troisième ligne on enlève les multiples de 2, 3 et 5. Et ainsi de suite.
+
+		Soient donc $p_{1},\dots,p_{N}$ les $N$ premiers nombres premiers. On a 
+		$$0=\sum_{k=1}^{p_{1}\dots p_{N}}\mu(k)S_{k}=\sum_{k\in\left\{p_{1}^{\alpha_{1}}\dots p_{N}^{\alpha_{N}}\middle|\left(\alpha_{1},\dots,\alpha_{N}\right)\in\left\{0,1\right\}^{N}\right\}}\mu(k)S_{k}$$
+		où si $k=p_{1}^{\alpha_{1}}\dots p_{r}^{\alpha_{r}}$, $\mu(k)=0$ s'il existe $\alpha_{i}\geqslant 2$ et $\mu\left(p_{i_{1}}\dots p_{i_{s}}\right)=\left(-1\right)^{s}$ sinon (fonction de Möbius).
+
+		Soit $n=p_{1}^{\beta_{1}}\dots p_{N}^{\beta_{N}}$. On cherche le coefficient en $u_{n}$ dans la somme. Si $n=1$, c'est 1. Si $n\geqslant 1$, on a 
+		$$\sum_{k\mid n}\mu(k)=0$$
+		donc 
+		$$\sum_{k\in\left\{p_{1}^{\alpha_{1}}\dots p_{N}^{\alpha_{N}}\middle|\left(\alpha_{1},\dots,\alpha_{N}\right)\in\left\{0,1\right\}^{N}\right\}}\mu(k)S_{k}=u_{1}+\alpha_{N}$$
+		avec 
+		$$\alpha_{N}=\sum_{k\in B_{N}}u_{k}$$
+		où $B_{N}\subset\N^{*}$ est tel que $\min\left(B_{N}\right)=p_{N+1}$. On a 
+		$$\left\lvert \alpha_{N}\right\rvert\leqslant\sum_{k\geqslant p_{N+1}}\left\lvert u_{k}\right\rvert\xrightarrow[N\to+\infty]{}0$$
+		car c'est le reste de $\sum_{n\geqslant 1}\left\lvert u_n\right\rvert$ convergente.
+
+		Donc $u_{1}+\alpha_{N}=0\xrightarrow[N\to+\infty]{}u_{1}$ donc $u_{1}=0$.
+
+		Avec $u_{1}=0$,
+		$$
+		\left\{
+			\begin{array}[]{lllll}
+				S_{n} &= &u_{n}+u_{2n}+u_{3n}+\dots &= &0\\
+				S_{2n} &= & u_{2n}+u_{4n}+u_{6n}+\dots &= &0
+			\end{array}
+		\right.
+		$$
+		et en recommençant avec $u_{n}$ pour tout $n\geqslant1$, on obtient bien 
+		$$\boxed{u_{n}=0}$$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+	\phantom{}
+	\begin{enumerate}
+		\item On prend $u_{n}=0$ pour tout $n\in\N$. Alors $\sum u_{n}=0$ converge donc $\sum f\left(u_{n}\right)=\sum f(0)$ converge. Donc 
+		$$\boxed{f(0)=0}$$
+
+		Supposons que $f$ n'est pas continue en 0. Alors il existe $\varepsilon_{0}>$ tel que pour tout $\alpha>0$, il existe $x\in\left[-\alpha,\alpha\right]\colon\left\lvert f(x)\right\rvert\geqslant\varepsilon_{0}$. Pour $\alpha\equiv\alpha_{n}=\frac{1}{n^{2}}$, il existe $x_{n}\in\left[-\frac{1}{n^{2}},\frac{1}{n^{2}}\right]\colon\left\lvert f(x_{n})\right\rvert\geqslant\varepsilon_{0}$.
+		$\sum x_{n}$ converge absolument mais $\sum f\left(x_{n}\right)$ diverge grossièrement ce qui est absurde.
+		$$\boxed{\text{f est continue en 0.}}$$
+
+		\item Supposons que pour tout $\alpha>0$, il existe $x\in\left]-\alpha,\alpha\right[\colon f\left(-x\right)\neq-f\left(x\right)$.
+		On définit $\left(x_{n}\right)_{n\in\N}\xrightarrow[n\to+\infty]{}0$ telle que $f\left(-x_{n}\right)+f\left(x_{n}\right)\neq 0$. Il existe $N_{n}\in\N^{*}$ tel que 
+		$$N_{n}\left\lvert f\left(-x_{n}\right)+f\left(x_{n}\right)\right\rvert\geqslant1$$
+		(il suffit de prendre $N_{n}=\left\lfloor\frac{1}{\left\lvert f\left(x_{n}\right)+f\left(-x_{n}\right)\right\rvert}\right\rfloor+1$)
+
+		On définit 
+		$$\left(u_{n}\right)_{n\in\N}=\left(x_{0},-x_{0},x_{0},-x_{0},\dots,\dots,x_{n},-x_{n},\dots,\dots\right)$$
+		où $\left(x_{n},-x_{n}\right)$ apparaît $N_{n}$ fois. On a 
+		$\sum_{k=0}^{2N}u_{k}=0$ et $\sum_{k=0}^{2N+1}u_{k}=x_{n}\xrightarrow[n\to+\infty]{}0$. Donc $\sum u_{n}$ converge.
+
+		Si $\sum f\left(u_{n}\right)$ convergeait, alors il existerait $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$ alors 
+		$$\left\lvert\sum_{k=n+1}^{+\infty}f\left(x_{k}\right)\right\rvert<\frac{1}{2}$$
+		De plus, pour $n\geqslant n_{0}$, on a 
+		$$\left\lvert f\left(x_n\right)+f\left(-x_n\right)+\dots+f\left(x_n\right)+f\left(-x_n\right)+f\left(x_{n+1}\right)+f\left(-x_{n+1}\right)+\dots\right\rvert<\frac{1}{2}$$
+		où $\left(f\left(x_{n}\right),f\left(-x_{n}\right)\right)$ apparaît $N_{n}$ fois.
+		Comme 
+		$$\left\lvert f\left(x_{n+1}\right)+f\left(-x_{n+1}\right)+\dots\right\rvert<\frac{1}{2}$$
+		on a 
+		$$\left\lvert f\left(x_n\right)+f\left(-x_n\right)+\dots+f\left(x_n\right)+f\left(-x_n\right)\right\rvert=N_{n}\left\lvert f\left(x_n\right)+f\left(-x_n\right)\right\rvert<1$$
+		ce qui est absurde.
+
+		$$\boxed{\text{Donc f est impaire au voisinage de 0.}}$$
+
+		\item Supposons que pour tout $\beta>0$, il existe $(x,y)\in\left]-\beta,\beta\right[^{2}$ avec $f\left(x+y\right)\neq f\left(x\right)+f\left(y\right)$. Alors il existe $\left(x_{n}\right)_{n\in\N}$ et $\left(y_{n}\right)_{n\in\N}$ qui tendent vers 0 telles que pour tout $n\in\N$, il existe $M_{n}\in\N$,
+		$$M_{n}\left\lvert f\left(x_{n}+y_{n}\right)-f\left(x_{n}\right)-f\left(y_{n}\right)\right\rvert\geqslant 1$$
+
+		On définit alors 
+		$$\left(u_{n}\right)_{n\in\N}=\left(x_{0}+y_{0},-x_{0},-y_{0},\dots,x_{0}+y_{0},-x_{0},-y_{0},\dots,x_{n}+y_{n},-x_{n},-y_{n},\dots\right)$$
+		où $\left(x_{n}+y_{n},-x_{n},-y_{n}\right)$ apparaît $M_{n}$ fois. On a 
+		$$\sum_{k=0}^{N}u_{k}=
+		\left\{
+			\begin{array}[]{ll}
+				0 & \text{si }N\equiv0[3]\\
+				x_{n}+y_{n} & \text{si }N\equiv1[3]\\
+				y_{n} & \text{si }N\equiv2[3]
+			\end{array}
+		\right.\xrightarrow[N\to+\infty]{}0
+		$$
+		donc $\sum u_{n}$ converge.
+
+		Si $\sum f\left(u_{n}\right)$ convergeait, alors il existerait $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$, 
+		$$\left\lvert\sum_{k=n+1}^{+\infty}f\left(u_{k}\right)\right\rvert<\frac{1}{2}$$
+		De plus, d'après 2., il existe $n_{1}\in\N$ tel que pour tout $n\geqslant n_{1}$, on a $f\left(-x_{n}\right)+f\left(-y_{n}\right)=-f\left(x_{n}\right)-f\left(y_{n}\right)$ donc pour tout $n\geqslant\max\left(n_{0},n_{1}\right)$, on a 
+		$$\left\lvert f\left(x_{n}+y_{n}\right)+f\left(-x_{n}\right)+f\left(-y_{n}\right)\right\rvert\times M_{n}=\left\lvert f\left(x_{n}+y_{n}\right)-f\left(x_{n}\right)-f\left(y_{n}\right)\right\rvert\times M_{n}<1$$
+		ce qui est absurde.
+
+		$$\boxed{\text{Donc f est linéaire au voisinage de 0.}}$$
+
+		\item Soit $k\in\Z^{*},x\in\R,\left\lvert x\right\rvert\leqslant\frac{\beta}{\left\lvert k\right\rvert}$. Par récurrence, on a $f\left(kx\right)=kf\left(x\right)$.
+		
+		Si $\left\lvert x\right\rvert<\beta$ et si $\frac{x}{\beta}\in\Q$, on a 
+		$$\frac{x}{\frac{\beta}{2}}=\frac{p}{q}$$
+		donc en posant $\lambda=\frac{2}{\beta}f\left(\frac{\beta}{2}\right)$, on a
+		$$f\left(x\right)=f\left(\frac{p\beta}{2q}\right)=\frac{p}{q}f\left(\frac{\beta}{2}\right)=\frac{p}{q}\frac{\beta}{2}\lambda=\lambda x$$
+
+		Si $\frac{x}{\beta}\notin\Q$, il existe une suite de rationnels $(r_{n})_{n\in\N}$ telle que $\lim\limits_{n\to+\infty}r_{n}=\frac{x}{\frac{\beta}{2}}$. On a alors 
+		\begin{align*}
+			f\left(x\right)
+			&=f\left(\left(x-\frac{r_{n}\beta}{2}\right)+r_{n}\frac{\beta}{2}\right)\\
+			&=f\left(x-\frac{r_{n}\beta}{2}\right)+f\left(\frac{r_{n}\beta}{2}\right)
+		\end{align*}
+		et $x-\frac{r_{n}\beta}{2}\xrightarrow[n\to+\infty]{}0$ et donc $f\left(x-\frac{r_{n}\beta}{2}\right)\xrightarrow[n\to+\infty]{}0$ d'après 1. et $r_{n}f\left(\frac{\beta}{2}\right)\xrightarrow[n\to+\infty]{}\lambda x$
+		
+		$$\boxed{\text{Donc f est une homothétie au voisinage de 0.}}$$
 	\end{enumerate}
 \end{solution}
