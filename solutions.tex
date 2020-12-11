@@ -2,11 +2,17 @@
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+
+%% Mathématiques
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{stmaryrd}
+
+%% Couleur
 \usepackage{xcolor}
 \definecolor{persianplum}{rgb}{0.44, 0.11, 0.11}
-\usepackage{url}
+
+%% Référence
 \usepackage[breaklinks]{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -15,26 +21,30 @@
 	citecolor=black,      
 	urlcolor=cyan,
 }
+
+%% Tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \usetikzlibrary{external}
 \tikzexternalize
 \tikzsetexternalprefix{figs/}
 
+%% Géométrie
 \textwidth=18cm \textheight=23cm \oddsidemargin=-1.00cm
 \evensidemargin=-1.00cm
 \parindent=1cm
 \topmargin=-2cm
-
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.5}
 
+%% Théorème
 \usepackage{amsthm}
 \newtheorem{solution}{Solution}[section]
 \newtheorem{remark}{Remarque}[section]
+\numberwithin{equation}{section}
 
-
+%% Raccourcis mathématiques
 \newcommand{\K}{\mathbb{K}} \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}} \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}} \newcommand{\Z}{\mathbb{Z}}
@@ -57,9 +67,8 @@
 	\end{array}
 	$$
 }
-\numberwithin{equation}{section}
 
-%\includeonly{solutions_series}
+\includeonly{solutions_probabilites}
 
 \begin{document}
 

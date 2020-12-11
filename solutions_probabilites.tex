@@ -1,1 +1,354 @@
 \section{Probabilités sur un univers dénombrable}
+
+\begin{solution}
+    \phantom{}
+    \begin{enumerate}
+        \item On note P:`le lancer initial donne pile', F:`le lancer initial donne face', $B_{k}$:`la k-ième boule est blanche', $N_{k}$:`la k-ième boule est noire'.
+        
+        On a 
+        \begin{equation}
+            \P\left(B_{k}\right)=\P\left(P\right)\P_{P}\left(B_{k}\right)+\P\left(F\right)\P_{F}\left(B_{k}\right)=\frac{1}{2}\frac{k}{k+1}+\frac{1}{2}\frac{1}{k+1}
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{\P\left(B_{k}\right)=\frac{1}{2}}
+        \end{equation}
+
+        \item On a 
+        \begin{equation}
+            \boxed{\P_{B_{k}}\left(P\right)=\P_{P}\left(B_{k}\right)\frac{\P\left(P\right)}{\P\left(B_{k}\right)}=\frac{k}{k+1}\xrightarrow[k\to+\infty]{}1}
+        \end{equation}
+
+        \item On a 
+        \begin{align}
+            \P\left(B_{1}\bigcap\dots\bigcap B_{k}\right)
+            &=\frac{1}{2}\P_{P}\left(B_{1}\bigcap\dots\bigcap B_{k}\right)+\frac{1}{2}\P_{F}\left(B_{1}\bigcap\dots\bigcap B_{k}\right)\\
+            &=\frac{1}{2}\left(\prod_{j=1}^{k}\frac{j}{j+1}+\prod_{j=1}^{k}\frac{1}{j+1}\right)\\
+            &\boxed{=\frac{1}{2}\left(\frac{1}{k+1}+\frac{1}{(k+1)!}\right)}
+        \end{align}
+
+        \item On a 
+        \begin{align}
+            \P\left(B_{k}\bigcap B_{k+1}\right)
+            &=\frac{1}{2}\left(\frac{k}{k+1}\times\frac{k+1}{k+2}+\frac{1}{k+1}\times\frac{1}{k+2}\right)\\
+            &=\frac{1}{2}\left(\frac{k\left(k+1\right)+1}{\left(k+1\right)\left(k+2\right)}\right)
+        \end{align}
+
+        Donc on a indépendance si et seulement si 
+        \begin{align}
+            \P\left(B_{k}\bigcap B_{k+1}\right)=\P\left(B_{k}\right)\P\left(B_{k+1}\right)=\frac{1}{4}
+            &\Leftrightarrow \frac{k\left(k+1\right)+1}{\left(k+1\right)\left(k+2\right)}=\frac{1}{2}\\
+            &\Leftrightarrow 2k\left(k+1\right)+2=\left(k+2\right)\left(k+2\right)\\
+            &\Leftrightarrow 2k^{2}+2k=k^{2}+3k\\
+            &\Leftrightarrow \boxed{k=1}
+        \end{align}
+        Ainsi, seuls les deux premiers tirages sont indépendants.
+    \end{enumerate}
+\end{solution}
+
+\begin{remark}
+    Seuls les deux premiers tirages sont indépendants car le premier tirage est indépendant du lancer de pièce.
+\end{remark}
+
+\begin{solution}
+    \phantom{}
+    \begin{enumerate}
+        \item 
+        \begin{equation}
+            \boxed{p_{0}=1,q_{0}=0,p_{N}=0,q_{N}=1}
+        \end{equation}
+        \item Soit $a\in\left\llbracket 1,N-1\right\rrbracket$. Puisque les lancers de pièce sont indépendants, on peut partitionner selon le résultat du premier lancer. On a donc [probabilités conditionnelles]
+        \begin{equation}
+            \boxed{p_{a}=p\times p_{a+1}+q\times p_{a-1}}
+        \end{equation}
+
+        L'équation caractéristique est 
+        \begin{equation}
+            pX^{2}-x+q=0
+        \end{equation}
+        On a $\Delta=1-4pq=1-4\left(1-p\right)p=4p^{2}-4p+1=\left(1-2p\right)^{2}$.
+
+        Ainsi, si $p\neq\frac{1}{2}$, il existe $\left(\alpha,\beta\right)\in\R^{2}$ tels que pour tout $a\in\left\llbracket 0,N\right\rrbracket$, on a 
+        \begin{equation}
+            p_{a}=\alpha+\beta\left(\frac{q}{p}\right)^{a}
+        \end{equation}
+        Grâce aux valeurs en $a=0,a=N$, on en déduit que 
+        \begin{equation}
+            \boxed{p_{a}=\frac{1}{1-\left(\frac{q}{p}\right)^{N}}\times\left(\left(\frac{q}{p}\right)^{a}-\left(\frac{q}{p}\right)^{N}\right)}
+        \end{equation}
+
+        Si $p=\frac{1}{2}$, il existe $\left(\alpha,\beta\right)\in\R^{2}$ tels que 
+        \begin{equation}
+            p_{a}=\alpha a+\beta
+        \end{equation}
+        Grâce aux valeurs en $a=0,a=N$, on en déduit que 
+        \begin{equation}
+            \boxed{p_{a}=\frac{1}{N}\left(N-a\right)}
+        \end{equation}
+
+        \item Pour tout $a\in\left\llbracket 1,N-1\right\rrbracket$, on a 
+        \begin{equation}
+            q_{a}=pq_{a+1}+qp_{a-1}
+        \end{equation}
+        donc pour tout $a\in\left\llbracket 1,N-1\right\rrbracket$, on a 
+        \begin{equation}
+            p_{a}+q_{a}=p\left(p_{a+1}+q_{a+1}\right)+q\left(p_{a-1}+q_{a-1}\right)
+        \end{equation}
+        Comme $p_{0}+q_{0}=p_{N}+q_{N}=1$, on a pour tout $a\in\left\llbracket 0,N\right\rrbracket$,
+        \begin{equation}
+            \boxed{p_{a}+q_{a}=1}
+        \end{equation}
+
+        Ainsi, le jeu s'arrête presque sûrement en temps fini.
+    \end{enumerate}
+\end{solution}
+
+\begin{solution}
+    \phantom{}
+    \begin{enumerate}
+        \item Les tirs sont indépendants donc 
+        \begin{equation}
+            \boxed{
+                \begin{array}[]{l}
+                    \P\left(A_{n}\right)=\left(1-a\right)^{n}\times\left(1-b\right)^{n}\times a\\
+                    \P\left(B_{n}\right)=\left(1-a\right)^{n}\times\left(1-b\right)^{n}\times \left(1-a\right)\times b
+                \end{array}
+            }    
+        \end{equation}
+        
+        \item On a 
+        \begin{equation}
+            G_{A}=\bigcup_{n\in\N}A_{n}
+        \end{equation}
+        réunion disjointe. Donc 
+        \begin{equation}
+            \boxed{
+                \begin{array}[]{l}
+                    \P\left(G_{A}\right)=\sum_{n=0}^{+\infty}\P\left(A_{n}\right)=\frac{a}{1-\left(1-a\right)\left(1-b\right)}=\frac{a}{a+b-ab}\\
+                    \P\left(G_{B}\right)=\sum_{n=0}^{+\infty}\P\left(B_{n}\right)=\frac{b\left(1-a\right)}{a+b-ab}\\
+                \end{array}
+            }
+        \end{equation}
+        
+        Ainsi, 
+        \begin{equation}
+            \boxed{\P\left(G_{A}\right)+\P\left(G_{B}\right)=1}
+        \end{equation}
+
+        \item On a $\P\left(G_{A}\right)=\P\left(G_{B}\right)$ si et seulement si 
+        \begin{equation}
+            \frac{a}{1-a}=b
+        \end{equation}
+        Cela implique que $\frac{a}{1-a}\in]0,1[$ ce qui est possible uniquement (après étude de fonction) si
+        \begin{equation}
+            \boxed{a\in\left]0,\frac{1}{2}\right[\text{ et }b=\frac{a}{1-a}}
+        \end{equation}
+    \end{enumerate}
+\end{solution}
+
+\begin{solution}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour $n\in\N^{*}$, on pose $E_{n}$:`Le joueur gagne au bout du n-ième lancer' (évènement disjoints) et G:`Le joueur gagne'. On a $G\cup_{n\in\N^{*}}E_{n}$. Donc 
+        \begin{equation}
+            \boxed{\P\left(G\right)=\sum_{n\in\N^{*}}\P\left(E_{n}\right)=\sum_{n\in\N^{*}}\left(\frac{1}{2}\right)^{n}\times\frac{1}{n}=\ln(2)}
+        \end{equation}
+
+        \item On note $P_{n}$:`le joueur obtient pile au n-ième lancer', P:`il obtient pile'. On a 
+        \begin{equation}
+            \P_{G}\left(P_{n}\right)=\frac{\P\left(G\bigcap P_{n}\right)}{\P\left(G\right)}=\frac{\P_{P_{n}}\left(G\right)\times\P\left(P_{n}\right)}{\P\left(G\right)}
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{\P_{G}\left(P_{n}\right)=\frac{\frac{1}{n}\left(\frac{1}{2}    \right)^{n}}{\ln\left(2\right)}}
+        \end{equation}
+
+        Puis 
+        \begin{equation}
+            \boxed{\P_{G}\left(P\right)=\sum_{n\in\N^{*}}\P_{G}\left(P_{n}\right)=1}
+        \end{equation}
+    \end{enumerate}
+\end{solution}
+
+\begin{remark}
+    On a utilisé le résultat suivant: pour tout $x\in\left]0,1\right[$, 
+    \begin{equation}
+        \sum_{n=1}^{+\infty}\frac{x^{n}}{n}=-\ln\left(1-x\right)
+    \end{equation}
+    Soit on connaît le résultat avec les séries entières, soit on le redémontre à la main: pour $N\geqslant1$, on a 
+    \begin{align}
+        \sum_{n=1}^{N}\frac{x^{n}}{n}
+        &=\int_{0}^{1}\sum_{n=1}^{N}x^{n}t^{n-1}dt\\
+        &=x\int_{0}^{1}\frac{1-\left(xt\right)^{N}}{1-xt}dt\\
+        &=\underbrace{\int_{0}^{1}\frac{x}{1-xt}dt}_{=\left[\ln\left(1-xt\right)\right]_{0}^{1}}+R_{N}
+    \end{align}
+    avec $\left\lvert R_{N}\right\rvert\leqslant\frac{x^{N+1}}{1-x}\xrightarrow[N\to+\infty]{}0$ d'où le résultat.
+\end{remark}
+
+\begin{solution}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \sum_{k=0}^{+\infty}p_{k}=p_{0}+p_{1}+\sum_{k=2}^{+\infty}\frac{1-2\alpha}{2^{k-1}}=2\alpha+\left(1-2\alpha\right)\times\sum_{k=1}^{+\infty}\frac{1}{2^{k}}=1
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{\text{c'est une probabilité sur }\N.}
+        \end{equation}
+
+        \item Pour tout $k\in\N$, on note $E_{k}$:`la famille a $k$ enfants et exactement 2 garçons', $E$:`la famille a exactement 2 garçons', $A_{k}$:`la famille a $k$ enfants'.
+        
+        On a alors 
+        \begin{align}
+            \P\left(E\right)
+            &=\sum_{k=2}^{+\infty}\P_{A_{k}}\left(E_{k}\right)\times\P\left(A_{k}\right)\\
+            &=\sum_{k=2}^{+\infty}\binom{k}{2}\left(\frac{1}{2}\right)^{k}\times p_{k}\\
+            &=\sum_{k=2}^{+\infty}\frac{k\left(k-1\right)}{2^{k+1}}\times\frac{1-2\alpha}{2^{k-1}}\\
+            &=\left(1-2\alpha\right)\sum_{k=2}^{+\infty}\frac{k\left(k-1\right)}{2^{2k}}\\
+            &=\left(1-2\alpha\right)\sum_{k=0}^{+\infty}\frac{\left(k+1\right)\left(k+2\right)}{2^{2k+4}}\\
+            &=\frac{1}{16}\left(1-2\alpha\right)\sum_{k=0}^{+\infty}\frac{\left(k+1\right)\left(k+2\right)}{4^{k}}=\frac{1}{16}\left(1-2\alpha\right)\times\frac{1}{\left(\frac{3}{4}\right)^{3}}\\
+            &\boxed{=\frac{4\left(1-2\alpha\right)}{27}}
+        \end{align}
+
+        \item On note $F$:`la famille a au moins 2 filles', $F_{k}$:`la famille a exactement $k$ filles et au moins 4 enfants', $G$:`la famille a au moins 2 garçons', $G_{k}$:`la famille a exactement $k$ garçons et au moins 4 enfants'.
+        
+        On a 
+        \begin{equation}
+            \P_{G}\left(G\right)=\frac{\P\left(F\cap G\right)}{\P\left(G\right)}
+        \end{equation}
+        et $\overline{F\cap G}=\overline{F}\cup\overline{G}=F_{0}\cup F_{1}\cup G_{0}\cup G_{1}$.
+        Donc, comme $\P\left(F_{0}\right)=\P\left(G_{0}\right)$ et $\P\left(F_{1}\right)=\P\left(G_{1}\right)$, on a $\P\left(F\cap G\right)=1-2\left(\P\left(G_{0}\right)+\P\left(G_{1}\right)\right)$.
+
+        On a alors 
+        \begin{align}
+            \P\left(G_{0}\right)
+            &=\sum_{k=4}^{+\infty}\binom{k}{0}\left(\frac{1}{2}\right)^{k}p_{k}\\
+            &=\sum_{k=4}^{+\infty}\frac{1-2\alpha}{2^{2k-1}}\\
+            &=2\left(1-2\alpha\right)\frac{1}{4^{4}}\times\frac{1}{1-\frac{1}{4}}\\
+            &=2\left(1-2\alpha\right)\times\frac{1}{4^{3}}\times\frac{1}{3}
+        \end{align}
+        et 
+        \begin{align}
+            \P\left(G_{1}\right)
+            &=\sum_{k=4}^{+\infty}\binom{k}{1}\left(\frac{1}{2}\right)^{k}p_{k}\\
+            &=\sum_{k=4}^{+\infty}k\times\frac{1}{2^{k}}\times\frac{1-2\alpha}{2^{k-1}}\\
+            &=\left(1-2\alpha\right)\sum_{k=4}^{+\infty}\frac{k}{2^{2k-1}}\\
+            &=\left(1-2\alpha\right)\times\frac{2}{4}\sum_{k=4}^{+\infty}\frac{k}{4^{k-1}}\\
+            &=\frac{1-2\alpha}{2}\sum_{k=3}^{+\infty}\frac{k+1}{4^{k}}\\
+            &=\frac{1-2\alpha}{2}\times\left(\frac{1}{\left(1-\frac{1}{4}\right)^{2}}-1-\frac{2}{4}-\frac{3}{4^{2}}\right)
+        \end{align}
+
+        et on calcule enfin 
+        \begin{equation}
+            \boxed{\P\left(G\right)=1-\P\left(G_{0}\right)-\P\left(G_{1}\right)}
+        \end{equation}
+    \end{enumerate}
+\end{solution}
+
+\begin{solution}
+    Pour tout $k\geqslant1$, on note $A_{k}$:`A gagne à son lancé $k$' et $B_{k}$ de manière équivalente pour le joueur $B$. On note $G_{A}$:`A gagne' et de même pour B. On a ainsi
+    \begin{equation}
+        G_{A}=\bigcup_{k\geqslant 1}A_{k}
+    \end{equation}
+    (réunion disjointe) et pareil pour $G_{B}$. On a 
+    \begin{equation}
+        \P\left(A_{k}\right)=\left(1-\frac{5}{36}\right)^{k-1}\times\left(1-\frac{1}{6}\right)^{k-1}\times\frac{5}{36}
+    \end{equation}
+    d'où 
+    \begin{equation}
+        \P\left(G_{A}\right)=\frac{5}{36}\times\frac{1}{1-\left(1-\frac{5}{36}\right)\left(1-\frac{1}{6}\right)}
+    \end{equation}
+    et pareil 
+    \begin{equation}
+        \boxed{\P\left(G_{B}\right)=\frac{1}{6}\times\left(1-\frac{5}{36}\right)\times\frac{1}{1-\left(1-\frac{5}{36}\right)\left(1-\frac{1}{6}\right)}>\P\left(G_{A}\right)}
+    \end{equation}
+    et 
+    \begin{equation}
+        \P\left(G_{A}\right)+\P\left(G_{B}\right)=1
+    \end{equation}
+    donc $G_{A}\cup G_{B}$ est presque sur.
+\end{solution}
+
+\begin{solution}
+    Soit $k\in\left\llbracket0,\left\lfloor\frac{n}{2}\right\rfloor\right\rrbracket$. La probabilité que l'on tire $2k$ boules blanches est (loi binomiale):
+    \begin{equation}
+        \binom{n}{2k}\times\left(\frac{a}{a+b}\right)^{2k}\times\left(\frac{b}{a+b}\right)^{n-2k}
+    \end{equation}
+    donc la probabilité que le nombre de boules blanches tirées soit pair est 
+    \begin{equation}
+        \P_{P}=\sum_{0\leqslant 2k\leqslant n}\binom{n}{2k}\times\left(\frac{a}{a+b}\right)^{2k}\times\left(\frac{b}{a+b}\right)^{n-2k}
+    \end{equation}
+    
+    De même, la probabilité que le nombre de boules blanches tirées soit impair est 
+    \begin{equation}
+        \P_{I}=\sum_{0\leqslant 2k+1\leqslant n}\binom{n}{2k+1}\times\left(\frac{a}{a+b}\right)^{2k+1}\times\left(\frac{b}{a+b}\right)^{n-2k-1}
+    \end{equation}
+
+    On a alors 
+    \begin{equation}
+        \P_{P}+\P_{I}=1
+    \end{equation}
+    et 
+    \begin{equation}
+        \P_{P}-\P_{I}=\sum_{k'=0}^{n}\binom{n}{k'}\left(-1\right)^{k'}\left(\frac{a}{a+b}\right)^{k'}\left(\frac{b}{a+b}\right)^{n-k'}=\left(\frac{b-a}{a+b}\right)^{n}
+    \end{equation}
+
+    On a donc 
+    \begin{equation}
+        \boxed{\P_{P}=\frac{1}{2}\left(1+\left(\frac{b-a}{a+b}\right)^{n}\right)}
+    \end{equation}
+\end{solution}
+
+\begin{remark}
+    Si on note $\P_{3}$ la probabilité que le nombre de boules blanches tirées soit multiple de 3:
+    \begin{equation}
+        \P_{3}=\sum_{0\leqslant 3k\leqslant n}\binom{n}{3k}\left(\frac{a}{a+b}\right)^{3k}\left(\frac{b}{a+b}\right)^{n-3k}
+    \end{equation}
+    On note $\P_{2}$ la probabilité pour que le nombre de boules blanches tirées soit congru à 2 module 3, et on définit $\P_{1}$ de même.
+    Alors on a 
+    \begin{equation}
+        \left\{
+            \begin{array}[]{rcl}
+                \P_{1}+\P_{2}+\P_{3} &= &1\\
+                \mathrm{j}\P_{1}+\mathrm{j}^{2}\P_{2}+\P_{3} &= &\left(\frac{b+\mathrm{j}a}{a+b}\right)^{n}\\
+                \mathrm{j}^{2}\P_{1}+\mathrm{j}\P_{1}+\P_{3} &= &\left(\frac{b+\mathrm{j}^{2}a}{a+b}\right)^{n}
+            \end{array}
+        \right.
+    \end{equation}
+    et donc 
+    \begin{equation}
+        \P_{3}=\frac{1}{3}\left(1+\left(\frac{b+\mathrm{j}a}{a+b}\right)^{n}+\left(\frac{b+\mathrm{j}^{2}a}{a+b}\right)^{n}\right)
+    \end{equation}
+\end{remark}
+
+\begin{solution}
+    Soit pour $i\in\left\llbracket 1,n\right\rrbracket$, 
+    \begin{equation}
+        A_{i}=\left\{\sigma\in\Sigma_{n}\middle|\sigma(i)=i\right\}
+    \end{equation}
+    \begin{equation}
+        A=\left\{\sigma\in\Sigma_{n}\middle|\sigma\text{ a un point fixe}\right\}
+    \end{equation}
+    On a 
+    \begin{equation}
+        A=\bigcup_{i=1}^{n}A_{i}
+    \end{equation}
+
+    On a 
+    \begin{equation}
+        \left\lvert A\right\rvert=\sum_{k=1}^{n}(-1)^{k-1}\sum_{\substack{J\subset\left\llbracket 1,n\right\rrbracket\\\left\lvert J\right\rvert=k}}\left\lvert\bigcap_{i\in J}A_{i}\right\rvert
+    \end{equation}
+    Il y a $\binom{n}{k}$ tels $J$, et on a 
+    \begin{equation}
+        \left\lvert\bigcap_{i\in J}A_{i}\right\rvert=\left\lvert\left\{\sigma\in\Sigma_{n}\middle|\forall i\in J,\sigma(i)=i\right\}\right\rvert=(n-k)!
+    \end{equation}
+    Ainsi, 
+    \begin{equation}
+        \left\lvert A\right\rvert=\sum_{k=1}^{n}(-1)^{k-1}\binom{n}{k}(n-k)!
+    \end{equation}
+    donc 
+    \begin{equation}
+        \boxed{p_{n}=\sum_{k=1}^{n}\frac{(-1)^{k-1}}{k!}\xrightarrow[n\to+\infty]{}\sum_{k=1}^{+\infty}\frac{(-1)^{k-1}}{k!}=-\left(\frac{1}{e}-1\right)=1-\frac{1}{e}}
+    \end{equation}
+\end{solution}
