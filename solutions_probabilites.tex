@@ -1,6 +1,6 @@
 \section{Probabilités sur un univers dénombrable}
 
-\begin{solution}
+\begin{proof}
     \phantom{}
     \begin{enumerate}
         \item On note P:`le lancer initial donne pile', F:`le lancer initial donne face', $B_{k}$:`la k-ième boule est blanche', $N_{k}$:`la k-ième boule est noire'.
@@ -44,13 +44,13 @@
         \end{align}
         Ainsi, seuls les deux premiers tirages sont indépendants.
     \end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
     Seuls les deux premiers tirages sont indépendants car le premier tirage est indépendant du lancer de pièce.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
     \phantom{}
     \begin{enumerate}
         \item 
@@ -101,9 +101,9 @@
 
         Ainsi, le jeu s'arrête presque sûrement en temps fini.
     \end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
     \phantom{}
     \begin{enumerate}
         \item Les tirs sont indépendants donc 
@@ -144,9 +144,9 @@
             \boxed{a\in\left]0,\frac{1}{2}\right[\text{ et }b=\frac{a}{1-a}}
         \end{equation}
     \end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
     \phantom{}
     \begin{enumerate}
         \item Pour $n\in\N^{*}$, on pose $E_{n}$:`Le joueur gagne au bout du n-ième lancer' (évènement disjoints) et G:`Le joueur gagne'. On a $G\cup_{n\in\N^{*}}E_{n}$. Donc 
@@ -168,7 +168,7 @@
             \boxed{\P_{G}\left(P\right)=\sum_{n\in\N^{*}}\P_{G}\left(P_{n}\right)=1}
         \end{equation}
     \end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
     On a utilisé le résultat suivant: pour tout $x\in\left]0,1\right[$, 
@@ -185,7 +185,7 @@
     avec $\left\lvert R_{N}\right\rvert\leqslant\frac{x^{N+1}}{1-x}\xrightarrow[N\to+\infty]{}0$ d'où le résultat.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
     \phantom{}
     \begin{enumerate}
         \item On a 
@@ -244,9 +244,9 @@
             \boxed{\P\left(G\right)=1-\P\left(G_{0}\right)-\P\left(G_{1}\right)}
         \end{equation}
     \end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
     Pour tout $k\geqslant1$, on note $A_{k}$:`A gagne à son lancé $k$' et $B_{k}$ de manière équivalente pour le joueur $B$. On note $G_{A}$:`A gagne' et de même pour B. On a ainsi
     \begin{equation}
         G_{A}=\bigcup_{k\geqslant 1}A_{k}
@@ -268,9 +268,9 @@
         \P\left(G_{A}\right)+\P\left(G_{B}\right)=1
     \end{equation}
     donc $G_{A}\cup G_{B}$ est presque sur.
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
     Soit $k\in\left\llbracket0,\left\lfloor\frac{n}{2}\right\rfloor\right\rrbracket$. La probabilité que l'on tire $2k$ boules blanches est (loi binomiale):
     \begin{equation}
         \binom{n}{2k}\times\left(\frac{a}{a+b}\right)^{2k}\times\left(\frac{b}{a+b}\right)^{n-2k}
@@ -298,7 +298,7 @@
     \begin{equation}
         \boxed{\P_{P}=\frac{1}{2}\left(1+\left(\frac{b-a}{a+b}\right)^{n}\right)}
     \end{equation}
-\end{solution}
+\end{proof}
 
 \begin{remark}
     Si on note $\P_{3}$ la probabilité que le nombre de boules blanches tirées soit multiple de 3:
@@ -322,7 +322,7 @@
     \end{equation}
 \end{remark}
 
-\begin{solution}
+\begin{proof}
     Soit pour $i\in\left\llbracket 1,n\right\rrbracket$, 
     \begin{equation}
         A_{i}=\left\{\sigma\in\Sigma_{n}\middle|\sigma(i)=i\right\}
@@ -351,4 +351,4 @@
     \begin{equation}
         \boxed{p_{n}=\sum_{k=1}^{n}\frac{(-1)^{k-1}}{k!}\xrightarrow[n\to+\infty]{}\sum_{k=1}^{+\infty}\frac{(-1)^{k-1}}{k!}=-\left(\frac{1}{e}-1\right)=1-\frac{1}{e}}
     \end{equation}
-\end{solution}
+\end{proof}

@@ -1,6 +1,6 @@
 \section{Algèbre Générale}
 
-\begin{solution}
+\begin{proof}
 	Soit $(x,y)\in G^{2}$. On a d'abord
 	\begin{align}
 		x\cdot y
@@ -20,7 +20,7 @@
 	\begin{equation}
 		\boxed{\text{G est abélien.}}
 	\end{equation}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	\phantom{}
@@ -30,7 +30,7 @@
 	\end{itemize}
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	$A$ est non vide car $\omega(e_{G})=1$ et $e_{G}\in A$. Soit $x\in A$ tel que $\omega(x)=2p+1$. Soit $k\in\Z$, on a 
 	\begin{align}
 		x^{2k}=e_{G}
@@ -46,9 +46,9 @@
 	\begin{equation}
 		\boxed{\text{Donc }A\text{ est bijective.}}
 	\end{equation}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On note $m=\theta(\sigma)$. On suppose que $\sigma$ se décompose en produit de cycle de longueur $l_{1},\dots,l_{m}$ avec $l_{1}+\dots+l_{m}=n$. Comme
 	\begin{equation}
 		(a_{1},\dots,a_{l})=[a_{1},a_{2}]\circ[a_{2},a_{3}]\circ\dots\circ[a_{l-1},a_{l}]
@@ -99,9 +99,9 @@
 	\begin{equation}
 		\boxed{\text{D'où le résultat par récurrence sur k.}}
 	\end{equation}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On note par $\overline{k}$ les éléments de $\Z/n\Z$ et par $\widetilde{l}$ les éléments de $\Z/m\Z$.
 
 	Soit $f$ un morphisme. On pose $f(\overline{1})=\widetilde{x}$ où $x\in\left\llbracket 0,m-1\right\rrbracket$. On a donc $nf(\overline{1})=f(\overline{0})=\widetilde{0}$.
@@ -117,13 +117,13 @@
 	\begin{equation}
 		\boxed{\text{On a donc }n\wedge m\text{ morphismes.}}
 	\end{equation}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	Exemple pour l'exercice précédent: morphisme de $\Z/4\Z$ dans $\Z/6\Z$. On a $f(\overline{1})=\widetilde{x}$ d'où $\widetilde{4x}=\widetilde{0}$ donc $3\mid x$ d'où $x\in\left\{0,3\right\}$. On a donc le morphisme trivial $f_{0}\colon \overline{l}\mapsto\widetilde{0}$ et $f_{1}\colon\overline{l}\mapsto\widetilde{3l}$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	On considère $H=\{x\in G\bigm| x^{2}=e_{G}\}$. Si $x\notin H$, alors $x^{-1}\neq x$ et donc 
 	
 	\begin{equation}
@@ -153,16 +153,16 @@
 	\begin{equation}
 		\boxed{P=e_{G}}
 	\end{equation}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Soit $x_{0}\in\R$. $(\overline{kx_{0}})_{0\leqslant k\leqslant n}$ ne sont pas deux à deux distincts. Donc il existe $l\neq l'\in\left\llbracket 0,n\right\rrbracket^{2}$ tel que $\overline{lx_{0}}=\overline{l'x_{0}}$ d'où $0<\vert l-l'\vert\leqslant n$. Donc il existe $j\in\left\llbracket 1, n\right\rrbracket$ avec $jx_{0}\in G$. Ainsi, $n!x_{0}\in G$ (itéré de $jx_{0}$). Ce raisonnement est vrai pour $x=\frac{x_{0}}{n!}$ donc $x_{0}\in G$. Ainsi, 
 	\begin{equation}
 		\boxed{G=\R}
 	\end{equation}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Soit $f$ un isomorphisme de $\Z/n\Z$ dans lui-même. Soit $k\in\left\llbracket 0, n-1\right\rrbracket$, on a $f(\overline{k})=kf\overline{1})$. Par isomorphisme, $\omega(f(\overline{1}))=\omega(\overline{1})=n$. Notons alors $\overline{x}=f(\overline{1})$ avec $x\in\left\llbracket 0,n-1\right\rrbracket$.
 
 	Si $x\wedge n=1$, il existe $(u,v)\in\Z^{2}$ tel que $ux+vn=1$, donc $u\overline{x}=\overline{1}\in gr\{\overline{x}\}$. Ainsi, $Z\/n\Z=gr\{\overline{x}\}$ (car les éléments de $\Z/n\Z$ sont des itérés de $\overline{1}$) donc $\omega(\overline{x})=n$.
@@ -176,9 +176,9 @@
 	où $x\in\left\llbracket 0,n-1\right\rrbracket$ et $x\wedge n=1$.
 
 	Réciproquement, si $x\in\left\llbracket 0,n-1\right\rrbracket$ est tel que $x\wedge n=1$, $f_{x}$ est évidemment un morphisme. Si $\overline{k}\in\ker\left(f_{x}\right)$, on a $f_{x}\left(\overline{k}\right)=\overline{0}$ si et seulement si $\overline{kx}=\overline{0}$ si et seulement si $n\mid kx$ et comme $n\wedge x=1$, d'après le théorème de Gauss, on a $n\mid k$ donc $\overline{k}=\overline{0}$ donc $\ker\left(f_{x}\right)=\left\{\overline{0}\right\}$. Donc $f_{x}$ est injective, donc bijective car $\left\vert\Z/n\Z\right\vert=\left\vert\Z/n\Z\right\vert=n$.
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Si $y\in \im\varphi$, $y$ possède $\vert\ker\varphi\vert$ antécédents. En effet, il existe $x_{0}\in G$ tel que $y=\varphi(x_{0})$. Pour tout $x\in G$, on a $\varphi(x)=y$ si et seulement si $\varphi(x)=\varphi(x_{0})$ si et seulement si $\varphi(x_{0}^{-1}\cdot x)=e_{G}$ si et seulement si $x_{0}^{-1}\cdot x\in\ker\varphi$ si et seulement si $x\in x_{0}\ker\varphi$. Comme \function{g}{\ker\varphi}{x_{0}\ker\varphi}{x}{x\cdot x_{0}}
 	est bijective, on a $\vert\ker\varphi\vert=\vert x_{0}\varphi\vert$. Ainsi, on a $\vert G\vert=\vert\im\varphi\vert\times\vert\ker\varphi\vert$.
 
@@ -190,9 +190,9 @@
 		&\Longleftrightarrow \vert\ker\varphi^{2}\vert=\vert\ker\varphi\vert\\
 		&\Longleftrightarrow \boxed{\ker\varphi^{2}=\ker\varphi}
 	\end{align}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On considère \function{f}{G}{G}{x}{x^{m}}
 	l'exercice revient à montrer que $f$ est bijective. D'après le théorème de Bézout, il existe $(a,b)\in\Z^{2}$ tel que $am+bn=1$. Soit $y\in G$, on a 
 	\begin{equation}
@@ -202,9 +202,9 @@
 	\begin{equation}
 		\boxed{\text{f est bijective.}}
 	\end{equation}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item On a $e_{G}\in S_{g}$, si $(x,y)\in S_{g}^{2}$ alors $x\cdot y\cdot g=x\cdot g\cdot y=g\cdot x\cdot y$ donc $x\cdot y\in S_{g}$ et si $x\in S_{g}$ alors $x\cdot g=g\cdot x$ implique $g\cdot x^{-1}=x^{-1}\cdot g$ en multipliant par l'inverse de $x$ à gauche et à droite donc 
@@ -244,7 +244,7 @@
 		\end{equation}
 		donc 
 		\begin{equation}
-			\left\lvert Z(G)\right\rvert\neq1
+			\boxed{\left\lvert Z(G)\right\rvert\neq1}
 		\end{equation}
 
 		\item On a 
@@ -272,35 +272,52 @@
 			\boxed{\text{f est un isomorphisme.}}
 		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	Les groupes de cardinal $p^{3}$ ne sont pas nécessairement abélien, par exemple le groupe des isométries du carré $\mathcal{D}_{4}$ de cardinal 8.
 \end{remark}
 
-\begin{solution}
-	Soit $f$ un morphisme de $(\Z,+)$ dans $(\Q_{+}^{*},\times)$. Pour tout $n\in\Z$, $f(n)=f(1)^{n}$ donc il existe $r_{0}\in\Q_{+}^{*}$ tel que $f(1)=r_{0}$ donc $f\colon n\mapsto r_{0}^{n}$.
+\begin{proof}
+	Soit $f$ un morphisme de $(\Z,+)$ dans $(\Q_{+}^{*},\times)$. Pour tout $n\in\Z$, $f(n)=f(1)^{n}$ donc il existe $r_{0}\in\Q_{+}^{*}$ tel que $f(1)=r_{0}$ donc 
+	\begin{equation}
+		\boxed{f\colon n\mapsto r_{0}^{n}}
+	\end{equation}
 
-	Soit $f$ un morphisme de $(\Q,+)$ dans $(\Q_{+}^{*},\times)$. Pour tout $a\in\N^{*}$, $f(1)=f(\frac{1}{a})^{a}$. Pour tout $p$ premier, on a $\nu_{p}(f(1))=a\nu_{p}(f(\frac{1}{a}))$ donc pour tout $a\in\N^{*}$, $a\mid\nu_{p}(f(1))$ donc $\nu_{p}(f(1))=0$ pour tout $p$ premier, donc $f(1)=1$. Ainsi, pour tout $n\in\Z$, $f(n)=f(1)^{n}=1$ et $f(b\times\frac{a}{b})=f(a)=1=f(\frac{a}{b})^{b}$ donc $f(\frac{a}{b})=1$. Donc $f\colon r\mapsto 1$.
-\end{solution}
+	Soit $f$ un morphisme de $(\Q,+)$ dans $(\Q_{+}^{*},\times)$. Pour tout $a\in\N^{*}$, $f(1)=f(\frac{1}{a})^{a}$. Pour tout $p$ premier, on a $\nu_{p}(f(1))=a\nu_{p}(f(\frac{1}{a}))$ donc pour tout $a\in\N^{*}$, $a\mid\nu_{p}(f(1))$ donc $\nu_{p}(f(1))=0$ pour tout $p$ premier, donc $f(1)=1$. Ainsi, pour tout $n\in\Z$, $f(n)=f(1)^{n}=1$ et $f(b\times\frac{a}{b})=f(a)=1=f(\frac{a}{b})^{b}$ donc $f(\frac{a}{b})=1$. Donc 
+	\begin{equation}
+		\boxed{f\colon r\mapsto 1}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On a $xy=y^{2}x$, $x^{2}y=xy^{2}x=y^{4}x^{2}$, $x^{3}y=x^{2}y^{2}x=xy^{4}x^{2}=y^{8}x^{3}$, $x^{5}y=y^{32}x^{5}$ donc $y^{31}=e_{G}$ et $\omega(y)=31$. 
 	
-	Tout élément de $G$ peut s'écrire $y^{\lambda}x^{\mu}$ avec $\left(\lambda,\mu\right)\in\left\llbracket 0,30\right\rrbracket \times\left\{0, 4\right\}$. Soit \function{f}{\{0,\dots,30\}\times\{0,\times 4\}}{G}{(\lambda,\mu)}{y^{\lambda}x^{\mu}} est surjective par construction. Soit $((\lambda,\mu),(\lambda',\mu'))\in(\{0,\dots,30\}\times\{0,\times 4\})^{2}$ tel que $y^{\lambda}x^{\mu}=y^{\lambda'}x^{\mu'}$ donc $y^{\lambda-\lambda'}=x^{p'-p}$ d'où $y^{5(\lambda-\lambda')}=x^{5(\mu'-\mu)}=e_{G}$. Or $\omega(y)=31$ donc $31\mid 5(\lambda-\lambda')$ et d'après le théorème de Gauss, $31\mid \lambda-\lambda'$. Or $(\lambda,\lambda')\in\left\llbracket 0,30\right\rrbracket^{2}$ donc $\lambda=\lambda'$ et de même $\mu=\mu'$ donc $f$ est injective donc bijective et $\vert G\vert=155$. Soit $G'$ un autre tel groupe engendré par $x'$ et $y'$, on forme \function{g}{G}{G}{y^{p}x^{\mu}}{y'^{\lambda}x'^{\mu}}
+	Tout élément de $G$ peut s'écrire $y^{\lambda}x^{\mu}$ avec $\left(\lambda,\mu\right)\in\left\llbracket 0,30\right\rrbracket \times\left\{0, 4\right\}$. Soit \function{f}{\left\llbracket 0,30\right\rrbracket\times\left\llbracket 0, 4\right\rrbracket}{G}{(\lambda,\mu)}{y^{\lambda}x^{\mu}} est surjective par construction. Soit $((\lambda,\mu),(\lambda',\mu'))\in(\left\llbracket 0,30\right\rrbracket\times\left\llbracket 0, 4\right\rrbracket)^{2}$ tel que $y^{\lambda}x^{\mu}=y^{\lambda'}x^{\mu'}$ donc $y^{\lambda-\lambda'}=x^{p'-p}$ d'où $y^{5(\lambda-\lambda')}=x^{5(\mu'-\mu)}=e_{G}$. Or $\omega(y)=31$ donc $31\mid 5(\lambda-\lambda')$ et d'après le théorème de Gauss, $31\mid \lambda-\lambda'$. Or $(\lambda,\lambda')\in\left\llbracket 0,30\right\rrbracket^{2}$ donc $\lambda=\lambda'$ et de même $\mu=\mu'$ donc $f$ est injective donc bijective et 
+	\begin{equation}
+		\boxed{\vert G\vert=155}
+	\end{equation}
+	
+	Soit $G'$ un autre tel groupe engendré par $x'$ et $y'$, on forme \function{g}{G}{G}{y^{p}x^{\mu}}{y'^{\lambda}x'^{\mu}}
 	et on vérifie que $g$ est un isomorphisme.
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item Soit $i\in\left\llbracket 1,r\right\rrbracket$, il existe nécessairement $y_{i}\in G$ tel que $\nu_{p_{i}}(\omega(y_{i}))=p_{i}^{\alpha_{i}}$ (où $\nu_{p}$ est la valuation $p$-adique), sinon on ne pourrait pas avoir ce terme dans le $\ppcm$. Donc $p_{i}^{\alpha_{i}}\mid \omega(y_{i})$.
+		\item Soit $i\in\left\llbracket 1,r\right\rrbracket$, il existe nécessairement $y_{i}\in G$ tel que $\nu_{p_{i}}(\omega(y_{i}))=p_{i}^{\alpha_{i}}$ (où $\nu_{p}$ est la valuation $p$-adique), sinon on ne pourrait pas avoir ce terme dans le $\ppcm$. Donc 
+		\begin{equation}
+			\boxed{p_{i}^{\alpha_{i}}\mid \omega(y_{i})}
+		\end{equation}
 		
 		\item Il existe $n\in\N$ tel que $\omega(y_{i})=p_{i}^{\alpha_{i}}n$. Posons $x_{i}=y_{i}^{n}\in G$. Alors pour $k\in\N$,
 		\begin{equation}
 			x_{i}^{k}=e_{G}\Longleftrightarrow y_{i}^{nk}=e_{G}\Longleftrightarrow \omega(y_{i})\mid nk\Longleftrightarrow p_{i}^{\alpha_{i}}\mid k
 		\end{equation}
-		Donc $\omega(x_{i})=p_{i}^{\alpha_{i}}$.
+		Donc 
+		\begin{equation}
+			\boxed{\omega(x_{i})=p_{i}^{\alpha_{i}}}
+		\end{equation}
 
 		\item On pose $x=\prod_{i=1}^{r}x_{i}$. Soit $k\in\N$, alors 
 		\begin{equation}
@@ -310,31 +327,45 @@
 		\begin{equation}
 			x_{i}^{kM_{i}}=e_{G}\Longleftrightarrow p_{i}^{\alpha_{i}}\mid kM_{i}\Longleftrightarrow p_{i}^{\alpha_{i}}\mid k
 		\end{equation}
-		la dernière équivalence venant du théorème de Gauss. Donc pour tout $i\in\left\llbracket 1,r\right\rrbracket$, $p_{i}^{\alpha_{i}}\mid k$, ce qui équivaut donc à $N\mid k$ et donc $\omega(x)=N$.
+		la dernière équivalence venant du théorème de Gauss. Donc pour tout $i\in\left\llbracket 1,r\right\rrbracket$, $p_{i}^{\alpha_{i}}\mid k$, ce qui équivaut donc à $N\mid k$ et donc 
+		\begin{equation}
+			\boxed{\omega(x)=N}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
-	Sur un corps commutatif, un polynôme de degré $n$ admet au plus $n$ racines. Montrons qu'il existe $x_{1}\in\K^{*}$ tel que $\omega(x_{i})=\vert\K^{*}\vert$. Par définition de $N$, pour tout $x\in\K^{*}$, $\omega(x)\mid N$. D'où $x^{N}=1_{\K}$. Donc $x$ est racine de $X^{N}-1$. Ainsi, $\vert\K^{*}\vert\leqslant N$. Par ailleurs, $N\mid\vert\K^{*}\vert$ car pour tout $x\in\K^{*}$, $x^{\vert\K^{*}\vert}=1_{\K^{*}}$. Donc $\vert\K^{*}\vert=N$ et donc $\K^{*}=gr\left\{x_{1}\right\}$.
+\begin{proof}
+	Sur un corps commutatif, un polynôme de degré $n$ admet au plus $n$ racines. Montrons qu'il existe $x_{1}\in\K^{*}$ tel que $\omega(x_{i})=\vert\K^{*}\vert$. Par définition de $N$, pour tout $x\in\K^{*}$, $\omega(x)\mid N$. D'où $x^{N}=1_{\K}$. Donc $x$ est racine de $X^{N}-1$. Ainsi, $\vert\K^{*}\vert\leqslant N$. Par ailleurs, $N\mid\vert\K^{*}\vert$ car pour tout $x\in\K^{*}$, $x^{\vert\K^{*}\vert}=1_{\K^{*}}$. Donc $\vert\K^{*}\vert=N$ et ainsi 
+	\begin{equation}
+		\boxed{\K^{*}=gr\left\{x_{1}\right\}}
+	\end{equation}
 
 	On a $\vert\Z/13\Z^{*}\vert=12$ donc pour tout $\overline{x}\in(\Z/13\Z)^{*}$, $\omega(\overline{x})\in\left\{1,2,3,4,6,12\right\}$. On a $\overline{2}^{2}=\overline{4}$, $\overline{2}^{3}=\overline{8}$, $\overline{2}^{4}=\overline{16}=\overline{3}$, $\overline{2}^{6}=\overline{12}$ donc $\omega(\overline{2})=12$ et 
 	\begin{equation}
-		\Z/13\Z^{*}=gr\left\{\overline{2}\right\}=\left\{\overline{2}^{k}\bigm| k\in\left\llbracket 0,11\right\rrbracket\right\}
+		\boxed{
+		\Z/13\Z^{*}=gr\left\{\overline{2}\right\}=\left\{\overline{2}^{k}\bigm| k\in\left\llbracket 0,11\right\rrbracket\right\}}
 	\end{equation}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item Soit $(x,y)\in G^{2}$, on a $(x\cdot y)^{2}=(x\cdot y)\cdot (x\cdot y)=e_{G}$ donc $x\cdot y=y^{-1}\cdot x^{-1}$ et comme $x^{2}=e_{G}$, $x^{-1}=x$ d'où $xy=yx$ et $G$ est abélien.
+		\item Soit $(x,y)\in G^{2}$, on a $(x\cdot y)^{2}=(x\cdot y)\cdot (x\cdot y)=e_{G}$ donc $x\cdot y=y^{-1}\cdot x^{-1}$ et comme $x^{2}=e_{G}$, $x^{-1}=x$ d'où $xy=yx$ et 
+		\begin{equation}
+			\boxed{\text{G est abélien.}}
+		\end{equation}
 		
 		\item Soit $(x_{1},\dots,x_{n})$ une famille génératrice minimale de $G$: pour tout $x\in G$, il existe$(\varepsilon_{i})\in\left\{0,1\right\}^{n}$ tel que $x=\prod_{i=1}^{n}x_{i}^{\varepsilon_{i}}$ (car $G$ est abélien).
 		Soit \function{f}{(\Z/2\Z)^{n}}{G}{(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})}{\prod_{i=1}^{n}x_{i}^{\varepsilon_{i}}}
 		Si pour tout $i\in\left\llbracket 1,n\right\rrbracket$ on a $\overline{\varepsilon_{i}}=\overline{\varepsilon_{i}'}$, alors $x^{\varepsilon_{i}}=x^{\varepsilon_{i}'}$ car $x_{i}^{2}=e_{G}$ et $2\mid\varepsilon_{i}-\varepsilon_{i}'$. Donc $f$ est bien définie.
 
-		$f$ est clairement un morphisme (car $G$ est abélien). D'après la première question, $f$ est surjective. Montrons que $f$ est injective. Soit $(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})$ tel que $\prod_{i=1}^{n}x_{i}^{\varepsilon_{i}}=e_{G}$. Soit $i\in\left\llbracket 1,n\right\rrbracket$, supposons $\varepsilon_{i}$ impair, on a alors $x_{i}=\varepsilon_{i}=x_{i}$. D'où $x_{i}=\prod_{j=1}^{n}x_{j}^{-\varepsilon_{j}}=\prod_{j=1}^{n}x_{j}^{\varepsilon_{j}}$ car $x^{2}=e_{G}$. Donc $x_{i}\in gr(x_{j},j\in\left\llbracket 1,n\right\rrbracket, j\neq i)$, ce qui contredit le caractère minimal de $(x_{1},\dots,x_{n})$. Ainsi, $f$ est injective donc est un isomorphisme.
+		$f$ est clairement un morphisme (car $G$ est abélien). D'après la première question, $f$ est surjective. Montrons que $f$ est injective. Soit $(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})$ tel que $\prod_{i=1}^{n}x_{i}^{\varepsilon_{i}}=e_{G}$. Soit $i\in\left\llbracket 1,n\right\rrbracket$, supposons $\varepsilon_{i}$ impair, on a alors $x_{i}=\varepsilon_{i}=x_{i}$. D'où $x_{i}=\prod_{j=1}^{n}x_{j}^{-\varepsilon_{j}}=\prod_{j=1}^{n}x_{j}^{\varepsilon_{j}}$ car $x^{2}=e_{G}$. Donc $x_{i}\in gr(x_{j},j\in\left\llbracket 1,n\right\rrbracket, j\neq i)$, ce qui contredit le caractère minimal de $(x_{1},\dots,x_{n})$. 
+		
+		\begin{equation}
+			\boxed{\text{Ainsi, f est injective donc est un isomorphisme.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	En notant $+$ la loi sur $G$, on peut définir \function{f}{\Z/2\Z\times G}{G}{(\varepsilon,x)}{x^{\varepsilon}}. Alors $(G,+,\cdot)$ est un $\Z/2\Z$-espace vectoriel, de dimension finie $n$ car $G$ est fini, et le choix d'une base réalise un isomorphisme de $((\Z/2\Z)^{n},+)$ dans $(G,+)$.
@@ -343,16 +374,19 @@
 \begin{remark}
 	Par isomorphisme, on a 
 	\begin{equation}
-		\prod_{x\in G}x=f(\sum_{(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})\in(\Z/2\Z)^{n}}(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}}))
+		\prod_{x\in G}x=f\left(\sum_{(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}})\in(\Z/2\Z)^{n}}\left(\overline{\varepsilon_{1}},\dots,\overline{\varepsilon_{n}}\right)\right)
 	\end{equation}
 
 	Pour $n=1$, on a $\overline{0}+\overline{1}=\overline{1}$, pour $n=2$, on a $(\overline{0},\overline{0})+(\overline{0},\overline{1})+(\overline{1},\overline{0})+(\overline{1},\overline{1})=(\overline{0},\overline{0})$. Pour $n>2$, $\overline{1}$ apparaît $2^{n+1}$ fois sur chaque coordonnée (donc un nombre pair de fois), donc la somme fait $(\overline{0},\dots,\overline{0})$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item Si $G$ est abélien, on a $D(G)=\left\{e_{G}\right\}$.
+		\item Si $G$ est abélien, on a 
+		\begin{equation}
+			\boxed{D(G)=\left\{e_{G}\right\}}
+		\end{equation}
 		\item Soit $\sigma\in\mathcal{A}_{n}$, $\sigma$ se décompose en un produit d'un nombre pair de transpositions. Soient $[a,b]$ et $[c,d]$ deux transpositions.
 		\begin{itemize}
 			\item Si $\left\{a,b\right\}=\left\{c,d\right\}$, alors $[a,b]\circ[c,d]=id$.
@@ -362,16 +396,25 @@
 				[a,b]\circ[c,d]=[a,b]\circ\underbrace{[b,c]\circ[b,c]}_{=id}\circ[c,d]=[a,b,c]\circ[b,c,d]
 			\end{equation}
 		\end{itemize}
-		Donc les $3$-cycles engendrent $\mathcal{A}_{n}$.
+		\begin{equation}
+			\boxed{\text{Donc les 3-cycles engendrent }\mathcal{A}_{n}.}
+		\end{equation}
 
 		\item On a 
 		\begin{equation}
 			\sigma\circ(a_{1},a_{2},a_{3})\circ\sigma^{-1}=(\sigma(a_{1}),\sigma(a_{2}),\sigma(a_{3}))
 		\end{equation}
 		On peut trouver $\sigma\colon\left\llbracket 1,n\right\rrbracket \to\left\llbracket 1,n\right\rrbracket$ telle que $a_{i}$ soit envoyé sur $b_{i}$ pour $i\in\left\{1,2,3\right\}$ et les éléments $\left\llbracket 1,n\right\rrbracket \setminus\left\{a_{1},a_{2},a_{3}\right\}$ dans $\left\llbracket 1,n\right\rrbracket\setminus\left\{b_{1},b_{2}b_{3}\right\}$.
-		Donc les 3-cycles sont conjugués dans $\Sigma_{n}$.
+		\begin{equation}
+			\boxed{\text{Donc les 3-cycles sont conjugués dans }\Sigma_{n}.}
+		\end{equation}
 
-		Si $n\geqslant5$ et $\sigma$ impair, soit $(c_{1},c_{2})\in\left\llbracket 1,n\right\rrbracket\setminus\left\{a_{1},a_{2},a_{3}\right\}$. $\sigma'=\sigma\circ[c_{1},c_{2}]$ est pair et $\sigma'(a_{i})=b_{i}$. Donc les trois cycles sont conjugués dans $\mathcal{A}_{n}$ pour $n\geqslant5$. C'est cependant faux pour $n=3$ et $n=4$.
+		Si $n\geqslant5$ et $\sigma$ impair, soit $(c_{1},c_{2})\in\left\llbracket 1,n\right\rrbracket\setminus\left\{a_{1},a_{2},a_{3}\right\}$. $\sigma'=\sigma\circ[c_{1},c_{2}]$ est pair et $\sigma'(a_{i})=b_{i}$. 
+		\begin{equation}
+			\boxed{\text{Donc les trois cycles sont conjugués dans }\mathcal{A}_{n}\text{ pour }n\geqslant5.}
+		\end{equation}
+		
+		C'est cependant faux pour $n=3$ et $n=4$.
 
 		\item Soit $(\sigma,\sigma')\in\Sigma_{n}^{2}$. En notant $\mathcal{E}$ la signature d'une permutation (morphisme de $(\Sigma_{n},\circ)$ dans $(\left\{-1,1\right\},\times)$), on a
 		\begin{equation}
@@ -379,43 +422,58 @@
 		\end{equation}
 		donc $\sigma\circ\sigma^{-1}\circ\sigma'\circ\sigma'^{-1}\in\mathcal{A}_{n}$. Donc $D(\Sigma_{n})\subset\mathcal{A}_{n}$.
 
-		Soit ensuite $(a_{1},a_{2},a_{3})$ un 3-cycle. On a $(a_{1},a_{3},a_{2})^{2}=(a_{1},a_{2},a_{3})$ et $(a_{1},a_{3},a_{2})^{-1}=(a_{1},a_{2},a_{3})$. Ainsi, on a 
+		Soit ensuite $(a_{1},a_{2},a_{3})$ un 3-cycle. On a $(a_{1},a_{3},a_{2})^{2}=(a_{1},a_{2},a_{3})$ puis\\$(a_{1},a_{3},a_{2})^{-1}=(a_{1},a_{2},a_{3})$. Ainsi, on a 
 		\begin{equation}
 			\sigma\circ(a_{1},a_{3},a_{2})\circ\sigma^{-1}\circ(a_{1},a_{2},a_{3})=(a_{1},a_{3},a_{2})^{2}=(a_{1},a_{2},a_{3})
 		\end{equation}
 		On pose $\sigma=[a_{2},a_{3}]$, et alors $(a_{1},a_{2},a_{3})$ est un commutateur. Ainsi, $(a_{1},a_{2},a_{3})\in D(\Sigma_{n})$ et donc $\mathcal{A}_{n}\subset D(\Sigma_{n})$ (d'après la première question).
 
-		Finalement, on a $D(\Sigma_{n})=\mathcal{A}_{n}$.
+		Finalement, on a 
+		\begin{equation}
+			\boxed{D(\Sigma_{n})=\mathcal{A}_{n}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	Pour $n\geqslant5$, on a $D(\mathcal{A}_{n})=\mathcal{A}_{n}$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item Pour $g\in G$, $\tau_{g}$ est bijective de réciproque $\tau_{g^{-1}}$. On a notamment $\tau_{g\cdot g'}=\tau_{g}\circ\tau_{g'}$ donc $\tau$ est un morphisme. Si $g\in G$ est tel que $\tau_{g}=id$, pour tout $x\in G$, on a $gx=x$ donc $g=e_{G}$. Donc $\tau$ est un morphisme injectif et $G$ est isomorphe à $\im\tau=\tau(G)$, sous-groupe de $\Sigma(G)$, lui-même isomorphe à $\Sigma_{n}$.
+		\item Pour $g\in G$, $\tau_{g}$ est bijective de réciproque $\tau_{g^{-1}}$. On a notamment $\tau_{g\cdot g'}=\tau_{g}\circ\tau_{g'}$ donc $\tau$ est un morphisme. Si $g\in G$ est tel que $\tau_{g}=id$, pour tout $x\in G$, on a $gx=x$ donc $g=e_{G}$. Donc $\tau$ est un morphisme injectif et 
+		\begin{equation}
+			\boxed{\text{G est isomorphe à }\im\tau=\tau(G)\text{, sous-groupe de }\Sigma(G)\text{, lui-même isomorphe à }\Sigma_{n}}
+		\end{equation}
 		
 		\item Soit \function{f}{\Sigma_{n}}{GL_{n}(\C)}{\sigma}{(\delta_{i,\sigma(j)})_{1\leqslant i,j\leqslant n}=P_{\sigma}}
-		$P_{\sigma}$ est la matrice de permutation associée à $\sigma$. $f$ est un morphisme, et est injectif, donc $G$ est isomorphe à un sous-groupe de $GL_{n}(\C)$.
+		$P_{\sigma}$ est la matrice de permutation associée à $\sigma$. $f$ est un morphisme, et est injectif, donc 
+		\begin{equation}
+			\boxed{\text{G est isomorphe à un sous-groupe de }GL_{n}(\C).}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Soit $(x,y,z,t)\in\N^{4}$ tel que $x^{2}+y^{2}+z^{2}=8t+7$. Dans $\Z/8\Z$, on a $\overline{0}^{2}=\overline{0}$, $\overline{1}^{2}=\overline{1}$, $\overline{2}^{2}=\overline{4}$, $\overline{3}^{2}=\overline{1}$, $\overline{4}^{2}=\overline{0}$, $\overline{5}^{2}=\overline{1}$, $\overline{6}^{2}=\overline{4}$ et $\overline{7}^{2}=\overline{1}$. Donc la somme de 3 de ces classes ne donnent pas $\overline{7}$.
 
 	Par récurrence, prouvons la propriété. Soit $(x,y,z,t)\in\N^{4}$ tel que $x^{2}+y^{2}+z^{2}=(8t+7)4^{n+1}$. Parmi $x,y,z$ les trois sont pairs ou deux d'entre eux sont impairs. Si $x,y$ impairs et $z$ pair, on écrit $x=2x'+1,y=2y'+1,z=2z'$, alors $x^{2}+y^{2}+z^{2}\equiv 2[4]$ mais $(8t+7)4^{n+1}\equiv 0[4]$: contradiction. Nécessairement, $x,y$ et $z$ sont pairs. En divisant par $4$, on se ramène donc à l'hypothèse de récurrence.
-\end{solution}
 
-\begin{solution}
+	\begin{equation}
+		\boxed{\text{D'où le résultat par récurrence.}}
+	\end{equation}
+\end{proof}
+
+\begin{proof}
 	On raisonne sur $\Z/7\Z$. On a $\overline{10^{10^{n}}}=\overline{3^{10^{n}}}$. Dans le groupe $((\Z/7\Z)^{*},\times)$, $\overline{3}$ a un ordre qui divise $\vert \Z/7\Z^{*}\vert=6$. On a $\overline{3}^{2}=\overline{2}$, $\overline{3}^{3}=\overline{-1}$ et $\overline{3}^{6}=\overline{1}$. Donc $\overline{3}^{6k}=\overline{1}, \overline{3}^{6k+1}=\overline{3},\overline{3}^{6k+2}=\overline{2},\overline{3}^{6k+3}=\overline{-1}, 3^{6k+4}=\overline{4}$ et $3^{6k+5}=\overline{5}$..
 
-	On se place maintenant dans $\Z/6\Z$: $\overline{10}=\overline{4},\overline{10}^{2}=\overline{4}$ et donc par récurrence sur $n\in\N^{*}$, $\overline{10}^{n}=\overline{4}$. Donc il existe $k\in\Z$ tel que $10^{n}=6k+4$. Ainsi, $\overline{10^{10^{n}}}=\overline{4}$.
-\end{solution}
+	On se place maintenant dans $\Z/6\Z$: $\overline{10}=\overline{4},\overline{10}^{2}=\overline{4}$ et donc par récurrence sur $n\in\N^{*}$, $\overline{10}^{n}=\overline{4}$. Donc il existe $k\in\Z$ tel que $10^{n}=6k+4$. Ainsi, \begin{equation}
+		\boxed{\overline{10^{10^{n}}}=\overline{4}}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item On a $F_{1}=5$ et $2+\prod_{k=0}^{0}F_{k}=2+3=5$. Soit $n\geqslant1$, supposons que $F_{n}=2+\prod_{k=0}^{n-1}F_{k}$. Alors 
@@ -424,33 +482,47 @@
 			&=(2^{2^{n}})^{2}-1\\
 			&=(2^{2^{n}}+1)(2^{2^{n}}-1)\\
 			&=F_{n}(F_{n}-2)\\
-			=F_{n}\times\prod_{k=0}^{n-1}F_{k}\\
+			&=F_{n}\times\prod_{k=0}^{n-1}F_{k}\\
 			&=\prod_{k=0}^{n}F_{k}
 		\end{align}
-		d'où le résultat par récurrence.
+		\begin{equation}
+			\boxed{\text{d'où le résultat par récurrence.}}
+		\end{equation}
+		
 
-		\item Soit $p$ un facteur premier de $F_{n}$. S'il existe $k\in\left\llbracket 0,n-1\right\rrbracket$ tel que $p\mid F_{k}$, alors d'après la première question on a $p\mid F_{n}-\prod_{k=0}^{n-1}F_{k}=2$. Donc $p=2$. Or $F_{n}$ est impair, donc non divisible par deux, ce qui est absurde. Donc $p$ ne divise aucun $F_{k}$ pour $k\in\left\llbracket 0,n-1\right\rrbracket$ et il existe donc une infinité de nombres premiers (car les $F_{n}$ sont tous différents deux à deux).
+		\item Soit $p$ un facteur premier de $F_{n}$. S'il existe $k\in\left\llbracket 0,n-1\right\rrbracket$ tel que $p\mid F_{k}$, alors d'après la première question on a $p\mid F_{n}-\prod_{k=0}^{n-1}F_{k}=2$. Donc $p=2$. Or $F_{n}$ est impair, donc non divisible par deux, ce qui est absurde. Donc $p$ ne divise aucun $F_{k}$ pour $k\in\left\llbracket 0,n-1\right\rrbracket$. Les $F_{n}$	 étant distincts deux à deux,
+		\begin{equation}
+			\boxed{\text{il existe donc une infinité de nombres premiers.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	Si $n\neq m$ alors $F_{n}\wedge F_{m}=1$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item On teste uniquement les puissances qui divisent 32: 2,4,8,16,32. On a $\overline{5}^{2}=\overline{-7},\overline{5}^{4}=\overline{-15},\overline{5}^{8}=\overline{1}$. Donc $\omega(\overline{5})=8$.
+		\item On teste uniquement les puissances qui divisent 32: 2,4,8,16,32. On a $\overline{5}^{2}=\overline{-7},\overline{5}^{4}=\overline{-15},\overline{5}^{8}=\overline{1}$. Donc 
+		\begin{equation}
+			\boxed{\omega(\overline{5})=8}
+		\end{equation}
+
 		\item On note \function{\psi}{\Z/2\Z\times\Z/8\Z}{U}{(\dot{k},\tilde{l})}{\overline{-1}^{k}\times\overline{5}^{l}}
-		\item On a $\omega(\overline{-1})=2$ et $\gamma(\overline{5})=8$ donc $\psi$ est bien définie. $\psi$ est bien un morphisme de groupes. Soit $(\dot{k},\tilde{l})\in\ker(\psi)$, on a $\overline{-1}^{k}\times \overline{5}^{l}=\overline{1}$. Si $\dot{k}=\dot{1}$, alors $\overline{-1}^{k}=\overline{-1}=\overline{5}^{-l}=\overline{5}^{l}\in gr\{\overline{5}\}$. Donc $\overline{5}^{2l}=\overline{1}$ et ainsi $8\mid 2l$ d'où $4\mid l$. Mais alors $l\in\left\{0,4\right\}$ ce qui est impossible. Donc $\dot{k}\neq\dot{1}$. De ce fait, $\dot{k}\neq\dot{1}$. Ainsi, $\overline{5}^{l}=\overline{1}$ donc $\tilde{l}=\tilde{0}$. Ainsi, $\ker(\psi)=\left\{(\dot{0},\tilde{0})\right\}$ donc $\psi$ est injective, puis bijective car $\vert\Z/2\Z\times\Z/8\Z\vert=\vert U\vert$.
+		
+		On a $\omega(\overline{-1})=2$ et $\gamma(\overline{5})=8$ donc $\psi$ est bien définie. $\psi$ est bien un morphisme de groupes. Soit $(\dot{k},\tilde{l})\in\ker(\psi)$, on a $\overline{-1}^{k}\times \overline{5}^{l}=\overline{1}$. Si $\dot{k}=\dot{1}$, alors $\overline{-1}^{k}=\overline{-1}=\overline{5}^{-l}=\overline{5}^{l}\in gr\{\overline{5}\}$. Donc $\overline{5}^{2l}=\overline{1}$ et ainsi $8\mid 2l$ d'où $4\mid l$. Mais alors $l\in\left\{0,4\right\}$ ce qui est impossible. Donc $\dot{k}\neq\dot{1}$. De ce fait, $\dot{k}\neq\dot{1}$. Ainsi, $\overline{5}^{l}=\overline{1}$ donc $\tilde{l}=\tilde{0}$. Ainsi, $\ker(\psi)=\left\{(\dot{0},\tilde{0})\right\}$ donc $\psi$ est injective, puis bijective car $\vert\Z/2\Z\times\Z/8\Z\vert=\vert U\vert$. Donc 
+		\begin{equation}
+			\boxed{U=gr\left\{\overline{-1},\overline{5}\right\}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	$U$ n'est pas cyclique car, par isomorphisme, ses éléments ont un ordre qui divise 8.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Soit \function{f}{G_{n}\times G_{m}}{U_{nm}}{(\xi,\xi')}{\xi\times\xi'}
@@ -463,8 +535,8 @@
 			\mu(n)\mu(m)
 			&=\sum_{\xi\in G_{n}}\xi\times\sum_{\xi'\in G_{m}}\xi'\\
 			&=\sum_{(\xi,\xi')\in G_{n}\times G_{m}}\xi\xi'\\
-			&=\sum_{\xi\in G_{nm}}\xi\text{ [f est bijective]}\\
-			&=\mu(nm)
+			&=\sum_{\xi\in G_{nm}}\xi\\
+			&=\boxed{\mu(nm)}
 		\end{align}
 
 		\item On a $\mu(1)=1$. Soit $p$ premier. On a 
@@ -478,12 +550,13 @@
 		
 		Soit alors $\alpha\in\N$ avec $\alpha\geqslant2$, on a 
 		\begin{equation}
-			\mu(p^{\alpha})=\sum_{\substack{k=1\\ k\wedge p=1}}^{p^{\alpha}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha}}}=\sum_{k=1}^{p^{\alpha}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha}}}-\sum_{k=1}^{p^{\alpha-1}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha-1}}}=0
+			\boxed{
+			\mu(p^{\alpha})=\sum_{\substack{k=1\\ k\wedge p=1}}^{p^{\alpha}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha}}}=\sum_{k=1}^{p^{\alpha}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha}}}-\sum_{k=1}^{p^{\alpha-1}}e^{\frac{2\mathrm{i}k\pi}{p^{\alpha-1}}}=0}
 		\end{equation}
 
 		Si $n=p_{1}^{\alpha_{1}}\dots p_{r}^{\alpha_{r}}$, s'il existe $i\in\left\llbracket 1,r\right\rrbracket$ tel que $\alpha_{i}\geqslant2$ alors $\mu(n)=0$. Sinon, on a 
 		\begin{equation}
-			\mu(n)=\prod_{i=1}^{r}\mu(p_{i})=(-1)^{r}
+			\boxed{\mu(n)=\prod_{i=1}^{r}\mu(p_{i})=(-1)^{r}}
 		\end{equation}
 
 		\item Soit $(f,g)\in(\C^{\N^{*}})^{2}$, on a 
@@ -493,7 +566,9 @@
 			&=\sum_{d_{1}d_{2}=n}g(d_{1})f(d_{2})\\
 			&=(g\star f)(n)
 		\end{align}
-		Donc $\star$ est commutative. 
+		\begin{equation}
+			\boxed{\text{Donc }\star\text{ est commutative.}}
+		\end{equation}
 
 		Soit $(f,g,h)\in(\C^{\N^{*}})^{3}$, on a 
 		\begin{align}
@@ -503,7 +578,9 @@
 			&=\sum_{d_{1}d_{2}d_{3}=n}f(g_{1})g(d_{2})h(d_{3})\\
 			&=((f\star g)\star h)(n)
 		\end{align}
-		donc $\star$ est associative. 
+		\begin{equation}
+			\boxed{\text{donc }\star\text{ est associative. }}
+		\end{equation}
 
 		On vérifie maintenant que l'élément neutre est $e:\N^{*}\to\C$ qui à $1$ associe $1$ et 0 si $n\geqslant2$.
 		Soit \function{\psi}{\N}{\Z}{n}{\sum_{d\mid n}\mu(d)}
@@ -520,13 +597,13 @@
 			&=(\mu\star id)(n)\\
 			&=(id\star \mu)(n)\\
 			&=(1\star (\varphi\star \mu))(n)\\
-			&=\varphi(n)
+			&=\boxed{\varphi(n)}
 		\end{align}
 		la troisième égalité venant du fait que $id=1\star\varphi$ car $n=\sum_{d\mid n}\varphi(d)$.
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Pour $k\in\left\llbracket 1,p-1\right\rrbracket$, on a 
 	\begin{equation}
 		\binom{p+k}{k}=\frac{(p+k)\times\dots\times(p+1)}{k\times\dots\times 1}=1+\alpha kp
@@ -550,33 +627,44 @@
 
 	Finalement, on a 
 	\begin{equation}
-		\sum_{k=0}^{p}\binom{p}{k}\binom{p+k}{k}\equiv 2^{p}-2+1+2[p^{2}]\equiv 2^{p}+1[p^{2}]
+		\boxed{
+		\sum_{k=0}^{p}\binom{p}{k}\binom{p+k}{k}\equiv 2^{p}-2+1+2[p^{2}]\equiv 2^{p}+1[p^{2}]}
 	\end{equation}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item Soit $G$ un sous-groupe de $(\U,\times)$. On note $\vert G\vert=d$. On a donc $G\subset\U_{d}$ car pour tout $x\in G$, $x^{d}=1$. Donc $G=\U_{d}$ est cyclique.
+		\item Soit $G$ un sous-groupe de $(\U,\times)$. On note $\vert G\vert=d$. On a donc $G\subset\U_{d}$ car pour tout $x\in G$, $x^{d}=1$. 
+		\begin{equation}
+			\boxed{\text{Donc }G=\U_{d}\text{ est cyclique.}}
+		\end{equation}
 		
 		\item On pose \function{\psi}{SO_{2}(\R)}{(\U,\times)}{R_{\theta}}{e^{\mathrm{i}\theta}}
 		qui est un isomorphisme. Donc les sous-groupes de $SO_{2}(\R)$ sont les $G_{n}$ pour $n\geqslant1$ avec 
 		\begin{equation}
-			G_{n}=\left\{R_{\frac{2k\pi}{n}}\bigm| k\in\left\llbracket 0,n-1\right\rrbracket\right\}
+			\boxed{
+			G_{n}=\left\{R_{\frac{2k\pi}{n}}\bigm| k\in\left\llbracket 0,n-1\right\rrbracket\right\}}
 		\end{equation}
 
-		\item $\varphi$ est bilinéaire et symétrique. Pour tout $X\in\R^{2}$, on $\varphi(X,X)=\sum_{M\in G}\Vert MX\Vert^{2}\geqslant0$ et si $\varphi(X,X)=0$, on a pour tout $M\in G$, $X=0$. Notamment, $I_{2}\in G$ et donc $X=0$. Donc $\varphi$ est bien un produit scalaire.
+		\item $\varphi$ est bilinéaire et symétrique. Pour tout $X\in\R^{2}$, on $\varphi(X,X)=\sum_{M\in G}\Vert MX\Vert^{2}\geqslant0$ et si $\varphi(X,X)=0$, on a pour tout $M\in G$, $X=0$. Notamment, $I_{2}\in G$ et donc $X=0$. 
+		\begin{equation}
+			\boxed{\text{Donc }\varphi\text{ est bien un produit scalaire.}}
+		\end{equation}
 		
 		Pour tout $(M_{0},X,Y)\in G\times(\R^{2})^{2}$, on a $\varphi(M_{0}X,M_{0}Y)=\sum_{M\in G}\langle MM_{0}X,MM_{0}Y\rangle$
 		et $M\mapsto MM_{0}$ est bijective de $G$ dans $G$ donc $\varphi(M_{0}X,M_{0}Y)=\varphi(X,Y)$.
 
 		Soit $\mathcal{B}_{0}$ la base canonique de $\R^{2}$ et $\mathcal{B}_{1}$ une base orthonormée pour $\varphi$. On note $P_{0}=\mat\limits_{\mathcal{B}_{0}\to \mathcal{B}_{1}}$. 
 		
-		Pour tout $M\in G$, $P_{0}^{-1}MP_{0}$ est la matrice d'une isométrie pour $\varphi$ dans une base orthonormée pour $\varphi$. Donc $P_{0}^{-1}MP_{0}$ est orthogonale, et $\det(P_{0}^{-1}MP_{0})=1$ car pour tout $M\in G$, $\det(M)=1$. Ainsi, $\left\{P_{0}^{-1}MP_{0}\bigm| M\in G\right\}$ est un sous-groupe fini de $SO_{2}(\R)$, donc cyclique. Il est isomorphe à $G$ donc $G$ est cyclique.
+		Pour tout $M\in G$, $P_{0}^{-1}MP_{0}$ est la matrice d'une isométrie pour $\varphi$ dans une base orthonormée pour $\varphi$. Donc $P_{0}^{-1}MP_{0}$ est orthogonale, et $\det(P_{0}^{-1}MP_{0})=1$ car pour tout $M\in G$, $\det(M)=1$. Ainsi, $\left\{P_{0}^{-1}MP_{0}\bigm| M\in G\right\}$ est un sous-groupe fini de $SO_{2}(\R)$, donc cyclique. Il est isomorphe à $G$ donc 
+		\begin{equation}
+			\boxed{\text{G est cyclique.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item On a $1=1+0\sqrt{2}\in E$. On remarque ensuite que pour tout $s=x+y\sqrt{2}\in E$, on a $ss^{-1}=1$ avec $s^{-1}=x-y\sqrt{1}\in E$. Soit $(s,s')\in E^{2}$ avec $s=x+y\sqrt{2}$ et $s'=x'+y'\sqrt{2}$. Notons déjà que $x+y\sqrt{2}>0$ car $x=\sqrt{1+2y^{2}}>\vert y\vert\sqrt{2}$.
@@ -591,7 +679,10 @@
 			&=(x^{2}-2y^{2})(x'^{2}-2y'^{2})\\
 			&=1
 		\end{align}
-		Donc $ss'\in E$. Finalement, $E$ est un sous-groupe de $(\R_{+}^{*},\times)$.
+		Donc $ss'\in E$. Finalement, 
+		\begin{equation}
+			\boxed{\text{E est un sous-groupe de }(\R_{+}^{*},\times).}
+		\end{equation}
 
 		\item $\ln$ est un isomorphisme de $E$ sur $\ln(E)$, sous-groupe de $(\R,+)$. On sait que si 
 		\begin{equation}
@@ -611,7 +702,10 @@
 		\begin{equation}
 			y_{n}=\sqrt{\frac{x_{n}^{2}-1}{2}}
 		\end{equation}
-		Si $x_{n+1}\geqslant x_{n}$, alors $y_{n+1}\geqslant y_{n}$ d'où $x_{n+1}+\sqrt{2}y_{n+1}>x_{n}+\sqrt{2}y_{n}$ ce qui est absurde. Donc $x_{n+1}<x_{n}$ et on obtient une suite strictement décroissante d'entiers naturels ce qui est impossible. Donc $\beta>1$ et $E=\left\{(x_{0}+y_{0}\sqrt{2})^{n}\bigm| n\in\Z\right\}$ est monogène.
+		Si $x_{n+1}\geqslant x_{n}$, alors $y_{n+1}\geqslant y_{n}$ d'où $x_{n+1}+\sqrt{2}y_{n+1}>x_{n}+\sqrt{2}y_{n}$ ce qui est absurde. Donc $x_{n+1}<x_{n}$ et on obtient une suite strictement décroissante d'entiers naturels ce qui est impossible. Donc $\beta>1$ et 
+		\begin{equation}
+			\boxed{E=\left\{(x_{0}+y_{0}\sqrt{2})^{n}\bigm| n\in\Z\right\}\text{ est monogène.}}
+		\end{equation}
 
 		On peut identifier $\beta$:
 		\begin{equation}
@@ -619,7 +713,7 @@
 		\end{equation}
 		Donc $\beta=3+2\sqrt{2}$ Finalement, $x^{2}-2y^{2}=1$ avec $x\in\N,y\in\N$ si et seulement s'il existe $n\in\N$ tel que $x_{n}+y_{n}\sqrt{2}=\beta^{n}$.
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	En fait, on a 
@@ -633,7 +727,7 @@
 	\end{equation}
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	On a $7\mid n^{n}-3$ si et seulement si $\overline{n}^{n}=\overline{3}$ dans $\Z/7\Z$. $(\Z/7\Z^{*},\times)$ est un groupe de cardinal 6. Donc l'ordre de ses éléments divisent 6, et sont donc 1,2,3 ou 6. Notamment, on vérifie que $\omega(\overline{3})=6$ et donc le groupe engendré par $\overline{3}$ est exactement $(\Z/7\Z^{*},\times)$. Ainsi, 
 	\begin{equation}
 		(\Z/7\Z^{*},\times)=\left\{\overline{3}^{k}\bigm| k\in\left\llbracket 0,5\right\rrbracket\right\}
@@ -645,10 +739,12 @@
 
 	Si $\overline{n}=5$, $\overline{5}^{n}=\overline{3}$ si et seulement si $n\equiv5[6]$ et $n\equiv5[7]$. D'après le théorème des restes chinois, on vérifie que ceci équivaut à $n\equiv5[42]$.
 
-	Donc les solutions sont $n\in\N^{*}$ tels que $n\equiv31[42]$ ou $n\equiv5[42]$.
-\end{solution}
+	\begin{equation}
+		\boxed{\text{Donc les solutions sont }n\in\N^{*}\text{ tels que }n\equiv31[42]\text{ ou }n\equiv5[42].}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On a 
 	\begin{align}
 		\sum_{k=1}^{p-1}\frac{1}{k}+\frac{1}{p-k}=\frac{2a}{(p-1)!}
@@ -681,27 +777,39 @@
 	\begin{equation}
 		\overline{2}\times\overline{b}=\sum_{k=1}^{p-1}\overline{k}^{2}=\overline{p}\times\overline{\frac{(p-1)(2p-1)}{6}}=0
 	\end{equation}
-	et donc $p\mid b$ par le théorème de Gauss. Donc $p^{2}\mid a$.
-\end{solution}
+	et donc $p\mid b$ par le théorème de Gauss. Donc 
+	\begin{equation}
+		\boxed{p^{2}\mid a}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Les racines réelles de $P$ ont une multiplicité paire, le coefficient dominant est positif (car la limite en $+\infty$ est positive) et les racines complexes non réelles sont 2 à 2 conjuguées:
 	\begin{equation}
 		(X-\alpha)(X-\overline{\alpha})=X^{2}-2\Re(\alpha)X+\vert\alpha\vert^{2}=(X-\Re(\alpha))^{2}+\vert\Im(\alpha)\vert^{2}
 	\end{equation}
 	avec $\Im(\alpha)\neq0$.
-	D'où le résultat en décomposant $P$ sur $\C[X]$.
-\end{solution}
+	\begin{equation}
+		\boxed{\text{D'où le résultat en décomposant P sur }\C[X].}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item $G=\Z+\alpha\Z$ est un sous-groupe de $\R$ engendré par $\alpha$ et $1$. S'il existait $a\in\R_{+}^{*}$ tel que $G=a\Z$, alors il existait $(n,m)\in(\Z^{*})^{2}$ tel que $1=na$ et $\alpha=ma$, d'où $\alpha=\frac{m}{n}\in\Q$ ce qui est absurde. Donc $G$ est dense dans $\R$. Le fait que $\Z+\alpha\N$ est dense dans $\R$ est alors immédiate.
+		\item $G=\Z+\alpha\Z$ est un sous-groupe de $\R$ engendré par $\alpha$ et $1$. S'il existait $a\in\R_{+}^{*}$ tel que $G=a\Z$, alors il existait $(n,m)\in(\Z^{*})^{2}$ tel que $1=na$ et $\alpha=ma$, d'où $\alpha=\frac{m}{n}\in\Q$ ce qui est absurde. Donc $G$ est dense dans $\R$. 
+		\begin{equation}
+			\boxed{\text{Le fait que }\Z+\alpha\N\text{ est dense dans }\R\text{ est alors immédiate.}}
+		\end{equation}
+
 		\item Posons $\beta=\frac{\alpha}{2\pi}\notin\Q$. Alors $\Z+\beta\N$ est dense dans $\R$. Soit $c<d\in\R^{2}$. Comme $\frac{c}{2\pi}<\frac{d}{2\pi}$, il existe $x\in\Z+\beta\N\cap]\frac{c}{2\pi},\frac{d}{2\pi}[$ et alors $2\pi x\in2\pi\Z+\alpha\N\cap]c,d[$. On pose $c=\arcsin(a)$ et $d=\arcsin(b)$ avec $a<b$. On a bien $c<d$ car $\arcsin$ est strictement croissante.
 		
 		Alors il existe $(m,n)\in\Z\times\N$ tel que $2\pi m+\alpha m=2\pi x\in]c,d[$ donc $\sin(2\pi x)=\sin(2\pi m+\alpha n)=\sin(\alpha n)\in]a,b[$.
 
-		Donc $(\sin(n\alpha))_{n\in\N}$ est dense dans $]-1,1[$. En particulier, cela vaut pour $\alpha=1$ car $\pi\notin\Q$. Donc $(\sin(n))_{n\in\N}$ est dense dans $[-1,1]$.
+		\begin{equation}
+			\boxed{\text{Donc }(\sin(n\alpha))_{n\in\N}\text{ est dense dans }]-1,1[.}
+		\end{equation}
+		En particulier, cela vaut pour $\alpha=1$ car $\pi\notin\Q$. Donc $(\sin(n))_{n\in\N}$ est dense dans $[-1,1]$.
 
 		\item Soit $n\in\N$. $2^{n}$ commence par 7 en base 10 si et seulement s'il existe $p\in\N$ avec 
 		\begin{align}
@@ -724,9 +832,11 @@
 		\begin{equation}
 			\frac{\ln(7)}{\ln(10)}<u_{n_{p+1}}<u_{n_{p}}<\frac{\ln(8)}{\ln(10)}
 		\end{equation}
-		Donc on a bien une infinité de puissance de 2 commençant par 7 en base 10.
+		\begin{equation}
+			\boxed{\text{Donc on a bien une infinité de puissance de 2 commençant par 7 en base 10.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	$(e^{\mathrm{i}n\alpha})_{n\in\N}$ est de la même façon dense dans $\U$. On peut montrer qu'elle est équirépartie, c'est à dire que pour tout $a<b\in[0,2\pi[^{2}$, on a 
@@ -746,7 +856,7 @@
 	\end{equation}
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Pour $\alpha=a+\i b$, on définit le module au carré: $\vert\alpha\vert^{2}=a^{2}+b^{2}$. Soit $\beta=c+\i d\neq0$. Si $\alpha=\beta q+r$ avec $q,r\in\Z[\i]^{2}$ et $\vert r\vert^{2}<\vert \beta\vert^{2}$, alors $\vert\alpha-\beta q\vert^{2}<\vert\beta\vert^{2}$ et $\beta\neq0$ donc
@@ -764,11 +874,14 @@
 			\right.
 		\end{equation}
 
-		et de même pour $u_{y}$. On a alors $q=u_{x}+\i u_{y}\in\Z[i]$ et 
+		et de même pour $u_{y}$. On a alors $q=u_{x}+\i u_{y}\in\Z[\i]$ et 
 		\begin{equation}
 			\left\vert\frac{\alpha}{\beta}-q\right\vert^{2}=\vert x-u_{x}\vert^{2}+\vert y-u_{y}\vert^{2}\leqslant2\times \left(\frac{1}{2}\right)^{2}=\frac{1}{2}<1
 		\end{equation}
-		On pose donc $r=\alpha-\beta q\in\Z[i]$ et ainsi l'anneau $\Z[i]$ est euclidien.
+		On pose donc $r=\alpha-\beta q\in\Z[i]$ et ainsi 
+		\begin{equation}
+			\boxed{\text{l'anneau }\Z[\i]\text{ est euclidien.}}
+		\end{equation}
 
 		\item Soit $A$ un anneau euclidien et $I$ un idéal de $A$ non réduit à $\{0\}$. Il existe $x\in I$ tel que 
 		\begin{equation}
@@ -778,21 +891,27 @@
 		\begin{equation}
 			x=x_{0}q+r
 		\end{equation}
-		avec $v(r)<v(x_{0})$ ou $r=0$. Or $r\in I$ donc $r=0$. Ainsi $x\in x_{0}A$ et donc $I=x_{0}A$. Donc tout anneau euclidien est principal.
+		avec $v(r)<v(x_{0})$ ou $r=0$. Or $r\in I$ donc $r=0$. Ainsi $x\in x_{0}A$ et donc $I=x_{0}A$. 
+		\begin{equation}
+			\boxed{\text{Donc tout anneau euclidien est principal.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	C'est encore vrai avec $\Z[\i\sqrt{2}]=\{a+\i b\sqrt{2}\bigm|(a,b)\in\Z^{2}\}$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Si $\overline{x}=\overline{y}^{2}$ est un carré, d'après le petit théorème de Fermat, on a $\overline{x}^{\frac{p-1}{2}}=\overline{y}^{p-1}=\overline{1}$. Soit \function{f}{\Z/p\Z^{*}}{\Z/p\Z^{*}}{\overline{y}}{\overline{y}^{2}}
 		$f$ est un morphisme multiplicatif, $\im(f)$ est un sous-groupe de $\left(\Z/p\Z^{*},\times\right)$.
 
-		Comme $\mathbb{F}_{p}$ est un corps, chaque carré possède exactement deux antécédents. Il y a $p-1$ antécédents, donc il y a $\frac{p-1}{2}$ carrés dans $\Z/p\Z^{*}$. Donc $\vert\im(f)\vert=\frac{p-1}{2}$ et si $\overline{x}$ est un carré, x est racine de $X^{\frac{p-1}{2}}-\overline{1}$. Le polynôme $X^{\frac{p-1}{2}}-\overline{1}$ possède au plus $\frac{p-1}{2}$ racines et tout carré est racine. Donc les racines sont exactement les carrés et $\overline{x}^{\frac{p-1}{2}}=\overline{1}$ si et seulement si $\overline{x}$ est un carré.
+		Comme $\mathbb{F}_{p}$ est un corps, chaque carré possède exactement deux antécédents. Il y a $p-1$ antécédents, donc il y a $\frac{p-1}{2}$ carrés dans $\Z/p\Z^{*}$. Donc $\vert\im(f)\vert=\frac{p-1}{2}$ et si $\overline{x}$ est un carré, x est racine de $X^{\frac{p-1}{2}}-\overline{1}$. Le polynôme $X^{\frac{p-1}{2}}-\overline{1}$ possède au plus $\frac{p-1}{2}$ racines et tout carré est racine. Donc les racines sont exactement les carrés et 
+		\begin{equation}
+			\boxed{\overline{x}^{\frac{p-1}{2}}=\overline{1}\text{ si et seulement si }\overline{x}\text{ est un carré.}}
+		\end{equation}
 
 		\item On a $p\equiv1[4]$ si et seulement si $\frac{p-1}{2}$ est pair si  et seulement si $(\overline{-1})^{\frac{p-1}{2}}=\overline{1}$ si et seulement si $\overline{-1}$ est un carré dans $\mathbb{F}_{p}$.
 		Supposons qu'il y ait un nombre fini de nombres premiers $p_{1},\dots,p_{r}$ tous congrus à 1 modulo 4. 
@@ -800,14 +919,19 @@
 		Soit $p$ un facteur premier de $n$, on a $n\equiv 1[n_{i}]$ donc $p\notin\{p_{1},\dots,p_{r}\}$.
 		Dans $\Z/p\Z$, on a $\overline{n}=\overline{0}$ donc $\overline{-1}=\overline{p_{1}\times\dots\times p_{r}}^{2}$ donc $p\equiv1[4]$ ce qui est une contradiction.
 
-		Donc il y a une infinité de nombres premiers congrus à 1 modulo 4.
+		\begin{equation}
+			\boxed{\text{Donc il y a une infinité de nombres premiers congrus à 1 modulo 4.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item On pose $P_{1}=\sum_{i=0}^{n}r'_{i}X^{i}$, et $\nu_{p}(r'_{i})$ est positif par définition de $c(P)$. Donc $P_{1}\in\Z[X]$.
+		\item On pose $P_{1}=\sum_{i=0}^{n}r'_{i}X^{i}$, et $\nu_{p}(r'_{i})$ est positif par définition de $c(P)$. Donc
+		\begin{equation}
+			\boxed{P_{1}\in\Z[X]}
+		\end{equation}
 		
 		Pour tout $p\in\mathcal{P}$, il existe $i_{0}\in\left\llbracket 1,n\right\rrbracket$ tel que 
 		\begin{equation}
@@ -818,11 +942,17 @@
 			\bigwedge_{i=1}^{n}r'_{i}=1
 		\end{equation}
 
-		Si on a $P=\alpha_{1}P_{1}=\alpha_{2}P_{2}$ avec les conditions requises, soit $p\in\mathcal{P}$, si $\nu_{p}(\alpha_{2})>\nu_{p}(\alpha_{1})$, alors $p$ divise tous les coefficients de $P_{1}$ ce qui n'est pas possible, donc $\nu_{p}(\alpha_{2})=\nu_{p}(\alpha_{1})$. Ceci étant vrai pour tout $p\in\mathcal{P}$, on a aussi $\alpha_{1}=\alpha_{2}$ et donc $P_{1}=P_{2}$.
+		Si on a $P=\alpha_{1}P_{1}=\alpha_{2}P_{2}$ avec les conditions requises, soit $p\in\mathcal{P}$, si $\nu_{p}(\alpha_{2})>\nu_{p}(\alpha_{1})$, alors $p$ divise tous les coefficients de $P_{1}$ ce qui n'est pas possible, donc $\nu_{p}(\alpha_{2})=\nu_{p}(\alpha_{1})$. Ceci étant vrai pour tout $p\in\mathcal{P}$, on a aussi $\alpha_{1}=\alpha_{2}$ et donc $P_{1}=P_{2}$. 
+		\begin{equation}
+			\boxed{\text{Donc l'écriture est unique.}}
+		\end{equation}
 
 		\item On a $P=c(P)P_{1}$ et $Q=c(Q)Q_{1}$ donc $PQ=c(P)c(Q)P_{1}Q_{1}$ et $P_{1}Q_{1}\in\Z[X]$.
 		
-		Soit $p\in\mathcal{P}$ divisant tous les coefficients de $P_{1}Q_{1}$. On définit, si $R=\sum_{i\in\N}\gamma_{i}X^{i}\in\Z[X]$, $\overline{R}=\sum_{i\in\N}\overline{\gamma_{i}}X^{i}\in\Z/p\Z[X]$. $R\mapsto\overline{R}$ est un morphisme d'anneaux. Par hypothèse, on a $\overline{P_{1}Q_{1}}=\overline{0}=\overline{P_{1}}\overline{Q_{1}}$ et par intégrité de $\Z/p\Z[X]$, on a $\overline{P_{1}}=\overline{0}$ ou bien $\overline{Q_{1}}=\overline{0}$, ce qui est exclu par les hypothèses. Donc $c(PQ)=c(P)c(Q)$.
+		Soit $p\in\mathcal{P}$ divisant tous les coefficients de $P_{1}Q_{1}$. On définit, si $R=\sum_{i\in\N}\gamma_{i}X^{i}\in\Z[X]$, $\overline{R}=\sum_{i\in\N}\overline{\gamma_{i}}X^{i}\in\Z/p\Z[X]$. $R\mapsto\overline{R}$ est un morphisme d'anneaux. Par hypothèse, on a $\overline{P_{1}Q_{1}}=\overline{0}=\overline{P_{1}}\overline{Q_{1}}$ et par intégrité de $\Z/p\Z[X]$, on a $\overline{P_{1}}=\overline{0}$ ou bien $\overline{Q_{1}}=\overline{0}$, ce qui est exclu par les hypothèses. Donc
+		\begin{equation}
+			\boxed{\text{c(PQ)=c(P)c(Q)}}
+		\end{equation}
 
 		\item 
 		Soit alors $P$ irréductible dans $\Z[X]$ (les inversibles de $\Z[X]$ étant -1 et 1). Posons 
@@ -831,7 +961,10 @@
 			&=QR\in\Q[X]^{2}\\
 			&=c(Q)c(R)\underbrace{Q_{1}R_{1}}_{\in\Z[X]}
 		\end{align}
-		Or $c(Q)c(R)=c(P)$ d'après le lemme de Gauss et nécessairement, $c(P)=1$. Donc $P=Q_{1}R_{1}$, et alors $Q_{1}=\pm 1$ et $R_{1}=\pm 1$, et $Q$ ou $R$ est constant, donc $P$ est irréductible sur $\Q[X]$.
+		Or $c(Q)c(R)=c(P)$ d'après le lemme de Gauss et nécessairement, $c(P)=1$. Donc $P=Q_{1}R_{1}$, et alors $Q_{1}=\pm 1$ et $R_{1}=\pm 1$, et $Q$ ou $R$ est constant, 
+		\begin{equation}
+			\boxed{\text{donc P est irréductible sur }\Q[X].}
+		\end{equation}
 
 		Pour la réciproque, on a $2X$ est irréductible sur $\Q[X]$ car de degré 1, mais pas sur $\Z[X]$ car ni 2 ni $X$ ne sont inversibles.
 
@@ -847,17 +980,18 @@
 
 		Donc $2\cos(\theta)\in\Z\cap[-2,2]$ donc $\cos\left\{\theta\right\}\in\left\{-\frac{1}{2},\frac{1}{2},0\right\}$ ($-1$ et $1$ ne peuvent y être car on a supposé $\theta\not\equiv0[\pi]$). Les solutions sont donc 
 		\begin{equation}
-			\theta\in\left\{0,\frac{\pi}{3},\frac{\pi}{2},\frac{2\pi}{3},\pi,\frac{4\pi}{3},\frac{3\pi}{2},\frac{5\pi}{3}\right\}
+			\boxed{
+			\theta\in\left\{0,\frac{\pi}{3},\frac{\pi}{2},\frac{2\pi}{3},\pi,\frac{4\pi}{3},\frac{3\pi}{2},\frac{5\pi}{3}\right\}}
 		\end{equation}
 		(en rajoutant $\theta=0$ et $\pi$).
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	On a $\frac{\arccos(\frac{1}{3})}{\pi}\notin Q$ car $\cos(\theta)=\frac{1}{3}$ n'est pas dans l'ensemble solutions.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Soit $P=a\prod_{i=1}^{s}(X-a_{i})^{\alpha_{i}}$ avec les $a_{i}$ distincts et $\alpha_{i}\geqslant1$. $a_{i}$ est racine de $P'$ de multiplicité $\alpha_{i}-1$. Il manque donc $s$ racines. Si $\alpha=0$, le résultat est évident, sinon on pose \function{f}{\R}{\R}{x}{P(x)e^{\frac{x}{\alpha}}}
@@ -865,7 +999,10 @@
 		\begin{equation}
 			f'(x)=\frac{e^{\frac{x}{\alpha}}}{\alpha}(P(x)+\alpha P'(x))
 		\end{equation}
-		Comme $P$ est scindé sur $\R$, $P'$ est scindé sur $\R$ (appliquer le théorème de Rolle entre les racines distinctes de $P$), donc $f'$ s'annule $s-1$ fois entre les racines de $P$ donc $P+\alpha P'$ aussi. 
+		Comme $P$ est scindé sur $\R$, $P'$ est scindé sur $\R$ (appliquer le théorème de Rolle entre les racines distinctes de $P$), donc $f'$ s'annule $s-1$ fois entre les racines de $P$ donc 
+		\begin{equation}
+			\boxed{P+\alpha P'\text{ aussi.}}
+		\end{equation}
 
 		La dernière racine est réelle car sinon, le conjugué de la racine complexe supposée serait aussi racine.
 
@@ -874,15 +1011,19 @@
 		\begin{equation}
 			\sum_{i=0}^{r}a_{i}P^{(i)}=\sum_{i=0}^{r}a_{i}\Delta^{i}(P)=R(\Delta)(P)=\mu\prod_{i=0}^{r}(\Delta-\beta_{i}id)(P)
 		\end{equation}
-		Par récurrence sur $r$, on montre que $\prod_{i=0}^{r}(\Delta-\beta_{i}id)(P)$ est scindé d'après la première question.
+		Par récurrence sur $r$, on montre que 
+		\begin{equation}
+			\boxed{\prod_{i=0}^{r}(\Delta-\beta_{i}id)(P)\text{ est scindé}}
+		\end{equation} 
+		d'après la première question.
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	On a aussi pour tout $\lambda\in\R$, $P'+\lambda P$ est aussi scindé sur $\R$ si $P$ est scindé sur $\R$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	Soit $F=\frac{P'}{P}$ définie sur $\R\setminus\{a_{1},\dots,a_{n}\}$ où $a_{i}$ sont les racines de $P$. On note $\alpha$ le coefficient dominant de $P$, et on a 
 	\begin{equation}
 		P'=\alpha\sum_{i=1}^{n}\left(\prod_{\substack{j=1\\ j\neq i}}^{n}(X-a_{j})\right)
@@ -898,10 +1039,10 @@
 		&\Longleftrightarrow n(P''(x)P(x)-P'^{2}(x))\leqslant-P'^{2}(x)\\
 		&\Longleftrightarrow \frac{P'^{2}(x)}{P^{2}(x)}\leqslant n(P''(x)P(x)-P'^{2}(x))\times\frac{1}{P^{2}(x)}\\
 		&\Longleftrightarrow F^{2}(x)\leqslant n(-F'(x))\\
-		&\Longleftrightarrow\left(\sum_{i=1}^{n}\frac{1}{(X-a_{i})}\right)^{2}\leqslant n\times\sum_{i=1}^{n}\frac{1}{(X-a_{i})^{2}}
+		&\Longleftrightarrow\left(\sum_{i=1}^{n}\frac{1}{(X-a_{i})}\right)^{2}\leqslant \boxed{n\times\sum_{i=1}^{n}\frac{1}{(X-a_{i})^{2}}}
 	\end{align}
 	qui est l'inégalité de Cauchy-Schwarz dans $\R^{2}$ avec $(1\dots 1)$ et $(\frac{1}{x-a_{1}}\dots\frac{1}{x-a_{n}})$.
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	Si $P=\alpha(X-a_{1})^{m_{1}}(X-a_{r})^{m_{r}}$, alors 
@@ -910,10 +1051,13 @@
 	\end{equation}
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item $P'\in\C[X]$ et $\deg(P')=\deg(P)-1$. On a $P\wedge P'=1$ car $P$ est irréductible sur $\Q[X]$. Comme le pgcd est obtenu par l'algorithme d'Euclide qui est indépendant du corps de référence, on a $P\wedge P'=1$ sur $\C[X]$ donc $P$ n'a que des racines simples sur $\C$.
+		\item $P'\in\C[X]$ et $\deg(P')=\deg(P)-1$. On a $P\wedge P'=1$ car $P$ est irréductible sur $\Q[X]$. Comme le pgcd est obtenu par l'algorithme d'Euclide qui est indépendant du corps de référence, on a $P\wedge P'=1$ sur $\C[X]$ donc 
+		\begin{equation}
+			\boxed{P\text{ n'a que des racines simples sur }\C.}
+		\end{equation}
 		\item Notons $P\in\Q[X]$ le polynôme minimal de $\alpha$ sur $\Q$ (défini car $A(\alpha)=0$ donc $\alpha$ est algébrique). Comme $A(\alpha)=0$, on a $P\mid A$ et $P$ est irréductible sur $\Q[X]$. Si $\alpha\notin\Q$, on a $\deg(P)\geqslant2$, on peut donc décomposer sur $\Q[X]$:
 		\begin{equation}
 			A=P^{r}\times P_{1}^{r_{1}}\times\dots P_{s}^{r_{s}}
@@ -922,21 +1066,27 @@
 
 		$\alpha$ n'est pas racine d'un $P_{i}$ car sinon $P\mid P_{i}$ ce qui est impossible. $\alpha$ est racine simple de $P$ donc $m(\alpha)=r>\frac{\deg(A)}{2}$. Par ailleurs, $\deg(P)^{r}\geqslant2r>\deg(A)$ ce qui est impossible.
 
-		Donc $\alpha\in\Q$.
+		Donc 
+		\begin{equation}
+			\alpha\in\Q
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Soit $x\in A$. Il existe $(n,m)\in\N^{2}$ avec $n<m$ tel que $x^{n}=x^{m}$. Alors $x^{m-n}=e_{G}\in A$.
 	\function{f}{\N^{*}}{A}{n}{x^{n}}
 	n'est pas injective, car $\N^{*}$ est infini et $A$ est fini. Or $m-n\in\N^{*}$ donc
 	\begin{equation}
 		x^{m-n}=e_{G}\Rightarrow x=x\cdot x^{m-n-1}=e_{G}
 	\end{equation}
-	donc $x^{-1}=x^{m-n-1}\in A$ et ainsi $A$ est un sous-groupe.
-\end{solution}
+	donc $x^{-1}=x^{m-n-1}\in A$ et ainsi 
+	\begin{equation}
+		\boxed{\text{A est un sous-groupe.}}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Pour $\alpha=0$, on a $1+p\equiv 1+p[p^{2}]$. Pour $\alpha=1$, on a 
 	\begin{equation}
 		(1+p)^{p}=\sum_{k=0}^{p}\binom{p}{k}p^{k}=1+p^{2}+\binom{p}{2}p^{2}\sum_{k=3}^{p}\binom{p}{k}p^{k}
@@ -963,49 +1113,67 @@
 	\begin{equation}
 		p^{\alpha+3}\Bigm| x^{2}\Bigm|\sum_{k=2}^{p}\binom{p}{k}x^{k}
 	\end{equation}
-	et
+	et donc
 	\begin{equation}
-		(1+p)^{p^{\alpha+1}}\equiv1+p^{\alpha+2}[p^{\alpha+3}]
+		\boxed{(1+p)^{p^{\alpha+1}}\equiv1+p^{\alpha+2}[p^{\alpha+3}]}
 	\end{equation}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	Pour $p=2,\alpha=1$, on a $3^{2}=9\not\equiv 5[8]$.
 \end{remark}
 
-\begin{solution}
-	Si $7=2x^{2}-5y^{2}$, on a $\overline{0}=2\overline{x}^{2}-5\overline{y}^{2}=\overline{2}(\overline{x}^{2}+\overline{y}^{2})$ dans $\Z/7\Z$. Comme 2 et 7 sont premiers entre eux donc $\overline{2}$ est inversible. Donc $\overline{x}^{2}+\overline{y}^{2}=\overline{0}$. La seule possibilité est $\overline{x}=\overline{0}$ et $\overline{y}=\overline{0}$. Donc $7\mid x$ et $y\mid y$. Si $x=7k$ alors $x^{2}=49k^{2}$ donc $49\mid x^{2}$ et $49\mid y^{2}$ donc $47\mid 2x^{2}-5y^{2}=7$ ce qui est faux.
-\end{solution}
+\begin{proof}
+	Si $7=2x^{2}-5y^{2}$, on a $\overline{0}=2\overline{x}^{2}-5\overline{y}^{2}=\overline{2}(\overline{x}^{2}+\overline{y}^{2})$ dans $\Z/7\Z$. Comme 2 et 7 sont premiers entre eux donc $\overline{2}$ est inversible. Donc $\overline{x}^{2}+\overline{y}^{2}=\overline{0}$. La seule possibilité est $\overline{x}=\overline{0}$ et $\overline{y}=\overline{0}$. Donc $7\mid x$ et $y\mid y$. Si $x=7k$ alors $x^{2}=49k^{2}$ donc $49\mid x^{2}$ et $49\mid y^{2}$ donc $47\mid 2x^{2}-5y^{2}=7$ ce qui est faux. 
 
-\begin{solution}
+	Ainsi, pour tout $(x,y)\in\Z^{2}$,
+	\begin{equation}
+		\boxed{7\neq2x^{2}-5y^{2}}
+	\end{equation}
+\end{proof}
+
+\begin{proof}
 	$\mathbb{F}_{19}$ est un corps car 19 est premier. On a donc $\overline{x}^{3}=\overline{1}$ si et seulement si $(x-\overline{1})(x^{2}+x-\overline{1})=\overline{0}$. On a donc $x=\overline{1}$ ou $x^{2}+x+\overline{1}=\overline{0}$.
 	On a 
 	\begin{equation}
 		x^{2}+x+\overline{1}=(x+\overline{2}^{-1})^{2}+\overline{3}\times\overline{4}^{-1}=(x+\overline{10})^{2}+\overline{3}\times\overline{5}\overline{0}
 	\end{equation}
-	Donc $(x+\overline{10})^{2}=\overline{4}$ d'où $x=\overline{-8}=\overline{11}$ ou $x=\overline{-12}=\overline{7}$.
-\end{solution}
+	Donc $(x+\overline{10})^{2}=\overline{4}$ d'où 
+	\begin{equation}
+		\boxed{x=\overline{-8}=\overline{11}\text{ ou }x=\overline{-12}=\overline{7}.}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item $m$ est inversible si et seulement si $m\wedge 2^{n}=1$ si et seulement si $m\wedge 2=1$ si et seulement si $m$ est impair. IL y a donc $2^{n-1}$ inversibles.
+		\item $m$ est inversible si et seulement si $m\wedge 2^{n}=1$ si et seulement si $m\wedge 2=1$ si et seulement si $m$ est impair. 
+		\begin{equation}
+			\boxed{\text{Il y a donc }2^{n-1}\text{ inversibles.}}
+		\end{equation}
 		\item On a $5^{2^{3-3}}=5\equiv1+2^{2}[2^{3}]$. Par récurrence, soit $n\geqslant3$. Il existe $k\in\Z$ avec $5^{2^{n-3}}=1+2^{n-1}+k2^{n}$ donc 
 		\begin{equation}
-			5^{2^{n-1}}=1+2^{n}+k2^{n+1}+2^{2n-2}(1+2k)^{2}\equiv 1+2^{n}[2^{n+1}]
+			\boxed{
+			5^{2^{n-1}}=1+2^{n}+k2^{n+1}+2^{2n-2}(1+2k)^{2}\equiv 1+2^{n}[2^{n+1}]}
 		\end{equation}
 		car $2n-2\geqslant n+1$ ($n\geqslant3)$.
 
-		\item On a $5^{2^{n-2}}\equiv 1+2^{n}[2^{n+1}]\equiv 1[2^{n}]$ et $5^{2^{n-3}}\not\equiv1[2^{n}]$. Donc l'ordre de $\overline{5}$ est $2^{n-2}$. 
+		\item On a $5^{2^{n-2}}\equiv 1+2^{n}[2^{n+1}]\equiv 1[2^{n}]$ et $5^{2^{n-3}}\not\equiv1[2^{n}]$. 
+		\begin{equation}
+			\boxed{\text{Donc l'ordre de }\overline{5}\text{ est }2^{n-2}.}
+		\end{equation}
 		
 		\item $gr\left\{\overline{-1}\right\}=\left\{\overline{-1},\overline{1}\right\}$. $\overline{5}$ n'engendre pas $\overline{-1}$ car si $\overline{5}^{k}=\overline{-1}$, on a $\overline{5}^{2k}=\overline{1}$ d'où $2^{n-2}\mid 2k$ donc $2^{n-3}\mid k$. Ainsi, $k\in\left\{2^{n-3},2^{n-2},2^{n-1}\right\}$. Mais $\overline{5}^{2^{n-2}}=\overline{1},\overline{5}^{2^{n-3}}=\overline{1+2^{n-1}}\neq\overline{-1}$ donc un tel $k$ n'existe pas.
 		
 		Posons \function{\varphi}{\left(\Z/2\Z\times\Z/2^{n-2}\Z, +\right)}{\left(\Z/2^{n}\Z^{\times},\times\right)}{(\widetilde{a},\dot{b})}{\overline{-1}^{a}\overline{5}^{b}}
-		Elle est bien définie car $\omega(\overline{-1})=2$ et $\omega(\overline{5})=2^{n-2}$. C'est évidemment un morphisme, on a égalité des cardinaux des ensembles de départ et d'arrivée, et on vérifie qu'elle est injective, et donc c'est un isomorphisme.
+		Elle est bien définie car $\omega(\overline{-1})=2$ et $\omega(\overline{5})=2^{n-2}$. C'est évidemment un morphisme, on a égalité des cardinaux des ensembles de départ et d'arrivée, et on vérifie qu'elle est injective, et donc 
+		\begin{equation}
+			\boxed{\text{c'est un isomorphisme.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Soit $(x,x')\in G^{2}$ tel que $x\cdot x'=e$. Alors 
 	\begin{equation}
 		e\cdot x=x\cdot x'\cdot x =x\cdot e\cdot x'\cdot x
@@ -1032,16 +1200,19 @@
 	\begin{equation}
 		x\cdot x'\cdot x=e\cdot x =x\cdot x'\cdot x=x\cdot e=x
 	\end{equation}
-	Et donc $e$ est neutre à gauche. Finalement, $(G,\cdot)$ est un groupe.
-\end{solution}
+	Et donc $e$ est neutre à gauche. Finalement, 
+	\begin{equation}
+		\boxed{(G,\cdot)\text{ est un groupe.}}
+	\end{equation}
+\end{proof}
 
 \begin{remark}
 	Si $f\colon\R\to\R$ est surjective, on peut définir \function{g}{\R}{\R}{y}{f(x)} pour un certain $x\in\R$. On a $f\circ g=id$. Si $f$ n'est pas injective: s'il existait $h\colon\R\to\R$ telle que $h\circ f=id$, soit $(x,x')\in \R^{2}$ telle que $f(x)=f(x')$. En composant par $h$, on aurait $x=x'$ donc $f$ serait injective ce qui n'est pas. 
 
-	On on peut avoir un inverse à droite mais pas à gauche.
+	On peut donc avoir un inverse à droite mais pas à gauche.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	Soit $n\in\N^{*}$.
 	\begin{equation}
 		\underbrace{1\dots 1}_{\text{n fois en base 10}}=1+10+\dots+10^{n-1}=\frac{10^{n}-1}{9}
@@ -1060,19 +1231,24 @@
 	Cherchons plus précisément les ordres de $\overline{10}$ dans $((\Z/7\Z)^{*},\times)$ et de $\widetilde{10}$ dans $((\Z/27\Z)^{\times},\times)$.
 	Dans $(\Z/7\Z)^{*}$, groupe de cardinal 6, on vérifie que l'ordre de 10 est 6. Dans l'autre groupe, on vérifie que l'ordre de $\widetilde{10}$ est 3. Ainsi, $21\mid 1\dots 1$ si et seulement si $6\mid n$.
 
-	Il y a donc une infinité de multiples de 21 qui s'écrivent avec uniquement des 1 en base 10.
-\end{solution}
+	\begin{equation}
+		\boxed{\text{Il y a donc une infinité de multiples de 21 qui s'écrivent avec uniquement des 1 en base 10.}}
+	\end{equation}
+\end{proof}
 
 \begin{remark}
 	Il suffit de trouver l'ordre de 10 dans les deux ensembles et de prendre le ppcm.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item $X^{d}-1$ a au plus $d$ racines dans $\K$. Pour tout $k\in\left\llbracket 0,d-1\right\rrbracket$, $x_{0}^{k}$ est racine de $X^{d}-1_{\K}$ car $gr\left\{x_{0}\right\}$ a pour cardinal $d$. Donc les racines sont exactement les puissances de $x_{0}$.
 		
-		Soit $x\in\K^{*}$ d'ordre $d$. On a $x\in gr\left\{x_{0}\right\}$ car $x^{d}=1$ (racine du polynôme de $X^{d}=1_{\K}$). Or, dans le groupe cyclique engendré par $x_{0}$, il y a $\varphi(d)$ éléments.
+		Soit $x\in\K^{*}$ d'ordre $d$. On a $x\in gr\left\{x_{0}\right\}$ car $x^{d}=1$ (racine du polynôme de $X^{d}=1_{\K}$). Or, dans le groupe cyclique engendré par $x_{0}$, 
+		\begin{equation}
+			\boxed{\text{il y a }\varphi(d)\text{ éléments.}}
+		\end{equation}
 
 		\item On a ou bien $\varphi(d)$ ou bien aucun élément d'ordre $d$ dans $\K$. Soit $d$ tel que $d\mid n$, on note $H_{d}=\{x\in K\bigm| \omega(x)=d\}$. On a 
 		\begin{equation}
@@ -1083,14 +1259,20 @@
 			n=\sum_{d\mid n}\vert H_{d}\vert\leqslant\sum_{d\mid n}\varphi(d)=n
 		\end{equation}
 
-		Alors pour tout $d$ tel que $d\mid n$, on a $\vert H_{d}\vert=\varphi(d)$. En particulier, on a $\vert H_{n}\vert=\varphi(n)\geqslant1$ donc $H_{n}$ est non vide. Donc il existe (au moins) un élément d'ordre $n$, on $(\K^{*},\times)$ est cyclique.
+		Alors pour tout $d$ tel que $d\mid n$, on a $\vert H_{d}\vert=\varphi(d)$. En particulier, on a $\vert H_{n}\vert=\varphi(n)\geqslant1$ donc $H_{n}$ est non vide. Donc il existe (au moins) un élément d'ordre $n$, donc 
+		\begin{equation}
+			\boxed{(\K^{*},\times)\text{ est cyclique.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item Soit $x\in M$. On a $\overline{1}-\overline{x}^{-1}$ si et seulement si $\overline{x}=\overline{1}$ et $\overline{1}-\overline{x}^{-1}=\overline{1}$ si et seulement si $\overline{x}=\overline{0}$, ce qui n'est pas possible pour les deux cas. Donc $f$ est bien définie.
+		\item Soit $x\in M$. On a $\overline{1}-\overline{x}^{-1}$ si et seulement si $\overline{x}=\overline{1}$ et $\overline{1}-\overline{x}^{-1}=\overline{1}$ si et seulement si $\overline{x}=\overline{0}$, ce qui n'est pas possible pour les deux cas. 
+		\begin{equation}
+			\boxed{\text{Donc f est bien définie.}}
+		\end{equation}
 		
 		Soit $x\in M$, on a 
 		\begin{align}
@@ -1110,7 +1292,10 @@
 			&=\overline{x}
 		\end{align}
 
-		Donc $f^{3}=id_{M}$.
+		Donc
+		\begin{equation}
+			f^{3}=id_{M}
+		\end{equation}
 
 		\item Soit $x\in M$, on a 
 		\begin{align}
@@ -1121,14 +1306,24 @@
 			&\Longleftrightarrow \overline{-3}=(\overline{2}\overline{x}-\overline{1})^{2}
 		\end{align}
 		$f$ admet un point fixe si et seulement $\overline{-3}$ est un carré dans $\Z/p\Z$ car $\overline{y}=\overline{2}\overline{x}-\overline{1}$ si et seulement si $\overline{x}=\overline{2}^{-1}(\overline{y}+\overline{1})$.
+		
+		Donc 
+		\begin{equation}
+			\boxed{\overline{-3}\text{ est un carré dans }\Z/p\Z\text{si et seulement si f admet un point fixe.}}
+		\end{equation}
 
 		\item Comme $p$ est premier plus grand que 5, on a $p\equiv 1\text{ ou }2[3]$ donc $p-2\equiv 0\text{ ou }2[3]$ car $f^{3}=id_{M}$, les longueurs des cycles qui composent $f$ valent 1 ou 3. 
 		
 		Si $f$ n'a pas de point fixe, tous les cycles sont de longueur 3, donc $3\mid p-2$ donc $p\equiv 2[3]$. Si $p\equiv 2[3]$, alors $3\mid p-2$, le nombre de points fixes est un multiple de $3$ donc aussi du nombre de racine carrés de $\overline{-3}$. Et puisque l'on est dans un corps, il y a au plus 2 racines de $\overline{-3}$. Donc si $p\equiv2[3]$, il n'y a pas de point fixe.
-	\end{enumerate}
-\end{solution}
 
-\begin{solution}
+		Donc 
+		\begin{equation}
+			\boxed{\overline{-3}\text{ est un carré dans }\Z/p\Z\text{ si et seulement si }p\equiv1[3].}
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
 	Soit $x\in\R$. Supposons que $x$ possède un développement décimal périodique. Alors il existe $(n_{0},T)\in\N\times\N^{*}$ tels que pour tout $n\geqslant n_{0}$, $a_{n+T}=a_{n}$. On a alors 
 	\begin{equation}
 		\vert x\vert=\underbrace{b_{m}\dots b_{0},a_{0}\dots a_{n_{0}-1}}_{\in\Q}+\frac{1}{10^{n_{0}-1}}\underbrace{(0,a_{n_{0}}\dots a_{n_{0}+T-1}a_{n_{0}}\dots)}_{=y}
@@ -1150,17 +1345,22 @@
 	On réitère l'algorithme avec $\frac{10^{k}b}{q}$ car on a $\left\lfloor\frac{10^{k}b}{q}\right\rfloor\in\left\llbracket 1,9\right\rrbracket$ par définition de $k$.
 
 	Il y a $q$ restes possibles dans la division euclidienne par $q$. Ainsi, au bout d'au plus de $q+1$ itérations, on retrouve un reste précédent. Par unicité de la division euclidienne, on obtient un développement décimal périodique.
-\end{solution}
+
+	Donc 
+	\begin{equation}
+		\boxed{x\in\Q\text{ si et seulement si }\exists n_{0}\in\N,\exists T\in\N^{*},\forall n\geqslant n_{0},a_{n+T}=a_{n}.}
+	\end{equation}
+\end{proof}
 
 \begin{remark}
 	On peut écrire $q=2^{a}5^{b}q'$ avec $q'\wedge 2=q'\wedge 5=1$. On se ramène alors à $q\wedge2=q\wedge5=1$. En reportant dans l'écriture décimale de $x$, on a 
 	\begin{equation}
 		\frac{\alpha}{q}=\frac{\beta}{10^{T}-1}
 	\end{equation}
-	avec $\alpha\wedge q=1$. On a donc $q\mid 10^{T}-1$ d'après le lemme de Gauss. $T$ revient donc à l'ordre de $\overline{10}$ dans $(\Z/q\Z^{\times},\times)$ qui contient $\varphi(q)$ éléments. Par défaut, on a donc $T=\varphi(q)$.
+	avec $\alpha\wedge q=1$. On a donc $q\mid 10^{T}-1$ d'après le lemme de Gauss. $T$ revient donc à l'ordre de $\overline{10}$ dans $\left(\left(\Z/q\Z\right)^{\times},\times\right)$ qui contient $\varphi(q)$ éléments. Par défaut, on a donc $T=\varphi(q)$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Soit $m\in\Z$. Si $m\in\left\llbracket 0,n-1\right\rrbracket$, on a $H_{n}(m)=0\in\Z$.
@@ -1168,7 +1368,10 @@
 		\begin{equation}
 			H_{n}(m)=\frac{m(m-1)\dots(m-n+1)}{n!}=(-1)^{n}\binom{-m+n-1}{-m-1}\in\Z
 		\end{equation}
-		Donc $H_{n}(\Z)\subset\Z$.
+		Donc 
+		\begin{equation}
+			\boxed{H_{n}(\Z)\subset\Z}
+		\end{equation}
 
 		\item Supposons qu'il existe $n\in\N$ et $(a_{0},\dots,a_{n})\in\Z^{n+1}$ et $P=\sum_{k=0}^{n}a_{k}H_{k}$. On a $H_{k}(\Z)\subset\Z$ donc $P(\Z)\subset\Z$.
 		Supposons $P(\Z)\subset\Z$. $(H_{k})_{k\in\N}$ est une base étagée en degré de $\C[X]$. Donc il existe $(a_{0},\dots,a_{n})\in\C^{n+1}$ tel que $P=\sum_{k=0}^{n}a_{k}H_{k}$. Par récurrence, on a $P(0)=a_{0}\in\Z$. Soit $k\in\left\llbracket 0,n-1\right\rrbracket$, supposons $(a_{0},\dots,a_{k})\in\Z^{k+1}$. On a alors 
@@ -1176,21 +1379,29 @@
 			P(k+1)=\underbrace{\sum_{i=0}^{k}\underbrace{a_{k}}_{\in\Z}H_{k}}_{\in\Z}+a_{k+1}\underbrace{H_{k+1}(k+1)}_{=1}
 		\end{equation}
 		Donc $a_{k+1}\in\Z$.
+
+		Donc 
+		\begin{equation}
+			\boxed{P\left(\Z\right)\subset\Z\text{ si et seulement si }\exists n\in\N,\exists(a_{0},\dots,a_{n})\in\Z^{n+1},P=\sum_{k=0}^{n}a_{k}H_{k}.}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	Les translation $X+\alpha$ sont les seules pour lesquelles on a $(X+\alpha)(\Z)=\Z$. En effet, si $P\in\C[X]$ est tel que $P(\Z)=\Z$, on a $P\in\Q[X]$ d'après ce qui précède. Si $\deg(P)\geqslant2$, quitte à remplacer $P$ par $-P$, on peut supposer le coefficient dominant de $P$ strictement positif. On a alors $\lim\limits_{x\to+\infty}P'(x)=+\infty$ donc il existe $A>0$ tel que $P$ est strictement croissant sur $[A,+\infty[$. De plus, $P(x+1)-P(x)\to+\infty$ quand $x\to+\infty$. Donc il existe $A'>0$ tel que $P(x+1)>P(x)+1$. Pour $n\geqslant\max(A,A')$, on a $P(n+1)\geqslant P(n)+2$ ce qui contredit $P(\Z)=\Z$. Donc le degré de $P$ est inférieur à 1.
 \end{remark}
 
-\begin{solution}
-	Le coefficient en $X^{k}$ s'écrit $a_{k-1}-\alpha a_{k}\in\Q$. Si $a_{k}\in\Q$, on a donc $a_{k-1}\in\Q$. Il est donc impossible d'avoir deux coefficients consécutifs rationnels. Or $x_{n-1}\in\Q$ car c'est le coefficient dominant de $P$. Donc $\alpha$ est nécessairement racine simple.
-\end{solution}
+\begin{proof}
+	Le coefficient en $X^{k}$ s'écrit $a_{k-1}-\alpha a_{k}\in\Q$. Si $a_{k}\in\Q$, on a donc $a_{k-1}\in\Q$. Il est donc impossible d'avoir deux coefficients consécutifs rationnels. Or $x_{n-1}\in\Q$ car c'est le coefficient dominant de $P$. Donc 
+	\begin{equation}
+		\boxed{\alpha\text{ est nécessairement racine simple.}}
+	\end{equation}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Soit $\Delta=P\wedge P'=\Delta$. On a $\deg(\Delta)\in\left\{1,2,3,4\right\}$ car $\Delta\mid P'$.
 
-	Si $\deg(\Delta)=4$, alors $\Delta=P'$ (car associé). Donc il existe $\beta\in\C$ d'où $\underbrace{P}_{\in\Q[X]}=(X-\beta)\underbrace{P'}_{\in\Q[X]}$. Par division euclidienne, $X-B\in\Q[X]$ et $\beta\in\Q$ d'après l'algorithme de la division euclidienne.
+	Si $\deg(\Delta)=4$, alors $\Delta=P'$ (car associé). Donc il existe $\beta\in\C$ d'où $\underbrace{P}_{\in\Q[X]}=(X-\beta)\underbrace{P'}_{\in\Q[X]}$. Par division euclidienne, $X-\beta\in\Q[X]$ et $\beta\in\Q$ d'après l'algorithme de la division euclidienne.
 
 	Si $\deg(\Delta)=1$, on a $P=X-\beta$ avec $\beta\in\Q$ racine de $P$.
 
@@ -1205,9 +1416,14 @@
 		X-\alpha=\frac{\Delta}{(X-\alpha)(X-\beta)}\in\Q[X]
 	\end{equation}
 	donc $\alpha\in\Q$.
-\end{solution}
 
-\begin{solution}
+	Donc
+	\begin{equation}
+		\boxed{\text{P admet au moins une racine rationnelle.}}
+	\end{equation}
+\end{proof}
+
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item $1\in\Z[\i],0\in\Z[\i],\i\in\Z[\i]$. Soit $(a,b,a',b')\in\Z^{4}$:
@@ -1222,27 +1438,43 @@
 		
 		Donc $\Z[\i]$ est un sous-anneau de $\C$ contenant $\i$.
 
-		Soit $A$ un sous anneau de $\C$ contenant $\i$. $A$ est stable par $x$ donc $i^{4}=1\in A$. $A$ est stable par + donc $\Z\subset A$, puis $\i\Z\subset A$ donc $\Z[\i]\subset A$. $\Z[\i]$ est donc le plus petit sous anneau de $\C$ contenant $\i$.
+		Soit $A$ un sous anneau de $\C$ contenant $\i$. $A$ est stable par $x$ donc $i^{4}=1\in A$. $A$ est stable par + donc $\Z\subset A$, puis $\i\Z\subset A$ donc $\Z[\i]\subset A$. 
+		\begin{equation}
+			\boxed{\Z[\i]\text{ est donc le plus petit sous anneau de }\C\text{ contenant }\i.}
+		\end{equation}
 
 		\item Si $\vert z\vert^{2}=1$ c'est-à-dire $a^{2}+b^{2}=1$, alors 
 		\begin{equation}
 			\frac{1}{z}=\frac{a-\i b}{\vert z\vert^{2}}=a-\i b\in\Z[\i]
 		\end{equation}
-		Si $z$ est inversible dans $\Z[\i]$, il existe $'\in\Z[\i]$ tel que $zz'=1$ donc $\vert z\vert^{2}\vert z'\vert^{2}=1$ donc $\vert z\vert^{2}=1$.
+		Si $z$ est inversible dans $\Z[\i]$, il existe $'\in\Z[\i]$ tel que $zz'=1$ donc $\vert z\vert^{2}\vert z'\vert^{2}=1$ donc $\vert z\vert^{2}=1$. Donc 
+		\begin{equation}
+			\boxed{z\text{ est inverse dans }\Z[\i]\text{ si et seulement si }\left\lvert z\right\rvert^{2}=1.}
+		\end{equation}
 
 		Soit $(a,b)\in\Z^{2}$. Si $\vert a\vert\geqslant2$ ou $\vert b\geqslant2$, alors $a^{2}+b^{2}\geqslant4$ donc si $\vert z\vert^{2}=1$, alors $a^{2}+b^{2}=1$ et $\left(\vert a\vert=1\text{ et }\vert b\vert=0\right)$ ou $\left(\vert a\vert=0\text{ et }\vert b\vert=1\right)$. Donc 
 		\begin{equation}
-			U=\left\{1,-1,\i,-\i\right\}
+			\boxed{U=\left\{1,-1,\i,-\i\right\}}
 		\end{equation}
 
 		\item 
 		\begin{enumerate}
-			\item Si $x\in\R$, il existe $n\in\Z$ tel que $\vert x-n\vert\leqslant\frac{1}{2}$ (faire un dessin et le montrer grâce aux parties entières). Soit alors $z_{0}=x_{0}+\i y_{0}\in\C$, on prend un $(a,b)\in\Z^{2}$ tel que $\vert x_{0}-a\vert\leqslant\frac{1}{2},\vert y_{0}-b\vert\leqslant\frac{1}{2}$. Et pour $z=a+\i b\in\Z[\i]$, on a $\vert z-z_{0}\vert^{2}=(x_{0}-a)^{2}+(y_{0}-b)^{2}\leqslant\frac{1}{2}$.
+			\item Si $x\in\R$, il existe $n\in\Z$ tel que $\vert x-n\vert\leqslant\frac{1}{2}$ (faire un dessin et le montrer grâce aux parties entières). Soit alors $z_{0}=x_{0}+\i y_{0}\in\C$, on prend un $(a,b)\in\Z^{2}$ tel que $\vert x_{0}-a\vert\leqslant\frac{1}{2},\vert y_{0}-b\vert\leqslant\frac{1}{2}$. Et pour $z=a+\i b\in\Z[\i]$, on a 
+			\begin{equation}
+				\boxed{\vert z-z_{0}\vert^{2}=(x_{0}-a)^{2}+(y_{0}-b)^{2}\leqslant\frac{1}{2}}
+			\end{equation}
 			
 			\item Soit $(q,r)\in\Z[\i]^{2}$, on a $z_{1}=qz_{2}+r$ si et seulement si $\frac{z_{1}}{z_{2}}-q=\frac{r}{z_{2}}$. On a $\vert r\vert<\vert z_{1}\vert$ si et seulement si $\left\vert\frac{z_{1}}{z_{2}}-q\right\vert<1$.
-			On a $\frac{z_{1}}{z_{2}}\in\C$ donc d'après 3.(a), il existe $q\in\Z[\i]$ tel que $\left\lvert \frac{z_{1}}{z_{2}}-q\right\rvert\leqslant\frac{\sqrt{2}}{2}<1$. On pose alors $r=z_{1}-qz_{2}\in\Z[\i]$ par stabilité. Il vient donc $\vert r\vert<\vert z_{2}\vert$
+			On a $\frac{z_{1}}{z_{2}}\in\C$ donc d'après 3.(a), il existe $q\in\Z[\i]$ tel que $\left\lvert \frac{z_{1}}{z_{2}}-q\right\rvert\leqslant\frac{\sqrt{2}}{2}<1$. On pose alors $r=z_{1}-qz_{2}\in\Z[\i]$ par stabilité. Il vient donc $\vert r\vert<\vert z_{2}\vert$. Ainsi,
+			\begin{equation}
+				\boxed{\exists(q,r)\in\Z[\i]^{2},z_{1}=qz_{2}+r\text{ et }\left\lvert r\right\rvert<\left\lvert z_{1}\right\rvert.}
+			\end{equation}
 
-			Il n'y a pas unicité: par exemple $z_{2}=1$ et $z_{1}=\frac{1+\i}{2}$.\\On peut prendre $q\in\left\{0,1,\i,1+\i\right\}$.
+			Si $z_{2}=1$ et $z_{1}=\frac{1+\i}{2}$, on peut prendre $q\in\left\{0,1,\i,1+\i\right\}$.
+			Donc 
+			\begin{equation}
+				\boxed{\text{il n'y a pas unicité.}}
+			\end{equation}
 
 			\item Soit $I\neq\left\{0\right\}$ un idéal de $\Z[\i]$. On note $n_{0}=\min\left\{\vert z\vert^{2}\bigm| z\in I\setminus\left\{0\right\}\right\}$ (partie non vide de $\N^{*}$). Soit $z_{0}\in I\setminus\left\{0\right\}$ tel que $\vert z_{0}\vert^{2}=n_{0}$. On a directement $z_{0}\Z[\i]\subset I$ ($I$ est un idéal). 
 			
@@ -1250,37 +1482,61 @@
 			\begin{equation}
 				r=\underbrace{z}_{\in I}-\underbrace{z_{0}}_{\in I}\underbrace{q}_{\in\Z[\i]}\in I
 			\end{equation} 
-			et $\vert r\vert^{2}<n_{0}$. Nécessairement, $r=0$ et $z=z_{0}q\in z_{0}\Z[\i]$. Donc $I=z_{0}\Z[\i]$. Finalement, $\Z[\i]$ est principal.
+			et $\vert r\vert^{2}<n_{0}$. Nécessairement, $r=0$ et $z=z_{0}q\in z_{0}\Z[\i]$. Donc $I=z_{0}\Z[\i]$. Finalement, 
+			\begin{equation}
+				\boxed{\Z[\i]\text{ est principal.}}
+			\end{equation}
 		\end{enumerate}
 
 		
-		\item Si $\vert z\vert^{2}=1$, alors $z\in U$ donc c'est bon. On travaille ensuite par récurrence sur $n\in\N^{*}$. Supposons que la décomposition existe pour $z\in\Z[\i]$ avec $\vert z\vert^{2}\leqslant n$. Soit $z\in\Z[\i]$ tel que $\vert z\vert^{2}=n+1$. On a $\vert z\vert^{2}\geqslant2$ donc $z\in U$. Si $z$ est irréductible, c'est bon. Sinon, il existe $(z_{1},z_{2})\in\Z[\i]^{2}$ tel que $z=z_{1}z_{2}$ et $z_{1}$ et $z_{2}$ non inversibles. Alors $\vert z_{1}\vert^{2}\geqslant2$ et $\vert z_{2}\vert^{2}\geqslant2$. Or $\vert z\vert^{2}=n+1=\vert z_{1}\vert^{2}\vert z_{2}\vert^{2}$ donc $\vert z_{1}\vert^{2}\leqslant n$ et $\vert z_{2}\vert^{2}\leqslant n$. Par hypothèse de récurrence, on peut décomposer $z_{1}$ et $z_{2}$, donc $z$ est décomposable.
+		\item Si $\vert z\vert^{2}=1$, alors $z\in U$ donc c'est bon. On travaille ensuite par récurrence sur $n\in\N^{*}$. Supposons que la décomposition existe pour $z\in\Z[\i]$ avec $\vert z\vert^{2}\leqslant n$. Soit $z\in\Z[\i]$ tel que $\vert z\vert^{2}=n+1$. On a $\vert z\vert^{2}\geqslant2$ donc $z\in U$. Si $z$ est irréductible, c'est bon. Sinon, il existe $(z_{1},z_{2})\in\Z[\i]^{2}$ tel que $z=z_{1}z_{2}$ et $z_{1}$ et $z_{2}$ non inversibles. Alors $\vert z_{1}\vert^{2}\geqslant2$ et $\vert z_{2}\vert^{2}\geqslant2$. Or $\vert z\vert^{2}=n+1=\vert z_{1}\vert^{2}\vert z_{2}\vert^{2}$ donc $\vert z_{1}\vert^{2}\leqslant n$ et $\vert z_{2}\vert^{2}\leqslant n$. Par hypothèse de récurrence, on peut décomposer $z_{1}$ et $z_{2}$, donc $z$ est décomposable
+		\begin{equation}
+			\boxed{\text{D'où le résultat par récurrence.}}
+		\end{equation}
 			
 		Pour l'unicité, soit $z\in\Z[\i]\setminus\left\{0\right\}$ tel que $z=u\prod_{\rho\in\mathcal{P}_{0}}\rho^{\nu_{\rho}(z)}=v\prod_{\rho\in\mathcal{P}_{0}}\rho^{\mu_{\rho}(z)}$. Le théorème de Gauss est valable dans $\Z[\i]$, car c'est un anneau principal. S'il existe $\rho_{0}\in\mathcal{P}_{0}$ tel que $\nu_{\rho_{0}}(z)<\mu_{\rho_{0}}(z)$, alors 
 		\begin{equation}
 			\rho_{0}\Bigm|\prod_{p\in\mathcal{P}_{0}\setminus\{\rho_{0}\}}\rho^{\nu_{\rho}(z)}
 		\end{equation}
-		ce qui est proscrit par le théorème de Gauss. On a donc pour tout $\rho\in\mathcal{P}_{0}$, $\nu_{\rho}(z)=\mu_{\rho}(z)$. En reportant, on a $u=v$. D'où l'unicité de la décomposition.
+		ce qui est proscrit par le théorème de Gauss. On a donc pour tout $\rho\in\mathcal{P}_{0}$, $\nu_{\rho}(z)=\mu_{\rho}(z)$. En reportant, on a $u=v$.
+		\begin{equation}
+			\boxed{\text{D'où l'unicité de la décomposition.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item On a $\overline{1}\in R$. Soit $(\overline{x_{1}},\overline{x_{2}})\in R^{2}$, il existe $(\overline{y_{1}},\overline{y_{2}})\in(\mathbb{F}_{p}^{*})^{2}$ tel que $\overline{x_{1}}=\overline{y_{1}}^{2}$ et $\overline{x_{2}}=\overline{y_{2}}^{2}$. On a  alors 
 		\begin{equation}
 			\overline{x_{1}}\overline{x_{2}}^{-1}=(\overline{y_{1}}\overline{y_{2}}^{-1})^{2}\in R
 		\end{equation}
-		donc $R$ est un sous groupe de $(\mathbb{F}_{p}^{*},\times)$. Soit \function{\varphi}{\mathbb{F}_{p}^{*}}{\mathbb{F}_{p}^{*}}{\overline{y}}{\overline{y}^{2}}
+		donc 
+		\begin{equation}
+			\boxed{R\text{ est un sous groupe de }(\mathbb{F}_{p}^{*},\times).}
+		\end{equation}
+		
+		Soit \function{\varphi}{\mathbb{F}_{p}^{*}}{\mathbb{F}_{p}^{*}}{\overline{y}}{\overline{y}^{2}}
 		On a $\im(\varphi)=R$. Comme $\mathbb{F}_{p}$ est un corps, chaque éléments de $R$ a exactement 2 antécédents par $\varphi$. Donc $\vert R\vert=\frac{\vert\mathbb{F}_{p}^{*}\vert}{2}=\frac{p-1}{2}$.
 
 		S'il existe $\overline{y}\in\mathbb{F}_{p}^{*}$ tel que $\overline{a}=\overline{y}^{2}$, on a $\overline{a}^{\frac{p-1}{2}}=\overline{y}^{p-1}=\overline{1}$ par le théorème de Fermat.
 
 		Réciproquement, si $\overline{a}^{\frac{p-1}{2}}=\overline{1}$, $X^{\frac{p-1}{2}}-\overline{1}$ admet au plus $\frac{p-1}{2}$ racines dans $\mathbb{F}_{p}^{*}$. Tous les éléments de $R$ sont racines de ce polynôme, ce sont donc ses seules racines. Donc $a\in R$.
 
-		\item Si $p=a^{2}+b^{2}$, alors $\overline{0}=\overline{a}^{2}+\overline{b}^{2}$. Si $\overline{a}=\overline{b}=\overline{0}$, on a $p\mid a$ et $p\mid b$ donc $p^{2}\mid p$ ce qui est exclu. Par exemple, si $\overline{a}\neq\overline{0}$, on a $\overline{1}=-\overline{b}^{2}\overline{a}^{-2}$ donc $\overline{-1}=(\overline{a}^{-1}\overline{b})^{2}\in R$ d'après 1. On a donc $(\overline{-1})^{\frac{p-1}{2}}=\overline{1}$ si et seulement si $2\bigm|\frac{p-1}{2}$ (car $p$ est premier plus grand que 3) d'où $4\mid p-1$ donc $p\equiv 1[4]$.
+		\begin{equation}
+			\boxed{\text{Donc }a\in R\text{ si et seulement si }a^{\frac{p-1}{2}}=1.}
+		\end{equation}
+
+		\item Si $p=a^{2}+b^{2}$, alors $\overline{0}=\overline{a}^{2}+\overline{b}^{2}$. Si $\overline{a}=\overline{b}=\overline{0}$, on a $p\mid a$ et $p\mid b$ donc $p^{2}\mid p$ ce qui est exclu. Par exemple, si $\overline{a}\neq\overline{0}$, on a $\overline{1}=-\overline{b}^{2}\overline{a}^{-2}$ donc $\overline{-1}=(\overline{a}^{-1}\overline{b})^{2}\in R$ d'après 1. On a donc $(\overline{-1})^{\frac{p-1}{2}}=\overline{1}$ si et seulement si $2\bigm|\frac{p-1}{2}$ (car $p$ est premier plus grand que 3) d'où $4\mid p-1$ donc 
+		\begin{equation}
+			\boxed{p\equiv 1[4]}
+		\end{equation}
 		
-		\item On a $\vert\mathbb{F}_{p}\vert=p$, $E(\sqrt{p})\leqslant\sqrt{p}<E(\sqrt{p})+1$ et $\vert\{0,\dots,E(\sqrt(p))\}\vert^{2}=(E(\sqrt{p})+1)^{2}>p$ ($p$ est premier, ce n'est pas un carré) donc $f$ n'est pas injective (cardinalité).
+		\item On a $\vert\mathbb{F}_{p}\vert=p$, $E(\sqrt{p})\leqslant\sqrt{p}<E(\sqrt{p})+1$ et $\vert\{0,\dots,E(\sqrt{p})\}\vert^{2}=(E(\sqrt{p})+1)^{2}>p$ ($p$ est premier, ce n'est pas un carré) donc (cardinalité)
+		\begin{equation}
+			\boxed{f\text{ n'est pas injective.}}
+		\end{equation}
 		
 		Donc il existe 
 		\begin{equation}
@@ -1290,26 +1546,32 @@
 			\overline{a_{1}}-\overline{k}\overline{b_{1}}=\overline{a_{2}}-\overline{k}\overline{b_{2}}\Rightarrow \overline{a_{1}}-\overline{a_{2}}=\overline{k}(\overline{b_{1}}-\overline{b_{2}})
 		\end{equation}
 		
-		Si $\overline{b_{1}}=\overline{b_{2}}$, alors $\overline{a_{1}}=\overline{a_{2}}$ donc $p\mid b_{1}-b_{2}$ et $p\mid a_{1}-a_{2}$ donc $(a_{1},b_{1})=(a_{2},b_{2})$ ce qui n'est pas vrai. Donc $\overline{b_{1}}\neq\overline{b_{2}}$. Posons $b_{0}=b_{1}-b_{2}$ et $a_{0}=a_{1}-a_{2}$. On a $\overline{b_{0}}\neq\overline{0}$. Il vient donc $(\vert a_{0}\vert,\vert b_{0}\vert)\in\left\llbracket 1,E(\sqrt{p})\right\rrbracket^{2}$, $\overline{a_{0}}=\overline{k}\overline{b_{0}}$ donc $\overline{k}=\overline{a_{0}}\overline{b_{0}}^{-1}$.
+		Si $\overline{b_{1}}=\overline{b_{2}}$, alors $\overline{a_{1}}=\overline{a_{2}}$ donc $p\mid b_{1}-b_{2}$ et $p\mid a_{1}-a_{2}$ donc $(a_{1},b_{1})=(a_{2},b_{2})$ ce qui n'est pas vrai. Donc $\overline{b_{1}}\neq\overline{b_{2}}$. Posons $b_{0}=b_{1}-b_{2}$ et $a_{0}=a_{1}-a_{2}$. On a $\overline{b_{0}}\neq\overline{0}$. Il vient donc $(\vert a_{0}\vert,\vert b_{0}\vert)\in\left\llbracket 1,E(\sqrt{p})\right\rrbracket^{2}$, $\overline{a_{0}}=\overline{k}\overline{b_{0}}$ donc 
+		\begin{equation}
+			\boxed{\overline{k}=\overline{a_{0}}\overline{b_{0}}^{-1}}
+		\end{equation}
 
 		\item Si $p\equiv 1[4]$, en remontant les calculs, on a $(\overline{-1})^{\frac{p-1}{2}}=\overline{1}$ donc $\overline{-1}\in R$ et il existe $\overline{k}\in\mathbb{F}_{p}^{*}$ tel que $\overline{-1}=\overline{k}^{2}$. Alors d'après 3., il existe $(a_{0},b_{0})$ tels que $\overline{k}=\overline{a_{0}}\overline{b_{0}}^{-1}$. Il vient alors $\overline{-1}=\overline{a_{0}}^{2}(\overline{b_{0}}^{-1})^{2}$ donc $\overline{-b_{0}}^{2}=\overline{a_{0}}^{2}$. On a 
 		\begin{equation}
 			p\mid a_{0}^{2}+b_{0}^{2}\in\left\llbracket 2,2E(\sqrt{p})\right\rrbracket^{2}\subset\left\llbracket 2,2p-1\right\rrbracket
 		\end{equation}
-		Nécessairement, $a_{0}^{2}+b_{0}^{2}=p$ et $p$ est somme de deux carrés.
+		Nécessairement, $a_{0}^{2}+b_{0}^{2}=p$ et 
+		\begin{equation}
+			\boxed{p\text{ est somme de deux carrés.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Soit $(m,n)\in A^{2}$. Il existe $(a,b,c,d)\in\N^{4}$ tel que $m=a^{2}+b^{2}=\vert a+\i b\vert^{2}$ et $n=c^{2}+d^{2}=\vert c+\i d\vert^{2}$. Donc 
 		\begin{equation}
-			m\times n=\vert ac-bd6\i(bc+ad)\vert^{2}=(ac-bd)^{2}+(bc+ad)^{2}\in A
+			\boxed{m\times n=\vert ac-bd6\i(bc+ad)\vert^{2}=(ac-bd)^{2}+(bc+ad)^{2}\in A}
 		\end{equation}
 		\item On a 
 		\begin{equation}
-			n=\underbrace{\prod_{p\in\mathcal{P}_{1}}p^{\nu_{p}(n)}}_{\in A\text{ car }\mathcal{P}_{1}\subset A}\times\underbrace{\prod_{p\in\mathcal{P}_{2}}p^{\nu_{p}(n)}}_{=\prod_{p\in\mathcal{P}_{2}}p^{2\alpha_{p}}\in A}\in A
+			\boxed{n=\underbrace{\prod_{p\in\mathcal{P}_{1}}p^{\nu_{p}(n)}}_{\in A\text{ car }\mathcal{P}_{1}\subset A}\times\underbrace{\prod_{p\in\mathcal{P}_{2}}p^{\nu_{p}(n)}}_{=\prod_{p\in\mathcal{P}_{2}}p^{2\alpha_{p}}\in A}\in A}
 		\end{equation}
 
 		\item Soit $n\in A$, il existe $(a,b)\in\N^{2}$ avec $n=a^{2}+b^{2}$. Soit $p\in \mathcal{P}_{1}\cup\mathcal{P}_{2}$, on a $p\mid a^{2}+b^{2}$ donc $\overline{a^{2}+b^{2}}=\overline{0}$ dans $\Z/p\Z$. Si $p\nmid a$ ou $p\nmid b$, alors $\overline{1+\frac{b^{2}}{a^{2}}}=\overline{0}$ donc $\overline{-1}\in R$ (résidus quadratiques, voir exercice précédent). Donc $p=2$ ou $p\equiv 1[4]$.
@@ -1324,5 +1586,8 @@
 			p\Bigm| a'^{2}+p^{2(l-k)b'^{2}}
 		\end{equation}
 		et $\overline{a'}^{2}+\overline{p^{2(l-k)}}\overline{b'}^{2}=\overline{0}$. Nécessairement, $l=k$. De même $p\in\mathcal{P}_{1}$. Par contraposée, $\nu_{p}$ est pair.
+		\begin{equation}
+			\boxed{\text{D'où la réciproque.}}
+		\end{equation}
 	\end{enumerate}
-\end{solution}
+\end{proof}

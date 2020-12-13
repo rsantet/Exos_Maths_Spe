@@ -1,6 +1,6 @@
 \section{Réduction des endomorphismes}
 
-\begin{solution}
+\begin{proof}
 	Si on a (i), soit $x$ un vecteur propre associé à $\rho(u)=\rho e^{\mathrm{i}\theta}$. On a $\Vert u(x)\Vert=\Vert\rho(u) x\Vert=\rho(u)\Vert x\Vert$ et comme $x\neq0$, on a $\rho(u)\leqslant\vertiii{\rho(u)}<1$ d'où (ii).
 
 	Si (ii), on utilise la décomposition de Dunford $u=n+d$ avec $n$ nilpotent, $d$ diagonalisable et $dn=nd$. Soit $m=\dim(E)$. Pour tout $p\geqslant m$, on a 
@@ -22,13 +22,13 @@
 	et on choisit
 	$$\varepsilon<\frac{1-\rho(u)}{\underbrace{m-1}_{>0}}$$
 	d'où $\vertiii{u}<1$ et donc on a (i) et finalement on a bien l'équivalence.
-\end{solution}
+\end{proof}
 
 \begin{remark}
 	$u\mapsto\rho(u)$ n'est pas une norme car pour $u$ nilpotente non nulle, $\rho(u)=0$.
 \end{remark}
 
-\begin{solution}
+\begin{proof}
 	Supposons (i), soit $Y$ un vecteur propre de $A$ avec $AY=\lambda Y$ pour $\lambda\in\C$. Pour tout $k\in\N,BA^{k}Y=\lambda^{k}BY$ et il existe $k_{0}\in\N$ tel que $\lambda^{k_{0}}BY\neq0$ et $BY\neq0$ donc on a (ii).
 
 	Si (ii), supposons qu'il existe $Y\in\C^{n}\setminus\{0\}$ tel que $\varphi=0$. On note 
@@ -57,4 +57,4 @@
 		&=0
 	\end{align*}
 	Par contraposée, on a bien ce qu'il faut, d'où l'équivalence.
-\end{solution}
+\end{proof}

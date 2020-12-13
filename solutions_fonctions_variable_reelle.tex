@@ -1,6 +1,6 @@
 \section{Fonction d'une variable réelle}
 
-\begin{solution}
+\begin{proof}
 	Tout d'abord, $\deg(L_{n})=n$ et  son coefficient dominant et $\frac{(2n)!}{2^{n}(n!)^{2}}$.
 	\begin{enumerate}
 		\item Soit $f\in\mathcal{C}^{0}([0,1],\R)$. $-1$ et $1$ sont racines d'ordre $n$ de $P_{n}$ donc pour tout $k\in\{0,\dots,n-1\}$ $P_{n}^{(k)}(-1)=P_{n}^{(k)}(-1)=0$. Ainsi, on a par intégrations par parties successives:
@@ -53,9 +53,9 @@
 		\end{align*}
 		donc $\frac{\alpha_{n,n-2}}{\alpha_{n,n}}=\frac{n-1}{n}$. D'où le résultat.
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On forme \function{g}{[a,b]}{\R}{x}{\underbrace{\Delta f(x_{0},\dots,x_{n-1},x)}_{\varphi(x)}-\underbrace{\prod_{i=0}^{n-1}(x-x_{i})A}_{P(x)}}
 	On a $g(x_{n})=0$. On suppose les $(x_{i})_{1\leqslant i\leqslant n}$ distincts, et on pose 
 	$$A=\frac{V(x_{0},\dots,x_{n})}{\prod_{i=0}^{n-1}(x_{n}-x_{i})}$$
@@ -68,9 +68,9 @@
 	$$\varphi^{(n)}(x)=f^{(n)}(x)\prod_{0\leqslant j<i\leqslant n-1}(x_{j}-x_{i})$$
 	et en reportant, on a 
 	$$\frac{f^{(n)}(\xi)}{n!}=\frac{A}{\prod_{0\leqslant i<j\leqslant n-1}(x_{j}-x_{i})}=\Delta f(x_{0},\dots,x_{n})$$
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On utilise le développement de Taylor avec reste intégral.
 	$$f(0)=f\Bigl(\frac{1}{2}\Bigr)-\frac{1}{2}f'\Bigl(\frac{1}{2}\Bigr)+\int_{\frac{1}{2}}^{0}-tf''(t)dt$$
 	et de même
@@ -84,9 +84,9 @@
 		&=\frac{1}{4}
 	\end{align*}
 	Et c'est atteint pour $f(t)=\frac{t^{2}}{4}$.
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Pour tout $(x,h)\in\R^{2}$, $f(x+h)-f(x-h)=2hf'(x)$ donc 
 	\begin{equation}
 		\label{eq:7.1}
@@ -97,9 +97,9 @@
 	pour tout $(x,h)\in\R^{2}$ donc $f''$ est constante et $f$ est polynômiale de degré 2.
 
 	Réciproquement, si $f(x)=ax^{2}+bx+c$, on a bien la relation de l'énoncé.
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Soit $a>0$, \function{\tau_{a}}{\R}{]a,+\infty[}{x}{\frac{f(x)-f(a)}{x-a}}
@@ -111,9 +111,9 @@
 		$$\frac{\varphi(y)-\varphi(x)}{y-x}=\frac{f(y)-f(x)}{y-x}-l\leqslant0$$
 		Donc $\varphi$ est décroissante et $\lim\limits_{x\to+\infty}\varphi(x)\in\overline{\R}$ existe.
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item On forme \function{g}{[0,1]}{\R}{x}{\frac{1}{\frac{1}{p}+x}}
@@ -151,9 +151,9 @@
 		donc 
 		$$v_{n}\underset{n\to+\infty}{\sim}\frac{f''(0)p}{n(p+1)}$$
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Supposons que $f'$ ne tend pa vers 0 en $+\infty$: il existe $\varepsilon_{0}>0,\forall A>0,\exists x_{A}\geqslant A,\vert f'(x_{A})\vert\geqslant\varepsilon_{0}>0$. Par continuité uniforme, il existe $\alpha_{0}\geqslant0$, $\forall(x,y)\in(\R_{+})^{2}$, si $\vert x-y\vert\leqslant\alpha_{0}$ alors $\vert f'(x)-f'(y)\vert\leqslant\frac{\varepsilon_{0}}{2}$. Alors pour tout $t\in[x_{A}-\alpha,x_{A}+\alpha]$, on a 
 	$$\vert f'(t)\vert\geqslant \vert f'(x_{A})\vert-\vert f'(x_{A})-f'(t)\vert\geqslant\varepsilon_{0}-\frac{\varepsilon_{0}}{2}\geqslant\frac{\varepsilon_{0}}{2}$$
 	et pour $A=n$, pour tout $n\in\N,\exists x_{n}\geqslant n,\forall t\in[x_{n}-\alpha,x_{n}+\alpha],\vert f'(t)\vert\geqslant\frac{\varepsilon_{0}}{n}$. D'après le théorème des valeurs intermédiaires, $f'$ est de signe constant sur $[x_{n}-\alpha,x_{n}+\alpha]$. Quitte à changer $f$ en $-f$, on peut supposer qu'il existe une infinité de $n\in\N$ tels que $f'>0$ sur les $[x_{n}-\alpha,x_{n}+\alpha]$. Alors
@@ -168,9 +168,9 @@
 	$$f(x)=\frac{\sin(x^{2})}{x}\xrightarrow[x\to+\infty]{}0$$
 	car $\vert f(x)\vert\leqslant\frac{1}{x}$ et 
 	$$f'(x)=\underbrace{-\frac{1}{x^{2}}\sin(x^{2})}_{\xrightarrow[x\to+\infty]{}0}+\underbrace{\frac{2x\cos(x^{2})}{x}}_{\text{n'a pas de limite en }+\infty}$$
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	Soit $x\in\R$ et $h\neq0$, on a 
 	$$\frac{f(x+h)-f(x)}{h}=g(x+\frac{h}{2})\xrightarrow[h\to0]{}g(x)$$
 	par continuité de $g$. Donc $f$ est dérivable et $f'=g$. Par ailleurs, pour $y=\frac{1}{2}$, on a 
@@ -182,9 +182,9 @@
 	Donc $f''$ est constante donc $f$ est un polynôme de degré plus petit que 2.
 
 	Réciproquement, on vérifie que ces fonctions marchent (avec $f'=g$).
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	On a 
 	$$S_{n}=\sum_{k=1}^{n-1}\frac{1}{2}(f(k)+f(k+1))-\int_{k}^{k+1}f(t)dt$$
 	On note $F(x)=\int_{1}^{x}f(t)dt$ de classe $\mathcal{C}^{2}$.
@@ -203,9 +203,9 @@
 	et 
 	$f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u)\leqslant f'(k+1)-f'(k)$ d'où 
 	$$S_{n}\leqslant\underbrace{\int_{0}^{\frac{1}{2}}udu}_{=\frac{1}{8}}(f'(n)-f'(1))$$
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item D'après l'inégalité de Taylor-Lagrange, on a 
@@ -256,9 +256,9 @@
 		$$\Vert f^{(j)}(x)\Vert\leqslant\sum_{i=1}^{n}\vert\alpha_{i}\vert\Bigl(\frac{n}{n!}M_{n}+M_{0}\Bigr)$$
 		Donc $f^{(j)}$ est bornée pour tout $j\in\{1,\dots,n-1\}$.
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item 
@@ -297,9 +297,9 @@
 		\end{pmatrix}$$
 		donc $\Vert\gamma'(t)\Vert=R$ et $l(\gamma)=2\pi R$.
 	\end{enumerate}
-\end{solution}
+\end{proof}
 
-\begin{solution}
+\begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Pour tout $t\in I$, on a 
@@ -331,4 +331,4 @@
 		$$e^{\mathrm{i}\theta(t)}=e^{-b(t)}e^{\mathrm{i}a(t)}$$
 		donc $b(t)=0$ et $\theta(t)\in\R$.
 	\end{enumerate}
-\end{solution}
+\end{proof}

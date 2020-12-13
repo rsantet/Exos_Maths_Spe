@@ -10,13 +10,13 @@
 
 %% Couleur
 \usepackage{xcolor}
-\definecolor{persianplum}{rgb}{0.44, 0.11, 0.11}
+\definecolor{bluearmy}{RGB}{16, 66, 146}
 
 %% Référence
 \usepackage[breaklinks]{hyperref}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=persianplum,
+	linkcolor=bluearmy,
 	filecolor=blue,
 	citecolor=black,      
 	urlcolor=cyan,
@@ -34,13 +34,15 @@
 \evensidemargin=-1.00cm
 \parindent=1cm
 \topmargin=-2cm
-\setlength{\parindent}{4em}
+\setlength{\parindent}{2em}
 \setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.5}
 
 %% Théorème
 \usepackage{amsthm}
-\newtheorem{solution}{Solution}[section]
+\renewcommand{\qedsymbol}{\hfill$\blacksquare$}
+\newcounter{proofcounter}[section]
+\addto\captionsfrench{\renewcommand\proofname{\stepcounter{proofcounter}\color{bluearmy}\emph{\textbf{Solution~\thesection.\theproofcounter}}}}
 \newtheorem{remark}{Remarque}[section]
 \numberwithin{equation}{section}
 
@@ -50,7 +52,7 @@
 \newcommand{\N}{\mathbb{N}} \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\U}{\mathbb{U}} \newcommand{\E}{\mathbb{E}}
 \newcommand{\M}{\mathcal{M}} \renewcommand{\L}{\mathcal{L}}
-\renewcommand{\P}{\mathbb{P}} \newcommand{\im}{\emph{Im}}
+\renewcommand{\P}{\mathbb{P}} \newcommand{\im}{\mathrm{Im}}
 \renewcommand{\i}{\mathrm{i}}
 \DeclareMathOperator{\sgn}{sgn} \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\rg}{rg} \DeclareMathOperator{\Tr}{Tr}
@@ -68,7 +70,7 @@
 	$$
 }
 
-\includeonly{solutions_probabilites}
+\includeonly{solutions_algebre_generale}
 
 \begin{document}
 
