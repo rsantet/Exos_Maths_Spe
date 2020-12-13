@@ -352,3 +352,120 @@
         \boxed{p_{n}=\sum_{k=1}^{n}\frac{(-1)^{k-1}}{k!}\xrightarrow[n\to+\infty]{}\sum_{k=1}^{+\infty}\frac{(-1)^{k-1}}{k!}=-\left(\frac{1}{e}-1\right)=1-\frac{1}{e}}
     \end{equation}
 \end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item 
+        \begin{equation}
+            \boxed{p_{N}(0)=0,p_{N}(1)=1}    
+        \end{equation}
+
+        \item Pour tout $n\in\left\llbracket 1,N-1\right\rrbracket$, on a 
+        \begin{equation}
+            p_{N}(n)=p\times p_{N}(n+1)+(1-n)\times p_{N}(n-1)
+        \end{equation}
+        et l'équation caractéristique est $X^{2}-\frac{1}{p}X+\frac{1-p}{p}$ et le discriminant vaut $\Delta=\left(\frac{1}{p}-2\right)^{2}\geqslant0$. Donc les solutions sont $r_{1}=1$ et $r_{2}=\frac{q}{p}$. Ainsi, pour tout $n\in\left\llbracket 1,N-1\right\rrbracket$,
+        \begin{equation}
+            p_{N}(n)=\lambda+\mu\left(\frac{q}{p}\right)^{n}
+        \end{equation}
+        avec $\left(\lambda,\mu\right)\in\R^{2}$.
+        
+        Avec les conditions initiales, on trouve 
+        \begin{equation}
+            \left\{
+                \begin{array}[]{rcl}
+                    \mu &= &\frac{1}{\left(\frac{q}{p}\right)^{N}-1}\\
+                    \lambda &= &\frac{1}{1-\left(\frac{q}{p}\right)^{N}}
+                \end{array}
+            \right.
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{
+            p_{N}(n)=\frac{1-\left(\frac{q}{p}\right)^{n}}{1-\left(\frac{q}{p}\right)^{N}}\xrightarrow[N\to+\infty]{}
+            \left\{
+                \begin{array}[]{ll}
+                    0 &\text{si }q>p\text{ i.e.~}p<\frac{1}{2}\\
+                    1-\left(\frac{q}{p}\right)^{n} &\text{si }q<p\text{ i.e.~}p>\frac{1}{2}
+                \end{array}
+            \right.}
+        \end{equation}
+        On vérifie d'ailleurs que l'arrêt en temps fini est presque sûr: $p_{N}(n)+q_{N}(n)=1$ (utiliser la relation de récurrence et les conditions initiales).
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On note $A_{n}$:`la première boule blanche apparaît au $n$-ième tirage' et $B_{n}$:`on tire une boule noire au $n$-ième tirage'. On a 
+        \begin{equation}
+            A_{n}=\bigcap_{i=1}^{n-1}B_{i}\bigcap\overline{B_{n}}
+        \end{equation}
+        ce qui implique donc 
+        \begin{align}
+            \P\left(A_{n}\right)
+            &=p_{n}\\
+            &=\P\left(B_{1}\right)\P_{B_{1}}\left(B_{2}\right)\dots\P_{B_{1}\cap \dots \cap B_{n-1}}\left(\overline{B_{n}}\right)\\
+            &=\frac{1}{2}\times\frac{2}{3}\times\dots\times\frac{n-1}{n}\times\frac{1}{n+1}\\
+            &=\boxed{\frac{1}{n(n+1)}}
+        \end{align}
+        et par sommation téléscopique, on a 
+        \begin{equation}
+            \boxed{\sum_{n=1}^{+\infty}p_{n}=1}
+        \end{equation}
+        Donc on tire une boule blanche presque sûrement.
+
+        \item On utilise le même principe: pour $n\geqslant1$,
+        \begin{equation}
+            \boxed{\P\left(A_{n}\right)=p_{n}=\frac{1}{2}\times\frac{c+1}{c+2}\times\frac{2c+1}{2c+2}}\times\dots\times\frac{\left(n-2\right)c+1}{\left(n-2\right)c+2}\times\frac{1}{\left(n-1\right)c+2}
+        \end{equation}
+        Comme les $\left(A_{n}\right)_{n\in\N^{*}}$ sont incompatibles, on a 
+        \begin{equation}
+            \sum_{n\geqslant1}\P\left(A_{n}\right)=\P\left(\bigcup_{n\geqslant1} A_{n}\right)\leqslant1
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{\text{la série converge.}}
+        \end{equation}
+
+        On peut montrer à nouveau que le tirage d'une boule blanche reste presque sûr. En effet, on a 
+        \begin{equation}
+            \frac{p_{n+1}}{p_{n}}=\frac{nc+2-c-1}{nc+2}=1-\frac{c+1}{nc+2}=a-\frac{c+1}{nc}+\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)
+        \end{equation}
+        D'après la règle de Raabe-Duhamel, il existe $K>0$ tel que 
+        \begin{equation}
+            p_{n}\underset{n\to+\infty}{\sim}\frac{K}{n^{\frac{c+1}{c}}}
+        \end{equation}
+        avec $\frac{c+1}{c}>1$. Notamment, $\lim\limits_{n\to+\infty}np_{n}=0$. Comme 
+        \begin{equation}
+            \left(nc+2\right)p_{n+1}=\left(\left(n-1\right)c+1\right)p_{n}
+        \end{equation}
+        on a 
+        \begin{align}
+            \sum_{n=1}^{+\infty}ncp_{n+1}-\left(n-1\right)cp_{n}
+            &=\sum_{n=1}^{+\infty}p_{n}-2p_{n+1}\\
+            &=\sum_{n=1}^{+\infty}p_{n}-2\left(\sum_{n=1}^{+\infty}p_{n}-u_{1}\right)
+        \end{align}
+        La première somme est téléscopique et vaut 0, et $u_{1}=\frac{1}{2}$ donc on trouve bien 
+        \begin{equation}
+            \sum_{n=1}^{+\infty}p_{n}=1
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    On peut contourner la règle de Raabe-Duhamel. On écrit 
+    \begin{align}
+        \ln\left(p_{n+1}\right)
+        &=-\ln\left(2\right)+\sum_{k=1}^{n-1}\ln\left(\frac{kc+1}{kc+2}\right)-\ln\left(nc+2\right)\\
+        &=\sum_{k=1}^{n-1}\ln\left(1-\frac{1}{kc+2}\right)-\ln\left(n\right)+\ln\left(c\right)-\ln(2)+\underset{n\to+\infty}{o}\left(1\right)\\
+        &=-\sum_{k=1}^{n-1}\left(\frac{1}{kc}+\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right)\right)-\ln\left(n\right)-A+\underset{n\to+\infty}{o}\left(1\right)\\
+        &=-\frac{1}{c}\left(\ln\left(n\right)+\gamma+\underset{n\to+\infty}{o}\left(1\right)\right)-\ln\left(n\right)-A+\underset{n\to+\infty}{o}\left(1\right)\\
+        &=-\ln\left(n\right)\left(1+\frac{1}{c}\right)+A'+\underset{n\to+\infty}{o}\left(1\right)
+    \end{align}
+    Ainsi, 
+    \begin{equation}
+        p_{n+1}\underset{n\to+\infty}{\sim}\frac{K}{n^{1+\frac{1}{c}}}
+    \end{equation}
+\end{remark}
