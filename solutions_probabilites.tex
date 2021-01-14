@@ -468,4 +468,153 @@
     \begin{equation}
         p_{n+1}\underset{n\to+\infty}{\sim}\frac{K}{n^{1+\frac{1}{c}}}
     \end{equation}
+    donc la série converge.
+\end{remark}
+
+\begin{proof}
+    On a 
+    \begin{equation}
+        u_{n+1}=q\times 1+p\times u_{n}^{2}
+    \end{equation}
+    car soit la bactérie meure au premier jour, soit les deux descendants n'ont plus de lignée au $n$-ième jour (on a $u_{n}^{2}$ car les lignées des deux descendants sont indépendantes).
+
+    Soit \function{f}{[0,1]}{\R}{x}{q+px^{2}}
+    Si $x\in[0,1]$, on a $f(x)\in[0,1]$ car $f(1)=q+p=1$. Soit $g(x)=f(x)-x$. On a 
+    \begin{equation}
+        g(x)=p\left(x-1\right)\left(x-\frac{p}{q}\right)
+    \end{equation}
+    \begin{itemize}
+        \item Si $1\leqslant\frac{p}{q}$: on a pour tout $x\in[0,1[$, $g(x)>0$ et $g(1)=0$. Donc si 
+        \begin{equation}
+            \boxed{\lim\limits_{n\to+\infty}u_{n}=1}
+        \end{equation}
+        car c'est une suite croissante, majorée, convergente vers le point fixe 1.
+
+        \item Si $1>\frac{q}{p}$: si $x\in\left[0,\frac{q}{p}\right[$, on a $g(x)>0$, si $x\in\left]\frac{q}{p},1\right[$, $g(x)<0$ et $g\left(\frac{q}{p}\right)=0$.
+        
+        Par récurrence, comme $u_{0}=0$, pour tout $n\in\N$, $u_{n}\in\left[0,\frac{q}{p}\right[$ donc (suite croissante majorée qui converge vers le point fixe $\frac{q}{p}$) donc 
+        \begin{equation}
+            \boxed{\lim\limits_{n\to+\infty}u_{n}=\frac{q}{p}}
+        \end{equation}
+    \end{itemize}
+
+    On a bien 
+    \begin{equation}
+        \boxed{\lim\limits_{n\to+\infty}u_{n}=\min\left(1,\frac{q}{p}\right)}
+    \end{equation}
+
+    Ainsi, la lignée s'éteint presque sûrement si et seulement si $\frac{q}{p}\geqslant1$ i.e.~$p\leqslant\frac{1}{2}$. Sinon, la probabilité d'extinction est $\frac{q}{p}$.
+
+    Si $p=\frac{1}{2}$, on pose $\varepsilon_{n}=1-u_{n}\xrightarrow[n\to+\infty]{}0$. On a 
+    \begin{equation}
+        u_{n+1}=\frac{1}{2}\left(1+u_{n}^{2}\right)
+    \end{equation}
+    d'où 
+    \begin{equation}
+        \varepsilon_{n+1}=1-u_{n+1}=\varepsilon_{n}\left(1-\frac{\varepsilon}{2}\right)
+    \end{equation}
+
+    Soit $\alpha\in\R$, on a 
+    \begin{equation}
+        \varepsilon_{n+1}^{\alpha}=\varepsilon_{n}^{\alpha}\left(1-\frac{\varepsilon_{n}}{2}\right)^{\alpha}=\varepsilon_{n}^{\alpha}-\frac{\alpha\varepsilon_{n}^{\alpha+1}}{2}+\underset{n\to+\infty}{o}\left(\varepsilon_{n}^{\alpha+1}\right)
+    \end{equation}
+
+    On choisit $\alpha=-1$, on a
+    \begin{equation}
+        \frac{1}{\varepsilon_{n+1}}-\frac{1}{\varepsilon_{n}}\xrightarrow[n\to+\infty]{}\frac{1}{2}
+    \end{equation}
+
+    D'après le lemme de Césaro, on a $\frac{1}{\varepsilon_{n}}\underset{n\to+\infty}{\sim}\frac{n}{2}$ d'où 
+    \begin{equation}
+        \boxed{\varepsilon_{n}\underset{n\to+\infty}{\sim}\frac{2}{n}}
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On note $E_{n}$:`la puce est en $0$ à l'instant $2n$' et $B_{n}$:`la puce repasse pour la première fois en $0$ à l'instant $2n$'.
+
+    Soit $E$:`la puce repasse par l'origine'. On a 
+    \begin{equation}
+        E=\bigcup_{n\in\N^{*}}E_{n}=\bigcup_{n\in\N^{*}}B_{n}
+    \end{equation}
+    où les $B_{n}$ sont disjoints donc $\P(E)=\sum_{n\in\N^{*}}\P(B_{n})$.
+
+    On a 
+    \begin{equation}
+        \P(E_{n})=\binom{2n}{n}p^{n}q^{n} 
+    \end{equation}
+    On écrit alors 
+    \begin{equation}
+        E_{n}=\bigcup_{1\leqslant k\leqslant n}\left(E_{n}\cap B_{k}\right)
+    \end{equation}
+    où la réunion est disjointe (on partitionne selon le premier passage en 0). D'où 
+    \begin{equation}
+        u_{n}=\P(E_{n})=\sum_{k=1}^{n}\P(B_{k})\P_{B_{k}}(E_{n})
+    \end{equation}
+    On pose $b_{k}=\P(B_{k})$ et on a $\P_{B_{k}}(E_{n})=\P(E_{n-k})=u_{n-k}$: c'est comme si on repartait de 0 à l'étape $k$. On a donc $u_{0}=\P(E_{0})=1$ et pour tout $n\geqslant1$,
+    \begin{equation}
+        u_{n}=\sum_{k=1}^{n}b_{k}u_{n-k}=\sum_{k=0}^{n}b_{k}u_{n-k}
+    \end{equation}
+    en posant $b_{0}=0$.
+
+    Or, on a 
+    \begin{equation}
+        u_{n}=\frac{(2n)!}{(n!)^{2}}(pq)^{n}\underset{n\to+\infty}{\sim}\frac{\sqrt{4\pi n}\left(\frac{2n}{e}\right)^{2n}}{2\pi n\left(\frac{n}{e}\right)^{2n}}(pq)^{n}
+    \end{equation}
+    d'où 
+    \begin{equation}
+        u_{n}\underset{n\to+\infty}{\sim}\frac{(4pq)^{n}}{\sqrt{\pi n}}
+    \end{equation}
+    et on a $4pq<1$ si et seulement si $p\neq\frac{1}{2}$ donc $\sum_{n\in\N}u_{n}$ converge si et seulement si $p\neq\frac{1}{2}$.
+
+    Dans le cas $p\neq\frac{1}{2}$, on pose $S=\sum_{n=0}^{+\infty}u_{n}$. On a 
+    \begin{align}
+        \sum_{n=1}^{+\infty}u_{n}
+        &=S-u_{0}\\
+        &=S-1\\
+        &=\sum_{n=1}^{+\infty}\sum_{k=0}^{n}b_{k}u_{n-k}\\
+        &=\sum_{n=0}^{+\infty}\sum_{k=0}^{n}b_{k}u_{n-k}\\
+        &=\left(\sum_{n=0}^{+\infty}b_{n}\right)\left(\sum_{l=0}^{+\infty}u_{l}\right)
+        &=S\sum_{n=0}^{+\infty}b_{n}
+    \end{align}
+    donc 
+    \begin{equation}
+        \boxed{\sum_{n=0}^{+\infty}b_{n}=\P(E)=\frac{S-1}{S}<1}
+    \end{equation}
+
+    Comme dans ce cas, on a $\sum_{n\geqslant1}\P(E_{n})<\infty$, le lemme de Borel-Cantelli indique que le nombre de retours à l'origine est presque sûrement fini.
+\end{proof}
+
+\begin{remark}
+
+    Avec les séries entières, on peut vérifier que 
+    \begin{equation}
+        S=\frac{1}{\sqrt{1-4pq}}
+    \end{equation}
+    d'où
+    \begin{equation}
+        \P(E)=1-\sqrt{1-4pq}
+    \end{equation}
+
+    Dans le cas $p=\frac{1}{2}$, $\sum_{n\in\N^{*}}u_{n}$ diverge. Comme on a pour $p\neq\frac{1}{2}$, on a 
+    \begin{equation}
+        \sum_{n=0}^{+\infty}b_{n}(p)=1-\sqrt{4p(1-p)}
+    \end{equation}
+    et $b_{n}(p)\leqslant b_{n}\left(\frac{1}{2}\right)$, on peut passer à la limite donc 
+    \begin{equation}
+        \sum_{n=0}^{+\infty}b_{n}\left(\frac{1}{2}\right)=1
+    \end{equation}
+    et la retour en 0 est presque sûr si $p=\frac{1}{2}$.
+\end{remark}
+
+\begin{remark}
+    Pour montrer que 
+    \begin{equation}
+        l(x)=\sum_{n=0}^{+\infty}\binom{2n}{n}x^{n}=\frac{1}{1-4x}
+    \end{equation}
+    lorsque $0\leqslant x<\frac{1}{4}$. On effectue un produit de Cauchy
+    \begin{equation}
+        l(x)^{2}=\sum_{n=0}^{+\infty}\left(\sum_{k=0}^{n}\binom{2k}{k}\binom{2n-2k}{n-k}\right)x^{n}=\sum_{n=0}^{+\infty}4^{n}x^{n}=\frac{1}{1-4r}
+    \end{equation}
+    en dénombrant les parties d'un ensemble à $2n$ éléments séparées en $n$ éléments dans $A$ et $n$ éléments dans $B$.
 \end{remark}
