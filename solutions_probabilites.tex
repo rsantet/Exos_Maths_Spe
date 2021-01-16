@@ -618,3 +618,900 @@
     \end{equation}
     en dénombrant les parties d'un ensemble à $2n$ éléments séparées en $n$ éléments dans $A$ et $n$ éléments dans $B$.
 \end{remark}
+
+\begin{proof}
+    On note $P_{n}$:`on obtient pile au $n$-ième lancer' et $F_{n}$:`on obtient face au $n$-ième lancer'.
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \boxed{a_{1}=0,a_{2}=p^{2},a_{3}=qp^{2}}
+        \end{equation}
+        \item Pour $n\geqslant4$, on a 
+        \begin{equation}
+            A_{n}=\bigcap_{k=1}^{n-3}\overline{A_{k}}\bigcap F_{n-2}\bigcap P_{n-1}\bigcap P_{n}
+        \end{equation}
+        Comme les évènements concernant des lancers différents sont supposés indépendants, on a 
+        \begin{equation}
+            a_{n}=\P\left(\bigcap_{k=1}^{n-3}\overline{A_{k}}\right)qp^{2}
+        \end{equation}
+        On écrit 
+        \begin{equation}
+            \P\left(\bigcap_{k=1}^{n-3}\overline{A_{k}}\right)=1-\P\left(\bigcup_{k=1}^{n-3}A_{k}\right)=1-\sum_{k=1}^{n-3}a_{k}
+        \end{equation}
+        car les $A_{k}$ sont incompatibles. Ainsi, 
+        \begin{equation}
+            a_{n}=p^{2}q\left(1-\sum_{k=1}^{n-3}a_{k}\right)
+        \end{equation}
+        et $\sum_{k\geqslant1}a_{k}$ converge puisque 
+        \begin{equation}
+            \sum_{k=1}^{N}a_{k}\leqslant\P\left(\bigcup_{k\geqslant1}\right)\leqslant1
+        \end{equation}
+
+        Pour calculer $a_{n}$, on remarque que 
+        \begin{equation}
+            B_{n}=\bigcap_{k=1}^{n}\overline{A_{k}}
+        \end{equation}
+        est exactement l'évènement `on n'a pas deux piles consécutifs dans les lancers $\lbrace1,\dots,n\rbrace$'.
+
+        Si $P_{n}$, on a nécessairement $F_{n-1}$ et $B_{n-2}$, si $F_{n}$ on a nécessairement $B_{n-1}$. Ainsi,
+        \begin{equation}
+            \P(B_{n})=qp\P(B_{n-2})+q\P(B_{n-1})
+        \end{equation}
+
+        On a l'équation caractéristique $X^{2}-qX-pq$, le discriminant est $\Delta=q^{2}+4pq>0$. On en déduit les racines $\lambda_{1}=\frac{q+\sqrt{\Delta}}{2}$ et $\lambda_{2}=\frac{q-\sqrt{\Delta}}{2}$, et on utilise les conditions aux limites $\P(B_{0})=\P(B_{1})=1$ et $\P(B_{n})=A\lambda_{1}^{n}+B\lambda_{2}^{n}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    La probabilité d'obtenir une séquence fixée de longueur $N$ est égale à 1. En effet, on pose pour tout $n\in\N$, $A_{n}$:`la séquence apparaît entre les lancers $nN+1$ et $(n+1)N$'. Les $A_{n}$ sont clairement indépendants et on a $\P(A_{n})=\P(A_{1})=\alpha>0$ et $\sum_{n\geqslant1}\P(A_{n})$ diverge. Notamment,
+    \begin{equation}
+        \P\left(\overline{\bigcup_{n\in\N}A_{n}}\right)=\P\left(\bigcap_{n\in\N}\overline{A_{n}}\right)=\lim\limits_{k\to+\infty}\P\left(\bigcap_{n=0}^{k}\overline{A_{n}}\right)=\lim\limits_{k\to+\infty}\prod_{n=0}^{k}(1-\alpha)=0
+    \end{equation}
+    On a donc presque sûrement la séquence. D'après le lemme de Borel-Cantelli, on a presque sûrement une infinité de fois la séquence.
+\end{remark}
+
+\begin{proof}
+    On note $N_{n}$:`on tire une boule noire au $n$-ième tirage', et $B_{n}$:`on tire une boule blanche au $n$-ième tirage'.
+    
+    On a 
+        \begin{equation}
+            \P_{N}(n)=\P_{B_{1}\cap\dots\cap B_{n}}(B_{n+1})=\frac{\P(B_{1}\cap\dots\cap B_{n+1})}{\P(B_{1}\cap\dots\cap B_{n})}
+        \end{equation}
+        Or 
+        \begin{equation}
+            \P(B_{1}\cap\dots\cap B_{n})=\sum_{k=0}^{N}\frac{1}{N+1}\left(\frac{k}{n}\right)^{n}\xrightarrow[N\to+\infty]{}\int_{0}^{1}x^{n}dx=\frac{1}{n+1}
+        \end{equation}
+        car pour $k$ fixé, $\frac{1}{N+1}$ est la probabilité d'avoir l'urne $k$ et $\left(\frac{k}{n}\right)^{n}$ est la probabilité d'avoir une blanche sachant qu'on a pris l'urne $k$, et la limite vient d'une somme de Riemann.
+        
+        Donc 
+        \begin{equation}
+            \boxed{\P_{N}(n)\xrightarrow[N\to+\infty]{}\frac{\frac{1}{n+2}}{\frac{1}{n+1}}=\frac{n+1}{n+2}}
+        \end{equation}
+\end{proof}
+
+\begin{remark}
+    Pour $n=0$, on a 
+    \begin{equation}
+        \P_{N}(0)=\frac{\frac{1}{N}\sum_{k=0}^{N}k}{N+1}=\frac{1}{2}
+    \end{equation}
+\end{remark}
+
+\begin{proof}
+    Si cette probabilité est définie, on note $p$ la probabilité recherchée. Soit $d\in\N^{*}$, pour tout $(n_{1},n_{2})\in\left(\N^{*}\right)^{2}$, on a $n_{1}\wedge n_{2}=d$ si et seulement si $n_{1}=dn_{1}'$ et $n_{2}=dn_{2}'$ avec $n_{1}'\wedge n_{2}'=1$. Ainsi, la probabilité pour que $n_{1}\wedge n_{2}=d$ est $\frac{p}{d^{2}}$ et 
+    \begin{equation}
+        \sum_{d\geqslant1}\frac{p}{d^{2}}=1
+    \end{equation}
+    d'où 
+    \begin{equation}
+        \boxed{p=\frac{6}{\pi^{2}}}
+    \end{equation}
+\end{proof}
+
+\begin{remark}
+    Pour justifier un peu plus précisément, on note que dans l'ensemble $\llbracket 1,dN\rrbracket$, la proportion de multiplies de $d$ est de $\frac{1}{d}$, donc sur $\llbracket 1,dN\rrbracket^{2}$, la proportion de couples de multiples de $d$ est  $\frac{1}{d^{2}}$.
+\end{remark}
+
+\begin{proof}
+
+    On note $q_{n}=\P(X_{n}=1)$ (qui détermine la loi de $X_{n}$ car c'est une variable de Bernouilli). On a $q_{1}=p_{2}$ et pour $n\geqslant2$,
+    \begin{equation}
+        q_{n}=p_{1}q_{n-1}+p_{2}(1-q_{n-1})=(p_{1}-p_{2})q_{n-1}+p_{2}
+    \end{equation}
+    La relation est vraie pour $n=1$ en posant $q_{0}=0$.
+
+    \begin{itemize}
+        \item Si $p_{1}=1$ et $p_{2}=0$, on a $q_{n}=q_{n-1}+p_{2}$ d'où 
+        \begin{equation}
+            \boxed{q_{n}=0}
+        \end{equation}
+
+        \item Si $(p_{1},p_{2})\neq(1,0)$, on a $p_{1}-p_{2}\neq1$ donc 
+        \begin{align}
+            q_{n}
+            &=(p_{1}-p_{2})^{n}\times \frac{-p_{2}}{1-(p_{1}-p_{2})}+\frac{p_{2}}{1-(p_{1}-p_{2})}\\
+            &=\boxed{\frac{p_{2}}{1-(p_{1}-p_{2})}\left(1-\left(p_{1}-p_{2}\right)^{n}\right)=\E(X_{n})}
+        \end{align}
+
+        \item Si $p_{1}-p_{2}=-1$, i.e.~$p_{1}=0$ et $p_{2}=1$, 
+        \begin{equation}
+            \boxed{q_{n}\text{ n'a pas de limite.}}
+        \end{equation}
+
+        \item Si $p_{1}-p_{2}\neq-1$,
+        \begin{equation}
+            \boxed{q_{n}\xrightarrow[n\to+\infty]{}\frac{p_{2}}{1-(p_{2}-p_{1})}}
+        \end{equation}
+    \end{itemize}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $k\in\llbracket1,6\rrbracket$, on veut
+        \begin{equation}
+            \P(X\leqslant k)=\P\left(\left(D_{1}\leqslant k\right)\cap\left(D_{2}\leqslant k\right)\right)=\P(D_{1}\leqslant k)\P(D_{2}\leqslant k)=\frac{k^{2}}{36}
+        \end{equation}
+
+        Or on a (avec $P(X\leqslant 0)=0$)
+        \begin{equation}
+            P(X=k)=P(X\leqslant k)-\P(X\leqslant k-1)=\frac{2k-1}{36}
+        \end{equation}
+        De même, on a $P(Y\geqslant k)=\frac{(7-k)^{2}}{36}$ donc
+        \begin{equation}
+            \P(Y=k)=\frac{13-2k}{36}
+        \end{equation}
+        A chaque fois, on vérifie que $\sum_{k=1}^{6}\P(X=k)=\sum_{k=1}^{6}\P(Y=k)=1$.
+
+        Pour les calculs de variance et d'espérance, on calcule $\sum_{k=1}^{6}k\P(X=k)$ et $\sum_{k=1}^{6}k^{2}\P(X=k)-\left(\sum_{k=1}^{6}k\P(X=k)\right)$, de même pour $Y$.
+
+        \item Soit $(i,j)\in\llbracket1,6\rrbracket^{2}$, si $i<j$ on a $\P((X=i)\cap (Y=j))=0$ mais $P(X=i)\P(Y=j)\neq0$, on n'a donc pas indépendance.
+        
+        \item Si $P(D_{i}=k)=p_{k,i}$, on a 
+        \begin{equation}
+            \P(X\leqslant k)=\left(\sum_{l=1}^{k}p_{l,1}\right)\left(\sum_{l=1}^{k}p_{l,2}\right)=\sum_{1\leqslant l,r\leqslant k}p_{l,1}\times p_{r,2}
+        \end{equation}
+        et on calcule ensuite $P(X=k)=\P(X\leqslant k)-\P(X\leqslant k-1)$ et cela vaut ce que cela vaut.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{align}
+            \sum_{(i,j)\in\N^{2}}
+            &=\sum_{i=0}^{+\infty}\sum_{j=0}^{i}\frac{a^{j}(1-a)^{i-j}}{j!(i-j)!}(b^{i}e^{-b})\\
+            &=\sum_{i=0}^{+\infty}\frac{b^{i}e^{-b}}{i!}\sum_{j=0}^{i}\binom{i}{j}a^{j}(1-a)^{i-j}\\
+            &=\sum_{i=0}^{+\infty}\frac{b^{i}e^{-b}}{i!}\\
+            &=e^{b}e^{-b}\\
+            &=1
+        \end{align}
+        donc la définition est cohérente.
+
+        \item On a 
+        \begin{equation}
+            \boxed{p_{i,\cdot}=\sum_{j=0}^{i}p_{i,j}=\frac{b^{i}e^{-b}}{i!}}
+        \end{equation}
+        et 
+        \begin{align}
+            p_{\cdot,j}
+            &=\sum_{i=j}^{+\infty}\frac{e^{-b}a^{j}}{j!}\left(\frac{b^{i}(1-a)^{i-j}}{(i-j)!}\right)\\
+            &=\frac{e^{-b}a^{j}b^{j}}{j!}\sum_{j=0}^{+\infty}\frac{b^{i}(1-a)^{i}}{i!}\\
+            &=\boxed{\frac{e^{-ab}(ab)^{j}}{j!}}
+        \end{align}
+        On a $p_{i,j}\neq p_{i,\cdot}\neq p_{\cdot,j}$ donc les variables ne sont pas indépendantes.
+
+        \item $Z$ est à valeurs dans $\N$ (car $p_{i,j}=0$ si $i<j$). On a 
+        \begin{align}
+            \P(X-Y=k)
+            &=\sum_{j=0}^{+\infty}\P(X=j+k,Y=j)\\
+            &=\sum_{j=0}^{+\infty}\frac{b^{j+k}e^{-b}a^{j}(1-a)^{k}}{j!k!}\\
+            &=\frac{e^{-b}b^{k}(1-a)^{k}}{k!}\sum_{j=0}^{+\infty}\frac{(ba)^{j}}{j!}\\
+            &=\boxed{\frac{e^{b(a-1)}(b(1-a))^{k}}{k!}}
+        \end{align}
+
+        De plus,
+        \begin{equation}
+            \P(Z=k,Y=j)=\P((X,Y)=(k+j,j))=p_{k+j,j}=\frac{b^{j+k}e^{-b}a^{j}(1-a)^{k}}{j!k!}
+        \end{equation}
+        et
+        \begin{align}
+            \P(Z=k)\P(Y=j))
+            &=\frac{e^{b(a-1)b^{k}(1-a)^{k}}}{k!}\frac{e^{-ab}(ab^{j})}{j!}\\
+            &=\frac{e^{-b}b^{k+j}a^{j}(1-a)^{k}}{k!j!}
+        \end{align}
+        donc $Z$ et $Y$ sont indépendantes.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    On a $X\sim \mathcal{P}(b)$ et $Y\sim\mathcal{P}(ab)$ donc $X$ et $Y$ ont des espérances.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a $S_{n}-S_{n-1}=T_{n}$ pour tout $n\geqslant2$, donc 
+        \begin{equation}
+            \boxed{S_{n}=\sum_{i=1}^{n}T_{i}}
+        \end{equation}
+
+        \item Pour tout $k\in\N^{*}$, comme $T_{n}\sim\mathcal{G}(1-x)$, on a 
+        \begin{equation}
+            \boxed{\P(T_{n}=k)=x^{k-1}(1-x)}
+        \end{equation}
+        et 
+        \begin{equation}
+            \boxed{\E(T_{n})=\sum_{k=1}^{+\infty}kx^{k-1}(1-x)=\frac{1}{1-x}}
+        \end{equation}
+        et 
+        \begin{equation}
+            \boxed{\mathbb{V}(T_{n})=\frac{x}{(1-x)^{2}}}
+        \end{equation}
+
+        \item On a
+        \begin{equation}
+            \boxed{\E(S_{n})=\sum_{i=1}^{n}\E(T_{i})=\frac{n}{1-x}}
+        \end{equation}
+        Comme les $(T_{i})_{1\leqslant i\leqslant n}$ sont indépendants, on a 
+        \begin{equation}
+            \boxed{\mathbb{V}(S_{n})=\sum_{i=1}^{n}\mathbb{V}(T_{i})=\frac{nx}{(1-x)^{2}}}
+        \end{equation}
+
+        Pour $k<n$, on a $\P(S_{n}=k)=0$ et sinon, on a 
+        \begin{equation}
+            \P(S_{n}=k)=\binom{k-1}{n-1}(1-x)^{n}x^{k-n}
+        \end{equation}
+        (choisir les $n-1$ succès parmi $k-1$ épreuves).
+
+        \item On a $\sum_{k=n}^{+\infty}\P(S_{n}=k)=1$ donc 
+        \begin{equation}
+            \boxed{\sum_{k=n}^{+\infty}\binom{k-1}{n-1}x^{k}=\frac{x^{n}}{(1-x)^{n}}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On a $\P(X>n)=\sum_{k=n+1}^{+\infty}$. On pose 
+    \begin{equation}
+        u_{k,n}=
+        \left\lbrace
+            \begin{array}[]{l}
+                \P(X=k)\text{ si k>n}\\
+                0 \text{ sinon}
+            \end{array}
+        \right.
+    \end{equation}
+
+    Alors $\sum_{n\in\N}\P(X>n)$ converge si et seulement si $(u_{k,n})_{(k,n)\in\N^{2}}$ est sommable ($u_{k,n}\geqslant0$) si et seulement si $\sum_{k=1}^{+\infty}\sum_{n=0}^{+\infty}u_{k,n}$ converge (théorème de Fubini). Or 
+    \begin{equation}
+        \sum_{k=1}^{+\infty}\sum_{n=0}^{+\infty}u_{k,n}=\sum_{k=1}^{+\infty}\sum_{n=0}^{k-1}\P(X=k)=\sum_{k=1}^{+\infty}k\P(X=k)
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On cherche $\sup\limits_{k\in\N}\left(\frac{\lambda^{k}}{k!}e^{-\lambda}\right)=\sup\limits_{k\in\N}u_{k}$ avec $u_{k}>$. On a 
+    \begin{equation}
+        \frac{u_{k+1}}{u_{k}}=\frac{\lambda}{k+1}\geqslant 1 
+    \end{equation}
+    si et seulement si $k\leqslant\lambda-1$. On a donc $u_{k}\leqslant u_{k+1}$ si et seulement si $k\leqslant \left\lfloor\lambda\right\rfloor-1$ et le maximum est donc atteint pour $k=\left\lfloor\lambda\right\rfloor$.
+
+    Si $\lambda=n\in\N^{*}$, le maximum vaut 
+    \begin{equation}
+        \frac{n^{n}e^{-n}}{n!}\underset{n\to+\infty}{\sim}\frac{1}{\sqrt{2\pi n}}
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \P(X=k)=\frac{9}{10}\times\frac{8}{9}\times\dots\times\frac{10-(k-1)}{10-(k-2)}\times\frac{1}{10-(k-1)}=\frac{1}{10}
+        \end{equation}
+        donc $X\sim\mathcal{U}\left(\llbracket1,10\rrbracket\right)$ et $Y\sim\mathcal{G}\left(\frac{1}{10}\right)$ donc $\E(X)=\frac{11}{2}$, $\mathbb{V}(X)=\frac{10^{2}-1}{12}=\frac{33}{4}$, $\E(Y)=10$, $\mathbb{V}(Y)=\frac{9}{10}\times100=90$.
+
+        \item Soit $S$ l'événement `le gardien est sobre' et $Z$ compte le nombre d'essais au bout desquels il a réussi. Alors 
+        \begin{equation}
+            \P_{Z\geqslant 9}(5)=\frac{\P(S)\P_{S}(Z\geqslant9)}{\P(Z\geqslant9)}=\frac{\P(S)\P(X\geqslant9)}{\frac{1}{3}\P(Y\geqslant9)+\frac{2}{3}\P(X\geqslant9)}
+        \end{equation}
+        On a $\P(X\geqslant9)=\frac{1}{5}$ et 
+        \begin{equation}
+            \P(Y\geqslant9)=\sum_{n=9}^{+\infty}\left(\frac{9}{10}\right)^{n-1}\times\frac{1}{10}=\left(\frac{9}{10}\right)^{8}
+        \end{equation}
+        d'où 
+        \begin{equation}
+            \boxed{\P_{Z\geqslant9}(5)=\frac{2}{5\times\left(\frac{9}{10}\right)^{8}+2}<\frac{1}{2}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \boxed{N=\frac{n(n+1)}{2}}
+        \end{equation}
+
+        \item Soit $(i,j)\in\llbracket1,n\rrbracket^{2}$, si $i<j$ on a $p_{i,j}=0$ (où $p_{i,j}$ est la loi conjointe). Si $j\leqslant i$, on a
+        \begin{equation}
+            p_{i,j}=\frac{1}{N}=\frac{2}{n(n+1)}
+        \end{equation}
+
+        On a ensuite 
+        \begin{equation}
+            \boxed{p_{i,\cdot}=\sum_{j=1}^{i}\frac{2}{n(n+1)}}=\frac{2i}{n(n+1)}
+        \end{equation}
+        et 
+        \begin{equation}
+            \boxed{p_{j,\cdot}}=\sum_{i=j}^{n}\frac{2}{n(n+1)}=\frac{2(n-j+1)}{n(n+1)}
+        \end{equation}
+
+        \item On calcule 
+        \begin{equation}
+            \boxed{
+                \begin{array}[]{l}
+                    \E(B)=\sum_{i=1}^{n}p_{i,\cdot}=\frac{2}{n(n+1)}\sum_{i=1}^{n}i^{2}=\frac{2n+1}{3}\\
+                    \E(R)=\sum_{j=1}^{n}jp_{\cdot,j}=\frac{2}{n(n+1)}\sum_{j=1}^{n}j(n+1-j)=\frac{n(n+1)^{2}}{2}-\frac{n(n+1)(2n+1)}{6}
+                \end{array}
+            }
+        \end{equation}
+
+        On laisse le reste en calcul facile en utilisant $\mathbb{V}(G)=\mathbb{V}(R)+\mathbb{V}(B)-2\mathrm{cov}(B,R)$ et 
+        \begin{equation}
+            \E(BR)=\sum_{(i,j)\in\llbracket1,n\rrbracket^{2}}ijp_{i,j}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On écrit 
+        \begin{equation}
+            \boxed{\P(X_{n+1}=k)=\P_{X_{n}=k-1}(X_{n+1}=k)\P(X_{n}=k-1)=\frac{k}{k+1}\P(X_{n}=k)}
+        \end{equation}
+
+        \item On a $\P(X_{n}=k)=0$ si $k>n$, sinon on écrit 
+        \begin{align}
+            \P(X_{n}=k)
+            &=\frac{k}{k+1}\P(X_{n-1}=k-1)\\
+            &=\frac{k}{k+1}\times\frac{k-1}{k}\times\frac{k-2}{k-1}\times\dots\times\frac{2}{3}\times\frac{1}{2}\times u_{n-k}\\
+            &=\boxed{\frac{1}{k+1}u_{n-k}}
+        \end{align}
+
+        \item On a $\sum_{j=0}^{n}\P(X_{n}=j)=1$ donc 
+        \begin{equation}
+            \boxed{\sum_{j=0}^{n}\frac{u_{n}}{n-j+1}=1}
+        \end{equation}
+        et on a $u_{0}=1,u_{1}=\frac{1}{2},u_{2}=\frac{5}{12},u_{3}=\frac{3}{8}$ (en utilisant la formule précédente).
+
+        \item On écrit 
+        \begin{equation}
+            (k+1)\P(X_{n+1}=k)=k\P(X_{n}=k-1)
+        \end{equation}
+        donc pour tout $k\in\llbracket1,n+1\rrbracket$, 
+        \begin{equation}
+            k\P(X_{n+1}=k)=(k-1)\P(X_{n}=k-1)+\P(X_{n}=k-1)-\P(X_{n+1}=k)
+        \end{equation}
+        En sommant sur $k\in\llbracket1,n+1\rrbracket$, on trouve donc 
+        \begin{equation}
+            \boxed{\E(X_{n+1})=\E(X_{n})+1-(1-u_{n+1})=\E(X_{n})+u_{n+1}}
+        \end{equation}
+        Par récurrence, on a directement 
+        \begin{equation}
+            \boxed{\E(X_{n})=u_{n}+\dots+u_{1}+\underbrace{\E(X_{0})}_{{=~0}}}
+        \end{equation}
+
+        \item On écrit 
+        \begin{align}
+            \P(T=n)
+            &=\P\left(\left(X_{0}=0\right)\cap\left(X_{1}=1\right)\cap\dots\cap\left(X_{n-1}=n-1\right)\cap\left(X_{n}=0\right)\right)\\
+            &=\P(X_{0}=0)\times\P_{X_{0}=0}(X_{1}=1)\times\dots\times\P_{\left(X_{0}=0\right)\cap\dots\cap\left(X_{n-1}=n-1\right)}(X_{n=0})\\
+            &=\P(X_{0}=0)\times\P_{X_{0}=0}(X_{1}=1)\times\dots\times\P_{\left(X_{n-1}=n-1\right)}(X_{n=0})\\
+            &=1\times\frac{1}{2}\times\frac{2}{3}\times\dots\times\frac{n-1}{n}\times\frac{1}{n+1}\\
+            &=\boxed{\frac{1}{n(n+1)}}
+        \end{align}
+
+        Comme $\frac{1}{n(n+1)}=\frac{1}{n}-\frac{1}{n+1}$, on a 
+        \begin{equation}
+            \sum_{n=1}^{+\infty}\P(T=n)=1
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{\P(T=0)=0}
+        \end{equation}
+        Donc le retour en temps fini à l'origine est presque sûr.
+
+        \item Non au vu de la formule donnée par $\P(T=n)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $k\in\llbracket0,n\rrbracket$, on a 
+        \begin{equation}
+            \boxed{\P_{N=n}(X_{1}=k)=\binom{n}{k}\left(\frac{1}{m}\right)^{k}\left(1-\frac{1}{m}\right)^{n-k}}
+        \end{equation}
+        (loi binomiale, car les $m$ caisses sont équiprobables).
+
+        \item On a $\P_{N=n}(X_{1}=k)=0$ si $k>n$ donc si $k\in\N$,
+        \begin{align}
+            \P_{X_{1}=k}
+            &=\sum_{n=0}^{+\infty}\P_{N=n}(X_{1}=k)\P(N=n)\\
+            &=\sum_{n=k}\binom{n}{k}\left(\frac{1}{m}\right)^{k}\left(1-\frac{1}{m}\right)^{n-k}\frac{\lambda^{n}}{n!}e^{-\lambda}\\
+            &=\frac{1}{k!}e^{-\lambda}\left(\frac{1}{m}\right)^{k}\lambda^{k}\sum_{n=k}^{+\infty}\lambda^{n-k}\left(1-\frac{1}{m}\right)^{n-k}\frac{1}{(n-k)!}
+        \end{align}
+        On reconnaît la série exponentielle, après un changement d'indice, appliquée en $\lambda\left(1-\frac{1}{m}\right)$. Ainsi,
+        \begin{equation}
+            \boxed{\P(X_{1}=k)=e^{-\frac{\lambda}{n}}\frac{\left(\frac{\lambda}{n}\right)^{k}}{k!}}
+        \end{equation}
+        et donc $X_{1}\sim\mathcal{P}\left(\frac{\lambda}{n}\right)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si $(i,j)\in\lbrace0,1,2\rbrace\times\lbrace-1,0,1\rbrace$, on a 
+        \begin{equation}
+            \boxed{\P\left((U,V)=(i,j)\right)=\P\left(X=\frac{i+j}{2},Y=\frac{-j}{2}\right)}
+        \end{equation}
+        Cette probabilité vaut 0 si $i$ et $j$ n'ont pas la même parité. Sinon, on a 
+        \begin{equation}
+            \boxed{
+                \begin{array}[]{l}
+                    \P\left((U,V)=(0,0)\right)=\P(X=0,Y=0)=q^{2}\\
+                    \P\left((U,V)=(1,-11)\right)=\P(X=0,Y=1)=qp\\
+                    \P\left((U,V)=(1,1)\right)=qp\\
+                    \P\left((U,V)=(2,0)\right)=\P(X=1,Y=1)=p^{2}\\
+                \end{array}
+            }
+        \end{equation}
+
+        \item On a 
+        \begin{align}
+            \mathrm{cov}(U,V)
+            &=\E\left(\left(U-\E(U)\right)\left(V-\E(V)\right)\right)\\
+            &=\E(UV)-\E(U)\E(V)\\
+            &=\E(X^{2}-Y^{2})-\left[\left(\E(X)+\E(Y)\right)\left(\E(X)-\E(Y)\right)\right]\\
+            &=\E(X^{2}-Y^{2})-\left[\E(X)^{2}-\E(Y)^{2}\right]\\
+            &=\mathbb{V}(X)-\mathbb{V}(Y)\\
+            &=0
+        \end{align}
+
+        \item Les variables $U$ et $V$ ne sont pas indépendantes, il suffit de voir que 
+        \begin{equation}
+            \boxed{\P\left((U,V)=(1,0)\right)=0\neq\P(U=1)\P(V=0)=2pq\times\left(q^{2}+p^{2}\right)}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $P\sim\mathcal{G}(p)$ et $F\sim\mathcal{G}(q)$ donc 
+        \begin{equation}
+            \boxed{
+                \begin{array}[]{l}
+                    \E(P)=\frac{1}{p}\\
+                    \mathbb{V}(P)=\frac{q}{p^{2}}\\
+                    \E(F)=\frac{1}{q}\\
+                    \mathbb{V}(F)=\frac{p}{q^{2}}
+                \end{array}
+            }
+        \end{equation}
+
+        \item On a $\P\left((P=1)\cap(F=1)\right)=0\neq\P(P=1)\P(F=1)$ donc $P$ et $F$ ne sont pas indépendantes.
+        
+        \item Soit $(i,j)\in\left(\N^{*}\right)^{2}$, on note $p_{i,j}=\P(X=i,Y=j)$. On partitionne selon si $P=1$ ou $F=1$ et donc 
+        \begin{equation}
+            \boxed{p_{i,j}=p^{i+1}q^{j}+q^{i+1}p^{j}}
+        \end{equation}
+        On note 
+        \begin{equation}
+            \begin{array}[]{l}
+                p_{i,\cdot}=\sum_{j=1}^{+\infty}p_{i,j}=p^{i+1}\frac{q}{1-q}+q^{i+1}\frac{p}{1-p}=p^{i}q+q^{i}p\\
+                p_{\cdot,j}=\sum_{i=1}^{+\infty}p_{i,j}=\frac{p^{2}}{1-p}q^{j}+\frac{q^{2}}{1-q}p^{j}=q^{j-1}p^{2}+p^{j-1}q^{2}
+            \end{array}
+        \end{equation}
+
+        De plus, on a $p_{1,1}=p^{2}q+q^{2}p=pq$ et $p_{1,\cdot}\times p_{\cdot,1}=(pq+qp)(p^{2}+q^{2})=2pq(p^{2}+q^{2})$ dp,c si $X$ et $Y$ sont indépendantes, on a $1=2(p^{2}+q^{2})$ d'où $p=\frac{1}{2}$. Réciproquement, si $p=\frac{1}{2}$, on a $p_{i,\cdot}=\frac{1}{2^{i}}$, $p_{\cdot, j}=\frac{1}{2^{j}}$ et $p_{i,j}=\frac{1}{2^{i+j}}=p_{i,\cdot}p_{\cdot,j}$. Ainsi, $X$ et $Y$ sont indépendantes si et seulement si $p=\frac{1}{2}$.
+
+        \item On a 
+        \begin{equation}
+            \E(X)=\sum_{i=1}^{+\infty}ip_{i,\cdot}=q\sum_{i=1}^{+\infty}ip^{i}+p\sum_{i=1}^{+\infty}iq^{i}
+        \end{equation}
+        On utilise alors le fait que $\sum_{n=1}^{+\infty}nz^{n-1}=\frac{1}{(1-z)^{2}}$ si $\left\lvert z\right\rvert<1$ et donc 
+        \begin{equation}
+            \boxed{\E(X)=\frac{p^{2}+q^{2}}{pq}\geqslant2}
+        \end{equation}
+        car $(p-q)^{2}\geqslant0$.
+
+        \item On a 
+        \begin{equation}
+            \boxed{\P(X=Y)=\sum_{i=1}^{+\infty}p_{i,i}=\sum_{i=1}^{+\infty}p^{i}q^{i}(p+q)=pq\times\frac{1}{1-pq}}
+        \end{equation}
+
+        \item Si $p=\frac{1}{2}$, $X$ et $Y$ sont indépendantes, donc par convolution,
+        \begin{equation}
+            \boxed{\P(X+Y=k)=\sum_{i=1}^{k-1}\P(X=i)\P(Y=k-i)=\sum_{i=1}^{k-1}p_{i,\cdot}p_{\cdot,k-i}=\sum_{i=1}^{k-1}\frac{1}{2^{k}}=\frac{k-1}{2^{k}}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \boxed{\e^{\lambda x}=\sum_{k=0}^{+\infty}\frac{(\lambda x)^{2k}}{(2k)!}+\sum_{k=0}^{+\infty}\frac{(\lambda x)^{2k+1}}{(2k+1)!}\leqslant\sum_{k=0}^{+\infty}\frac{\lambda^{2k}}{2^{k}k!}+x\sinh(\lambda)=\e^{\frac{\lambda^{2}}{2}}+x\sinh(\lambda)}
+        \end{equation}
+        car $\left\lvert x^{2}\right\rvert\leqslant1$ et pour tout $k\in\N^{*}$, $(2k)!\geqslant2^{k}k!$ (par récurrence).
+
+        \item $\e^{\lambda X}$ admet une espérance car $\left\lvert\e^{\lambda X}\right\rvert\leqslant \e^{\lambda}$. Comme $X$ est centrée, on a d'après l'inégalité précédente, en prenant l'espérance,
+        \begin{equation}
+            \boxed{\E\left(\e^{\lambda X}\right)\leqslant\E\left(e^{\frac{\lambda^{2}}{2}}\right)+\sinh(\lambda)\E(X)=\e^{\frac{\lambda^{2}}{2}}}
+        \end{equation}
+        En appliquant l'inégalité à $-X$, on a l'autre inégalité.
+
+        \item Grâce à l'inégalité de Markov, on en déduit que 
+        \begin{equation}
+            \boxed{\P(X\geqslant a)=\P\left(\e^{\lambda X}\geqslant \e^{\lambda a}\right)}\leqslant \frac{\E\left(\e^{\lambda X}\right)}{e^{\lambda a}}=\e^{-\lambda a}\E\left(\e^{\lambda X}\right)
+        \end{equation}
+
+        \item On pose $X=\frac{1}{n}\sum_{k=1}^{n}X_{i}$. $X$ est centrée dans $[-1,1]$ ainsi que $-X$. On a donc, pour tout $\lambda\geqslant0$,
+        \begin{equation}
+            \P\left(\left\lvert X\right\rvert\geqslant a\right)=\P(X\geqslant a)+\P(-X\geqslant a)\leqslant 2\e^{-\lambda a}\e^{\frac{\lambda^{2}}{2}}
+        \end{equation}
+        On optimise ensuite cette inégalité en $\lambda\geqslant0$ (le minimum est en $\lambda=a$) et on a bien 
+        \begin{equation}
+            \boxed{\P\left(\left\lvert\frac{1}{n}\sum_{i=1}^{n}X_{i}\right\rvert\geqslant a\right)\leqslant 2\e^{-\frac{a^{2}}{2}}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Comme $\E(Y)<+\infty$, on a d'après le théorème de Fubini et le fait que $\left(X=l\right)_{l\in\N}$ est un système complet d'événements:
+        \begin{equation}
+            \boxed{\E(Y)=\sum_{l=0}^{+\infty}l\P(Y=l)\sum_{l=0}^{+\infty}\sum_{k=0}^{+\infty}\P_{(X=k)}(Y=l)\P(X=k)=\sum_{k=0}^{+\infty}\E_{(X=k)}(Y)\P(X=k)}
+        \end{equation}
+
+        \item Pour $\lambda=X_{n+1}$ et $X=X_{n}$, et en utilisant le fait que les poules sont indépendantes, on a 
+        \begin{equation}
+            \E(X_{n+1})=\sum_{k=0}^{+\infty}\E_{(X_{n}=k)}\P(X_{n}=k)=\sum_{k=0}^{+\infty}k\lambda\P(X_{n}=k)=\lambda\E(X_{n})
+        \end{equation}
+        Par récurrence, on a 
+        \begin{equation}
+            \boxed{\E(X_{n})=\lambda^{n}\E(X_{0})=\lambda^{n}N}
+        \end{equation}
+
+        On note que si $\lambda>1$, $\E(X_{n})\xrightarrow[n\to+\infty]{}+\infty$ donc la descendance est assurée. Si $\lambda<1$, on a $\E(X_{n})\xrightarrow[n\to+\infty]{}0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    Soit $k\in\N$, on a 
+    \begin{align}
+        \P(K=k)
+        &=\sum_{n=0}^{+\infty}\P_{(N=n)}(K=k)\P(N=n)\\
+        &=\sum_{n=k}^{+\infty}\binom{n}{k}p^{k}(1-p)^{n-k}\e^{-\lambda}\frac{\lambda^{n}}{n!}\\
+        &=\e^{-\lambda p}\frac{\left(\lambda p\right)^{k}}{k!}
+    \end{align}
+
+    Donc $K\sim\mathcal{P}(\lambda p)$ et 
+    \begin{equation}
+        \boxed{\E(K)=\lambda p}
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a $\chi_{A_{k}}\sim\mathcal{B}\left(\frac{1}{k}\right)$. Ainsi,
+        \begin{equation}
+            \boxed{\E(S_{n})=\sum_{k=1}^{n}\frac{1}{k}\underset{n\to+\infty}{\sim}\ln(n)}
+        \end{equation}
+
+        Comme les $(A_{n})_{n\geqslant1}$ sont indépendants, on a aussi 
+        \begin{equation}
+            \boxed{\mathbb{V}(S_{n})=\sum_{k=1}^{n}\mathbb{V}(\chi_{A_{k}})=\sum_{k=1}^{n}\frac{1}{k}\left(1-\frac{1}{k}\right)\underset{n\to+\infty}{\sim}\ln(n)}
+        \end{equation}
+
+        \item Soit $X_{n}=\frac{S_{n}}{\ln(n)}$. On a $\E(X_{n})\xrightarrow[n\to+\infty]{}1$ et $\mathbb{V}(X_{n})=\frac{1}{\ln^{2}(n)}\mathbb{V}(S_{n})\xrightarrow[n\to+\infty]{}0$.
+        
+        D'après l'inégalité de Bienaymé-Tchebychev,
+        \begin{equation}
+            \P\left(\left\lvert X_{n}-\E(X_{n})\right\rvert\geqslant\frac{\varepsilon}{2}\right)\leqslant4\frac{\mathbb{V}(X_{n})}{\varepsilon^{2}}\xrightarrow[n\to+\infty]{}0
+        \end{equation}
+
+        Or, si $\left\lvert X_{n}-\E(X_{n})\right\rvert<\frac{\varepsilon}{2}$ et $\left\lvert\E(X_{n})-1\right\rvert<\frac{\varepsilon}{2}$, alors $\left\lvert X_{n}-1\right\rvert<\varepsilon$.
+        Par contraposée, si $\left\lvert X_{n}-1\right\rvert\geqslant\varepsilon$, alors ou bien $\left\lvert X_{n}-\E(X_{n})\right\rvert\geqslant\frac{\varepsilon}{2}$ ou $\left\lvert\E(X_{n})-1\right\rvert\geqslant\frac{\varepsilon}{2}$. Ainsi,
+        \begin{equation}
+            \P\left(\left\lvert X_{n}-1\right\rvert\geqslant\varepsilon\right)\leqslant4\frac{\mathbb{V}(X_{n})}{\varepsilon^{2}}+\P\left(\left\lvert\E(X_{n})-1\right\rvert\geqslant\frac{\varepsilon}{2}\right)
+        \end{equation}
+        A partir d'un certain rang $N_{0}\in\N$, on a $\left\lvert\E(X_{n})-1\right\rvert<\frac{\varepsilon}{2}$, donc pour tout $n\geqslant N_{0}$, on a $\P\left(\left\lvert\E(X_{n})-1\right\rvert\geqslant\frac{\varepsilon}{2}\right)=0$. Ainsi,
+        \begin{equation}
+            \boxed{\lim\limits_{n\to+\infty}\P\left(\left\lvert\frac{S_{n}}{\ln(n)}-1\right\rvert\geqslant\varepsilon\right)=0}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $k\in\N^{*}$. On a 
+        \begin{equation}
+            \P(U\geqslant k)=\P\left(\bigcap_{i=1}^{n}\left(X_{i}\geqslant k\right)\right)=\prod_{i=1}^{k}\P\left(X_{i}\geqslant k\right)=\prod_{i=1}^{n}\sum_{j=k}^{+\infty}q^{j-1}p=(q^{k-1})^{n}
+        \end{equation}
+
+        Ainsi, 
+        \begin{equation}
+            \boxed{\P(U=k)=\P(U\geqslant k)-\P(U\geqslant k+1)=q^{(k-1)n}(q^{n}-1)}
+        \end{equation}
+
+        $U$ possède une espérance car $0\leqslant U\leqslant X\sim\mathcal{G}(p)$ et on a 
+        \begin{align}
+            \E(U)
+            &=\sum_{k=1}^{+\infty}k\P(U=k)\\
+            &=\sum_{k=1}^{+\infty}k\left(\left(q^{n}\right)^{k-1}-\left(q^{n}\right)^{k}\right)\\
+            &=\frac{1}{\left(1-q^{n}\right)^{2}}-\frac{q^{n}}{(1-q^{n})^{2}}\\
+            &=\boxed{\frac{1}{1-q^{n}}}
+        \end{align}
+        où l'on a utilisé le fait que $\sum_{n=0}^{+\infty}nx^{n-1}=\frac{1}{(1-x)^{2}}$ si $\left\lvert x\right\rvert<1$.
+
+        \item Soit $k\in\N^{*}$. On a $\P(V\leqslant k)=\left(1-q^{k}\right)^{n}$ donc 
+        \begin{equation}
+            \boxed{\P(V=k)=\left(1-q^{k}\right)^{n}-\left(1-q^{k-1}\right)^{n}\underset{n\to+\infty}{\sim}nq^{k-1}\left(1-q\right)\xrightarrow[k\to+\infty]{}0}
+        \end{equation}
+
+        Comme $k\P(V=k)=\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right)$, $V$ admet une espérance est 
+        \begin{align}
+            \E(V)
+            &=\sum_{k=1}^{+\infty}k\P(V=k)\\
+            &=\sum_{k=1}^{+\infty}k\left[\left(1-q^{k}\right)^{n}-\left(1-q^{k-1}\right)^{n}\right]\\
+            &=\sum_{k=1}^{+\infty}k\sum_{i=1}^{n}\binom{n}{i}\left[(-1)^{i}q^{ki}-(-1)^{i}q^{(k-1)i}\right]\\
+            &=\sum_{k=1}^{+\infty}k\sum_{i=1}^{n}(-1)^{i+1}\binom{n}{i}q^{(k-1)i}(1-q^{i})\\
+            &=\sum_{k=1}^{+\infty}(-1)^{i+1}\binom{n}{i}(1-q^{i})\sum_{k=1}^{+\infty}k\left(q^{i}\right)^{k-1}\\
+            &=\boxed{\sum_{i=1}^{n}\binom{n}{i}(-1)^{i+1}\frac{1}{1-q^{i}}}
+        \end{align}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $1-p^{N}$ correspond à la probabilité que le joueur perde au moins une partie sur $N$ consécutives donc c'est aussi la probabilité pour qu'il perde une partie entre la $nN+1$-ième et la $(n+1)N$-ième (inclus), car les parties sont indépendantes. On note $A_{nN+1,(n+1)N}$:`le joueur perd une partie entre la $nN+1$-ième et la $(n+1)N$-ième (au sens large)'. $\lbrace t_{k}>nN\rbrace$ et $A_{nN+1,(n+1)N}$ sont des événements indépendants car les différentes parties sont indépendantes. Ainsi,
+        \begin{equation}
+            \boxed{\P\left(t_{k}>nN\right)(1-p^{N})=\P\left(\left(t_{k}>nN\right)\cap A_{nN+1,(n+1)N}\right)\geqslant\P(t_{k}>n(N+1))}
+        \end{equation}
+        car s'il avait gagné toutes les parties entre $nN+1$ et $(n+1)N$ on aurait $t_{k}\leqslant n(N+1)$.
+
+        On sait que si $X$ est une variable aléatoire discrète à valeurs dans $\N^{*}$, $X$ possède une espérance finie si et seulement si $\sum_{k\in\N}\P(X>k)$ converge et on a (théorème de Fubini) $\E(X)=\sum_{k\in\N}\P(X>k)$.
+
+        On a donc 
+        \begin{equation}
+            \P(t_{k}>Nn)\leqslant (1-p^{n})\P(t_{k}>0)=1-p^{n}
+        \end{equation}
+        par récurrence sur $n$ d'après 1. Pour $l\in\N$, soit $n=\left\lfloor\frac{l}{N}\right\rfloor$, on a $nN\leqslant l<(n+1)N$ donc 
+        \begin{equation}
+            \P(t_{k}>l)\leqslant\P(t_{k}>nN)\leqslant(1-p^{N})^{\left\lfloor\frac{l}{N}\right\rfloor}\leqslant\left(1-p^{N}\right)^{\frac{l}{N}}
+        \end{equation}
+        et le membre de droite est le terme général d'une série converge car $\left(1-p^{N}\right)^{\frac{1}{N}}<1$. Donc $t_{k}$ admet une espérance.
+
+        \item On note $b_{i}$:`le joueur gagne au $i$-ième coup'. Alors 
+        \begin{align}
+            T_{k}
+            &=\sum_{l=0}^{+\infty}l\P(t_{k}=l)\\
+            &=\sum_{l=0}^{+\infty}l\left(\P_{b_{i}}(t_{k}=l)\P(b_{i})+\P_{\overline{b_{i}}}(t_{k}=l)\P(\overline{b_{i}})\right)\\
+            &=p\sum_{l=1}^{+\infty}l\P(t_{k+1}=l-1)+q\sum_{l=1}^{+\infty}l\P(t_{k-1}=l-1)\\
+            &=p\left(\sum_{l=1}^{+\infty}(l-1)\P(t_{k+1}=l-1)+\sum_{l=1}^{+\infty}1\times\P(t_{k+1}=l-1)\right)\notag\\
+            &~~~+q\left(\sum_{l=1}^{+\infty}(l-1)\P(t_{k-1}=l-1)+\sum_{l=1}^{+\infty}1\times\P(t_{k-1}=l-1)\right)\\
+            &=p\left(T_{k-1}+1\right)+q\left(T_{k+1}+1\right)
+        \end{align}
+
+        \item On a $qT_{k+1}-T_{k}+pT_{k-1}=-1$. Comme $q\alpha(k+1)-\alpha k+p\alpha(k-1)=1$ si et seulement si $\alpha=\frac{1}{1-2p}$, on pose $U_{k}=T_{k}-\frac{k}{1-2p}$ si $p=\frac{1}{2}$. Alors 
+        \begin{equation}
+            qU_{k+1}-U_{k}+pU_{k-1}=-1-q\frac{k+1}{1-2p}+\frac{k}{1-2p}-p\frac{k-1}{1-2p}=0
+        \end{equation}
+        car $p+q=1$.
+
+        L'équation caractéristique est $qr^{2}-r+p=0$, les racines sont $1$ et $\frac{p}{q}$ (qui est différent de 1 car $p\neq \frac{1}{2}$). Donc 
+        \begin{equation}
+            q\left(1-\frac{p}{q}\right)(1-1)=0
+        \end{equation}
+        On a $T_{0}=T_{N}=0$ donc 
+        \begin{equation}
+            \boxed{T_{k}=\frac{1}{q-p}\left(k-N\left(\frac{1-\left(\frac{q}{p}\right)^{k}}{1-\left(\frac{q}{p}\right)^{N}}\right)\right)}
+        \end{equation}
+        si $p\neq\frac{1}{2}$. Si $p=\frac{1}{2}$, on a 
+        \begin{equation}
+            T_{k+1}-2T_{k}+T_{k-1}=-2    
+        \end{equation}
+        Ainsi, si $V_{k}=T_{k-1}-T_{k}$, on a 
+        \begin{equation}
+            V_{k+1}=-2+V_{k}
+        \end{equation}
+        On en déduit grâce aux conditions aux limites $T_{0}=T_{N}=0$ que 
+        \begin{equation}
+            \boxed{T_{k}=k(N-k)}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \boxed{\sum_{n\geqslant1}\P(\lbrace n\rbrace)=\sum_{n\geqslant1}\frac{1}{\zeta(s)n^{s}}=1}
+        \end{equation}
+
+        \item On a 
+        \begin{equation}
+            \boxed{\P(A_{n})=\sum_{k\in A_{n}}\P(\lbrace k\rbrace)=\sum_{r=1}^{+\infty}\frac{1}{\zeta(s)r^{s}n^{s}}=\frac{1}{n^{s}}}
+        \end{equation}
+
+        \item Soient $p_{1},\dots,p_{k}$ des nombres premiers distincts. On a $A_{p_{1}}\cap\dots\cap A_{p_{r}}=A_{p_{1}\times\dots\times p_{k}}$ donc 
+        \begin{equation}
+            \boxed{\P\left(A_{p_{1}}\bigcap\dots\bigcap A_{p_{k}}\right)}=\frac{1}{(p_{1}\dots p_{k})^{s}}=\prod_{i=1}^{k}\frac{1}{p_{i}^{s}}=\prod_{i=1}^{k}\P(A_{p_{i}})
+        \end{equation}
+        donc les $(A_{p})_{p\in\mathcal{P}}$ sont indépendants.
+
+        On remarque que l'on a $\lbrace1\rbrace=\cap_{p\in\mathcal{P}}\overline{A_{p}}$. On pose $p_{k}$ le $k$-ième nombre premier et $B_{k}=\cap_{i=1}^{k}\overline{A_{p_{i}}}$ qui est une suite décroissante d'événements. Comme les $(A_{p_{i}})_{i}$ sont indépendants, c'est aussi le cas des $(\overline{A_{p_{i}}})_{i}$, et on a donc 
+        \begin{equation}
+            \P(\lbrace1\rbrace)=\lim\limits_{k\to+\infty}\P(B_{k})=\lim\limits_{k\to+\infty}\prod_{i=1}^{k}\left(1-\P(A_{p_{i}})\right)=\prod_{i=}^{+\infty}\left(1-\frac{1}{p_{i}^{s}}\right)
+        \end{equation}
+        Or $\P(\lbrace1\rbrace)=\frac{1}{\zeta(s)}$ donc 
+        \begin{equation}
+            \boxed{\zeta(s)=\left(\prod_{i=1}^{+\infty}\left(1-\frac{1}{p_{i}^{s}}\right)\right)^{-1}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On a $\P(E_{1})=\frac{1}{2},\P(E_{2})=\frac{1}{2}(1-b)$ et pour tout $n\geqslant2$,
+    \begin{equation}
+        \boxed{\P(E_{n})=\frac{1}{2}b^{n-1}(1-b)}
+    \end{equation}
+
+    Les événements $E_{n}$ sont incompatibles donc 
+    \begin{equation}
+        \boxed{\P\left(\bigcup_{n=1}^{+\infty}E_{n}\right)=\sum_{n=1}^{+\infty}\P(E_{n})=1}
+    \end{equation}
+    Il est donc presque sûr qu'on finisse par utiliser $A$.
+
+    On a 
+    \begin{equation}
+        \boxed{\P(U_{n})=\frac{1}{2}a^{n}+\frac{1}{2}b^{n}}
+    \end{equation}
+    $(U_{n})_{n\in\N}$ forme une suite décroissante d'événements, donc 
+    \begin{equation}
+        \boxed{\P\left(\bigcap_{n=1}^{+\infty}U_{n}\right)=\lim\limits_{n\to+\infty}\P(U_{n})=0}
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \boxed{\P(A_{n})=\sum_{k=1}^{n}p(1-p)^{k-1}=1-(1-p)^{n}}
+        \end{equation}
+
+        \item $B_{n}=\bigcap_{i=1}^{N}A_{i,n}$ et les $A_{i,n}$ sont indépendants donc 
+        \begin{equation}
+            \boxed{\P(B_{n})=\prod_{i=1}^{N}\P(A_{i,n})=\left(1-\left(1-p\right)^{n}\right)^{N}}
+        \end{equation}
+
+        \item On note $C_{n}=B_{n}\setminus B_{n-1}$ et $B_{n-1}\subset B_{n}$ donc 
+        \begin{equation}
+            \boxed{\P(C_{n})=\P(B_{n})-\P(B_{n-1})=\left(1-\left(1-p\right)^{n}\right)^{N}-\left(1-\left(1-p\right)^{n-1}\right)^{N}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \K_{<n}[X]=\left\lbrace a_{0}+\dots+a_{n-1}X^{n-1}\middle|(a_{0},\dots,a_{n-1})\in\K^{n}\right\rbrace    
+        \end{equation}
+        donc $\left\lvert\K_{<n}[X]\right\rvert=p^{n}$. De même, on a 
+        \begin{equation}
+            \K_{=n}[X]=\left\lbrace a_{0}+\dots+a_{n-1}X^{n-1}+a_{n}X^{n}\middle|(a_{0},\dots,a_{n})\in\K^{n},a_{n}\neq\overline{0}\right\rbrace
+        \end{equation}
+        donc $\left\lvert\K_{=n}[X]\right\rvert=p^{n}(p-1)$ d'où $\left\lvert\Omega\right\rvert=p^{2n}(p-1)$.
+
+        On a $\P\left(\deg(Q)=-\infty\right)=\frac{1}{p^{n}}$ et si $k\in\llbracket0,n-1\rrbracket$,
+        \begin{equation}
+            \boxed{\P\left(\deg(Q)=k\right)=\frac{p^{k}(p-1)}{p^{n}}}
+        \end{equation}
+
+        \item On a $(Q,P)\in A$ si et seulement si $Q\mid P$ si et seulement si il existe $A\in\K_{\leqslant n}[X]$ tel que $P=AQ$ et $\deg(A)+\deg(Q)=n$. Ainsi, $\left(Q,\frac{P}{Q}\right)\in B$ et $f$ est bien définie. On a directement
+        \function{f^{-1}}{B}{A}{(Q,A)}{(Q,AQ)}
+        donc $f$ est bijective et $\left\lvert A\right\rvert =\left\lvert B\right\rvert$.
+
+        On a 
+        \begin{equation}
+            B=\bigcup_{k=0}^{n-1}\left\lbrace(Q,A)\in\K_{=k}[X]\times\K_{=n-k}[X]\right\rbrace
+        \end{equation}
+        donc 
+        \begin{equation}
+            \left\lvert B\right\rvert=\sum_{k=0}^{n-1}p^{k}(p-1)\times p^{n-k}(p-1)=np^{n}(p-1)^{2}=\left\lvert A\right\rvert
+        \end{equation}
+
+        Ainsi, 
+        \begin{equation}
+            \boxed{\P(Q\mid P)=\frac{np^{n}(p-1)^{2}}{p^{2n}(p-1)}=\frac{n(p-1)}{p^{n}}}
+        \end{equation}
+
+        \item On a $R_{1}=R$ si et seulement si il existe $A\in\K[X]$ tel que $P=AQ+R$ avec $\deg(R)<\deg(Q)$ si et seulement si $Q\mid P-R$ et $\deg(R)<\deg(Q)$. Comme $\deg(Q)<\deg(P)$, $\deg(R)<\deg(P)$ implique $\deg(P-R)=\deg(P)$.
+        
+        Or \function{\varphi}{\K_{=n}[X]}{\K_{=n}[X]}{P}{P-R}
+        est bijective donc les lois de $P-R$ et de $P$ sont les mêmes. En notant $r=\deg(R)$, on a donc 
+        \begin{align}
+            \P(R_{1}=R)
+            &=\P\left((Q\mid P-R)\cap(\deg(Q)>\deg(R))\right)\\
+            &=\sum_{q=r+1}^{n-1}\frac{p^{n-q}(p-1)}{(p-1)^{2}}\times\frac{p^{d}(p-1)}{p^{2n}}\\
+            &=\boxed{\frac{1}{p^{n}}\times(n-r-1)}
+        \end{align}
+
+        et 
+        \begin{align}
+            \P_{\deg(Q)=q}(R_{1}=R)
+            &=\frac{\P\left((R_{1}=R)\cap(\deg(Q)=q)\right)}{\P\left(\deg(Q)=s\right)}\\
+            &=\frac{\frac{1}{p^{n}}}{\frac{p^{q}(p-1)}{p^{n}}}\\
+            &=\boxed{\frac{1}{p^{q}(p-1)}}
+        \end{align}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $(X_{1},X_{2})$ prend ses valeurs dans $\llbracket1,n\rrbracket^{2}\setminus\left\lbrace(i,i)\middle| i\in\left\llbracket1,n\right\rrbracket\right\rbrace$. Soit $(i,j)\in\llbracket1,n\rrbracket^{2}$ avec $i\neq j$, alors 
+        \begin{equation}
+            \boxed{\P(X_{1}=i,X_{2}=j)=\frac{1}{n(n-1)}}
+        \end{equation}
+        La loi conjointe est uniforme.
+
+        \item $X_{2}$ prend ses valeurs dans $\llbracket1,n\rrbracket$. On a 
+        \begin{equation}
+            \P(X_{2}=j)=\sum_{\substack{i=1\\i\neq j}^{n}}\P(X_{1}=i,X_{2}=j)=\frac{n-1}{n(n-1)}=\frac{1}{n}
+        \end{equation}
+        donc $X_{2}\sim\mathcal{U}\left(\llbracket1,n\rrbracket\right)$.
+
+        $X_{1_{\mid X_{2}=j}}$ prend ses valeurs dans $\llbracket1,n\rrbracket\setminus\lbrace j\rbrace$ et 
+        \begin{equation}
+            \P(X_{1_{\mid X_{2}=j}}=i)=\frac{\P(X_{1}=i,X_{2}=j)}{\P(X_{2}=j)}=\frac{1}{n-1}
+        \end{equation}
+        donc $X_{1_{\mid X_{2}=j}}\sim\mathcal{U}\left(\left\llbracket1,n\right\rrbracket\setminus\left\lbrace j\right\rbrace\right)$.
+
+        \item D'après ce qui précède, les lois de $X_{1}$ et $X_{2}$ sont différentes et $X_{1}$ et $X_{2}$ ne sont pas indépendantes.
+        
+        \item On écrit 
+        \begin{equation}
+            (X_{1},\dots,X_{k})=\left\lbrace(x_{1},\dots,x_{k})\in\llbracket1,n\rrbracket^{k}\middle| \forall i\neq j,x_{i}\neq x_{j}\right\rbrace
+        \end{equation}
+        ensemble que l'on note $A_{n,k}$. On a $\left\lvert A_{n,k}\right\rvert=n(n-1)\dots(n-k+1)$. Pour $(x_{1},\dots,x_{k})\in A_{n,k}$, on a donc 
+        \begin{equation}
+            \boxed{\P(X_{1}=x_{1},\dots,X_{k}=x_{k})=\frac{1}{n(n-1)}\dots(n-k+1)}
+        \end{equation}
+        et pour tout $i\in\llbracket1,n\rrbracket$, $X_{i}\sim\mathcal{U}(\llbracket1,n\rrbracket)$ et les $X_{i}$ ne sont pas indépendants.
+
+        \item On a 
+        \begin{align}
+            \E(X_{1},X_{2})
+            &=\sum_{\substack{(i,j)\in\llbracket1,n\rrbracket^{2}\\ i\neq j}}(i,j)\times\frac{1}{n(n-1)}\\
+            &=\frac{1}{n(n-1)}\left(\sum_{i=1}^{n}\left(\sum_{j\neq i}i\right),\sum_{j=1}^{n}\left(\sum_{i\neq j}j\right)\right)\\
+            &=\frac{1}{n(n-1)}\left(\frac{n(n-1)(n+1)}{2},\frac{n(n-1)(n+1)}{2}\right)\\
+            &=\boxed{\frac{n+1}{2},\frac{n+1}{2}}
+        \end{align}
+    \end{enumerate}
+\end{proof}
