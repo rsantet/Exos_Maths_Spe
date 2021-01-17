@@ -8,28 +8,30 @@
 		On a donc l'équation caractéristique $x^{2}-2x-3=0$. Les deux solutions sont 3 et -1. Donc il existe $(\lambda,\mu)\in\R^{2}$, $b_{p}=\lambda 3^{p}+\mu(-1)^{p}$.
 
 		On a alors $b_{0}=5=\lambda+\mu$ et $b_{1}=13=3\lambda-\mu$. On trouve alors 
-		$$\boxed{\lambda=\frac{9}{2} \text{ et } \mu=\frac{1}{2}}$$
+		\begin{equation}
+			\boxed{\lambda=\frac{9}{2} \text{ et } \mu=\frac{1}{2}}
+		\end{equation}
 
 		\item On le montre par récurrence sur $p\in\N$.
 		
 		\item Si $3^{p}\leqslant n<3^{p+1}$, on a $a_{n}=b_{p}=\frac{9}{2}3^{p}+\frac{1}{2}(-1)^{p}$.
 		Alors 
-		$$\frac{3}{2}+\frac{1}{2}(-1)^{p}\frac{1}{3^{p+1}}<\frac{a_{n}}{n}\leqslant\frac{9}{2}+\frac{1}{2}(-1)^{p}\frac{1}{3^{p}}$$
+		\begin{equation}\frac{3}{2}+\frac{1}{2}(-1)^{p}\frac{1}{3^{p+1}}<\frac{a_{n}}{n}\leqslant\frac{9}{2}+\frac{1}{2}(-1)^{p}\frac{1}{3^{p}}\end{equation}
 		Soit $\sigma\colon\N\to\N$ strictement croissante telle que 
-		$$\frac{a_{\sigma(n)}}{\sigma(n)}\xrightarrow[n\to+\infty]{}\lambda$$
+		\begin{equation}\frac{a_{\sigma(n)}}{\sigma(n)}\xrightarrow[n\to+\infty]{}\lambda\end{equation}
 		Soit $p_{n}\in\N$ tel que $3^{p_{n}}\leqslant\sigma(n)<3^{p_{n}+1}$. On a 
-		$$p_{n}=\bigl\lfloor\log_{3}(\sigma(n))\bigr\rfloor\xrightarrow[n\to+\infty]{}+\infty$$
+		\begin{equation}p_{n}=\bigl\lfloor\log_{3}(\sigma(n))\bigr\rfloor\xrightarrow[n\to+\infty]{}+\infty\end{equation}
 		En reportant, on a $\frac{3}{2}\leqslant\lambda\leqslant\frac{9}{2}$.
 
 		Si $\sigma(n)=3^{n}$, on a 
-		$$\frac{a_{3^{n}}}{3^{n}}=\frac{b_{n}}{3^{n}}=\frac{9}{2}+\frac{1}{2}\frac{(-1)^{n}}{3^{n}}\xrightarrow[n\to+\infty]{}\frac{9}{2}$$
+		\begin{equation}\frac{a_{3^{n}}}{3^{n}}=\frac{b_{n}}{3^{n}}=\frac{9}{2}+\frac{1}{2}\frac{(-1)^{n}}{3^{n}}\xrightarrow[n\to+\infty]{}\frac{9}{2}\end{equation}
 		Si $\sigma(n)=3^{n+1}-1$, on a 
-		$$\frac{a_{3^{n}}}{3^{n}}=\frac{b_{n}}{3^{n+1}-1}\xrightarrow[n\to+\infty]{}\frac{3}{2}$$
+		\begin{equation}\frac{a_{3^{n}}}{3^{n}}=\frac{b_{n}}{3^{n+1}-1}\xrightarrow[n\to+\infty]{}\frac{3}{2}\end{equation}
 
 		Soit $\mu\in[1,3[$ et $\sigma(n)=\lfloor 3^{n}\mu\rfloor\underset{n\to+\infty}{\sim}3^{n}\mu$. Alors 
-		$$\frac{a_{\sigma(n)}}{\sigma(n)}=\frac{b_{n}}{\lfloor3^{n}\mu\rfloor}\underset{n\to+\infty}{\sim}\frac{b_{n}}{3^{n}\mu}=\frac{9}{2\mu}+\frac{1}{2\mu}\frac{(-1)^{n}}{3^{n}}\xrightarrow[n\to+\infty]{}\frac{9}{2\mu}$$
+		\begin{equation}\frac{a_{\sigma(n)}}{\sigma(n)}=\frac{b_{n}}{\lfloor3^{n}\mu\rfloor}\underset{n\to+\infty}{\sim}\frac{b_{n}}{3^{n}\mu}=\frac{9}{2\mu}+\frac{1}{2\mu}\frac{(-1)^{n}}{3^{n}}\xrightarrow[n\to+\infty]{}\frac{9}{2\mu}\end{equation}
 		
-		$$\boxed{\text{Donc tout réel compris dans } \Biggl[\frac{3}{2},\frac{9}{2}\Biggr] \text{ est valeur d'adhérence.}}$$
+		\begin{equation}\boxed{\text{Donc tout réel compris dans } \Biggl[\frac{3}{2},\frac{9}{2}\Biggr] \text{ est valeur d'adhérence.}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -38,7 +40,7 @@
 	\begin{enumerate}
 		\item \function{g}{[a,b]}{\R}{x}{f(x)-x}
 		est continue, $g(a)\geqslant0$ et $g(b)\leqslant0$, donc le théorème des valeurs intermédiaires affirme qu'il existe $l\in[a,b]$ avec $g(l)=0$, d'où 
-		$$\boxed{f(l)=l}$$
+		\begin{equation}\boxed{f(l)=l}\end{equation}
 
 		\item On note $A=\{\lambda\bigm| \lambda\text{ est valeur d'adhérence}\}$.
 		Le théorème de Bolzano-Weierstrass indique que $A$ est non vide. De plus, $A$ est borné car $A\subset[a,b]$. Soit $\lambda=\inf(A)$ et $\mu=\sup(A)$. 
@@ -51,13 +53,13 @@
 		Soit alors $n\geqslant\max(N_{0},N_{1})$. Si $x_{n}\leqslant\nu-\varepsilon_{0}$, alors $x_{n+1}\leqslant\nu-\varepsilon_{0}$. Si $x_{n}\geqslant\nu+\varepsilon_{0}$, alors $x_{n+1}\geqslant\nu+\varepsilon_{0}$. Ceci contredit que $\lambda$ et $\mu$ sont valeur d'adhérence. 
 		
 		Ainsi, $\nu\in A$ et 
-		$$\boxed{[\lambda,\mu] \text{ est le segment des valeurs d'adhérence.}}$$
+		\begin{equation}\boxed{[\lambda,\mu] \text{ est le segment des valeurs d'adhérence.}}\end{equation}
 
 		\item Si $(x_{n})$ converge, alors $\lim\limits_{n\to+\infty}x_{n+1}-x_{n}=0$. Réciproquement, si $\lim\limits_{n\to+\infty}x_{n+1}-x_{n}=0$, d'après 2., on a $A=[\lambda,\mu]$. On suppose $\lambda<\nu$. Ainsi, $\frac{\lambda+\nu}{2}=\alpha$ est valeur d'adhérence. Donc il existe $\sigma\colon\N\to\N$ strictement croissante telle que $x_{\sigma(n)}\xrightarrow[n\to+\infty]{}\alpha$. Alors $\lim\limits_{n\to+\infty}x_{\sigma(n)+1}=f(\alpha)$ par continuité de $f$ et c'est aussi égale à $\lim\limits_{n\to+\infty}x_{\sigma(n)}=\alpha$ car $\lim\limits_{n\to+\infty}x_{n+1}-x_{n}=0$.
-		Ainsi, $$\boxed{f(\alpha)=\alpha}$$
+		Ainsi, \begin{equation}\boxed{f(\alpha)=\alpha}\end{equation}
 
 		Par ailleurs, il existe $n_{0}\in\N$ tel que $x_{n_{0}}\in[\lambda,\mu]$ et $f(x_{n_{0}})=x_{n_{0}}\in A$, alors pour tout $n\geqslant n_{0}$, on a $x_{n}=x_{n_{0}}$. Donc $(x_{n})_{n\in\N}$ converge et $\lambda=\mu$: $(x_{n})_{n\in\N}$ est bornée et a une unique valeur d'adhérence. 
-		$$\boxed{\text{Donc }(x_{n})_{n\in\N}\text{ converge.}}$$
+		\begin{equation}\boxed{\text{Donc }(x_{n})_{n\in\N}\text{ converge.}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -75,13 +77,13 @@
 	Réciproquement, s'il existe $p\in\N$, $u_{0}\in\N$ tel que $\frac{\theta}{2\pi}=\frac{p}{2^{n_{0}}}$ (nombre dyadique). Alors pour tout $n\geqslant n_{0}$, $2^{n}\theta\in 2\pi\N$ et $u_{n}=u_{n_{0}}=1$.
 
 	Pour la densité, on prend une suite $(a_{n})_{n\in\N}$ en écrivant successivement, pour tout $k\in\N^{*}$, tous les paquets de $k$ entiers sont dans $\{0,1\}^{k}$. Soit $x\in[0,1[$ tel que 
-	$$x=\sum_{n=1}^{+\infty}\frac{a_{n}}{2^{n}}$$
+	\begin{equation}x=\sum_{n=1}^{+\infty}\frac{a_{n}}{2^{n}}\end{equation}
 	Soit $N\in\N$, il existe $p_{N}\in\N$, 
-	$$2^{p_{N}}\theta=2\pi\underbrace{(\dots)}_{\in\N}+2\pi(\frac{a_{1}}{2}+\dots+\frac{a_{N}}{2^{N}}+\underbrace{\dots}_{\in[0,\frac{1}{2^{N}}[})$$
+	\begin{equation}2^{p_{N}}\theta=2\pi\underbrace{(\dots)}_{\in\N}+2\pi(\frac{a_{1}}{2}+\dots+\frac{a_{N}}{2^{N}}+\underbrace{\dots}_{\in[0,\frac{1}{2^{N}}[})\end{equation}
 	On a alors 
-	$$e^{\i2^{p_{N}}\theta}=e^{\i2\pi(\frac{a_{1}}{2}+\dots+\frac{a_{N}}{2^{N}}+\dots)}$$
+	\begin{equation}e^{\i2^{p_{N}}\theta}=e^{\i2\pi(\frac{a_{1}}{2}+\dots+\frac{a_{N}}{2^{N}}+\dots)}\end{equation}
 	et 
-	$$\Bigl\vert\frac{a_{1}}{2}+\dots+\frac{a_{N}}{2^{N}}-x\Bigr\vert\leqslant\frac{1}{2^{N}}$$
+	\begin{equation}\Bigl\vert\frac{a_{1}}{2}+\dots+\frac{a_{N}}{2^{N}}-x\Bigr\vert\leqslant\frac{1}{2^{N}}\end{equation}
 	D'où $\lim\limits_{N\to+\infty}u_{p_{N}}=e^{\i2\pi x}$ et $(u_{n})_{n\in\N}$ est dense dans $\U$.
 \end{proof}
 
@@ -91,86 +93,86 @@
 	Si $a=0$ et $b\neq0$ (ou inversement), $u_{n}\underset{n\to+\infty}{\sim}\Bigl(\frac{1}{2}\Bigr)^{n^{2}}\xrightarrow[n\to+\infty]{}0$.
 
 	Si $a>0$ ou $b>0$, on a
-	\begin{align*}
+	\begin{align}
 		u_{n}
 		&=\exp\Bigl(n^{2}\ln\Bigl(\frac{e^{\frac{1}{n}\ln(a)}+e^{\frac{1}{n}\ln(b)}}{2}\Bigr)\Bigr)\\
 		&=\exp\Bigl(n^{2}\ln\Bigl(1+\frac{1}{2n}\ln(ab)+\frac{1}{4n^2}(\ln(a)^{2}+\ln(b)^{2})\Bigr)+o\Bigl(\frac{1}{n^{2}}\Bigr)\Bigr)\\
 		&=\exp\Bigl(\frac{n}{2}\ln(ab)+\frac{1}{4}(\ln(a)^{2}+\ln(b)^{2}+o(1))\Bigr)
-	\end{align*}
+	\end{align}
 
 	Si $ab>1$, on a 
-	$$\boxed{\lim\limits_{n\to+\infty} u_{n}=+\infty}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty} u_{n}=+\infty}\end{equation}
 	
 	Si $ab<1$, on a 
-	$$\boxed{\lim\limits_{n\to+\infty} u_{n}=0}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty} u_{n}=0}\end{equation}
 
 	Si $ab=1$, on a 
-	$$\boxed{\lim\limits_{n\to+\infty} u_{n}=e^{\frac{1}{2}\ln(a)^{2}}}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty} u_{n}=e^{\frac{1}{2}\ln(a)^{2}}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Soit $M=\sup\limits_{n\in\N}x_{n}>0$ (car $\sum_{n\in\N}x_{n}=+\infty$). 
-		$$J=\Biggl\{k\in\N\bigm| x_{k}\geqslant\frac{M}{2}\Biggr\}$$
+		\begin{equation}J=\Biggl\{k\in\N\bigm| x_{k}\geqslant\frac{M}{2}\Biggr\}\end{equation}
 		est fini car $x_{n}\xrightarrow[n\to+\infty]{}0$ et est non vide. On définit 
-		$$\varphi(0)=\min\Biggl\{k\in J\Bigm| x_{k}=\max\{x_{n}\bigm|n\in J\}\Biggr\}$$
+		\begin{equation}\varphi(0)=\min\Biggl\{k\in J\Bigm| x_{k}=\max\{x_{n}\bigm|n\in J\}\Biggr\}\end{equation}
 		Pour tout $n\in J$, $x_{\varphi(0)}\geqslant x_{n}$. Si $n\notin J$, $x_{n}\leqslant\frac{M}{2}<x_{\varphi(0)}$. Ainsi, 
-		$$\boxed{x_{\varphi(0)}=\max\{x_{n}\bigm| n\in\N\}}$$
+		\begin{equation}\boxed{x_{\varphi(0)}=\max\{x_{n}\bigm| n\in\N\}}\end{equation}
 		Puis on recommence avec 
-		$$\Bigl\{x_{n}\bigm| n\in\N\setminus\{\varphi(0)\}\Bigr\}$$
+		\begin{equation}\Bigl\{x_{n}\bigm| n\in\N\setminus\{\varphi(0)\}\Bigr\}\end{equation}
 
 		\item Pour $l=0$, pour tout $\varepsilon>0$, il existe $n\in\N$ tel que $x_{N}<\varepsilon$. On pose 
-		$$\boxed{I=\{N\}}$$
+		\begin{equation}\boxed{I=\{N\}}\end{equation}
 		et on a bien 
-		$$\Biggl\lvert\sum_{k\in I}x_{k}-l\Biggr\rvert\leqslant\varepsilon$$
+		\begin{equation}\Biggl\lvert\sum_{k\in I}x_{k}-l\Biggr\rvert\leqslant\varepsilon\end{equation}
 
 		Si $l=+\infty$, soit $A>0$. Il existe $N\in\N$ tel que $\sum_{k=0}^{N}x_{k}>A$ (car $\sum_{n\in\N}x_{n}=+\infty$). Donc on peut prendre 
-		$$\boxed{I=\{0,\dots,N\}}$$
+		\begin{equation}\boxed{I=\{0,\dots,N\}}\end{equation}
 
 		Si $l\in\R_{+}^{*}$. Soit $\varepsilon>0$, on peut supposer sans perte de généralité que $\varepsilon<l$. Il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, on a $x_{n}<\varepsilon$ et $\sum_{n=N_{0}}^{+\infty}x_{n}=+\infty$. Donc il existe un plus petit entier $N_{1}$ tel que $\sum_{n=N_{0}}^{N_{1}}x_{n}\geqslant l-\varepsilon$. Comme $x_{N_{1}}<\varepsilon$, on a $\sum_{n=N_{0}}^{N_{1}}x_{n}\leqslant l+\varepsilon$. Donc 
-		$$\boxed{I=\{N_{0},\dots,N_{1}\}}$$
+		\begin{equation}\boxed{I=\{N_{0},\dots,N_{1}\}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{proof}
 	On pose 
-	$$S_{n}=\sum_{k=0}^{n}u_{k}^{2}$$
+	\begin{equation}S_{n}=\sum_{k=0}^{n}u_{k}^{2}\end{equation}
 	Montrons que $S_{n}\xrightarrow[n\to+\infty]{}+\infty$. D'abord, il existe $n_{0}\in\N$ tel que $u_{n_{0}}>$ donc $\lim\limits_{n\to+\infty}S_{n}=l\in\overline{R}_{+}^{*}$. Si $l<+\infty$, on a $u_{n}\xrightarrow[n\to+\infty]{}\frac{1}{l}$ et donc $u_{n}^{2}\xrightarrow[n\to+\infty]{}\frac{1}{l^{2}}$ et la série diverge. Donc $l=+\infty$ et comme $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{S_{n}}$, on a $u_{n}\xrightarrow[n\to+\infty]{}0$.
 
 	On observe ensuite que $S_{n}-S_{n-1}=u_{n}^{2}=o(1)$ donc $S_{n-1}\underset{n\to+\infty}{\sim}S_{n}$. Ainsi, 
-	$$\underbrace{u_{n}^{2}S_{n}^{2}}_{=~(S_{n}-S_{n-1})S_{n}^{2}}\xrightarrow[n\to+\infty]{}1$$
+	\begin{equation}\underbrace{u_{n}^{2}S_{n}^{2}}_{=~(S_{n}-S_{n-1})S_{n}^{2}}\xrightarrow[n\to+\infty]{}1\end{equation}
 	et on a 
-	$$\frac{S_{n}^{2}+S_{n}S_{n-1}+S_{n-1}^{2}}{S_{n}^{2}}=1+\frac{S_{n-1}}{S_{n}}+\frac{S_{n-1}^{2}}{S_{n}^{2}}\xrightarrow[n\to+\infty]{}3$$
+	\begin{equation}\frac{S_{n}^{2}+S_{n}S_{n-1}+S_{n-1}^{2}}{S_{n}^{2}}=1+\frac{S_{n-1}}{S_{n}}+\frac{S_{n-1}^{2}}{S_{n}^{2}}\xrightarrow[n\to+\infty]{}3\end{equation}
 	donc 
-	$$\underbrace{(S_{n}-S_{n-1})(S_{n}^{2}+S_{n}S_{n-1}+S_{n-1}^{2})}_{=~S_{n}^{3}-S_{n-1}^{3}}\xrightarrow[n\to+\infty]{}3$$
+	\begin{equation}\underbrace{(S_{n}-S_{n-1})(S_{n}^{2}+S_{n}S_{n-1}+S_{n-1}^{2})}_{=~S_{n}^{3}-S_{n-1}^{3}}\xrightarrow[n\to+\infty]{}3\end{equation}
 
 	On applique le théorème de Césaro à la suite $S_{n}^{3}-S_{n-1}^{3}$:
-	$$\frac{S_{n}^{3}-S_{0}^{3}}{n}\xrightarrow[n\to+\infty]{}3$$
+	\begin{equation}\frac{S_{n}^{3}-S_{0}^{3}}{n}\xrightarrow[n\to+\infty]{}3\end{equation}
 	donc $S_{n}\underset{n\to+\infty}{\sim}\sqrt[3]{3n}$, et comme $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{S_{n}}$, on a bien 
-	$$\boxed{u_{n}\underset{n\to+\infty}{\sim}\frac{1}{\sqrt[3]{3n}}}$$
+	\begin{equation}\boxed{u_{n}\underset{n\to+\infty}{\sim}\frac{1}{\sqrt[3]{3n}}}\end{equation}
 
 	Réciproquement, soit $u_{n}=\frac{1}{\sqrt[3]{3n}}$ avec $u_{0}=1$. On a 
-	$$u_{n}^{2}=\frac{1}{(3n)^{\frac{2}{3}}}$$
+	\begin{equation}u_{n}^{2}=\frac{1}{(3n)^{\frac{2}{3}}}\end{equation}
 	Par comparaison série-intégrale, on a 
-	$$\sum_{k=0}^{n}u_{k}^{2}\underset{n\to+\infty}{\sim}\frac{1}{3^{\frac{2}{3}}}\times 3n^{\frac{1}{3}}=(3n)^{\frac{1}{3}}$$
+	\begin{equation}\sum_{k=0}^{n}u_{k}^{2}\underset{n\to+\infty}{\sim}\frac{1}{3^{\frac{2}{3}}}\times 3n^{\frac{1}{3}}=(3n)^{\frac{1}{3}}\end{equation}
 	et donc 
-	$$\boxed{u_{n}\times\sum_{k=0}^{n}u_{k}^{2}\underset{n\to+\infty}{\sim}\frac{\sqrt[3]{3n}}{\sqrt[3]{3n}}=1}$$
+	\begin{equation}\boxed{u_{n}\times\sum_{k=0}^{n}u_{k}^{2}\underset{n\to+\infty}{\sim}\frac{\sqrt[3]{3n}}{\sqrt[3]{3n}}=1}\end{equation}
 \end{proof}
 
 \begin{remark}
 	On rappelle que l'on a la comparaison série-intégrale, pour $\alpha<1$,
-	$$\sum_{k=1}^{N}\frac{1}{k^{\alpha}}\underset{n\to+\infty}{\sim}\int_{1}^{N}\frac{dt}{t^{\alpha}}\underset{n\to+\infty}{\sim}\frac{1}{1-\alpha}N^{1-\alpha}$$
+	\begin{equation}\sum_{k=1}^{N}\frac{1}{k^{\alpha}}\underset{n\to+\infty}{\sim}\int_{1}^{N}\frac{dt}{t^{\alpha}}\underset{n\to+\infty}{\sim}\frac{1}{1-\alpha}N^{1-\alpha}\end{equation}
 \end{remark}
 
 \begin{proof}
 	Tout d'abord, on montre que pour tout $x\in[0,1]$,
-	$$0\leqslant\cosh(x)-1-\frac{x^{2}}{2}\leqslant x^{4}$$
+	\begin{equation}0\leqslant\cosh(x)-1-\frac{x^{2}}{2}\leqslant x^{4}\end{equation}
 	en posant \function{f}{[0,1]}{\R}{x}{\cosh(x)-1-\frac{x^{2}}{2}}
 	de classe $\mathcal{C}^{\infty}$ sur $[0,1]$ et on a $f''(x)=\cosh(x)-1\geqslant0$ et $f'(0)=0$. Comme $f(0)=0$, on a pour tout $x\in[0,1],f(x)\geqslant0$.
 
 	Avec l'inégalité de Taylor-Lagrange à l'ordre 4 sur $f$, on a
-	$$0\leqslant\cosh(x)-1-\frac{x^{2}}{2}\leqslant\frac{x^{4}}{24}\times\underbrace{\sup\limits_{t\in[0,1]}\vert\cosh^{(4)}(t)\vert}_{\leqslant\cosh(1)}\leqslant x^{4}$$
+	\begin{equation}0\leqslant\cosh(x)-1-\frac{x^{2}}{2}\leqslant\frac{x^{4}}{24}\times\underbrace{\sup\limits_{t\in[0,1]}\vert\cosh^{(4)}(t)\vert}_{\leqslant\cosh(1)}\leqslant x^{4}\end{equation}
 
 	\begin{figure}[ht!]
 		\centering
@@ -193,14 +195,14 @@
 	\end{figure}
 
 	On a 
-	$$-x_{n}=\sum_{k=1}^{n}\Bigl[\cosh\Bigl(\frac{1}{\sqrt{k+n}}\Bigr)-1\Bigr]$$
+	\begin{equation}-x_{n}=\sum_{k=1}^{n}\Bigl[\cosh\Bigl(\frac{1}{\sqrt{k+n}}\Bigr)-1\Bigr]\end{equation}
 	Ainsi, 
-	$$0\leqslant x_{n}-\sum_{k=1}^{n}\frac{1}{2}\frac{1}{n+k}\leqslant\sum_{k=1}^{n}\frac{1}{(n+k)^{2}}\leqslant\frac{n}{(n+1)^{2}}\xrightarrow[n\to+\infty]{}0$$
+	\begin{equation}0\leqslant x_{n}-\sum_{k=1}^{n}\frac{1}{2}\frac{1}{n+k}\leqslant\sum_{k=1}^{n}\frac{1}{(n+k)^{2}}\leqslant\frac{n}{(n+1)^{2}}\xrightarrow[n\to+\infty]{}0\end{equation}
 
 	On a 
-	$$\sum_{k=1}^{n}\frac{1}{n+k}=H_{2n}-H_{n}=\ln(2n)+\gamma+o(1)-\ln(n)-\gamma=\ln(2)+o(1)$$
+	\begin{equation}\sum_{k=1}^{n}\frac{1}{n+k}=H_{2n}-H_{n}=\ln(2n)+\gamma+o(1)-\ln(n)-\gamma=\ln(2)+o(1)\end{equation}
 	Donc 
-	$$\boxed{\lim\limits_{n\to+\infty}x_{n}=-\frac{\ln(2)}{2}}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty}x_{n}=-\frac{\ln(2)}{2}}\end{equation}
 \end{proof}
 
 \begin{proof}
@@ -225,14 +227,14 @@
 	\end{figure}
 
 	On a 
-	$$0\varphi(a_{n})\leqslant\varphi(a_{n})+\varphi(b_{n})+\varphi(c_{n})\xrightarrow[n\to+\infty]{}0$$
-	donc $$\lim\limits_{n\to+\infty}\varphi(a_{n})=0$$
+	\begin{equation}0\varphi(a_{n})\leqslant\varphi(a_{n})+\varphi(b_{n})+\varphi(c_{n})\xrightarrow[n\to+\infty]{}0\end{equation}
+	donc \begin{equation}\lim\limits_{n\to+\infty}\varphi(a_{n})=0\end{equation}
 
 	Par l'absurde, soit $\varepsilon>0$. Supposons qu'il existe une infinité d'entiers $k\in\N$ tel que $\vert a_{k}\vert>\varepsilon$. Cela implique alors
-	$$\varphi(a_{k})\geqslant\min(\varphi(\varepsilon),\varphi(-\varepsilon))>0$$
+	\begin{equation}\varphi(a_{k})\geqslant\min(\varphi(\varepsilon),\varphi(-\varepsilon))>0\end{equation}
 	ce qui contredit $\lim\limits_{n\to+\infty}\varphi(a_{n})=0$.
 	Donc 
-	$$\boxed{\lim\limits_{n\to+\infty}a_{n}=0}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty}a_{n}=0}\end{equation}
 	et c'est pareil pour $b_{n}$ et $c_{n}$.
 \end{proof}
 
@@ -242,7 +244,7 @@
 		\item Soit \function{f}{]0,1[}{\R}{x}{x(1-x)}
 		On a $f(x)\in]0,\frac{1}{4}]$. Pour tout $n\in\geqslant1$, $u_{n}\in]0,\frac{1}{4}]$. Par récurrence, on a donc $u_{n+1}\leqslant u_{n}$ et $\lim\limits_{n\to+\infty}u_{n}=0$. 
 		
-		$$\boxed{\text{Donc }v_{n}\text{ est bien définie.}}$$
+		\begin{equation}\boxed{\text{Donc }v_{n}\text{ est bien définie.}}\end{equation}
 
 		\begin{figure}[!ht]
 			\centering
@@ -269,32 +271,32 @@
 		\end{figure}
 
 		\item On a 
-		$$\frac{1}{u_{n+1}}=\frac{1}{u_{n}}\times\frac{1}{1-u_{n}}=\frac{1}{u_{n}}(1+u_{n}+o(u_{n}))=\frac{1}{u_{n}}+1+o(1)$$
+		\begin{equation}\frac{1}{u_{n+1}}=\frac{1}{u_{n}}\times\frac{1}{1-u_{n}}=\frac{1}{u_{n}}(1+u_{n}+o(u_{n}))=\frac{1}{u_{n}}+1+o(1)\end{equation}
 		Donc $v_{n+1}-v_{n}\xrightarrow[n\to+\infty]{}1$. D'après le théorème de Césaro, on a 
-		$$\frac{v_{n}-v_{0}}{n}\xrightarrow[n\to+\infty]{}1$$
+		\begin{equation}\frac{v_{n}-v_{0}}{n}\xrightarrow[n\to+\infty]{}1\end{equation}
 		donc $v_{n}\underset{n\to+\infty}{\sim}n$ et $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{n}$.
 
 		On a 
-		$$\frac{1}{u_{n+1}}=\frac{1}{u_{n}}(1+u_{n}+u_{n}^{2}+O(u_{n}^{3}))=\frac{1}{u_{n}}+1+u_{n}+\underbrace{O(u_{n}^{2})}_{=~O\bigl(\frac{1}{n^{2}}\bigr)}$$
+		\begin{equation}\frac{1}{u_{n+1}}=\frac{1}{u_{n}}(1+u_{n}+u_{n}^{2}+O(u_{n}^{3}))=\frac{1}{u_{n}}+1+u_{n}+\underbrace{O(u_{n}^{2})}_{=~O\bigl(\frac{1}{n^{2}}\bigr)}\end{equation}
 		donc 
-		$$\frac{1}{u_{n+1}}-\frac{1}{u_{n}}=1+u_{n}+O\Bigl(\frac{1}{n^{2}}\Bigr)$$
+		\begin{equation}\frac{1}{u_{n+1}}-\frac{1}{u_{n}}=1+u_{n}+O\Bigl(\frac{1}{n^{2}}\Bigr)\end{equation}
 		et $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{n}$ donc $\sum_{k=0}^{n}u_{k}\underset{n\to+\infty}{\sim}\ln(n)$. En sommant, on a donc 
-		$$v_{n}-v_{0}=n+\ln(n)+o\bigl(\ln(n)\bigr)$$
+		\begin{equation}v_{n}-v_{0}=n+\ln(n)+o\bigl(\ln(n)\bigr)\end{equation}
 
 		On a alors 
-		\begin{align*}
+		\begin{align}
 			u_{n}
 			&=\frac{1}{n+\ln(n)+o\bigl(\ln(n)\bigr)}\\
 			&=\frac{1}{n}\times\frac{1}{1+\frac{\ln(n)}{n}+o(\frac{\ln(n)}{n})}\\
 			&=\frac{1}{n}\Bigl(1-\frac{\ln(n)}{n}+o\Bigl(\frac{\ln(n)}{n}\Bigr)\Bigr)\\
 			&=\frac{1}{n}-\underbrace{\frac{\ln(n)}{n^{2}}+o\Bigl(\frac{\ln(n)}{n^{2}}\Bigr)}_{=~\alpha_{n}}
-		\end{align*}
+		\end{align}
 		$\alpha_{n}$ est le terme genéral d'une série à termes positifs convergentes car $\alpha_{n}=O\Bigl(\frac{1}{n^{\frac{3}{2}}}\Bigr)$. Donc 
-		$$v_{n+1}-v_{n}=1+\frac{1}{n}+\alpha_{n}+O\Bigl(\frac{1}{n^{2}}\Bigr)$$
+		\begin{equation}v_{n+1}-v_{n}=1+\frac{1}{n}+\alpha_{n}+O\Bigl(\frac{1}{n^{2}}\Bigr)\end{equation}
 		et en sommant,
-		$$\boxed{v_{n}=n+\ln(n)+O(1)}$$
+		\begin{equation}\boxed{v_{n}=n+\ln(n)+O(1)}\end{equation}
 		et comme montré auparavant,
-		$$\boxed{u_{n}=\frac{1}{n}-\frac{\ln(n)}{n^{2}}+o\Bigl(\frac{\ln(n)}{n^{2}}\Bigr)}$$
+		\begin{equation}\boxed{u_{n}=\frac{1}{n}-\frac{\ln(n)}{n^{2}}+o\Bigl(\frac{\ln(n)}{n^{2}}\Bigr)}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -303,11 +305,11 @@
 	\begin{enumerate}
 		\item Soit \function{f_{n}}{\R^{+}}{\R}{x}{x^{n}-x-n}
 		On a $f_{n}'(x)=nx^{n-1}-1=0$ si et seulement si 
-		$$x=\Bigl(\frac{1}{n}\Bigr)^{\frac{1}{n-1}}=\alpha_{n}$$
+		\begin{equation}x=\Bigl(\frac{1}{n}\Bigr)^{\frac{1}{n-1}}=\alpha_{n}\end{equation}
 		$f_{n}(0)=0$ et $f_{n}(x)\xrightarrow[x\to+\infty]{}+\infty$.
 		$f_{n}$ est monotone strictement sur $]\alpha_{n},+\infty[$.
 		
-		$$\boxed{\text{Donc il existe un unique }x_{n}\in\R^{+}\text{ tel que }f_{n}(x_{n})=0}$$
+		\begin{equation}\boxed{\text{Donc il existe un unique }x_{n}\in\R^{+}\text{ tel que }f_{n}(x_{n})=0}\end{equation}
 
 		On a $f_{n}(1)=-n<0$ donc $x_{n}>1$ et $f_{n}(2)=2^{n}-2-n>0$ pour $n\geqslant3$ (on a $x_{2}=2$). Donc pour $n\geqslant3$, $x_{n}\in]1,2[$.
 
@@ -338,112 +340,112 @@
 		\end{figure}
 
 		\item On a $x_{n}^{n}=x_{n}+n\leqslant2+n$ donc 
-		$$1\leqslant x_{n}\leqslant(2+n)^{\frac{1}{n}}=e^{\frac{1}{n}\ln(2+n)}\xrightarrow[n\to+\infty]{}1$$
+		\begin{equation}1\leqslant x_{n}\leqslant(2+n)^{\frac{1}{n}}=e^{\frac{1}{n}\ln(2+n)}\xrightarrow[n\to+\infty]{}1\end{equation}
 		Donc 
-		$$\boxed{\lim\limits_{n\to+\infty}x_{n}=1}$$
+		\begin{equation}\boxed{\lim\limits_{n\to+\infty}x_{n}=1}\end{equation}
 
 		\item On peut poser $x_{n}=1+\varepsilon_{n}$ avec $\varepsilon_{n}>0$ et $\lim\limits_{n\to+\infty}\varepsilon_{n}=0$. On a 
-		$$(1+\varepsilon_{n})^{n}=1+\varepsilon_{n}+n$$
+		\begin{equation}(1+\varepsilon_{n})^{n}=1+\varepsilon_{n}+n\end{equation}
 		donc 
-		$$n\ln(1+\varepsilon_{n})=\ln(1+\varepsilon_{n}+n)=\ln(n)+\underbrace{\ln\Bigl(1+\frac{1+\varepsilon_{n}}{n}\Bigr)}_{\underset{n\to+\infty}{\sim}\frac{1}{n}}$$
+		\begin{equation}n\ln(1+\varepsilon_{n})=\ln(1+\varepsilon_{n}+n)=\ln(n)+\underbrace{\ln\Bigl(1+\frac{1+\varepsilon_{n}}{n}\Bigr)}_{\underset{n\to+\infty}{\sim}\frac{1}{n}}\end{equation}
 		et donc 
-		$$\varepsilon_{n}\underset{n\to+\infty}{\sim}\frac{\ln(n)}{n}$$
+		\begin{equation}\varepsilon_{n}\underset{n\to+\infty}{\sim}\frac{\ln(n)}{n}\end{equation}
 
 		On a donc 
-		$$x_{n}=1+\frac{\ln(n)}{n}+o\Bigl(\frac{\ln(n)}{n}\Bigr)$$
+		\begin{equation}x_{n}=1+\frac{\ln(n)}{n}+o\Bigl(\frac{\ln(n)}{n}\Bigr)\end{equation}
 
 		On a enfin 
-		$$(1+\varepsilon_{n})^{n}=1+\varepsilon_{n}+n=1+n+\frac{\ln(n)}{n}+o\Bigl(\frac{\ln(n)}{n}\Bigr)$$
+		\begin{equation}(1+\varepsilon_{n})^{n}=1+\varepsilon_{n}+n=1+n+\frac{\ln(n)}{n}+o\Bigl(\frac{\ln(n)}{n}\Bigr)\end{equation}
 		d'où
-		\begin{align*}
+		\begin{align}
 			\ln(1+\varepsilon_{n})
 			&=\frac{1}{n}\ln(n+1+\frac{\ln(n)}{n}+o\Bigl(\frac{\ln(n)}{n}\Bigr))\\
 			&=\frac{1}{n}\Bigl[\ln(n)+\ln\Bigl(1+\frac{1}{n}+\underbrace{\frac{\ln(n)}{n^{2}}+o\Bigl(\frac{\ln(n)}{n^{2}}\Bigr)}_{=~o\bigl(\frac{1}{n}\bigr)}\Bigr)\Bigr]\\
 			&=\frac{\ln(n)}{n}+\frac{1}{n^{2}}+o\Bigl(\frac{1}{n^{2}}\Bigr)
-		\end{align*}
+		\end{align}
 		donc 
-		$$1+\varepsilon_{n}=e^{\frac{\ln(n)}{n}+\frac{1}{n^{2}}+o\Bigl(\frac{1}{n^{2}}\Bigr)}=1+\frac{\ln(n)}{n}+\frac{\ln(n)^{2}}{2n^{2}}+o\Bigl(\frac{\ln(n)^{2}}{n^{2}}\Bigr)$$
+		\begin{equation}1+\varepsilon_{n}=e^{\frac{\ln(n)}{n}+\frac{1}{n^{2}}+o\Bigl(\frac{1}{n^{2}}\Bigr)}=1+\frac{\ln(n)}{n}+\frac{\ln(n)^{2}}{2n^{2}}+o\Bigl(\frac{\ln(n)^{2}}{n^{2}}\Bigr)\end{equation}
 		puis
-		$$\varepsilon_{n}=\frac{\ln(n)}{n}+\frac{\ln(n)^{2}}{2n^{2}}+o\Bigl(\frac{\ln(n)^{2}}{n^{2}}\Bigr)$$
+		\begin{equation}\varepsilon_{n}=\frac{\ln(n)}{n}+\frac{\ln(n)^{2}}{2n^{2}}+o\Bigl(\frac{\ln(n)^{2}}{n^{2}}\Bigr)\end{equation}
 		et ainsi
-		$$\boxed{x_{n}=1+\frac{\ln(n)}{n}+\frac{\ln(n)^{2}}{2n^{2}}+o\Bigl(\frac{\ln(n)^{2}}{n^{2}}\Bigr)}$$
+		\begin{equation}\boxed{x_{n}=1+\frac{\ln(n)}{n}+\frac{\ln(n)^{2}}{2n^{2}}+o\Bigl(\frac{\ln(n)^{2}}{n^{2}}\Bigr)}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{proof}
 	On note 
-	$$v_{n}=\lim\limits_{n\to+\infty}\frac{u_{n}a_{0}+u_{n-1}a_{1}+\dots+u_{0}a_{n}}{u_{0}+\dots+u_{n}}$$
+	\begin{equation}v_{n}=\lim\limits_{n\to+\infty}\frac{u_{n}a_{0}+u_{n-1}a_{1}+\dots+u_{0}a_{n}}{u_{0}+\dots+u_{n}}\end{equation}
 
 	Si pour tout $n\in\N$, $a_{n}=a$ alors $v_{n}=a\xrightarrow[n\to+\infty]{}a$. De manière générale, on a 
-	$$v_{n}-a=v_{n}-a\frac{u_{n}+\dots+u_{0}}{u_{0}+\dots+u_{n}}=\frac{\sum_{k=0}^{n}u_{n-k}(a_{k}-a)}{u_{0}+\dots+u_{n}}$$
+	\begin{equation}v_{n}-a=v_{n}-a\frac{u_{n}+\dots+u_{0}}{u_{0}+\dots+u_{n}}=\frac{\sum_{k=0}^{n}u_{n-k}(a_{k}-a)}{u_{0}+\dots+u_{n}}\end{equation}
 
 	Ainsi,
-	$$\vert u_{n}-a\vert\leqslant\frac{\sum_{k=0}^{n}u_{n-k}\vert a_{k}-a\vert}{u_{0}+\dots+u_{n}}$$
+	\begin{equation}\vert u_{n}-a\vert\leqslant\frac{\sum_{k=0}^{n}u_{n-k}\vert a_{k}-a\vert}{u_{0}+\dots+u_{n}}\end{equation}
 
 	Soit $\varepsilon>0$. Il existe $N\in\N$ tel que pour tout $k\geqslant N$, $\vert a_{k}-a\vert\leqslant\frac{\varepsilon}{2}$. Comme $(a_{k})_{k\in\N}$ converge, on note $M=\sup\limits_{k\in\N}\vert a_{k}-a\vert$. Soit $n\geqslant N$, on a 
-	\begin{align*}
+	\begin{align}
 		\vert v_{n}-a\vert
 		&\leqslant\frac{\sum_{k=0}^{N-1}u_{n-k}\vert a_{k}-a\vert+\sum_{k=N}^{n}\vert a_{k}-a\vert}{u_{0}+\dots+u_{n}}\\
 		&\leqslant\frac{\sum_{k=n-N+1}^{n}u_{k}M}{u_{0}+\dots+u_{n}}+\underbrace{\frac{\sum_{k=N}^{n}u_{n-k}\frac{\varepsilon}{2}}{u_{0}+\dots+u_{n}}}_{\leqslant\frac{\varepsilon}{2}}
-	\end{align*}
+	\end{align}
 	car les $u_{i}$ sont positifs.
 
 	On remarque enfin que 
-	$$
+	\begin{equation}
 	\begin{array}[]{rcl}
 		u_{n} &=& o(u_{0}+\dots+u_{n})\\
 		u_{n-1} &=& o(u_{0}+\dots+u_{n-1})=o(u_{0}+\dots+u_{n})\\
 		\vdots & &\\
 		u_{n-N+1}&=&o(u_{0}+\dots+u_{n})
 	\end{array}
-	$$
+	\end{equation}
 
 	Donc 
-	$$M\frac{\sum_{k=n-N+1}^{n}u_{k}}{u_{0}+\dots+u_{n}}\xrightarrow[n\to+\infty]{}0$$
+	\begin{equation}M\frac{\sum_{k=n-N+1}^{n}u_{k}}{u_{0}+\dots+u_{n}}\xrightarrow[n\to+\infty]{}0\end{equation}
 	et il existe $N'\in\C$ tel que pour tout $n\geqslant N'$, on a 
-	$$M\frac{\sum_{k=n-N+1}^{n}u_{k}}{u_{0}+\dots+u_{n}}\leqslant\frac{\varepsilon}{2}$$
+	\begin{equation}M\frac{\sum_{k=n-N+1}^{n}u_{k}}{u_{0}+\dots+u_{n}}\leqslant\frac{\varepsilon}{2}\end{equation}
 	et donc pour tout $n\geqslant\max(N,N')$, on a $\vert v_{n}-a\vert\leqslant\frac{\varepsilon}{2}$ et ainsi 
-	$$\boxed{\lim\limits_{n\to+\infty}v_{n}=a}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty}v_{n}=a}\end{equation}
 \end{proof}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Pour $n\geqslant2$, (iii) donne 
-		$$x-\frac{a_{2}}{2}-\dots-\frac{a_{n}}{n!}=\sum_{k=n+1}^{+\infty}\frac{a_{k}}{k!}$$
+		\begin{equation}x-\frac{a_{2}}{2}-\dots-\frac{a_{n}}{n!}=\sum_{k=n+1}^{+\infty}\frac{a_{k}}{k!}\end{equation}
 		Ainsi,
-		$$0\leqslant x-\frac{a_{2}}{2}-\dots-\frac{a_{n}}{n!}<\sum_{k=n+1}^{+\infty}\frac{k-1}{k!}=\sum_{k=n+1}^{+\infty}\frac{1}{(k-1)!}-\frac{1}{k!}=\frac{1}{n!}$$
+		\begin{equation}0\leqslant x-\frac{a_{2}}{2}-\dots-\frac{a_{n}}{n!}<\sum_{k=n+1}^{+\infty}\frac{k-1}{k!}=\sum_{k=n+1}^{+\infty}\frac{1}{(k-1)!}-\frac{1}{k!}=\frac{1}{n!}\end{equation}
 		où l'inégalité est stricte d'après (ii). Pour $n\geqslant2$, on a 
-		$$x-\frac{a_{2}}{2}<\frac{1}{2!}$$
+		\begin{equation}x-\frac{a_{2}}{2}<\frac{1}{2!}\end{equation}
 		donc 
-		$$0\leqslant 2x-\underbrace{a_{2}}_{\in\N}<1$$
+		\begin{equation}0\leqslant 2x-\underbrace{a_{2}}_{\in\N}<1\end{equation}
 		Donc $a_{2}=\lfloor 2x\rfloor$.
 		On a ensuite 
-		$$0\leqslant n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)-\underbrace{a_{n}}_{\in\N}<1$$
+		\begin{equation}0\leqslant n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)-\underbrace{a_{n}}_{\in\N}<1\end{equation}
 		donc 
-		$$\boxed{a_{n}=\Biggl\lfloor n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)\Biggr\rfloor}$$
+		\begin{equation}\boxed{a_{n}=\Biggl\lfloor n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)\Biggr\rfloor}\end{equation}
 
 		On a donc bien unicité.
 
 		Soit maintenant $(a_{n})_{n\in\N}$ définie comme ci-dessus. On a, pour tout $n\geqslant2$, on a 
-		$$0\leqslant n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)-\underbrace{a_{n}}_{\in\N}<1$$
+		\begin{equation}0\leqslant n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)-\underbrace{a_{n}}_{\in\N}<1\end{equation}
 		Or 
-		$$0-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\leqslant\frac{1}{(n-1)!}$$
+		\begin{equation}0-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\leqslant\frac{1}{(n-1)!}\end{equation}
 		donc 
-		$$a_{n}\in\{0,\dots,n-1\}$$
+		\begin{equation}a_{n}\in\{0,\dots,n-1\}\end{equation}
 		et (i) est vérifié.
 
 		On a 
-		$$0\leqslant x-\sum_{k=2}^{n}\frac{a_{k}}{k!}<\frac{1}{n!}\xrightarrow[n\to+\infty]{}0$$
+		\begin{equation}0\leqslant x-\sum_{k=2}^{n}\frac{a_{k}}{k!}<\frac{1}{n!}\xrightarrow[n\to+\infty]{}0\end{equation}
 		donc (iii) est vérifié, et supposons qu'il existe $n_{0}\geqslant2$ tel que pour tout $m\geqslant n_{0}+1$, on a $a_{m}=m-1$.
 		Alors 
-		$$x=\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!}+\sum_{k=n_{0}+1}^{+\infty}\frac{k-1}{k!}$$
+		\begin{equation}x=\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!}+\sum_{k=n_{0}+1}^{+\infty}\frac{k-1}{k!}\end{equation}
 		et
-		$$x-\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!} = \sum_{k=n_{0}+1}^{+\infty}\frac{k-1}{k!}=\frac{1}{n_{0}!}$$
+		\begin{equation}x-\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!} = \sum_{k=n_{0}+1}^{+\infty}\frac{k-1}{k!}=\frac{1}{n_{0}!}\end{equation}
 		donc 
-		$$n_{0}!\Bigl(x-\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!}\Bigr)=1$$
+		\begin{equation}n_{0}!\Bigl(x-\sum_{k=0}^{n_{0}}\frac{a_{k}}{k!}\Bigr)=1\end{equation}
 		et 
-		$$n_{0}!\Bigl(x-\sum_{k=0}^{n_{0}-1}\frac{a_{n_{0}-1}}{(n_{0}-1)!}\Bigr)-a_{n_{0}}=1$$
+		\begin{equation}n_{0}!\Bigl(x-\sum_{k=0}^{n_{0}-1}\frac{a_{n_{0}-1}}{(n_{0}-1)!}\Bigr)-a_{n_{0}}=1\end{equation}
 		En prenant la partie entière, on a donc $0=1$ ce qui est absurde.
 
 		Donc (ii) est vérifié.
@@ -451,32 +453,32 @@
 		\item S'il existe $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$, $a_{n}=0$ alors $x\in\Q$.
 		
 		Si $x=\frac{p}{q}\in\Q$, on a 
-		$$x=\frac{a_{2}}{2}+\dots+\frac{a_{n}}{n!}$$
+		\begin{equation}x=\frac{a_{2}}{2}+\dots+\frac{a_{n}}{n!}\end{equation}
 		si et seulement si 
-		$$a_{n}=n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)$$
+		\begin{equation}a_{n}=n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)\end{equation}
 		si et seulement si 
-		$$n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)\in\N$$
+		\begin{equation}n!\Bigl(x-\frac{a_{2}}{2}-\dots-\frac{a_{n-1}}{(n-1)!}\Bigr)\in\N\end{equation}
 		ce qui est vrai dès que $n\geqslant q$. Donc pour tout $n > q$, on a $a_{n}=0$ par unicité.
 
 		\item Soit $l\in[-1,1]$. Soit $x\in[0,1[$ avec 
-		$$x=\sum_{k=2}^{+\infty}\frac{a_{k}}{k!}$$
+		\begin{equation}x=\sum_{k=2}^{+\infty}\frac{a_{k}}{k!}\end{equation}
 		On a alors 
-		$$n!2\pi x=\underbrace{\sum_{k=2}^{n}\frac{2\pi a_{k}n!}{k!}}_{\in 2\pi\Z}+\frac{2\pi a_{n+1}}{n+1}+\underbrace{\sum_{k\geqslant n+2}\frac{2\pi a_{k}n!}{k!}}_{=~\varepsilon_{n}}$$
+		\begin{equation}n!2\pi x=\underbrace{\sum_{k=2}^{n}\frac{2\pi a_{k}n!}{k!}}_{\in 2\pi\Z}+\frac{2\pi a_{n+1}}{n+1}+\underbrace{\sum_{k\geqslant n+2}\frac{2\pi a_{k}n!}{k!}}_{=~\varepsilon_{n}}\end{equation}
 		On a 
-		$$0\leqslant \varepsilon_{n} < \frac{2\pi n!}{(n+1)!}=\frac{2\pi}{n+1}\xrightarrow[n\to+\infty]{}0$$
+		\begin{equation}0\leqslant \varepsilon_{n} < \frac{2\pi n!}{(n+1)!}=\frac{2\pi}{n+1}\xrightarrow[n\to+\infty]{}0\end{equation}
 		Donc 
-		$$\sin(n!2\pi x)=\sin\Bigl(\frac{2\pi a_{n+1}}{n+1}+\varepsilon_{n}\Bigr)$$
+		\begin{equation}\sin(n!2\pi x)=\sin\Bigl(\frac{2\pi a_{n+1}}{n+1}+\varepsilon_{n}\Bigr)\end{equation}
 		et il suffit d'avoir, comme $\varepsilon_{n}\xrightarrow[n\to+\infty]{}0$,
-		$$\frac{a_{n}}{n}\xrightarrow[n\to+\infty]{}\frac{\arcsin(l)}{2\pi}\in\Bigl[0,\frac{1}{4}\Bigr]$$
+		\begin{equation}\frac{a_{n}}{n}\xrightarrow[n\to+\infty]{}\frac{\arcsin(l)}{2\pi}\in\Bigl[0,\frac{1}{4}\Bigr]\end{equation}
 		On pose alors 
-		$$\boxed{a_{n}=\Biggl\lfloor\frac{n\arcsin(l)}{2\pi}\Biggr\rfloor}$$
+		\begin{equation}\boxed{a_{n}=\Biggl\lfloor\frac{n\arcsin(l)}{2\pi}\Biggr\rfloor}\end{equation}
 		pour $n\geqslant2$ et on a $0\leqslant a_{n}\leqslant \frac{n}{4}<n-1$ pour tout $n\geqslant2$. On a donc le résultat.
 	\end{enumerate}
 \end{proof}
 
 \begin{remark}
 	Il n'y a pas unicité. Par exemple, pour $l=0$, $x=0$ ou $x=\frac{1}{2}$ convient. Plus généralement, pour tout $\frac{p}{q}\in\Q$, pour tout $n\geqslant q$, on a
-	$$\sin\Biggl(n!2\pi\Bigl(x+\frac{p}{q}\Bigr)\Biggr)=\sin(n!2\pi x)$$
+	\begin{equation}\sin\Biggl(n!2\pi\Bigl(x+\frac{p}{q}\Bigr)\Biggr)=\sin(n!2\pi x)\end{equation}
 \end{remark}
 
 \begin{proof}
@@ -484,7 +486,7 @@
 	Soit \function{g}{\R_{+}}{\R}{x}{2\ln(1+x)-x}
 	et \function{f}{\R_{+}}{\R}{x}{2\ln(1+x)}
 	$g$ est dérivable est 
-	$$g'(x)=\frac{1-x}{1+x}$$
+	\begin{equation}g'(x)=\frac{1-x}{1+x}\end{equation}
 	donc $g$ est croissante sur $[0,1]$ et décroissante sur $[1,+\infty[$. Comme $g(0)=0$ et $\lim\limits_{x\to+\infty}g(x)=-\infty$, d'après le théorème des valeurs intermédiaires, il existe un unique réel $l\in]0,+\infty[$ tel que $g(l)=0$ d'où $f(l)=l$.
 
 	\begin{figure}[ht!]
@@ -513,185 +515,185 @@
 	Pour tout $x\in]0,l]$, on a $x\leqslant f(x)\leqslant l$ et pour tout $x>l$, on a $l\leqslant f(x)\leqslant x$.
 
 	Soit $n\geqslant1$. Si $u_{n}\geqslant l$ et $u_{n-1}\geqslant l$, on a $m_{n}=l$ et $M_{n}\in\{u_{n},u_{n-1}\}$. Il vient donc 
-	$$u_{n+1}=\frac{1}{2}(f(u_{n})+f(u_{n-1}))\geqslant f(l)=l$$
+	\begin{equation}u_{n+1}=\frac{1}{2}(f(u_{n})+f(u_{n-1}))\geqslant f(l)=l\end{equation}
 	et 
-	$$u_{n+1}\leqslant\frac{1}{2}(u_{n}+u_{n-1})\leqslant M_{n}$$
+	\begin{equation}u_{n+1}\leqslant\frac{1}{2}(u_{n}+u_{n-1})\leqslant M_{n}\end{equation}
 	Donc $m_{n+1}=l=m_{n}$ et $M_{n+1}\leqslant M_{n}$.
 
 	Par récurrence, on a pour tout $k\geqslant n$, $u_{k}\geqslant l$ et $(M_{k})_{k\geqslant n}$ converge vers $\lambda\geqslant l$ (car décroissante et plus grande que $l$) et $m_{k}=l$ pour tout $k\geqslant n$.
 
 	De plus pour tout $k\geqslant n$, on a 
-	$$u_{k+1}=\frac{1}{2}(f(u_{k})+f(u_{k-1}))\leqslant f(M_{k})$$
+	\begin{equation}u_{k+1}=\frac{1}{2}(f(u_{k})+f(u_{k-1}))\leqslant f(M_{k})\end{equation}
 	car $f$ est croissante et donc 
-	$$u_{k+2}\leqslant f(M_{k+1})\leqslant f(M_{k})$$
+	\begin{equation}u_{k+2}\leqslant f(M_{k+1})\leqslant f(M_{k})\end{equation}
 	Par passage à la limite, on a $\lambda\leqslant f(\lambda)$ donc $\lambda=f(\lambda)$ et donc $\lambda=l$. Or pout tout $k\geqslant n$, on a 
-	$$\underbrace{m_{k}}_{=~l}\leqslant u_{k}\leqslant M_{k}\xrightarrow[k\to+\infty]{}l$$
+	\begin{equation}\underbrace{m_{k}}_{=~l}\leqslant u_{k}\leqslant M_{k}\xrightarrow[k\to+\infty]{}l\end{equation}
 	donc 
-	$$\boxed{u_{k}\xrightarrow[k\to+\infty]{}l}$$
+	\begin{equation}\boxed{u_{k}\xrightarrow[k\to+\infty]{}l}\end{equation}
 
 	S'il existe $n_{0}\in\N^{*}$ tel que $u_{n_{0}-1}\geqslant l$ et $u_{n_{0}}\geqslant l$ alors $\lim\limits_{n\to+\infty}u_{n}=l$. Or même s'il existe $n_{1}\in\N^{*}$ tel que $u_{n_{1}-1}\leqslant l$ et $u_{n_{1}}\leqslant l$, alors on inverse les rôles de $M_{n_{1}}$ et $m_{n_{1}}$.
 
 	Si pour tout $n\in\N$,
-	$$(u_{n}-l)(u_{n+1}-l)\leqslant 0$$
+	\begin{equation}(u_{n}-l)(u_{n+1}-l)\leqslant 0\end{equation}
 	Supposons par exemple $u_{0}\geqslant l$ et $u_{1}\leqslant l$. Alors 
-	$$0\leqslant u_{2}-l\leqslant\frac{u_{0}-l}{2}$$
+	\begin{equation}0\leqslant u_{2}-l\leqslant\frac{u_{0}-l}{2}\end{equation}
 	et par récurrence, pour tout $k\in\N$, on a $0\leqslant u_{2k}-l\leqslant\frac{u_{0}-l}{2^{k}}$.
 	Donc $u_{2k}\xrightarrow[k\to+\infty]{}l$ et de même $u_{2k+1}\xrightarrow[k\to+\infty]{}l$ (par valeurs inférieures). Donc 
-	$$\boxed{u_{k}\xrightarrow[k\to+\infty]{}l}$$
+	\begin{equation}\boxed{u_{k}\xrightarrow[k\to+\infty]{}l}\end{equation}
 \end{proof}
 
 \begin{proof}
 	Soit $(\theta,\theta')\in[2,2\pi[^{2}$ tel que 
-	$$\lim\limits_{k\to+\infty}e^{\i px_{n}}=e^{\i \theta}$$ et 
-	$$\lim\limits_{k\to+\infty}e^{\i qx_{n}}=e^{\i \theta'}$$
+	\begin{equation}\lim\limits_{k\to+\infty}e^{\i px_{n}}=e^{\i \theta}\end{equation} et 
+	\begin{equation}\lim\limits_{k\to+\infty}e^{\i qx_{n}}=e^{\i \theta'}\end{equation}
 	Soient $x,x'$ deux valeurs d'adhérence de $(x_{n})_{n\in\N}$ distinctes. On a 
-	$$
+	\begin{equation}
 	\left\{
 		\begin{array}[]{l}
 			e^{\i px}=e^{\i \theta}=e^{\i px'}\\
 			e^{\i qx}=e^{\i \theta'}=e^{\i qx'}
 		\end{array}
 	\right.
-	$$
+	\end{equation}
 
 	Il existe $(k,k')\in\Z^{2}$ tel que 
-	$$
+	\begin{equation}
 	\left\{
 		\begin{array}[]{l}
 			px=px'+2k\pi\\
 			qx=qx'+2k\pi
 		\end{array}
 	\right.
-	$$
+	\end{equation}
 	et donc $p(x-x')=2k\pi$ et $q(x-x')=2k'\pi$ et alors $\frac{p}{q}\in\Q$ ce qui contredit l'hypothèse. Donc $(u_{n})_{n\in\N}$ possède une unique valeur d'adhérence. Comme elle est bornée,
-	$$\boxed{(x_{n})_{n\in\N}\text{ converge.}}$$
+	\begin{equation}\boxed{(x_{n})_{n\in\N}\text{ converge.}}\end{equation}
 
 	Si $(x_{n})_{n\in\N}$ n'est pas bornée, on peut prendre 
-	$$\boxed{x_{n}=n!}$$
+	\begin{equation}\boxed{x_{n}=n!}\end{equation}
 	On a 
-	$$e^{2\i \pi n!}=1$$
+	\begin{equation}e^{2\i \pi n!}=1\end{equation}
 	et 
-	$$n!e=n!\sum_{k=0}^{+\infty}\frac{1}{k!}=\underbrace{\sum_{k=0}^{n}\frac{n!}{k!}}_{\in\N}+\underbrace{\sum_{k=n+1}^{+\infty}\frac{n!}{k!}}_{\xrightarrow[k\to+\infty]{}0}$$
+	\begin{equation}n!e=n!\sum_{k=0}^{+\infty}\frac{1}{k!}=\underbrace{\sum_{k=0}^{n}\frac{n!}{k!}}_{\in\N}+\underbrace{\sum_{k=n+1}^{+\infty}\frac{n!}{k!}}_{\xrightarrow[k\to+\infty]{}0}\end{equation}
 	
 	Si on veut $x_{n}$ divergente dans $\overline{\R}$, on peut prendre 
-	$$\boxed{x_{n}=(-1)^{n}n!}$$
+	\begin{equation}\boxed{x_{n}=(-1)^{n}n!}\end{equation}
 \end{proof}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item On a $$\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)\dots(n-k+1)}{k!}\leqslant\boxed{\frac{n^{k}}{k!}}$$
+		\item On a \begin{equation}\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)\dots(n-k+1)}{k!}\leqslant\boxed{\frac{n^{k}}{k!}}\end{equation}
 		\item On a 
-		$$\left(1+\frac{z}{n}\right)^{n}=\sum_{k=0}^{n}\binom{n}{k}\left(\frac{z}{n}\right)^{k}$$
+		\begin{equation}\left(1+\frac{z}{n}\right)^{n}=\sum_{k=0}^{n}\binom{n}{k}\left(\frac{z}{n}\right)^{k}\end{equation}
 		donc 
-		\begin{align*}
+		\begin{align}
 			\left|\sum_{k=0}^{n}\frac{z^{k}}{k!}-\binom{n}{k}\frac{z^{k}}{n^{k}}\right|
 			&\leqslant\sum_{k=0}^{n}\vert z\vert^{k}\underbrace{\left|\frac{1}{k!}-\binom{n}{k}\frac{1}{n^{k}}\right|}_{\geqslant0}\\
 			&\leqslant\sum_{k=0}^{n}\frac{\left|z\right|^{k}}{k!}-\sum_{k=0}^{n}\binom{k}{n}\frac{\left|z\right|^{k}}{n^{k}}\\
 			&\boxed{=\sum_{k=0}^{n}\frac{\left|z\right|^{k}}{k!}-\left(1+\frac{\left|z\right|}{n}\right)^{n}}
-		\end{align*}
+		\end{align}
 
 		\item On sait que 
-		$$\sum_{k=0}^{n}\frac{\left|z\right|^{k}}{k!}\xrightarrow[k\to+\infty]{}e^{\left|z\right|}$$
+		\begin{equation}\sum_{k=0}^{n}\frac{\left|z\right|^{k}}{k!}\xrightarrow[k\to+\infty]{}e^{\left|z\right|}\end{equation}
 		et 
-		$$\left(1+\frac{\left|z\right|}{n}\right)^{n}=e^{n\ln\left(1+\frac{\left|z\right|}{n}\right)}=e^{n\left(\frac{\left|z\right|}{n}+o\left(\frac{\left|z\right|}{n}\right)\right)}=e^{\left|z\right|}e^{o\left(1\right)}\xrightarrow[n\to+\infty]{}e^{\left|z\right|}$$
+		\begin{equation}\left(1+\frac{\left|z\right|}{n}\right)^{n}=e^{n\ln\left(1+\frac{\left|z\right|}{n}\right)}=e^{n\left(\frac{\left|z\right|}{n}+o\left(\frac{\left|z\right|}{n}\right)\right)}=e^{\left|z\right|}e^{o\left(1\right)}\xrightarrow[n\to+\infty]{}e^{\left|z\right|}\end{equation}
 		
 		En reportant dans la question précédente, on a donc 
-		$$\boxed{\lim\limits_{n\to+\infty}\left(1+\frac{z}{n}\right)^{n}=\sum_{k=0}^{+\infty}\frac{z^{k}}{k!}=e^{z}}$$
+		\begin{equation}\boxed{\lim\limits_{n\to+\infty}\left(1+\frac{z}{n}\right)^{n}=\sum_{k=0}^{+\infty}\frac{z^{k}}{k!}=e^{z}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{remark}
 	Une autre méthode est d'écrire, pour $z=a+\i b$, 
-	$$1+\frac{z+\i b}{n}=1+\frac{a}{n}+\i\frac{b}{n}=\rho_{n}e^{\i\theta_{n}}$$.
+	\begin{equation}1+\frac{z+\i b}{n}=1+\frac{a}{n}+\i\frac{b}{n}=\rho_{n}e^{\i\theta_{n}}\end{equation}.
 	On a alors 
-	$$\left|1+\frac{a+\i b}{n}\right|=\sqrt{\left(1+\frac{a}{n}\right)^{2}+\frac{b^{2}}{n^{2}}}=\rho_{n}$$
+	\begin{equation}\left|1+\frac{a+\i b}{n}\right|=\sqrt{\left(1+\frac{a}{n}\right)^{2}+\frac{b^{2}}{n^{2}}}=\rho_{n}\end{equation}
 	et alors 
-	\begin{align*}
+	\begin{align}
 		\rho_{n}^{n}
 		&=\left|\left(1+\frac{z}{n}\right)\right|^{n}\\
 		&=e^{\frac{n}{2}\ln\left(\left(1+\frac{a}{n}\right)^{2}+\frac{b^{2}}{n^{2}}\right)}\\
 		&=e^{\frac{n}{2}\ln\left(1+\frac{2a}{n}+o\left(\frac{1}{n}\right)\right)}\\
 		&=e^{a+o\left(1\right)}\xrightarrow[n\to+\infty]{}e^{a}=\left|e^{z}\right|
-	\end{align*}
+	\end{align}
 
 	On écrit ensuite 
-	$$1+\frac{a+\i b}{n}=\rho_{n}\Bigl(\underbrace{\frac{1+\frac{a}{n}}{\rho_{n}}}_{=~\cos(\theta_{n})}+\i\underbrace{\frac{b}{n\rho_{n}}}_{=~\sin(\theta_{n})}\Bigr)$$
+	\begin{equation}1+\frac{a+\i b}{n}=\rho_{n}\Bigl(\underbrace{\frac{1+\frac{a}{n}}{\rho_{n}}}_{=~\cos(\theta_{n})}+\i\underbrace{\frac{b}{n\rho_{n}}}_{=~\sin(\theta_{n})}\Bigr)\end{equation}
 	On a alors
-	$$\lim\limits_{n\to+\infty}\frac{b}{n\rho_{n}}=0\text{ et }\lim\limits_{n\to+\infty}\frac{1+\frac{a}{n}}{\rho_{n}}=1$$
+	\begin{equation}\lim\limits_{n\to+\infty}\frac{b}{n\rho_{n}}=0\text{ et }\lim\limits_{n\to+\infty}\frac{1+\frac{a}{n}}{\rho_{n}}=1\end{equation}
 	On peut imposer $\theta_{n}\in]-\pi,\pi]$ et il existe alors $N\in\N$ tel que pour tout $n\geqslant N$, $\cos(\theta_{n})\geqslant0$. Pour $n\geqslant N$, on a alors $\theta_{n}\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ donc 
-	$$\theta_{n}=\arcsin\left(\frac{b}{n\rho_{n}}\right)$$
+	\begin{equation}\theta_{n}=\arcsin\left(\frac{b}{n\rho_{n}}\right)\end{equation}
 	et $n\theta_{n}=n\arcsin\left(\frac{b}{n\rho_{n}}\right)\underset{n\to+\infty}{\sim}b$. Finalement, on a bien 
-	$$\left(1+\frac{z}{n}\right)^{n}=\rho_{n}^{n}e^{\i\theta_{n}}\xrightarrow[n\to+\infty]{}e^{a}e^{\i b}=e^{z}$$
+	\begin{equation}\left(1+\frac{z}{n}\right)^{n}=\rho_{n}^{n}e^{\i\theta_{n}}\xrightarrow[n\to+\infty]{}e^{a}e^{\i b}=e^{z}\end{equation}
 \end{remark}
 
 \begin{proof}
 	Pour tout $n\geqslant2$, $u_{n}>0$. On a 
-	$$u_{n+1}=\underbrace{\frac{\sqrt{n+1}-1}{\sqrt{n+1}+1}}_{<1}u_{n}$$
+	\begin{equation}u_{n+1}=\underbrace{\frac{\sqrt{n+1}-1}{\sqrt{n+1}+1}}_{<1}u_{n}\end{equation}
 	donc $(u_{n})_{n\in\N}$ est décroissante donc converge. On a 
-	$$\ln(u_{n})=\sum_{k=2}^{n}\underbrace{\ln\Bigl(1-\frac{1}{\sqrt{k}}\Bigr)-\ln\Bigl(1+\frac{1}{\sqrt{k}}\Bigr)}_{=~v_{k}}<0$$
+	\begin{equation}\ln(u_{n})=\sum_{k=2}^{n}\underbrace{\ln\Bigl(1-\frac{1}{\sqrt{k}}\Bigr)-\ln\Bigl(1+\frac{1}{\sqrt{k}}\Bigr)}_{=~v_{k}}<0\end{equation}
 	Ensuite, 
-	$$v_{k}=-\frac{1}{\sqrt{k}}-\frac{1}{\sqrt{k}}+o\left(\frac{1}{\sqrt{k}}\right)\underset{k\to+\infty}{\sim}-\frac{2}{\sqrt{k}}$$
+	\begin{equation}v_{k}=-\frac{1}{\sqrt{k}}-\frac{1}{\sqrt{k}}+o\left(\frac{1}{\sqrt{k}}\right)\underset{k\to+\infty}{\sim}-\frac{2}{\sqrt{k}}\end{equation}
 
 	Comme $\sum_{k\geqslant2}\frac{1}{\sqrt{k}}$ diverge, on a $\lim\limits_{n\to+\infty}\ln(u_{n})=-\infty$.
 
 	Ainsi, 
-	$$\boxed{\lim\limits_{n\to+\infty}u_{n}=0}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty}u_{n}=0}\end{equation}
 
 	On a ensuite 
-	$$u_{n}=\exp\left(\sum_{k=2}^{n}\left[\ln\left(1-\frac{1}{\sqrt{k}}\right)-\ln\left(1+\frac{1}{\sqrt{k}}\right)\right]\right)$$
+	\begin{equation}u_{n}=\exp\left(\sum_{k=2}^{n}\left[\ln\left(1-\frac{1}{\sqrt{k}}\right)-\ln\left(1+\frac{1}{\sqrt{k}}\right)\right]\right)\end{equation}
 	et 
-	$$\ln\left(1\pm\frac{1}{\sqrt{k}}\right)=\pm\frac{1}{\sqrt{k}}-\frac{1}{2k}+O\left(\frac{1}{k^{\frac{3}{2}}}\right)$$
+	\begin{equation}\ln\left(1\pm\frac{1}{\sqrt{k}}\right)=\pm\frac{1}{\sqrt{k}}-\frac{1}{2k}+O\left(\frac{1}{k^{\frac{3}{2}}}\right)\end{equation}
 	Donc 
-	$$v_{k}=-\frac{2}{\sqrt{k}}+O\left(\frac{1}{k^{\frac{3}{2}}}\right)$$
+	\begin{equation}v_{k}=-\frac{2}{\sqrt{k}}+O\left(\frac{1}{k^{\frac{3}{2}}}\right)\end{equation}
 	Le terme dans le $O$ est le terme générale d'une série absolument convergent donc convergent, on note ce terme $\alpha_{k}$. On a alors 
-	$$\sum_{k=2}^{n}v_{k}=\sum_{k=2}^{n}\left(-\frac{2}{\sqrt{k}}+\alpha_{k}\right)=-2\sum_{k=2}^{n}\frac{1}{\sqrt{k}}+\underbrace{\sum_{k=2}^{+\infty}\alpha_{k}}_{=~C}+o\left(1\right)$$
+	\begin{equation}\sum_{k=2}^{n}v_{k}=\sum_{k=2}^{n}\left(-\frac{2}{\sqrt{k}}+\alpha_{k}\right)=-2\sum_{k=2}^{n}\frac{1}{\sqrt{k}}+\underbrace{\sum_{k=2}^{+\infty}\alpha_{k}}_{=~C}+o\left(1\right)\end{equation}
 	Par comparaison série-intégrale, on a 
-	$$\sum_{k=2}^{n}\frac{1}{\sqrt{k}}\underset{k\to+\infty}{\sim}\int_{2}^{n}\frac{dt}{\sqrt{t}}\underset{k\to+\infty}{\sim}2\sqrt{n}$$
+	\begin{equation}\sum_{k=2}^{n}\frac{1}{\sqrt{k}}\underset{k\to+\infty}{\sim}\int_{2}^{n}\frac{dt}{\sqrt{t}}\underset{k\to+\infty}{\sim}2\sqrt{n}\end{equation}
 
 	Posons 
-	$$w_{n}=\sum_{k=2}^{n}\frac{1}{\sqrt{k}}-2\sqrt{n}$$
+	\begin{equation}w_{n}=\sum_{k=2}^{n}\frac{1}{\sqrt{k}}-2\sqrt{n}\end{equation}
 	On étudie la série de terme général $w_{n}-w_{n-1}$. On a 
-	\begin{align*}
+	\begin{align}
 		w_{n}-w_{n-1}
 		&=\frac{1}{\sqrt{n}}-2\left(\sqrt{n}-\sqrt{n-1}\right)\\
 		&=\frac{1}{\sqrt{n}}-2\left(1-\sqrt{1-\frac{1}{n}}\right)\\
 		&=\frac{1}{\sqrt{n}}-2\left(1-\left(1-\frac{1}{2n}+O\left(\frac{1}{n^{2}}\right)\right)\right)\\
 		&=\frac{1}{\sqrt{n}}-\frac{\sqrt{n}}{n}+O\left(\frac{1}{n^{\frac{3}{2}}}\right)\\
 		&=O\left(\frac{1}{n^{\frac{3}{2}}}\right)
-	\end{align*}
+	\end{align}
 
 	Donc la série de terme général $w_{n}-w_{n-1}$ converge et ainsi $(w_{n})_{n\geqslant2}$ converge: il existe $C'\in\R$ tel que 
-	$$\sum_{k=2}^{n}\frac{1}{\sqrt{n}}=2\sqrt{n}+C'+o\left(1\right)$$
+	\begin{equation}\sum_{k=2}^{n}\frac{1}{\sqrt{n}}=2\sqrt{n}+C'+o\left(1\right)\end{equation}
 
 	On a donc 
-	$$\ln(u_{n})=\sum_{k=2}^{n}v_{k}=-4\sqrt{n}-2C'+C+o\left(1\right)$$
+	\begin{equation}\ln(u_{n})=\sum_{k=2}^{n}v_{k}=-4\sqrt{n}-2C'+C+o\left(1\right)\end{equation}
 	Ainsi, 
-	$$u_{n}=\exp\left(-4\sqrt{n}-2C'+C+o\left(1\right)\right)\underset{n\to+\infty}{\sim}Ke^{-4\sqrt{n}}$$
+	\begin{equation}u_{n}=\exp\left(-4\sqrt{n}-2C'+C+o\left(1\right)\right)\underset{n\to+\infty}{\sim}Ke^{-4\sqrt{n}}\end{equation}
 	où $K=e^{-2C'+C}>0$.
 
 	Donc 
-	$$u_{n}^{\alpha}\underset{n\to+\infty}{\sim}K^{\alpha}e^{-4\alpha\sqrt{n}}$$
+	\begin{equation}u_{n}^{\alpha}\underset{n\to+\infty}{\sim}K^{\alpha}e^{-4\alpha\sqrt{n}}\end{equation}
 
 	Si $\alpha\leqslant0$, $\lim\limits_{n\to+\infty}u_{n}^{\alpha}\not\to 0$
 	donc 
-	$$\boxed{\sum u_{n}^{\alpha}\text{ diverge.}}$$
+	\begin{equation}\boxed{\sum u_{n}^{\alpha}\text{ diverge.}}\end{equation}
 
 	Si $\alpha>0$, $u_{n}^{\alpha}=o\left(\frac{1}{n^{2}}\right)$ donc d'après le critère de Riemann, 
-	$$\boxed{\sum u_{n}^{\alpha}\text{ converge.}}$$
+	\begin{equation}\boxed{\sum u_{n}^{\alpha}\text{ converge.}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	Soit $S_{n}=\sum_{k=0}^{n}u_{k}$. On a 
-	$$u_{n+1}+\dots+u_{2n}\geqslant nu_{2n}\geqslant0$$
+	\begin{equation}u_{n+1}+\dots+u_{2n}\geqslant nu_{2n}\geqslant0\end{equation}
 
 	Si $(S_{n})$ converge alors $S_{2n}-S_{n}\xrightarrow[n\to+\infty]{}0$. Alors $\lim\limits_{n\to+\infty}nu_{2n}=0$ et $\lim\limits_{n\to+\infty}2n u_{2n}=0$.
 
 	Comme on a $(2n+1)u_{2n}\geqslant (2n+1)u_{2n+1}\geqslant0$, on a aussi $\lim\limits_{n\to+\infty}(2n+1) u_{2n}=0$. Finalement, on a bien 
-	$$\boxed{\lim\limits_{n\to+\infty}nu_{n}=0\text{ et donc }u_{n}=o\left(\frac{1}{n}\right)}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty}nu_{n}=0\text{ et donc }u_{n}=o\left(\frac{1}{n}\right)}\end{equation}
 
 	Si $\left\{p\in\N \middle|pu_{p}\geqslant1 \right\}$ est infini, alors $u_{p}\neq o\left(\frac{1}{p}\right)$ donc 
-	$$\boxed{\sum u_{p}\text{ diverge.}}$$
+	\begin{equation}\boxed{\sum u_{p}\text{ diverge.}}\end{equation}
 \end{proof}
 
 \begin{remark}
@@ -701,58 +703,58 @@
 \begin{proof}
 	\begin{enumerate}
 		\item C'est une série à termes positifs. On a 
-		$$n^{\frac{1}{n}}=e^{\frac{1}{n}\ln\left(n\right)}\xrightarrow[n\to+\infty]{}1$$
+		\begin{equation}n^{\frac{1}{n}}=e^{\frac{1}{n}\ln\left(n\right)}\xrightarrow[n\to+\infty]{}1\end{equation}
 		Ainsi
-		$$n^{-1-\frac{1}{n}}\underset{n\to+\infty}{\sim}\frac{1}{n}$$
+		\begin{equation}n^{-1-\frac{1}{n}}\underset{n\to+\infty}{\sim}\frac{1}{n}\end{equation}
 		et donc 
-		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ diverge.}}\end{equation}
 
 		\item C'est une série à termes positifs. On a 
-		$$u_{n}\geqslant \int_{1}^{\frac{\pi}{2}}t^{n}\sin(1)dt=\frac{\sin(1)}{n+1}\times\left(\left(\frac{\pi}{2}\right)^{n+1}-1\right)\xrightarrow[n\to+\infty]{}+\infty$$
+		\begin{equation}u_{n}\geqslant \int_{1}^{\frac{\pi}{2}}t^{n}\sin(1)dt=\frac{\sin(1)}{n+1}\times\left(\left(\frac{\pi}{2}\right)^{n+1}-1\right)\xrightarrow[n\to+\infty]{}+\infty\end{equation}
 		donc 
-		$$\boxed{\sum u_{n}\text{ diverge grossièrement.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ diverge grossièrement.}}\end{equation}
 
 		\item On écrit 
-		$$\frac{n!}{e}=\sum_{k=0}^{+\infty}\frac{n!}{k!}(-1)^{k}=\underbrace{\sum_{k=0}^{n}\frac{n!}{k!}(-1)^{k}}_{\in\Z}+\frac{(-1)^{n+1}}{n+1}+\sum_{k=n+2}^{+\infty}\frac{n!}{k!}(-1)^{k}$$
+		\begin{equation}\frac{n!}{e}=\sum_{k=0}^{+\infty}\frac{n!}{k!}(-1)^{k}=\underbrace{\sum_{k=0}^{n}\frac{n!}{k!}(-1)^{k}}_{\in\Z}+\frac{(-1)^{n+1}}{n+1}+\sum_{k=n+2}^{+\infty}\frac{n!}{k!}(-1)^{k}\end{equation}
 		et
-		$$\left\vert\sum_{k=n+2}^{+\infty}\frac{n!}{k!}(-1)^{k}\right\vert<\frac{1}{(n+1)(n+2)}$$
+		\begin{equation}\left\vert\sum_{k=n+2}^{+\infty}\frac{n!}{k!}(-1)^{k}\right\vert<\frac{1}{(n+1)(n+2)}\end{equation}
 		d'après le critère spécial des séries alternées.
 
 		Donc 
-		\begin{align*}
+		\begin{align}
 			\sin\left(2\pi\frac{n!}{e}\right)
 			&=\sin\left(\frac{2\pi(-1)^{n+1}}{n+1}+O\left(\frac{1}{n^{2}}\right)\right)\\
 			&=\underbrace{\frac{2\pi(-1)^{n+1}}{n+1}}_{\substack{\text{terme général}\\\text{d'une série alternée}\\\text{convergente}}}+\underbrace{O\left(\frac{1}{n^{2}}\right)}_{\substack{\text{terme général}\\\text{d'une série absolument}\\\text{convergente}}}
-		\end{align*}
+		\end{align}
 		
 		Donc
-		$$\boxed{\sum u_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 
 		\item Si $\alpha\leqslant0$, $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{\ln(n)}$ et comme $\frac{1}{n}=O\left(\frac{1}{\ln(n)}\right)$, 
-		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ diverge.}}\end{equation}
 
 		Si $\alpha>1$, $\vert u_{n}\vert\underset{n\to+\infty}{\sim}\frac{1}{n^{\alpha}}$ donc d'après le critère de Riemann,
-		$$\boxed{\sum u_{n}\text{ convegre absolument donc converge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge absolument donc converge.}}\end{equation}
 
 		Si $\alpha\in]0,1]$, on écrit 
-		\begin{align*}
+		\begin{align}
 			u_{n}
 			&=\frac{(-1)^{n}}{n^{\alpha}}\times\frac{1}{1+\underbrace{(-1)^{n}\frac{\ln(n)}{n^{\alpha}}}_{\xrightarrow[n\to+\infty]{}0}}\\
 			&=\frac{(-1)^{n}}{n^{\alpha}}\left(1-(-1)^{n}\frac{\ln(n)}{n^{\alpha}}+o\left(\frac{\ln(n)}{n^{\alpha}}\right)\right)\\
 			&=\underbrace{\frac{(-1)^{n}}{n^{\alpha}}}_{\substack{\text{terme général}\\\text{d'une série alternée}\\\text{convergente}}}\underbrace{-\frac{\ln(n)}{n^{2\alpha}}+o\left(\frac{\ln(n)}{n^{2\alpha}}\right)}_{\substack{\underset{n\to+\infty}{\sim}-\frac{\ln(n)}{n^{2\alpha}}<0\\\text{terme général}\\\text{d'une série convergente}\\\text{ssi }\alpha>\frac{1}{2}}}
-		\end{align*}
+		\end{align}
 
-		$$\boxed{\sum u_{n}\text{ converge si et seulement si }\alpha>\frac{1}{2}\text{.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge si et seulement si }\alpha>\frac{1}{2}\text{.}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{remark}
 	Soit $\alpha\in[0,1]$ et 
-	$$u_{n}=\int_{0}^{\alpha}t^{n}\sin(t)dt\geqslant0$$
+	\begin{equation}u_{n}=\int_{0}^{\alpha}t^{n}\sin(t)dt\geqslant0\end{equation}
 	Si $\alpha<1$, $u_{n}\leqslant\alpha^{n+1}$, terme général d'une série convergente donc $\sum u_{n}$ converge.
 
 	Si $\alpha=1$, on utilise
-	$$\forall t\in\left[0,\frac{\pi}{2}\right],\sin(t)\geqslant\frac{2}{\pi}t$$
+	\begin{equation}\forall t\in\left[0,\frac{\pi}{2}\right],\sin(t)\geqslant\frac{2}{\pi}t\end{equation}
 	Alors $u_{n}\geqslant\frac{2}{\pi (n+2)}$, terme générale d'une série divergente donc $\sum u_{n}$ diverge.
 \end{remark}
 
@@ -780,66 +782,66 @@
 
 \begin{proof}
 	\item On a 
-	$$u_{n}=\sum_{k=n}^{+\infty}\frac{(-1)^{k}}{k}$$
+	\begin{equation}u_{n}=\sum_{k=n}^{+\infty}\frac{(-1)^{k}}{k}\end{equation}
 	$u_{n}$ est le reste d'ordre $n$ d'une série alternée, donc $u_{n}$ est du signe de $\frac{(-1)^{n}}{n}$. Donc on a 
-	$$u_{n+1}\times u_{n}\leqslant0$$
+	\begin{equation}u_{n+1}\times u_{n}\leqslant0\end{equation}
 	Par ailleurs,
-	$$\vert u_{n}\vert=\underbrace{\frac{1}{n}-\frac{1}{n+1}}_{=~\frac{1}{n(n+1)}}+\underbrace{\frac{1}{n+2}-\frac{1}{n+3}}_{=~\frac{1}{(n+2)(n+3)}}+\dots=\sum_{p=0}^{+\infty}\frac{1}{(n+2p)(n+2p+1)}$$
+	\begin{equation}\vert u_{n}\vert=\underbrace{\frac{1}{n}-\frac{1}{n+1}}_{=~\frac{1}{n(n+1)}}+\underbrace{\frac{1}{n+2}-\frac{1}{n+3}}_{=~\frac{1}{(n+2)(n+3)}}+\dots=\sum_{p=0}^{+\infty}\frac{1}{(n+2p)(n+2p+1)}\end{equation}
 	Donc $(\vert u_{n}\vert)_{n\geqslant1}$ est décroissante.
 
 	D'après le critère des séries alternées, 
-	$$\boxed{\sum u_{n}\text{ converge.}}$$
+	\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 
 	Pour calculer la somme, on peut chercher si la famille $(u_{n,p})_{\substack{n\geqslant1\\p\in\N}}$ est sommable où
-	$$u_{n,p}=\frac{(-1)^{n}}{(n+2p)(n+2p+1)}$$ 
+	\begin{equation}u_{n,p}=\frac{(-1)^{n}}{(n+2p)(n+2p+1)}\end{equation} 
 	Soit $p\geqslant0$, on a 
-	$$\sum_{n=1}^{+\infty}\frac{1}{(n+2p)(n+2p+1)}=\sum_{n=1}^{+\infty}\left(\frac{1}{n+2p}-\frac{1}{n+2p+1}\right)=\frac{1}{2p+1}$$
+	\begin{equation}\sum_{n=1}^{+\infty}\frac{1}{(n+2p)(n+2p+1)}=\sum_{n=1}^{+\infty}\left(\frac{1}{n+2p}-\frac{1}{n+2p+1}\right)=\frac{1}{2p+1}\end{equation}
 	Donc 
-	$$\sum_{p\in\N}\sum_{n\geqslant1}\vert u_{n,p}\vert=+\infty$$
+	\begin{equation}\sum_{p\in\N}\sum_{n\geqslant1}\vert u_{n,p}\vert=+\infty\end{equation}
 	Ainsi, cette famille n'est pas sommable. Essayons plutôt de calculer $u_{n}$ d'abord: soit $n\geqslant1$ fixé et $N\geqslant n$. On a 
-	\begin{align*}
+	\begin{align}
 		\sum_{k=n}^{N}\frac{(-1)^{k}}{k}
 		&=\sum_{k=n}^{N}(-1)^{k}\int_{0}^{1}t^{k-1}dt\\
 		&=-\sum_{k=n}^{N}\int_{0}^{1}(-t)^{k-1}dt\\
 		&=-\int_{0}^{1}\sum_{k=n}^{N}(-t)^{k-1}dt\\
 		&=\int_{0}^{1}(-t)^{n}\frac{1-(-t)^{N-n+1}}{1+t}dt
-	\end{align*}
+	\end{align}
 
 	Ainsi, 
-	$$\sum_{k=n}^{N}\frac{(-1)^{k}}{k}=-\int_{0}^{1}\frac{(-t)^{n}}{1+t}dt+\int_{0}^{1}\frac{(-t)^{N+1}}{1+t}dt$$
+	\begin{equation}\sum_{k=n}^{N}\frac{(-1)^{k}}{k}=-\int_{0}^{1}\frac{(-t)^{n}}{1+t}dt+\int_{0}^{1}\frac{(-t)^{N+1}}{1+t}dt\end{equation}
 	et 
-	$$\left\vert\int_{0}^{1}\frac{(-t)^{N+1}}{1+t}dt\right\vert\leqslant\int_{0}^{1}t^{N+1}dt=\frac{1}{N+2}$$
+	\begin{equation}\left\vert\int_{0}^{1}\frac{(-t)^{N+1}}{1+t}dt\right\vert\leqslant\int_{0}^{1}t^{N+1}dt=\frac{1}{N+2}\end{equation}
 
 	Donc 
-	$$u_{n}=-\int_{0}^{1}\frac{(-t)^{n}}{1+t}dt$$
+	\begin{equation}u_{n}=-\int_{0}^{1}\frac{(-t)^{n}}{1+t}dt\end{equation}
 	Soit alors $M\geqslant1$. On a 
-	\begin{align*}
+	\begin{align}
 		\sum_{n=1}^{M}u_{n}
 		&=\sum_{n=1}^{M}\left(-\int_{0}^{1}\frac{(-t)^{n}}{t+1}dt\right)\\
 		&=-\int_{0}^{1}\frac{1}{1+t}\sum_{n=1}^{M}(-t)^{n}dt\\
 		&=-\int_{0}^{1}\frac{-t}{1+t}\frac{1-(-t)^{M}}{1+t}dt\\
 		&=\int_{0}^{1}\frac{t}{(1+t)^{2}}dt+\int_{0}^{1}\frac{(-t)^{M+1}}{(1+t)^{2}}dt
-	\end{align*}
+	\end{align}
 	Comme 
-	$$\left\vert\int_{0}^{1}\frac{(-t)^{M+1}}{(1+t)^{2}}dt\right\vert\leqslant\int_{0}^{1}t^{M+1}dt=\frac{1}{M+2}\xrightarrow[M\to+\infty]{}0$$
+	\begin{equation}\left\vert\int_{0}^{1}\frac{(-t)^{M+1}}{(1+t)^{2}}dt\right\vert\leqslant\int_{0}^{1}t^{M+1}dt=\frac{1}{M+2}\xrightarrow[M\to+\infty]{}0\end{equation}
 	on a 
-	\begin{align*}
+	\begin{align}
 		\sum_{n=1}^{+\infty}u_{n}
 		&=\int_{0}^{1}\frac{t}{(1+t)^{2}}dt\\
 		&=\int_{0}^{1}\frac{(t+1)-1}{(1+t)^{2}}dt\\
 		&=\int_{0}^{1}\frac{1}{1+t}dt-\int_{0}^{1}\frac{1}{(1+t)^{2}}dt\\
 		&=\left[\ln\left(1+t\right)\right]_{0}^{1}+\left[\frac{1}{2}-1\right]\\
 		&=\ln(2)-\frac{1}{2}
-	\end{align*}
+	\end{align}
 
 	Finalement, 
-	$$\boxed{\sum_{n=1}^{+\infty} u_{n}=\ln(2)-\frac{1}{2}}$$
+	\begin{equation}\boxed{\sum_{n=1}^{+\infty} u_{n}=\ln(2)-\frac{1}{2}}\end{equation}
 
-	\item $$\frac{1}{(3n)!}=\left(\frac{1}{n^{2}}\right)$$
+	\item \begin{equation}\frac{1}{(3n)!}=\left(\frac{1}{n^{2}}\right)\end{equation}
 	donc d'après le critère de Riemann, 
-	$$\boxed{\sum u_{n}\text{ converge.}}$$
+	\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 	Posons 
-	$$
+	\begin{equation}
 	\left\{
 		\begin{array}[]{rcl}
 			S_{0} &= &\sum_{n=0}^{+\infty}\frac{1}{(3n)!}\\
@@ -847,9 +849,9 @@
 			S_{2} &= &\sum_{n=0}^{+\infty}\frac{1}{(3n+2)!}
 		\end{array}
 	\right.
-	$$
+	\end{equation}
 	On a 
-	$$
+	\begin{equation}
 	\left\{
 		\begin{array}[]{rcl}
 			S_{0} + S_{1} + S_{2} &= & e\\
@@ -857,31 +859,31 @@
 			S_{0} + j^{2}S_{1} + jS_{2} &= &\exp(j^{2})
 		\end{array}
 	\right.
-	$$
+	\end{equation}
 	où $j=\exp\left(\frac{2\i \pi}{3}\right)$.
 	En sommant les trois lignes, on a 
-	$$3S_{0}=e+\exp(j)+\exp(j^{2})=e+e^{-\frac{1}{2}}\left(2\cos\left(\frac{\sqrt{3}}{2}\right)\right)$$
+	\begin{equation}3S_{0}=e+\exp(j)+\exp(j^{2})=e+e^{-\frac{1}{2}}\left(2\cos\left(\frac{\sqrt{3}}{2}\right)\right)\end{equation}
 
 	Donc 
-	$$\boxed{\sum_{n=0}^{+\infty} u_{n}=\frac{1}{3}\left(e+e^{-\frac{1}{2}}\left(2\cos\left(\frac{\sqrt{3}}{2}\right)\right)\right)}$$
+	\begin{equation}\boxed{\sum_{n=0}^{+\infty} u_{n}=\frac{1}{3}\left(e+e^{-\frac{1}{2}}\left(2\cos\left(\frac{\sqrt{3}}{2}\right)\right)\right)}\end{equation}
 
 	\item S'il existe $p\geqslant0$ tel que $n=p^{3}$, alors 
-	$$\left\lfloor n^{\frac{1}{3}}\right\rfloor=p$$
+	\begin{equation}\left\lfloor n^{\frac{1}{3}}\right\rfloor=p\end{equation}
 	et 
-	$$\left\lfloor \left(n-1\right)^{\frac{1}{3}}\right\rfloor=\left\lfloor \left(p^{3}-1\right)^{\frac{1}{3}}\right\rfloor=p-1$$
+	\begin{equation}\left\lfloor \left(n-1\right)^{\frac{1}{3}}\right\rfloor=\left\lfloor \left(p^{3}-1\right)^{\frac{1}{3}}\right\rfloor=p-1\end{equation}
 
 	Sinon, $n^{\frac{1}{3}}\notin\N$. Soit $k=\left\lfloor n^{\frac{1}{3}}\right\rfloor$. Alors $k^{3}<n\leqslant (k+1)^{3}$ donc $k^{3}\leqslant n-1<(k+1)^{3}$ d'où $k\leqslant (n-1)^{\frac{1}{3}}<k+1$. Donc $\left\lfloor(n-1)^{\frac{1}{3}}\right\rfloor=k$.
 
 	Donc $\sum u_{n}$ est une série lacunaire. Comme $u_{p^{3}}=O\left(\frac{1}{p^{3}}\right)$, d'après le critère de Riemann,
-	$$\boxed{\sum u_{n}\text{ converge.}}$$
+	\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 
 	Sa somme vaut 
-	$$\sum_{n=1}^{+\infty}u_{n}=\sum_{p=1}^{+\infty}\frac{1}{4p^{3}-p}$$
+	\begin{equation}\sum_{n=1}^{+\infty}u_{n}=\sum_{p=1}^{+\infty}\frac{1}{4p^{3}-p}\end{equation}
 	On décompose en éléments simples:
-	$$\frac{1}{4x^{3}-x}=\frac{1}{x(4x^{2}-1)}=\frac{-1}{x}+\frac{1}{2x-1}+\frac{1}{2x+1}$$
+	\begin{equation}\frac{1}{4x^{3}-x}=\frac{1}{x(4x^{2}-1)}=\frac{-1}{x}+\frac{1}{2x-1}+\frac{1}{2x+1}\end{equation}
 
 	Donc la somme partielle jusqu'au rang $n$ vaut
-	\begin{align*}
+	\begin{align}
 		S_{n}
 		&=-\underbrace{\sum_{p=1}^{n}\frac{1}{p}}_{=~H_{n}}+\sum_{p=1}^{n}\frac{1}{2p-1}+\sum_{p=1}^{n}\frac{1}{2p+1}\\
 		&=-H_{n}+1+\frac{1}{2n+1}+2\sum_{p=1}^{n-1}\frac{1}{2p+1}\\
@@ -889,112 +891,112 @@
 		&=-H_{n}+2H_{2n-1}-H_{n-1}-1+\frac{1}{2n+1}\\
 		&=-\ln(n)+2\ln(2n-1)-\ln(n-1)-1+\underbrace{\frac{1}{2n+1}}_{=~o\left(1\right)}+o\left(1\right)\\
 		&=\ln\left(\frac{(2n-1)^{2}}{n(n-1)}\right)-1+o\left(1\right)\xrightarrow[n\to+\infty]{}\ln(4)-1
-	\end{align*}
+	\end{align}
 
 	Donc 
-	$$\boxed{\sum_{n=1}^{+\infty}u_{n}=\ln(4)-1}$$
+	\begin{equation}\boxed{\sum_{n=1}^{+\infty}u_{n}=\ln(4)-1}\end{equation}
 \end{proof}
 
 \begin{proof}
 	Soit $\varepsilon>0$ tel que $a+\varepsilon<0$. Il existe $A>0$ tel que pour tout $x>A$, 
-	$$a-\varepsilon\leqslant\frac{f'(x)}{f(x)}\leqslant a+\varepsilon$$
+	\begin{equation}a-\varepsilon\leqslant\frac{f'(x)}{f(x)}\leqslant a+\varepsilon\end{equation}
 	Alors
-	$$(a-\varepsilon)f(x)\leqslant f'(x)\leqslant (+\varepsilon)f(x)$$
+	\begin{equation}(a-\varepsilon)f(x)\leqslant f'(x)\leqslant (+\varepsilon)f(x)\end{equation}
 
 	On voit donc que 
-	$$f'(x)-f(x)(a+\varepsilon)\leqslant0$$
+	\begin{equation}f'(x)-f(x)(a+\varepsilon)\leqslant0\end{equation}
 	On pose alors (sorte d'inéquation différentielle) 
-	$$g_{1}(x)=f(x)e^{-(a+\varepsilon)x}$$
+	\begin{equation}g_{1}(x)=f(x)e^{-(a+\varepsilon)x}\end{equation}
 	On a 
-	$$g_{1}'(x)=e^{-(a+\varepsilon)x}\left(f'(x)-f(x)(a+\varepsilon)\right)\leqslant 0$$
+	\begin{equation}g_{1}'(x)=e^{-(a+\varepsilon)x}\left(f'(x)-f(x)(a+\varepsilon)\right)\leqslant 0\end{equation}
 	pour tout $x\geqslant A$. Donc $g_{1}$ est décroissante sur $[A,+\infty[$. Alors 
-	$$0<g_{1}(x)\leqslant g_{1}(A)=f(A)e^{-(a+\varepsilon)A}$$
+	\begin{equation}0<g_{1}(x)\leqslant g_{1}(A)=f(A)e^{-(a+\varepsilon)A}\end{equation}
 	Alors 
-	$$0<f(x)\leqslant \left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a+\varepsilon)x}$$
+	\begin{equation}0<f(x)\leqslant \left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a+\varepsilon)x}\end{equation}
 
 	De même, pour $x\geqslant A$, 
-	$$\left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a-\varepsilon)x}\leqslant f(x)$$
+	\begin{equation}\left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a-\varepsilon)x}\leqslant f(x)\end{equation}
 	car $g_{2}(x)=f(x)e^{-(a-\varepsilon)x}$ est croissante sur $[A,+\infty[$.
 
 	Donc 
-	$$f(n)\leqslant\left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a+\varepsilon)n}$$
+	\begin{equation}f(n)\leqslant\left(f(A)e^{-(a+\varepsilon)A}\right)e^{(a+\varepsilon)n}\end{equation}
 	Comme $a+\varepsilon<0$, 
-	$$\boxed{\sum_{n\geqslant1}f(n)\text{ converge.}}$$
+	\begin{equation}\boxed{\sum_{n\geqslant1}f(n)\text{ converge.}}\end{equation}
 	
 	De plus
-	$$f(A)e^{-(a-\varepsilon)A}\frac{e^{(a-\varepsilon)N}}{1-e^{a-\varepsilon}}\leqslant R_{N}=\sum_{n=N}^{+\infty}f(n)\leqslant f(A)e^{-(a+\varepsilon)A}\frac{e^{(a+\varepsilon)N}}{1+e^{a+\varepsilon}}$$
+	\begin{equation}f(A)e^{-(a-\varepsilon)A}\frac{e^{(a-\varepsilon)N}}{1-e^{a-\varepsilon}}\leqslant R_{N}=\sum_{n=N}^{+\infty}f(n)\leqslant f(A)e^{-(a+\varepsilon)A}\frac{e^{(a+\varepsilon)N}}{1+e^{a+\varepsilon}}\end{equation}
 
 	Donc 
-	$$\boxed{R_{N}=\underset{n\to+\infty}{O}\left(e^{aN}\right)\text{ et }e^{aN}=\underset{n\to+\infty}{O}\left(R_{N}\right)}$$
+	\begin{equation}\boxed{R_{N}=\underset{n\to+\infty}{O}\left(e^{aN}\right)\text{ et }e^{aN}=\underset{n\to+\infty}{O}\left(R_{N}\right)}\end{equation}
 \end{proof}
 
 \begin{proof}
 	On a 
-	$$S_{n}=\sum_{k=1}^{n}\underbrace{\frac{e^{k}}{k}}_{\xrightarrow[k\to+\infty]{}+\infty}\xrightarrow[n\to+\infty]{}+\infty$$
+	\begin{equation}S_{n}=\sum_{k=1}^{n}\underbrace{\frac{e^{k}}{k}}_{\xrightarrow[k\to+\infty]{}+\infty}\xrightarrow[n\to+\infty]{}+\infty\end{equation}
 	On utilise la règle d'Abel: on écrit $e^{k}=B_{k}-B_{k-1}$ avec 
-	$$
+	\begin{equation}
 	\left\{
 		\begin{array}[]{ll}
 			B_{k}=\sum_{j=0}^{k}e^{j}=\frac{e^{k+1}-1}{e-1}\\
 			B_{-1}=0
 		\end{array}	
 	\right.
-	$$
+	\end{equation}
 	Alors 
-	$$S_{n}=\sum_{k=1}^{n}\frac{B_{k}}{k}-\sum_{k=0}^{n-1}\frac{B_{k}}{k+1}=\underbrace{-1+\sum_{k=1}^{n-1}\underbrace{\frac{B_{k}}{k(k+1)}}_{\underset{k\to+\infty}{\sim}\frac{e^{k+1}}{(e-1)k^{2}}}}_{=~\underset{n\to+\infty}{o}(S_{n})}+\underbrace{\frac{B_{n}}{n}}_{\underset{n\to+\infty}{\sim}\frac{e^{n}e}{n(e-1)}}$$
+	\begin{equation}S_{n}=\sum_{k=1}^{n}\frac{B_{k}}{k}-\sum_{k=0}^{n-1}\frac{B_{k}}{k+1}=\underbrace{-1+\sum_{k=1}^{n-1}\underbrace{\frac{B_{k}}{k(k+1)}}_{\underset{k\to+\infty}{\sim}\frac{e^{k+1}}{(e-1)k^{2}}}}_{=~\underset{n\to+\infty}{o}(S_{n})}+\underbrace{\frac{B_{n}}{n}}_{\underset{n\to+\infty}{\sim}\frac{e^{n}e}{n(e-1)}}\end{equation}
 
 	Donc 
-	$$\boxed{S_{n}\underset{n\to+\infty}{\sim}\frac{e^{n+1}}{n(e-1)}}$$
+	\begin{equation}\boxed{S_{n}\underset{n\to+\infty}{\sim}\frac{e^{n+1}}{n(e-1)}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item $u_{n}>0$ et 
-		$$u_{n}=e^{n^{\alpha}\ln\left(1-\frac{1}{n}\right)}=e^{n^{\alpha}\left(-\frac{1}{n}+O\left(\frac{1}{n^{2}}\right)\right)}=e^{-n^{\alpha-1}}+O\left(n^{\alpha-2}\right)$$
+		\begin{equation}u_{n}=e^{n^{\alpha}\ln\left(1-\frac{1}{n}\right)}=e^{n^{\alpha}\left(-\frac{1}{n}+O\left(\frac{1}{n^{2}}\right)\right)}=e^{-n^{\alpha-1}}+O\left(n^{\alpha-2}\right)\end{equation}
 
 		Si $\alpha<1$, $u_{n}\xrightarrow[n\to+\infty]{}1$ donc 
-		$$\boxed{\sum u_{n}\text{ diverge grossièrement.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ diverge grossièrement.}}\end{equation}
 
 		Si $\alpha=1$, $u_{n}\xrightarrow[n\to+\infty]{}\frac{1}{2}$ donc 
-		$$\boxed{\sum u_{n}\text{ diverge grossièrement.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ diverge grossièrement.}}\end{equation}
 
 		Si $\alpha>1$, on a 
-		$$-n^{\alpha-1}+O\left(n^{\alpha-2}\right)\underset{n\to+\infty}{\sim}-n^{\alpha-1}$$
+		\begin{equation}-n^{\alpha-1}+O\left(n^{\alpha-2}\right)\underset{n\to+\infty}{\sim}-n^{\alpha-1}\end{equation}
 		donc il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$,
-		$$-n^{\alpha-1}+O\left(n^{\alpha-1}\right)\leqslant\frac{-n^{\alpha-1}}{2}$$
+		\begin{equation}-n^{\alpha-1}+O\left(n^{\alpha-1}\right)\leqslant\frac{-n^{\alpha-1}}{2}\end{equation}
 		d'où 
-		$$u_{n}\leqslant e^{-\frac{n^{\alpha-1}}{2}}=\underset{n\to+\infty}{o}\left(\frac{1}{n^{2}}\right)$$
+		\begin{equation}u_{n}\leqslant e^{-\frac{n^{\alpha-1}}{2}}=\underset{n\to+\infty}{o}\left(\frac{1}{n^{2}}\right)\end{equation}
 		donc 
-		$$\boxed{\sum u_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 
 		\item On a $u_{n}>0$ et 
-		$$\left(\frac{1}{k}\right)^{\frac{1}{k}}e^{-\frac{1}{k}\ln(k)}\xrightarrow[k\to+\infty]{}1$$
+		\begin{equation}\left(\frac{1}{k}\right)^{\frac{1}{k}}e^{-\frac{1}{k}\ln(k)}\xrightarrow[k\to+\infty]{}1\end{equation}
 		donc par comparaison des sommes partielles, on a 
-		$$\sum_{k=1}^{n}\left(\frac{1}{k}\right)^{\frac{1}{k}}\underset{n\to+\infty}{\sim}n$$
+		\begin{equation}\sum_{k=1}^{n}\left(\frac{1}{k}\right)^{\frac{1}{k}}\underset{n\to+\infty}{\sim}n\end{equation}
 		Donc $u_{n}\underset{n\to+\infty}{\sim}\frac{1}{n}$ et 
-		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ diverge.}}\end{equation}
 
 		\item On écrit $n!e=\left\lfloor n!e\right\rfloor+\alpha_{n}$.
 		Alors 
-		$$\sin(n!\pi e)=(-1)^{\left\lfloor n!e\right\rfloor}\sin(\alpha_{n}\pi)$$
+		\begin{equation}\sin(n!\pi e)=(-1)^{\left\lfloor n!e\right\rfloor}\sin(\alpha_{n}\pi)\end{equation}
 		On écrit 
-		$$n!e=\sum_{k=0}^{n-2}\frac{n!}{k!}+n+1+\frac{1}{n+1}+\sum_{k=n+1}^{+\infty}\frac{n!}{k!}$$
+		\begin{equation}n!e=\sum_{k=0}^{n-2}\frac{n!}{k!}+n+1+\frac{1}{n+1}+\sum_{k=n+1}^{+\infty}\frac{n!}{k!}\end{equation}
 
 		On pose $v_{n}=\sum_{k=0}^{n}\frac{1}{k!}$ et $w_{n}=v_{n}+\frac{1}{n\times n!}$. On a 
-		$$v_{n}\leqslant e\leqslant w_{n}$$
+		\begin{equation}v_{n}\leqslant e\leqslant w_{n}\end{equation}
 		donc 
-		$$0\leqslant e-v_{n}\leqslant\frac{1}{n\times n!}$$
+		\begin{equation}0\leqslant e-v_{n}\leqslant\frac{1}{n\times n!}\end{equation}
 		d'où
-		$$0\leqslant \sum_{k=n+1}^{+\infty}\frac{n!}{k!}\leqslant\frac{n!}{(n+1)(n+1)!}=\frac{1}{(n+1)^{2}}$$
+		\begin{equation}0\leqslant \sum_{k=n+1}^{+\infty}\frac{n!}{k!}\leqslant\frac{n!}{(n+1)(n+1)!}=\frac{1}{(n+1)^{2}}\end{equation}
 		Donc 
-		$$n!e\pi = \underbrace{\sum_{k=0}^{n-2}\frac{n!}{k!}}_{\text{pair}}\pi+(n+1)\pi+\frac{\pi}{n+1}+O\left(\frac{1}{n^{2}}\right)$$
+		\begin{equation}n!e\pi = \underbrace{\sum_{k=0}^{n-2}\frac{n!}{k!}}_{\text{pair}}\pi+(n+1)\pi+\frac{\pi}{n+1}+O\left(\frac{1}{n^{2}}\right)\end{equation}
 
 		Finalement,a
-		$$\frac{\sin(n!e\pi)}{\ln(n)}=(-1)^{n+1}\frac{\sin\left(\frac{\pi}{n+1}+O\left(\frac{1}{n^{2}}\right)\right)}{\ln(n)}=\underbrace{\frac{(-1)^{n+1}\pi}{\ln(n)(n+1)}}_{\substack{\text{terme général}\\\text{d'une série alternée}\\\text{convergente}}}+\underbrace{O\left(\frac{1}{n^{2}\ln(n)}\right)}_{\substack{\text{terme général}\\\text{d'une série absolument}\\\text{convergente}}}$$
+		\begin{equation}\frac{\sin(n!e\pi)}{\ln(n)}=(-1)^{n+1}\frac{\sin\left(\frac{\pi}{n+1}+O\left(\frac{1}{n^{2}}\right)\right)}{\ln(n)}=\underbrace{\frac{(-1)^{n+1}\pi}{\ln(n)(n+1)}}_{\substack{\text{terme général}\\\text{d'une série alternée}\\\text{convergente}}}+\underbrace{O\left(\frac{1}{n^{2}\ln(n)}\right)}_{\substack{\text{terme général}\\\text{d'une série absolument}\\\text{convergente}}}\end{equation}
 
 		Donc 
-		$$\boxed{\sum u_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -1002,233 +1004,237 @@
 	\phantom{}
 	\begin{enumerate}
 		\item On a 
-		$$u_{n}=(a+b+c)\ln(n)+b\ln\left(1+\frac{1}{n}\right)+c\ln\left(1+\frac{2}{n}\right)=(a+b+c)\ln(n)+\frac{b+2c}{n}+O\left(\frac{1}{n^{2}}\right)$$
+		\begin{equation}u_{n}=(a+b+c)\ln(n)+b\ln\left(1+\frac{1}{n}\right)+c\ln\left(1+\frac{2}{n}\right)=(a+b+c)\ln(n)+\frac{b+2c}{n}+O\left(\frac{1}{n^{2}}\right)\end{equation}
 		Donc $\sum u_{n}$ converge si et seulement si 
-		$$
+		\begin{equation}
 		\left\{
 			\begin{array}[]{lcr}
 				a+b+c &= &0\\
 				b+2c &= &0
 			\end{array}
 		\right.
-		$$
+		\end{equation}
 		si et seulement si 
-		$$
+		\begin{equation}
 		\left\{
 			\begin{array}[]{lcr}
 				a &= &c\\
 				b &= &-2c
 			\end{array}
 		\right.
-		$$
+		\end{equation}
 
 		Donc 
-		$$\boxed{\sum u_{n}\text{ converge si et seulement si} a=b\text{ et }b=-2c\text{ avec }c\in\R}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge si et seulement si} a=b\text{ et }b=-2c\text{ avec }c\in\R}\end{equation}
 
 		Prenons $c=1$ pour calculer la somme. On a 
-		\begin{align*}
+		\begin{align}
 			\sum_{n=1}^{N}u_{n}
 			&=\sum_{n=1}^{N}\ln(n)-2\ln(n+1)+\ln(n+2)\\
 			&=\sum_{n=1}^{N}\ln(n)-\ln(n+1)+\sum_{n=1}^{N}\ln(n+2)-\ln(n+1)\\
 			&=-\ln(N+1)-\ln(2)+\ln(N+2)\\
 			&=\ln\left(\frac{N+2}{N+1}\right)-\ln(2)\xrightarrow[n\to+\infty]{}-\ln(2)
-		\end{align*}
+		\end{align}
 
 		Donc 
-		$$\boxed{\sum_{n=1}^{+\infty}u_{n}=-\ln(2)}$$
+		\begin{equation}\boxed{\sum_{n=1}^{+\infty}u_{n}=-\ln(2)}\end{equation}
 
 		\item On a $u_{n}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$ donc d'après le critère de Riemann,
-		$$\boxed{\sum u_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 
 		On écrit 
-		$$u_{n}=\frac{2^{n}\left(3^{2^{n-1}}-1\right)}{\left(3^{2^{-1}}+1\right)\left(3^{2^{n}}-1\right)}=\frac{2^{n}\left(3^{2^{n-1}}+1-2\right)}{3^{2^{n}}-1}=\underbrace{\frac{2^{n}}{3^{2^{n-1}}-1}}_{=~v_{n}}-\underbrace{\frac{2^{n+1}}{3^{2^{n}}-1}}_{=~v_{n+1}}$$
+		\begin{equation}u_{n}=\frac{2^{n}\left(3^{2^{n-1}}-1\right)}{\left(3^{2^{-1}}+1\right)\left(3^{2^{n}}-1\right)}=\frac{2^{n}\left(3^{2^{n-1}}+1-2\right)}{3^{2^{n}}-1}=\underbrace{\frac{2^{n}}{3^{2^{n-1}}-1}}_{=~v_{n}}-\underbrace{\frac{2^{n+1}}{3^{2^{n}}-1}}_{=~v_{n+1}}\end{equation}
 
 		Donc 
-		$$\boxed{\sum_{n=1}^{+\infty}u_{n}=v_{1}=1}$$
+		\begin{equation}\boxed{\sum_{n=1}^{+\infty}u_{n}=v_{1}=1}\end{equation}
 
 		\item On remarque que $k-n\left\lfloor\frac{k}{n}\right\rfloor$ est le reste de la division euclidienne de $k$ par $n$. Donc ce reste est borné par $k-1$. Donc $u_{n}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$. D'après le critère de Riemann,
-		$$\boxed{\sum u_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge.}}\end{equation}
 
 		On note alors 
-		$$J_{r}=\left\{n\in\N^{*}\middle| n\equiv r[k]\right\}$$
+		\begin{equation}J_{r}=\left\{n\in\N^{*}\middle| n\equiv r[k]\right\}\end{equation}
 		$(J_{r})_{r\in\{0,\dots,k-1\}}$ forme une partition de $\N^{*}$. On a 
-		$$\sum_{n\in J_{r}}\frac{r}{n(n+1)}=0$$
+		\begin{equation}\sum_{n\in J_{r}}\frac{r}{n(n+1)}=0\end{equation}
 		si $r=0$. Si $r\in\{1,\dots,k-1\}$, on a 
-		$$S_{r}=r\sum_{p=0}^{+\infty}\frac{1}{(kp+r)(kp+r+1)}$$
+		\begin{equation}S_{r}=r\sum_{p=0}^{+\infty}\frac{1}{(kp+r)(kp+r+1)}\end{equation}
 		et par sommabilité on a 
-		$$S=\sum_{k=1}^{+\infty}\frac{n-k\left\lfloor\frac{n}{k}\right\rfloor}{n(n+1)}=\sum_{r=1}^{k-1}S_{r}=\sum_{p=0}^{+\infty}\sum_{r=1}^{k-1}\frac{1}{(kp+r)(kp+r+1)}$$
+		\begin{equation}S=\sum_{k=1}^{+\infty}\frac{n-k\left\lfloor\frac{n}{k}\right\rfloor}{n(n+1)}=\sum_{r=1}^{k-1}S_{r}=\sum_{p=0}^{+\infty}\sum_{r=1}^{k-1}\frac{1}{(kp+r)(kp+r+1)}\end{equation}
 
 		Soit $p\in\N$ fixé. On a 
-		\begin{align*}
+		\begin{align}
 			v_{p}
 			&=\sum_{r=1}^{k-1}\frac{r}{(kp+r)(kp+r+1)}\\
 			&=\sum_{r=1}^{k-1}\frac{r}{kp+r}-\sum_{r=1}^{k-1}\frac{r}{kp+r+1}\\
 			&=\sum_{r=1}^{k-1}\frac{r}{kp+r}-\sum_{r=2}^{k}\frac{r-1}{kp+r}\\
 			&=\frac{1}{kp+1}+\sum_{r=2}^{k-1}\frac{1}{kp+r}-\frac{k-1}{k(p+1)}\\
 			&=\sum_{r=1}^{k}\frac{1}{kp+r}-\frac{1}{p+1}
-		\end{align*}
+		\end{align}
 
 		Ainsi, 
-		$$\sum_{p=0}^{N}v_{p}=\sum_{n=1}^{k(N+1)}\frac{1}{n}-\sum_{n=1}^{N+1}\frac{1}{n}=\ln\left(\frac{k(N+1)}{N+1}\right)+\underset{n\to+\infty}{o}\left(1\right)=\ln(k)+\underset{n\to+\infty}{o}\left(1\right)$$
+		\begin{equation}\sum_{p=0}^{N}v_{p}=\sum_{n=1}^{k(N+1)}\frac{1}{n}-\sum_{n=1}^{N+1}\frac{1}{n}=\ln\left(\frac{k(N+1)}{N+1}\right)+\underset{n\to+\infty}{o}\left(1\right)=\ln(k)+\underset{n\to+\infty}{o}\left(1\right)\end{equation}
 
 		Donc 
-		$$\boxed{\sum_{n=1}^{+\infty}u_{n}=\ln(k)}$$
+		\begin{equation}\boxed{\sum_{n=1}^{+\infty}u_{n}=\ln(k)}\end{equation}
 
 		\item On a 
-		$$\arctan(u)+\arctan(v)=\arctan\left(\frac{u+v}{1-uv}\right)$$
-		donc $$\arctan\left(\frac{1}{n^{2}+n+1}\right)=\arctan(n+1)-\arctan(n)$$
+		\begin{equation}\arctan(u)+\arctan(v)=\arctan\left(\frac{u+v}{1-uv}\right)\end{equation}
+		donc \begin{equation}\arctan\left(\frac{1}{n^{2}+n+1}\right)=\arctan(n+1)-\arctan(n)\end{equation}
 		Ainsi,
-		$$\boxed{\sum_{n=0}^{+\infty}\arctan\left(\frac{1}{n^{2}+n+1}\right)=\frac{\pi}{2}}$$
+		\begin{equation}\boxed{\sum_{n=0}^{+\infty}\arctan\left(\frac{1}{n^{2}+n+1}\right)=\frac{\pi}{2}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{proof}
 	On a 
-	$$\sum_{k=1}^{n}v_{k}=\sum_{k=1}^{n}ku_{k}-\sum_{k=2}^{n+1}(k-1)u_{k}=u_{1}-nu_{n+1}+\sum_{k=2}^{n}u_{k}=\sum_{k=1}^{n}u_{k}-nu_{n+1}$$
+	\begin{equation}\sum_{k=1}^{n}v_{k}=\sum_{k=1}^{n}ku_{k}-\sum_{k=2}^{n+1}(k-1)u_{k}=u_{1}-nu_{n+1}+\sum_{k=2}^{n}u_{k}=\sum_{k=1}^{n}u_{k}-nu_{n+1}\end{equation}
 
 	Si $(nu_{n})_{n\geqslant1}$, on a donc évidemment d'après ce qui précède
-	$$\boxed{\sum_{k=1}^{+\infty}v_{k}=\sum_{k=1}^{+\infty}u_{k}}$$
+	\begin{equation}\boxed{\sum_{k=1}^{+\infty}v_{k}=\sum_{k=1}^{+\infty}u_{k}}\end{equation}
 
 	Si $(u_{n})_{n\geqslant1}$ décroît, $v_{n}\geqslant0$ et on a 
-	$$\frac{v_{k}}{k}=u_{k}-u_{k+1}$$
+	\begin{equation}\frac{v_{k}}{k}=u_{k}-u_{k+1}\end{equation}
 	et donc 
-	$$\sum_{k=n}^{+\infty}\frac{v_{k}}{k}=u_{n}=\sum_{k=1}^{+\infty}w_{k,n}$$
+	\begin{equation}\sum_{k=n}^{+\infty}\frac{v_{k}}{k}=u_{n}=\sum_{k=1}^{+\infty}w_{k,n}\end{equation}
 	en définissant $w_{n,k}=\frac{v_{k}}{k}$ si $k\geqslant n$ et 0 sinon. On a $w_{k,n}\geqslant0$ car $(u_{n})_{n\geqslant1}$ est décroissante.
 
 	Ainsi, $\sum_{n\geqslant1}u_{n}$ converge si et seulement si $(u_{n})_{n\in\N^{*}}$ sommable si et seulement si $(w_{n,k})_{k\in\N^{*}}$ si et seulement si (d'après le théorème de Fubini) 
-	$$\sum_{k=1}^{+\infty}\underbrace{\sum_{n=1}^{+\infty}w_{n,k}}_{\sum_{n=1}^{k}\frac{v_{k}}{k}=v_{k}}<+\infty$$
+	\begin{equation}\sum_{k=1}^{+\infty}\underbrace{\sum_{n=1}^{+\infty}w_{n,k}}_{\sum_{n=1}^{k}\frac{v_{k}}{k}=v_{k}}<+\infty\end{equation}
 
 	Et dans ce cas (toujours d'après le théorème de Fubini), 
-	$$\sum_{n=1}^{+\infty}\underbrace{\sum_{k=1}^{+\infty}w_{n,k}}_{=~u_{n}}=\sum_{k=1}^{+\infty}\underbrace{\sum_{n=1}^{+\infty}w_{n,k}}_{=~v_{k}}<+\infty$$
+	\begin{equation}\sum_{n=1}^{+\infty}\underbrace{\sum_{k=1}^{+\infty}w_{n,k}}_{=~u_{n}}=\sum_{k=1}^{+\infty}\underbrace{\sum_{n=1}^{+\infty}w_{n,k}}_{=~v_{k}}<+\infty\end{equation}
 
 	donc 
-	$$\boxed{\sum_{k=1}^{+\infty}v_{k}=\sum_{k=1}^{+\infty}u_{k}}$$
+	\begin{equation}\boxed{\sum_{k=1}^{+\infty}v_{k}=\sum_{k=1}^{+\infty}u_{k}}\end{equation}
 
 	On pose
-	$$u_{n}=\frac{1}{n(n+1)\dots(n+p)}$$
+	\begin{equation}u_{n}=\frac{1}{n(n+1)\dots(n+p)}\end{equation}
 	et 
-	$$v_{n}=\frac{1}{(n+1)\dots(n+p)}-\frac{n}{(n+1)\dots(n+p+1)}=\frac{p+1}{(n+1)\dots(n+p+1)}$$
+	\begin{equation}v_{n}=\frac{1}{(n+1)\dots(n+p)}-\frac{n}{(n+1)\dots(n+p+1)}=\frac{p+1}{(n+1)\dots(n+p+1)}\end{equation}
 
 	Soit 
-	$$S_{p}=\sum_{n=1}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}=(p+1)\sum_{n=2}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}=(p+1)\left(S_{p}-\frac{1}{p!}\right)$$
+	\begin{equation}S_{p}=\sum_{n=1}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}=(p+1)\sum_{n=2}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}=(p+1)\left(S_{p}-\frac{1}{p!}\right)\end{equation}
 	Ainsi, 
-	$$\boxed{\sum_{n=1}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}}=\frac{p+1}{p(p!)}$$
+	\begin{equation}\boxed{\sum_{n=1}^{+\infty}\frac{1}{n(n+1)\dots(n+p)}}=\frac{p+1}{p(p!)}\end{equation}
 \end{proof}
 
 \begin{proof}
-	Montrons d'une manière générale que si $(u_{k})_{k\in\N}\in\left(\R_{+}^{*}\right)^{\N}$ est telle que $u_{k}=\underset{k\to+\infty}{o}(u_{k+1})$, alors $\sum u_{k}$ diverge et $\sum_{k=0}^{n}u_{k}\underset{n\to+\infty}{\sim}u_{n}$.
+	Montrons d'une manière générale que si $(u_{k})_{k\in\N}\in\left(\R_{+}^{*}\right)^{\N}$ est telle que 
+	\begin{equation}
+		u_{k}=\underset{k\to+\infty}{o}(u_{k+1})	
+	\end{equation}
+	, alors $\sum u_{k}$ diverge et $\sum_{k=0}^{n}u_{k}\underset{n\to+\infty}{\sim}u_{n}$.
 
 	En effet, on a alors $\lim\limits_{k\to+\infty}\frac{u_{k+1}}{u_{k}}=+\infty$ et d'après la règle de d'Alembert, $\sum u_{k}$ diverge. Soit ensuite $\varepsilon>0$. Il existe $N\in\N$ tel que pour tout $k\geqslant N$, 
-	$$0\leqslant \frac{u_{k}}{u_{k+1}}\leqslant\varepsilon$$
+	\begin{equation}0\leqslant \frac{u_{k}}{u_{k+1}}\leqslant\varepsilon\end{equation}
 	Soit $n\geqslant N$. Pour $k\geqslant N+1$, on a 
-	$$u_{k}\leqslant \varepsilon u_{k+1}\leqslant\dots\leqslant \varepsilon^{n-k}u_{n}$$
+	\begin{equation}u_{k}\leqslant \varepsilon u_{k+1}\leqslant\dots\leqslant \varepsilon^{n-k}u_{n}\end{equation}
 	pour $k\leqslant n-1$.
 
 	Alors 
-	$$0\leqslant\sum_{k=0}^{n-1}u_{k}\leqslant\sum_{k=0}^{N}u_{k}+\sum_{k=N+1}^{n-1}u_{k}\leqslant\left(\varepsilon+\varepsilon^{2}+\dots+\varepsilon^{n-N-1}u_{n}\right)$$
+	\begin{equation}0\leqslant\sum_{k=0}^{n-1}u_{k}\leqslant\sum_{k=0}^{N}u_{k}+\sum_{k=N+1}^{n-1}u_{k}\leqslant\left(\varepsilon+\varepsilon^{2}+\dots+\varepsilon^{n-N-1}u_{n}\right)\end{equation}
 
 	On peut supposer que $\varepsilon<\frac{1}{2}$ et alors 
-	$$0\leqslant\sum_{k=0}^{n-1}u_{k}\leqslant\frac{\varepsilon}{1-\varepsilon}u_{n}\leqslant2\varepsilon u_{n}$$
+	\begin{equation}0\leqslant\sum_{k=0}^{n-1}u_{k}\leqslant\frac{\varepsilon}{1-\varepsilon}u_{n}\leqslant2\varepsilon u_{n}\end{equation}
 	Donc on a bien le résultat voulu.
 
 	Pour revenir à l'exercice, on a alors 
-	$$v_{n}\underset{n\to+\infty}{\sim}\frac{n!}{(n+q)!}\underset{n\to+\infty}{\sim}\frac{1}{n^{q}}$$
+	\begin{equation}v_{n}\underset{n\to+\infty}{\sim}\frac{n!}{(n+q)!}\underset{n\to+\infty}{\sim}\frac{1}{n^{q}}\end{equation}
 	qui est le terme général d'une série absolument convergente.
 	Donc 
-	$$\boxed{\sum v_{n}\text{ converge.}}$$
+	\begin{equation}\boxed{\sum v_{n}\text{ converge.}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	On a 
-	$$\left\vert\frac{z^{nb}}{z^{na+c}+1}\right\vert=\frac{\left\vert z\right\vert^{nb}}{\left\vert1+z^{na+c}\right\vert}\underset{n\to+\infty}{\sim}\left\vert z\right\vert^{nb}$$
+	\begin{equation}\left\vert\frac{z^{nb}}{z^{na+c}+1}\right\vert=\frac{\left\vert z\right\vert^{nb}}{\left\vert1+z^{na+c}\right\vert}\underset{n\to+\infty}{\sim}\left\vert z\right\vert^{nb}\end{equation}
 	car $\vert z\vert<1$. $\vert z\vert^{nb}$ est le terme général d'une série absolument convergente.
 
 	Pour $n$ fini, on a 
-	$$\frac{1}{1+z^{na+c}}=\sum_{k=0}^{+\infty}(-z^{na+c})^{k}$$
+	\begin{equation}\frac{1}{1+z^{na+c}}=\sum_{k=0}^{+\infty}(-z^{na+c})^{k}\end{equation}
 
 	Montrons donc que $\left(z^{nb}\left(\left(-z^{na+c}\right)^{k}\right)\right)_{(k,n)\in\N^{2}}$ est sommable. On a 
-	$$\sum_{n=0}^{+\infty}\sum_{k=0}^{+\infty}\vert z\vert^{nb}\vert z\vert^{k(na+c)}=\sum_{n=0}^{+\infty}\frac{\vert z\vert^{nb}}{1-\vert z\vert^{na+c}}<+\infty$$
+	\begin{equation}\sum_{n=0}^{+\infty}\sum_{k=0}^{+\infty}\vert z\vert^{nb}\vert z\vert^{k(na+c)}=\sum_{n=0}^{+\infty}\frac{\vert z\vert^{nb}}{1-\vert z\vert^{na+c}}<+\infty\end{equation}
 	d'après ce qui précède. On a sommabilité, donc d'après le théorème de Fubini,
-	\begin{align*}
+	\begin{align}
 		\sum_{n=0}^{+\infty}\frac{z^{nb}}{1+z^{na+c}}
 		&=\sum_{k=0}^{+\infty}\sum_{n=0}^{+\infty}z^{nb}(-z^{na+c})^{k}\\
 		&=\sum_{k=0}^{+\infty}(-1)^{k}z^{ck}\left(\sum_{n=0}^{+\infty}z^{n(b+ak)}\right)\\
 		&=\sum_{k=0}^{+\infty}\frac{(-1)^{k}z^{ck}}{1-z^{b+ak}}
-	\end{align*}
+	\end{align}
 
 	Ainsi, on a bien 
-	$$\boxed{\sum_{n=0}^{+\infty}\frac{z^{nb}}{1+z^{na+c}}=\sum_{k=0}^{+\infty}\frac{(-1)^{k}z^{ck}}{1-z^{b+ak}}}$$
+	\begin{equation}\boxed{\sum_{n=0}^{+\infty}\frac{z^{nb}}{1+z^{na+c}}=\sum_{k=0}^{+\infty}\frac{(-1)^{k}z^{ck}}{1-z^{b+ak}}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	On a 
-	$$b_{q}=\sum_{n=1}^{q}u_{n,q}=\sum_{n=1}^{+\infty}u_{n,q}$$
+	\begin{equation}b_{q}=\sum_{n=1}^{q}u_{n,q}=\sum_{n=1}^{+\infty}u_{n,q}\end{equation}
 
 	Montrons donc que la famille des $(u_{n,q})_{(n,q)\in(\N^{*})^{2}}$ est sommable. On a 
-	\begin{align*}
+	\begin{align}
 		\sum_{n=1}^{+\infty}\sum_{q=1}^{+\infty}\vert u_{n,q}\vert
 		&=\sum_{n=1}^{+\infty}\sum_{q=n}^{+\infty}\frac{n\vert a_{n}\vert}{q(q+1)}\\
 		&=\sum_{n=1}^{+\infty}n\vert a_{n}\vert\left(\sum_{q=n}^{+\infty}\frac{1}{q}-\frac{1}{q+1}\right)\\
 		&=\sum_{n=1}^{+\infty}\vert a_{n}\vert<+\infty
-	\end{align*}
+	\end{align}
 
 	Donc le théorème de Fubini s'applique et on a 
-	$$\sum_{q=1}^{+\infty}\sum_{n=1}^{+\infty}u_{n,q}=\sum_{q=1}^{+\infty}b_{q}=\sum_{n=1}^{+\infty}\sum_{q=1}^{+\infty}u_{n,q}=\sum_{n=1}^{+\infty}a_{n}$$
+	\begin{equation}\sum_{q=1}^{+\infty}\sum_{n=1}^{+\infty}u_{n,q}=\sum_{q=1}^{+\infty}b_{q}=\sum_{n=1}^{+\infty}\sum_{q=1}^{+\infty}u_{n,q}=\sum_{n=1}^{+\infty}a_{n}\end{equation}
 
 	Donc 
-	$$\boxed{\sum_{q=1}^{+\infty}b_{q}=\sum_{n=1}^{+\infty}a_{n}}$$
+	\begin{equation}\boxed{\sum_{q=1}^{+\infty}b_{q}=\sum_{n=1}^{+\infty}a_{n}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	D'après l'exercice précédent, $\sum v_{n}$ converge et 
-	$$\sum_{n=1}^{+\infty}v_{n}=\sum_{n=1}^{+\infty}u_{n}$$
+	\begin{equation}\sum_{n=1}^{+\infty}v_{n}=\sum_{n=1}^{+\infty}u_{n}\end{equation}
 	On applique l'inégalité de la moyenne géométrique et arithmétique à $(u_{1},2u_{2},\dots,nu_{n})$:
-	$$\sqrt[n]{u_{1}\times 2u_{2}\times\dots\times nu_{n}}=w_{n}\sqrt[n]{n!}\leqslant\frac{1}{n}(u_{1}+2u_{2}+\dots+nu_{n})=(n+1)v_{n}$$
+	\begin{equation}\sqrt[n]{u_{1}\times 2u_{2}\times\dots\times nu_{n}}=w_{n}\sqrt[n]{n!}\leqslant\frac{1}{n}(u_{1}+2u_{2}+\dots+nu_{n})=(n+1)v_{n}\end{equation}
 	Donc on a 
-	$$w_{n}\leqslant\frac{(n+1)v_{n}}{\sqrt[n]{n!}}$$
+	\begin{equation}w_{n}\leqslant\frac{(n+1)v_{n}}{\sqrt[n]{n!}}\end{equation}
 
 	On étudie donc $\sqrt[n]{n!}$:
-	\begin{align*}
+	\begin{align}
 		\sqrt[n]{n!}
 		&=\exp\left(\frac{1}{n}\ln(n!)\right)\\
 		&=\exp\left(\frac{1}{n}\ln\left(n^{n}e^{-n}\sqrt{2\pi n}\left(1+\underset{n\to+\infty}{o}\left(1\right)\right)\right)\right)\\
 		&=\exp\left(\frac{1}{n}\left(n\ln\left(n\right)-n+\frac{1}{2}\ln\left(\pi n\right)+\ln\left(1+\underset{n\to+\infty}{o}\left(1\right)\right)\right)\right)\\
 		&=n\exp\left(-1+\underset{n\to+\infty}{o}\left(1\right)\right)\\
 		&\underset{n\to+\infty}{\sim}\frac{n}{e}
-	\end{align*}
+	\end{align}
 
-	Donc $$\lim\limits_{n\to+\infty}\frac{n+1}{\sqrt[n]{n!}}=e$$
+	Donc \begin{equation}\lim\limits_{n\to+\infty}\frac{n+1}{\sqrt[n]{n!}}=e\end{equation}
 
 	Ainsi, $w_{n}=\underset{n\to+\infty}{O}(v_{n})$ donc 
-	$$\boxed{\sum w_{n}\text{ converge.}}$$
+	\begin{equation}\boxed{\sum w_{n}\text{ converge.}}\end{equation}
 
 	Montrons que pour tout $n\geqslant1$, 
-	$$\frac{n+1}{\sqrt[n]{n!}}\leqslant e$$
+	\begin{equation}\frac{n+1}{\sqrt[n]{n!}}\leqslant e\end{equation}
 	Cela équivaut à $(n+1)^{n}\leqslant e^{n}n!$ si et seulement si 
-	$$\sum_{k=0}^{n}\binom{n}{k}n^{k}\leqslant n!e^{n}$$
+	\begin{equation}\sum_{k=0}^{n}\binom{n}{k}n^{k}\leqslant n!e^{n}\end{equation}
 	ce qui est vrai car pour tout $k\in\{0,\dots,n\}$ on a $\frac{1}{(n-k)!}\leqslant1$.
 	Donc $w_{n}\leqslant ev_{n}$ pour tout $n\geqslant1$ et donc 
-	$$\boxed{\sum_{n=1}^{+\infty}w_{n}\leqslant e\sum_{n=1}^{+\infty}v_{n}=e\sum_{n=1}^{+\infty}u_{n}}$$
+	\begin{equation}\boxed{\sum_{n=1}^{+\infty}w_{n}\leqslant e\sum_{n=1}^{+\infty}v_{n}=e\sum_{n=1}^{+\infty}u_{n}}\end{equation}
 
 	Pour montrer que $e$ est la meilleure constante possible, on forme pour $N\in\N^{*}$, $u_{n,N}=\frac{1}{n}$ si $n\leqslant N$ et 0 sinon.
 	On a 
-	$$\sum_{n=1}^{+\infty}=H_{n}<+\infty$$
+	\begin{equation}\sum_{n=1}^{+\infty}=H_{n}<+\infty\end{equation}
 	Dans ce cas, on a 
-	$$w_{n,N}=\sqrt[n]{u_{1,N}\dots w_{n,N}}=\frac{1}{\sqrt[n]{n!}}=\frac{n+1}{\sqrt[n]{n!}}v_{n}$$
+	\begin{equation}w_{n,N}=\sqrt[n]{u_{1,N}\dots w_{n,N}}=\frac{1}{\sqrt[n]{n!}}=\frac{n+1}{\sqrt[n]{n!}}v_{n}\end{equation}
 	pour $n\leqslant N$ et 0 sinon.
 	On a alors 
-	$$\sum_{n=1}^{+\infty}w_{n,N}=\sum_{n=1}^{N}w_{n,N}=\sum_{n=1}^{N}\frac{n+1}{\sqrt[n]{n!}}v_{n}$$
+	\begin{equation}\sum_{n=1}^{+\infty}w_{n,N}=\sum_{n=1}^{N}w_{n,N}=\sum_{n=1}^{N}\frac{n+1}{\sqrt[n]{n!}}v_{n}\end{equation}
 	En divisant par $\sum_{n=1}^{+\infty}u_{n}=\sum_{n=1}^{+\infty}v_{n}$, on a donc 
-	$$\frac{\sum_{n=1}^{+\infty}w_{n,N}}{\sum_{n=1}^{+\infty}u_{n,N}}=\frac{\sum_{n=1}^{N}v_{n,N}\times\frac{n+1}{\sqrt[n]{n!}}}{\sum_{n=1}^{+\infty}v_{n,N}}\xrightarrow[n\to+\infty]{}e$$
+	\begin{equation}\frac{\sum_{n=1}^{+\infty}w_{n,N}}{\sum_{n=1}^{+\infty}u_{n,N}}=\frac{\sum_{n=1}^{N}v_{n,N}\times\frac{n+1}{\sqrt[n]{n!}}}{\sum_{n=1}^{+\infty}v_{n,N}}\xrightarrow[n\to+\infty]{}e\end{equation}
 	d'après le théorème de Césaro.
 
 	On a trouvé une suite donc la constante $C$ est égale à $e$. D'après ce qui précède, 
-	$$\boxed{e\text{ est la meilleure constante possible.}}$$
+	\begin{equation}\boxed{e\text{ est la meilleure constante possible.}}\end{equation}
 \end{proof}
 
 \begin{remark}
 	Pour la fin de l'exercice précédent, on peut utiliser le fait que $H_{N}\underset{N\to+\infty}{\sim}\ln(N)$ et alors 
-	$$\sum_{n=1}^{N}w_{n,N}\sum_{n=1}^{N}\underbrace{\frac{n+1}{\sqrt[n]{n!}}\times\frac{1}{n+1}}_{\underset{n\to+\infty}{\sim}\frac{e}{n}}\underset{N\to+\infty}{\sim}e\sum_{n=1}^{N}\frac{1}{n}\underset{N\to+\infty}{\sim}e\ln(N)$$
+	\begin{equation}\sum_{n=1}^{N}w_{n,N}\sum_{n=1}^{N}\underbrace{\frac{n+1}{\sqrt[n]{n!}}\times\frac{1}{n+1}}_{\underset{n\to+\infty}{\sim}\frac{e}{n}}\underset{N\to+\infty}{\sim}e\sum_{n=1}^{N}\frac{1}{n}\underset{N\to+\infty}{\sim}e\ln(N)\end{equation}
 	par le théorème de sommation des relations de comparaison.
 \end{remark}
 
@@ -1236,224 +1242,224 @@
 	\phantom{}
 	\begin{enumerate}
 		\item Soit $n\in\N^{*}$ et 
-		$$I_{n}=\left\{(p,q)\in\N^{2}\setminus\{(0,0)\}\middle| p+q=n\right\}$$
+		\begin{equation}I_{n}=\left\{(p,q)\in\N^{2}\setminus\{(0,0)\}\middle| p+q=n\right\}\end{equation}
 		On a alors 
-		$$\Sigma_{n}=\sum_{(p,q)\in I_{n}}\frac{1}{(p+q)^{\alpha}}=\sum_{(p,q)\in I_{n}}\frac{1}{n^{\alpha}}=\frac{n+1}{n^{\alpha}}\underset{n\to+\infty}{\sim}\frac{1}{n^{\alpha-1}}$$
+		\begin{equation}\Sigma_{n}=\sum_{(p,q)\in I_{n}}\frac{1}{(p+q)^{\alpha}}=\sum_{(p,q)\in I_{n}}\frac{1}{n^{\alpha}}=\frac{n+1}{n^{\alpha}}\underset{n\to+\infty}{\sim}\frac{1}{n^{\alpha-1}}\end{equation}
 
-		$$\boxed{\text{Donc la condition nécessaire et suffisante est }\alpha>2\text{.}}$$
+		\begin{equation}\boxed{\text{Donc la condition nécessaire et suffisante est }\alpha>2\text{.}}\end{equation}
 
 		Dans ce cas, par le théorème des sommation par paquets, on a 
-		$$\boxed{\sum_{(p,q)\in\N^{2}\setminus\{(0,0)\}}\frac{1}{(p+q)^{\alpha}}=\sum_{n=0}^{+\infty}\frac{1}{n^{\alpha-1}}+\frac{1}{n^{\alpha}}=\zeta(\alpha-1)+\zeta(\alpha)}$$
+		\begin{equation}\boxed{\sum_{(p,q)\in\N^{2}\setminus\{(0,0)\}}\frac{1}{(p+q)^{\alpha}}=\sum_{n=0}^{+\infty}\frac{1}{n^{\alpha-1}}+\frac{1}{n^{\alpha}}=\zeta(\alpha-1)+\zeta(\alpha)}\end{equation}
 
 		\item Pour tout $(p,q)\in\N^{2}\setminus\{(0,0)\}$, on a 
-		$$\frac{(p+q)^{2}}{2}\leqslant p^{2}+q^{2}\leqslant (p+q)^{2}$$
+		\begin{equation}\frac{(p+q)^{2}}{2}\leqslant p^{2}+q^{2}\leqslant (p+q)^{2}\end{equation}
 
 		Pour $\alpha\leqslant0$, il est clair que l'on a divergence. Pour $\alpha>0$, on a donc 
-		$$\frac{1}{(p+q)^{2\alpha}}\leqslant\frac{1}{(p^{2}+q^{2})^{\alpha}}\leqslant\frac{2^{\alpha}}{(p+q)^{2\alpha}}$$
+		\begin{equation}\frac{1}{(p+q)^{2\alpha}}\leqslant\frac{1}{(p^{2}+q^{2})^{\alpha}}\leqslant\frac{2^{\alpha}}{(p+q)^{2\alpha}}\end{equation}
 		
-		$$\boxed{\text{Donc la condition nécessaire et suffisante est }\alpha>1\text{.}}$$
+		\begin{equation}\boxed{\text{Donc la condition nécessaire et suffisante est }\alpha>1\text{.}}\end{equation}
 		d'après le 1.
 	\end{enumerate}
 \end{proof}
 
 \begin{proof}
 	On fixe $n\in\N^{*}$. On a 
-	$$\sum_{m=0}^{+\infty}\frac{1}{(m+n^{2})(m+n^{2}+1)}=\sum_{m=0}^{+\infty}\frac{1}{m+n^{2}}-\frac{1}{m+n^{2}-1}=\frac{1}{n^{2}}=\Sigma_{n}$$
+	\begin{equation}\sum_{m=0}^{+\infty}\frac{1}{(m+n^{2})(m+n^{2}+1)}=\sum_{m=0}^{+\infty}\frac{1}{m+n^{2}}-\frac{1}{m+n^{2}-1}=\frac{1}{n^{2}}=\Sigma_{n}\end{equation}
 	par téléscopage.
 	$\sum_{n\geqslant1}\Sigma_{n}$ converge et 
-	$$\sum_{n\geqslant1}\Sigma_{n}=\frac{\pi^{2}}{6}$$
+	\begin{equation}\sum_{n\geqslant1}\Sigma_{n}=\frac{\pi^{2}}{6}\end{equation}
 
-	$$\boxed{\text{Donc }\left(\frac{1}{\left(m+n^{2}\right)\left(m+n^{2}+1\right)}\right)_{(m,n)\in\N\times\N^{*}}\text{ est sommable et la somme vaut }\frac{\pi^{2}}{6}\text{.}}$$
+	\begin{equation}\boxed{\text{Donc }\left(\frac{1}{\left(m+n^{2}\right)\left(m+n^{2}+1\right)}\right)_{(m,n)\in\N\times\N^{*}}\text{ est sommable et la somme vaut }\frac{\pi^{2}}{6}\text{.}}\end{equation}
 
 	Posons, pour $k\geqslant1$, 
-	$$I_{k}=\left\{(m,n)\in\N\times\N^{*}\middle| m+n^{2}=k\right\}$$
+	\begin{equation}I_{k}=\left\{(m,n)\in\N\times\N^{*}\middle| m+n^{2}=k\right\}\end{equation}
 	On a $n^{2}\in\{1,\dots,k\}$ si et seulement si $n\in\left\{1,\dots,\left\lfloor \sqrt{k}\right\rfloor\right\}$ et $(m,n)\in I_{k}$ si et seulement si $m=k-n^{2}$.
 
 	On a $\left\vert I_{k}\right\vert=\left\lfloor\sqrt{k}\right\rfloor$ et par sommation par paquets,
-	$$\boxed{\frac{\pi^{2}}{6}=\sum_{k=1}^{+\infty}\sum_{(m,n)\in I_{k}}\frac{1}{(m+n^{2})(m+n^{2}+1)}=\sum_{k=1}^{+\infty}\frac{\left\lfloor k\right\rfloor}{k(k+1)}}$$
+	\begin{equation}\boxed{\frac{\pi^{2}}{6}=\sum_{k=1}^{+\infty}\sum_{(m,n)\in I_{k}}\frac{1}{(m+n^{2})(m+n^{2}+1)}=\sum_{k=1}^{+\infty}\frac{\left\lfloor k\right\rfloor}{k(k+1)}}\end{equation}
 \end{proof}
 
 \begin{remark}
 	Grâce à une transformation d'Abel, on a aussi, pour $N\geqslant1$,
-	\begin{align*}
+	\begin{align}
 		\sum_{k=1}^{N}\frac{\left\lfloor k\right\rfloor}{k(k+1)}
 		&=\sum_{k=1}^{N}\frac{\left\lfloor k\right\rfloor}{k}-\sum_{k=1}^{N}\frac{\left\lfloor k\right\rfloor}{k+1}\\
 		&=1+\sum_{k=2}^{N}\underbrace{\frac{\left\lfloor k\right\rfloor-\left\lfloor k-1\right\rfloor}{k}}_{\neq0\text{ ssi }k=p^{2}}+\underbrace{\frac{\left\lfloor N\right\rfloor}{N+1}}_{\xrightarrow[N\to+\infty]{}0}
-	\end{align*}
+	\end{align}
 	et on retrouve le résultat.
 \end{remark}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item $$\prod_{k\geqslant1}\frac{1}{1-\frac{1}{p_{k}}}$$
+		\item \begin{equation}\prod_{k\geqslant1}\frac{1}{1-\frac{1}{p_{k}}}\end{equation}
 		converge si et seulement si 
-		$$\sum_{k\geqslant1}-\ln\left(\frac{1}{1-\frac{1}{p_{k}}}\right)$$
+		\begin{equation}\sum_{k\geqslant1}-\ln\left(\frac{1}{1-\frac{1}{p_{k}}}\right)\end{equation}
 		converge si et seulement si 
-		$$\sum_{k\geqslant1}-\ln\left(1--\frac{1}{p_{k}}\right)$$
+		\begin{equation}\sum_{k\geqslant1}-\ln\left(1--\frac{1}{p_{k}}\right)\end{equation}
 		converge si et seulement si (car $-\ln\left(1-\frac{1}{p_{k}}\right)\underset{k\to+\infty}{\sim}p_{k}>0$ vu que $p_{k}\geqslant k$ pour tout $k\geqslant1$)
-		$$\sum_{k\geqslant1}\frac{1}{p_{k}}$$
+		\begin{equation}\sum_{k\geqslant1}\frac{1}{p_{k}}\end{equation}
 		converge.
 
 		Donc 
-		$$\boxed{\prod_{k\geqslant1}\frac{1}{1-\frac{1}{p_{k}}}\text{ converge si et seulement si }\sum_{k\geqslant 1}\frac{1}{p_{k}}\text{ converge.}}$$
+		\begin{equation}\boxed{\prod_{k\geqslant1}\frac{1}{1-\frac{1}{p_{k}}}\text{ converge si et seulement si }\sum_{k\geqslant 1}\frac{1}{p_{k}}\text{ converge.}}\end{equation}
 
 		Fixons alors $N\in\N^{*}$. On a 
-		$$\prod_{k=1}^{N}\frac{1}{1-\frac{1}{p_{k}}}=\prod_{k=1}^{N}\left(\sum_{n_{k}=0}^{+\infty}\frac{1}{p_{k}^{n_{k}}}\right)$$
+		\begin{equation}\prod_{k=1}^{N}\frac{1}{1-\frac{1}{p_{k}}}=\prod_{k=1}^{N}\left(\sum_{n_{k}=0}^{+\infty}\frac{1}{p_{k}^{n_{k}}}\right)\end{equation}
 		où la série est à termes positifs et est convergent. Par produit de Cauchy,
-		$$\left(\frac{1}{p_{1}^{n_{1}}\dots p_{N}^{n_{N}}}\right)_{n_{1},\dots,n_{N}\in\N^{N}}$$
+		\begin{equation}\left(\frac{1}{p_{1}^{n_{1}}\dots p_{N}^{n_{N}}}\right)_{n_{1},\dots,n_{N}\in\N^{N}}\end{equation}
 		est sommable et on a
-		\begin{align*}
+		\begin{align}
 			\prod_{k=1}^{N}\frac{1}{1-\frac{1}{p_{k}}}
 			&=\sum_{(n_{1},\dots,n_{N})\in\N^{N}}\frac{1}{p_{1}^{n_{1}}\dots p_{N}^{n_{N}}}\\
 			&\geqslant \sum_{k=1}^{p_{N+1}-1}\frac{1}{k}\xrightarrow[N\to+\infty]{}+\infty
-		\end{align*}
+		\end{align}
 		car dans la première somme, tous les inverses (et une seule fois) des nombres dont les facteurs premiers sont dans $\{p_{1},\dots,p_{N}\}$ apparaissent.
 
 		Donc 
-		$$\boxed{\sum_{k\geqslant1}\frac{1}{p_{k}}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum_{k\geqslant1}\frac{1}{p_{k}}\text{ diverge.}}\end{equation}
 
 		\item Posons 
-		$$\Pi_{n}=\prod_{k=1}^{n}\frac{1}{1-\frac{1}{p_{k}^{s}}}$$
+		\begin{equation}\Pi_{n}=\prod_{k=1}^{n}\frac{1}{1-\frac{1}{p_{k}^{s}}}\end{equation}
 		On a 
-		$$\ln\left(\Pi_{n}\right)=\sum_{k=1}^{n}\underbrace{-\ln\left(1-\frac{1}{1-\frac{1}{p_{k}^{s}}}\right)}_{\underset{k\to+\infty}{\sim}\frac{1}{p_{k}^{s}}=\underset{k\to+\infty}{O}\left(\frac{1}{k^{s}}\right)}$$
+		\begin{equation}\ln\left(\Pi_{n}\right)=\sum_{k=1}^{n}\underbrace{-\ln\left(1-\frac{1}{1-\frac{1}{p_{k}^{s}}}\right)}_{\underset{k\to+\infty}{\sim}\frac{1}{p_{k}^{s}}=\underset{k\to+\infty}{O}\left(\frac{1}{k^{s}}\right)}\end{equation}
 		car $p_{k}\geqslant k$. 
 		Donc 
-		$$\boxed{\left(\Pi_{n}\right)\text{ converge dans }\R_{+}^{*}\text{.}}$$
+		\begin{equation}\boxed{\left(\Pi_{n}\right)\text{ converge dans }\R_{+}^{*}\text{.}}\end{equation}
 		
 		Par produit de Cauchy,
-		$$\left(\frac{1}{\left(p_{1}^{s}\right)^{j_{1}}\dots\left(p_{n}^{s}\right)^{j_{n}}}\right)_{(j_{1},\dots,j_{n})\in\N^{n}}$$
+		\begin{equation}\left(\frac{1}{\left(p_{1}^{s}\right)^{j_{1}}\dots\left(p_{n}^{s}\right)^{j_{n}}}\right)_{(j_{1},\dots,j_{n})\in\N^{n}}\end{equation}
 		
 		Ainsi, on a 
-		\begin{align*}
+		\begin{align}
 			\Pi_{n}=\sum_{(j_{1},\dots,j_{n})\in\N^{n}}\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{s}
 			&\leqslant\sum_{k=1}^{+\infty}\frac{1}{k^{s}}\\
 			&=\zeta(s)
-		\end{align*}
+		\end{align}
 		car dans la première somme, par unicité de la décomposition en facteurs premiers, chaque $k$ n'apparaît qu'une unique fois.
 		Comme on a 
-		$$\sum_{k=1}^{p_{n+1}-1}\frac{1}{k^{s}}\leqslant \Pi_{n}$$
+		\begin{equation}\sum_{k=1}^{p_{n+1}-1}\frac{1}{k^{s}}\leqslant \Pi_{n}\end{equation}
 		Donc $\Pi_{n}\xrightarrow[n\to+\infty]{}\zeta(s)$ et ainsi 
-		$$\boxed{\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}=\zeta(s)}$$
+		\begin{equation}\boxed{\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}=\zeta(s)}\end{equation}
 
 		\item Soit $z=a+\i b\in\C$. Si $a>1$, on a 
-		$$\left\vert\frac{1}{n^{z}}\right\vert=\frac{1}{n^{a}}$$
+		\begin{equation}\left\vert\frac{1}{n^{z}}\right\vert=\frac{1}{n^{a}}\end{equation}
 		Donc $\sum \frac{1}{n^{z}}$ converge absolument. On peut donc prolonger $\zeta$ à $\left\{z\in\C\middle|\Re(z)>1\right\}$.
 
 		De même que précédemment, puisque 
-		$$\left\vert\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}\right\vert=\frac{1}{\left(p_{1}^{j_{1}}\dots p_{n}^{j_{n}}\right)^{a}}$$
+		\begin{equation}\left\vert\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}\right\vert=\frac{1}{\left(p_{1}^{j_{1}}\dots p_{n}^{j_{n}}\right)^{a}}\end{equation}
 		la famille 
-		$$\left(\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}\right)_{(j_{1},\dots,j_{n})\in\N^{n}}$$
+		\begin{equation}\left(\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}\right)_{(j_{1},\dots,j_{n})\in\N^{n}}\end{equation}
 		est sommable. On peut aussi développer et 
-		$$\Pi_{n}=\prod_{k=1}^{n}\frac{1}{1-\frac{1}{p_{k}^{z}}}=\sum_{(j_{1},\dots,j_{n})\in\N^{n}}\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}$$
+		\begin{equation}\Pi_{n}=\prod_{k=1}^{n}\frac{1}{1-\frac{1}{p_{k}^{z}}}=\sum_{(j_{1},\dots,j_{n})\in\N^{n}}\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}\end{equation}
 		
 		On a 
-		\begin{align*}
+		\begin{align}
 			\left\vert\Pi_{n}-\zeta(z)\right\vert
 			&=\left\vert\sum_{(j_{1},\dots,j_{n})\in\N^{n}}\left(\frac{1}{p_{1}^{j_{1}}\dots p_{n}^{j_{n}}}\right)^{z}-\sum_{k=1}^{+\infty}\frac{1}{k^{z}}\right\vert\\
 			&=\left\vert\sum_{k\in\N\setminus J_{n}}\frac{1}{k^{z}}\right\vert\\
 			&\leqslant \sum_{k\in\N\setminus J_{n}}\frac{1}{k^{a}}\xrightarrow[n\to+\infty]{}0
-		\end{align*}
+		\end{align}
 		où l'on a noté $J_{n}=\{k\geqslant 1|\text{ les facteurs premiers de }k\text{ sont dans }\{p_{1},\dots,p_{n}\}\}$ et où l'on a appliqué l'inégalité triangulaire et le résultat de 2. pour conclure.
 
 		Ainsi, on a bien 
-		$$\boxed{\zeta(z)=\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}}$$
+		\begin{equation}\boxed{\zeta(z)=\prod_{k=1}^{+\infty}\frac{1}{1-\frac{1}{p_{k}^{s}}}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{proof}
 	Pour $\alpha>2$, puisque $\varphi(n)\geqslant n$, on a 
-	$$\frac{\varphi(n)}{n^{\alpha}}\leqslant \frac{1}{n^{\alpha-1}}$$
+	\begin{equation}\frac{\varphi(n)}{n^{\alpha}}\leqslant \frac{1}{n^{\alpha-1}}\end{equation}
 	qui est le terme général d'une série absolument convergente. 
 
 	Pour $\alpha=2$, si $n=p_{k}$ est premier, on a $\varphi(p_{k})=p_{k}-1$ et 
-	$$\frac{\varphi(p_{k})}{p_{k}^{2}}=\frac{p_{k}-1}{p_{k}^{2}}\underset{k\to+\infty}{\sim}\frac{1}{p_{k}}$$
+	\begin{equation}\frac{\varphi(p_{k})}{p_{k}^{2}}=\frac{p_{k}-1}{p_{k}^{2}}\underset{k\to+\infty}{\sim}\frac{1}{p_{k}}\end{equation}
 	et $\sum_{k\geqslant1}\frac{1}{p_{k}}$ diverge.
 
 	De même pour $\alpha<2$, $\sum\frac{\varphi(n)}{n^{\alpha}}$ diverge car $\frac{\varphi(n)}{n^{2}}=\underset{n\to+\infty}{O}\left(\frac{\varphi(n)}{n^{\alpha}}\right)$.
 
 	Donc 
-	$$\boxed{\sum \frac{\varphi(n)}{n^{\alpha}}\text{ converge si et seulement si }\alpha>2\text{.}}$$
+	\begin{equation}\boxed{\sum \frac{\varphi(n)}{n^{\alpha}}\text{ converge si et seulement si }\alpha>2\text{.}}\end{equation}
 
 	Pour $\alpha>1$, on calcule 
-	$$S=\sum_{n_{1}=1}^{+\infty}\frac{\varphi(n_{1})}{n_{1}^{\alpha}}\times \sum_{n_{2}=1}^{+\infty}\frac{1}{n_{2}^{\alpha}}=\sum_{(n_{1},n_{2})\in\N^{2}}\frac{\varphi(n_{1})}{(n_{1}n_{2})^{\alpha}}$$
+	\begin{equation}S=\sum_{n_{1}=1}^{+\infty}\frac{\varphi(n_{1})}{n_{1}^{\alpha}}\times \sum_{n_{2}=1}^{+\infty}\frac{1}{n_{2}^{\alpha}}=\sum_{(n_{1},n_{2})\in\N^{2}}\frac{\varphi(n_{1})}{(n_{1}n_{2})^{\alpha}}\end{equation}
 	ce qui est légitime car il s'agit de deux séries à termes positifs convergentes. Soit, pour $n\geqslant1$, $D_{n}=\left\{(n_{1},n_{2})\in\left(\N^{*}\right)^{2}\middle| n=n_{1}n_{2}\right\}$. Par sommation par paquets, on a, 
-	$$S=\sum_{n=1}^{+\infty}\sum_{(n_{1},n_{2})\in D_{n}}\frac{\varphi(n_{1})}{n^{\alpha}}=\sum_{n=1}^{+\infty}\frac{1}{n^{\alpha}}\left(\sum_{n_{1}\mid n}\varphi(n_{1})\right)$$
+	\begin{equation}S=\sum_{n=1}^{+\infty}\sum_{(n_{1},n_{2})\in D_{n}}\frac{\varphi(n_{1})}{n^{\alpha}}=\sum_{n=1}^{+\infty}\frac{1}{n^{\alpha}}\left(\sum_{n_{1}\mid n}\varphi(n_{1})\right)\end{equation}
 	et grâce à la formule d'Euler-Möbius, on a 
-	$$\sum_{n_{1}\mid n}\varphi(n_{1})=n$$
+	\begin{equation}\sum_{n_{1}\mid n}\varphi(n_{1})=n\end{equation}
 	Ainsi, $S=\zeta(\alpha-1)$ et donc 
-	$$\boxed{\sum_{n\geqslant1}\frac{\varphi(n)}{n^{\alpha}}=\frac{\zeta(\alpha-1)}{\zeta(\alpha)}}$$
+	\begin{equation}\boxed{\sum_{n\geqslant1}\frac{\varphi(n)}{n^{\alpha}}=\frac{\zeta(\alpha-1)}{\zeta(\alpha)}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	Soit $A\in \C$ et $R>0$. S'il y a $n$ indices $k\in\N$ tels que $z_{k}\in B(A,R)$, alors pour ces indices $k$, on a $B(z_{k},\frac{1}{2})\subset B(A,R+\frac{1}{2})$. Donc (faire un dessin !), on a 
-	$$n\frac{\pi}{4}\leqslant \pi\left(R+\frac{1}{2}\right)^{2}$$
+	\begin{equation}n\frac{\pi}{4}\leqslant \pi\left(R+\frac{1}{2}\right)^{2}\end{equation}
 
 	On pose, pour tout $n\in\N$, $B_{n}=\left\{i\in\N\middle| z_{i}\in B(0,n)\right\}$. De l'inégalité précédente, pour tout $n\in\N$, $D_{n}$ est fini. Il existe $\sigma\colon\N\to\N$ bijective qui permet d'ordonner les $z_{n}$ par module croissante et à même module par indice croissant.
 
 	Pour $n\in\N$ et $R=\left\vert z_{\sigma(n)}\right\vert$, on a pour tout $k\leqslant n$, $z_{\sigma(k)}\in B(0,R)$.
 
 	Donc 
-	$$n\frac{\pi}{4}\leqslant\pi\left(\left\vert z_{\sigma(n)}\right\vert+\frac{1}{2}\right)^{2}$$
+	\begin{equation}n\frac{\pi}{4}\leqslant\pi\left(\left\vert z_{\sigma(n)}\right\vert+\frac{1}{2}\right)^{2}\end{equation}
 	d'où 
-	$$\left\vert z_{\sigma(n)}\right\vert\geqslant\left\vert z_{\sigma(n)}+\frac{1}{2}\right\vert-\frac{1}{2}\geqslant\frac{\sqrt{n}}{2}-\frac{1}{2}$$
+	\begin{equation}\left\vert z_{\sigma(n)}\right\vert\geqslant\left\vert z_{\sigma(n)}+\frac{1}{2}\right\vert-\frac{1}{2}\geqslant\frac{\sqrt{n}}{2}-\frac{1}{2}\end{equation}
 	Donc 
-	$$\left\vert\frac{1}{z_{\sigma(n)}}\right\vert^{3}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)$$
+	\begin{equation}\left\vert\frac{1}{z_{\sigma(n)}}\right\vert^{3}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)\end{equation}
 
 	Donc
-	$$\boxed{\sum \frac{1}{z_{\sigma(n)}^{3}}\text{ est absolument convergente.}}$$
+	\begin{equation}\boxed{\sum \frac{1}{z_{\sigma(n)}^{3}}\text{ est absolument convergente.}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	On a $k=\left\lfloor n\right\rfloor$ si et seulement si $k^{2}\leqslant n<(k+1)^{2}$. Il y a $(k+1)^{2}-k^{2}=2k+1$ entiers.
 
 	Posons
-	$$B_{p}=\sum_{n=1}^{p}(-1)^{\left\lfloor n\right\rfloor}$$
+	\begin{equation}B_{p}=\sum_{n=1}^{p}(-1)^{\left\lfloor n\right\rfloor}\end{equation}
 	et $B_{-1}=0$.
 	Si $k^{2}\leqslant p\leqslant(k+1)^{2}$, on a 
-	$$B_{p}=\underbrace{B_{k}^{2}}_{\text{signe de }(-1)^{k}}+(-1)^{k}\underbrace{(p-k)^{2}}_{\left\vert \cdot\right\vert\leqslant 2k+1}$$
+	\begin{equation}B_{p}=\underbrace{B_{k}^{2}}_{\text{signe de }(-1)^{k}}+(-1)^{k}\underbrace{(p-k)^{2}}_{\left\vert \cdot\right\vert\leqslant 2k+1}\end{equation}
 
 	Par récurrence, pour tout $p\in\N$,
-	$$\left\vert B_{p}\right\vert\leqslant2\left\lfloor p\right\rfloor+1$$
+	\begin{equation}\left\vert B_{p}\right\vert\leqslant2\left\lfloor p\right\rfloor+1\end{equation}
 	Donc avec une transformation d'Abel, on a 
-	\begin{align*}
+	\begin{align}
 		\sum_{n=1}^{N}\frac{(-1)^{\left\lfloor n\right\rfloor}}{n}
 		&=\sum_{n=1}^{N}\frac{\left(B_{n}-B_{n-1}\right)}{n}\\
 		&=\sum_{n=1}^{N}\frac{B_{n}}{n}-\sum_{n=0}^{N-1}\frac{B_{n}}{n+1}\\
 		&=\underbrace{\frac{B_{N}}{N}}_{=\underset{N\to+\infty}{O}\left(\frac{1}{\sqrt{N}}\right)}-B_{0}+\underbrace{\sum_{n=1}^{N-1}\frac{B_{n}}{n(n+1)}}_{=\underset{N\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}
-	\end{align*}
+	\end{align}
 
 	D'après le critère de Riemann, la dernière somme converge absolument et donc 
-	$$\boxed{\sum_{n\geqslant1}\frac{(-1)^{\left\lfloor n\right\rfloor}}{n}\text{ converge.}}$$
+	\begin{equation}\boxed{\sum_{n\geqslant1}\frac{(-1)^{\left\lfloor n\right\rfloor}}{n}\text{ converge.}}\end{equation}
 \end{proof}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Pour tout $n\in\N$, on a $u_{n}\neq 0$. Il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, $u_{n}u_{n+1}>0$. On a 
-		$$\ln\left(\frac{u_{n}}{u_{N_{0}}}\right)=\sum_{k=N_{0}+1}^{n}\ln\left(\frac{a+k}{n+k}\right)=\sum_{k=N_{0}+1}\ln\left(1+\frac{a}{k}\right)-\ln\left(1+\frac{b}{k}\right)$$
+		\begin{equation}\ln\left(\frac{u_{n}}{u_{N_{0}}}\right)=\sum_{k=N_{0}+1}^{n}\ln\left(\frac{a+k}{n+k}\right)=\sum_{k=N_{0}+1}\ln\left(1+\frac{a}{k}\right)-\ln\left(1+\frac{b}{k}\right)\end{equation}
 
 		Alors 
-		$$\ln\left(\frac{u_{n}}{u_{N_{0}}}\right)=\sum_{k=N_{0}+1}^{n}\frac{a-b}{k}+\underbrace{\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right)}_{\text{terme général d'une série convergente}}=(a-b)\ln(n)+\underbrace{C}_{\in\R}+\underset{n\to+\infty}{o}(1)$$
+		\begin{equation}\ln\left(\frac{u_{n}}{u_{N_{0}}}\right)=\sum_{k=N_{0}+1}^{n}\frac{a-b}{k}+\underbrace{\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right)}_{\text{terme général d'une série convergente}}=(a-b)\ln(n)+\underbrace{C}_{\in\R}+\underset{n\to+\infty}{o}(1)\end{equation}
 
 		Ainsi,
-		$$u_{n}=u_{N_{0}}n^{a-b}\underbrace{k^{1+\underset{n\to+\infty}{o}(1)}}_{>0}\underset{n\to+\infty}{\sim}U_{N_{0}}n^{a-b}k$$
+		\begin{equation}u_{n}=u_{N_{0}}n^{a-b}\underbrace{k^{1+\underset{n\to+\infty}{o}(1)}}_{>0}\underset{n\to+\infty}{\sim}U_{N_{0}}n^{a-b}k\end{equation}
 
 		Donc 
-		$$\boxed{\sum u_{n}\text{ converge si et seulement si }b-a>1}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ converge si et seulement si }b-a>1}\end{equation}
 
 		\item On a 
-		$$u_{n+1}(b+n+1)=u_{n}(a+n+1)$$
+		\begin{equation}u_{n+1}(b+n+1)=u_{n}(a+n+1)\end{equation}
 		donc 
-		$$(a+1)u_{n}=bu_{n+1}+(n+1)u_{n+1}-nu_{n}$$
+		\begin{equation}(a+1)u_{n}=bu_{n+1}+(n+1)u_{n+1}-nu_{n}\end{equation}
 		En sommant sur $\N$, on a 
-		$$(a+1)\sum_{n=0}^{+\infty}u_{n}=b\sum_{n=1}^{+\infty}u_{n}+u_{1}=b\sum_{n=1}^{+\infty}+\underbrace{u_{1}-bu_{0}}_{=~\frac{a(a+1)}{b(b+1)}-a}$$
+		\begin{equation}(a+1)\sum_{n=0}^{+\infty}u_{n}=b\sum_{n=1}^{+\infty}u_{n}+u_{1}=b\sum_{n=1}^{+\infty}+\underbrace{u_{1}-bu_{0}}_{=~\frac{a(a+1)}{b(b+1)}-a}\end{equation}
 
 		Ainsi, 
-		$$\boxed{\sum_{n=0}^{+\infty}u_{n}=\frac{a\left(a+1-b\left(b+1\right)\right)}{b\left(b+1\right)\left(a+1-b\right)}=a\left(\frac{1}{b(b+1)}-\frac{b}{(b+1)(a+1-b)}\right)}$$
+		\begin{equation}\boxed{\sum_{n=0}^{+\infty}u_{n}=\frac{a\left(a+1-b\left(b+1\right)\right)}{b\left(b+1\right)\left(a+1-b\right)}=a\left(\frac{1}{b(b+1)}-\frac{b}{(b+1)(a+1-b)}\right)}\end{equation}
 
 		\item Pour $a=-\frac{1}{2}$ et $b=1$, on a 
-		$$\boxed{u_{n}=\frac{\left(-\frac{1}{2}\right)\left(\frac{1}{2}\right)\dots\left(n-\frac{1}{2}\right)}{(n+1)!}=\frac{-\frac{(2n)!}{2^{2n+1}n!}}{(n+1)!}=-\frac{1}{2^{2n+1}(n+1)}\binom{2n}{n}}$$
+		\begin{equation}\boxed{u_{n}=\frac{\left(-\frac{1}{2}\right)\left(\frac{1}{2}\right)\dots\left(n-\frac{1}{2}\right)}{(n+1)!}=\frac{-\frac{(2n)!}{2^{2n+1}n!}}{(n+1)!}=-\frac{1}{2^{2n+1}(n+1)}\binom{2n}{n}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -1461,55 +1467,55 @@
 	\phantom{}
 	\begin{enumerate}
 		\item $u_{n}$ est une série à termes positifs et 
-		$$\frac{1}{n}=\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n}\right)$$
+		\begin{equation}\frac{1}{n}=\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n}\right)\end{equation}
 		donc 
-		$$\boxed{\sum u_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum u_{n}\text{ diverge.}}\end{equation}
 
 		$\sum v_{n}$ est une série alternée. On a $\lim\limits_{n\to+\infty}v_{n}=0$ et en formant \function{f}{[2,\infty[}{\R}{x}{\frac{\ln(x)}{x}}
 		On a $f'(x)=\frac{1-\ln(x)}{x^{2}}$ qui est négatif dès que $x>e$. Donc $(v_{n})_{n\geqslant3}$ décroît. D'après le critère des séries alternées, 
-		$$\boxed{\sum v_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum v_{n}\text{ converge.}}\end{equation}
 
 		\item $f$ décroît sur $[,+\infty[$ donc pour tout $k\geqslant4$, on a 
-		$$\int_{k}^{k+1}\frac{\ln(x)}{x}dx\leqslant\frac{\ln(k)}{k}\leqslant\int_{k-1}^{k}\frac{\ln(x)}{x}dx$$
+		\begin{equation}\int_{k}^{k+1}\frac{\ln(x)}{x}dx\leqslant\frac{\ln(k)}{k}\leqslant\int_{k-1}^{k}\frac{\ln(x)}{x}dx\end{equation}
 		d'où 
-		$$\underbrace{\int_{4}^{N+1}\frac{\ln(x)}{x}dx}_{=~\frac{1}{2}\left[\ln^{2}\left(N+1\right)-\ln^{2}\left(4\right)\right]}\leqslant\sum_{k=4}^{N}\frac{\ln(k)}{k}\leqslant\underbrace{\int_{3}^{N}\frac{\ln(x)}{x}dx}_{=~\frac{1}{2}\left[\ln^{2}\left(N\right)-\ln^{2}\left(3\right)\right]}$$
+		\begin{equation}\underbrace{\int_{4}^{N+1}\frac{\ln(x)}{x}dx}_{=~\frac{1}{2}\left[\ln^{2}\left(N+1\right)-\ln^{2}\left(4\right)\right]}\leqslant\sum_{k=4}^{N}\frac{\ln(k)}{k}\leqslant\underbrace{\int_{3}^{N}\frac{\ln(x)}{x}dx}_{=~\frac{1}{2}\left[\ln^{2}\left(N\right)-\ln^{2}\left(3\right)\right]}\end{equation}
 
 		Donc 
-		$$\boxed{S_{N}\underset{N\to+\infty}{\sim}\frac{1}{2}\ln^{2}\left(N\right)}$$
+		\begin{equation}\boxed{S_{N}\underset{N\to+\infty}{\sim}\frac{1}{2}\ln^{2}\left(N\right)}\end{equation}
 
 		Formons $w_{n}=S_{n}-\frac{\ln^{2}(n)}{2}$. $(w_{n})_{n\in\N}$ converge si et seulement si $\sum_{n\in\N^{*}}w_{n}-w_{n-1}$ converge.
 		On a 
-		$$w_{n}-w_{n-1}=\frac{\ln(n)}{n}-\frac{\ln^{2}(n)}{2}+\frac{\ln^{2}(n-1)}{2}$$
+		\begin{equation}w_{n}-w_{n-1}=\frac{\ln(n)}{n}-\frac{\ln^{2}(n)}{2}+\frac{\ln^{2}(n-1)}{2}\end{equation}
 
 		On a 
-		$$\ln(n-1)=\ln(n)+\ln\left(1-\frac{1}{n}\right)=\ln(n)-\frac{1}{n}+\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$$
+		\begin{equation}\ln(n-1)=\ln(n)+\ln\left(1-\frac{1}{n}\right)=\ln(n)-\frac{1}{n}+\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)\end{equation}
 		et 
-		$$\ln^{2}(n-1)=\ln^{2}(n)-\frac{2\ln(n)}{n}+\underbrace{\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n^{2}}\right)}_{=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}$$
+		\begin{equation}\ln^{2}(n-1)=\ln^{2}(n)-\frac{2\ln(n)}{n}+\underbrace{\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n^{2}}\right)}_{=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}\end{equation}
 
 		Donc 
-		$$w_{n}-w_{n-1}=\underbrace{\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}_{\text{terme général d'une série absolument convergente}}$$
+		\begin{equation}w_{n}-w_{n-1}=\underbrace{\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)}_{\text{terme général d'une série absolument convergente}}\end{equation}
 
 		Donc il existe $L\in\R$ tel que 
-		$$\boxed{S_{n}=\frac{\ln^{2}(n)}{2}+L+\underset{n\to+\infty}{o}(1)}$$
+		\begin{equation}\boxed{S_{n}=\frac{\ln^{2}(n)}{2}+L+\underset{n\to+\infty}{o}(1)}\end{equation}
 		
 		\item On a 
-		$$\sum_{n=2}^{2N}v_{n}=\underbrace{\sum_{k=1}^{N}\frac{\ln(2k)}{2k}}_{=~I_{N}}-\underbrace{\sum_{k=1}^{N-1}}\frac{\ln(2k+1)}{2k+1}_{=~J_{N}}$$
+		\begin{equation}\sum_{n=2}^{2N}v_{n}=\underbrace{\sum_{k=1}^{N}\frac{\ln(2k)}{2k}}_{=~I_{N}}-\underbrace{\sum_{k=1}^{N-1}}\frac{\ln(2k+1)}{2k+1}_{=~J_{N}}\end{equation}
 
 		Donc
-		$$\sum_{n=2}^{2N}v_{n}=I_{N}-(S_{2N}-I_{N})$$
+		\begin{equation}\sum_{n=2}^{2N}v_{n}=I_{N}-(S_{2N}-I_{N})\end{equation}
 		On a 
-		$$S_{2N}=\frac{\ln^{2}(2N)}{2}+L+\underset{N\to+\infty}{o}(1)=\frac{\ln^{2}(2)}{2}+\frac{\ln^{2}(N)}{2}+\ln(2)\ln(N)+L+\underset{N\to+\infty}{o}(1)$$
+		\begin{equation}S_{2N}=\frac{\ln^{2}(2N)}{2}+L+\underset{N\to+\infty}{o}(1)=\frac{\ln^{2}(2)}{2}+\frac{\ln^{2}(N)}{2}+\ln(2)\ln(N)+L+\underset{N\to+\infty}{o}(1)\end{equation}
 		De plus, 
-		$$I_{N}=\underbrace{\sum_{k=1}^{N}\frac{\ln(2)}{2k}}_{=\frac{\ln(2)}{2}\left(\ln(N)+\gamma+\underset{N\to+\infty}{o}(1)\right)}+\underbrace{\sum_{k=1}^{N}\frac{\ln(k)}{2k}}_{=~\frac{1}{2}S_{N}=\frac{\ln^{2}(N)}{4}+\frac{L}{2}+\underset{N\to+\infty}{o}(1)}$$
+		\begin{equation}I_{N}=\underbrace{\sum_{k=1}^{N}\frac{\ln(2)}{2k}}_{=\frac{\ln(2)}{2}\left(\ln(N)+\gamma+\underset{N\to+\infty}{o}(1)\right)}+\underbrace{\sum_{k=1}^{N}\frac{\ln(k)}{2k}}_{=~\frac{1}{2}S_{N}=\frac{\ln^{2}(N)}{4}+\frac{L}{2}+\underset{N\to+\infty}{o}(1)}\end{equation}
 
 		Finalement, on a bien 
-		\begin{align*}
+		\begin{align}
 			\sum_{n=2}^{2N}v_{n}
 			&=2I_{n}-S_{2N}\\
 			&=\ln(2)\gamma-\frac{\ln^{2}(2)}{2}+\underset{N\to+\infty}{o}(1)
-		\end{align*}
+		\end{align}
 		Donc 
-		$$\boxed{\sum_{n=2}^{+\infty}v_{n}=\ln(2)\gamma-\frac{\ln^{2}(2)}{2}}$$
+		\begin{equation}\boxed{\sum_{n=2}^{+\infty}v_{n}=\ln(2)\gamma-\frac{\ln^{2}(2)}{2}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -1517,27 +1523,27 @@
 	Si $\alpha_{0}=2$ et $\alpha_{n+1}=10^{\alpha_{n}-1}$. Alors $q_{1}(\alpha_{n+1})=\alpha_{n}$, $q_{k}(\alpha_{n})=\alpha_{n-k}$, $q_{n}(\alpha_{n})=2$ et $q_{n+1}(\alpha_{n})=1$.
 
 	Si $k<\alpha_{n}$, $q_{n}(k)=1$. Soit 
-	$$S_{n}=\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}u_{k}$$
+	\begin{equation}S_{n}=\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}u_{k}\end{equation}
 	Comme c'est une série à termes positifs, $\sum_{k\geqslant1}u_{k}$ converge si et seulement $\sum_{n\geqslant0}S_{n}$ converge.
 
 	Par définition, pour tout $k\in\{\alpha_{n},\dots,\alpha_{n+1}-1\}$, on a $q_{n+1}(k)=1$ et pour tout $p\geqslant n+1$, $q_{p}(k)=1$. Donc 
-	$$S_{n}=\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}\frac{1}{kq_{1}(k)\dots \underbrace{q_{n}(k)}_{\geqslant 2}}$$
+	\begin{equation}S_{n}=\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}\frac{1}{kq_{1}(k)\dots \underbrace{q_{n}(k)}_{\geqslant 2}}\end{equation}
 
 	Posons \function{f}{\R_{+}^{*}}{\R}{t}{\log_{10}(t)=\frac{\ln(t)}{\ln(10)}}
 
 	Il vient $q_{1}(t)=\left\lfloor f(t)\right\rfloor+1>f(t)$. Par récurrence, on a
-	$$q_{n}(t)\geqslant f^{n}(t)$$
+	\begin{equation}q_{n}(t)\geqslant f^{n}(t)\end{equation}
 	défini pour $t\geqslant \alpha_{n}$. On a donc 
-	$$S_{n}\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}	\frac{1}{k(f(k))\dots f^{n}(k)}$$
+	\begin{equation}S_{n}\sum_{k=\alpha_{n}}^{\alpha_{n+1}-1}	\frac{1}{k(f(k))\dots f^{n}(k)}\end{equation}
 
 	On forme \function{g_n}{[\alpha_{n},\alpha_{n+1}-1}{\R}{t}{\frac{1}{tf(t)\dots f^{n}(t)}}
 	qui est décroissante. Ainsi, pour tout $k\in\{\alpha_{n},\alpha_{n+1}-1\}$, on a 
-	$$\int_{k}^{k+1}g_{n}(t)\leqslant u_{k}\leqslant\int_{k-1}^{k}g_{n}(t)$$
+	\begin{equation}\int_{k}^{k+1}g_{n}(t)\leqslant u_{k}\leqslant\int_{k-1}^{k}g_{n}(t)\end{equation}
 	d'où en faisant le changement de variables $u=\log_{10}(t)$, on a
-	$$\int_{\alpha_{n-1}-1}^{\alpha_{n}-1}g_{n-1}(u)du(\ln(10))\leqslant S_{n}\leqslant\int_{\alpha_{n}-1}^{\alpha_{n+1}-1}g_{n}(t)dt$$
+	\begin{equation}\int_{\alpha_{n-1}-1}^{\alpha_{n}-1}g_{n-1}(u)du(\ln(10))\leqslant S_{n}\leqslant\int_{\alpha_{n}-1}^{\alpha_{n+1}-1}g_{n}(t)dt\end{equation}
 
 	On obtient donc une minoration par $C\times(\ln(10))^{n}$ donc 
-	$$\boxed{\text{la série diverge.}}$$
+	\begin{equation}\boxed{\text{la série diverge.}}\end{equation}
 \end{proof}
 
 \begin{proof}
@@ -1545,90 +1551,90 @@
 	\begin{enumerate}
 		\item Montrons le résultat par récurrence sur $n\in\N^{*}$. On a $P_{0}=1>0$ et $P_{1}(x)=1+x$ s'annule en -1. Soit $n\in\N^{*}$, supposons le résultat au rang $n$. On a $P_{2n+2}'(x)=P_{2n+1}(x)$, par hypothèse $P_{2n+1}$ s'annule uniquement en $\alpha_{2n+1}<0$. Donc $P_{2n+2}	(\alpha_{2n+1})=\frac{\left(\alpha_{2n+1}\right)^{2n+2}}{(2n+2)!}>0$ donc $P_{2n+2}>0$.
 		Comme $P_{2n+3}'=P_{2n+2}>0$ donc $P_{2n+3}$ est strictement croissante sur $\R$. On a $\lim\limits_{x\to\pm\infty}P_{2n+3}=\pm\infty$. Donc il existe un unique $\alpha_{2n+3}\in\R$ tel que $P_{2n+3}(\alpha_{2n+3})=0$. Comme $P_{2n+3}(0)=1\geqslant1$, $\alpha_{2n+3}<0$.
-		$$\boxed{\text{D'où le résultat par récurrence.}}$$
+		\begin{equation}\boxed{\text{D'où le résultat par récurrence.}}\end{equation}
 
 		\item Soit $x<0$, on a $\lim\limits_{n\to+\infty}P_{n}(x)=e^{x}>0$. Donc il existe $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$, $P_{2n+1}(x)>0$. En particulier, $\alpha_{2n+1}<x$ donc 
-		$$\boxed{\lim\limits_{n\to+\infty}\alpha_{2n+1}=-\infty}$$
+		\begin{equation}\boxed{\lim\limits_{n\to+\infty}\alpha_{2n+1}=-\infty}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{proof}
 	On pose $f_{n}(x)=e^{x}-x-n$, on a $f'_{n}(x)=e^{x}-1$. Donc $x_{1}=0$ et ainsi 
-	$$\boxed{\forall n\geqslant 2,\exists! x_n\geqslant0\colon e^{x_{n}}=x_{n}+n}$$
+	\begin{equation}\boxed{\forall n\geqslant 2,\exists! x_n\geqslant0\colon e^{x_{n}}=x_{n}+n}\end{equation}
 
 	Pour tout $x\geqslant0$, on a $f_{n+1}(x)-f_{n}(x)=-1<0$ donc $f_{n+1}(x)<f_{n}(x)$ et ainsi $f_{n+1}(x_{n})<0$ et $x_{n}<x_{n+1}$.
 
 	$(x_{n})_{n\in\N}$ est strictement croissante, de plus $e^{x_{n}}=x_{n}+n\geqslant n$ donc $x_{n}\geqslant \ln(n)$ et donc 
-	$$\boxed{\lim\limits_{n\to+\infty}x_{n}=+\infty}$$
+	\begin{equation}\boxed{\lim\limits_{n\to+\infty}x_{n}=+\infty}\end{equation}
 
 	De plus, $x_{n}=\ln(x_{n}+n)$ et $f_{n}(n)=e^{n}-2n>0$ (par récurrence), donc $x_{n}<n$ par stricte croissante de $f_{n}$ donc 
-	$$x_{n}=\ln(x_{n}+n)\leqslant \ln(2n)=\ln(n)+\ln(2)$$
+	\begin{equation}x_{n}=\ln(x_{n}+n)\leqslant \ln(2n)=\ln(n)+\ln(2)\end{equation}
 	Ainsi, $x_{n}=\underset{n\to+\infty}{O}(\ln(n))$. En reportant, on a 
-	$$x_{n}=\ln(n+\underset{n\to+\infty}{O}(\ln(n)))=\ln(n)+\ln(1+\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n}\right))=\ln(n)+\underset{n\to+\infty}{o}(1)$$
+	\begin{equation}x_{n}=\ln(n+\underset{n\to+\infty}{O}(\ln(n)))=\ln(n)+\ln(1+\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n}\right))=\ln(n)+\underset{n\to+\infty}{o}(1)\end{equation}
 	donc 
-	$$\boxed{n\underset{n\to+\infty}{\sim}\ln(n)}$$
+	\begin{equation}\boxed{n\underset{n\to+\infty}{\sim}\ln(n)}\end{equation}
 
 	En reportant, on a 
-	$$\boxed{x_{n}=\ln(n)+\frac{\ln(n)}{n}+\underset{n\to+\infty}{o}\left(\frac{\ln(n)}{n}\right)}$$
+	\begin{equation}\boxed{x_{n}=\ln(n)+\frac{\ln(n)}{n}+\underset{n\to+\infty}{o}\left(\frac{\ln(n)}{n}\right)}\end{equation}
 \end{proof}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
-		\item Si $S_{n}\xrightarrow[n\to+\infty]{}S\in\R^{+}_{+}$, on a $$v_{n}\underset{n\to+\infty}{\sim}\frac{u_{n}}{S^{\alpha}}$$
+		\item Si $S_{n}\xrightarrow[n\to+\infty]{}S\in\R^{+}_{+}$, on a \begin{equation}v_{n}\underset{n\to+\infty}{\sim}\frac{u_{n}}{S^{\alpha}}\end{equation}
 		Comme $u_{n}$ est le terme générale d'une série convergente donc 
-		$$\boxed{\sum v_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum v_{n}\text{ converge.}}\end{equation}
 
 		\item On a $\alpha=1$ donc $v_{n}=\frac{u_{n}}{S_{n}}$, soit $(n,p)\in\N^{2}$. On a 
-		$$\sum_{i=n+1}^{n+p}v_{i}=\sum_{i=1}^{n+p}\frac{u_{i}}{S_{i}}$$
+		\begin{equation}\sum_{i=n+1}^{n+p}v_{i}=\sum_{i=1}^{n+p}\frac{u_{i}}{S_{i}}\end{equation}
 		où $(S_{i})_{i\in\N}$ est croissante donc pour tout $i\in\{n+1,n+p\}$, $S_{i}\leqslant S_{n+p}$
 		donc 
-		$$\sum_{i=n+1}^{n+p}v_{i}\geqslant\frac{1}{S_{n+p}}\sum_{i=n+1}^{n+p}u_{i}=\frac{1}{S_{n+p}}\left(S_{n+p}-S_{n}\right)=1-\frac{S_{n}}{S_{p+n}}$$
+		\begin{equation}\sum_{i=n+1}^{n+p}v_{i}\geqslant\frac{1}{S_{n+p}}\sum_{i=n+1}^{n+p}u_{i}=\frac{1}{S_{n+p}}\left(S_{n+p}-S_{n}\right)=1-\frac{S_{n}}{S_{p+n}}\end{equation}
 		et ainsi,
-		$$\boxed{\sum_{i=n+1}^{n+p}v_{i}\geqslant 1-\frac{S_{n}}{S_{n+p}}}$$
+		\begin{equation}\boxed{\sum_{i=n+1}^{n+p}v_{i}\geqslant 1-\frac{S_{n}}{S_{n+p}}}\end{equation}
 
 		Supposons que $\sum v_{n}$ converge. Pour $n$ fixé, on a $\lim\limits_{p\to+\infty}S_{n+p}=+\infty$ (car $\sum u_{n}$ diverge). Donc lorsque $p\to+\infty$, on a pour tout $n\in\N$,
-		$$\sum_{i=n+1}^{+\infty}v_{i}\geqslant1$$
+		\begin{equation}\sum_{i=n+1}^{+\infty}v_{i}\geqslant1\end{equation}
 		ce qui est absurde puisque la limite en $+\infty$ du reste est 0.
 		Ainsi,
-		$$\boxed{\sum v_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum v_{n}\text{ diverge.}}\end{equation}
 
 		\item On a $\lim\limits_{n\to+\infty}S_{n}=+\infty$ et 
-		$$v_{n}=\frac{1}{\alpha-1}\left(S_{n-1}^{1-\alpha}-S_{n}^{1-\alpha}\right)$$
+		\begin{equation}v_{n}=\frac{1}{\alpha-1}\left(S_{n-1}^{1-\alpha}-S_{n}^{1-\alpha}\right)\end{equation}
 		avec $(S_{n}^{1-\alpha})_{n\in\N}$ tend vers $0$ quand $n\to+\infty$.
 		Donc $\sum w_{n}$ est une série téléscopique convergente. Comme $t\mapsto\frac{1}{t^{\alpha}}$ est décroissante, on a 
-		$$\frac{u_{n}}{S_{n}^{\alpha}}\leqslant w_{n}\leqslant \frac{u_{n}}{S_{n-1}^{\alpha}}$$
+		\begin{equation}\frac{u_{n}}{S_{n}^{\alpha}}\leqslant w_{n}\leqslant \frac{u_{n}}{S_{n-1}^{\alpha}}\end{equation}
 		car $u_{n}=S_{n}-S_{n-1}$. Comme $\sum w_{n}$ converge, 
-		$$\boxed{\sum \frac{u_{n}}{S_{n}^{\alpha}}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum \frac{u_{n}}{S_{n}^{\alpha}}\text{ converge.}}\end{equation}
 
 		Si $\alpha<1$, comme $\lim\limits_{n\to+\infty}S_{n}^{\alpha-1}=0$,
-		$$\frac{u_{n}}{S_{n}}=\underset{n\to+\infty}{o}\left(\frac{u_{n}}{S_{n}^{\alpha}}\right)$$
+		\begin{equation}\frac{u_{n}}{S_{n}}=\underset{n\to+\infty}{o}\left(\frac{u_{n}}{S_{n}^{\alpha}}\right)\end{equation}
 		donc 
-		$$\boxed{\sum v_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum v_{n}\text{ diverge.}}\end{equation}
 
 		\item On a $\lim\limits_{n\to+\infty}R_{n}=0$ par convergence et $\lim\limits_{n\to+\infty}u_{n}=0$ et de plus $u_{n}=R_{n}-R_{n+1}$. On pose 
-		$$\alpha_{n}=\int_{R_{n+1}}^{R_{n}}\frac{dt}{t^{\alpha}}=\frac{1}{\alpha-1}\left(R_{n+1}^{1-\alpha}-R_{n}^{1-\alpha}\right)$$
+		\begin{equation}\alpha_{n}=\int_{R_{n+1}}^{R_{n}}\frac{dt}{t^{\alpha}}=\frac{1}{\alpha-1}\left(R_{n+1}^{1-\alpha}-R_{n}^{1-\alpha}\right)\end{equation}
 		si $\alpha\neq1$.
 
 		Si $0<\alpha<1$, $\lim\limits_{n\to+\infty}R_{n}^{1-\alpha}=0$ donc $\sum \alpha_{n}$ est une série téléscopique convergente et de même que précédemment, on a 
-		$$\frac{u_{n}}{R_{n}^{\alpha}}\leqslant\alpha_{n}$$
+		\begin{equation}\frac{u_{n}}{R_{n}^{\alpha}}\leqslant\alpha_{n}\end{equation}
 		donc $w_{n}\leqslant \alpha_{n}$ et 
-		$$\boxed{\sum w_{n}\text{ converge.}}$$
+		\begin{equation}\boxed{\sum w_{n}\text{ converge.}}\end{equation}
 
 		Si $\alpha=1$, on a 
-		$$\alpha_{n}=\ln(R_{n})-\ln(R_{n+1})$$
+		\begin{equation}\alpha_{n}=\ln(R_{n})-\ln(R_{n+1})\end{equation}
 		où $\ln(R_{n})\xrightarrow[n\to+\infty]{}-\infty$. Donc $\sum \alpha_{n}$ est une série téléscopique divergente. De plus 
-		$$\frac{u_{n}}{R_{n}}=\frac{R_{n}-R_{n+1}}{R_{n}}=1-\frac{R_{n+1}}{R_{n}}$$
+		\begin{equation}\frac{u_{n}}{R_{n}}=\frac{R_{n}-R_{n+1}}{R_{n}}=1-\frac{R_{n+1}}{R_{n}}\end{equation}
 		donc 
-		$$\ln\left(\frac{R_{n+1}}{R_{n}}\right)=\ln\left(1-\frac{u_{n}}{R_{n}}\right)\underset{n\to+\infty}{\sim}\frac{-u_{n}}{R_{n}}$$
+		\begin{equation}\ln\left(\frac{R_{n+1}}{R_{n}}\right)=\ln\left(1-\frac{u_{n}}{R_{n}}\right)\underset{n\to+\infty}{\sim}\frac{-u_{n}}{R_{n}}\end{equation}
 
-		On a donc $$\frac{u_{n}}{R_{n}}\underset{n\to+\infty}{\sim}\alpha_{n}$$
+		On a donc \begin{equation}\frac{u_{n}}{R_{n}}\underset{n\to+\infty}{\sim}\alpha_{n}\end{equation}
 		donc 
-		$$\boxed{\sum w_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum w_{n}\text{ diverge.}}\end{equation}
 
-		Si $\alpha>1$, on a $$\frac{u_{n}}{R_{n}}=\underset{n\to+\infty}{o}\left(\frac{u_{n}}{R_{n}^{\alpha}}\right)$$
+		Si $\alpha>1$, on a \begin{equation}\frac{u_{n}}{R_{n}}=\underset{n\to+\infty}{o}\left(\frac{u_{n}}{R_{n}^{\alpha}}\right)\end{equation}
 		donc 
-		$$\boxed{\sum w_{n}\text{ diverge.}}$$
+		\begin{equation}\boxed{\sum w_{n}\text{ diverge.}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -1637,43 +1643,43 @@
 	\begin{enumerate}
 		\item Pour tout $x\in[0,1[$ il existe un unique $q_{x}\in\{0,\dots,n-1\}$ tel que $x\in[\frac{q_{x}}{n},\frac{q_{x}+1}{n}]$ avec $q_{x}=\left\rfloor nx\right\rfloor$ et \function{h}{\{0,\dots,n\}}{\{0,\dots,n-1\}}{k}{q_{x_{k}}=\left\lfloor nx_{k}\right\rfloor}
 		n'est pas injective donc il existe $k>k'$ tel que $\vert x_{k}-x_{k'}\vert<\frac{1}{n}$ avec $(k,k')\in\{0,\dots,n\}^{2}$ d'où
-		$$\left\vert kx-\left\lfloor kx\right\rfloor-\left(k'x-\left\lfloor k'x\right\rfloor\right)\right\vert<\frac{1}{n}$$
+		\begin{equation}\left\vert kx-\left\lfloor kx\right\rfloor-\left(k'x-\left\lfloor k'x\right\rfloor\right)\right\vert<\frac{1}{n}\end{equation}
 		d'où 
-		$$\left\vert (k-k')x-p\right\vert<\frac{1}{n}$$
+		\begin{equation}\left\vert (k-k')x-p\right\vert<\frac{1}{n}\end{equation}
 		avec $p\in\Z$ et pour $q=(k-k')\in\{1,\dots,n\}$, on a 
-		$$\boxed{\left\vert x-\frac{p}{q}\right\vert<\frac{1}{qn}}$$
+		\begin{equation}\boxed{\left\vert x-\frac{p}{q}\right\vert<\frac{1}{qn}}\end{equation}
 
 		\item D'après ce qui précède, pour tout $n\geqslant1$, il existe $(p_{n},q_{n})\in\Z\times\{1,\dots,n\}$ tels que 
-		$$\left\vert x-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{nq_{n}}\leqslant\frac{1}{q_{n}^{2}}$$
+		\begin{equation}\left\vert x-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{nq_{n}}\leqslant\frac{1}{q_{n}^{2}}\end{equation}
 		car $n\geqslant q_{n}$.
 		Donc 
-		$$\boxed{\left\vert x-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{q_{n}^{2}}}$$
+		\begin{equation}\boxed{\left\vert x-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{q_{n}^{2}}}\end{equation}
 
 		On a donc $\frac{p_{n}}{q_{n}}\xrightarrow[n\to+\infty]{}x\in\R\setminus\Q$. Si $q_{n}$ ne tend pas vers $+\infty$, il existe $A>0$ tel que pour tout $N\in\N$ il existe $n>N$ avec $q_{n}<A$. Donc $\{n\in\N|q_{n}<A\}$ est infini: on peut extraire $(q_{\sigma(n)})$ telle que pour tout $n\in\N$, on a $q_{\sigma(n)}<A$. D'après le théorème de Bolzano-Weierstrass, on peut extraire $(q_{\varphi(n)})$ qui converge vers $q\in\R$. Notons que toute suite d'entiers relatifs qui converge est stationnaire à partir d'un certain rang donc $q\in\N^{*}$. Or pour tout $n\in\N$, on a $p_{\varphi(n)}=\frac{p_{\varphi(n)}}{q_{\varphi(n)}}q_{\varphi(n)}\xrightarrow[n\to+\infty]{}\alpha q$. $(p_{\varphi(n)})_{n\in\N}$ est une suite convergente d'entiers relatifs stationnaire, donc $\alpha q\in\Z$ et $\alpha\in\Q$ ce qui est absurde.
 
 		Donc 
-		$$\boxed{\lim\limits_{n\to+\infty}q_{n}=+\infty}$$
+		\begin{equation}\boxed{\lim\limits_{n\to+\infty}q_{n}=+\infty}\end{equation}
 
 		\item On sait qu'il existe $\sigma\colon\N\to\N$ croissante telle que $\sin\left(\sigma(n)\right)\xrightarrow[n\to+\infty]{}1$ alors 
-		$$\lim\limits_{n\to+\infty}\frac{1}{\sigma(n)\sin(\sigma(n))}=0$$
+		\begin{equation}\lim\limits_{n\to+\infty}\frac{1}{\sigma(n)\sin(\sigma(n))}=0\end{equation}
 		donc si la suite converge, alors elle converge vers 0.
 
 		Appliquons ce qui précède à $\alpha=\frac{1}{\pi}\notin\Q$. Il existe $(p_{n},q_{n})\in\Z^{\N}\times(\N^{*})^{\N}$ avec $\lim\limits_{n\to+\infty}q_{n}=0$ et 
-		$$\left\vert\frac{1}{\pi}-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{q_{n}^{2}}$$
+		\begin{equation}\left\vert\frac{1}{\pi}-\frac{p_{n}}{q_{n}}\right\vert<\frac{1}{q_{n}^{2}}\end{equation}
 		Alors 
-		$$\left\vert q_{n}-\pi p_{n}\right\vert<\frac{\pi}{q_{n}}\leqslant\frac{\pi}{2}$$
+		\begin{equation}\left\vert q_{n}-\pi p_{n}\right\vert<\frac{\pi}{q_{n}}\leqslant\frac{\pi}{2}\end{equation}
 		pour $n$ suffisamment grand. Quitte à extraire, on peut supposer que $(q_{n})_{n\in\N}$ est croissante. On a
-		$$\left\vert\sin(x)\right\vert=\left\vert\sin(q_n-\pi q_n)\right\vert$$
+		\begin{equation}\left\vert\sin(x)\right\vert=\left\vert\sin(q_n-\pi q_n)\right\vert\end{equation}
 		donc 
-		$$\left\vert\sin(q_n)\right\vert\leqslant\left\vert\sin\left(\frac{\pi}{q_n}\right)\right\vert\leqslant\frac{\pi}{q_n}$$
+		\begin{equation}\left\vert\sin(q_n)\right\vert\leqslant\left\vert\sin\left(\frac{\pi}{q_n}\right)\right\vert\leqslant\frac{\pi}{q_n}\end{equation}
 		car $\sin$ est croissant sur $\left[0,\frac{\pi}{2}\right]$ et $\vert\sin(x)\vert\leqslant\vert x\vert$.
 
 		Donc 
-		$$\underbrace{\frac{1}{\vert q_n\sin(q_n)\vert}}_{\xrightarrow[n\to+\infty]{}0}\geqslant\frac{1}{\pi}$$
+		\begin{equation}\underbrace{\frac{1}{\vert q_n\sin(q_n)\vert}}_{\xrightarrow[n\to+\infty]{}0}\geqslant\frac{1}{\pi}\end{equation}
 		ce qui est absurde.
 
 		Donc 
-		$$\boxed{\left(\frac{1}{n\sin(n)}\right)_{n\geqslant1}\text{ ne converge pas.}}$$
+		\begin{equation}\boxed{\left(\frac{1}{n\sin(n)}\right)_{n\geqslant1}\text{ ne converge pas.}}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -1681,39 +1687,39 @@
 	\phantom{}
 	\begin{enumerate}
 		\item On a 
-		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert=\left\lvert\sum_{p=1}^{n}\left(a_{n,p}-a_{p}\right)-\sum_{p=n+1}^{+\infty}a_{p}\right\rvert=\leqslant\sum_{p=1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert+\sum_{p=n+1}^{+\infty}\left\lvert a_{p}\right\rvert$$
+		\begin{equation}\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert=\left\lvert\sum_{p=1}^{n}\left(a_{n,p}-a_{p}\right)-\sum_{p=n+1}^{+\infty}a_{p}\right\rvert=\leqslant\sum_{p=1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert+\sum_{p=n+1}^{+\infty}\left\lvert a_{p}\right\rvert\end{equation}
 
 		Soit $N\in\N^{*}$. Si $n\geqslant N$, on a 
-		$$\sum_{p=1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert=\sum_{p=1}^{N}\left\lvert a_{n,p}-a_{p}\right\rvert+\sum_{p=N+1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert$$
+		\begin{equation}\sum_{p=1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert=\sum_{p=1}^{N}\left\lvert a_{n,p}-a_{p}\right\rvert+\sum_{p=N+1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert\end{equation}
 
 		Pour $p$ fixé, on a $\left\lvert a_{p}\right\rvert\leqslant b_{p}$ donc 
-		$$\sum_{p=N+1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert\leqslant 2\sum_{p=N+1}^{n} b_{p}$$
+		\begin{equation}\sum_{p=N+1}^{n}\left\lvert a_{n,p}-a_{p}\right\rvert\leqslant 2\sum_{p=N+1}^{n} b_{p}\end{equation}
 
 		Ainsi, 
-		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert\leqslant\sum_{p=1}^{N}\left\lvert a_{n,p}-a_{p}\right\rvert+3\sum_{p=N+1}^{+\infty}b_{p}$$
+		\begin{equation}\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert\leqslant\sum_{p=1}^{N}\left\lvert a_{n,p}-a_{p}\right\rvert+3\sum_{p=N+1}^{+\infty}b_{p}\end{equation}
 
 		Soit $\varepsilon>0$. Comme $\sum_{p\geqslant1}b_{p}$ converge, il existe $N_{1}\in\N$ tel que 
-		$$3\sum_{p=N_{1}+1}^{+\infty}b_{p}\leqslant\frac{\varepsilon}{2}$$
+		\begin{equation}3\sum_{p=N_{1}+1}^{+\infty}b_{p}\leqslant\frac{\varepsilon}{2}\end{equation}
 		donc pour tout $n\geqslant N_{1}$, on a 
-		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert<\frac{\varepsilon}{2}+\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert$$
+		\begin{equation}\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert<\frac{\varepsilon}{2}+\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert\end{equation}
 
 		$N_{1}$ étant fixé, il existe $N_{2}\in\N$ tel que pour tout $n\geqslant N_{2}$, on a 
-		$$\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert<\frac{\varepsilon}{2}$$
+		\begin{equation}\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert<\frac{\varepsilon}{2}\end{equation}
 		car 
-		$$\lim\limits_{n\to+\infty}\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert=0$$
+		\begin{equation}\lim\limits_{n\to+\infty}\sum_{p=1}^{N_{1}}\left\lvert a_{n,p}-a_{p}\right\rvert=0\end{equation}
 
 		Donc pour tout $n\geqslant\max\left(N_{1},N_{2}\right)$, on a 
-		$$\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert<\varepsilon$$
+		\begin{equation}\left\lvert\sum_{p=1}^{n}a_{n,p}-\sum_{p=1}^{+\infty}a_{p}\right\rvert<\varepsilon\end{equation}
 		Ainsi,
 
-		$$\boxed{\lim\limits_{n\to+\infty}\sum_{p=1}^{+\infty}a_{n,p}=\sum_{p=1}^{+\infty}a_{p}}$$
+		\begin{equation}\boxed{\lim\limits_{n\to+\infty}\sum_{p=1}^{+\infty}a_{n,p}=\sum_{p=1}^{+\infty}a_{p}}\end{equation}
 
 		\item On fixe $p\in\N$, on a 
-		$$\lim\limits_{n\to+\infty}\left(1-\frac{p}{n}\right)^{n}=e^{-p}$$
+		\begin{equation}\lim\limits_{n\to+\infty}\left(1-\frac{p}{n}\right)^{n}=e^{-p}\end{equation}
 		Pour $x\geqslant -1$, on a $\ln\left(1+x\right)\leqslant x$ donc $\ln\left(1-\frac{p}{n}\right)\leqslant -\frac{p}{n}$ et $a_{n,p}=e^{n\ln\left(1-\frac{p}{n}\right)}\leqslant e^{-p}=b_{p}$
 		Donc d'après ce qui précède, 
 		
-		$$\boxed{\lim\limits_{n\to+\infty\left(\left(\frac{1}{n}\right)^{n}+\dots+\left(\frac{n-1}{n}\right)^{n}\right)}=\frac{1}{e-1}}$$
+		\begin{equation}\boxed{\lim\limits_{n\to+\infty\left(\left(\frac{1}{n}\right)^{n}+\dots+\left(\frac{n-1}{n}\right)^{n}\right)}=\frac{1}{e-1}}\end{equation}
 		
 		\begin{figure}[ht!]
 			\centering
@@ -1739,19 +1745,19 @@
 
 \begin{remark}
 	C'est faux si on n'a pas l'hypothèse (ii). Par exemple, 
-	$$a_{n,p}=\frac{1}{\sqrt{n}}\xrightarrow[n\to+\infty]{}0$$
+	\begin{equation}a_{n,p}=\frac{1}{\sqrt{n}}\xrightarrow[n\to+\infty]{}0\end{equation}
 	pour $p$ fixé mais 
-	$$\sum_{p=1}^{n}\frac{1}{\sqrt{n}}=\sqrt{n}\xrightarrow[n\to+\infty]{}+\infty$$
+	\begin{equation}\sum_{p=1}^{n}\frac{1}{\sqrt{n}}=\sqrt{n}\xrightarrow[n\to+\infty]{}+\infty\end{equation}
 \end{remark}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item Pour tout $k\geqslant1$, $\left(u_{kn}\right)_{n\geqslant1}$ est une sous-famille de $\left(u_{n}\right)_{n\geqslant1}$ sommable, donc $\left(u_{kn}\right)_{n\geqslant1}$ est sommable.
-		$$\boxed{\text{Donc }S_{k}\text{ existe.}}$$
+		\begin{equation}\boxed{\text{Donc }S_{k}\text{ existe.}}\end{equation}
 
 		\item On a 
-		$$
+		\begin{equation}
 		\left\{
 			\begin{array}[]{lllll}
 				S_{1}-S_{2} &= &u_{1}+u_{3}+\dots+u_{2n+1}+\dots &= &0\\
@@ -1759,36 +1765,36 @@
 				S_{1}-S_{2}-S_{3}-S_{5}+S_{6}+S_{10}+S_{15}-S_{10} &= &u_{1}+u_{7}+u_{11}+\dots &= &0
 			\end{array}
 		\right.
-		$$
+		\end{equation}
 		A la première ligne on enlève les multiples de 2, à la deuxième ligne on enlève les multiples de 2 et 3, à la troisième ligne on enlève les multiples de 2, 3 et 5. Et ainsi de suite.
 
 		Soient donc $p_{1},\dots,p_{N}$ les $N$ premiers nombres premiers. On a 
-		$$0=\sum_{k=1}^{p_{1}\dots p_{N}}\mu(k)S_{k}=\sum_{k\in\left\{p_{1}^{\alpha_{1}}\dots p_{N}^{\alpha_{N}}\middle|\left(\alpha_{1},\dots,\alpha_{N}\right)\in\left\{0,1\right\}^{N}\right\}}\mu(k)S_{k}$$
+		\begin{equation}0=\sum_{k=1}^{p_{1}\dots p_{N}}\mu(k)S_{k}=\sum_{k\in\left\{p_{1}^{\alpha_{1}}\dots p_{N}^{\alpha_{N}}\middle|\left(\alpha_{1},\dots,\alpha_{N}\right)\in\left\{0,1\right\}^{N}\right\}}\mu(k)S_{k}\end{equation}
 		où si $k=p_{1}^{\alpha_{1}}\dots p_{r}^{\alpha_{r}}$, $\mu(k)=0$ s'il existe $\alpha_{i}\geqslant 2$ et $\mu\left(p_{i_{1}}\dots p_{i_{s}}\right)=\left(-1\right)^{s}$ sinon (fonction de Möbius).
 
 		Soit $n=p_{1}^{\beta_{1}}\dots p_{N}^{\beta_{N}}$. On cherche le coefficient en $u_{n}$ dans la somme. Si $n=1$, c'est 1. Si $n\geqslant 1$, on a 
-		$$\sum_{k\mid n}\mu(k)=0$$
+		\begin{equation}\sum_{k\mid n}\mu(k)=0\end{equation}
 		donc 
-		$$\sum_{k\in\left\{p_{1}^{\alpha_{1}}\dots p_{N}^{\alpha_{N}}\middle|\left(\alpha_{1},\dots,\alpha_{N}\right)\in\left\{0,1\right\}^{N}\right\}}\mu(k)S_{k}=u_{1}+\alpha_{N}$$
+		\begin{equation}\sum_{k\in\left\{p_{1}^{\alpha_{1}}\dots p_{N}^{\alpha_{N}}\middle|\left(\alpha_{1},\dots,\alpha_{N}\right)\in\left\{0,1\right\}^{N}\right\}}\mu(k)S_{k}=u_{1}+\alpha_{N}\end{equation}
 		avec 
-		$$\alpha_{N}=\sum_{k\in B_{N}}u_{k}$$
+		\begin{equation}\alpha_{N}=\sum_{k\in B_{N}}u_{k}\end{equation}
 		où $B_{N}\subset\N^{*}$ est tel que $\min\left(B_{N}\right)=p_{N+1}$. On a 
-		$$\left\lvert \alpha_{N}\right\rvert\leqslant\sum_{k\geqslant p_{N+1}}\left\lvert u_{k}\right\rvert\xrightarrow[N\to+\infty]{}0$$
+		\begin{equation}\left\lvert \alpha_{N}\right\rvert\leqslant\sum_{k\geqslant p_{N+1}}\left\lvert u_{k}\right\rvert\xrightarrow[N\to+\infty]{}0\end{equation}
 		car c'est le reste de $\sum_{n\geqslant 1}\left\lvert u_n\right\rvert$ convergente.
 
 		Donc $u_{1}+\alpha_{N}=0\xrightarrow[N\to+\infty]{}u_{1}$ donc $u_{1}=0$.
 
 		Avec $u_{1}=0$,
-		$$
+		\begin{equation}
 		\left\{
 			\begin{array}[]{lllll}
 				S_{n} &= &u_{n}+u_{2n}+u_{3n}+\dots &= &0\\
 				S_{2n} &= & u_{2n}+u_{4n}+u_{6n}+\dots &= &0
 			\end{array}
 		\right.
-		$$
+		\end{equation}
 		et en recommençant avec $u_{n}$ pour tout $n\geqslant1$, on obtient bien 
-		$$\boxed{u_{n}=0}$$
+		\begin{equation}\boxed{u_{n}=0}\end{equation}
 	\end{enumerate}
 \end{proof}
 
@@ -1796,42 +1802,42 @@
 	\phantom{}
 	\begin{enumerate}
 		\item On prend $u_{n}=0$ pour tout $n\in\N$. Alors $\sum u_{n}=0$ converge donc $\sum f\left(u_{n}\right)=\sum f(0)$ converge. Donc 
-		$$\boxed{f(0)=0}$$
+		\begin{equation}\boxed{f(0)=0}\end{equation}
 
 		Supposons que $f$ n'est pas continue en 0. Alors il existe $\varepsilon_{0}>$ tel que pour tout $\alpha>0$, il existe $x\in\left[-\alpha,\alpha\right]\colon\left\lvert f(x)\right\rvert\geqslant\varepsilon_{0}$. Pour $\alpha\equiv\alpha_{n}=\frac{1}{n^{2}}$, il existe $x_{n}\in\left[-\frac{1}{n^{2}},\frac{1}{n^{2}}\right]\colon\left\lvert f(x_{n})\right\rvert\geqslant\varepsilon_{0}$.
 		$\sum x_{n}$ converge absolument mais $\sum f\left(x_{n}\right)$ diverge grossièrement ce qui est absurde.
-		$$\boxed{\text{f est continue en 0.}}$$
+		\begin{equation}\boxed{\text{f est continue en 0.}}\end{equation}
 
 		\item Supposons que pour tout $\alpha>0$, il existe $x\in\left]-\alpha,\alpha\right[\colon f\left(-x\right)\neq-f\left(x\right)$.
 		On définit $\left(x_{n}\right)_{n\in\N}\xrightarrow[n\to+\infty]{}0$ telle que $f\left(-x_{n}\right)+f\left(x_{n}\right)\neq 0$. Il existe $N_{n}\in\N^{*}$ tel que 
-		$$N_{n}\left\lvert f\left(-x_{n}\right)+f\left(x_{n}\right)\right\rvert\geqslant1$$
+		\begin{equation}N_{n}\left\lvert f\left(-x_{n}\right)+f\left(x_{n}\right)\right\rvert\geqslant1\end{equation}
 		(il suffit de prendre $N_{n}=\left\lfloor\frac{1}{\left\lvert f\left(x_{n}\right)+f\left(-x_{n}\right)\right\rvert}\right\rfloor+1$)
 
 		On définit 
-		$$\left(u_{n}\right)_{n\in\N}=\left(x_{0},-x_{0},x_{0},-x_{0},\dots,\dots,x_{n},-x_{n},\dots,\dots\right)$$
+		\begin{equation}\left(u_{n}\right)_{n\in\N}=\left(x_{0},-x_{0},x_{0},-x_{0},\dots,\dots,x_{n},-x_{n},\dots,\dots\right)\end{equation}
 		où $\left(x_{n},-x_{n}\right)$ apparaît $N_{n}$ fois. On a 
 		$\sum_{k=0}^{2N}u_{k}=0$ et $\sum_{k=0}^{2N+1}u_{k}=x_{n}\xrightarrow[n\to+\infty]{}0$. Donc $\sum u_{n}$ converge.
 
 		Si $\sum f\left(u_{n}\right)$ convergeait, alors il existerait $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$ alors 
-		$$\left\lvert\sum_{k=n+1}^{+\infty}f\left(x_{k}\right)\right\rvert<\frac{1}{2}$$
+		\begin{equation}\left\lvert\sum_{k=n+1}^{+\infty}f\left(x_{k}\right)\right\rvert<\frac{1}{2}\end{equation}
 		De plus, pour $n\geqslant n_{0}$, on a 
-		$$\left\lvert f\left(x_n\right)+f\left(-x_n\right)+\dots+f\left(x_n\right)+f\left(-x_n\right)+f\left(x_{n+1}\right)+f\left(-x_{n+1}\right)+\dots\right\rvert<\frac{1}{2}$$
+		\begin{equation}\left\lvert f\left(x_n\right)+f\left(-x_n\right)+\dots+f\left(x_n\right)+f\left(-x_n\right)+f\left(x_{n+1}\right)+f\left(-x_{n+1}\right)+\dots\right\rvert<\frac{1}{2}\end{equation}
 		où $\left(f\left(x_{n}\right),f\left(-x_{n}\right)\right)$ apparaît $N_{n}$ fois.
 		Comme 
-		$$\left\lvert f\left(x_{n+1}\right)+f\left(-x_{n+1}\right)+\dots\right\rvert<\frac{1}{2}$$
+		\begin{equation}\left\lvert f\left(x_{n+1}\right)+f\left(-x_{n+1}\right)+\dots\right\rvert<\frac{1}{2}\end{equation}
 		on a 
-		$$\left\lvert f\left(x_n\right)+f\left(-x_n\right)+\dots+f\left(x_n\right)+f\left(-x_n\right)\right\rvert=N_{n}\left\lvert f\left(x_n\right)+f\left(-x_n\right)\right\rvert<1$$
+		\begin{equation}\left\lvert f\left(x_n\right)+f\left(-x_n\right)+\dots+f\left(x_n\right)+f\left(-x_n\right)\right\rvert=N_{n}\left\lvert f\left(x_n\right)+f\left(-x_n\right)\right\rvert<1\end{equation}
 		ce qui est absurde.
 
-		$$\boxed{\text{Donc f est impaire au voisinage de 0.}}$$
+		\begin{equation}\boxed{\text{Donc f est impaire au voisinage de 0.}}\end{equation}
 
 		\item Supposons que pour tout $\beta>0$, il existe $(x,y)\in\left]-\beta,\beta\right[^{2}$ avec $f\left(x+y\right)\neq f\left(x\right)+f\left(y\right)$. Alors il existe $\left(x_{n}\right)_{n\in\N}$ et $\left(y_{n}\right)_{n\in\N}$ qui tendent vers 0 telles que pour tout $n\in\N$, il existe $M_{n}\in\N$,
-		$$M_{n}\left\lvert f\left(x_{n}+y_{n}\right)-f\left(x_{n}\right)-f\left(y_{n}\right)\right\rvert\geqslant 1$$
+		\begin{equation}M_{n}\left\lvert f\left(x_{n}+y_{n}\right)-f\left(x_{n}\right)-f\left(y_{n}\right)\right\rvert\geqslant 1\end{equation}
 
 		On définit alors 
-		$$\left(u_{n}\right)_{n\in\N}=\left(x_{0}+y_{0},-x_{0},-y_{0},\dots,x_{0}+y_{0},-x_{0},-y_{0},\dots,x_{n}+y_{n},-x_{n},-y_{n},\dots\right)$$
+		\begin{equation}\left(u_{n}\right)_{n\in\N}=\left(x_{0}+y_{0},-x_{0},-y_{0},\dots,x_{0}+y_{0},-x_{0},-y_{0},\dots,x_{n}+y_{n},-x_{n},-y_{n},\dots\right)\end{equation}
 		où $\left(x_{n}+y_{n},-x_{n},-y_{n}\right)$ apparaît $M_{n}$ fois. On a 
-		$$\sum_{k=0}^{N}u_{k}=
+		\begin{equation}\sum_{k=0}^{N}u_{k}=
 		\left\{
 			\begin{array}[]{ll}
 				0 & \text{si }N\equiv0[3]\\
@@ -1839,32 +1845,32 @@
 				y_{n} & \text{si }N\equiv2[3]
 			\end{array}
 		\right.\xrightarrow[N\to+\infty]{}0
-		$$
+		\end{equation}
 		donc $\sum u_{n}$ converge.
 
 		Si $\sum f\left(u_{n}\right)$ convergeait, alors il existerait $n_{0}\in\N$ tel que pour tout $n\geqslant n_{0}$, 
-		$$\left\lvert\sum_{k=n+1}^{+\infty}f\left(u_{k}\right)\right\rvert<\frac{1}{2}$$
+		\begin{equation}\left\lvert\sum_{k=n+1}^{+\infty}f\left(u_{k}\right)\right\rvert<\frac{1}{2}\end{equation}
 		De plus, d'après 2., il existe $n_{1}\in\N$ tel que pour tout $n\geqslant n_{1}$, on a $f\left(-x_{n}\right)+f\left(-y_{n}\right)=-f\left(x_{n}\right)-f\left(y_{n}\right)$ donc pour tout $n\geqslant\max\left(n_{0},n_{1}\right)$, on a 
-		$$\left\lvert f\left(x_{n}+y_{n}\right)+f\left(-x_{n}\right)+f\left(-y_{n}\right)\right\rvert\times M_{n}=\left\lvert f\left(x_{n}+y_{n}\right)-f\left(x_{n}\right)-f\left(y_{n}\right)\right\rvert\times M_{n}<1$$
+		\begin{equation}\left\lvert f\left(x_{n}+y_{n}\right)+f\left(-x_{n}\right)+f\left(-y_{n}\right)\right\rvert\times M_{n}=\left\lvert f\left(x_{n}+y_{n}\right)-f\left(x_{n}\right)-f\left(y_{n}\right)\right\rvert\times M_{n}<1\end{equation}
 		ce qui est absurde.
 
-		$$\boxed{\text{Donc f est linéaire au voisinage de 0.}}$$
+		\begin{equation}\boxed{\text{Donc f est linéaire au voisinage de 0.}}\end{equation}
 
 		\item Soit $k\in\Z^{*},x\in\R,\left\lvert x\right\rvert\leqslant\frac{\beta}{\left\lvert k\right\rvert}$. Par récurrence, on a $f\left(kx\right)=kf\left(x\right)$.
 		
 		Si $\left\lvert x\right\rvert<\beta$ et si $\frac{x}{\beta}\in\Q$, on a 
-		$$\frac{x}{\frac{\beta}{2}}=\frac{p}{q}$$
+		\begin{equation}\frac{x}{\frac{\beta}{2}}=\frac{p}{q}\end{equation}
 		donc en posant $\lambda=\frac{2}{\beta}f\left(\frac{\beta}{2}\right)$, on a
-		$$f\left(x\right)=f\left(\frac{p\beta}{2q}\right)=\frac{p}{q}f\left(\frac{\beta}{2}\right)=\frac{p}{q}\frac{\beta}{2}\lambda=\lambda x$$
+		\begin{equation}f\left(x\right)=f\left(\frac{p\beta}{2q}\right)=\frac{p}{q}f\left(\frac{\beta}{2}\right)=\frac{p}{q}\frac{\beta}{2}\lambda=\lambda x\end{equation}
 
 		Si $\frac{x}{\beta}\notin\Q$, il existe une suite de rationnels $(r_{n})_{n\in\N}$ telle que $\lim\limits_{n\to+\infty}r_{n}=\frac{x}{\frac{\beta}{2}}$. On a alors 
-		\begin{align*}
+		\begin{align}
 			f\left(x\right)
 			&=f\left(\left(x-\frac{r_{n}\beta}{2}\right)+r_{n}\frac{\beta}{2}\right)\\
 			&=f\left(x-\frac{r_{n}\beta}{2}\right)+f\left(\frac{r_{n}\beta}{2}\right)
-		\end{align*}
+		\end{align}
 		et $x-\frac{r_{n}\beta}{2}\xrightarrow[n\to+\infty]{}0$ et donc $f\left(x-\frac{r_{n}\beta}{2}\right)\xrightarrow[n\to+\infty]{}0$ d'après 1. et $r_{n}f\left(\frac{\beta}{2}\right)\xrightarrow[n\to+\infty]{}\lambda x$
 		
-		$$\boxed{\text{Donc f est une homothétie au voisinage de 0.}}$$
+		\begin{equation}\boxed{\text{Donc f est une homothétie au voisinage de 0.}}\end{equation}
 	\end{enumerate}
 \end{proof}

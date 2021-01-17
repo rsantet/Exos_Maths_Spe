@@ -4,53 +4,53 @@
 	Tout d'abord, $\deg(L_{n})=n$ et  son coefficient dominant et $\frac{(2n)!}{2^{n}(n!)^{2}}$.
 	\begin{enumerate}
 		\item Soit $f\in\mathcal{C}^{0}([0,1],\R)$. $-1$ et $1$ sont racines d'ordre $n$ de $P_{n}$ donc pour tout $k\in\{0,\dots,n-1\}$ $P_{n}^{(k)}(-1)=P_{n}^{(k)}(-1)=0$. Ainsi, on a par intégrations par parties successives:
-		$$(f|L_{n})=(-1)^{n}\int_{-1}^{1}f^{(n)}(t)P_{n}(t)dt$$
+		\begin{equation}(f|L_{n})=(-1)^{n}\int_{-1}^{1}f^{(n)}(t)P_{n}(t)dt\end{equation}
 		Notamment, si $P\in\R_{n-1}[X]$, $P^{(n)}=0$ et $(P|L_{n})=0$. En particulier, pour tout $m<n$, $\deg(L_{m})\leqslant n-1$ et $(L_{m}|L_{n})=0$ donc $(L_{n})_{n\in\N}$ est orthogonale. Notons dès maintenant que l'on peut calculer la norme de $L_{n}$ grâce aux intégrales de Wallis:
 		
-		\begin{align*}
+		\begin{align}
 			\Vert L_{n}\Vert_{2}^{2}
 			&=(L_{n}|L_{n})\\
 			&=(-1)^{n}\int_{-1}^{1}L_{n}^{(n)}(t^{2}-1)^{n}dt\\
 			&=\frac{(2n)!}{2^{2n}(n!)^{2}}\int_{-1}^{1}(1-t^{2})^{n}dt
-		\end{align*}
+		\end{align}
 		On pose $t=\cos(\theta)$ d'où $dt=-\sin(\theta)d\theta$, d'où
-		\begin{align*}
+		\begin{align}
 			\int_{-1}^{1}(1-t^{2})^{n}dt
 			&=\int_{0}^{\pi}\sin(\theta)^{2n+1}d\theta\\
 			&=2I_{2n+1}\text{ [Wallis] }
-		\end{align*}
+		\end{align}
 		On a classiquement $I_{n+2}=\frac{n+1}{n+2}I_{n}$.
 		D'où
-		\begin{align*}
+		\begin{align}
 			I_{2n+1}
 			&=\frac{2n}{2n+1}\times\frac{2n-2}{2n-1}\times\dots\times\frac{2}{3}\times \underbrace{I_{1}}{=1}\\
 			&=\frac{2^{2n}(n!)^{2}}{(2n+1)!}
-		\end{align*}
+		\end{align}
 		d'où
-		$$\Vert L_{n}\Vert_{2}^{2}=\frac{(2n)!}{2^{2n}(n!)^{2}}\times 2\times \frac{2^{2n}(n!)^{2}}{(2n+1)!}=\frac{2}{2n+1}$$
+		\begin{equation}\Vert L_{n}\Vert_{2}^{2}=\frac{(2n)!}{2^{2n}(n!)^{2}}\times 2\times \frac{2^{2n}(n!)^{2}}{(2n+1)!}=\frac{2}{2n+1}\end{equation}
 
 		\item On utilise la formule de Leibniz en écrivant $X^{2}-1=(X+1)(X-1)$.
 		\item On montre le résultat par récurrence sur $k\in\{0,\dots,n\}$ en invoquant le théorème de Rolle. On trouve donc que $L_{n}=P_{n}^{(n)}$ s'annule au moins $n$ fois sur $]-1,1[$. Or $\deg(L_{n})=n$, donc ces zéros sont simples et ce sont les seuls.
 		\item $(L_{0},\dots,L_{n})$ est une base de $\R_{n}[X]$ (étagée en degré). Donc il existe $(\alpha_{n,0},\dots,\alpha_{n,k})\in\R^{k+1}$ tel que $XL_{n-1}=\sum_{k=0}^{n}\alpha_{n,k}L_{k}$. Si $k\leqslant n-3$, on a
-		$$(XL_{n-1} L_{k})=\alpha_{n,k}\Vert L_{k}\Vert_{2}^{2}=(L_{n-1}XL_{k})=0$$
+		\begin{equation}(XL_{n-1} L_{k})=\alpha_{n,k}\Vert L_{k}\Vert_{2}^{2}=(L_{n-1}XL_{k})=0\end{equation}
 		car $\deg(XL_{k})=k+1\leqslant n-2$. Donc 
-		$$XL_{n-1}=\alpha_{n,n-2}L_{n-2}+\alpha_{n,n-1}L_{n-1}+\alpha_{n,n}L_{n}$$
+		\begin{equation}XL_{n-1}=\alpha_{n,n-2}L_{n-2}+\alpha_{n,n-1}L_{n-1}+\alpha_{n,n}L_{n}\end{equation}
 		Pour calculer les coefficients, on fait tout simplement les produits scalaires:
-		$$(Xl_{n-1}|L_{n-1})=\int_{-1}^{1}tL_{n-1}(t)^{2}dt$$
+		\begin{equation}(Xl_{n-1}|L_{n-1})=\int_{-1}^{1}tL_{n-1}(t)^{2}dt\end{equation}
 		Or $P_{n}$ est paire, donc $L_{n}$ est de la parité de $n$ et donc $L_{n}^{2}$ est paire puis $XL_{n}^{2}$ est impaire. Donc $\alpha_{n,n-1}=0$.
 
-		\begin{align*}
+		\begin{align}
 			(XL_{n-1}|L_{n-2})
 			&=\alpha_{n,n-2}\underbrace{\Vert L_{n-2}\Vert_{2}^{2}}_{=\frac{2}{2n-3}}\\
 			&=(-1)^{n}\int_{-1}^{1}P_{n-1}(t)\underbrace{(XL_{n-2})^{(n-1)}(t)}_{\frac{(2n-4)!(n-1)}{2^{n-2}(n-2)!}}
-		\end{align*}
+		\end{align}
 		Par ailleurs,
-		\begin{align*}
+		\begin{align}
 			(-1)^{n-1}\int_{-1}^{1}P_{n-1}(t)dt
 			&=\frac{1}{2^{n-1}(n-1)!}\underbrace{\int_{-1}^{1}(1-t^{2})^{n-1}dt}_{2I_{2n-1}}\\
 			&=\frac{1}{2^{n-1}(n-1)!}\times 2\times\frac{2^{2n-2}(n-1)!)^{2}}{(2n-1)!}\\
 			&=\frac{2^{n}(n-1)!}{(2n-1)!}
-		\end{align*}
+		\end{align}
 		donc $\frac{\alpha_{n,n-2}}{\alpha_{n,n}}=\frac{n-1}{n}$. D'où le résultat.
 	\end{enumerate}
 \end{proof}
@@ -58,31 +58,31 @@
 \begin{proof}
 	On forme \function{g}{[a,b]}{\R}{x}{\underbrace{\Delta f(x_{0},\dots,x_{n-1},x)}_{\varphi(x)}-\underbrace{\prod_{i=0}^{n-1}(x-x_{i})A}_{P(x)}}
 	On a $g(x_{n})=0$. On suppose les $(x_{i})_{1\leqslant i\leqslant n}$ distincts, et on pose 
-	$$A=\frac{V(x_{0},\dots,x_{n})}{\prod_{i=0}^{n-1}(x_{n}-x_{i})}$$
+	\begin{equation}A=\frac{V(x_{0},\dots,x_{n})}{\prod_{i=0}^{n-1}(x_{n}-x_{i})}\end{equation}
 	$g$ est de classe $\mathcal{C}^{n}$ et pour tout $i\in\{0,\dots,n\}$, on a $g(x_{i})=0$.
 	Donc il existe $\xi\in]a,b[$ tel que $g^{(n)}(\xi)=0$ (théorème de Rolle appliqué $n$ fois. $\deg(P)=n$ et son coefficient dominant est $A$ donc $P^{(n)}(\xi)=An!=\varphi^{(n)}(\xi)$.
 
 	On développe maintenant $\varphi(x)$ par rapport à la dernière colonne:
-	$$\varphi(x)=f(x)\times V_{n}(x_{0},\dots,x_{n-1})+Q(X)$$
+	\begin{equation}\varphi(x)=f(x)\times V_{n}(x_{0},\dots,x_{n-1})+Q(X)\end{equation}
 	avec $\deg(Q)\leqslant n-1$ et $V_{n}(x_{0},\dots,x_{n-1})=\prod_{0\leqslant j<i\leqslant n-1}(x_{i}-x_{j})$ (déterminant de Vandermonde). On a donc 
-	$$\varphi^{(n)}(x)=f^{(n)}(x)\prod_{0\leqslant j<i\leqslant n-1}(x_{j}-x_{i})$$
+	\begin{equation}\varphi^{(n)}(x)=f^{(n)}(x)\prod_{0\leqslant j<i\leqslant n-1}(x_{j}-x_{i})\end{equation}
 	et en reportant, on a 
-	$$\frac{f^{(n)}(\xi)}{n!}=\frac{A}{\prod_{0\leqslant i<j\leqslant n-1}(x_{j}-x_{i})}=\Delta f(x_{0},\dots,x_{n})$$
+	\begin{equation}\frac{f^{(n)}(\xi)}{n!}=\frac{A}{\prod_{0\leqslant i<j\leqslant n-1}(x_{j}-x_{i})}=\Delta f(x_{0},\dots,x_{n})\end{equation}
 \end{proof}
 
 \begin{proof}
 	On utilise le développement de Taylor avec reste intégral.
-	$$f(0)=f\Bigl(\frac{1}{2}\Bigr)-\frac{1}{2}f'\Bigl(\frac{1}{2}\Bigr)+\int_{\frac{1}{2}}^{0}-tf''(t)dt$$
+	\begin{equation}f(0)=f\Bigl(\frac{1}{2}\Bigr)-\frac{1}{2}f'\Bigl(\frac{1}{2}\Bigr)+\int_{\frac{1}{2}}^{0}-tf''(t)dt\end{equation}
 	et de même
-	$$f(1)=f\Bigl(\frac{1}{2}\Bigr)-\frac{1}{2}f'\Bigl(\frac{1}{2}\Bigr)+\int_{\frac{1}{2}}^{1}(1-t)f''(t)dt$$
+	\begin{equation}f(1)=f\Bigl(\frac{1}{2}\Bigr)-\frac{1}{2}f'\Bigl(\frac{1}{2}\Bigr)+\int_{\frac{1}{2}}^{1}(1-t)f''(t)dt\end{equation}
 	D'où
-	\begin{align*}
+	\begin{align}
 		A(f)
 		&=f(0)-f\Bigl(\frac{1}{2}\Bigr)+f(1)-f\Bigl(\frac{1}{2}\Bigr)\\
 		&=\int_{0}^{\frac{1}{2}}tf''(t)dt+\int_{\frac{1}{2}}^{1}(1-t)f''(t)dt\\
 		&\leqslant\int_{0}^{\frac{1}{2}}tdt+\int_{\frac{1}{2}}^{1}(1-t)dt\\
 		&=\frac{1}{4}
-	\end{align*}
+	\end{align}
 	Et c'est atteint pour $f(t)=\frac{t^{2}}{4}$.
 \end{proof}
 
@@ -93,7 +93,7 @@
 		f'(x)=\frac{1}{2}(f(x+1)-f(x-1))
 	\end{equation}
 	donc $f'$ est $\mathcal{C}^{1}$ et donc $f$ est $\mathcal{C}^{2}$. On fixe alors $x$ et on dérive deux fois~\eqref{eq:7.1} en fonction de $h$. On a alors
-	$$f''(x+h)=f''(x-h)$$
+	\begin{equation}f''(x+h)=f''(x-h)\end{equation}
 	pour tout $(x,h)\in\R^{2}$ donc $f''$ est constante et $f$ est polynômiale de degré 2.
 
 	Réciproquement, si $f(x)=ax^{2}+bx+c$, on a bien la relation de l'énoncé.
@@ -104,11 +104,11 @@
 	\begin{enumerate}
 		\item Soit $a>0$, \function{\tau_{a}}{\R}{]a,+\infty[}{x}{\frac{f(x)-f(a)}{x-a}}
 		est croissante. Donc il existe $l=\lim\limits_{x\to+\infty}\tau_{a}(x)\in\overline{\R}$. On écrit alors 
-		$$\frac{f(x)}{x}=\frac{f(x)-f(a)}{x-a}\times \frac{x-a}{x}+\frac{f(a)}{x}\xrightarrow[x\to+\infty]{}l$$
+		\begin{equation}\frac{f(x)}{x}=\frac{f(x)-f(a)}{x-a}\times \frac{x-a}{x}+\frac{f(a)}{x}\xrightarrow[x\to+\infty]{}l\end{equation}
 
 		\item S'il existe $a<b\in(\R_{+}^{*})^{2}$ tel que $f(a)<f(b)$, alors $\tau_{a}(b)>0$. Comme $\tau_{a}$ est croissante, $l\geqslant\tau_{a}(b)>0$. Par contraposée, si $l\geqslant0$, $f$ est décroissante.
 		\item Posons pour tout $x\in\R_{+}^{*}$, $\varphi(x)=f(x)-lx$. Pour $x<y$, on a 
-		$$\frac{\varphi(y)-\varphi(x)}{y-x}=\frac{f(y)-f(x)}{y-x}-l\leqslant0$$
+		\begin{equation}\frac{\varphi(y)-\varphi(x)}{y-x}=\frac{f(y)-f(x)}{y-x}-l\leqslant0\end{equation}
 		Donc $\varphi$ est décroissante et $\lim\limits_{x\to+\infty}\varphi(x)\in\overline{\R}$ existe.
 	\end{enumerate}
 \end{proof}
@@ -118,67 +118,67 @@
 	\begin{enumerate}
 		\item On forme \function{g}{[0,1]}{\R}{x}{\frac{1}{\frac{1}{p}+x}}
 		Alors 
-		$$\sum_{k=0}^{np}\frac{1}{n+k}=\frac{1}{np}\sum_{k=0}^{np}\frac{1}{\frac{1}{p}+\frac{k}{np}}\xrightarrow[n\to+\infty]{}\int_{0}^{1}\frac{dx}{\frac{1}{p}+x}=\ln(p+1)=l_{p}$$
+		\begin{equation}\sum_{k=0}^{np}\frac{1}{n+k}=\frac{1}{np}\sum_{k=0}^{np}\frac{1}{\frac{1}{p}+\frac{k}{np}}\xrightarrow[n\to+\infty]{}\int_{0}^{1}\frac{dx}{\frac{1}{p}+x}=\ln(p+1)=l_{p}\end{equation}
 
 		\item On note $f(x)=f(0)+xf'(0)+x\varepsilon(x)$ avec $\varepsilon(x)\xrightarrow[\varepsilon\to0]{}0$. 
 		
 		Soit $\varepsilon_{0}>0$. Il existe $\alpha_{0}>0$ tel que si $0<x<\alpha_{0}$, alors $\vert\varepsilon(x_{0})\vert\leqslant\varepsilon_{0}$, et il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, $\frac{1}{n}\leqslant\alpha_{0}$. Alors pour tout $n\geqslant N_{0}$, pour tout $k\in\{0,\dots,np\}$, 
-		$$\frac{1}{k+n}\Rightarrow \Biggl\vert\varepsilon\Bigl(\frac{1}{k+n}\Bigr)\Biggr\vert\leqslant\frac{\varepsilon_{0}}{p}$$
+		\begin{equation}\frac{1}{k+n}\Rightarrow \Biggl\vert\varepsilon\Bigl(\frac{1}{k+n}\Bigr)\Biggr\vert\leqslant\frac{\varepsilon_{0}}{p}\end{equation}
 		et
-		$$\Biggl\vert\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{k+n})}{k+n}\Biggr\vert\leqslant\sum_{k=0}^{np}\frac{\frac{\varepsilon_{0}}{p}}{k+n}\leqslant\frac{\varepsilon_{0}}{p}\frac{np+1}{n+1}\leqslant\varepsilon_{0}$$
+		\begin{equation}\Biggl\vert\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{k+n})}{k+n}\Biggr\vert\leqslant\sum_{k=0}^{np}\frac{\frac{\varepsilon_{0}}{p}}{k+n}\leqslant\frac{\varepsilon_{0}}{p}\frac{np+1}{n+1}\leqslant\varepsilon_{0}\end{equation}
 
 		On a donc
-		$$v_{n}=\sum_{k=0}^{np}\frac{1}{n+k}f'(0)+\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{n+k}\xrightarrow[n\to+\infty]{}\ln(p+1)f'(0)$$
+		\begin{equation}v_{n}=\sum_{k=0}^{np}\frac{1}{n+k}f'(0)+\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{n+k}\xrightarrow[n\to+\infty]{}\ln(p+1)f'(0)\end{equation}
 
 		\item On peut penser à $f\colon x\mapsto\sqrt{x}$ continue et $f(0)=0$. De plus,
-		$$\sum_{k=0}^{np}\frac{1}{\sqrt{n+k}}\geqslant\frac{np+1}{\sqrt{n(p+1)}}\xrightarrow[n\to+\infty]{}+\infty$$
+		\begin{equation}\sum_{k=0}^{np}\frac{1}{\sqrt{n+k}}\geqslant\frac{np+1}{\sqrt{n(p+1)}}\xrightarrow[n\to+\infty]{}+\infty\end{equation}
 		donc $v_{n}$ diverge.
 
 		\item On écrit $f(x)=f(0)+xf'(0)+\frac{x^{2}}{2!}f''(0)+x^{2}\varepsilon(x)$ avec $\varepsilon(x)\xrightarrow[\varepsilon\to+\infty]{}0$. Ainsi, 
-		$$v_{n}=\sum_{k=0}^{np}\frac{f''(0)}{2(n+k)^{2}}+\sum_{k=0}^{bp}\frac{\varepsilon(\frac{1}{k+n})}{(k+n)^{2}}$$
+		\begin{equation}v_{n}=\sum_{k=0}^{np}\frac{f''(0)}{2(n+k)^{2}}+\sum_{k=0}^{bp}\frac{\varepsilon(\frac{1}{k+n})}{(k+n)^{2}}\end{equation}
 		Soit $\varepsilon>0$, il existe $N\in\N$ tel que pour tout $n\geqslant N$, pour tout $k\in\{0,\dots,np\}$, $\vert\varepsilon(\frac{1}{n+k})\vert\leqslant\varepsilon$ et donc 
-		$$\Biggl\vert\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{(n+k)^{2}}\Biggr\vert\leqslant\sum_{k=0}^{np}\frac{\varepsilon}{(n+k)^{2}}$$
+		\begin{equation}\Biggl\vert\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{(n+k)^{2}}\Biggr\vert\leqslant\sum_{k=0}^{np}\frac{\varepsilon}{(n+k)^{2}}\end{equation}
 		donc 
-		$$\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{(n+k)^{2}}=O\Biggl(\sum_{k=0}^{np}\frac{f''(0)}{2}\times\frac{1}{(n+k)^{2}}\Biggr)$$
+		\begin{equation}\sum_{k=0}^{np}\frac{\varepsilon(\frac{1}{n+k})}{(n+k)^{2}}=O\Biggl(\sum_{k=0}^{np}\frac{f''(0)}{2}\times\frac{1}{(n+k)^{2}}\Biggr)\end{equation}
 		puis
-		$$v_{n}\underset{n\to+\infty}{\sim}\sum_{k=0}^{np}\frac{f''(0)}{2(n+k)^{2}}$$
+		\begin{equation}v_{n}\underset{n\to+\infty}{\sim}\sum_{k=0}^{np}\frac{f''(0)}{2(n+k)^{2}}\end{equation}
 		Or 
-		\begin{align*}
+		\begin{align}
 			\sum_{k=0}^{np}\frac{1}{(n+k)^{2}}
 			&=\frac{1}{(np)^{2}}\sum_{k=0}^{np}\frac{1}{(\frac{1}{p}+\frac{k}{np})^{2}}\\
 			&=\frac{1}{np}\times \underbrace{\frac{1}{np}\sum_{k=0}^{np}\frac{1}{(\frac{1}{p}+\frac{k}{np})^{2}}}_{\xrightarrow[n\to+\infty]{}\int_{0}^{1}\frac{dx}{(\frac{1}{p}+x)^{2}}}
-		\end{align*}
+		\end{align}
 		donc 
-		$$v_{n}\underset{n\to+\infty}{\sim}\frac{f''(0)p}{n(p+1)}$$
+		\begin{equation}v_{n}\underset{n\to+\infty}{\sim}\frac{f''(0)p}{n(p+1)}\end{equation}
 	\end{enumerate}
 \end{proof}
 
 \begin{proof}
 	Supposons que $f'$ ne tend pa vers 0 en $+\infty$: il existe $\varepsilon_{0}>0,\forall A>0,\exists x_{A}\geqslant A,\vert f'(x_{A})\vert\geqslant\varepsilon_{0}>0$. Par continuité uniforme, il existe $\alpha_{0}\geqslant0$, $\forall(x,y)\in(\R_{+})^{2}$, si $\vert x-y\vert\leqslant\alpha_{0}$ alors $\vert f'(x)-f'(y)\vert\leqslant\frac{\varepsilon_{0}}{2}$. Alors pour tout $t\in[x_{A}-\alpha,x_{A}+\alpha]$, on a 
-	$$\vert f'(t)\vert\geqslant \vert f'(x_{A})\vert-\vert f'(x_{A})-f'(t)\vert\geqslant\varepsilon_{0}-\frac{\varepsilon_{0}}{2}\geqslant\frac{\varepsilon_{0}}{2}$$
+	\begin{equation}\vert f'(t)\vert\geqslant \vert f'(x_{A})\vert-\vert f'(x_{A})-f'(t)\vert\geqslant\varepsilon_{0}-\frac{\varepsilon_{0}}{2}\geqslant\frac{\varepsilon_{0}}{2}\end{equation}
 	et pour $A=n$, pour tout $n\in\N,\exists x_{n}\geqslant n,\forall t\in[x_{n}-\alpha,x_{n}+\alpha],\vert f'(t)\vert\geqslant\frac{\varepsilon_{0}}{n}$. D'après le théorème des valeurs intermédiaires, $f'$ est de signe constant sur $[x_{n}-\alpha,x_{n}+\alpha]$. Quitte à changer $f$ en $-f$, on peut supposer qu'il existe une infinité de $n\in\N$ tels que $f'>0$ sur les $[x_{n}-\alpha,x_{n}+\alpha]$. Alors
-	$$f(x_{n}+\alpha_{0})-f(x_{n}-\alpha_{0})=\int_{x_{n}-\alpha_{0}}^{x_{n}+\alpha_{0}}f'(t)dt\geqslant\varepsilon_{0}\alpha_{0}>0$$
+	\begin{equation}f(x_{n}+\alpha_{0})-f(x_{n}-\alpha_{0})=\int_{x_{n}-\alpha_{0}}^{x_{n}+\alpha_{0}}f'(t)dt\geqslant\varepsilon_{0}\alpha_{0}>0\end{equation}
 	mais comme $\lim\limits_{x\to+\infty}f(x)\in\R$, on a 
-	$$\lim\limits_{n\to+\infty}f(x_{n}+\alpha_{0})-f(x_{n}-\alpha_{0})=0$$
+	\begin{equation}\lim\limits_{n\to+\infty}f(x_{n}+\alpha_{0})-f(x_{n}-\alpha_{0})=0\end{equation}
 	d'où la contradiction.
 
 	Si $f\in\mathcal{C}^{1}(\R_{+},\C)$, on applique ce qui précède à $\Im(f)$ et $\Re(f)$. 
 
 	Si $f'$ n'est pas uniformément continue, ce n'est plus valable, par exemple 
-	$$f(x)=\frac{\sin(x^{2})}{x}\xrightarrow[x\to+\infty]{}0$$
+	\begin{equation}f(x)=\frac{\sin(x^{2})}{x}\xrightarrow[x\to+\infty]{}0\end{equation}
 	car $\vert f(x)\vert\leqslant\frac{1}{x}$ et 
-	$$f'(x)=\underbrace{-\frac{1}{x^{2}}\sin(x^{2})}_{\xrightarrow[x\to+\infty]{}0}+\underbrace{\frac{2x\cos(x^{2})}{x}}_{\text{n'a pas de limite en }+\infty}$$
+	\begin{equation}f'(x)=\underbrace{-\frac{1}{x^{2}}\sin(x^{2})}_{\xrightarrow[x\to+\infty]{}0}+\underbrace{\frac{2x\cos(x^{2})}{x}}_{\text{n'a pas de limite en }+\infty}\end{equation}
 \end{proof}
 
 \begin{proof}
 	Soit $x\in\R$ et $h\neq0$, on a 
-	$$\frac{f(x+h)-f(x)}{h}=g(x+\frac{h}{2})\xrightarrow[h\to0]{}g(x)$$
+	\begin{equation}\frac{f(x+h)-f(x)}{h}=g(x+\frac{h}{2})\xrightarrow[h\to0]{}g(x)\end{equation}
 	par continuité de $g$. Donc $f$ est dérivable et $f'=g$. Par ailleurs, pour $y=\frac{1}{2}$, on a 
-	$$f'(x)=f(x+\frac{1}{2})-f(x-\frac{1}{2})$$
+	\begin{equation}f'(x)=f(x+\frac{1}{2})-f(x-\frac{1}{2})\end{equation}
 	par récurrence $f$ est $\mathcal{C}^{\infty}$.
 
 	En outre, en fixant $x$ et en dérivant la relation de départ deux fois par rapport à $y$, on a 
-	$$f''(x+y)-f''(x-y)=0$$
+	\begin{equation}f''(x+y)-f''(x-y)=0\end{equation}
 	Donc $f''$ est constante donc $f$ est un polynôme de degré plus petit que 2.
 
 	Réciproquement, on vérifie que ces fonctions marchent (avec $f'=g$).
@@ -186,45 +186,45 @@
 
 \begin{proof}
 	On a 
-	$$S_{n}=\sum_{k=1}^{n-1}\frac{1}{2}(f(k)+f(k+1))-\int_{k}^{k+1}f(t)dt$$
+	\begin{equation}S_{n}=\sum_{k=1}^{n-1}\frac{1}{2}(f(k)+f(k+1))-\int_{k}^{k+1}f(t)dt\end{equation}
 	On note $F(x)=\int_{1}^{x}f(t)dt$ de classe $\mathcal{C}^{2}$.
 
 	On a
-	$$F(b)=F(a)+F'(a)(b-a)+\int_{a}^{b}F''(t)(b-t)dt$$
+	\begin{equation}F(b)=F(a)+F'(a)(b-a)+\int_{a}^{b}F''(t)(b-t)dt\end{equation}
 	Pour $a=k$ et $b=k+\frac{1}{2}$, on a 
-	$$F(k+\frac{1}{2})=F(k)+\frac{1}{2}F'(k)+\int_{k}^{k+\frac{1}{2}}(k+\frac{1}{2}-t)f'(t)dt=F(k)+\frac{1}{2}F'(k)+\int_{0}^{\frac{1}{2}}uf'(k+\frac{1}{2}-u)du$$
+	\begin{equation}F(k+\frac{1}{2})=F(k)+\frac{1}{2}F'(k)+\int_{k}^{k+\frac{1}{2}}(k+\frac{1}{2}-t)f'(t)dt=F(k)+\frac{1}{2}F'(k)+\int_{0}^{\frac{1}{2}}uf'(k+\frac{1}{2}-u)du\end{equation}
 	et pour $a=k+1,b=k+\frac{1}{2}$,
-	$$F(k+\frac{1}{2})=F(k+1)-\frac{1}{2}F'(k+1)+\int_{k+1}^{k+\frac{1}{2}}(k+\frac{1}{2}-t)f'(t)dt=F(k+1)-\frac{1}{2}F'(k+1)+\int_{0}^{\frac{1}{2}}uf'(k+\frac{1}{2}+u)du$$
+	\begin{equation}F(k+\frac{1}{2})=F(k+1)-\frac{1}{2}F'(k+1)+\int_{k+1}^{k+\frac{1}{2}}(k+\frac{1}{2}-t)f'(t)dt=F(k+1)-\frac{1}{2}F'(k+1)+\int_{0}^{\frac{1}{2}}uf'(k+\frac{1}{2}+u)du\end{equation}
 
 	On a donc
-	$$\frac{1}{2}(f(k)-f(k+1))-\int_{k}^{k+1}f(t)dt=\int_{0}^{\frac{1}{2}}u(f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u))du$$
+	\begin{equation}\frac{1}{2}(f(k)-f(k+1))-\int_{k}^{k+1}f(t)dt=\int_{0}^{\frac{1}{2}}u(f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u))du\end{equation}
 	d'où
-	$$S_{n}=\int_{0}^{\frac{1}{2}}u\sum_{k=1}^{n-1}\underbrace{f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u)}_{\geqslant0\text{ car }u\geqslant0\text{ et }f'\text{ croissante}}du$$
+	\begin{equation}S_{n}=\int_{0}^{\frac{1}{2}}u\sum_{k=1}^{n-1}\underbrace{f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u)}_{\geqslant0\text{ car }u\geqslant0\text{ et }f'\text{ croissante}}du\end{equation}
 	et 
 	$f'(k+\frac{1}{2}+u)-f'(k+\frac{1}{2}-u)\leqslant f'(k+1)-f'(k)$ d'où 
-	$$S_{n}\leqslant\underbrace{\int_{0}^{\frac{1}{2}}udu}_{=\frac{1}{8}}(f'(n)-f'(1))$$
+	\begin{equation}S_{n}\leqslant\underbrace{\int_{0}^{\frac{1}{2}}udu}_{=\frac{1}{8}}(f'(n)-f'(1))\end{equation}
 \end{proof}
 
 \begin{proof}
 	\phantom{}
 	\begin{enumerate}
 		\item D'après l'inégalité de Taylor-Lagrange, on a 
-		$$
+		\begin{equation}
 		\left\{
 			\begin{array}[]{l}
 				\Vert A\Vert\leqslant\frac{h^{2}}{2}M_{2}\\
 				\Vert B\Vert\leqslant\frac{h^{2}}{2}M_{2}
 			\end{array}
 		\right.
-		$$
+		\end{equation}
 		On a $B-A-f(x-h)+f(x+h)=2hf'(x)$ d'où 
-		$$\Vert f'(x)\Vert\leqslant\frac{hM_{2}}{2}+\frac{M_{0}}{h}$$
+		\begin{equation}\Vert f'(x)\Vert\leqslant\frac{hM_{2}}{2}+\frac{M_{0}}{h}\end{equation}
 		Donc $f'$ est bornée sur $\R$. On a ensuite un majorant qui dépend de $h$ que l'on peut optimiser, et on trouve la borne demandée.
 
 		\item L'inégalité de Taylor-Lagrange donne à nouveau
-		$$\forall k\in\{1,\dots,n-1\},\Vert A_{k}\Vert\leqslant\frac{k^{n}}{n!}M_{n}$$
+		\begin{equation}\forall k\in\{1,\dots,n-1\},\Vert A_{k}\Vert\leqslant\frac{k^{n}}{n!}M_{n}\end{equation}
 		On forme alors
-		$$
+		\begin{equation}
 		\begin{pmatrix}
 			A_{1}-f(x+1)\\
 			\vdots\\
@@ -248,12 +248,12 @@
 			\vdots\\
 			f^{(n-1)}(x)
 		\end{pmatrix}
-		$$
+		\end{equation}
 
 		On a 
-		$$\det(M)=\frac{(-1)^{n}}{1!\times 2!\times\dots\times (n-1)!}V(1,\dots,n)$$
+		\begin{equation}\det(M)=\frac{(-1)^{n}}{1!\times 2!\times\dots\times (n-1)!}V(1,\dots,n)\end{equation}
 		où $V$ est le déterminant de Vandermonde. Donc $\det(M)\neq0$. On peut former les $f^{(j)}(x)$ en fonction des $(A_{i}-f(x+i))_{1\leqslant i\leqslant n}$: il existe $(\alpha_{1},\dots,\alpha_{n})\in\R^{n}$ tel que pour tout $x\in\R$, $f^{(j)}(x)=\sum_{i=1}^{n}\alpha_{i}(A_{i}-f(x+i))$. Donc 
-		$$\Vert f^{(j)}(x)\Vert\leqslant\sum_{i=1}^{n}\vert\alpha_{i}\vert\Bigl(\frac{n}{n!}M_{n}+M_{0}\Bigr)$$
+		\begin{equation}\Vert f^{(j)}(x)\Vert\leqslant\sum_{i=1}^{n}\vert\alpha_{i}\vert\Bigl(\frac{n}{n!}M_{n}+M_{0}\Bigr)\end{equation}
 		Donc $f^{(j)}$ est bornée pour tout $j\in\{1,\dots,n-1\}$.
 	\end{enumerate}
 \end{proof}
@@ -262,39 +262,39 @@
 	\phantom{}
 	\begin{enumerate}
 		\item 
-		$$l_{\sigma,\gamma}=\sum_{i=0}^{n-1}\Bigl\Vert\int_{a_{i}}^{a_{i+1}}\gamma'(t)dt\Bigr\Vert\leqslant\sum_{i=0}^{n-1}\int_{a_{i}}^{a_{i+1}}\Vert\gamma'(t)\Vert dt=\int_{a}^{b}\Vert\gamma'(t)\Vert dt$$
+		\begin{equation}l_{\sigma,\gamma}=\sum_{i=0}^{n-1}\Bigl\Vert\int_{a_{i}}^{a_{i+1}}\gamma'(t)dt\Bigr\Vert\leqslant\sum_{i=0}^{n-1}\int_{a_{i}}^{a_{i+1}}\Vert\gamma'(t)\Vert dt=\int_{a}^{b}\Vert\gamma'(t)\Vert dt\end{equation}
 
 		\item On a 
-		\begin{align*}
+		\begin{align}
 			\Bigl\vert l_{\sigma,\gamma}-\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})\Bigr\vert
 			&=\Bigl\vert\sum_{i=0}^{n-1}\Vert\gamma(a_{i+1})-\gamma(a_{i})\Vert-\Vert\underbrace{(a_{i+1}-a_{i})}_{>0}\gamma'(a_{i})\Vert\Bigr\vert\\
 			&\leqslant\sum_{i=0}^{n-1}\Vert\gamma(a_{i+1})-\gamma(a_{i})-(a_{i+1}-a_{i})\gamma'(a_{i})\Vert\\
 			&\leqslant\sum_{i=0}^{n-1}\int_{a_{i}}^{a_{i+1}}\Vert\gamma'(t)-\gamma'(a_{i})\Vert dt
-		\end{align*}
+		\end{align}
 
 		\item $\Vert\gamma'\Vert$ est continue donc 
-		$$\int_{a}^{b}\Vert\gamma'(t)\Vert dt=\lim\limits_{\delta(\sigma)\to0}\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})$$
+		\begin{equation}\int_{a}^{b}\Vert\gamma'(t)\Vert dt=\lim\limits_{\delta(\sigma)\to0}\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})\end{equation}
 		Donc $\alpha_{0}$ existe.
 
 		$\gamma'$ est continue sur $[a,b]$ donc uniformément continue sur $[a,b]$, et il existe $\alpha_{1}>0$ tel que pour tout $(x,y)\in[a,b]^{2}$, on a 
-		$$\vert x-y\vert\leqslant\alpha_{}\Rightarrow\Vert\gamma'(x)-\gamma'(y)\Vert\leqslant\frac{\varepsilon}{2(b-a)}$$
+		\begin{equation}\vert x-y\vert\leqslant\alpha_{}\Rightarrow\Vert\gamma'(x)-\gamma'(y)\Vert\leqslant\frac{\varepsilon}{2(b-a)}\end{equation}
 		Alors si $\delta(\sigma)\leqslant\alpha_{1}$, pour tout $i\in\{0,\dots,n-1\}$, pour tout $t\in[a_{i},a_{i+1}]$, on a
-		$$\vert t-a_{i}\vert\leqslant(a_{i+1}-a_{i})\leqslant\alpha_{1}$$
+		\begin{equation}\vert t-a_{i}\vert\leqslant(a_{i+1}-a_{i})\leqslant\alpha_{1}\end{equation}
 		d'où 
-		$$\Vert \gamma'(a_{i})-\gamma'(t)\Vert\leqslant\frac{\varepsilon}{2(b-a)}$$
+		\begin{equation}\Vert \gamma'(a_{i})-\gamma'(t)\Vert\leqslant\frac{\varepsilon}{2(b-a)}\end{equation}
 		et d'après la question 2, on a donc 
-		$$\Bigl\vert l_{\sigma,\gamma}-\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})\Bigr\vert\leqslant\frac{\varepsilon}{2}$$
+		\begin{equation}\Bigl\vert l_{\sigma,\gamma}-\sum_{i=0}^{n-1}\Vert\gamma'(a_{i})\Vert(a_{i+1}-a_{i})\Bigr\vert\leqslant\frac{\varepsilon}{2}\end{equation}
 
 		Finalement, si $@d(\sigma)\leqslant\min(\alpha_{0},\alpha_{1})$, on a 
-		$$\Bigl\vert l_{\sigma,\gamma}-\int_{a}^{b}\Vert\gamma'(t)\Vert dt\Bigr\vert\leqslant\varepsilon$$
+		\begin{equation}\Bigl\vert l_{\sigma,\gamma}-\int_{a}^{b}\Vert\gamma'(t)\Vert dt\Bigr\vert\leqslant\varepsilon\end{equation}
 		Donc 
-		$$l(\gamma)=\int_{a}^{b}\Vert\gamma'(t)\Vert dt$$
+		\begin{equation}l(\gamma)=\int_{a}^{b}\Vert\gamma'(t)\Vert dt\end{equation}
 
 		\item On a 
-		$$\gamma'(t)=\begin{pmatrix}
+		\begin{equation}\gamma'(t)=\begin{pmatrix}
 			-R\sin(t)\\
 			R\cos(t)
-		\end{pmatrix}$$
+		\end{pmatrix}\end{equation}
 		donc $\Vert\gamma'(t)\Vert=R$ et $l(\gamma)=2\pi R$.
 	\end{enumerate}
 \end{proof}
@@ -303,32 +303,32 @@
 	\phantom{}
 	\begin{enumerate}
 		\item Pour tout $t\in I$, on a 
-		$$\gamma(t)=\vert\gamma(t)\vert e^{\mathrm{i}\theta_{1}(t)}=\vert\gamma(t)\vert e^{\mathrm{i}\theta_{2}(t)}$$
+		\begin{equation}\gamma(t)=\vert\gamma(t)\vert e^{\mathrm{i}\theta_{1}(t)}=\vert\gamma(t)\vert e^{\mathrm{i}\theta_{2}(t)}\end{equation}
 		donc 
-		$$e^{\mathrm{i}(\theta_{1}(t)-\theta_{2}(t))}=1$$
+		\begin{equation}e^{\mathrm{i}(\theta_{1}(t)-\theta_{2}(t))}=1\end{equation}
 
 		Ainsi, pour tout $t\in I$, il existe $k(t)\in\Z$ telle que $\theta_{2}(t)-\theta_{1}(t)=2k(t)\pi$. On a 
-		$$k(t)=\frac{\theta_{2}(t)-\theta_{1}(t)}{2\pi}$$
+		\begin{equation}k(t)=\frac{\theta_{2}(t)-\theta_{1}(t)}{2\pi}\end{equation}
 		qui est continue et à valeurs entières, donc constante égale à $k_{0}$ d'après le théorème des valeurs intermédiaires.
 
 		\item Si $\gamma(t)=x(t)+\mathrm{i}y(t)$, 
-		$$\vert\gamma(t)\vert=\sqrt{x(t)^{2}+y(t)^{2}}$$
+		\begin{equation}\vert\gamma(t)\vert=\sqrt{x(t)^{2}+y(t)^{2}}\end{equation}
 		Comme $\sqrt{\cdot}$ est $\mathcal{C}^{\infty}$ sur $\R_{+}^{*}$, par composition, $f$ est $\mathcal{C}^{k}$. On a alors
-		$$f(t)=e^{\mathrm{i}\theta(t)}\Rightarrow f'(t)=\mathrm{i}\theta'(t)e^{\mathrm{i\theta(t)}}=\mathrm{i}\theta'(t)f(t)$$
+		\begin{equation}f(t)=e^{\mathrm{i}\theta(t)}\Rightarrow f'(t)=\mathrm{i}\theta'(t)e^{\mathrm{i\theta(t)}}=\mathrm{i}\theta'(t)f(t)\end{equation}
 		Donc 
-		$$\theta(t)=-\mathrm{i}\frac{f'(t)}{f(t)}$$
+		\begin{equation}\theta(t)=-\mathrm{i}\frac{f'(t)}{f(t)}\end{equation}
 
 		De plus, on a 
-		$$\theta(t)=\theta(t_{0})-\mathrm{i}\int_{t_{0}}^{t}\frac{f'(u)}{f(u)}du$$
+		\begin{equation}\theta(t)=\theta(t_{0})-\mathrm{i}\int_{t_{0}}^{t}\frac{f'(u)}{f(u)}du\end{equation}
 		pour $t_{0}\in I$.
 
 		\item On fixe $t_{0}\in I$. Soit $\theta_{0}$ un argument de $\gamma(t_{0})$, on pose 
-		$$\theta(t)=\theta_{0}-\mathrm{i}\int_{t_{0}}^{t}\frac{f'(u)}{f(u)}du$$
+		\begin{equation}\theta(t)=\theta_{0}-\mathrm{i}\int_{t_{0}}^{t}\frac{f'(u)}{f(u)}du\end{equation}
 		
 		Comme $\frac{f'}{f}$ est $\mathcal{C}^{k-1}$, $\theta$ est bien $\mathcal{C}^{k}$. On forme $g(t)=e^{\mathrm{i}\theta(t)}$ qui est de classe $\mathcal{C}^{k}$. On a 
-		$$g'(t)=\mathrm{i}\theta'(t)g(t)=\frac{f'(t)}{f(t)}g(t)$$
+		\begin{equation}g'(t)=\mathrm{i}\theta'(t)g(t)=\frac{f'(t)}{f(t)}g(t)\end{equation}
 		donc $\Bigl(\frac{g}{f}\Bigr)'=0$, donc $\frac{g}{f}$ est constante sur $I$ et $g(t_{0})=e^{\mathrm{i}\theta_{0}}=f(t_{0})$ donc $g=f$ sur $I$. Ainsi, pour tout $t\in I$, on a $\vert f(t)\vert=\vert e^{\mathrm{i}\theta(t)}\vert=1$ et si $\theta(t)=a(t)+\mathrm{i}(t)$, on a donc 
-		$$e^{\mathrm{i}\theta(t)}=e^{-b(t)}e^{\mathrm{i}a(t)}$$
+		\begin{equation}e^{\mathrm{i}\theta(t)}=e^{-b(t)}e^{\mathrm{i}a(t)}\end{equation}
 		donc $b(t)=0$ et $\theta(t)\in\R$.
 	\end{enumerate}
 \end{proof}

@@ -1,1 +1,382 @@
 \section{Calcul matriciel}
+
+\begin{proof}
+    Soit $(k,m)\in\left(\N^{*}\right)^{2}$, on a 
+    \begin{align}
+        \left[M\overline{M}\right]_{k,m}
+        &=\sum_{j=1}^{n}\omega^{(k-1)(j-1)}\overline{\omega}^{(j-1)(m-1)}\\
+        &=\sum_{j=0}^{n-1}\left[\omega^{k-1}\overline{\omega}^{m-1}\right]^{j}\\
+        &=\sum_{j=0}^{n-1}\left[\omega^{k-m}\right]^{j}
+    \end{align}
+
+    Or $\omega^{k-m}=1$ si et seulement si $n\mid k-m$ si et seulement si $k=m$ car $\left\lvert k-m\right\rvert\in\llbracket0,n-1\rrbracket$. Si $k=m$, on a $[M\overline{M}]_{k,m}=n$ et si $k\neq m$, on a 
+    \begin{equation}
+        [M\overline{M}]_{k,m}=\frac{1-\left(\omega^{k-m}\right)^{n}}{1-\omega^{k-m}}=0
+    \end{equation}
+    Donc $M\overline{M}=nI_{n}$. Ainsi, $M\in GL_{n}(\C)$ et 
+    \begin{equation}
+        \boxed{M^{-1}=\frac{1}{n}\overline{M}}
+    \end{equation}
+
+    On a $\det(M\overline{M})=\det(M)\det(\overline{M})=n^{n}=\det(M)\overline{\det(M)}=\left\lvert\det(M)\right\rvert^{2}$ donc $\left\lvert\det(M)\right\rvert=n^{\frac{n}{2}}$.
+
+    On calcul $M^{2}$. On a 
+    \begin{equation}
+        [M^{2}]_{k,m}=\sum_{j=1}^{n}\omega^{(k-1)(j-1)+(j-1)(m-1)}=\sum_{j=0}^{n-1}\left[\omega^{k+m-2}\right]^{j}
+    \end{equation}
+
+    On a $k+m-2\in\llbracket0,2n-2\rrbracket$ donc $n\mid k+m-2$ si et seulement si $k+m=n+2$ ou $k+m=2$ si et seulement si $m=n+2-k$ ou $k=m=1$. Donc 
+    \begin{equation}
+        M^{2}=
+        \begin{pmatrix}
+            n       & 0         & \dots     & \dots & 0\\
+            0       &           &           &       & n\\
+            \vdots  &           &           & n     & 0\\
+            \vdots  &           & \iddots   &       & \vdots\\
+            0       & n         &\dots      &\dots  &0
+        \end{pmatrix}
+    \end{equation}
+
+    En développant par rapport à la première ligne (ou colonne), on a 
+    \begin{equation}
+        \det(M^{2})=n^{n}(-1)^{\frac{n(n+1)}{2}}
+    \end{equation}
+
+    donc 
+    \begin{equation}
+        \boxed{\det(M)=
+        \left\lbrace
+            \begin{array}[]{ll}
+                \pm n^{\frac{n}{2}} &\text{si }\frac{n(n+1)}{2}\text{ est pair i.e. }
+                \left\lbrace
+                \begin{array}[]{l}
+                    n\equiv 0[4]\\
+                    \text{ou}\\
+                    n\equiv 3[4]
+                \end{array}
+                \right.\\
+                \pm \i n^{\frac{n}{2}} &\text{si }\frac{n(n+1)}{2}\text{ est impair i.e. }
+                \left\lbrace
+                \begin{array}[]{l}
+                    n\equiv 1[4]\\
+                    \text{ou}\\
+                    n\equiv 2[4]
+                \end{array}
+                \right.\\
+            \end{array}
+        \right.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si $A\geqslant0$, soit $X\geqslant0$, on a 
+        \begin{equation}
+            [AX]_{i}=\sum_{j=1}^{n}a_{i,j}x_{j}\geqslant 0
+        \end{equation}
+        donc $AX\geqslant0$.
+
+        Réciproquement, soit $j\in\llbracket1,n\rrbracket$, on prend 
+        \begin{equation}
+            X_{j}=
+            \begin{pmatrix}
+                0\\
+                \vdots\\
+                0\\
+                1\\
+                0\\
+                \vdots\\
+                0    
+            \end{pmatrix}
+        \end{equation}
+        où le 1 est en $j$-ième position. $X_{j}\geqslant0$ et 
+        \begin{equation}
+            AX=
+            \begin{pmatrix}
+                a_{1,j}\\
+                \vdots\\
+                a_{n,j}
+            \end{pmatrix}
+            \geqslant0
+        \end{equation}
+        donc $A\geqslant0$.
+
+        \item Soit $A\in GL_{n}(\R)$ avec $A=(A_{i,j})_{1\leqslant i,j\leqslant n}\geqslant0,A^{-1}=(A^{-1})_{1\leqslant i,j\leqslant n}\geqslant0$. Soit $(i,j)\in\llbracket1,n\rrbracket^{2}$ avec $i\neq j$. On a 
+        \begin{equation}
+            \sum_{k=1}^{n}A_{i,k}A^{-1}_{k,j}=0
+        \end{equation}
+        donc pour tout $k\in\llbracket1,n\rrbracket$ on a $A_{i,j}=0$ ou $A^{-1}_{k,j}=0$.
+
+        $i$ étant fixé, comme $A\in Gl_{n}(\R)$, il existe $k_{0}\in\llbracket1,n\rrbracket$ tel que $A_{i,k_{0}}>0$. Alors pour tout $j\in\llbracket1,n\rrbracket\setminus\lbrace i\rbrace$, on a $A^{-1}_{k_{0},j}=0$ et $A^{-1}_{k_{0},i}>0$ (car $A^{-1}$ est inversible). Supposons qu'il existe $k_{1}\neq k_{0}$ tel que $A_{i,k_{1}}>0$. Alors pour tout $j\neq i$, on a $A^{-1}_{k,j}=0$ et $A^{-1}_{k_{1},i}>0$, mais alors les lignes $k_{0}$ et $k_{1}$ sont liées, ce qui est impossible. Donc il existe un unique $k_{i}\in\llbracket1,n\rrbracket$, $A_{i,k_{i}}>0$.
+
+        Comme $A$ est inversible, pour $i\neq i'$, on a $k_{i}\neq k_{i'}$, sinon on aurait deux lignes proportionnelles. Donc \function{\Delta}{\llbracket1,n\rrbracket}{\llbracket1,n\rrbracket}{i}{k_{i}}
+        Ainsi il existe une unique permutation $\sigma\in\Sigma_{n}$ telle que pour tout $i\in\llbracket1,n\rrbracket$, $A_{i,\sigma(i)}>0$ et pour tout $j\neq\sigma(i)$, $A_{ij}=0$. Donc 
+        \begin{equation}
+            \boxed{A=\diag(a_{1},\dots,a_{n})P_{\sigma}}
+        \end{equation}
+        avec $P_{\sigma}=(\delta_{i,\sigma(j)})_{i,j}$ et $a_{i}>0$.
+
+        Réciproquement, si $A$ est de cette forme, on a $A\geqslant0$ et 
+        \begin{equation}
+            A^{-1}=P^{-1}_{\sigma}\diag\left(\frac{1}{a_{1}},\dots,\frac{1}{a_{n}}\right)=P_{\sigma^{-1}}\diag\left(\frac{1}{a_{1}},\dots,\frac{1}{a_{n}}\right)
+        \end{equation}
+        donc $A^{-1}\geqslant0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Soit 
+    \begin{equation}
+        A=
+        \begin{pmatrix}
+            2   & -1    & 0   &\dots &0\\
+            -1  & \ddots&\ddots     &\ddots&\vdots\\
+            0   & \ddots&\ddots     &\ddots&0\\
+            \vdots&\ddots&\ddots&\ddots&-1\\
+            0&\dots&0&-1&2
+        \end{pmatrix}
+    \end{equation}
+
+    Si $AX\geqslant0$, en définissant $x_{0}=x_{n+1}=0$, on a pour tout $k\in\llbracket1,n\rrbracket$,
+    \begin{equation}
+        -x_{k-1}+2x_{k}-x_{k+1}\geqslant0
+    \end{equation}
+    Si $x_{i_{0}}=\min(x_{0},\dots,x_{n+1})$, on a 
+    \begin{equation}
+        2x_{i_{0}}\geqslant x_{i_{0}-1}+x_{i_{0}+1}\geqslant 2x_{i_{0}}
+    \end{equation}
+    donc $x_{i_{0}-1}=x_{i_{0}+1}=x_{i_{0}}$. De proche en proche, on a $x_{i_{0}}=x_{0}=0$. Donc $X\geqslant0$.
+
+    Si $AX=0$, on a $AX\geqslant0$ et $A(-X)=0$ donc $X\geqslant0$ et $-X\geqslant0$ donc $X=0$ et $A\in GL_{n}(\R)$ et pour tout $Y=AX\geqslant0$, on a $A^{-1}Y=X\geqslant0$ donc $A^{-1}\geqslant0$.
+\end{remark}
+
+\begin{proof}
+    Soit \function{u}{\R_{n-1}[X]}{\R_{n-1}[X]}{P}{P(X+1)}
+    Pour tout $j\in\llbracket1,n\rrbracket$,
+    \begin{equation}
+        (X+1)^{j-1}=\sum_{i=0}^{j-1}\binom{j-1}{i}X^{i}=\sum_{i=1}^{j}\binom{j-1}{i-1}X^{i-1}
+    \end{equation}
+    On note $P_{i}=X^{i-1}$ et $\mathcal{B}=(P_{1},\dots,P_{n})$ la base canonique de $\R_{n-1}[X]$. On note $A=\mat_{\mathcal{B}}(u)$. $u^{-1}\colon P\mapsto P(X-1)$ donc $A$ est inversible et pour tout $k\in\llbracket1,n\rrbracket$,
+    \begin{equation}
+        (X-1)^{j-1}=\sum_{i=0}^{j-1}\binom{j-1}{i}X^{i}(-1)^{j-i-1}=\sum_{i=1}^{j}\binom{j-1}{i-1}X^{i-1}(-1)^{j-i}
+    \end{equation}
+    donc 
+    \begin{equation}
+        \boxed{A^{-1}=\left(\binom{j-1}{i-1}(-1)^{j-i}\right)_{1\leqslant i,j\leqslant n}}
+    \end{equation}
+
+    Pour tout $k\in\N$, on a $u^{k}\colon P\mapsto P(X+k)$ et pour tout $j\in\llbracket1,n\rrbracket$,
+    \begin{equation}
+        (X+k)^{j-1}=\sum_{i=0}^{j-1}\binom{j-1}{i}X^{i}k^{j-i-1}=\sum_{i=1}^{j}\binom{j-1}{i-1}X^{i-1}k^{j-i}
+    \end{equation}
+    donc 
+    \begin{equation}
+        \boxed{A^{k}=\left(\binom{j-1}{i-1}k^{j-i}\right)_{1\leqslant i,j\leqslant n}}
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour $n\in\N^{*}$, on note $H(n)$:`si $\dim(E)=n$ et si $u\in\L(E)$ vérifie $\Tr(u)=0$, alors il existe une base $\mathcal{B}$ de $E$ telle que 
+        \begin{equation}
+            \mat_{\mathcal{B}}(u)=
+            \begin{pmatrix}
+                0 & \star & \dots & \star\\
+                \star & \ddots & \ddots & \vdots\\
+                \vdots & \ddots & \ddots & \star\\
+                \star & \dots & \star &0
+            \end{pmatrix}
+        \end{equation}'
+
+        Pour $n=1$, on a $u=0$ si $\Tr(u)=0$. Pour $n\geqslant1$, on suppose $H(n)$, soit $E$ de dimension $n+1$ et $u\in\L(E)$ tel que $\Tr(u)=0$. S'il existe $\lambda\in\K$ tel que $u=\lambda id_{E}$, on a $\Tr(u)=(n+1)\lambda=0$ donc $\lambda=0$ donc $u=0$. 
+
+        Sinon, il existe $e_{1}\neq0$ tel que $(e_{1},u(e_{1}))$ est libre (résultat classique, redémontré en remarque ci-dessous). On pose $e_{2}=u(e_{1})$ et on complète $(e_{1},e_{2})$ en une base de $E$: $(e_{1},e_{2},\dots,e_{n+1})=\mathcal{B}_{1}$. Alors $\mat_{\mathcal{B}_{1}}(u)$ est de la forme 
+        \begin{equation}
+            \begin{pmatrix}
+                0 & 
+                \begin{matrix}
+                    \star & \dots & \dots & \star    
+                \end{matrix}\\
+                \begin{matrix}
+                    1\\
+                    0\\
+                    \vdots\\
+                    0
+                \end{matrix}
+                & \mbox{\Huge A'}
+            \end{pmatrix}
+        \end{equation}
+        avec $\Tr(u)=\Tr(A')=0$. Posons $F=\Vect(e_{2},\dots,e_{n+1})$. On note $\Pi$ la projection sur $F$ parallèlement à $\Vect(e_{1})$. Alors si \function{u'}{F}{F}{x}{\Pi(u(x))}
+        et $A'=\mat_{(e_{2},\dots,e_{n+1})}(u')$ donc $\Tr(u')=0$. D'après $H(n)$, il existe $(f_{2},\dots,f_{n+1})$ une base de $F$ telle que 
+        \begin{equation}
+            \mat_{(f_{2},\dots,f_{n+1})}(u')=
+            \begin{pmatrix}
+                0 & \star & \dots & \star\\
+                \star & \ddots & \ddots & \vdots\\
+                \vdots & \ddots & \ddots & \star\\
+                \star & \dots & \star &0
+            \end{pmatrix}
+        \end{equation}
+
+        Soit donc $\mathcal{B}_{2}=(e_{1},f_{2},\dots,f_{n+1})$ base de $E$. On a $u(e_{1})\in F$ donc 
+        \begin{equation}
+            \boxed{
+            \mat_{\mathcal{B}_{2}}(u)=
+            \begin{pmatrix}
+                0 & \star & \dots & \star\\
+                \star & \ddots & \ddots & \vdots\\
+                \vdots & \ddots & \ddots & \star\\
+                \star & \dots & \star &0
+            \end{pmatrix}
+            }
+        \end{equation}
+
+        \item Soit $M=(a_{i,j})_{1\leqslant i,j\leqslant n}$ et $D=(i\delta_{i,j})_{1\leqslant i,j\leqslant n}$. On a 
+        \begin{equation}
+            [DM]_{i,j}=\sum_{k=1}^{n}i\delta_{i,k}a_{k,j}=ia_{i,j}
+        \end{equation}
+        et 
+        \begin{equation}
+            [MD]_{i,j}=\sum_{k=1}^{n}a_{i,k}k\delta_{k,j}=ja_{i,j}
+        \end{equation}
+
+        On a $M\in\ker(\varphi)$ si et seulement si pour tout $i\neq j$, $a_{i,j}=0$ si et seulement si $M\in D_{n}(\K)$ (ensemble des matrices diagonales). Donc $\dim(\ker(\varphi))=n$ et $\dim(\im(\varphi))=n^{n}-n$. Or pour tout $M\in \M_{n}(\K), [MD-DM]_{i,i}=0$. Notons $\Delta_{n}$ l'ensemble des matrices de diagonale nulle. On a $\im\varphi\subset\Delta_{n}$ et $\dim(\Delta_{n})=n^{2}-n$ (une base de $\Delta_{n}$ est $(E_{i,j})_{i\neq j}$, matrices élémentaires) donc $\im(\varphi)=\Delta_{n}$.
+
+        Soit alors $A\in\M_{n}(\K)$ telle que $\Tr(A)=0$. D'après 1. il existe $P\in GL_{n}(\K)$ telle que $P^{-1}AP\in\Delta_{n}=\im(\varphi)$ donc il existe $M\in\M_{n}(\K)$ telle que $P^{-1}AP=MD-DM$ donc 
+        \begin{align}
+            A
+            &=P(MD-DM)P^{-1}\\
+            &=PM DP^{-1}-PD MP^{-1}\\
+            &=\boxed{XY-YX}
+        \end{align}
+        avec $X=PMP^{-1}$ et $Y=PDP^{-1}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Soit $E$ un $\K$-espace vectoriel et $u\in\L(E)$ tel que pour tout $x\in E\setminus\lbrace0\rbrace$, $(x,u(x))$ est liée i.e.~pour tout $x\in E\setminus\lbrace0\rbrace$, $u(x)=\lambda_{x}x$. Alors $u$ est une homothétie.
+
+    En effet, soit $(x,y)\in\left(E\setminus\lbrace0\rbrace\right)^{2}$, si $(x,y)$ est liée, il existe $\mu\in\K^{*}$ tel que $y=\mu x$. On a alors 
+    \begin{equation}
+        u(y)=\lambda_{y}y=\mu u(x)=\mu\lambda_{x}x=\lambda_{x}y
+    \end{equation}
+    On a $y\neq0$ donc $\lambda_{x}=\lambda_{y}$.
+
+    Si $(x,y)$ est libre, on a
+    \begin{equation}
+        u(x+y)=\lambda_{x+y}(x+y)=\lambda_{x}x+\lambda_{y}y
+    \end{equation}
+    Par liberté de $(x,y)$, on a $\lambda_{x+y}=\lambda_{x}=\lambda_{y}$. 
+    
+    Ainsi, $\lambda_{x}$ ne dépend pas de $x$: il existe $\lambda\in\K$ tel que pour tout $x\in E$, $u(x)=\lambda x$, i.e.~$u=\lambda id_{E}$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si
+        $X=\begin{pmatrix}
+            x_{1} & \dots &x_{n}
+        \end{pmatrix}^{\mathsf{T}}$ et $Y=\begin{pmatrix}
+            x_{1} & \dots &x_{n}
+        \end{pmatrix}^{\mathsf{T}}$, on a 
+        \begin{equation}
+            XY^{\mathsf{T}}=
+            \begin{pmatrix}
+                x_{1}y_{1}&\dots&\dots&x_{1}y_{n}\\
+                \vdots & & & \vdots\\
+                \vdots & & & \vdots\\
+                x_{n}y_{1} & \dots & \dots & x_{n}y_{n}
+            \end{pmatrix}
+        \end{equation}
+        est de rang 1. On a 
+        \begin{equation}
+            (XY^{\mathsf{T}})^{2}=X(Y^{\mathsf{T}}X)Y^{\mathsf{T}}=\left(\sum_{i=1}^{n}x_{i}y_{i}\right)XY^{\mathsf{T}}
+        \end{equation}
+
+        Si $\lambda=0$, c'est évident.
+
+        Si $\lambda\neq0$ et $B=I_{n}+\lambda XY^{\mathsf{T}}$, on a
+        \begin{equation}
+            XY^{\mathsf{T}}=\frac{B-I_{n}}{\lambda}
+        \end{equation}
+        et 
+        \begin{equation}
+            (XY^{\mathsf{T}})^{2}=\frac{\left(B-I_{n}\right)^{2}}{\lambda^{2}}
+        \end{equation}
+        soit 
+        \begin{equation}
+            (XY^{\mathsf{T}})^{2}=\frac{B^{2}-2B+I_{n}}{\lambda^{2}}=\left(\sum_{i=1}^{n}x_{i}y_{i}\right)\left(\frac{B-I_{n}}{\lambda}\right)
+        \end{equation}
+        d'où 
+        \begin{equation}
+            \lambda\left(Y^{\mathsf{T}}X\right)\left(B-I_{n}\right)=B^{2}-2B+I_{n}
+        \end{equation}
+        d'où
+        \begin{equation}
+            B^{2}+\left(-2-\lambda\left(Y^{\mathsf{T}}X\right)\right)B+I_{n}\left(1+\lambda\left(Y^{\mathsf{T}}X\right)\right)=0
+        \end{equation}
+
+        Si $1+\lambda Y^{\mathsf{T}}X\neq0$, alors $B$ est inversible et 
+        \begin{equation}
+            \boxed{B^{-1}=-\frac{1}{1+\lambda Y^{\mathsf{T}}X}\left(B-\left(2+\lambda Y^{\mathsf{T}}X\right)I_{n}\right)}
+        \end{equation}
+
+        Si $1+\lambda Y^{\mathsf{T}}X=0$, on a 
+        \begin{equation}
+            B\left(B-I_{n}\right)=0
+        \end{equation}
+        Si $B$ est inversible, on aura $B=I_{n}$ et $\lambda XY^{\mathsf{T}}=O_{\M_{n}(\K)}$. Or $\lambda\neq0$ donc $X=Y=0$ et $1=0$: absurde. Donc $B\notin GL_{n}(\K)$.
+
+        \item On a 
+        \begin{equation}
+            M=A+\lambda XY^{Y}=A\left(I_{n}+\lambda A^{-1}XY^{\mathsf{T}}\right)
+        \end{equation}
+        donc $M\in GL_{n}(\R)$ si et seulement si $\left(I_{n}+\lambda A^{-1}XY^{\mathsf{T}}\right)$ est inversible si et seulement si $1+\lambda Y^{\mathsf{T}}A^{-1}X$ est inversible d'après 1. Alors 
+        \begin{equation}
+            \boxed{M^{-1}=\left(I_{n}-\frac{\lambda A^{-1}XY^{\mathsf{T}}}{1+\lambda Y^{\mathsf{T}}A^{-1}X}\right)A^{-1}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On a $\dim(\R_{n}[X])=n+1$ donc il faut montrer que $(S_{0},\dots, S_{n})$ est libre. Soit donc $\alpha=\left(\alpha_{0},\dots,\alpha_{n}\right)\in\R^{n+1}$ tel que 
+    \begin{equation}
+        \alpha_{0}S_{0}+\dots+\alpha_{n}S_{n}=0
+    \end{equation}
+
+    Si $\alpha\neq0$, on pose $k_{0}=\max\left(k\in\llbracket0,n\rrbracket\middle|\alpha_{k}\neq0\right)$. On a 
+    \begin{equation}
+        \alpha_{0}(1-X)^{n}+\dots+\alpha_{k_{0}}X^{k_{0}}(1-X)^{n-k_{0}}=0
+    \end{equation}
+    soit 
+    \begin{equation}
+        \alpha_{0}(1-X)^{k_{0}}+\dots+\alpha_{k_{0}}X^{k_{0}}=0
+    \end{equation}
+    En évaluant en 1, on a $\alpha_{k_{0}}=0$ ce qui est absurde. Donc $(S_{0},\dots,S_{n})$ est une base de $\R_{n}[X]=n+1$.
+
+    Pour tout $k\in\llbracket0,n\rrbracket$, on a 
+    \begin{align}
+        S_{j}
+        &=X^{j}(1-X)^{n-j}\\
+        &=X^{j}\left(\sum_{k=0}^{n-j}\binom{n-j}{k}(-1)^{k}X^{k}\right)\\
+        &=\sum_{k=0}^{n-j}\binom{n-j}{k}(-1)^{k}X^{k+j}\\
+        &=\sum_{k=j}^{n}\binom{n-j}{k-j}(-1)^{k-j}X^{k}
+    \end{align}
+    donc 
+    \begin{equation}
+        \boxed{
+            A=P_{(1,\dots,X^{n})\to(S_{0},\dots, S_{n})}=\left(\binom{n-j}{k-j}(-1)^{k-j}\right)_{0\leqslant k,j\leqslant n}
+        }
+    \end{equation}
+
+    On considère $u\in\L\left(\R[X]\right)$ tel que $u(X^{j})=S_{j}$ pour tout $j\in\llbracket0,n\rrbracket$. On a $u(X^{j})=\left(\frac{X}{1-X}\right)^{j}(1-X)^{n}$. Pour tout $P\in\R_{n}[X]$, on a $u(P)=P\left(\frac{X}{1-X}\right)(1-X)^{n}$. Soit $(P,Q)\in\R_{n}[X]^{2}$, on a $u(P)=Q$ si et seulement si $P\left(\frac{X}{1-X}\right)(1-X)^{n}=Q(X)$ si et seulement si $P(Y)\left(\frac{1}{1+Y}\right)^{n}=Q\left(\frac{Y}{1+Y}\right)$ soit $u(P)=Q$ si et seulement si $P(Y)=Q\left(\frac{Y}{1+Y}\right)(1+Y)^{n}$. Ainsi $u^{-1}(X^{j})=X^{j}(1+X)^{n-j}$, donc 
+    \begin{equation}
+        \boxed{
+            A^{-1}=\mat_{(1,\dots,X^{n})}(u^{-1})=\left(\binom{n-j}{k-j}\right)_{0\leqslant k,j\leqslant n}
+        }
+    \end{equation}
+\end{proof}
