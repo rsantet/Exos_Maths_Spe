@@ -178,6 +178,7 @@
 \end{proof}
 
 \begin{proof}
+    \label{sol:4.4}
     \phantom{}
     \begin{enumerate}
         \item Pour $n\in\N^{*}$, on note $H(n)$:`si $\dim(E)=n$ et si $u\in\L(E)$ vérifie $\Tr(u)=0$, alors il existe une base $\mathcal{B}$ de $E$ telle que 
@@ -378,5 +379,383 @@
         \boxed{
             A^{-1}=\mat_{(1,\dots,X^{n})}(u^{-1})=\left(\binom{n-j}{k-j}\right)_{0\leqslant k,j\leqslant n}
         }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    Si on a $H\cap GL_{n}(\K)=\emptyset$, on a $I_{n}\notin H$. On écrit donc 
+    \begin{equation}
+        \M_{n}(\K)=H\oplus \K I_{n}
+    \end{equation}
+    Soit $i\neq j$, on prend $E_{i,j}=M+\lambda I_{n}$ (décomposition précédente) avec $\lambda\in\K$. Si $\lambda\neq0$, on a
+    \begin{equation}
+        M=E_{i,j}-\lambda I_{n}\in GL_{n}(\K)
+    \end{equation}
+    donc $M\in GL_{n}(\K)\cap H$: absurde. Donc $\lambda=0$ et $E_{i,j}\in H$, d'où $\Vect(E_{i,j})_{,\neq i}\subset H$. Or
+    \begin{equation}
+        \begin{pmatrix}
+            0 & \dots & \dots & 0 & 1\\
+            1 & \ddots & & & 0\\
+            0 & \ddots & \ddots& & \vdots\\
+            \vdots & \ddots & \ddots&\ddots & \vdots\\
+            0 & \dots& 0 & 1 & 0
+        \end{pmatrix}\in \left(GL_{n}(\K)\cap\Vect(E_{i,j})_{i\neq j}\right)\subset \left(GL_{n}(\K)\cap H\right)
+    \end{equation}
+    donc $H\cap GL_{n}(\K)\neq\emptyset$: absurde.
+\end{proof}
+
+\begin{remark}
+    Il existe une forme linéaire non nulle $\varphi\colon\M_{n}(\K)\to \K$ telle que $H=\ker(\varphi)$. 
+
+    En effet, pour toute forme linéaire $\varphi$ sur $\M_{n}(\K)$, il existe une unique matrice $A\in\M_{n}(\K)$ telle que 
+    \begin{equation}
+        \varphi(M)=\Tr(AM)
+    \end{equation}
+
+    Pour le montrer: si $A$ existe, pour tout $(i,j)\in\llbracket1,n\rrbracket^{2}$, $\varphi(E_{i,j})=\Tr(AE_{i,j})=a_{j,i}$. Réciproquement, soit $A=\left(\varphi(E_{j,i})\right)_{1\leqslant i,j\leqslant n}$. On a pour tout $M\in\M_{n}(\K)$, $\varphi(M)=\Tr(AM)$ car cex deux formes linéaires coïncident sur les $(E_{i,j})_{1\leqslant i,j\leqslant n}$.
+
+    Il existe donc $A\in \M_{n}(\K)\setminus\lbrace0\rbrace$,
+    \begin{equation}
+        H=\left\lbrace M\in\M_{n}(\K)\middle|\Tr(AM)=0\right\rbrace
+    \end{equation}
+
+    Si $r=\rg(A)$, il existe $(P,Q)\in GL_{n}(\K)^{2}$ telles que $A=Q^{-1}J_{n,n,r}P$ ($J_{n,n,r}$: matrice de taille $n\times n$ avec les $r$ premiers coefficients diagonaux valant 1). Alors pour tout $M\in \M_{n}(\K)$, on a 
+    \begin{equation}
+        \Tr(AM)=\Tr(J_{n,n,r}\underbrace{MPQ^{-1}}_{=~M'})
+    \end{equation}
+    et il suffit de prendre 
+    \begin{equation}
+        M'=
+        \begin{pmatrix}
+            0 & \dots & \dots & 0 & 1\\
+            1 & \ddots & & & 0\\
+            0 & \ddots & \ddots& & \vdots\\
+            \vdots & \ddots & \ddots&\ddots & \vdots\\
+            0 & \dots& 0 & 1 & 0
+        \end{pmatrix}
+    \end{equation}
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On prend $\lambda=0$ et $N(0\times 0)=0\times N(0)=0$ donc 
+        \begin{equation}
+            \boxed{N(0)=0}
+        \end{equation}
+
+        \item On a pour $j\neq i,$ $E_{i,j}\times E_{j,j}=E_{i,j}$ et $E_{j,j}E_{i,j}=0$ donc $N(E_{i,j})=N(E_{i,j}E_{j,j})=N(E_{j,j}E_{i,j})$ d'où 
+        \begin{equation}
+            \boxed{N(E_{i,j})=0}
+        \end{equation}
+
+        \item Déjà traité à l'exercice~\ref{sol:4.4}.
+        
+        \item Si $\Tr(A)=0$, alors il existe $P\in GL_{n}(\C)$ telle que 
+        \begin{equation}
+            P^{-1}AP=\sum_{i\neq j}\alpha_{i,j}E_{i,j}
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{N(A)=N(P^{-1}AP)\leqslant\sum_{i\neq j}\alpha_{i,j}N(E_{i,j})=0}
+        \end{equation}
+
+        \item Soit $A'=A-\frac{\Tr(A)}{n}I_{n}$. On a $N(A')=0$ d'après ce qui précède. Montrons que pour tout $(A,B)\in\M_{n}(\C)^{2}$,
+        \begin{equation}
+            \left\lvert N(A)-N(B)\right\rvert\leqslant N(A-B)
+        \end{equation}
+        On écrit $A=A-B+B$ et $N(A)\leqslant N(A-B)+N(B)$ d'où $N(A)-N(B)\leqslant N(A-B)$ et on a le résultat par symétrie de $A$ et $B$.
+
+        On a donc 
+        \begin{equation}
+            \left\lvert N(A)-N\left(\frac{\Tr(A)}{n}I_{n}\right)\right\rvert\leqslant N\left(A-\frac{\Tr(A)}{n}I_{n}\right)=0
+        \end{equation}
+        d'où 
+        \begin{equation}
+            \boxed{N(A)=N\left(\frac{\Tr(A)}{n}I_{n}\right)=\left\lvert\Tr(A)\right\rvert\times \underbrace{N\left(\frac{I_{n}}{n}\right)}_{=~a\geqslant0}}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On écrit 
+    \begin{equation}
+        f+g=f\circ\left(id+f^{-1}\circ g\right)
+    \end{equation}
+    avec $f^{-1}\circ g$ de rang 1. Il existe une base $\mathcal{B}
+    $ de $E$ telle que 
+    \begin{equation}
+        \mat_{\mathcal{B}}(f^{-1}\circ g)=
+        \begin{pmatrix}
+            0 & \dots & \dots & 0 & \star\\
+            \vdots & & &\vdots &\vdots\\
+            \vdots & & &\vdots & \vdots\\
+            0 & \dots & \dots & 0 & \alpha
+        \end{pmatrix}
+    \end{equation}
+    avec $\alpha=\Tr(f^{-1}\circ g)$ et donc $\mat_{\mathcal{B}}(id+g^{-1}\circ g)$ est inversible si et seulement si $1+\alpha\neq0$ si et seulement si $\Tr(f^{-1}\circ g)\neq 1$.
+\end{proof}
+
+\begin{proof}
+    Par symétrie du problème, il suffit de déterminer les
+    \begin{equation}
+        a_{n,j}=\left\lvert\left\lbrace\text{chemins de longueur }n\text{ de }1\text{ vers }j\in\left\lbrace2,3,4\right\rbrace\right\rbrace\right\rvert
+    \end{equation}
+
+    On pose 
+    \begin{equation}
+        X_{n}=
+        \begin{pmatrix}
+            a(n,1)\\
+            a(n,2)\\
+            a(n,3)\\
+            a(n,4)
+        \end{pmatrix}
+    \end{equation}
+    On a alors 
+    \begin{equation}
+        X_{n+1}=
+        \underbrace{
+        \begin{pmatrix}
+            0 &1 &0 &1\\
+            1 &0 &1 &0\\
+            0 &1 &0 &1\\
+            1 &0 &1 &0
+        \end{pmatrix}}_{=~A}
+        X_{n}
+    \end{equation}
+    car (en raisonnant modulo 4) il y a autant de chemins de longueur n+1 reliant 1 à j que de chemins de longueur n reliant 1 à j-1 + chemins de longueur n reliant 1 à j+1.
+    d'où $X_{n}=A^{n}X_{0}$ avec 
+    \begin{equation}
+        X_{0}=
+        \begin{pmatrix}
+            1\\0\\0\\0
+        \end{pmatrix}
+    \end{equation}
+    On a
+    \begin{equation}
+        A=
+        \begin{pmatrix}
+            B&B\\B&B
+        \end{pmatrix}
+    \end{equation}
+    avec
+    \begin{equation}
+        B=
+        \begin{pmatrix}
+            0&1\\1&0
+        \end{pmatrix}
+    \end{equation}
+    On a $B^{2}=I_{2}$ et on montre par récurrence
+    \begin{equation}
+        \left\lbrace
+            \begin{array}[]{ll}
+                A^{2p}=2^{2p-1}
+                \begin{pmatrix}
+                    I_{2} &I_{2}\\ I_{2}&I_{2}
+                \end{pmatrix} &p\geqslant1\\
+                A^{2p+1}=2^{2p}
+                \begin{pmatrix}
+                    B & B\\B &B
+                \end{pmatrix}&p\geqslant0
+            \end{array}
+        \right.
+    \end{equation}
+
+    Ainsi,
+    \begin{equation}
+        \boxed{
+            \begin{array}[]{l}
+                a(2p,1)=2^{2p-1}=a(2p,3)\\
+                a(2p,2)=0=a(2p,4)\\
+                a(2p+1,1)=0=a(2p+1,3)\\
+                a(2p+1,4)=2^{2p}=a(2p+1,4)\\
+            \end{array}
+        }
+    \end{equation}
+
+    \item Ici, on a 
+    \begin{equation}
+        A=
+        \begin{pmatrix}
+            0 &1 &0 &1 &0 &1 &0 &0\\
+            1 &0 &1 &0 &0 &0 &1 &0\\
+            0 &1 &0 &1 &0 &0 &0 &1\\
+            1 &0 &1 &0 &1 &0 &0 &0\\
+            0 &0 &0 &1 &0 &1 &0 &1\\
+            1 &0 &0 &0 &1 &0 &1 &0\\
+            0 &1 &0 &0 &0 &1 &0 &1\\
+            0 &0 &1 &0 &1 &0 &1 &0
+        \end{pmatrix}
+    \end{equation}
+
+    En deux itérations, il y a chaque fois deux possibilités pour relier deux sommets différents de même partié, et 3 pour revenir au même sommet. On a donc 
+    \begin{equation}
+        A^{2}=
+        \begin{pmatrix}
+            3 &0 &2 &0 &2 &0 &2 &0\\
+            0 &3 &0 &2 &0 &2 &0 &2\\
+            2 &0 &3 &0 &2 &0 &2 &0\\
+            0 &2 &0 &3 &0 &2 &0 &2\\
+            2 &0 &2 &0 &3 &0 &2 &0\\
+            0 &2 &0 &2 &0 &3 &0 &2\\
+            2 &0 &2 &0 &2 &0 &3 &0\\
+            0 &2 &0 &2 &0 &2 &0 &3
+        \end{pmatrix}
+        =I_{8}+2
+        \begin{pmatrix}
+            B &B &B &B\\
+            B &B &B &B\\
+            B &B &B &B\\
+            B &B &B &B
+        \end{pmatrix}
+    \end{equation}
+
+    On applique le binôme de Newton pour calculer les puissances paires de $A$, puis on déduit les puissances impaires en multipliant par $A$.
+\end{proof}
+
+\begin{proof}
+    Soit $X=\begin{pmatrix}
+        x_{1}&\dots&x_{n}
+    \end{pmatrix}^{\mathsf{T}}\in\M_{n,1}(\C)$. Supposons $AX=0$. Alors pour tout $i\in\llbracket1,n\rrbracket$,
+    \begin{equation}
+        \sum_{j=1}^{n}a_{i,j}x_{j}=0\Rightarrow -a_{i,i}x_{i}=\sum_{\substack{j=1\\j\neq i}}^{n}a_{i,j}x_{j}
+    \end{equation}
+    donc 
+    \begin{equation}
+        \left\lvert\sum_{\substack{j=1\\j\neq i}}^{n}a_{i,j}x_{j}\right\rvert=\left\lvert a_{i,i}x_{i}\right\rvert\leqslant\sum_{\substack{j=1\\j\neq i}}^{n}\left\lvert a_{i,j}x_{j}\right\rvert
+    \end{equation}
+    Soit $i_{0}\in\llbracket1,n\rrbracket$ tel que 
+    \begin{equation}
+        x_{i_{0}}=\max\left\lbrace\left\lvert x_{i}\right\rvert,i\in\llbracket1,n\rrbracket\right\rbrace
+    \end{equation}
+
+    On a alors 
+    \begin{equation}
+        \left\lvert a_{j,i_{0}}\right\rvert\left\lvert x_{i_{0}}\right\rvert\leqslant \left\lvert x_{i_{0}}\right\rvert\sum_{\substack{j=1\\j\neq i}}^{n}\left\lvert a_{i_{0},j}\right\rvert
+    \end{equation}
+    D'après l'hypothèse, on a $\left\lvert x_{i_{0}}\right\rvert=0$ donc $X=0$ et $A$ est inversible.
+
+    Il faut l'inégalité stricte, un contre-exemple est donnée par une ligne nulle.
+\end{proof}
+
+\begin{remark}
+    Si pour tout $j\in\llbracket1,n\rrbracket$, $\left\lvert a_{j,j}\right\rvert>\sum_{i\neq j}\left\lvert a_{i,j}\right\rvert$ alors $A^{\mathsf{T}}\in GL_{n}(\C)$ et donc $A\in GL_{n}(\C)$.
+\end{remark}
+
+\begin{proof}
+    On écrit, pour tout $(i,j)\in\llbracket1,n\rrbracket^{2}$,
+    \begin{align}
+        i\wedge j
+        &=\sum_{k\mid i\wedge j}\varphi(k)\\
+        &=\sum_{\substack{k\mid i\\ k\mid j}}\varphi(k)\\
+        &=\sum_{k=1}^{n}b_{k,i}b_{k,j}\varphi(k)
+    \end{align}
+    avec $b_{k,i}=1$ si $k\mid i$ et 0 sinon. On a alors, si $A=\left(i\wedge j\right)_{1\leqslant i,j\leqslant n}$, $A=B^{\mathsf{T}}C$ avec $B=(b_{k,i})_{1\leqslant i,k\leqslant n}$ (triangulaire supérieure) et $C=\left(\varphi(k)b_{k,j}\right)_{1\leqslant k,j\leqslant n}$ (triangulaire supérieure). Donc 
+    \begin{equation}
+        \boxed{\det(A)=\prod_{i=1}^{n}\varphi(i)}
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    Pour l'unicité, si $A=L_{1}U_{1}=L_{2}U_{2}$ telles que proposées. Comme $A$ est inversible, on a $\det(A)=\det(L_{i})\det(U_{i})\neq0$ pour $i\lbrace1,2\rbrace$ et donc $L_{i}$ et $U_{i}$ sont inversibles. Ainsi,
+    \begin{equation}
+        L_{2}^{-1}L_{1}=U_{2}U_{1}^{-1}\in \mathcal{T}_{n}^{-}(\C)\cap\mathcal{T}_{n}^{+}(\C)
+    \end{equation}
+    avec des 1 sur la diagonale, c'est donc $I_{n}$, d'où l'unicité.
+
+    Pour l'existence, on travaille par récurrence sur $n\in\N$: pour $n=1$ on a $A=(1)\times(a_{1,1})$. Soit $A_{n+1}\in \M_{n+1}(\C)$ vérifiant l'hypothèse, alors $A_{n}$ vérifie l'hypothèse $A_{n}=L_{n}U_{n}$ avec 
+    \begin{equation}
+        A_{n+1}=
+        \begin{pmatrix}
+            A_{n} & Y\\
+            X^{\mathsf{T}} & a_{n+1,n+1}
+        \end{pmatrix}
+    \end{equation}
+
+    On veut 
+    \begin{equation}
+        A_{n+1}=
+        \begin{pmatrix}
+            L' &\begin{matrix}
+                0\\\vdots\\0
+            \end{matrix}\\
+            X_{1}^{\mathsf{T}} &1
+        \end{pmatrix}\times\begin{pmatrix}
+            U' & Y_{1}\\
+            \begin{matrix}
+                0&\dots&0
+            \end{matrix}&u_{n+1,n+1}
+        \end{pmatrix}
+    \end{equation}
+    On a $(X,Y)\in\M_{n+1}(\C)$, par produits par blocs, on a $A_{n}=L'U'=L_{n}U_{n}$ et par unicité, $L'=L_{n}$ et $U'=U_{n}$. On a $X^{\mathsf{T}}=X_{1}^{\mathsf{T}}U'$ et donc $X_{1}^{\mathsf{T}}=X^{\mathsf{T}}U_{n}^{-1}$ et $Y=L_{n}Y_{1}$ donc $Y_{1}=L_{n}^{-1}Y$.
+
+    Enfin, $a_{n+1,n+1}=X_{1}^{\mathsf{T}}Y_{1}+u_{n+1,n+1}$ et donc 
+    \begin{equation}
+        u_{n+1,n+1}=a_{n+1,n+1}-X_{1}^{\mathsf{T}}Y_{1}=a_{n+1,n+1}-X^{\mathsf{T}}U_{n}^{-1}L_{n}^{-1}Y
+    \end{equation}
+
+    Réciproquement, en définissant ainsi $U$ et $L$, on a bien $A=Lu$ en remontant les calculs.
+\end{proof}
+
+\begin{proof}
+    On a $\sum_{k\in A_{i}}a_{k}-\sum_{k\in B_{i}}a_{k}=0$ (combinaison linéaire des $a_{k}$ avec des coefficients $\pm1$), donc 
+    \begin{equation}
+        \underbrace{
+            \begin{pmatrix}
+                0 & \pm 1&\dots&\dots&\pm1\\
+                \pm 1&\ddots&\ddots&&\vdots\\
+                \vdots&\ddots&\ddots&\ddots&\vdots\\
+                \vdots&&\ddots&\ddots&\pm1\\
+                \pm1&\dots&\dots&\pm1&0
+            \end{pmatrix}
+        }_{=~A}
+        \underbrace{
+            \begin{pmatrix}
+                a_{1}\\
+                \vdots\\
+                a_{2n+1}
+            \end{pmatrix}
+        }_{=~X}=0
+    \end{equation}
+
+    Sur chaque ligne, il y a $n$ fois 1 et $n$ fois -1 (car les $A_{i}$ et $B_{i}$ sont disjoints). On veut montrer que $X=\alpha\bm{1}$. On a $X\in\ker(A)$ et $\bm{1}\in\ker(A)$ (car il y a $n$ 1 et $n$ -1 par ligne). On veut donc montrer que $\dim(\ker(A))=1$, soit $\rg(A)=2n$.
+
+    On doit donc montrer qu'il existe une sous-matrice de taille $2n$ inversible car $\dim(\ker(A))\geqslant1$. Comme on est bloqué par les $\pm1$, on se place dans $\Z/2\Z$. Soit donc 
+    \begin{equation}
+        \overline{B_{n}}=
+        \begin{pmatrix}
+            \overline{0} & \overline{1}&\dots&\dots&\overline{1}1\\
+            \overline{1}&\ddots&\ddots&&\vdots\\
+            \vdots&\ddots&\ddots&\ddots&\vdots\\
+            \vdots&&\ddots&\ddots&\overline{1}1\\
+            \overline{1}1&\dots&\dots&\overline{1}1&\overline{0}
+        \end{pmatrix}\in\M_{n}\left(\Z/2\Z\right)
+    \end{equation}
+    Si $\det(\overline{B_{n}})\neq0$, on a $\det(B_{n})\neq 2k$ pour tout $k\in\N$ où $B_{n}$ est obtenue en enlevant à $A$ sa dernière ligne et sa dernière colonne, et donc $\det(A)\neq0$.
+
+    On cherche un polynôme annulateur de $\overline{B_{n}}$. On a 
+    \begin{equation}
+        \left(\overline{B_{n}}+\overline{I_{2n}}\right)^{2}=\overline{B_{n}}^{2}+2\overline{B_{n}}+I_{2n}=\begin{pmatrix}
+            \overline{1}&\dots&\overline{1}\\
+            \vdots & & \vdots\\
+            \overline{1}&\dots&\overline{1}
+        \end{pmatrix}^{2}=2n
+        \begin{pmatrix}
+            \overline{1}&\dots&\overline{1}\\
+            \vdots & & \vdots\\
+            \overline{1}&\dots&\overline{1}
+        \end{pmatrix}=\begin{pmatrix}
+            \overline{0}
+        \end{pmatrix}
+    \end{equation}
+
+    Ainsi,
+    \begin{equation}
+        \overline{B_{n}}\left(\overline{B_{n}}+2\overline{I_{2n}}\right)=-\overline{I_{2n}}=\overline{I_{2n}}
+    \end{equation}
+    donc $\overline{B_{n}}\in GL_{n}\left(\Z/2\Z\right)$ et donc $B_{n}\in GL_{2n}(\R)$, ce qui démontre bien que $\rg(A)=2n$ et $\ker(A)=\Vect(\bm{1})$, d'où
+    \begin{equation}
+        \boxed{a_{1}=\dots=a_{2n+1}}
     \end{equation}
 \end{proof}
