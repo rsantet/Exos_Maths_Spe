@@ -436,6 +436,13 @@
     \end{equation}
 \end{remark}
 
+\begin{remark}
+    Si $F$ est un sous-espace vectoriel de $\M_{n}(\K)$ vérifie $\dim(F)\geqslant n^{2}-n+1$ alors 
+    \begin{equation}
+        G\cap GL_{n}(\K)\neq\emptyset
+    \end{equation}
+\end{remark}
+
 \begin{proof}
     \phantom{}
     \begin{enumerate}
@@ -759,3 +766,529 @@
         \boxed{a_{1}=\dots=a_{2n+1}}
     \end{equation}
 \end{proof}
+
+\begin{proof}
+    On note $T_{i,j}(\lambda)=I_{n}+\lambda E_{i,j}$ pour $i<j$. On rappelle que la multiplication à gauche par $T_{i,j}(\lambda)$ remplace la $i$-ième ligne de la matrice $L_{i}$ par $L_{i}+\lambda L_{j}$: on ajoute à une ligne $\lambda$ fois une ligne d'indice supérieur.
+    La multiplication à droite par $T_{i,j}(\lambda)$ remplace la $j$-ième colonne de la matrice $C_{j}$ par $C_{j}+\lambda C_{i}$: on ajoute à une colonne $\lambda$ foi une colonne d'indice inférieur. Ces matrices sont des matrices de transvection.
+
+    On note aussi $D_{i}(\lambda)$ la matrice de dilatation qui contient des 1 sur la diagonale sauf en $i$ position où il y a un $\lambda$. On rappelle que la multiplication à gauche par $D_{i}(\lambda)$ revient à multiplier $L_{i}$ par $\lambda$ et la multiplication à droite revient à multiplier $C_{i}$ par $\lambda$.
+
+    Sur la première colonne de $M$, il y a au moins un coefficient non nul car $M\in GL_{n}(\C)$. Soit $i_{1}=\max\lbrace i\in\llbracket,n\rrbracket,m_{i,1}\neq0\rbrace$. On effectue alors 
+    \begin{equation}
+        D_{i_{1}}\left(\frac{1}{m_{i_{1},1}}\right)M=
+        \begin{pmatrix}
+            \star & \star & \dots & \dots & \star\\
+            \vdots & \vdots & & &\vdots\\
+            \star & \vdots & & & \vdots\\
+            1 & \vdots & & & \vdots\\
+            0 & \vdots & & &\vdots\\
+            \vdots & \vdots & & & \vdots\\
+            0 & \star & \dots & \dots & \star
+        \end{pmatrix}
+    \end{equation}
+
+    Par produite de transvections (qui sont des matrices triangulaires supérieures, i.e.~dans $\mathcal{T}_{n}^{+}$) à gauche, on obtient 
+    \begin{equation}
+        \begin{pmatrix}
+            0 & \star & \dots & \dots & \star\\
+            \vdots & \vdots & & &\vdots\\
+            0 & \vdots & & & \vdots\\
+            1 & \vdots & & & \vdots\\
+            0 & \vdots & & &\vdots\\
+            \vdots & \vdots & & & \vdots\\
+            0 & \star & \dots & \dots & \star
+        \end{pmatrix}
+    \end{equation}
+
+    Par produite de transvections $\in\mathcal{T}_{n}^{+}$ à droite, on obtient
+    \begin{equation}
+        \begin{pmatrix}
+            0 & \star & \dots & \dots & \star\\
+            \vdots & \vdots & & &\vdots\\
+            0 & \star &\dots &\dots & \star\\
+            1 & 0 &\dots & \dots& 0\\
+            0 & \star & \dots& \dots&\star\\
+            \vdots & \vdots & & & \vdots\\
+            0 & \star & \dots & \dots & \star
+        \end{pmatrix}
+    \end{equation}
+
+    Soit $M'\in GL_{n}(\C)$ la matrice extraite de $M$ en ôtant la première colonne et la $i_{1}$-ième ligne. On procède par récurrence avec $M'$. Donc il existe $\sigma\in\Sigma_{n},(T,T')\in\left(\mathcal{T}_{n}^{+}\right)^{2}$ telle que 
+    \begin{equation}
+        \boxed{M=TP_{\sigma}T'}
+    \end{equation}
+
+    Montrons que tout matrice de $\mathcal{T}_{n}^{+}$ inversible est produit de matrices de transvections dans $\mathcal{T}_{n}^{+}$ et de dilatations.
+
+    Soit $T\in\mathcal{T}_{n}^{+}\cap GL_{n}(\C)$ avec 
+    \begin{equation}
+        T=
+        \begin{pmatrix}
+            t_{1,1}&\star &\dots & \dots& \star\\
+            0 & \ddots & \ddots & & \vdots\\
+            \vdots & \ddots & \ddots & \ddots & \vdots\\
+            \vdots & & \ddots & \ddots & \star\\
+            0 &\dots & \dots & 0 & t_{n,n}
+        \end{pmatrix}
+    \end{equation}
+
+    On a $t_{1,1}\neq0$ car sinon la colonne 1 est nulle. On a donc 
+    \begin{equation}
+        TD_{1}\left(\frac{1}{t_{1,1}}\right)=
+        \begin{pmatrix}
+            1&\star &\dots & \dots& \star\\
+            0 & \star & \ddots & & \vdots\\
+            \vdots & \ddots & \ddots & \ddots & \vdots\\
+            \vdots & & \ddots & \ddots & \star\\
+            0 &\dots & \dots & 0 & \star
+        \end{pmatrix}
+    \end{equation}
+
+    Puis, par produit de transvections à droite, on a 
+    \begin{equation}
+        \begin{pmatrix}
+            1&0 &\dots & \dots& 0\\
+            0 & \star & \dots &\dots & \star\\
+            \vdots & \ddots & \ddots &  & \vdots\\
+            \vdots & & \ddots & \ddots & \star\\
+            0 &\dots & \dots & 0 & \star
+        \end{pmatrix}
+    \end{equation}
+
+    On procède ensuite par récurrence sur $n$, et on a 
+    \begin{equation}
+        T\times B_{1}\times\dots\times B_{l}=I_{n}
+    \end{equation}
+    donc 
+    \begin{equation}
+        T=B_{l}^{-1}\times\dots\times B_{1}^{-1}
+    \end{equation}
+    où $B_{i}\mathcal{T}_{n}^{+}$ transvection ou dilatation.
+
+    Soit donc $(T,T',P_{\sigma})$ vérifiant les hypothèses telles que $M=TP_{\sigma}T'$, alors on a 
+    \begin{equation}
+        T^{-1}MT'^{-1}=P_{\sigma}=\underbrace{B_{l}^{-1}\times\dots\times B_{1}^{-1}}_{\text{transvections ou dilatations}}\times M\times\underbrace{B_{l}'^{-1}\times\dots\times B_{1}'^{-1}}_{\text{transvections ou dilatations}}
+    \end{equation}
+
+    Nécessairement, on a  $\sigma(1)=i$ défini plus haut. Donc de proche en proche, $\sigma$ est univoquement déterminée.
+
+    Cependant, on peut écrire
+    \begin{equation}
+        I_{2}=
+        \begin{pmatrix}
+        \frac{1}{2}&0\\
+        0&\frac{1}{2}    
+        \end{pmatrix}\times I_{2}\times
+        \begin{pmatrix}
+            2&0\\
+            0&2    
+        \end{pmatrix}
+        =
+        I_{2}=
+        \begin{pmatrix}
+        \frac{1}{3}&0\\
+        0&\frac{1}{3}    
+        \end{pmatrix}\times I_{2}\times
+        \begin{pmatrix}
+            3&0\\
+            0&3    
+        \end{pmatrix}
+    \end{equation}
+    donc il n'y a pas unicité de $T$ et $T'$.
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $A\in J\cap GL_{n}(\K)$, on a pour tout $M\in\M_{n}(\K)$, on a 
+        \begin{equation}
+            M=\underbrace{\underbrace{M\times A}_{\in J}\times A^{-1}}_{\in J}\in J
+        \end{equation}
+
+        \item Soit $A_{0}\in J\setminus\lbrace0\rbrace$ de rang $r\neq0$. Il existe $(P,Q)\in GL_{n}(\K)$ telle que $Q^{-1}A_{0}P=J_{r}\in J$, on a alors 
+        \begin{equation}
+            \boxed{J_{r}\times J_{1}=J_{1}\in J}
+        \end{equation}
+
+        \item Deux matrices de rang 1 sont équivalentes donc toutes les matrices de rang 1 son dans $J$. Or si $A=\left(a_{i,j}\right)_{1\leqslant i,j\leqslant n}\in\M_{n}(\K)$ s'écrit 
+        \begin{equation}
+            \boxed{A=\sum_{1\leqslant i,j\leqslant n}\underbrace{a_{i,j}E_{i,j}}_{\text{de rang 1 ou 0}}\in J}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On a 
+    \begin{equation}
+        (\lambda A+I_{n})(\lambda B+I_{n})=\lambda^{2} AB+\lambda A+\lambda B+I_{n}=I_{n}
+    \end{equation}
+    donc $\lambda B+I_{n}$ est inversible. De plus, $A(\lambda B+I_{n})=-B$ donc 
+    \begin{equation}
+        A=-\left(\lambda B+I_{n}\right)^{-1}B
+    \end{equation}
+
+    Or $(\lambda B+I_{n})^{-1}$ et $B$ commutent. En effet, comme $\lambda\neq0$, on a 
+    \begin{equation}
+        B(\lambda B+I_{n})^{-1}=\left(\left[B+\frac{1}{\lambda I_{n}}\right]-\frac{1}{\lambda}I_{n}\right)(\lambda B+I_{n})^{-1}=\frac{1}{\lambda}I_{n}-\frac{1}{\lambda}(\lambda B+I_{n})^{-1}
+    \end{equation}
+    et on montre de même que 
+    \begin{equation}
+        (\lambda B+I_{n})^{-1}B=\frac{1}{\lambda}I_{n}-\frac{1}{\lambda}(\lambda B+I_{n})^{-1}
+    \end{equation}
+
+    Ainsi, 
+    \begin{equation}
+        \boxed{BA=-B(\lambda B+I_{n})^{-1}B=-(\lambda B+I_{n})^{-1}BB=AB}
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    Soit $X=\begin{pmatrix}
+        x_{1} &\dots&x_{n}
+    \end{pmatrix}^{\mathsf{T}}$ et $Y=\begin{pmatrix}
+        y_{1}&\dots& y_{n}
+    \end{pmatrix}^{\mathsf{T}}$
+
+    On a $AX=Y$ si et seulement si 
+    \begin{equation}
+        \left\lbrace
+        \begin{array}[]{lcll}
+            x_{1}-a_{2}x_{2}-\dots- a_{n}x_{n} &= &y_{1} &[1]\\
+            a_{2}x_{1}+x_{2} &= &y_{2} &[2]\\
+            \vdots\\
+            a_{n}x_{1}+x_{n}&=&y_{n}&[n]
+        \end{array}
+        \right.
+    \end{equation}
+    si et seulement si ($L_{1}\leftarrow L_{1}+\sum_{i=2}^{n}a_{i}L_{i}$)
+    \begin{equation}
+        \left\lbrace
+        \begin{array}[]{lcll}
+            \left(1+\sum_{i=2}^{n}a_{i}^{2}\right)x_{1} &= &y_{1}+\sum_{i=2}^{n}a_{i}y_{i} &[1]\\
+            a_{2}x_{1}+x_{2} &= &y_{2} &[2]\\
+            \vdots\\
+            a_{n}x_{1}+x_{n}&=&y_{n}&[n]
+        \end{array}
+        \right.
+    \end{equation}
+    si et seulement si 
+    \begin{equation}
+        \left\lbrace
+        \begin{array}[]{lcll}
+            x_{1} &= &\dfrac{y_{1}+a_{2}y_{2}+\dots+a_{n}y_{n}}{1+\sum_{i=2}^{n}a_{i}^{2}}\\
+            x_{j}&=&y_{j}-a_{j}x_{1} &\forall j\in\llbracket2,n\rrbracket
+        \end{array}
+        \right.
+    \end{equation}
+    En posant 
+    \begin{equation}
+        \lambda=\frac{1}{1+\sum_{i=2}^{n}a_{i}^{2}}
+    \end{equation}
+    cela équivaut à (en posant $a_{1}=1$)
+    \begin{equation}
+        \left\lbrace
+        \begin{array}[]{lcll}
+            x_{1} &= &\lambda(y_{1}+a_{2}y_{2}+\dots+a_{n}y_{n})\\
+            x_{j}&=&\lambda\left[\sum_{\substack{i=1\\i\neq j}}a_{i}y_{i}-\left(1+\sum_{\substack{i=1\\i\neq j}}a_{i}^{2}\right)y_{j}\right] &\forall j\in\llbracket2,n\rrbracket
+        \end{array}
+        \right.
+    \end{equation}
+
+    Donc $A\in GL_{n}(\R)$.
+\end{proof}
+
+\begin{remark}
+    On pourrait se poser la question si $A\in GL_{n}(\C)$ ? Si $1+a_{2}^{2}+\dots+a_{n}^{2}\neq0$, on sait que $A\in GL_{n}(\C)$. Cependant, on vérifie que si $X=\begin{pmatrix}
+        1 & -a_{2}&\dots&-a_{n}
+    \end{pmatrix}^{\mathsf{T}}\neq0$, on a $AX=0$ et donc $A\notin GL_{n}(\C)$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $X=\begin{pmatrix}
+            x_{1}&\dots &x_{n}
+        \end{pmatrix}\in \ker(A)\cap H$, on a $\sum_{i=1}^{n}x_{i}=0$ et $AX=0$. Notons que l'on a 
+        \begin{equation}
+            A+A^{\mathsf{T}}=
+            \begin{pmatrix}
+                0&1 &\dots & \dots& 1\\
+                1 & \ddots & \ddots & & \vdots\\
+                \vdots & \ddots & \ddots & \ddots & \vdots\\
+                \vdots & & \ddots & \ddots & 1\\
+                1 &\dots & \dots & 1 & 0
+            \end{pmatrix}=N
+        \end{equation}
+        On a 
+        \begin{equation}
+            NX=-X
+        \end{equation}
+        et $N^{\mathsf{T}}=N$.
+
+        On a alors 
+        \begin{equation}
+            X^{\mathsf{T}}AX+X^{\mathsf{T}}A^{\mathsf{T}}X=X^{\mathsf{T}}NX=-X^{\mathsf{T}}X=-\sum_{i=1}^{n}x_{i}^{2}
+        \end{equation}
+        Comme $AX=0$, on a aussi $X^{\mathsf{T}}AX=0$ et $X^{\mathsf{T}}A^{\mathsf{T}}X=(AX)^{\mathsf{T}}X=0$ donc on a $\sum_{i=1}^{n}x_{i}^{2}=0$ d'où $x_{i}=0$ et $X=0$. Donc 
+        \begin{equation}
+            \boxed{\ker(u)\cap H}=\lbrace 0\rbrace
+        \end{equation}
+
+        Donc $\dim(\ker(u))\in\lbrace0,1\rbrace$ et le théorème du rang assure alors que $\rg(A)\in\lbrace n-1,n\rbrace$.
+
+        \item Comme $A+A^{\mathsf{T}}=N$, on a $A=\frac{1}{2}N+S$ avec $S\in\mathcal{A}_{n}(\R)$. Or, pour $S=0$, on a 
+        \begin{equation}
+            N=\begin{pmatrix}
+                1&\dots&1\\
+                \vdots & &1\\
+                1 & \dots &1
+            \end{pmatrix}
+            -I_{n}
+        \end{equation}
+        et $(N+I_{n})^{2}=n(M+I_{n})$ donc $N\in GL_{n}(\R)$. De même, pour 
+        \begin{equation}
+            S=\frac{1}{2}
+            \begin{pmatrix}
+                0&-1 &\dots & \dots& -1\\
+                1 & \ddots & \ddots & & \vdots\\
+                \vdots & \ddots & \ddots & \ddots & \vdots\\
+                \vdots & & \ddots & \ddots & -1\\
+                1 &\dots & \dots & 1 & 0
+            \end{pmatrix}
+        \end{equation}
+        on a
+        \begin{equation}
+            A=
+            \begin{pmatrix}
+                0&0 &\dots & \dots& 0\\
+                1 & \ddots & \ddots & & \vdots\\
+                \vdots & \ddots & \ddots & \ddots & \vdots\\
+                \vdots & & \ddots & \ddots & 0\\
+                1 &\dots & \dots & 1 & 0
+            \end{pmatrix}
+        \end{equation}
+        et $\rg(A)=n-1$.
+
+        Donc on peut avoir les deux possibilités.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    Soit $u\in\L(\C^{n})$ de range 1 telle que $\Tr(u)=\lambda$. On a $\dim(\ker(u))=n-1$
+
+    En prenant une base de $\ker(u)$ $(e_{1},\dots,e_{n-1})$ que l'on complète en $\mathcal{B}=(e_{1},\dots,e_{n-1},e_{n})$ une base de $\C^{n}$, on a 
+    \begin{equation}
+        \mat_{\mathcal{B}}(u)
+        =
+        \begin{pmatrix}
+            0 & \dots & 0 & \alpha_{1}\\
+            \vdots & & \vdots &\vdots\\
+            \vdots & & \vdots &\alpha_{n-1}\\
+            0 & \dots & 0& \lambda
+        \end{pmatrix}
+    \end{equation}
+
+    Si $\lambda\neq0$, posons $f_{n}=\beta_{1}e_{1}+\dots+\beta_{n-1}e_{n}+e_{n}$, on a 
+    \begin{equation}
+        u(f_{n})=\lambda f_{n}
+    \end{equation}
+    si et seulement si
+    \begin{equation}
+        \alpha_{1}e_{1}+\dots+\alpha_{n-1}e_{n-1}+\lambda e_{n}=\lambda f_{n}
+    \end{equation}
+    On pose $\beta_{1}=\frac{\alpha}{\lambda},\dots,\beta_{n-1}=\frac{\alpha_{n-1}}{\lambda}$ et si $\mathcal{B}'=(e_{1},\dots,e_{n-1},f_{n})$, on a 
+    \begin{equation}
+        \mat_{\mathcal{B}'}(u)=
+        \begin{pmatrix}
+            0 & \dots & 0 & 0\\
+            \vdots & & \vdots &\vdots\\
+            \vdots & & \vdots &0\\
+            0 & \dots & 0& \lambda
+        \end{pmatrix}
+    \end{equation}
+
+    Si $\lambda=0$, il existe $i_{0}\in\llbracket 1,n-1\rrbracket$ tel que $\alpha_{i_{0}}\neq0$ (sinon $\rg(u)=0$). On pose $f_{n}=e_{n}$ et $f_{1}=\alpha_{1}e_{1}+\dots+\alpha_{n-1}e_{n-1}\in\ker(u)\setminus\lbrace0\brace$ et on complète $(f_{1},\dots,f_{n-1})$ en une base de $\ker(u)$. On pose $\mathcal{B}'=(f_{1},\dots,f_{n})$ base de $\C^{n}$ et on a alors 
+    \begin{equation}
+        \mat_{\mathcal{B}'}(u)=
+        \begin{pmatrix}
+            0 & \dots & 0 & 1\\
+            \vdots & & 0 &0\\
+            \vdots & & \vdots &\vdots\\
+            0 & \dots & 0& 0
+        \end{pmatrix}
+    \end{equation}
+
+    Ainsi, dans les deux cas, deux matrices sont de rang 1 et de même trace si et seulement si elles sont semblables.
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $M\in F$, telle que $\rg(M)=r$. $M$ est équivalente à $J_{r}$, donc il existe $(P_{0},Q_{0})\in GL_{n}(\R)^{2}$ telle que $P_{0}^{-1}J_{r}Q_{0}=M\in F$.
+        
+        \item Soit \function{\varphi}{F}{F_0}{M}{P_0 MQ_{0}^{-1}}
+        est linéaire surjective par définition de $F_{0}$ de réciproque $\varphi^{-1}\colon M_{0}\to P_{0}^{-1}M_{0}Q_{0}$ donc $F$ et $F_{0}$ sont isomorphes.
+
+        Pour tout $M\in F$, $\rg(M)=\rg(\varphi(M))$: $\varphi$ étant bijective, on a $r=\max\left\lbrace\rg(M_{0})\middle| M_{0}\in F_{0}\right\rbrace$
+
+        \item Il suffit de choisir les coefficients de $B$ et $C$ donc 
+        \begin{equation}
+            \boxed{\dim(G_{0})=n(n-r)}
+        \end{equation}
+
+        \item On écrit 
+        \begin{equation}
+            \begin{pmatrix}
+                \lambda I_{r} & B^{\mathsf{T}}\\
+                B & C
+            \end{pmatrix}
+            =\lambda J_{r}+M_{0}\in F_{0}
+        \end{equation}
+
+        Si on avait 
+        \begin{equation}
+            \det\left(
+				\begin{array}{@{}c|c@{}}
+				\lambda
+				I_{r} &
+				\begin{matrix}
+				b_{j,1}\\
+						\vdots\\
+						b_{j,r}
+						\end{matrix}
+						\\
+					\hline
+					\begin{matrix}
+						b_{i,1} &
+						\dots
+						& b_{i,r}
+						\end{matrix}
+						& c_{i,j}
+				\end{array}
+			\right)\neq0
+        \end{equation}
+        (déterminant d'une sous-matrice de taille $r+1$ de la matrice précédente), on aurait 
+        \begin{equation}
+            \rg\begin{pmatrix}
+                \lambda I_{r} & B^{\mathsf{T}}\\
+                B & C
+            \end{pmatrix}\geqslant r+1>r
+        \end{equation}
+        ce qui est exclu d'après 2.
+
+        \item En effectuant $L_{r+1}\leftarrow L_{r+1}-\frac{b_{i,1}}{\lambda}L_{1}-\dots-\frac{b_{i,r}}{\lambda}L_{r}$, en notant $f(\lambda)=c_{i,j}-\sum_{k=1}^{r}\frac{b_{i,k}}{\lambda}b_{j,k}$, on obtient 
+        \begin{equation}
+            \det\left(
+				\begin{array}{@{}c|c@{}}
+				\lambda
+				I_{r} &
+				\begin{matrix}
+				b_{j,1}\\
+						\vdots\\
+						b_{j,r}
+						\end{matrix}
+						\\
+					\hline
+					\begin{matrix}
+						0 &
+						\dots
+						& 0
+						\end{matrix}
+						& f(\lambda)
+				\end{array}
+			\right)=0
+        \end{equation}
+
+        D'où $f(\lambda)=0$ et comme $\lambda\neq0$, on a
+        \begin{equation}
+            \lambda f(\lambda)=0=\lambda c_{i,j}-\sum_{k=1}^{r}b_{i,k}b_{j,k}
+        \end{equation}
+        qui est nulle sur $\R^{*}$ donc $c_{i,j}=0$ et $\sum_{k=1}^{r}b_{i,k}b_{j,k}=0$. Ceci implique $C=0$ et pour $i=j$, on a $\sum_{k=1}^{r}b_{j,k}^{2}=0$ donc $B=0$.
+
+        \item On a donc $G_{0}\cap F_{0}=\lbrace0\rbrace$ ($\dim(G_{0})=n(n-r)$). $G_{0}$ et $F_{0}$ sont en somme directe, donc 
+        \begin{equation}
+            \dim(G_{0}\oplus F_{0})=\dim(G_{0})+\dim(F_{0})\leqslant n^{2}
+        \end{equation}
+        donc 
+        \begin{equation}
+            \boxed{\dim(F)=\dim(F_{0})\leqslant n^{2}-n(n-r)=nr}
+        \end{equation}
+
+        \item Si $F\cap GL_{n}(\R)=\emptyset$, on a $r\leqslant n-1$ et $\dim(F)\leqslant n(n-1)$. Par contraposée, si $\dim(F)\geqslant n^{2}-n+1$, on a $F\cap GL_{n}(\R)\neq\emptyset$.
+        
+        \item Soit 
+        \begin{equation}
+            G_{1}=\left\lbrace\begin{pmatrix}
+                0 & B^{\mathsf{T}}\\
+                B & C
+            \end{pmatrix}\middle| B\in\M_{n-r,r}(\C),C\in\M_{r}(\C)\right\rbrace
+        \end{equation}
+        sous-$\R$-espace-vectoriel de $\M_{n}(\C)$. Par les mêmes arguments que précédemment, on a $G_{1}\cap F_{0}=\lbrace0\rbrace$ et $\dim_{\R}(G_{1})=2n(n-r)$ et $\dim_{\R}\M_{n}(\C)=2n^{2}$ donc 
+        \begin{equation}
+            \boxed{\dim_{\R}F_{0}=2\dim_{\C}F_{0}\leqslant 2nr}
+        \end{equation}
+
+        Le résultat est donc encore valable.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On a $f(I_{n})=f(I_{n})^{2}$ donc $f(I_{n}\in\lbrace0,1\rbrace$. Si $f(I_{n})=0$, alors $f=0$ ce qui est exclu.
+
+    Si $M$ est inversible, on a 
+    \begin{equation}
+        f(M\times M^{-1})=f(M)\times f(M^{-1})=1
+    \end{equation}
+    donc $f(M)\neq0$.
+
+    Si $M$ n'est pas inversible, posons $r=\rg(M)\leqslant n-1$. $M$ est équivalente la matrice nilpotente
+    \begin{equation}
+        M'=
+        \begin{pmatrix}
+            0 & 1 & 0 &\dots & \dots&\dots & 0\\
+            \vdots & \ddots & \ddots & \ddots& & &\vdots\\
+            \vdots & &\ddots & 1 & \ddots &&\vdots\\
+            \vdots & && \ddots & 0 &\ddots &\vdots\\
+            \vdots & & & &\ddots & \ddots & 0\\
+            0 &\dots & \dots & \dots & \dots &0&0
+        \end{pmatrix}
+    \end{equation}
+
+    Donc il existe $(P,Q)\in (GL_{n}(\C))^{2}$ telles que $M=P^{-1}M'Q$. On a
+    \begin{equation}
+        f(M'^{n})=\left(f(M')\right)^{n}=f(0)
+    \end{equation}
+    Comme $f(0)=f(0)^{2}$, on a aussi $f(0)\in\lbrace0,1\rbrace$. Si $f(0)=1$, pour tout $A\in\M_{n}(\C)$, on a $f(A\times 0)=f(A)\times f(0)=1$ ce qui est impossible car $f$ n'est pas constante. Donc $f(0)=0$. Ainsi, $f(M')=0$ et donc $f(M)=0$.
+\end{proof}
+
+\begin{remark}
+    $f$ induit donc un morphisme de $\left(GL_{n}(\C),\times\right)\to(\C^{*},\times)$.
+\end{remark}
+
+\begin{remark}
+    On peut montrer que pour $n\geqslant 2$, pour tout $i\neq j\in\lbrace1,n\rbrace^{2}$, $\forall \lambda \in \C$, il existe $(A,B)\in GL_{n}(\C)^{2}$,
+    \begin{equation}
+        T_{i,j}(\lambda)=ABA^{-1}B^{-1}
+    \end{equation}
+    en écrivant 
+    \begin{align}
+        T_{i,k}(\alpha)T_{k,j}(\beta)T_{i,k}(-\alpha)T_{k,j}(-\beta)
+        =&\left(I_{n}+\alpha E_{i,k}+\beta E_{k,j}+\alpha \beta E_{i,j}\right)\notag\\
+        ~~~~~~&\times \left(I_{n}-\alpha E_{i,k}-\beta E_{k,j}+\alpha\beta E_{i,j}\right)\\
+        =&I_{n}+\alpha\beta E_{i,j}
+    \end{align}
+
+    Il vient 
+    \begin{equation}
+        f(T_{i,j}(\lambda))=f(A)f(B)f(A)^{-1}f(B)^{-1}=1
+    \end{equation}
+    Si $M\in GL_{n}(\C)$ s'écrit comme produit de transvections $T_{i,j}(\lambda)$ et de dilatations $D_{n}(\det(M))$.
+
+    Il vient $f(M)=f(D_{n}(\det(M)))$. Or 
+    \function{\varphi}{(\C^{*},\times)}{(\C^{*},\times)}{\alpha}{f(D_{n}(\alpha))}
+    est un morphisme de groupe (car $D_{n}(\alpha\beta)=D_{n}(\alpha)D_{n}(\beta)$).
+
+    Finalement, $f(M)=\varphi(\det(M))$.
+
+    Si de plus $f$ est continue, $\varphi$ aussi et on peut montrer qu'il existe $k\in\R$ tel que pour tout $z\in\C^{*}$, $\varphi(z)=z^{k}$.
+\end{remark}
