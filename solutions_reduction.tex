@@ -1,26 +1,266 @@
 \section{Réduction des endomorphismes}
 
 \begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a \function{f^k}{E}{E}{M}{A^{k}M} donc pour tout polynôme $P$, on a $P(f)=P(A)M$ par combinaison linéaire. Si $P(A)=0$, alors $P(f)=0$. Donc si $A$ est diagonalisable, $f$ l'est aussi. Si $P(f)=0$ alors avec $M=I_{n}$, on a $P(A)=0$ et $A$ est diagonalisable si $f$ l'est.
+		
+		Même résultat avec $g$ et $B$.
+
+		\item Soit $(\lambda_{i,j})_{1\leqslant i,j\leqslant n}$ tel que $\sum_{(i,j)\in\llbracket1,n\rrbracket^{2}}\lambda_{i,j}X_{i}Y_{j}^{\mathsf{T}}=0$. Alors on a 
+		\begin{equation}
+			\sum_{j=1}^{n}\left(\sum_{i=1}^{n}\lambda_{i,j}X_{i}\right)Y_{j}^{\mathsf{T}}=0
+		\end{equation}
+
+		Soit $k\in\llbracket1,n\rrbracket$, la $k$-ième ligne de notre matrice est 
+		\begin{equation}
+			\sum_{j=1}^{n}\left(\sum_{i=1}^{n}\lambda_{i,j}X_{i,k}\right)Y_{j}^{\mathsf{T}}=0
+		\end{equation}
+		Puisque $(Y_{j}^{\mathsf{T}})_{1\leqslant j\leqslant n}$ est libre, on a pour tout $j\in\llbracket1,n\rrbracket$,
+		\begin{equation}
+			\sum_{i=1}^{n}\lambda_{i,j}X_{i,k}=0
+		\end{equation}
+		Puisque $(X_{i})_{1\leqslant i\leqslant n}$ est libre, pour tout $(i,j)\in\llbracket1,n\rrbracket^{2}$, $\lambda_{i,j}=0$, d'où le résultat.
+
+		\item Puisque $B$ est diagonalisable, $B^{\mathsf{T}}$ l'est aussi. On prend $(X_{i})_{1\leqslant i\leqslant n}$ une base de vecteurs propres de $A$ avec pour tout $i\in\llbracket1,n\rrbracket$, $AX_{i}=\lambda_{i}X_{i}$. Prenons $(Y_{j})_{1\leqslant j\leqslant n}$ une base de vecteurs propres de $B^{\mathsf{T}}$ avec pour tout $j\in\llbracket1,n\rrbracket$, $B^{\mathsf{T}}Y_{j}=\mu_{j}Y_{j}$ et $Y_{j}B^{\mathsf{T}}=\mu_{j}Y_{j}^{\mathsf{T}}$. Ainsi,
+		\begin{equation}
+			h\left(X_{i}Y_{j}^{\mathsf{T}}\right)=AX_{i}Y_{j}^{\mathsf{T}}B=\mu_{j}AX_{i}Y_{j}^{\mathsf{T}}=\mu_{j}\lambda_{i}X_{i}Y_{j}^{\mathsf{T}}
+		\end{equation}
+		et les $(X_{i}Y_{j}^{\mathsf{T}})_{1\leqslant i,j\leqslant n}$ forment une base de $E$ d'après ce qui précède. Donc $h$ est diagonalisable.
+
+		Réciproquement, on a le contre-exemple $A=0$ et $B$ non diagonalisable: $h$ est l'endomorphisme nul.
+	\end{enumerate}	
+\end{proof}
+
+\begin{remark}
+	Généralement, soit $A\in\M_{n}(\K)$ et $B\in\M_{p}(\K)$, on définit \function{h_{A,B}}{\M_{n,p}(\K)}{\M_{n,p}(\K)}{M}{AMB}
+	La matrice de $h_{A,B}$ dans la base canonique de $\M_{n,p}(\K)$ s'appelle le produit tensoriel de $A$ et $B$ noté 
+	\begin{equation}
+		A\otimes B=
+		\begin{pmatrix}
+			a_{1,1}B & \dots & a_{1,n}B\\
+			\vdots & &\vdots\\
+			a_{n,1}B&\dots & a_{n,n}B
+		\end{pmatrix}
+	\end{equation}
+	On a toujours 
+	\begin{equation}
+		\Tr(A\otimes B)=\sum_{i=1}^{n}a_{i,i}\Tr(B)=\Tr(A)\Tr(B)
+	\end{equation}
+	Si $A$ et $B$ sont diagonalisables, $h_{A,B}$ l'est.
+\end{remark}
+
+\begin{proof}
+	On pose $P=DP_{1}$ et $Q=DQ_{1}$ avec $P_{1}\wedge Q_{1}=1$. Il existe $(U,V)\in\K[X]^{2}$ telles que $UP_{1}+VQ_{1}=1$. On a $MD=PQ$ donc $M=DP_{1}Q_{1}=PQ_{1}=P_{1}Q$.
+
+	\begin{enumerate}
+		\item Soit $x\in\ker(D(f))$. On a 
+		\begin{equation}
+			P(f)(x)=DP_{1}(f)(x)=P_{1}(f)\circ D(f)(x)=0	
+		\end{equation}
+		De même pour $Q(f)(x)=0$, donc 
+		\begin{equation}
+			\ker(D(f))\subset\ker(P(f))\cap\ker(Q(f))
+		\end{equation}
+
+		Soit $x\in\ker(P(f))\cap\ker(Q(f))$. On a
+		\begin{equation}
+			DUP_{1}+DVQ_{1}=0
+		\end{equation}
+		d'où 
+		\begin{equation}
+			UP+VQ=0
+		\end{equation}
+		et
+		\begin{equation}
+			D(f)(x)=UP(f)(x)+VQ(f)(x)=0
+		\end{equation}
+
+		Donc 
+		\begin{equation}
+			\boxed{\ker(D(f))=\ker(P(f))\cap\ker(M(f))}	
+		\end{equation}
+
+		\item On a $P\mid M$ donc $\ker(P(f))\subset\ker(M(f))$. De même, $\ker(Q(f))\subset\ker(M(f))$ donc 
+		\begin{equation}
+			\ker(P(f))+\ker(Q(f))\subset\ker(M(f))
+		\end{equation}
+
+		Si $x\in\ker(M(f))$, on a 
+		\begin{equation}
+			x=\underbrace{UP_{1}(f)(x)}_{\in\ker(Q(f))}+\underbrace{VQ_{1}(f)(x)}_{\in\ker(P(f))}
+		\end{equation}
+		car $M=P_{1}Q=Q_{1}P$. Donc 
+		\begin{equation}
+			\boxed{\ker(M(f))=\ker(P(f))+\ker(Q(f))}
+		\end{equation}
+
+		\item Si $i\in\im(P(f))$, il existe $x\in E$ tel que $y=P(f)(x)=D(f)\circ P_{1}(f)(x)\in\im(D(f))$. De même pour $\im(Q(f))\subset\im(D(f))$. Donc 
+		\begin{equation}
+			\im(P(f))+\im(Q(f))\subset\im(D(f))
+		\end{equation}
+
+		Soit $y\in\im(D(f))$, alors il existe $x\in E$ tel que 
+		\begin{equation}
+			y=D(f)(x)=\underbrace{UP(f)(x)}_{\in\im(P(f))}+\underbrace{VQ(f)(x)}_{\in\im(Q(f))}
+		\end{equation}
+		Donc 
+		\begin{equation}
+			\boxed{\im(D(f))=\im(P(f))+\im(Q(f))}
+		\end{equation}
+
+		\item On a $P\mid M$ d'où $\im(M(f))\subset\im P(f)$ et $\im(M(f))\subset\im Q(f)$. Ainsi,
+		\begin{equation}
+			\im(M(f))\subset\im(Q(f))\cap\im\im(Q(f))
+		\end{equation}
+
+		Si $y\in\im(P(f))\cap\im(Q(f))$ alors il existe $(x,x')\in E^{2}$ tels que 
+		\begin{equation}
+			y=P(f)(x)=P(f)(x')
+		\end{equation}
+		Or $M=P_{1}Q=PQ_{1}$ donc 
+		\begin{equation}
+			y=UP_{1}(f)(y)+VQ_{1}(f)(y)=UP_{1}Q(f)(x')+VQ_{1}P(f)(x)\in\im(M(f))
+		\end{equation}
+		donc 
+		\begin{equation}
+			\boxed{\im(M(f))=\im(P(f))\cap\im(Q(f))}
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	On a 
+	\begin{equation}
+		A\left(\frac{-1}{5}A+\frac{4}{5}I_{n}\right)=I_{n}
+	\end{equation}
+	donc $A$ est inversible.
+	\begin{equation}
+		X^{2}-4X+5=(X-2+\i)(X-2-\i)
+	\end{equation}
+	est scindé à racines simples sur $\C$. Donc $A$ est diagonalisable sur $\C$, semblable sur $\C$ à
+	\begin{equation}
+		\begin{pmatrix}
+			\lambda_{1}I_{n_{1}} &0\\
+			0 & \lambda_{2}I_{n_{2}}
+		\end{pmatrix}
+	\end{equation}
+	où $\lambda_{1}=2+\i$ et $\lambda_{2}=2-\i$. $A\in\M_{n}(\R)$ donc $\Tr(A)=n_{1}\lambda_{1}+n_{2}\lambda_{2}\in\R$
+
+	Donc 
+	\begin{equation}
+		\Im(n_{1}\lambda_{1}+n_{2}\lambda_{2})=0=n_{1}-n_{2}
+	\end{equation}
+
+	Ainsi $n_{1}=n_{2}$ donc $n$ est pair.
+
+	$A$ est semblable sur $\C$ à 
+	\begin{equation}
+		\begin{pmatrix}
+			\lambda_{1}&0&\dots&\dots&0\\
+			0&\overline{\lambda_{1}}&\ddots&&\vdots\\
+			\vdots &\ddots & \ddots &\ddots&\vdots\\
+			\vdots & &\ddots & \lambda_{1}&0\\
+			0 &\dots&\dots&0&\overline{\lambda_{1}}
+		\end{pmatrix}
+	\end{equation}
+
+	Soit 
+	\begin{equation}
+		A_{0}=
+		\begin{pmatrix}
+			0&-5\\
+			1&4
+		\end{pmatrix}
+	\end{equation}
+	On a $\chi_{A_{0}}=X^{2}-4X+5$. $A_{0}$ est diagonalisable sur $\C$ et est semblable à 
+	\begin{equation}
+		\begin{pmatrix}
+			\lambda_{1}&0\\
+			0&\overline{\lambda_{1}}
+		\end{pmatrix}
+	\end{equation}
+	Donc $A$ est semblable sur $\C$ à 
+	\begin{equation}
+		\begin{pmatrix}
+			A_{0}&&\\
+			&\ddots&\\
+			&&A_{0}
+		\end{pmatrix}
+	\end{equation}
+	donc $A$ est semblable sur $\R$ à cette même matrice.
+
+	Soit $l\in\N$, on a 
+	\begin{equation}
+		X^{l}=Q_{p}(X^{2}-4X+5)+\alpha_{l}X+\beta_{l}
+	\end{equation}
+	par division euclidienne. Donc 
+	\begin{equation}
+		A^{l}=\alpha_{l}A+\beta_{l}I_{n}
+	\end{equation}
+	On a notamment 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{l}
+				(2+\i)^{l}=\alpha_{l}(2+\i)+\beta_{l}\\
+				(2-\i)^{l}=\alpha_{l}(2-\i)+\beta_{l}
+			\end{array}
+		\right.
+	\end{equation}
+
+	On a donc 
+	\begin{equation}
+		\boxed{
+			\left\lbrace
+			\begin{array}[]{l}
+				\alpha_{l}=\frac{(2+\i)^{l}-(2-\i)^{l}}{2\i}\\
+				\beta_{l}=(2+\i)^{l}-\frac{(2+\i)}{2\i}\left[(2+\i)^{l}-(2-\i)^{l}\right]
+			\end{array}
+		\right.
+		}
+	\end{equation}
+\end{proof}
+
+\begin{remark}
+	On a $2+\i=\sqrt{5}\e^{\i\theta}$ avec $\theta=\arccos\left(\frac{2}{\sqrt{5}}\right)\in]0,\pi[$. Donc $\alpha_{l}=\left(\sqrt{5}\right)^{l}\sin(l\theta)$.
+\end{remark}
+
+\begin{remark}
+	On a 
+	\begin{equation}
+		I_{n}-4A^{-1}+5A^{-2}=0
+	\end{equation}
+	De même, $\left(X-\frac{1}{2-\i}\right)\left(X-\frac{1}{2+\i}\right)$ annule $A^{-1}$ et on a pour tout $l\in-\N^{*}$,
+	\begin{equation}
+		A^{l}=\alpha_{l}A+\beta_{l}I_{n}
+	\end{equation}
+\end{remark}
+
+\begin{remark}
+	$(A-2I_{n})^{2}=-I_{n}$ donc $\det(-I_{n})=(-1)^{n}>0$ donc $n$ est pair.
+\end{remark}
+
+\begin{proof}
 	Si on a (i), soit $x$ un vecteur propre associé à $\rho(u)=\rho e^{\mathrm{i}\theta}$. On a $\Vert u(x)\Vert=\Vert\rho(u) x\Vert=\rho(u)\Vert x\Vert$ et comme $x\neq0$, on a $\rho(u)\leqslant\vertiii{\rho(u)}<1$ d'où (ii).
 
 	Si (ii), on utilise la décomposition de Dunford $u=n+d$ avec $n$ nilpotent, $d$ diagonalisable et $dn=nd$. Soit $m=\dim(E)$. Pour tout $p\geqslant m$, on a 
-	$$u^{p}=\sum_{k=0}^{p}\binom{p}{k}n^{k}d^{p-k}=\sum_{k=0}^{m-1}\binom{p}{k}n^{k}\underbrace{d^{p-k}}_{\xrightarrow[p\to+\infty]{}0}$$
+	\begin{equation}u^{p}=\sum_{k=0}^{p}\binom{p}{k}n^{k}d^{p-k}=\sum_{k=0}^{m-1}\binom{p}{k}n^{k}\underbrace{d^{p-k}}_{\xrightarrow[p\to+\infty]{}0}\end{equation}
 	En effet, on a $k\geqslant m-1$ fixé, il existe une base $\mathcal{B}$ de $E$ telle que 
-	$$\binom{p}{k}\mat\limits_{\mathcal{B}}(d^{p})=\binom{p}{k}\diag(\lambda_{1}^{p},\dots,\lambda_{m}^{p})\xrightarrow[p\to+\infty]{}0$$
+	\begin{equation}\binom{p}{k}\mat\limits_{\mathcal{B}}(d^{p})=\binom{p}{k}\diag(\lambda_{1}^{p},\dots,\lambda_{m}^{p})\xrightarrow[p\to+\infty]{}0\end{equation}
 	car $\vert\lambda_{i}\vert<1$ pour tout $i\in\{1,\dots,m\}$ et 
-	$$\binom{p}{k}\underset{p\to+\infty}{\sim}\frac{p^{k}}{k!}=\underset{p\to+\infty}{o}\Bigl(\frac{1}{\rho(u)^{p}}\Bigr)$$
+	\begin{equation}\binom{p}{k}\underset{p\to+\infty}{\sim}\frac{p^{k}}{k!}=\underset{p\to+\infty}{o}\Bigl(\frac{1}{\rho(u)^{p}}\Bigr)\end{equation}
 	donc on a (iii).
 
 	Si (iii), soit $x$ un vecteur propré associé à $\lambda\in\C$, on a $u^{p}\xrightarrow[p\to+\infty]{}0$ donc en particulier, $u^{p}(x)=\lambda^{p}\xrightarrow[p\to+\infty]{}0$, donc $\rho(u)^{p}\xrightarrow[p\to+\infty]{}0$ et $\rho(u)\geqslant0$ donc $\rho(u)<1$. Posons encore $u=d+n$ la décomposition de Dunford de $u$. Soit $\varepsilon>0$, il existe $\mathcal{B}_{0}=(e_{1},\dots,e_{n})$ base de $E$ dans laquelle les coefficients de $\mat\limits_{\mathcal{B}_{0}}(n)$ sont en module $\leqslant\varepsilon$. Définissons sur $E$ 
-	$$\Biggl\Vert\sum_{i=1}^{m}x_{i}e_{i}\Biggr\Vert_{\infty}=\max\limits_{1\leqslant i\leqslant m}\vert x_{i}\vert$$
+	\begin{equation}\Biggl\Vert\sum_{i=1}^{m}x_{i}e_{i}\Biggr\Vert_{\infty}=\max\limits_{1\leqslant i\leqslant m}\vert x_{i}\vert\end{equation}
 	Soit $M=\mat\limits_{\mathcal{B}_{0}}(u)=(m_{i,j})_{1\leqslant i,j\leqslant m}$ triangulaire supérieure avec $m_{ii}=\lambda_{i}$ et pour tout $j\neq i$, $\vert m_{i,j}\vert<\varepsilon$. Soit donc $x=\sum_{i=1}^{m}x_{i}e_{i}\in\C^{m}$, on a 
-	$$
+	\begin{equation}
 	\Vert Mx\Vert_{\infty}=\max\limits_{1\leqslant i\leqslant n}\underbrace{\Biggl\vert\sum_{j=1}^{m}m_{i,j}x_{j}\Biggr\vert}_{(\vert\lambda_{i}\vert+(m-1)\varepsilon)\Vert x\Vert_{\infty}}
-	$$
+	\end{equation}
 	donc 
-	$$\vertiii{u}\leqslant\underbrace{\rho(u)}_{<1}+(m-1)\varepsilon$$
+	\begin{equation}\vertiii{u}\leqslant\underbrace{\rho(u)}_{<1}+(m-1)\varepsilon\end{equation}
 	et on choisit
-	$$\varepsilon<\frac{1-\rho(u)}{\underbrace{m-1}_{>0}}$$
+	\begin{equation}\varepsilon<\frac{1-\rho(u)}{\underbrace{m-1}_{>0}}\end{equation}
 	d'où $\vertiii{u}<1$ et donc on a (i) et finalement on a bien l'équivalence.
 \end{proof}
 
@@ -32,10 +272,10 @@
 	Supposons (i), soit $Y$ un vecteur propre de $A$ avec $AY=\lambda Y$ pour $\lambda\in\C$. Pour tout $k\in\N,BA^{k}Y=\lambda^{k}BY$ et il existe $k_{0}\in\N$ tel que $\lambda^{k_{0}}BY\neq0$ et $BY\neq0$ donc on a (ii).
 
 	Si (ii), supposons qu'il existe $Y\in\C^{n}\setminus\{0\}$ tel que $\varphi=0$. On note 
-	$$\chi_{A}=\prod_{i=1}^{r}(X-\lambda_{i})^{m_{i}}$$ avec les $\lambda_{i}$ distincts. Alors $Y=\sum_{i=1}^{r}Y_{i}$ où $Y_{i}\in\ker(A-\lambda_{i}I_{n})$. Il existe $i_{0}\in\{1,\dots,n\}$ tel que $Y_{i_{0}}\neq0$ car $Y\neq0$. On a alors, pour $t\in\R$,
-	$$B\exp(tA)Y=\sum_{i=1}^{r}B\exp(t\lambda_{i})Y_{i}=0$$
+	\begin{equation}\chi_{A}=\prod_{i=1}^{r}(X-\lambda_{i})^{m_{i}}\end{equation} avec les $\lambda_{i}$ distincts. Alors $Y=\sum_{i=1}^{r}Y_{i}$ où $Y_{i}\in\ker(A-\lambda_{i}I_{n})$. Il existe $i_{0}\in\{1,\dots,n\}$ tel que $Y_{i_{0}}\neq0$ car $Y\neq0$. On a alors, pour $t\in\R$,
+	\begin{equation}B\exp(tA)Y=\sum_{i=1}^{r}B\exp(t\lambda_{i})Y_{i}=0\end{equation}
 	Pour tout $k\in\{0,\dots,r-1\}$, on a $\varphi^{(k)}(t)=\sum_{i=1}^{r}B\lambda_{i}^{k}\exp(t\lambda_{i})Y_{i}=0$. Pour $t=0$ on a $\sum_{i=1}^{r}\lambda_{i}^{k}BY_{i}=0$ ce qui, pour $t=0$, donne le système 
-	$$
+	\begin{equation}
 	\left\{
 		\begin{array}[]{lll}
 			BY_{1}+\dots+BY_{r} &= &0\\
@@ -44,17 +284,17 @@
 			\lambda_{1}^{r-1}BY_{1}+\dots+\lambda_{r}^{r-1}BY_{r} &= &0
 		\end{array}
 	\right.
-	$$
+	\end{equation}
 	Pour tout $P\in\C_{r-1}[X]$, on a donc $\sum_{i=1}^{r}P(\lambda_{i})BY_{i}=0$. Pour $i\in\{0,\dots,r-1\}$ et $P=\prod_{i\neq j}\frac{(X-\lambda_{j})}{\lambda_{i}-\lambda_{j}}$, on obtient pour tout $i\in\{1,\dots, r\}, BY_{i}=0$. En particulier, $BY_{i_{0}}=0$ et $Y_{i_{0}}$ est un vecteur propre de $A$ car non nul. C'est une contradiction. On a donc (iii).
 
 	\item Soit $Y\in\C^{n}\setminus\{0\}$, supposons que pour tout $k\in\{0,\dots,n-1\}$, $BA^{k}Y=0$. Soit $k\geqslant n$, il existe $(Q_{k},R_{k})\in\C[X]\times\C_{n-1}[X]$ tel que 
-	$$X^{k}=Q_{k}\chi_{A}+R_{k}$$
+	\begin{equation}X^{k}=Q_{k}\chi_{A}+R_{k}\end{equation}
 	et le théorème de Cayley-Hamilton donne donc $A^{k}=R_{k}(A)$ d'où $BA^{k}Y=BR_{k}(A)Y=0$. Alors pour tout $t\in\R$,
-	\begin{align*}
+	\begin{align}
 		B\exp(tA)Y
 		&=B\sum_{k=0}^{+\infty}\frac{t^{k}A^{k}}{k!}Y\\
 		&=\sum_{k=0}^{+\infty}\frac{t^{k}(BA^{k}Y)}{k!}\\
 		&=0
-	\end{align*}
+	\end{align}
 	Par contraposée, on a bien ce qu'il faut, d'où l'équivalence.
 \end{proof}
