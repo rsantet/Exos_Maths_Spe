@@ -241,6 +241,775 @@
 \end{remark}
 
 \begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a 
+		\begin{equation}
+			A\begin{pmatrix}
+				1\\\vdots\\1
+			\end{pmatrix}=\begin{pmatrix}
+				1\\\vdots\\1
+			\end{pmatrix}
+		\end{equation}
+		et $\begin{pmatrix}
+			1&\dots&1
+		\end{pmatrix}^{\mathsf{T}}\neq0$ donc 
+		\begin{equation}
+			\boxed{1\in\Sp_{\R}(A)}
+		\end{equation}
+
+		\item Soit $X=\begin{pmatrix}
+			x_{1}&\dots&x_{n}
+		\end{pmatrix}^{\mathsf{T}}\neq0$ associé à $\lambda$. Pour tout $i\in\llbracket1,n\rrbracket$, on a 
+		\begin{equation}
+			\lambda x_{i}=\sum_{j=1}^{n}a_{i,j}x_{j}
+		\end{equation}
+		Soit $i_{0}\in\llbracket1,n\rrbracket$ tel que $\left\lvert x_{i_{0}}\right\rvert=\max\limits_{i\in\llbracket1,n\rrbracket}\left\lvert x_{i}\right\rvert>0$ car $X\neq0$. On a alors 
+		\begin{equation}
+			\left\lvert\lambda\right\rvert\left\lvert x_{i_{0}}\right\rvert=\left\lvert\sum_{j=1}^{n}a_{i_{0},j}x_{j}\right\rvert\leqslant\sum_{j=1}^{n}a_{i_{0},j}\left\lvert x_{j}\right\rvert\leqslant\left(\sum_{j=1}^{n}a_{i_{0},j}\right)\left\lvert x_{i_{0}}\right\rvert
+		\end{equation}
+		donc 
+		\begin{equation}
+			\boxed{\left\lvert\lambda\right\rvert\leqslant1}
+		\end{equation}
+
+		\item Soit $J_{i}=\left\lbrace j\in\llbracket1,n\rrbracket\middle| a_{i,j}>0\right\rbrace$. On a 
+		\begin{equation}
+			\left\lvert\lambda\right\rvert\left\lvert x_{i_{0}}\right\rvert=\left\lvert\sum_{j\in J_{i_{0}}}^{n}a_{i_{0},j}x_{j}\right\rvert\leqslant\sum_{j\in J_{i_{0}}}^{n}a_{i_{0},j}\left\lvert x_{j}\right\rvert\leqslant\left(\sum_{j\in J_{i_{0}}}^{n}a_{i_{0},j}\right)\left\lvert x_{i_{0}}\right\rvert=\left\lvert x_{i_{0}}\right\rvert
+		\end{equation}
+
+		On a égalité partout donc pour tout $j\in J_{i_{0}}$, $\left\lvert x_{j}\right\rvert=\left\lvert x_{i_{0}}\right\rvert$ et $x_{j}=\left\lvert x_{i_{0}}\right\rvert\e^{\i \theta}$. En reportant, on a 
+		\begin{equation}
+			\lambda\left\lvert x_{i_{0}}\right\rvert=\sum_{j\in J_{i_{0}}}a_{i_{0},j}\left\lvert x_{i_{0}}\right\rvert
+		\end{equation}
+		donc 
+		\begin{equation}
+			\boxed{\lambda=1}
+		\end{equation}
+
+		\item Si $\left\lvert\lambda\right\rvert=1$ et $\lambda\neq1$, on a $i_{0}\notin J_{i_{0}}$ car sinon $\lambda=1$. Donc il existe $i_{1}\in J_{i_{0}}\setminus\lbrace i_{0}\rbrace$ tel que $x_{i_{1}}=\left\lvert x_{i_{0}}\right\rvert\e^{\i\theta}=\lambda x_{i_{0}}$. Ainsi, il existe $i_{2}\neq i_{1}$ tel que $x_{i_{2}}=\lambda x_{i_{1}}$. De proche en proche, il existe $i_{q}\neq i_{q-1}$ tel que $x_{i_{q}}=\lambda x_{i_{q-1}}$ (avec $q\geqslant1$) et $x_{i_{q}}=\lambda^{q}x_{i_{0}}$. Or \function{\varphi}{\N}{\llbracket1,n\rrbracket}{k}{i_{k}} n'est pas injective. Donc il existe $k>l$ tel que $i_{k}=i_{l}$ et $x_{i_{k}}=\lambda^{k-k}x_{i_{k}}$ et $k-l>1$ donc 
+		\begin{equation}
+			\boxed{
+				\lambda\in\U_{k-l}
+			}
+		\end{equation}
+
+		\item L'identité convient, les matrices de permutation aussi. En effet, si $\sigma\in\Sigma_{n}$, on a $P_{\sigma}^{n!}=I_{n}$ donc les valeurs propres sont racines de $X^{n!}-1$ donc $\Sp_{\C}(P_{\sigma})\subset\U_{n!}$.
+		
+		Réciproquement, soit $A$ stochastique telle que $\Sp_{\C}(A)\subset(\U)$. Soit $i\in\llbracket1,n\rrbracket$, supposons $\left\lvert J_{i_{0}}\right\rvert\geqslant2$. D'après la décomposition de Dunford, il existe $D$ diagonale et $N$ nilpotente qui commutent telles que $A=D+N$ et $\Sp_{\C}(D)=\Sp_{\C}(A)$. Si $N$ est nilpotente d'indice $r\geqslant2$, on a pour tout $k\in\N^{*}$ avec $k\geqslant r$, on a 
+		\begin{equation}
+			A^{k}=\sum_{j=1}^{k}\binom{k}{j}N^{j}D^{k-j}=\sum_{j=1}^{r}\binom{k}{j}N^{j}D^{k-j}
+		\end{equation}
+
+		Pour tout $j\in\llbracket1,r\rrbracket$, on a 
+		\begin{equation}
+			\binom{k}{j}=\frac{k(k-1)\dots(k-j+1)}{j!}\underset{k\to+\infty}{\sim}\frac{k^{j}}{j!}
+		\end{equation}
+		Comme $N^{r-1}\neq0$, on a 
+		\begin{equation}
+			A^{k}\underset{k\to+\infty}{sim}\frac{k^{r-1}}{(r-1)!}N^{r-1}D^{k-r+1}
+		\end{equation}
+		et les coefficients de $D^{k-r+1}$ sont bornés car $\Sp(D)\subset\U$.
+
+		Or, notons que si $A$ et $B$ sont stochastiques, $AB$ l'est aussi ($\bm{1}$ est toujours valeur propre). Par récurrence, $A^{k}$ l'est. Donc $A^{k}\in\M_{n}([0,1])$, et l'équivalent est impossible si $r\geqslant2$. Donc $r=1$ donc $N=0$ et $A=D$ est diagonalisable.
+
+		Les valeurs propres de $A$ sont des racines de l'unité, soit $m$ le $\ppcm$ des ordres de ces racines (dans $(\U,\times)$). On a alors 
+		\begin{equation}
+			A=P\diag(\lambda_{1},\dots,\lambda_{n})P^{-1}
+		\end{equation}
+		d'où 
+		\begin{equation}
+			A^{m}=P\diag(\lambda_{1}^{m},\dots,\lambda_{n}^{m})P^{-1}
+		\end{equation}
+
+		Notons $M=\max\limits_{j\in J_{i_{0}}}\left\lvert a_{i_{0},j}\right\rvert<1$ (car $\left\lvert J_{i_{0}}\right\rvert\geqslant2$ donc pour tout $j\in J_{i_{0}}$, $a_{i_{0},j}\neq1$). On note $a_{i_{0},i_{0}}^{(m)}$ le coefficient $(i_{0},i_{0})$ de $A^{m}$. On a alors 
+		\begin{equation}
+			a_{i_{0},i_{0}}^{(m)}=1=\sum_{j\in J_{i_{0}}}a_{i_{0},j}a_{j,i_{0}}^{(m-1)}\leqslant M\sum_{j\in J_{i_{0}}}a_{j,i_{0}}^{(m-1)}\leqslant M\sum_{j=1}^{n}a_{j,i_{0}}^{(m-1)}=M
+		\end{equation}
+		car $A^{m-1}$ est stochastique. Donc $M=1$ ce qui n'est pas possible (par définition de $M$). Ainsi, pour tout $i\in\llbracket1,n\rrbracket$, on a $\lvert J_{i}\rvert=1$ donc il existe un unique $j_{i}\in\llbracket1,n\rrbracket$ avec $a_{i,j_{i}}=1$ et pour tout $j\neq j_{i}$, $a_{i,j}=0$.
+
+		$i\mapsto j_{i}$ est injective, sinon $\rg(A)\leqslant n-1$ et $0\in\Sp(A)$.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	On peut avoir $\left\lvert \lambda\right\rvert<1$ pour la question 2, par exemple 
+	\begin{equation}
+		A=
+		\begin{pmatrix}
+			\frac{1}{n}&\dots&\frac{1}{n}\\
+			\vdots&&\vdots\\
+			\frac{1}{n}&\dots&\frac{1}{n}
+		\end{pmatrix}
+	\end{equation}
+	On a $A^{2}=A$ et $\rg(A)=1$, $\Sp(A)=\lbrace0,1\rbrace$.
+\end{remark}
+
+\begin{remark}
+	Par exemple, pour 4, on a 
+	\begin{equation}
+		A=
+		\begin{pmatrix}
+			0&1\\
+			1&0
+		\end{pmatrix}
+	\end{equation}
+	On a $\chi_{A}=X^{2}-1$ et $\Sp(A)=\lbrace-1,1\rbrace$.
+\end{remark}
+
+\begin{remark}
+	Si pour tout $(i,j)\in\llbracket1,n\rrbracket$, $a_{i,j}>0$ (i.e.~pour tout $i\in\llbracket1,n\rrbracket$, $J_{i}=\llbracket1,n\rrbracket$). D'après 3, on a $\Sp_{\C}(A)\cap\U=\lbrace1\rbrace$. De plus, si $X=\begin{pmatrix}
+		x_{1}&\dots&x_{n}
+	\end{pmatrix}^{\mathsf{T}}\in\M_{n,1}(\C)\setminus\lbrace0\rbrace$ vérifie $AX=X$, d'après ce qui précède, on a $x_{1}=\dots=x_{n}$ et le sous-espace propre associé à 1 est de dimension 1.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $(\lambda,\mu)\in\Sp_{\C}(A)\times\Sp_{\C}(B)$. On a $\mu\in\Sp_{\C}(B^{\mathsf{T}})$. Soit $(X,Y)\in\M_{n-1}(\C)\setminus\lbrace0\rbrace$ vecteurs propres associés respectivement à $\lambda$ et à $\mu$. On pose $M=XY^{\mathsf{T}}$. Alors
+		\begin{equation}
+			\Phi_{A,B}(M)=AXY^{\mathsf{T}}-XY^{\mathsf{T}}B=(\lambda-\mu)XY^{\mathsf{T}}=(\lambda-\mu)M
+		\end{equation}
+		donc 
+		\begin{equation}
+			\boxed{\lambda-\mu\in\Sp(\Phi_{A,B})}
+		\end{equation}
+
+		Réciproquement, soit $\alpha\in\Sp(\Phi_{A,B})$. Il existe $M\in\M_{n}(\C)\setminus\lbrace0\rbrace$ tel que l'on ait $AM-MB=\alpha M$ d'où $AM=M(\alpha I_{n}+B)$. Par récurrence, $A^{k}M=M(\alpha I_{n}+B)^{k}$ et par combinaison linéaire, pour tout $P\in\C[X]$ on a $P(A)M=MP(\alpha I_{n}+B)$. En particulier, on prend $P=\chi_{A}$. D'après le théorème de Cayley-Hamilton, on a 
+		\begin{equation}
+			0=M\chi_{A}(\alpha I_{n}+B)
+		\end{equation}
+		On a $M\neq0$ donc $\chi_{A}(\alpha I_{n}+B)$ n'est pas inversible. On écrit 
+		\begin{equation}
+			\chi_{A}(X)=\prod_{k=1}^{n}(X-\lambda_{k})
+		\end{equation}
+		d'où 
+		\begin{equation}
+			\chi_{A}(\alpha I_{n}+B)=\prod_{k=1}^{n}(B+(\alpha-\lambda_{k})I_{n})
+		\end{equation}
+		donc il existe $k_{0}\in\llbracket1,n\rrbracket$ tel que $B+(\alpha-\lambda_{k_{0}})I_{n}$ est non inversible. Donc $\lambda_{k_{0}}-\alpha\in\Sp(B)$ et donc $\alpha$ est une différence d'un élément de $\Sp(A)$ et de $\Sp(B)$.
+
+		\item On forme \function{f_A}{\M_n(\C)}{\M_n(\C)}{M}{AM} et \function{g_B}{\M_n(\C)}{\M_n(\C)}{M}{MB}
+		Toujours par récurrence et combinaison linéaires, pour tout $P\in\C[X]$,
+		\begin{equation}
+			P(f_{A})M=P(A)M
+		\end{equation}
+		Si $P(A)=0$, on a $P(f_{A})=0$. Si $P(f_{A})=0$, pour $M=I_{n}$, on a $P(A)=0$. De même pour $B$. Donc $\Pi_{A}=\Pi_{f_{A}}$ (polynômes minimaux) et $A$ est diagonalisable si et seulement si $f_{A}(M)$ est diagonalisable. $f_{A}$ et $g_{B}$ commutent car 
+		\begin{equation}
+			(f_{A}\circ g_{B})(M)=AMB=(g_{B}\circ f_{A})(M)
+		\end{equation}
+		Donc $f_{A}$ et $g_{B}$ sont codiagonalisables et donc $\Phi_{A,B}$ l'est.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Si $(X_{1},\dots,X_{n})$ (respectivement $(Y_{1},\dots,Y_{n})$) est une base de vecteurs propres de $A$ (respectivement de $B^{\mathsf{T}}$), alors $(X_{i}Y_{j}^{\mathsf{T}})_{1\leqslant i,j\leqslant n}$ est une base de vecteurs propres pour $\Phi_{A,B}$.
+\end{remark}
+
+\begin{remark}
+	C'est faux sur $\R$, par exemple 
+	\begin{equation}
+		A=B=
+		\begin{pmatrix}
+			0 & -1\\
+			1 &0	
+		\end{pmatrix}
+	\end{equation}
+	On a $\Sp_{\R}=\emptyset$ et $\Phi_{A,A}(I_{2})=0$ donc $0\in\Sp_{\Phi_{A,A}}$.
+\end{remark}
+
+\begin{remark}
+	Si $\Phi_{A,B}$ est diagonalisable, soit $(M_{i,j})_{1\leqslant i,j\leqslant n}$ une base de vecteurs propres de $\Phi_{A,B}$. Soit $\lambda\in\Sp_{\C}(B)$ et $X\in\M_{n,1}(\C)\setminus\lbrace0\rbrace$ tel que $BX=\lambda X$. On a 
+	\begin{equation}
+		AM_{i,j}=M_{i,j}(B+\lambda_{i,j}I_{n})
+	\end{equation}
+	avec $\Phi_{A,B}(M_{i,j})=\lambda_{i,j}M_{i,j}$. Donc 
+	\begin{equation}
+		AM_{i,j}X=(\lambda+\lambda_{i,j})M_{i,j}X
+	\end{equation}
+	Pour tout $X_{0}\in\M_{n,1}(\C)$, il existe $M\in\M_{n}(\C)$ tel que $X_{0}=MX$. $M\in\Vect(M_{i,j})_{1\leqslant i,j\leqslant n}$ donc 
+	\begin{equation}
+		\Vect(M_{i,j}X)_{1\leqslant i,j\leqslant n}=M_{n,1}(\C)
+	\end{equation}
+	On peut donc en extraire une base: c'est une base de vecteurs propres de $A$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Par récurrence, pour tout $k\in\N$, on a $A^{k}M=\theta^{k}MA^{k}$, or $F$ est un sous-espace vectoriel donc par combinaisons linéaires, pour tout $P\in\K[X]$, on a $P(A)M=MP(\theta A)$.
+		
+		\item Soit $X\in\ker(A-\lambda I_{n})$. On a $AMX=\theta MAX=\lambda\theta MX$. On a donc $MX\in\ker(A-\lambda\theta I_{n})$.
+		
+		Si pour tout $\lambda\in\Sp_{\C}(A)$, on a $\theta\lambda\notin\Sp_{\C}(A)$, alors si $\lambda\in\Sp_{\C}(A)$ et $X\in\ker(A-\lambda I_{n})$, alors $\ker(A-\lambda\theta I_{n})=\lbrace0\rbrace$. Donc $MX=0$. Or les vecteurs propres forment une famille génératrice donc $M=0$ et $F=\lbrace0\rbrace$.
+
+		S'il existe $\lambda_{0}\in\Sp_{\C}(A)$ tel que $\theta\lambda_{0}\in\Sp_{\C}(A)$. Soit $X_{1}$ un vecteur propre de $A$ associé à $\lambda_{0}$. On complète $(X_{1})$ en $\mathcal{B}=(X_{1},\dots,X_{n})$ base de $\C^{n}$ formé de vecteurs propres de $A$. On définit $MX_{1}=Y_{1}\in\ker(A-\lambda_{0}\theta I_{n})\setminus\lbrace0\rbrace$ et pour tout $i\in\llbracket2,n\rrbracket$, on a $MX_{i}=0$. Ainsi, pour tout $i\in\llbracket2,n\rrbracket$, on a 
+		\begin{equation}
+			AMX_{i}=0=\theta MAX_{i}=\theta\lambda_{i}MX_{i}
+		\end{equation}
+		et 
+		\begin{equation}
+			AMX_{1}=AY_{1}=\lambda_{0}\theta Y_{1}=\theta MAX_{1}=\theta\lambda_{0}X_{1}
+		\end{equation}
+		Donc $M\neq0$ et $M\in F$. Finalement, on a $F=\lbrace0\rbrace$ si et seulement si pour tout $\lambda\in\Sp_{\C}(A),\theta\lambda\notin\Sp_{\C}(A)$.
+
+		\item On écrit $\chi_{A}=\prod_{j=1}^{r}(X-\lambda_{j})^{m_{j}}$ avec $\lambda_{j}$ distincts et $m_{j}\geqslant1$. D'après le théorème de Cayley-Hamilton et le lemme des noyaux, on a 
+		\begin{equation}
+			\C^{n}=\bigotimes_{j=1}^{r}\ker(A-\lambda_{j}I_{n})^{m_{j}}
+		\end{equation}
+
+		Supposons $\theta\neq0$. Si $M\in F$ et si $x\in \ker(A-\lambda_{j}I_{n})^{m_{j}}$. On a 
+		\begin{equation}
+			\left(\left(\frac{X}{\theta}-\lambda_{j}\right)^{m_{j}}\right)(A)(Mx)=M\left(A-\lambda_{j}I_{n}\right)^{m_{j}}(x)=0
+		\end{equation}
+		Donc 
+		\begin{equation}
+			Mx\in\ker\left(\frac{1}{\theta}A-\lambda_{j}I_{n}\right)^{m_{j}}=\ker\left(A-\theta\lambda_{j}I_{n}\right)^{m_{j}}
+		\end{equation}
+		car $\theta\neq0$.
+
+		De plus, $\ker(A-\theta\lambda_{j} I_{n})^{m_{j}}\neq\lbrace0\rbrace0$ si et seulement si $\ker(A-\theta\lambda_{j}I_{n})\neq\lbrace0\rbrace$ car \begin{equation}
+			\det\left[(A-\theta\lambda_{j}I_{n})^{m_{j}}\right]=\det\left[(A-\theta\lambda_{j}I_{n})\right]^{m_{j}}
+		\end{equation}
+
+		Si pour tout $\lambda\in\Sp_{\C}(A)$, $\lambda\theta\notin\Sp_{\C}(A)$, soit $x\in\ker(A-\lambda_{j}I_{n})^{m_{j}}$. On a 
+		\begin{equation}
+			Mx\in\ker(A-\theta\lambda_{j}I_{n})^{m_{j}}=\lbrace0\rbrace
+		\end{equation}
+		donc $M=0$ car $\C^{n}=\bigotimes_{j=1}^{r}\ker(A-\lambda_{j}I_{n})^{m_{j}}$.
+
+		S'il existe $\lambda_{0}\in\Sp_{\C}(A)$ tel que $\lambda_{0}\theta\in\Sp_{\C}(A)$, soit $x_{1}\in\ker(A-\lambda_{0}I_{n})\neq\lbrace0\rbrace$. On pose 
+		\begin{equation}
+			Mx_{1}=y_{1}\in\ker(A-\lambda_{0}\theta I_{n})\setminus\lbrace0\rbrace
+		\end{equation}
+		On complète $(x_{1})$ en $\mathcal{B}=(x_{1},\dots,x_{n})$ base de $\C^{n}$ formée de vecteurs appartenant à 
+		\begin{equation}
+			\bigcup_{j=1}^{r}\ker(A-\lambda_{j}I_{n})^{m_j}	
+		\end{equation}
+		On a pour tout $i\in\llbracket2,n\rrbracket$, $Mx_{i}=0$. On a $M\neq0$ et 
+		\begin{equation}
+			AMx_{1}=Ay_{1}=\theta\lambda_{0}y_{1}=\theta\lambda_{0}Mx_{1}
+		\end{equation}
+		Pour tout $i\in\llbracket2,n\rrbracket$, on a $AMx_{i}=0$ si $x_{i}\in\ker(A-\lambda_{j_{i}}I_{n})^{m_{j_{i}}}$ et si $\lambda_{j_{i}}\neq\lambda_{0}$. On a $Ax_{i}\in\ker(A-\lambda_{j_{i}}I_{n})^{m_{j_{i}}}$ donc 
+		\begin{equation}
+			Ax_{i}\in\Vect(x_{2},\dots,x_{n})
+		\end{equation}
+		et $MAx_{i}=0$ donc $AMx_{i}=\theta MAx_{i}$.
+
+		Si $F\neq\lbrace0\rbrace$, il existe $M\neq0$ tel que $AM=\theta MA$. Pour tout $P\in\C[X]$, on a $P(A)M=MP(\theta A)$. En particulier, pour $P=\chi_{A}$, on a
+		\begin{equation}
+			M\chi_{A}(\theta A)=0
+		\end{equation}
+		$M\neq0$ et donc $\chi_{A}(\theta A)$ n'est pas inversible. Si $\chi_{A}=\prod_{k=1}^{n}(X-\lambda_{k})$, il existe $k\in\llbracket1,n\rrbracket$, $(\theta A-\lambda_{k}I_{n})$ est non inversible, d'où 
+		\begin{equation}
+			\boxed{\lambda_{k}\in\Sp_{\C}(A)\cap\Sp_{\C}(\theta A)}
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	On a 
+	\begin{align}
+		\chi_{A}(\lambda)
+		&=
+		\begin{vmatrix}
+			\lambda-1	&-1			&0			&-1\\
+			-1			&\lambda-1	&-1			&0\\
+			-1			&0			&\lambda-1	&-1\\
+			0			&-1			&-1			&\lambda-1
+		\end{vmatrix}\\
+		&=(\lambda-3)
+		\begin{vmatrix}
+			1	&1			&1			&1\\
+			-1			&\lambda-1	&-1			&0\\
+			-1			&0			&\lambda-1	&-1\\
+			0			&-1			&-1			&\lambda-1
+		\end{vmatrix}\\
+		&=(\lambda-3)
+		\begin{vmatrix}
+			1	&0			&0			&0\\
+			-1			&\lambda-1	&-1			&0\\
+			-1			&0			&\lambda-1	&-1\\
+			0			&-1			&-1			&\lambda-1
+		\end{vmatrix}\\
+		&=(\lambda-3)
+		\begin{vmatrix}
+			\lambda &0 &1\\
+			1 &\lambda &0\\
+			-1 &-1 &\lambda-1
+		\end{vmatrix}\\
+		&=(\lambda-3)
+		\begin{vmatrix}
+			\lambda-1 &0 &1\\
+			1-\lambda &\lambda &0\\
+			1-\lambda &-1 &\lambda-1
+		\end{vmatrix}\\
+		&=(\lambda-3)(\lambda-1)
+		\begin{vmatrix}
+			1 &0 &1\\
+			-1 &\lambda &0\\
+			-1 &-1 &\lambda-1
+		\end{vmatrix}\\
+		&=(\lambda-3)(\lambda-1)
+		\begin{vmatrix}
+			1 &0 &1\\
+			0 &\lambda &1\\
+			0 &-1 &\lambda
+		\end{vmatrix}\\
+		&=(\lambda-3)(\lambda-1)(\lambda^{2}+1)
+	\end{align}
+	où l'on a fait successivement les opérations suivantes: $L_{1}\leftarrow L_{1}+L_{2}+L_{3}+L_{4}$, $C_{i}\leftarrow C_{i}-C_{1}$ pour $i\in\lbrace2,3,4\rbrace$, développement selon la première ligne, $C_{1}\leftarrow C_{1}-C_{2}-C_{3}$, $L_{i}\leftarrow L_{i}+L_{1}$ pour $i\in\lbrace2,3\rbrace$, développement selon la première colonne.
+
+	$\chi_{A}$ est scindé à racines simples sur $\C$ donc $A$ est diagonalisable. On trouve ensuite un vecteur propre dans chaque sous-espace propre (qui sont de dimension un).
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $\lambda\in\Sp_{\R}(A)$ si et seulement s'il existe $X\in\M_{n,1}(\R)\setminus\lbrace0\rbrace$ telle que $AX=\lambda X$ si et seulement si 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{lll}
+					\sum_{i\neq 1}a_{i}x_{i}&=&\lambda x_{1}\\
+					\vdots\\
+					\sum_{i\neq j}a_{i}x_{i}&=&\lambda x_{1}\\
+					\vdots\\
+					\sum_{i\neq n}a_{i}x_{i}&=&\lambda x_{1}\\
+				\end{array}
+			\right.
+		\end{equation}
+
+		Soit $S=\sum_{i=1}^{n}a_{i}x_{i}$. Ce système équivaut à 
+		\begin{equation}
+			S=(\lambda+a_{1})x_{1}=\dots=(\lambda+a_{n})x_{n}
+		\end{equation}
+
+		Si $S=0$, pour tout $i\in\llbracket1,n\rrbracket$, on a $\lambda=-a_{i}$ ou $x_{i}=0$ (et $X\neq0$). Les $(a_{i})_{1\leqslant i\leqslant n}$, il existe un unique $i_{0}\in\llbracket1,n\rrbracket$ tel que $\lambda=-a_{i_{0}}$ et pour tout $i\neq i_{0}$, on a $x_{i}=0$. En reportant, on a $S=0=\lambda x_{i_{0}}$ donc $\lambda=0$ ce qui est impossible car $0=\lambda=-a_{i_{0}}>0$.
+
+		Donc $S\neq0$ et pour tout $i\in\llbracket1,n\rrbracket$, $\lambda+a_{i}\neq0$ et pour tout $i\in\llbracket1,n\rrbracket$, $x_{i}=\frac{S}{\lambda+a_{i}}$. On a alors 
+		\begin{equation}
+			S=\sum_{i=1}^{n}a_{i}x_{i}=\sum_{i=1}^{n}\frac{a_{i}S}{\lambda+a_{i}}
+		\end{equation}
+		donc 
+		\begin{equation}
+			\boxed{
+				\sum_{i=1}^{n}\frac{a_{i}}{\lambda+a_{i}}=1
+			}
+		\end{equation}
+
+		Réciproquement, on prend $x_{i}=\frac{1}{\lambda+a_{i}}$ et on a bien $AX=\lambda X$.
+
+		\item On définit \function{f}{\R\setminus\lbrace -a_{n},\dots,-a_{1}\rbrace}{\R}{x}{\sum_{i=1}^{n}\frac{a_{i}}{x+a_{i}}}
+		\item Posons $-a_{n+1}=-\infty$ et $-a_{0}=+\infty$. Sur $]-a_{k+1},-a_{k}[$, on a 
+		\begin{equation}
+			f'(x)=\sum_{i=1}^{n}\frac{-a_{i}}{(x+a_{i})^{2}}	
+		\end{equation}
+
+		Les $(a_{i})_{1\leqslant i\leqslant n}$ étant positifs, on a $\lim\limits_{x\to-a_{k+1}^{+}}f(x)=+\infty$ et $\lim\limits_{x\to-a_{k}^{-}}f(x)=-\infty$ (si $k\neq n$) (et $\lim\limits_{x\to-\infty}f(x)=\lim\limits_{x\to+\infty}f(x)=0$).
+
+		D'après le théorème des valeurs intermédiaires, pour tout $k\in\llbracket0,n-1\rrbracket$, il existe un unique $\lambda_{k}\in]-a_{k+1},-a_{k}[$ tel que $f(\lambda_{k})=1$. Donc $A$ admet exactement $n$ valeurs propres réelles distinctes. Donc $A$ est diagonalisable sur $\R$.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Soit 
+	\begin{equation}
+		F(X)=-\sum_{k=1}^{n}\frac{a_{k}}{X+a_{k}}+1=\frac{P(X)}{(X+a_{1}\dots(X+a_{n}))}
+	\end{equation}
+	avec $P=(X+a_{1})\dots(X+a_{n})-\sum_{k=1}^{n}a_{k}P_{k}$ où $P_{k}=\prod_{\substack{i=1\\i\neq k}}(X+a_{i})$ de degré $n-1$. On a $\deg(P)=n$ et son coefficient dominant est 1. De plus, pour tout $\lambda\in\R$, on a $P(\lambda)=0$ si et seulement si $\sum_{k=1}^{n}\frac{a_{k}}{\lambda+a_{k}}=1$ si et seulement si $\lambda\in\Sp(A)$ donc $P=\chi_{A}$.
+\end{remark}
+
+\begin{proof}
+	On a 
+	\begin{equation}
+		\begin{pmatrix}
+			1 &0 &\dots&\dots&\dots&\dots&0\\
+			0&\frac{1}{2}&\ddots&&&&\vdots\\
+			\vdots&\ddots & \ddots &\ddots &&\frac{\lambda}{j}&\vdots\\
+			\vdots&& \ddots & \ddots &\ddots&&\vdots\\
+			\vdots&&&\ddots&\ddots&\ddots&\vdots\\
+			\vdots&&&&\ddots&\ddots&0\\
+			0&\dots&\dots&\dots&\dots&0&\frac{1}{n}\\
+		\end{pmatrix}
+		\times\diag(1,2,\dots,n)
+		=
+		\begin{pmatrix}
+			1 &0 &\dots&\dots&\dots&\dots&0\\
+			0&1&\ddots&&&&\vdots\\
+			\vdots&\ddots & \ddots &\ddots &&\lambda&\vdots\\
+			\vdots&& \ddots & \ddots &\ddots&&\vdots\\
+			\vdots&&&\ddots&\ddots&\ddots&\vdots\\
+			\vdots&&&&\ddots&\ddots&0\\
+			0&\dots&\dots&\dots&\dots&0&1\\
+		\end{pmatrix}
+	\end{equation}
+	où le coefficient est à la $i$-ième ligne et la $j$-ième colonne. La matrice à gauche est diagonalisable car son polynôme caractéristique est scindé à racines simples. Donc les matrices de transvections sont dans $G$. De plus, les matrices de dilatations sont aussi dans $G$. Donc $G=GL_{n}(\R)$.
+\end{proof}
+
+\begin{proof}
+	Supposons $u$ diagonalisable, il existe un base $\mathcal{B}$ telle que 
+	\begin{equation}
+		\mat_{\mathcal{B}}(u)=A=\diag(0,\dots,0,\lambda_{1},\dots,\lambda_{r})
+	\end{equation}
+	avec $\lambda_{i}\neq0$. Donc $\mat_{\mathcal{B}}(u^{p})=A^{p})\diag(0,\dots,0,\lambda_{1}^{p},\dots,\lambda_{r}^{p})$ donc $u^{p}$ est diagonalisable. On a toujours $\ker(u)\subset\ker(u^{2})$ et la forme diagonale implique $\ker(u)=\ker(u^{2})$.
+
+	Supposons $u^{p}$ diagonalisable, on écrit $\Pi_{u^{p}}=(X-\lambda_{0})\dots(X-\lambda_{r})=R$ (avec $\lambda_{k}\neq0$ pour tout $k\geqslant k$) qui est scindé à racines simples. On a 
+	\begin{equation}
+		P(u^{p})=0=(u^{p}-\lambda_{0}id_{E})\circ\dots\circ(u^{p}-\lambda_{r}id_{E})=Q(u)
+	\end{equation}
+	avec $Q(X)=P(X^{p})$. 
+
+	Si $\lambda_{0}\neq0$, chaque $\lambda_{k}$ admet $p$ racines $p$-ièmes distinctes et si $\mu_{k}$ est l'une de ses racines, on a 
+	\begin{equation}
+		X^{p}-\lambda_{k}=\prod_{j=1}^{p}\left(X-\mu_{k}\e^{\i\frac{2j\pi}{p}}\right)
+	\end{equation}
+	De plus, les racines $p$-ièmes des $(\lambda_{k})_{kk\in\llbracket1,r\rrbracket}$ sont deux à deux distinctes. Donc $Q$ est scindé à racines simples, et donc $u$ est diagonalisable.
+
+	Si $\lambda_{0}=0$, on a $Q=X^{p}A(X)$ avec $A$ scindé à racines simples non nulles et $X^{p}\wedge A=1$. D'après le lemme des noyaux, on a 
+	\begin{equation}
+		\ker(Q(u))=\C^{n}=\ker(u^{p})\bigotimes\ker(A(u))=\ker(u^{p})\bigotimes_{i\in I}\ker(u-\mu_{i}id)
+	\end{equation}
+	car $A$ est scindé à racines simples.
+	Montrons que $\ker(u)=\ker(u^{p})$. L'inclusion directe est évidente. Réciproquement, montrons que pour tout $k\in\N$, on a $\ker(u^{k})\subset\ker(u^{k+1})$ et si $\ker(u^{k})=\ker(u^{k+1})$, alors $\ker(u^{k+1})=\ker(u^{k+2})$. L'inclusion est évidente, et si on a l'égalité, si $x\in\ker(u^{k+2})$, on a $u(x)\in\ker(u^{k+1})=\ker(u^{k})$ donc $x\in\ker(u^{k+1})$.
+	Comme $\ker(u)=\ker(u^{2})$, d'après ce qui précède, par récurrence, on a $\ker(u)=\ker(u^{p})$, donc $u$ est diagonalisable.
+\end{proof}
+
+\begin{proof}
+	Soit $(e_{1},\dots,e_{n})$ la base canonique de $\C^{n}$, $u$ canoniquement associée à 
+	\begin{equation}
+		J_{n}=
+		\begin{pmatrix}
+			0 & 1 & 0&\dots&0\\
+			\vdots & \ddots & \ddots &\ddots& \vdots\\
+			\vdots&&\ddots&\ddots&0\\
+			0 &&&\ddots&1\\
+			1 & 0&\dots &\dots&0
+		\end{pmatrix}
+	\end{equation}. On a 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				u(e_{1})&=&e_{n}\\
+				u(e_{2})&=&e_{1}\\
+				\vdots\\
+				u(e_{n})&=&e_{n-1}
+			\end{array}
+		\right.
+	\end{equation}
+	d'où 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				u^{k}(e_{1})&=&e_{n+1-k}\\
+				\vdots
+				u^{k}(e_{k-1})&=&e_{n-1}\\
+				\vdots\\
+				u^{k}(e_{n})&=&e_{n-k}
+			\end{array}
+		\right.
+	\end{equation}
+	et donc 
+	\begin{equation}
+		J_{n}^{k}=
+		\begin{pmatrix}
+			0 & \dots & \dots&0 &1 &0&\dots &0\\
+			\vdots&\ddots&&&\ddots&\ddots&\ddots&\vdots\\
+			\vdots&&\ddots&&&\ddots&\ddots&0\\
+			0&&&\ddots&&&\ddots&1\\
+			1&\ddots&&&\ddots&&&0\\
+			0&\ddots&\ddots&&&\ddots&&\vdots\\
+			\vdots&\ddots&\ddots&\ddots&&&\ddots&\vdots\\
+			0&\dots&0&1&0&\dots&\dots&0
+		\end{pmatrix}
+	\end{equation}
+	où les $1$ commencent à la $k+1$-ième colonne sur la première ligne et à la $n-k+1$-ième ligne sur la première colonne. Notamment, le 1 sur la dernière colonne est à la $n-k$-ième ligne.
+
+	On a $A(a_{0},\dots,a_{n})=\sum_{k=0}^{n-1}a_{k}J_{n}^{k}$. En développant par rapport à la première ligne, on a 
+	\begin{equation}
+		\chi_{J_{n}}(X)=X
+		\begin{vmatrix}
+			X&-1&0&\dots&\dots&0\\
+			0&\ddots&\ddots&\ddots&&\vdots\\
+			\vdots&\ddots&\ddots&\ddots&\ddots&\vdots\\
+			\vdots&&\ddots&\ddots&\ddots&0\\
+			\vdots&&&\ddots&\ddots&-1\\
+			0&\dots&\dots&\dots&0&X
+		\end{vmatrix}+
+		\begin{vmatrix}
+			0&-1&0&\dots&\dots&0\\
+			0&X&\ddots&\ddots&&\vdots\\
+			\vdots&\ddots&\ddots&\ddots&\ddots&\vdots\\
+			\vdots&&\ddots&\ddots&\ddots&0\\
+			0&&&\ddots&\ddots&-1\\
+			-1 &0&\dots&\dots&0&X
+		\end{vmatrix}
+	\end{equation}
+	Le premier déterminant vaut $X^{n-1}$ et le deuxième vaut $-(-1)^{n}\times(-1)^{n-2}=-1$ donc $\chi_{J_{n}}(X)=X^{n}-1$.
+	Ainsi, $\chi_{J_{n}}$ est scindé à racines simples sur $\C$ donc $J_{n}$ est diagonalisable avec des sous-espaces propres de dimension 1. Soit $\omega=\e^{\frac{2\i\pi}{n}}$, on a $\Sp(J_{n})=\left\lbrace\omega^{k},0\leqslant k\leqslant n-1\right\rbrace$. On a $J_{n}X=\omega^{k}X$ si et seulement si 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				x_{2}&=&\omega^{k}x_{1}\\
+				\vdots\\
+				x_{n}&=&=\omega^{k}x_{n-1}\\
+				x_{1}&=&\omega^{k}x_{n}
+			\end{array}
+		\right.
+	\end{equation}
+	si et seulement si 
+	\begin{equation}
+		X=x_{1}\begin{pmatrix}
+			1\\
+			\omega^{k}\\
+			\omega^{2k}\\
+			\vdots\\
+			(\omega^{k})^{n-1}
+		\end{pmatrix}=x_{1}X_{k}
+	\end{equation}
+	avec $X_{k}$ vecteur propre de $J_{n}$ associé à $\omega^{k}$. Posons 
+	\begin{equation}
+		P=
+		\begin{pmatrix}
+			1&1&\dots&1\\
+			\vdots&\omega&&\omega^{n-1}\\
+			\vdots&\vdots&&\vdots\\
+			1&\omega^{n-1}&\dots&(\omega^{n-1})^{n-1}
+		\end{pmatrix}
+	\end{equation}
+	et $P^{-1}J_{n}P=\diag(1,\omega,\dots,\omega^{n-1})$. On a donc $P^{-1}A(a_{0},\dots,a_{n})P=\diag(Q(1),Q(\omega),\dots,Q(\omega^{n-1}))$ où $Q=\sum_{k=0}^{n-1}a_{k}X^{k}$.
+	Donc $A$ est diagonalisable de valeurs propres $Q(1),\dots,Q(\omega^{n-1})$ et donc
+	\begin{equation}
+		\boxed{\det(A)=\prod_{k=0}^{n-1}Q(\omega^{k})}
+	\end{equation}
+\end{proof}
+
+\begin{remark}
+	On a 
+	\begin{equation}
+		\begin{vmatrix}
+			a&b&c\\
+			c&a&b\\
+			b&c&a
+		\end{vmatrix}=(a+b+c)(a+\j b+\j^{2}c)(a+\j^{2}b+\j c)=(a+b+c)(a^{2}+b^{2}+c^{2}-ab-bc-ac)
+	\end{equation}
+
+	Si $a,b,c\in\R_{+}$ vérifient $a+b+c=1$, on a 
+	\begin{equation}
+		\left\lvert a+\j b+\j^{2}c\right\rvert=\left\lvert a+\j^{2}b+\j c\right\rvert\leqslant a+b+c=1
+	\end{equation}
+	si et seulement si $a,\j b,\j^{2}c$ ont même argument si et seulement si $\lbrace a,b,c\rbrace=\lbrace1,0,0\rbrace$.
+\end{remark}
+
+\begin{proof}
+	On sait que que $f^{n}=0$ d'après le théorème de Cayley-Hamilton et que pour tout $k\in\N$, $\ker(f^{k})\subset\ker(f^{k+1})$ et si $\ker(f^{k})=\ker(f^{k+1})$, alors $\ker(f^{k})=\ker(f^{m})$ pour tout $m\geqslant k$.
+
+	Soit $k\in\llbracket0,n-1\rrbracket$ et \function{u}{\ker(f^{+1})}{\ker(f^{k})}{x}{u(x)} est bien définie car si $x\in\ker(f^{k+1}),f(x)\in\ker(f^{k})$. Comme $\ker(f)\subset\ker(f^{k+1})$, $\ker(u)=\ker(f)$ et $\dim(\ker(u))=1$. D'après le théorème du rang, on a $\dim(\ker(f^{k+1}))=\rg(u)+1\leqslant\dim(\ker(f^{k}))+1$. Par récurrence, on a pour tout $k\in\N$, $\dim(\ker(f^{k}))\leqslant k$ (car on ne peut croître au lus de 1 à chaque itération).
+
+	Si $f^{n-1}=0$, on a $\dim(\ker(f^{n-1}))=n\leqslant n-1$ ce qui est absurde. Donc 
+	\begin{equation}
+		\boxed{f^{n-1}\neq0}
+	\end{equation}
+
+	Soit $x\notin\ker(f^{n-1})$. Soit $(\alpha_{0},\dots,\alpha_{n-1})\in\K^{n}$. Si $\alpha_{0}x+\dots+\alpha_{n-1}f^{n-1}(x)=0$, en appliquant $f^{n-1}$, on a $\alpha_{0}f^{n-1}(x)=0$ donc $\alpha_{0}=0$. Puis on applique $f^{n-2}$, etc. De proche en proche, $\alpha_{0}=\alpha_{1}=\dots=\alpha_{n-1}=0$. Ainsi, $\mathcal{B}=(x,f(x),\dots,f^{n-1}(x))$ est libre en dimension $n$, c'est donc une base et on a 
+	\begin{equation}
+		\mat_{\mathcal{B}}(f)=
+		\begin{pmatrix}
+			0&\dots&\dots&\dots&0\\
+			1&\ddots&&&\vdots\\
+			0&\ddots&\ddots&&\vdots\\
+			\vdots&\ddots&\ddots&\ddots&\vdots\\
+			0&\dots&0&1&0
+		\end{pmatrix}
+	\end{equation}
+	qui est une matrice nilpotente d'indice $n$. Matriciellement, on a $\ker(f^{k})=\Vect(e_{n-k+1},\dots,e_{n})$.
+\end{proof}
+
+\begin{proof}
+	Supposons qu'il existe $x\in V$, $(x,u(x),\dots,u^{n-1}(x))$ soit une base de $V$. Notons $u^{n}(x)=a_{0}x+\dots+a_{n-1}u^{n-1}(x)$. Soit $y\in V$ tel que $u(y)=\lambda y$. Pour $y=\sum_{i=0}^{n-1}y_{i}u^{i}(x)$. On a donc 
+	\begin{equation}
+		u(y)=\sum_{i=0}^{n-1}y_{i}u^{i+1}(x)=\sum_{i=0}^{n-1}\lambda y_{i}u^{i}(x)=\sum_{i=1}^{n-1}y_{i-1}u^{i}(x)+y_{n-1}\sum_{i=0}^{n-1}a_{i}u^{i}(x)
+	\end{equation}
+	Donc $u(y)=\sum_{i=1}^{n-1}u^{i}(x)(y_{i-1}+y_{n-1}a_{i})+y_{n-1}a_{0}x$ donc 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				\lambda y_{0} &= &y_{n-1}a_{0}\\
+				\lambda y_{1} &= &y_{0}+a_{1}y_{n-1}\\
+				\vdots\\
+				\lambda y_{n-2} &= &y_{n-3}+a_{n-2}y_{n-1}\\
+				\lambda y_{n-1} &= &y_{n-2}+a_{n-1}y_{n-1}
+			\end{array}
+		\right.
+	\end{equation}
+	donc par récurrence 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				\lambda y_{n-2} &= &(\lambda -a_{n-1})y_{n-1}\\
+				\lambda y_{n-3} &= &(\lambda(\lambda-a_{n-1})-a_{n-2})y_{n-1}\\
+				\vdots\\
+				\lambda y_{0} &= &(\lambda^{n-1}-a_{n-1}\lambda^{n-2}-\dots-a_{1})y_{n-1}
+			\end{array}
+		\right.
+	\end{equation}
+	Donc les sous-espaces propres sont de dimension 1.
+
+	Supposons que les sous-espaces propres de $u$ sont de dimension 1. On écrit $\chi_{u}=\prod_{i=1}^{r}(X-\lambda_{i})^{n_{i}}$. D'après le théorème de Cayley-Hamilton et le lemme des noyaux, on a 
+	\begin{equation}
+		V=\bigotimes_{i=1}^{r}\underbrace{\ker(u-\lambda_{i}id_{V})^{n_{i}}}_{F_{i}}
+	\end{equation}
+	et les sous-espaces caractéristiques $F_{i}$ sont stables par $u$. Soit $v_{i}=u_{\mid F_{i}}-\lambda_{i}id_{F_{i}}$. On a $\chi_{u}=\prod_{i=1}^{r}\chi_{u_{\mid F_{i}}}$ (matrice diagonale par blocs dans un base adaptée). $(X-\lambda_{i})^{n}$ annule $u_{\mid F_{i}}$ et $\Sp_{F_{i}}(u_{\mid F_{i}})=\lbrace\lambda_{i}\rbrace$. Alors $\chi_{u_{\mid F_{i}}}=(X-\lambda_{i})^{\dim(F_{i})}$. En reportant, on a $\dim(F_{i})=n_{i}$. De plus, $V_{i}^{n_i}=0$ donc $v_{i}$ est nilpotent. On a donc $\dim(\ker(v_{i}))=\dim(\ker(u-\lambda_{i}id_{E}))=1$. Donc il existe $x_{i}\in F_{i}$ tel que $(x_{i},v_{i}(x_{i}),\dots,v_{i}^{n_{i}-1}(x_{i}))$ soit une base de $F_{i}$.
+
+	On forme $x=\sum_{i=1}^{r}x_{i}$. Soit $(\alpha_{0},\dots,\alpha_{r-1})$ tel que $\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x)=0=\sum_{i=1}^{r}\left(\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x_{i})\right)$. Les $F_{i}$ sont en somme directe donc 
+	\begin{equation}
+		\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x_{i})=0
+	\end{equation}
+
+	Soit $P(X)=\sum_{j=0}^{n-1}\alpha_{j}X^{j}$. $I_{x_{i}}=\left\lbrace A\in\C[X]\middle| A(u)(x_{i})=0\right\rbrace$ est un idéal de $\C[X]$ donc est principal et il existe $\Pi_{i}\in I_{x_{i}}$ minimal et 
+	\begin{equation}
+		\Pi_{i}\mid P
+	\end{equation}
+	On a $(X-\lambda_{i})^{n_{i}}(u)(x_{i})=0$ et $(x_{i},u(x_{i}),\dots,u^{n_{i}-1}(x))$ est libre, donc si $P\in I_{x_{i}}$, $\deg(P)\geqslant n_{i}$ donc $\deg(\Pi_{i})=n_{i}$ et $\Pi_{i}=(X-\lambda_{i})^{n_{i}}$. Ainsi, pour tout $i\in\llbracket1,r\rrbracket$, $\Pi_{i}\mid P$ et donc 
+	\begin{equation}
+		\prod_{i=1}^{r}(X-\lambda_{i})^{n_{i}}\mid P
+	\end{equation}
+	Mais $P$ est de degré $\leqslant n-1$, nécessairement $P=0$ et $(x,u(x),\dots,u^{n-1}(x))$ est libre.
+\end{proof}
+
+\begin{remark}
+	Autre méthode pour le sens direct: on a 
+	\begin{equation}
+		\mat_{(x,u(x),\dots,u^{n-1}(x))}(u)=
+		\begin{pmatrix}
+			0&\dots&\dots&0&a_{0}\\
+			1&\ddots&&\vdots&\vdots\\
+			0&\ddots&\ddots&\vdots&\vdots\\
+			\vdots&\ddots&\ddots&0&\vdots\\
+			0&\dots&0&1&a_{n-1}
+		\end{pmatrix}=A
+	\end{equation}
+
+	Si $\lambda\in\Sp(u)$, on a 
+	\begin{equation}
+		A-\lambda I_{n}=
+		\mat_{(x,u(x),\dots,u^{n-1}(x))}(u)=
+		\begin{pmatrix}
+			-\lambda&\dots&\dots&0&a_{0}\\
+			1&\ddots&&\vdots&\vdots\\
+			0&\ddots&\ddots&\vdots&\vdots\\
+			\vdots&\ddots&\ddots&-\lambda&\vdots\\
+			0&\dots&0&1&a_{n-1}-\lambda
+		\end{pmatrix}
+	\end{equation}
+	qui est non inversible, mais donc les $(n-1)$ première colonnes sont libres, donc est de rang $n-1$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On utilise le fait que pour tout $k\in\N$ tel que $\im(f^{k+1})\subset\im(f^{k})$. S'il existe $k\in\N$, $\im(f^{k+1})=\im(f^{k})$ alors pour tout $l\geqslant k$, $\im(f^{k})=\im(f^{l})$. 
+
+		En effet, si $x=f^{k+1}(x')\in\im(f^{k+1})$,, on a $x=f^{k}(f(x))\in\im(f^{k})$. Si on a égalité des espaces, soit $x=f^{k+1}(x')=f(f^{k}(x'))\in\im(f^{k+1})$. Alors $f^{k}(x')\in\im(f^{k})=\im(f^{k+1})$ donc il existe $x''$ tel que $f^{k}(x')=f^{k+1}(x'')$, mais alors $x=f^{k+2}(x'')\in\im(f^{k+2})$. On a donc le résultat en itérant.
+
+		Ainsi, pour tout $n\geqslant d$, on a $\rg(f^{n})=\rg(f^{d})$ donc $(\rg(f^{n}))_{n\in\N}$ est stationnaire au moins à partir de $d$ et $r(f)=\rg(f^{d})$.
+
+		\item Comme $f$ et $g$ commutent, on a 
+		\begin{equation}
+			(f+g)^{2d}=\sum_{k=0}^{2d}\binom{2d}{k}f^{k}g^{2d-k}
+		\end{equation}
+		Pour tot $k\in\llbracket0,2d\rrbracket$, on a $k\geqslant d$ ou $2d-k\geqslant d$ donc 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{l}
+					\im(f^{k}g^{2d-k})\subset\im(f^{d})\\
+					\text{ou}\\
+					\im(f^{k}g^{2d-k})\subset\im(g^{d})
+				\end{array}
+			\right.
+		\end{equation}
+		et donc $\im(f^{k}g^{2d-k})\subset\im(f^{d})+\im(g^{d})$. Finalement, $\im(f+g)^{2d}\subset\im(f^{d})+\im(g^{d})$. On a donc 
+		\begin{align}
+			r(f+g)
+			&=\dim(\im(f+g)^{2d})\\
+			&\leqslant \dim(\im(f^{d})+\im(g^{d}))\\
+			&\leqslant \dim(\im(f^{d}))+\im(g^{d})\\
+			&\leqslant r(f)+r(g)
+		\end{align}
+
+		Pour un contre-exemple, on utilise $A=\begin{pmatrix}
+			0&0\\1&0
+		\end{pmatrix}$ et $B=A^{\mathsf{T}}$. On a $A^{2}=B^{2}$ donc $r(A^{2})=r(B^{2})=0$ et $A+B$ inversible donc $r(A+B)=2>r(A)+r(B)$.
+
+		\item On a $\chi_{f}=X^{m_{0}}Q$ avec $\deg(Q)=d-m_{0}$ et $Q(0)=0$. D'après le lemme des noyaux, on a 
+		\begin{equation}
+			V=\ker(f^{m_{0}})\bigotimes\ker(Q(f))
+		\end{equation}
+		Dans une base adaptée $\mathcal{B}$, on a $\mat_{\mathcal{B}}(f)=\begin{pmatrix}
+			A&0\\0&B
+		\end{pmatrix}$ avec $A^{m_{0}}=0$ et $B$ inversible. Alors pour tout $k\geqslant m_{0}$, $\mat_{\mathcal{B}}(f^{k})=\begin{pmatrix}
+			0&0\\0&B^{k}
+		\end{pmatrix}$ et $\rg(f^{k})=\rg(B^{k})=d-m_{0}=r(f)$.
+	\end{enumerate}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{proof}
 	Si on a (i), soit $x$ un vecteur propre associé à $\rho(u)=\rho e^{\mathrm{i}\theta}$. On a $\Vert u(x)\Vert=\Vert\rho(u) x\Vert=\rho(u)\Vert x\Vert$ et comme $x\neq0$, on a $\rho(u)\leqslant\vertiii{\rho(u)}<1$ d'où (ii).
 
 	Si (ii), on utilise la décomposition de Dunford $u=n+d$ avec $n$ nilpotent, $d$ diagonalisable et $dn=nd$. Soit $m=\dim(E)$. Pour tout $p\geqslant m$, on a 
