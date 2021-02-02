@@ -162,9 +162,9 @@
 			\dots
 			& a_{n}
 			\end{matrix}
-			& 0
+			& 1
 		\end{array}
-		\right)
+		\right)\in\M_{n+1}(\R)
 	$$
 	\begin{enumerate}
 		\item $A$ est-elle diagonalisable ?
@@ -294,31 +294,6 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit
-	$$
-	A=
-	\left(
-		\begin{array}{@{}c|c@{}}
-		I_{n} &
-		\begin{matrix}
-			a_{1}\\
-			\vdots\\
-			a_{n}
-			\end{matrix}
-			\\
-		\hline
-		\begin{matrix}
-			a_{1} &
-			\dots
-			& a_{n}
-			\end{matrix}
-			& 1
-		\end{array}
-		\right)
-	$$
-\end{exercise}
-
-\begin{exercise}
 	Soit $n\geqslant1$ et $(x_{1},\dots,x_{n})\in\C^{n}$.
 	\begin{enumerate}
 		\item
@@ -332,7 +307,7 @@
 		\end{pmatrix}
 		$$
 		est-elle diagonalisable ?
-		\item La suite $(A^{p})_{p\in\N}$ converger-t-elle ?
+		\item La suite $(A^{p})_{p\in\N}$ converge-t-elle ?
 	\end{enumerate}
 \end{exercise}
 
@@ -373,20 +348,10 @@
 	avec $B\in\M_{n_{1}}(\C)$, $C\in\M_{n_{1},n_{2}}\in\M_{n}(\C)^{2}$ et $D\in\M_{n_{2}}(\C)$.
 	\begin{enumerate}
 		\item Donner une formule pour $A^{p}$ pour $p\in\N$.
-		\item Comparer, du point de vue de la divisibilité $\mu_{A}$, $\mu_{B}\vee\mu_{D}$ et $\mu_{B}\times\mu_{D}$ (polynômes minimaux).
+		\item Comparer, du point de vue de la divisibilité, $\mu_{A}$, $\mu_{B}\vee\mu_{D}$ et $\mu_{B}\times\mu_{D}$ (polynômes minimaux).
 		\item Que dire si $C=0$ ?
 		\item Que dire si $B=D$ et $C=I_{n_{1}}$ ?
 		\item Trouver une matrice $A$ telle que $\mu_{A}\neq \mu_{B}\vee\mu_{D}$ et $\mu_{A}\neq \mu_{B}\times\mu_{D}$.
-	\end{enumerate}
-\end{exercise}
-
-\begin{exercise}
-	Soit $E$ un $\C$-espace vectoriel de dimension finie $n\geqslant1$. Soit $f\in\L(E)$ et \function{\Phi_f}{\L(E)}{\L(E)}{g}{f\circ g-g\circ f}
-	\begin{enumerate}
-		\item Montrer que si $f$ est nilpotente, $\Phi_{f}$ l'est aussi. A-t-on la réciproque ?
-		\item Montrer que $f$ est diagonalisable si et seulement si $\Phi_{f}$ l'est.
-		\item Déterminer $\Sp(\Phi_{f})$ en fonction de celui de $f$.
-		\item Montrer que si $g$ est vecteur propre de $\Phi_{f}$, il existe une base $\mathcal{B}$ de $E$ telle que $\mat(f,\mathcal{B})$ et $\mat(g,\mathcal{B})$ sont triangulaires supérieures.
 	\end{enumerate}
 \end{exercise}
 
@@ -405,26 +370,18 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit $GL_{2}(\Z)=\{M\in\M_2(\Z)\text{ inversibles }\mid M^{-1}\in\M_{2}(\Z)\}$.
-	\begin{enumerate}
-		\item Soit $M\in\M_{2}(\Z)$, montrer que $M\in GL_{2}(\Z)$ si et seulement si $\det(M)=\pm1$.
-		\item Soit $G$ un sous-groupe abélien fini de $GL_{2}(\Z)$, montrer que $\vert G\vert\in\{1,2,3,4,6\}$ et décrire $G$.
-	\end{enumerate}
-\end{exercise}
-
-\begin{exercise}
 	Soit $\K$ un corps quelconque, $n\geqslant1$ et $A\in\M_{n}(\K)$. On a $\chi_{A}=a_{0}+a_{1}X+\dots+a_{n-1}X^{n-1}+X^{n}$ (polynôme caractéristique).
 	\begin{enumerate}
 		\item Montrer qu'il existe $(M_{0},\dots,M_{n-1})\in\M_{n}(\K)^{n}$ tel que pour tout $\lambda\in\K$, $\com(\lambda I_{n}-A)^{\mathsf{T}}=M_{0}+\lambda M_{1}+\dots+\lambda^{n-1}M_{n-1}$ (où $\com$ indique la comatrice.)
 		\item En formant $(\lambda I_{n}-A)\com(\lambda I_{n}-A)^{\mathsf{T}}$, calculer $(M_{0},\dots,M_{n-1})$ en fonction de \\$A,A^{2},\dots,A^{n}$. En déduire le théorème de Cayley-Hamilton.
 		\item Pour les questions suivantes, on suppose que la caractéristique de $\K$ est 0. Montrer que pour tout $\lambda\in\K$, $\chi_{A}'(\lambda)=\Tr(\com(\lambda I_{n}-A)^{\mathsf{T}})$.
 		\item En déduire qu'il existe $f:\K^{n}\to\K^{n}$ telle que pour tout $A\in\M_{n}(\K)$, $(a_{0},\dots,a_{n-1}) = f(\Tr(A),\dots,\Tr(A^{n}))$.
-		\item Soit $B\in\M_{n}(\K)$, montrer que si pour tout $k\in\{1,\dots,n\}$ $\Tr(A^{k})=\Tr(B^{k})$ alors $\chi_{A}=\chi_{B}$.
+		\item Soit $B\in\M_{n}(\K)$, montrer que si pour tout $k\in\{1,\dots,n\}$,$\Tr(A^{k})=\Tr(B^{k})$ alors $\chi_{A}=\chi_{B}$.
 	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-	On admet que si $P\in\K[X]$ (avec $\K$ un corps), il existe $\mathbb{L}$ sur-corps de $\K$ tel que $P$ soit scindé sur $\L$ avec la caractéristique de $\mathbb{L}$ égale à la caractéristique de $\K$.
+	On admet que si $P\in\K[X]$ (avec $\K$ un corps), il existe $\mathbb{L}$ sur-corps de $\K$ tel que $P$ soit scindé sur $\mathbb{L}$ avec la caractéristique de $\mathbb{L}$ égale à la caractéristique de $\K$.
 
 	Soit $A\in\M_{n}(\Z)$ et $p$ premier, montrer que $\Tr(A^{p})\equiv\Tr(A)[p]$.
 \end{exercise}

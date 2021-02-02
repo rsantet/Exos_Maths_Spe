@@ -667,7 +667,7 @@
 
 	Si $\lambda_{0}=0$, on a $Q=X^{p}A(X)$ avec $A$ scindé à racines simples non nulles et $X^{p}\wedge A=1$. D'après le lemme des noyaux, on a 
 	\begin{equation}
-		\ker(Q(u))=\C^{n}=\ker(u^{p})\bigotimes\ker(A(u))=\ker(u^{p})\bigotimes_{i\in I}\ker(u-\mu_{i}id)
+		\ker(Q(u))=\C^{n}=\ker(u^{p})\otimes\ker(A(u))=\ker(u^{p})\otimes_{i\in I}\ker(u-\mu_{i}id)
 	\end{equation}
 	car $A$ est scindé à racines simples.
 	Montrons que $\ker(u)=\ker(u^{p})$. L'inclusion directe est évidente. Réciproquement, montrons que pour tout $k\in\N$, on a $\ker(u^{k})\subset\ker(u^{k+1})$ et si $\ker(u^{k})=\ker(u^{k+1})$, alors $\ker(u^{k+1})=\ker(u^{k+2})$. L'inclusion est évidente, et si on a l'égalité, si $x\in\ker(u^{k+2})$, on a $u(x)\in\ker(u^{k+1})=\ker(u^{k})$ donc $x\in\ker(u^{k+1})$.
@@ -942,7 +942,7 @@
 
 		\item On a $\chi_{f}=X^{m_{0}}Q$ avec $\deg(Q)=d-m_{0}$ et $Q(0)=0$. D'après le lemme des noyaux, on a 
 		\begin{equation}
-			V=\ker(f^{m_{0}})\bigotimes\ker(Q(f))
+			V=\ker(f^{m_{0}})\otimes\ker(Q(f))
 		\end{equation}
 		Dans une base adaptée $\mathcal{B}$, on a $\mat_{\mathcal{B}}(f)=\begin{pmatrix}
 			A&0\\0&B
@@ -953,17 +953,1022 @@
 \end{proof}
 
 
+\begin{proof}
+	On munit $\M_{n}(\C)$ de la norme $\vertiii{A}=\sup\limits_{\left\lVert X\right\rVert_{\infty}=1}\left\lVert AX\right\rVert_{\infty}$. Notons que si $\lambda\in\Sp_{\C}(A)$, alors $\left\lvert\lambda\right\rvert\leqslant\vertiii{A}$. En effet, si $X$ est un vecteur propre associé à $\lambda$, on a 
+	\begin{equation}
+		\left\lVert AX\right\rVert_{\infty}=\left\lvert\lambda\right\rvert\left\lVert X\right\rVert_{\infty}\leqslant\vertiii{A}\left\lVert X\right\rVert_{\infty}
+	\end{equation}
+	et $X\neq0$ donc $\left\lVert X\right\rVert_{\infty}\neq0$.
+
+	Soit $A=\e^{\frac{2\i k\pi}{q}}I_{n}$, soit $B\in \mathcal{G}_{q}$ telle que $\vertiii{B-A}\leqslant\sin\left(\frac{\pi}{q}\right)$. Soit $\mu\in\Sp_{\C}(B)$, on a $\mu\in\U_{q}$ car $B^{q}=I_{n}$. Donc $\mu-\e^{\frac{2\i k\pi}{q}}\in\Sp_{\C}(B-A)$ et 
+	\begin{equation}
+		\left\lvert\mu-\e^{\frac{2\i k\pi}{q}}\right\rvert\leqslant\sin\left(\frac{\pi}{q}\right)
+	\end{equation}
+	Si $\mu=\e^{\frac{2\i l\pi}{q}}$, on a 
+	\begin{equation}
+		\left\lvert\mu-\e^{\frac{2\i k\pi}{q}}\right\rvert=2\left\lvert\sin\left(\frac{\left(l-k\right)\pi}{q}\right)\right\rvert>\sin\left(\frac{\pi}{q}\right)
+	\end{equation}
+	si $l\neq k$. Nécessairement, on a $\mu=\e^{\frac{2\i k\pi}{q}}$, donc $B=A$ car $B$ est diagonalisable et $\Sp_{\C}(B)=\left\lbrace\e^{\frac{2\i k\pi}{q}}\right\rbrace$. Donc $A$ est un point isolé de $\mathcal{G}_{q}$.
+
+	Soit maintenant $A\in\mathcal{G}_{q}$, on suppose que $A$ n'est pas une matrice scalaire, donc $\left\lvert\Sp_{\C}(A)\right\rvert\geqslant2$. Soit $\lambda\in\left(\Sp_{\C}(A)\right)$.
+	Il existe $P\in GL_{n}(\C)$ telle que $P^{-1}AP=\diag(\lambda,\dots,\lambda,\mu_{1},\dots,\mu_{r})$ avec $\mu_{1},\dots,\mu_{r}\neq\lambda$. Soit $\varepsilon>0$, posons 
+	\begin{equation}
+		A_{\varepsilon}=P
+		\begin{pmatrix}
+			\lambda &0 &\dots&\dots &\dots&\dots&\dots&\dots&0\\
+			0 & \ddots & \ddots &&&&&&\vdots\\
+			\vdots &\ddots&\ddots&0&\dots&\dots&\dots&\dots&\vdots\\
+			\vdots&&\ddots&\lambda & \varepsilon&0&\dots&\dots&0\\
+			\vdots&&& \ddots & \mu_{1}&0&\dots&\dots&0\\
+			\vdots&&&&\ddots&\ddots&\ddots&&\vdots\\
+			\vdots&&&&&\ddots&\ddots&\ddots&\vdots\\
+			\vdots&&&&&&\ddots&\ddots&0\\
+			0&\dots&\dots&\dots&\dots&\dots&\dots&0&\mu_{r}
+		\end{pmatrix}P^{-1}
+	\end{equation}
+
+	On a $A_{\varepsilon}\xrightarrow[\varepsilon\to0]{}A$ et $A_{\varepsilon}\neq A$. Montrons que $A_{\varepsilon}\in \mathcal{G}_{q}$. On a $\chi_{A_{\varepsilon}}=\chi_{A}$, $\rg\left(A_{\varepsilon}-\lambda I_{n}\right)=\rg(A-\lambda I_{n})$ (observer les colonnes) et pour $\mu_{l}\in\Sp(A)$, $\mu_{l}\neq \lambda$, on a $\rg\left(A_{\varepsilon}-\mu_{l}I_{n}\right)=\rg\left(A-\mu_{l}I_{n}\right)$ (observer les lignes). La dimension des sous-espaces propres de $A$ et $A_{\varepsilon}$ sont les mêmes donc $A_{\varepsilon}$ est diagonalisable. De plus, $\Sp(A_{\varepsilon})\subset\Sp(A)\subset\U_{q}$ donc $A_{\varepsilon}\in\mathcal{G}_{q}$. Ainsi, $A$ n'est pas isolé dans $\mathcal{G}_{q}$.
+\end{proof}
+
+\begin{proof}
+	On a 
+	\begin{equation}
+		\chi_{M}(\lambda)=
+		\begin{vmatrix}
+			\lambda-1 &1&0\\
+			1&\lambda-2&-1\\
+			-1&0&\lambda-1
+		\end{vmatrix}=(\lambda-1)(\lambda-2)(\lambda-1)-\left((\lambda-1)-1\right)=\lambda(\lambda-2)^{2}
+	\end{equation}
+
+	Soit $X=\begin{pmatrix}
+		x&y&z
+	\end{pmatrix}^{\mathsf{T}}$. On a $MX=0$ si et seulement si $y=x$ et $z=-x$ donc $E_{0}=\Vect\begin{pmatrix}
+		1&1&-1
+	\end{pmatrix}=\Vect(\varepsilon_{1})$.
+
+	On a $(M-2I_{3})X=0$ si et seulement si $y=z=-x$ donc $E_{2}=\Vect\begin{pmatrix}
+		1&-1&-1
+	\end{pmatrix}=\Vect(\varepsilon_{2})$.
+
+	$M$ n'est pas diagonalisable sur $\R$ mais trigonalisable. D'après le théorème de Cayley-Hamilton et le lemme des noyaux, on a 
+	\begin{equation}
+		\R^{3}=\ker(u)\otimes\ker(u-2 id)^{2}
+	\end{equation}
+	Soit $P\in GL_{n}(\C)$ tel que 
+	\begin{equation}
+		P^{-1}MP=
+		\begin{pmatrix}
+			0&0&0\\
+			0&2&\star\\
+			0&0&2
+		\end{pmatrix}
+	\end{equation}
+	avec $\varepsilon_{3}\in\ker(u-2id)^{2}$ et $\varepsilon_{3}\notin\Vect(\varepsilon_{2})$. On a 
+	\begin{equation}
+		(M-2I_{3})^{2}=
+		\begin{pmatrix}
+			2&1&-1\\
+			2&1&-1\\
+			-2&-1&1
+		\end{pmatrix}
+	\end{equation}
+	donc $(M-2I_{3})^{2}X=0$ si et seulement si $2x-y+z=0$. On pose $\varepsilon_{3}=\begin{pmatrix}
+		0\\1\\1
+	\end{pmatrix}$. On a $M\varepsilon_{3}=-\varepsilon_{2}+2\varepsilon_{3}$ donc si 
+	\begin{equation}
+		P=
+		\begin{pmatrix}
+			1&1&0\\
+			1&-1&1\\
+			-1&1&1
+		\end{pmatrix}
+	\end{equation}
+	on a 
+	\begin{equation}
+		P^{-1}MP=
+		\begin{pmatrix}
+			0&0&0\\
+			0&2&-1\\
+			0&0&2
+		\end{pmatrix}
+	\end{equation}
+
+	Les sous-espaces stables de dimension $0$: $\lbrace0\rbrace$. Les sous-espaces stables de dimension 1: ils sont engendrés par les vecteurs propres, ce sont donc $\Vect(\varepsilon_{1})$ et $\Vect(\varepsilon_{2})$. Si maintenant $F$ est un sous-espace stable de dimension $2$, montrons que l'on a 
+	\begin{equation}
+		F=\left(F\cap\ker(u)\right)\otimes\left(F\cap\ker(u-2id)^{2}\right)=F_{0}\otimes F_{2}
+	\end{equation}
+	En effet, on a $F_{0}\otimes F_{2}\subset F$. Si maintenant $x\in F$, a priori on a $x=x_{0}+x_{2}$ avec $x_{0}\in\ker(u)$ et $x_{2}\in\ker(u-2id)^{2}$. On a $u(x)=u(x_{2})\in F$ par stabilité, $u^{2}(x)=u^{2}(x_{2})\in F$, et $(u-2id)^{2}(x_{2})=0$ donc $x_{2}=\frac{1}{4}\left(-u^{2}(x)+4u(x_{2})\right)\in F$ et $x_{0}=x-x_{2}\in F$.
+
+	On a $F_{0}=\lbrace0\rbrace$ ou $\ker(u)$. Si $F_{0}=\lbrace0\rbrace$, on a $F=F_{2}$. Si $F_{0}=\ker(u)$, on a $\dim(F_{2})=1$ donc $F_{2}=\Vect(\varepsilon_{2})$.
+
+	Donc les sous-espaces stables de dimension 2 sont $\ker(u-2id)^{2}$ et $\Vect(\varepsilon_{1},\varepsilon_{2})$. 
+
+	Enfin, les sous-espaces stables de dimension 3: $\R^{3}$.
+\end{proof}
+
+\begin{remark}
+	Plus généralement, si $\chi_{u}=\prod_{i=1}^{r}(X-\lambda_{i})^{m_{i}}$. On écrit 
+	\begin{equation}
+		E=\bigotimes_{i=1}^{r}\ker(u-\lambda_{i}id_{E})^{m_{i}}=\bigotimes_{i=1}^{r}F_{i}
+	\end{equation}
+	Si $F$ est stable, on note $\Pi_{i}$ le projecteur sur $F_{i}$ parallèlement à $\bigotimes_{\substack{j=1\\j\neq i}}^{r}F_{i}\in\K[u]$. On a pour tout $x\in F$, $\Pi_{i}(x)\in F$ par stabilité, il s'ensuit que 
+	\begin{equation}
+		\boxed{F=\bigotimes_{i=1}^{r}\left(F\cap F_{i}\right)}
+	\end{equation}
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $(a_{1},\dots,a_{n})\neq(0,\dots,0)$, on a 
+		\begin{equation}
+			A-I_{n+1}=
+			\left(
+			\begin{array}{@{}c|c@{}}
+			0_{n} &
+			\begin{matrix}
+				a_{1}\\
+				\vdots\\
+				a_{n}
+				\end{matrix}
+				\\
+			\hline
+			\begin{matrix}
+				a_{1} &
+				\dots
+				& a_{n}
+				\end{matrix}
+				& 0
+			\end{array}
+			\right)
+		\end{equation}
+		donc $\rg(A-I_{n+1})=2$ et $\chi_{A-I_{n+1}}=X^{n-1}(X-\lambda)(X-\mu)$ (sur $\C$). On a $\Tr(A-I_{n+1})=0=\mu+\lambda$ et $\Tr(A-I_{n+1})^{2}=2\sum_{i=1}^{n}a_{i}^{2}=\lambda^{2}+\mu^{2}$ donc $\lbrace\lambda,\mu\rbrace\in\left\lbrace\pm\sqrt{\sum_{i=1}^{n}a_{i}^{2}}\right\rbrace$ et $A-I_{n+1}$ est semblable à 
+		\begin{equation}
+			\begin{pmatrix}
+				0&\star&\dots&\dots&\star\\
+				0&\ddots&\ddots&&\vdots\\
+				\vdots&\ddots&0&\ddots&\vdots\\
+				\vdots&&\ddots&\lambda&\star\\
+				0&\dots&\dots&0&\mu
+			\end{pmatrix}
+		\end{equation}
+
+		\item On note $\lambda=\sqrt{\sum_{i=1}^{n}a_{i}^{2}}$. Soit $X$ tel que $A'X=\pm\lambda$ où $A'=A-I_{n+1}$. Alors en écrivant le système, on vérifie que l'on peut prendre 
+		\begin{equation}
+			f_{\pm}=\begin{pmatrix}
+				a_{1}\\
+				\vdots\\
+				a_{n}\\
+				\lambda
+			\end{pmatrix}	
+		\end{equation}
+		et si $X$ est tel que $A'X=0$, si $i_{0}$ est tel que $a_{i_{0}}\neq0$, on récupère une bas de $\ker(A')$ avec 
+		\begin{equation}
+			f_{i}=\begin{pmatrix}
+				0\\
+				\vdots\\
+				0\\
+				1\\
+				0\\
+				\dots\\
+				0\\
+				-\frac{a_{i}}{a_{i_{0}}}\\
+				0\\
+				\vdots\\
+				0
+			\end{pmatrix}
+		\end{equation}
+		où $i\in\llbracket1,n\rrbracket\setminus\lbrace i_{0}\rbrace$. Le 1 est à la $i$-ième ligne, $-\frac{a_{i}}{a_{i_{0}}}$ est à la ligne $i_{0}$.
+	\end{enumerate}
+\end{proof}
 
 
+\begin{proof}
+	On pose $\vertiii{A}=\sup\limits_{\left\lVert X\right\rVert_{\infty}=1}\left\lVert AX\right\rVert_{\infty}$. On montre d'abord que si $A\in\M_{n}(\C)$, alors pour tout $\lambda\in\Sp_{\C}(A)$ $\left\lvert\lambda\right\rvert\leqslant\vertiii{A}$. En effet, si $X$ non nul est tel que $AX=\lambda X$, on a $\left\lVert AX\right\rVert_{\infty}\leqslant\vertiii{A}\left\lVert X\right\rVert_{\infty}$ donc $\left\lvert\lambda\right\rvert\left\lVert X\right\rVert_{\infty}\leqslant\vertiii{A}\left\lVert X\right\rVert_{\infty}$, d'où le résultat.
 
+	Soit alors $m=\sup\left\lbrace\vertiii{M}\middle| M\in G\right\rbrace$. Soit $M\in G$ et $\lambda\in\Sp_{\C}(M)$. On a $\left\lvert\lambda\right\rvert\leqslant m$. Comme $M^{k}\in G$ pour tout $k\in\Z$, on a aussi $\left\lvert\lambda\right\rvert^{k}\leqslant m$ donc $\left\lvert\lambda\right\rvert=1$ (faire tendre $k$ vers $-\infty$ et $+\infty$).
 
+	Grâce à la décomposition de Dunford, on a $M=D+N$ avec $D$ diagonalisable, $N$ nilpotente et $D$ et $N$ qui commutent. Soit $r\in\N^{*}$ telle que $N^{r-1}\neq0$ et $N^{r}=0$. On a $\Sp_{\C}(D)=\Sp_{\C}(M)\subset\U$ donc $G\in GL_{n}(\C)$ et $MD^{-1}=I_{n}+ND^{-1}$ avec $ND^{-1}$ est nilpotente d'indice $r$. On a pour tout $k\geqslant r$, on a 
+	\begin{align}
+		(MD^{-1})^{k}
+		&=M^{k}(D^{-1})^{k}\\
+		&=\sum_{i=0}^{k}\binom{k}{i}(ND^{-1})^{i}\\
+		&=\sum_{i=0}^{r-1}\binom{k}{i}(ND^{-1})^{i}\\
+		&\underset{k\to+\infty}{\sim}\frac{k^{r-1}}{(r-1)!}N^{r-1}D^{k-r+1}
+	\end{align}
 
+	Notons que pour tout $(A,B)\in\M_{n}(\C)$, pour tout $X\in\M_{n,1}(\C)$ si $\left\lVert X\right\rVert_{\infty}=1$, on a 
+	\begin{equation}
+		\left\lVert (AB)X\right\rVert_{\infty}\leqslant\vertiii{A}\left\lVert BX\right\rVert_{\infty}\leqslant\vertiii{A}\vertiii{B}
+	\end{equation}
+	donc $\vertiii{AB}\leqslant\vertiii{A}\vertiii{B}$.
 
+	La suite $(MD^{-1})^{k}$ est bornée, donc $r=1$ et $N=0$, donc $M$ est diagonalisable.
 
+	Prenons ensuite $\alpha=\sqrt{3}$. Soit $\lambda\in\Sp_{\C}(M)$, on a $\lambda-1\in\Sp_{\C}(M-I_{n})$. Si $\lambda=\e^{\i\theta}$ avec $\theta\in]-\pi,\pi[$, on a $\left\lvert\e^{\i\theta}-1\right\rvert<\sqrt{3}$ si et seulement si $2\sin\left(\frac{\theta}{2}\right)<\sqrt{3}$ si et seulement si $\theta\in\left]-\frac{2\pi}{3},\frac{2\pi}{3}\right[$.
 
+	Pour tout $k\in\R$, on a $\left(\e^{\i\theta}\right)^{k}\in\Sp(M^{k})$. Donc on a aussi $\left\lvert\sin\left(\frac{k\theta}{2}\right)\right\rvert<\frac{\sqrt{3}}{2}$. Quitte à changer $\theta$ en $-\theta$, on peut supposer $\theta\in\left[0,\frac{2\pi}{3}\right[$. Si $\theta\geqslant0$, posons l'unique $k\in\N$ tel que $k\theta\geqslant\frac{2\pi}{3}$ et $(k-1)\theta\in\left[0,\frac{2\pi}{3}\right[$. On a alors 
+	\begin{equation}
+		k\theta=(k-1)\theta+\theta<\frac{4\pi}{3}
+	\end{equation}
+	ce qui est absurde si et seulement si $\left\lvert\sin\left(\frac{k\theta}{2}\right)\right\rvert\geqslant\frac{\sqrt{3}}{2}$.
 
+	Ainsi, $\theta=0$ et $\Sp(M)=\lbrace1\rbrace$, et puisque $M$ est diagonalisable, $M=I_{n}$ et $G=\lbrace I_{n}\rbrace$.
+\end{proof}
 
+\begin{remark}
+	Soit $\alpha>\sqrt{3}$ et $G=\left\lbrace I_{n},\j I_{n},\j^{2} I_{n}\right\rbrace$. Pour tout $M\in G$, $\vertiii{M-I_{n}}<\alpha$ et $G\neq\lbrace I_{n}\rbrace$.
+\end{remark}
 
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On vérifie que $\chi_{A}(\lambda)=\lambda^{3}$. On a $AX=0$ si et seulement si $x_{1}=x_{3}$ et $x_{2}=-2x_{1}$. On prend $\varepsilon_{1}=\begin{pmatrix}
+			1\\-1\\1
+		\end{pmatrix}$. $u$ est nilpotente et $\dim(\ker(u))=1$. On a $u^{3}=0$ et on a
+		\begin{equation}
+			A^{2}=\begin{pmatrix}
+				1&1&1\\
+				-2&-2&-2\\
+				1&1&1
+			\end{pmatrix}\neq0
+		\end{equation}
+		Soit $e_{1}=\begin{pmatrix}
+			1\\0\\0
+		\end{pmatrix}$, on a $u^{2}(e_{1})\neq0$ donc $(u^{2}(e_{1}),u(e_{1}),e_{1})$ est une base de $\R^{3}$. On a
+		\begin{equation}
+			\mat_{\mathcal{B}}(u)=\begin{pmatrix}
+				0&1&0\\
+				0&0&1\\
+				0&0&0
+			\end{pmatrix}
+		\end{equation}
+		
+		$\dim(\ker(u^{k}))=k$ pour $k\in\lbrace0,1,2,3\rbrace$, notamment car $\rg(u^{2})=1$ pour justifier que $\dim(\ker(u^{2}))=2$.
+
+		Soit $F$ stable par $u$ de dimension $i\in\lbrace0,1,2,3\rbrace$. $u_{\mid F}$ est nimpotente et $u_{\mid F}^{i}=0$. Donc $F\subset\ker(u^{i})$ qui est de dimension $i$. Donc $F=\ker(u^{i})$.
+
+		\item Si $B^{2}=A$, $B^{6}=0$ donc $B^{3}=0$. Alors $B^{4}=0=A^{2}$ ce qui n'est pas vrai. Donc il n'y a pas de $B$ tel que $B^{2}=A$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Soit $u\in\L(\R^{3})$ canoniquement associé à $A$. On a $X^{3}+X^{2}+X+1=(X+1)(X^{2}+1)$. D'après le lemme des noyaux, on a 
+	\begin{equation}
+		\R^{3}=\ker(u+id)\otimes\underbrace{\ker(u^{2}+id)}_{F}
+	\end{equation}
+	On a $F\neq\lbrace0\rbrace$ car $u\neq-id$. On note $v=u_{\mid F}$. On a $v^{2}=-id_{F}$ et $\det(v^{2})=(\det(v))^{2}=(-1)^{\dim(F)}>0$ donc $\dim(F)$ est pair. Nécessairement, on a $\dim(F)=2$ et $\dim(\ker(u+id))=1$. Soit $\varepsilon_{3}$ vecteur propre associé à -1. Soit $x\in F\setminus\lbrace0\rbrace$. Si $(x,u(x))$ est lié, $x$ est vecteur propre de $v$ et $v^{2}+id_{F}=0$ ce qui est impossible car il n'y a pas de valeur propre réelle. Donc on pose $\mathcal{B}=(x,u(x),\varepsilon_{3})$ base de $\R^{3}$. On a $u^{2}(x)=-x$, donc 
+	\begin{equation}
+		\boxed{
+			\mat_{\mathcal{B}}(u)=
+			\begin{pmatrix}
+				0&-1&0\\
+				1&0&0\\
+				0&0&-1
+			\end{pmatrix}
+		}
+	\end{equation}
+\end{proof}
+
+\begin{remark}
+	Sur $\C$, on peut prendre 
+	\begin{equation}
+		A=
+		\begin{pmatrix}
+			\i&0&0\\
+			0&-1&0\\
+			0&0&-1
+		\end{pmatrix}
+	\end{equation}
+	ou $\i I_{3}$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $I_{x}=\left\lbrace A\in\K[X]\middle| A(f)(x)=0\right\rbrace$ est un idéal de $\K[X]$ non vide car $\mu_{f}\in I_{x}$. Donc il existe un unique $P_{x}$ unitaire tel que $I_{x}=P_{x}\K[X]$.
+		\item Soit $A\in\K[X]$, on a $A(f)=0$ si et seulement si pour tout $x\in E$, $P_{x}\mid A$ si et seulement si $\vee_{x\in E}P_{x}\mid A$ donc $\mu_{f}=\vee_{x\in E}P_{x}$.
+		\item On a 
+		\begin{align}
+			P_{x}P_{y}(f)(x+y)
+			&=P_{x}P_{y}(f)(x)+P_{x}P_{y}(f)(y)\\
+			&=P_{f}(f)\left(P_{x}(f)(x)\right)+P_{x}(f)\left(P_{y}(f)(y)\right)\\
+			&=0
+		\end{align}
+		Donc $P_{x+y}\mid P_{x}P_{y}$.
+
+		Soit $A\in\K[X]$. Supposons $A(f)(x+y)=0$. On a $P_{x}(f)\left(A(f)(x+y)\right)=0$, $P_{x}(f)\left(A(f)(x)\right)=A(f)\left(P_{x}(f)(x)\right)=0=-AP_{x}(f)(y)$. Donc $P_{y}\mid AP_{x}$. D'après le théorème de Gauss, $P_{y}\mid A$. De même, $P_{x}\mid A$. On prend $A=P_{x+y}$. Comme $P_{x}\wedge P_{y}=1$ et $P_{x}P_{y}\mid P_{x+y}$, on a 
+		\begin{equation}
+			\boxed{P_{x}P_{y}=P_{x+y}}
+		\end{equation}
+
+		\item On décompose $\mu_{f}=\prod_{i=1}^{r}A_{i}^{\alpha_{i}}$ avec pour tout $i\in\llbracket1,r\rrbracket$, $A_{i}$ irréductible sur $\K[X]$ et $\alpha_{i}\geqslant1$.
+		Comme $\mu_{f}=\vee_{x\in E}P_{x}$, pour tout $i\in\llbracket1,r\rrbracket$, il existe $y_{i}\in E$ tel que $P_{y_{i}}=A_{i}^{\alpha_{i}}Q_{i}$. On pose $x_{i}=Q_{i}(f)(y_{i})$. Pour tout $A\in\K[X]$, on a $A(f)(x_{i})=0$ si et seulement si $AQ_{i}(f)(y_{i})=0$ si et seulement si $A_{i}^{\alpha_{i}}Q_{i}\mid AQ_{i}$ si et seulement si $A_{i}^{\alpha_{i}}\mid A$. Ainsi, $P_{x_{i}}=A_{i}^{\alpha_{i}}$. En utilisant le point précédent par récurrence, on a $\mu_{f}=P_{\sum_{i=1}^{r}x_{i}}$ et on pose donc $x=\sum_{i=1}^{r}x_{i}$.
+
+		\item Supposons que ce $v$ existe. D'après le théorème de Cayley-Hamilton, $\deg(\mu_{f})\leqslant n$. Soit $(\alpha_{0},\dots,\alpha_{n-1})\in\K^{n}$. Si $\alpha_{0}id+\alpha_{1}f+\dots+\alpha_{n-1}f^{n-1}=0$. En appliquant en $v$, comme la famille est libre, on a de proche en proche $\alpha_{0}=\dots=\alpha_{n-1}=0$. Donc pour tout $A\in\K_{n-1}[X]$, si $A(f)=0$, alors $A=0$. Donc $\deg(\mu_{f})\geqslant n$, donc $\deg(\mu_{f})=n$.
+		
+		Réciproquement, soit $v\in E$ tel que $P_{v}=\mu_{f}$ qui existe d'après le point précédent. Soit $(\alpha_{0},\dots,\alpha_{n-1})\in\K^{n}$ tel que $\alpha_{0}v+\dots+\alpha_{n-1}f^{n-1}(v)=0$. On forme $A=\alpha_{0}+\dots+\alpha_{n-1}X^{n-1}$. On a $A(f)(v)=0$, donc $P_{v}\mid A$ mais $P_{v}$ est de degré $n$ donc $A=0$. Donc la famille est libre et de cardinal $n$: c'est une base.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $\varphi$ est linéaire, soit $(s,t)\in S^{2}$. On a $\varphi(s)=t$ si et seulement si $\frac{1}{n}\sum_{k=1}^{n}s_{k}=t_{n}$ pour tout $n\geqslant1$ si et seulement si 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{lll}
+					s_{1}&=&t_{1}\\
+					s_{1}+s_{2}&=&2t_{2}\\
+					\vdots\\
+					s_{1}+\dots+s_{n-1}&=&(n-1)t_{n-1}\\
+					s_{1}+\dots+s_{n}&=&nt_{n}\\
+					\vdots
+				\end{array}
+			\right.
+		\end{equation}
+		si et seulement si 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{lll}
+					s_{1}&=&t_{1}\\
+					s_{2}&=&2t_{2}-t_{1}\\
+					\vdots\\
+					s_{n}=nt_{n}-(n-1)t_{n-1}\\
+					\vdots
+				\end{array}
+			\right.
+		\end{equation}
+		donc $\varphi$ est bijective.
+
+		\item Soit $\lambda\in\R$, il existe $s\in S\setminus\lbrace0\rbrace$ tel que $\varphi(s)=\lambda s$ si et seulement si $\frac{1}{n}\sum_{k=1}^{n}s_{k}=\lambda s_{n}$ pour tout $n\geqslant1$ si et seulement si $s\in S\setminus\lbrace0\rbrace$ tel que $s=\lambda\varphi^{-1}(s)$ si et seulement si $s\in S\setminus\lbrace0\rbrace$ tel que $s_{1}=\lambda s_{1}$ et pour tout $n\geqslant2$, $s_{n}=\lambda(ns_{n}-(n-1)s_{n-1})$ i.e.~$(\lambda n-1)s_{n}=\lambda(n-1)s_{n-1}$.
+		
+		Si c'est le cas, si $s_{1}\neq0$, on a $\lambda=1$ et pour tout $n\geqslant2$, $s_{n}=s_{n-1}$ donc $s$ est constante.
+
+		Sinon, soit $n_{0}=\min\left\lbrace n\in\N^{*}\middle| s_{n_{0}}\neq0\right\rbrace$. On a $(\lambda n_{0}-1)s_{n_{0}}=0$ donc $\lambda=\frac{1}{n_{0}}$ et pour tout $n> n_{0}$, on a $s_{n}=\frac{\frac{1}{n_{0}}(n-1)}{\frac{n}{n_{0}}-1}s_{n-1}=\frac{n-1}{n-n_{0}}s_{n-1}$. Ainsi, 
+		\begin{equation}
+			s_{n}=\frac{(n-1)!}{(n_{0}-1)!(n-n_{0})!}s_{n_{0}}=\binom{n-1}{n_{0}-1}s_{n_{0}}
+		\end{equation}
+
+		Réciproquement, en posant $s_{n_{0}}=1$ et en définissant pour tout $n>n_{0}$, $s_{n}=\binom{n-1}{n_{0}-1}$ et pour tout $n\leqslant n_{0}-1$, $s_{n}=0$, alors on a $\varphi(s)=\frac{1}{n_{0}}s$. Ainsi, 
+		\begin{equation}
+			\boxed{
+				\Sp(\varphi)=\left\lbrace\frac{1}{n}\middle| n\in\N^{*}\right\rbrace
+			}
+		\end{equation}
+		et les sous-espaces propres sont de dimension 1.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Si on se limite à $\R^{p}$, en définissant $\varphi_{p}(s_{1},\dots,s_{p})=(s_{1},\frac{s_{1}+s_{2}}{2},\dots,\frac{s_{1}+\dots+s_{p}}{p})$. Alors en écrivant la matrice de $\varphi_{p}$ dans la base canonique, on a $\chi_{\varphi_{p}}=(X-1)(X-\frac{1}{2})\dots(X-\frac{1}{p})$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\lambda\in\Sp(A)$. Supposons que pour tout $i\in\llbracket1,n\rrbracket$, $\left\lvert\lambda-a_{i,i}\right\rvert >L_{i}$. $\lambda I_{n}-A$ est une matrice à diagonale strictement dominante donc inversible: absurde. Donc il existe $i\in\llbracket1,n\rrbracket$ tel que $\lambda\in D_{i}$. Comme $\lambda\in\Sp(A^{\mathsf{T}})$, il existe $i\in\llbracket1,n\rrbracket$ tel que $\lambda\in S_{i}$. D'où le résultat.
+		\item Soit $X$ non nul (dans $\C^{n}$) tel que $AX=\lambda X$. Soit $i_{1}\in\llbracket1,n\rrbracket$ tel que $\left\lvert x_{i}\right\rvert=\left\lVert X\right\rVert_{\infty}>0$. On a, pour tout $i\in\llbracket1,n\rrbracket$, $(\lambda-a_{i,i})x_{i}=\sum_{j\neq i}a_{i,j}x_{j}$. 
+		
+		Soit $i_{2}\in\llbracket1,n\rrbracket$ tel que $\left\lvert x_{i_{2}}\right\rvert=\max_{i\neq i_{1}}\left\lvert x_{i}\right\rvert$. 
+		
+		Si $x_{i_{2}}=0$, on a $\lambda=a_{i_{1},i_{1}}$ et $\left\lvert \lambda-a_{i_{1},a_{1}}\right\rvert=0$ et $\left\lvert\lambda-a_{i_{1},a_{1}}\right\rvert\left\lvert\lambda-a_{i_{2},i_{2}}\right\rvert=0\leqslant L_{i_{1}}L_{i_{2}}$.
+
+		Sinon, on a $\left\lvert\lambda-a_{i_{1},i_{1}}\right\rvert\left\lvert x_{i_{1}}\right\rvert\leqslant\left\lvert x_{i_{2}}\right\rvert L_{i_{1}}$ et de même $\left\lvert\lambda-a_{i_{2},i_{2}}\right\rvert\left\lvert x_{i_{2}}\right\rvert\leqslant\left\lvert x_{i_{1}}\right\rvert L_{i_{2}}$ d'où le résultat.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	On peut avoir égalité, par exemple avec la matrice nulle.
+\end{remark}
+
+\begin{proof}
+	$A$ est symétrique réelle, donc diagonalisable. Si pour tout $i\in\llbracket1,n\rrbracket$, $a_{i}=0$ alors $A=0$.
+
+	Sinon, $\rg(A)=2$. Soit $u\in\L(\R^{n+1})$ canoniquement associée à $A$. On a $\dim(\ker(u))=n-1$ et $\chi_{A}=X^{n-1}(X-\lambda)(X-\mu)$ sur $\C$. On a $\Tr(A)=\lambda+\mu=0$ donc $\mu=-\lambda$ et $\Tr(A^{2})=\lambda^{2}+\mu^{2}=2\sum_{i=1}^{n}a_{i}^{2}$ donc 
+	\begin{equation}
+		\left\lbrace\lambda,\mu\right\rbrace=\left\lbrace\pm\sqrt{\sum_{i=1}^{n}a_{i}^{2}}\right\rbrace
+	\end{equation}
+	Les deux valeurs propres sont de multiplicité 1 dans $\chi_{A}$: les sous-espaces propres sont de dimension 1.
+
+	$A$ est diagonalisable sur $\R$, semblable à $\diag(0,\dots,0,\sqrt{\sum_{i=1}^{n}a_{i}^{2}},-\sqrt{\sum_{i=1}^{n}a_{i}^{2}})$.
+
+	On a $AX=0$ si et seulement si 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				a_{1}x_{n+1}&=&0\\
+				\vdots\\
+				a_{n}x_{n+1}&=&0\\
+				a_{1}x_{1}+\dots+a_{n}x_{n}&=&0
+			\end{array}
+		\right.
+	\end{equation}
+	si et seulement si 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				x_{n+1}&=&0\\
+				x_{i_{0}}&=&\sum_{\substack{i=1\\ i\neq i_{0}}}a_{i}x_{i}
+			\end{array}
+		\right.
+	\end{equation}
+	avec $i_{0}$ indice tel que $a_{i_{0}}\neq0$. Une base de $\ker(u)$ est donc 
+	\begin{equation}
+		f_{i}=\begin{pmatrix}
+			0\\
+			\vdots\\
+			0\\
+			1\\
+			0\\
+			\dots\\
+			0\\
+			-\frac{a_{i}}{a_{i_{0}}}\\
+			0\\
+			\vdots\\
+			0
+		\end{pmatrix}
+	\end{equation}
+	où $i\in\llbracket1,n\rrbracket\setminus\lbrace i_{0}\rbrace$. Le 1 est à la $i$-ième ligne, $-\frac{a_{i}}{a_{i_{0}}}$ est à la ligne $i_{0}$.
+
+	On a $AX=\sqrt{\sum_{i=1}^{n}a_{i}^{2}}X=\alpha X$ si et seulement si 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				a_{1}x_{n+1}&=&\alpha x_{1}\\
+				\vdots\\
+				a_{n}x_{n+1}&=&\alpha x_{n}\\
+				\sum_{i=1}^{n}a_{i}x_{i}&=&\alpha x_{n+1}
+			\end{array}
+		\right.
+	\end{equation}
+	si et seulement si
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lll}
+				x_{1}&=&\frac{a_{1}}{\alpha}x_{n+1}\\
+				\vdots\\
+				x_{n}&=&\frac{a_{n}}{\alpha}x_{n+1}\\
+			\end{array}
+		\right.
+	\end{equation}
+	Une base de $ker(u-\alpha id)$ est donc 
+	\begin{equation}
+		\begin{pmatrix}
+			\frac{a_{1}}{\alpha}\\
+			\dots\\
+			\frac{a_{n}}{\alpha}\\
+			1
+		\end{pmatrix}
+	\end{equation}
+
+	De même pour $-\alpha$, on vérifie qu'une base de $\ker(u+\alpha id)$ est 
+	\begin{equation}
+		\begin{pmatrix}
+			-\frac{a_{1}}{\alpha}\\
+			\dots\\
+			-\frac{a_{n}}{\alpha}\\
+			1
+		\end{pmatrix}
+	\end{equation}
+\end{proof}
+
+\begin{proof}
+	Pour le sens direct, $f$ et $g$ ont les mêmes espaces propres distincts. Pour tout $i\in\llbracket1,r\rrbracket$, $E_{i}=\ker(f-\lambda_{i}id)=\ker(g-\mu_{i}id)$ avec $\lambda_{1},\dots,\lambda_{r}$ valeurs propres distinctes deux à deux de $f$ et $\mu_{1},\dots,\mu_{r}$ pour $g$.
+
+	On pose 
+	\begin{equation}
+		\begin{array}[]{lll}
+			Q&=&\sum_{i=1}^{r}\mu_{i}\prod_{\substack{j=1\\ j\neq i}}^{r}\frac{X-\lambda_{j}}{\lambda_{i}-\lambda_{j}}\\
+			P&=&\sum_{i=1}^{r}\lambda_{i}\prod_{\substack{j=1\\ j\neq i}}^{r}\frac{X-\mu_{j}}{\mu_{i}-\mu_{j}}
+		\end{array}
+	\end{equation}
+
+	Soit $i\in\llbracket1,r\rrbracket$ et $x\in E_{i}$. On a $Q(f)(x)=Q(\lambda_{i})x=\mu_{i}x=g(x)$. $Q(f)$ et $g$ coïncident sur les vecteurs d'une base, donc ils sont égaux, donc $Q(f)=g$. De même, $f=P(g)$.
+
+	Réciproquement, s'il existe $(P,Q)\in\K_{n-1}[X]^{2}$ tel que $f=P(g)$ et $g=Q(f)$. On prend $\lambda\in\Sp(f)$, soit $x\in\ker(f-\lambda id)$. On a $g(x)=Q(f)(x)=Q(\lambda)x$ donc $x\in\ker(g-Q(\lambda)id)$. On a 
+	\begin{equation}
+		\ker(f-\lambda id)\subset\ker(g-Q(\lambda)id)\subset\ker(f-P(Q(\lambda))id)
+	\end{equation}
+	Or $P(Q(\lambda))=\lambda$ car pour $x\in\ker(f-\lambda id)\setminus\lbrace0\rbrace$, on a $\lambda x=P(Q(\lambda))x$. Donc $\ker(f-\lambda id)=\ker(g-Q(\lambda)id)$ donc $f$ et $g$ ont les mêmes sous-espaces propres.
+\end{proof}
+
+\begin{remark}
+	C'est faux si $f$ et $g$ ne sont pas diagonalisables, par exemple 
+	\begin{equation}
+		A=\begin{pmatrix}
+			0&1&0&0\\
+			0&0&0&0\\
+			0&0&0&0\\
+			0&0&1&0
+		\end{pmatrix},~~~B=\begin{pmatrix}
+			0&1&0&0\\
+			0&0&1&0\\
+			0&0&0&0\\
+			0&0&0&0
+		\end{pmatrix}
+	\end{equation}
+	$A$ et $B$ ont les mêmes sous-espaces propres  (un seul: $\Vect(e_{1},e_{4})$). On a $A^{2}=0$ donc pour tout $P\in\C[X]$, il existe $(\alpha,\beta)\in\C^{2}$,
+	\begin{equation}
+		P(A)=\alpha I_{4}+\beta A=\begin{pmatrix}
+			\alpha&\beta&0&0\\
+			0&\alpha&0&0\\
+			0&0&\alpha&0\\
+			0&0&\beta&\alpha
+		\end{pmatrix}\neq B
+	\end{equation}
+\end{remark}
+
+\begin{proof}
+	Soit $m=\left\lvert G\right\rvert$. On a pour tout $M\in G$, on a $M^{m}=I_{2}$ donc $M$ est diagonalisable sur $\C$ et $\Sp_{\C}(M)\subset\U_{m}$. Notons que $G$ étant abélien, toutes les matrices sont co-diagonalisables.
+
+	Si $\Sp_{\C}(M)=\lbrace1\rbrace$, alors $M=I_{2}$. Si $\Sp_{\C}(M)=\lbrace-1\rbrace$, alors $M=-I_{2}$. Dans ces deux cas, on a $\det(M)=1$ et $\Tr(M)=\pm2$. On note ce cas 1.
+	
+	Si $\Sp_{\C}(M)=\lbrace-1,1\rbrace$, $M$ est semblable à $\begin{pmatrix}
+		-1&0\\
+		0&1
+	\end{pmatrix}$ et $M^{2}=I_{2}$. Dans ce cas, on a $\det(M)=-1$ et $\Tr(M)=0$. On note ce cas 2.
+
+	Notons que l'on a $\chi_{M}=X^{2}-\Tr(M)X+\det(M)$ et $\Delta=(\Tr(M))^{2}-4\det(M)$. Comme $\chi_{M}$ est un polynôme réel, si $\delta<0$, on écrit $\chi_{M}(X-\e^{\i\theta})(X-\e^{-\i\theta})$. Comme $\Tr(M)=2\cos(\theta)\in\Z$, on a $\theta\in\left\lbrace\frac{2\pi}{3},\frac{\pi}{2},\frac{\pi}{3}\right\rbrace$.
+
+	Si $\theta=\frac{2\pi}{3}$, $M$ est semblable à 
+	\begin{equation}
+		\begin{pmatrix}
+			\e^{\i\frac{2\pi}{3}}&0\\
+			0&\e^{-\i\frac{2\pi}{3}}
+		\end{pmatrix}
+	\end{equation}
+	et $M^{3}=I_{2}$. On a $\det(M)=1$ et $\Tr(M)=-1$. On note ce cas 3.
+
+	Si $\theta=\frac{\pi}{2}$, $M$ est semblable à 
+	\begin{equation}
+		\begin{pmatrix}
+			\e^{\i\frac{\pi}{2}}&0\\
+			0&\e^{-\i\frac{\pi}{2}}
+		\end{pmatrix}
+	\end{equation}
+	et $M^{4}=I_{2}$. On a $\det(M)=1$ et $\Tr(M)=0$. On note ce cas 4.
+
+	Si $\theta=\frac{\pi}{3}$, $M$ est semblable à 
+	\begin{equation}
+		\begin{pmatrix}
+			\e^{\i\frac{\pi}{3}}&0\\
+			0&\e^{-\i\frac{\pi}{3}}
+		\end{pmatrix}
+	\end{equation}
+	et $M^{6}=I_{2}$. On a $\det(M)=1$ et $\Tr(M)=1$. On note ce cas 5.
+
+	Par ailleurs, il existe $P\in GL_{2}(\C)$ telle que pour tout $M\in G$, $P^{-1}MP=I_{2}$.
+
+	S'il existe $M\in G$ du type 2, alors les types 3 et 5 sont exclus car on obtiendrait par produit $\begin{pmatrix}
+		\e^{\i\theta}&0\\0&-\e^{\i\theta}
+	\end{pmatrix}$ avec $\Tr(M)=0$ car $\chi_{m}$ est un polynôme réel, et $\theta\in\left\lbrace\frac{\pi}{3},\frac{2\pi}{3}\right\rbrace$, ce qui n'est pas.
+
+	Ainsi, 
+	\begin{equation}
+		P^{-1}GP\subset\left\lbrace I_{2},-I_{2},\begin{pmatrix}
+			-1&0\\0&1
+		\end{pmatrix},\begin{pmatrix}
+			1&0\\0&-1
+		\end{pmatrix},\begin{pmatrix}
+			\i&0\\0&-\i
+		\end{pmatrix},\begin{pmatrix}
+			-\i&0\\0&\i
+		\end{pmatrix}\right\rbrace
+	\end{equation}
+
+	Ainsi, 
+	\begin{equation}
+		G=
+		\left\lbrace
+			\begin{array}[]{ll}
+				\left\lbrace I_{2}\right\rbrace\\
+				\left\lbrace -I_{2},I_{2}\right\rbrace\\
+				\left\lbrace I_{2},B\right\rbrace& B\text{ matrice de type 2}\\
+				\left\lbrace I_{2}, A,A^{2},A^{3}\right\rbrace\cong\Z/4\Z& A\text{ matrice de type 4}\\
+				\left\lbrace I_{2},A,B,A^{2},A^{3},-B\right\rbrace\cong \Z/3\Z\times\Z/2\Z& A,B\text{ matrices de type 4, 2}\\
+				\left\lbrace I_{2},B,-B,-I_{2}\right\rbrace\cong\left(\Z/2\Z\right)^{2} & B\text{ matrice de type 2}
+			\end{array}
+		\right.
+	\end{equation}
+
+	S'il n'y a pas de matrice de type 2, on a 
+	\begin{equation}
+		P^{-1}GP\subset\left\lbrace I_{2},-I_{2},\begin{pmatrix}
+			\j&0\\0&\j^{2}
+		\end{pmatrix},\begin{pmatrix}
+			\i&0\\0&-\i
+		\end{pmatrix},\begin{pmatrix}
+			-\i&0\\0&\i
+		\end{pmatrix},\begin{pmatrix}
+			-\j&0\\0&-\j^{2}
+		\end{pmatrix},\begin{pmatrix}
+			-\j^{2}&0\\0&-\j
+		\end{pmatrix}\right\rbrace
+	\end{equation}
+
+	On ne peut pas avoir une matrice de type 3 ou 5 car $\pm\i\j$ et $\pm\i\j^{2}$ ne sont pas des valeurs propres possibles. Donc 
+	\begin{equation}
+		G=
+		\left\lbrace
+		\begin{array}[]{ll}
+			\left\lbrace I_{2},C,C^{2}\right\rbrace\cong\Z/3\Z & C\text{ matrice de type 3}\\
+			\left\lbrace I_{2},D,D^{2},D^{3},D^{4},D^{5}\right\rbrace\cong\Z/6\Z& D\text{ matrice de type 5}
+		\end{array}
+		\right.
+	\end{equation}
+	Notons que dans le deuxième cas, $D^{2}$ est de type 3.
+
+	On a donc bien $\left\lvert G\right\rvert\in\left\lbrace1,2,3,4,6\right\rbrace$.
+\end{proof}
+
+\begin{proof}
+	Si $u$ est diagonalisable, la famille des vecteurs propres est génératrice. En prenant un sous-espace de $E$ de base $\mathcal{B}$, on complète avec des vecteurs propres, ce qui forme un sous-espace stable par u.
+
+	Réciproquement, soit 
+	\begin{equation}
+		F=\bigotimes_{\lambda\in\Sp(u)}\ker(u-\lambda id)
+	\end{equation}
+	stable par $u$. $F$ admet un supplémentaire stable qu'on nommera $G$. Si $G\neq\lbrace0\rbrace$, $u_{\mid G}$ admet nécessairement un vecteur propre, or les vecteurs propres sont dans $F\setminus\lbrace0\rbrace$; absurde. Donc $G=\left\lbrace0\right\rbrace$ et $E=F$ donc $u$ est diagonalisable.
+\end{proof}
+
+\begin{proof}
+	Plus généralement, soit $A=(a_{i,j})\in\M_{n}(\K)$ et $B=(b_{k,l})\in\M_{p}(\K)$. On définit 
+	\begin{equation}
+		M=B\otimes A=
+		\begin{pmatrix}
+			b_{1,1}A&\dots&b_{1,p}A\\
+			\vdots&&\vdots\\
+			b_{p,1}A&\dots&b_{p,p}A
+		\end{pmatrix}
+	\end{equation}
+
+	Si $B$ est diagonalisable, il existe $Q\in GL_{p}(\K)$ tel que $Q^{-1}BQ=\diag(\mu_{1},dots,\mu_{p})$. On note $Q=(q_{i,j})$ et $Q^{-1}=(q'_{i,j})$. Par produits par blocs, on a 
+	\begin{equation}
+		\underbrace{\begin{pmatrix}
+			q'_{1,1}I_{n}&\dots&q'_{1,p}I_{n}\\
+			\vdots&&\vdots\\
+			q'_{p,1}I_{n}&\dots&q'_{p,p}I_{n}
+		\end{pmatrix}}_{=Q^{-1}\otimes I_{n}=(Q\otimes I_{n})^{-1}}M
+		\underbrace{\begin{pmatrix}
+			q_{1,1}I_{n}&\dots&q_{1,p}I_{n}\\
+			\vdots&&\vdots\\
+			q_{p,1}I_{n}&\dots&q_{p,p}I_{n}
+		\end{pmatrix}}_{Q\otimes I_{n}}
+		=\diag(\mu_{1}A,\dots,\mu_{p}A)=M_{1}
+	\end{equation}
+
+	Si de plus $A$ est diagonalisable, il existe $P\in GL_{n}(\K)$ tel que $P^{-1}AP=\diag(\lambda_{1},dots,\lambda_{n})$. Alors 
+	\begin{equation}
+		\diag(P^{-1},\dots,P^{-1})M_{1}\diag(P,\dots,P)=\diag(\mu_{1},\lambda_{1},\dots,\mu_{1},\lambda_{n},\dots,\mu_{p}\lambda_{1},\dots,\mu_{p}\lambda_{n})
+	\end{equation}
+
+	Donc $B\otimes A$ est diagonalisable et $\Sp(B\otimes A)=\left\lbrace \lambda_{i}\mu_{j}\middle| 1\leqslant i\leqslant n,1\leqslant j\leqslant p\right\rbrace$.
+\end{proof}
+
+\begin{remark}
+	On a $\Tr(B\otimes A)=\Tr(B)\times\Tr(A)$ et $\det(B\otimes A)=\det(B)^{n}\det(A)^{p}$.
+\end{remark}
+\begin{remark}
+	Si $B$ est diagonalisable et non nulle, si $B\otimes A$ est diagonalisable, il existe $i\in\llbracket1,p\rrbracket$ tel que $\mu_{i}\neq0$ et $\mu_{i}A$ est diagonalisable (restriction à un sous-espace stable d'un endomorphisme diagonalisable) donc $A$ est diagonalisable.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On note $(e_{1},\dots,e_{n})$ la base canonique de $\C^{n}$ et $u\in\L(\C^{n})$ canoniquement associé à $A$. 
+		
+		Si $n=2m$ avec $m\in\N^{*}$, on pose pour $k\in\llbracket1,m\rrbracket$, $F_{k}=\Vect(e_{k},\dots,e_{n-k+1})$. On a $u(e_{k})=x_{k}e_{n-k+1}$ et $u(e_{n-k+1})=x_{n-k+1}e_{k}$ donc $F_{k}$ est stable par $u$. Ainsi, $\mat_{(e_{k},e_{n-k+1})}(u_{\mid F_{k}})=\begin{pmatrix}
+			0&x_{n-k+1}\\ x_{k}&0
+		\end{pmatrix}$. 
+
+		Étudions, pour tout $(a,b)\in\C^{2}$, $M=\begin{pmatrix}
+			0&a\\b&0
+		\end{pmatrix}$. On a $\chi_{M}=X^{2}-ab$. 
+		
+		Si $ab\neq0$, on note $\lambda$ une racine carrée de $ab$ sur $\C$. On a $\chi_{M}(X-\lambda)(X+\lambda)$ qui est scindé à racines simples donc $M$ est diagonalisable et semblable à $\diag(\lambda,-\lambda)$.
+
+		Si $ab=0$: si $a=b=0$ alors $M=0$. Si $a$ ou $b\neq0$, alors $M$ n'est pas diagonalisable puisque si elle l'était, comme sa seule valeur propre est 0, elle serait semblable donc égale à 0 ce qui n'est pas. Donc $A$ est diagonalisable si et seulement si pour tout $k\in\llbracket1,m\rrbracket$, $x_{k}$ et $x_{n-k+1}$ non nuls ou $x_{k}=0=x_{n-k+1}$.
+
+		Si $n=2m+1$, on fait le même raisonnement avec $u(e_{m})=x_{m}e_{m}$.
+
+		\item $(A^{p})_{p\in\N}$ converge si et seulement si pour tout $k\in\llbracket1,m\rrbracket$, $\left(u_{\mid F_{k}}^{p}\right)_{p\in\N}$ converge. 
+		
+		Soit $k\in\llbracket1,m\rrbracket$. Si $x_{k}x_{n+1-k}\neq0$, soit $\lambda\in\C$ tel que $\lambda^{2}=x_{k}x_{n+1-k}$. Dans une base de vecteurs propres $\mathcal{B}$, on a 
+		\begin{equation}
+			\mat_{\mathcal{B}}(u_{\mid F_{k}}^{p})=\begin{pmatrix}
+				\lambda^{p}&0\\0&(-\lambda)^{p}
+			\end{pmatrix}
+		\end{equation}
+		Cela converge si et seulement si $\lvert\lambda\rvert<1$ si et seulement si $\left\lvert x_{k}x_{n+1-k}\right\rvert<1$.
+
+		Si $x_{k}=x_{n+1-k}=0$, alors pour tout $p\geqslant2$, $u_{\mid F_{k}}^{p}=0$ donc on a convergence.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a 
+		\begin{equation}
+			\mat_{(1,X,\dots,X^{n})}(\varphi)=\diag(-n,1-n,\dots,0)
+		\end{equation}
+		donc les valeurs propres sont $(k-n)_{k\in\llbracket0,n\rrbracket}$. On a $n+1$ valeurs propres distinctes donc $\varphi$ est diagonalisable et les sous-espaces propres sont de dimension 1. Les vecteurs propres sont les $(X^{k})$ pour $k\in\llbracket1,n\rrbracket$.
+
+		\item Si $\varphi(P)=kP$, alors $\deg(P)=k$. Si $P=\sum_{i=0}^{k}a_{i}X^{i}$ donc 
+		\begin{equation}
+			XP'-nP''-kP=0=\sum_{i=0}^{k-2}\left(ia_{i}-n(i+1)(i+2)-ka_{i}\right)X^{i}-a_{k-1}X^{k-1}
+		\end{equation}
+
+		Ainsi, par récurrence, pour tout $p\in\left\lbrace0,\dot,\left\lfloor\frac{k-1}{2}\right\rfloor\right\rbrace$, $a_{k-(2p+1)}=0$ et pour tout $p\in\left\lbrace0,\dots,\left\lfloor\frac{k}{2}\right\rfloor\right\rbrace$,
+		\begin{equation}
+			a_{k-2p}=\frac{n^{p}(k-2p+1)\dots(k-1)k}{(-2p)\dots(-4)(-2)}a_{k}=\frac{n^{p}(-1)^{p}}{2^{p}p!}\times \frac{k!}{(k-2p)!}a_{k}
+		\end{equation}
+		donc les vecteurs propres correspondent aux polynômes ayant ces coefficients.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a 
+		\begin{equation}
+			A=aI_{3}+c\underbrace{\begin{pmatrix}
+				0&0&1\\1&0&0\\0&1&0
+			\end{pmatrix}}_{C}+b\underbrace{\begin{pmatrix}
+				0&1&0\\0&0&1\\1&0&0
+			\end{pmatrix}}_{B}
+		\end{equation}
+		avec $B=C^{2}$ et $C$ est la matrice compagnon du polynôme $X^{3}-1$, donc $\chi_{C}=X^{3}-1$. Ainsi, $C$ est diagonalisable sur $\C$ et $\Sp_{\C}(C)=\left\lbrace1,\j,\j^{2}\right\rbrace$. On a 
+		\begin{equation}
+			\begin{array}[]{l}
+				C\begin{pmatrix}
+					1\\1\\1
+				\end{pmatrix}=\begin{pmatrix}
+					1\\1\\1
+				\end{pmatrix}\\
+				C\begin{pmatrix}
+					1\\\j^{2}\\\j
+				\end{pmatrix}=\j\begin{pmatrix}
+					1\\\j^{2}\\\j
+				\end{pmatrix}\\
+				C\begin{pmatrix}
+					1\\\j\\\j^{2}
+				\end{pmatrix}=\j^{2}\begin{pmatrix}
+					1\\\j\\\j^{2}
+				\end{pmatrix}\\
+			\end{array}
+		\end{equation}
+		donc si 
+		\begin{equation}
+			P=\begin{pmatrix}
+				1&1&1\\ 1&\j^{2}&\j\\1&\j&\j^{2}
+			\end{pmatrix}
+		\end{equation}
+		alors on a 
+		\begin{equation}
+			P^{-1}AP=\begin{pmatrix}
+				1&0&0\\
+				0&a+b\j^{2}+c\j&0\\
+				0&0&a+b\j+c\j^{2}
+			\end{pmatrix}
+		\end{equation}
+		et 
+		\begin{equation}
+			\boxed{
+				\Sp_{\C}(A)=\left\lbrace1,a+c\j+b\j^{2},a+b\j+c\j^{2}\right\rbrace
+			}
+		\end{equation}
+
+		\item On a 
+		\begin{equation}
+			A^{n}=P\begin{pmatrix}
+				1&0&0\\
+				0&(a+b\j^{2}+c\j)^{n}&0\\
+				0&0&(a+b\j+c\j^{2})^{n}
+			\end{pmatrix}P^{-1}
+		\end{equation}
+
+		Tout d'abord, on a $\left\lvert a+c\j+b\j^{2}\right\rvert\leqslant\left\lvert a\right\rvert+\left\lvert b\right\rvert+\left\lvert c\right\rvert=1$ et on a égalité si et seulement si $a,c\j$ et $b\j^{2}$ ont le même argument si et seulement si $\left\lbrace a,b,c\right\rbrace\in\left\lbrace\left\lbrace1,0,0\right\rbrace,\left\lbrace0,1,0\right\rbrace,\left\lbrace0,0,1\right\rbrace\right\rbrace$.
+
+		Si $a=1$ et $b=c=0$, la suite $(A^{n})_{n\in\N}$ converge.
+
+		Si $(b=1$ et $a=c=0$) ou ($c=1$ et $a=b=0$), $(A^{n})_{n\in\N}$ diverge.
+
+		Sinon,
+		\begin{equation}
+			\boxed{
+			A^{n}\xrightarrow[n\to+\infty]{}P\begin{pmatrix}
+				1&0&0\\0&0&0\\0&0&0
+			\end{pmatrix}P^{-1}}
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On vérifie en calculant les premiers termes puis par récurrence que 
+		\begin{equation}
+			\boxed{A^{k}=\begin{pmatrix}
+				B^{k}&\sum_{i=1}^{k}B^{i-1}CD^{k-i}\\0&D^{k}
+			\end{pmatrix}}
+		\end{equation}
+
+		\item On a 
+		\begin{equation}
+			\mu_{A}(A)=0=\begin{pmatrix}
+				\mu_{A}(B)&\star\\0&\mu_{A}(D)
+			\end{pmatrix}
+		\end{equation}
+		donc $\mu_{A}(B)=\mu_{A}(D)=0$. Ainsi, $\mu_{B}\mid \mu_{A}$ et $\mu_{D}\mid\mu_{A}$ donc $\mu_{B}\vee\mu_{D}\mid \mu_{A}$.
+
+		Si $B$ et $D$ sont de tailles 1, $\chi_{A}(X)=(X-b)(X-d)$ d'où $\mu_{B}=X-b$ et $\mu_{D}=X-d$.
+
+		Si $b\neq d$, $X-b$ et $X-d$ divise $\mu_{A}$ donc $\mu_{A}\mid \chi_{A}$ d'après le théorème de Cayley-Hamilton.
+
+		Si $b=d$, si $c=0$ on a $\mu_{A}=X-b$ donc $\mu_{A}\mid\mu_{B}\mu_{D}=(X-b)^{2}$. Si $c\neq0$, $\mu_{A}=X-b$ ou $\mu_{A}=(X-b)^{2}$ et $A-bI_{n}\neq0$ donc $\mu_{A}=(X-b)^{2}$.
+
+		\item Si $C=0$, on a $\mu_{A}=\mu_{B}\vee\mu_{D}$.
+		\item Si $B=D$ et $C=I_{n_{1}}$, on a $A^{0}=I_{n_{1}+n_{2}}$ et pour $k\geqslant1$,
+		\begin{equation}
+			A^{k}=\begin{pmatrix}
+				B^{k}&kB^{k-1}\\
+				0&B^{k}
+			\end{pmatrix}
+		\end{equation}
+		Ainsi
+		\begin{equation}
+			P(A)=\begin{pmatrix}
+				P(B)&P'(B)\\
+				0&P(B)
+			\end{pmatrix}=0
+		\end{equation}
+		si et seulement si $P(B)=P'(B)=0$ donc $\mu_{B}\mid P$ et $\mu_{B}\mid P'$ donc $\mu_{B}\mid P\vee P'$.
+
+		On a 
+		\begin{equation}
+			\mu_{B}^{2}(A)=\begin{pmatrix}
+				0&2\mu_{B}\mu_{B}'(B)\\
+				0&0
+			\end{pmatrix}=0
+		\end{equation}
+		donc $\mu_{A}\mid\mu_{B}^{2}$.
+
+		On décompose $\mu_{B}=(X-\lambda_{1})^{m_{1}}\times\dots\times(X-\lambda_{r})^{m_{r}}$. On a $P(A)=0$ si et seulement si pour tout $i\in\left\lbrace1,\dots,r\right\rbrace$, $\lambda_{i}$ est racine de $P$ d'ordre plus grand que $m_{i}+1$.
+
+		\item On prend 
+		\begin{equation}
+			A=\begin{pmatrix}
+				0&1&0&0\\
+				0&0&0&1\\
+				0&0&0&1\\
+				0&0&0&0
+			\end{pmatrix}
+		\end{equation}
+		On a 
+		\begin{equation}
+			B=D=\begin{pmatrix}
+				0&1\\0&0
+			\end{pmatrix}
+		\end{equation}
+		$\mu_{B}=\mu_{D}=X^{2}$, et $\mu_{A}\mid X^{3}$. Or $u^{2}(e_{4})\neq0$ donc $\mu_{A}=X^{3}\neq X^{2}=\mu_{B}\vee\mu_{D}\neq X^{4}=\mu_{B}\mu_{D}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	On décompose sur $\C$: $P(X)-\lambda=\alpha\prod_{i=1}^{m}(X-\mu_{i})$ avec $\alpha\neq0$. On a 
+	\begin{equation}
+		\underbrace{g-\lambda id}_{\substack{\text{non inversible}\\\text{(respectivement non injectif)}}}=\alpha\prod_{i=1}^{m}(f-\mu_{i}id)
+	\end{equation}
+	donc il existe $i\in\llbracket1,m\rrbracket$, $f-\mu_{i}id$ est non inversible (respectivement non injectif), d'où le résultat.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $(f_{1},\dots,f_{r})$ une base de $V$ et $x\in E\setminus\lbrace0\rbrace$. Soit $(\alpha_{1},\dots,\alpha_{r})\in\K^{r}$ tels que $\alpha_{1}f_{1}(x)+\dots+\alpha_{r}f_{r}(x)=0$. Or $V$ est un sous-espace, donc $\alpha_{1}f_{1}+\dots+\alpha_{r}f_{r}\in V$ et $\alpha_{1}f_{1}+\dots+\alpha_{r}f_{r}\notin GL(E)$ car $x\neq0$. D'où $\alpha_{1}f_{1}+\dots+\alpha_{r}f_{r}=0$ et donc $\alpha_{1}=\dots=\alpha_{r}=0$ car $(f_{1},\dots,f_{r})$ est une base de $V$.
+		
+		Ainsi $(f_{1}(x),\dots,f_{r}(x))$ est libre donc $r=\dim(V)\leqslant\dim(E)$.
+
+		\item Si $\dim(V)=1$, alors $V=\C f$ avec $f\in GL(E)$. Si $\dim(V)\geqslant2$, soient $(f,g)\in V^{2}$ tels que $(f,g)$ soit libre alors pour tout $\alpha\in\C$, $f+\alpha g\neq0$ et $f+\alpha g\in V\setminus\lbrace0\rbrace$. Or $f+\alpha g=g(g^{-1}\circ f+\alpha id)$. Pour $\alpha\in \Sp(-g^{-1}\circ f)$ (existe car on est dans $\C$), on obtient une contradiction. Donc de même, $V=\C f$ avec $f\in GL(E)$.
+		
+		\item Comme $\dim(E)=2$, on a $\dim(V)\leqslant2$. Si $\dim(V)=1$, comme précédemment, on a $V=\R f$ avec $f\in GL(E)$. Si $\dim(V)=2$, soit $(f,g)$ une base de $V$. D'après ce qui précède, on a $\Sp_{\R}(g^{-1}\circ f)=\emptyset$. Soit $\mathcal{B}$ une base de $E$ et $A=\mat_{\mathcal{B}}(f)$ et $B=\mat_{\mathcal{B}}(g)$. On écrit $\chi_{A^{-1}B}=(X-\lambda)(X-\overline{\lambda})$ avec $\lambda=\alpha+\i \beta$, $\beta>0$. $A^{-1}B$ est diagonalisable sur $\C$ et semblable à $\diag(\lambda,\overline{\lambda})$ et $\frac{A^{-1}B-\alpha I_{2}}{\beta}$ est semblable sur $\C$ à $\diag(\i,-\i)$ semblable sur $\R$ à $\begin{pmatrix}
+			0&-1\\1&0
+		\end{pmatrix}$ donc $\frac{A^{-1}B-\alpha I_{2}}{\beta}$ est semblable sur $\R$ à $\begin{pmatrix}
+			0&-1\\1&0
+		\end{pmatrix}$. Il existe $P\in GL_{2}(\R)$ tel que 
+		\begin{equation}
+			A^{-1}B=P\begin{pmatrix}
+				\alpha&-\beta\\\beta&\alpha
+			\end{pmatrix}P^{-1}
+		\end{equation}
+
+		Pour tout $(\lambda,\mu)\in\R^{2}$, 
+		\begin{equation}
+			\lambda A+\mu B=A(\lambda I_{2}+\mu A^{-1}B)=\underbrace{AP}_{\in GL_{2}(\R)}\begin{pmatrix}
+				\lambda+\alpha\mu&-\beta\\\beta&\lambda+\alpha\mu
+			\end{pmatrix}\underbrace{P^{-1}}_{\in GL_{2}(\R)}
+		\end{equation}
+		avec $\beta>0$,$\alpha\in\R$.
+
+		\item Avec les notations précédentes, si $(A,B)\in V^{2}$ est libre, on a 
+		\begin{equation}
+			\i\in\Sp\left(\frac{A^{-1}B-\alpha I_{2}}{\beta}\right)=\Sp\left((BA)^{-1}(B-\alpha A)\right)
+		\end{equation}
+		et on pose $A'=\beta A\in V$ et $B'=B-\alpha A\in V$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item En notant $c_{i,j}$ les cofacteurs d'indice $(j,i)$, on a 
+		\begin{equation}
+			\left[\com(\lambda I_{n}-A)^{\mathsf{T}}\right]_{i,j}=(-1)^{i+j}c_{j,i}(\lambda-I_{n})
+		\end{equation}
+
+		En développant, on obtient des polynômes en $\lambda$ de degré plus petit que $n-1$. En regroupant selon les puissances de $\lambda$, on a 
+		\begin{equation}
+			\boxed{\com(\lambda I_{n}-A)^{\mathsf{T}}=M_{0}+M_{1}\lambda+\dots+\lambda^{n-1}M_{n-1}}
+		\end{equation}
+
+		\item On a $(\lambda I_{n}-A)\com(\lambda I_{n}-A)^{\mathsf{T}}=\det(\lambda I_{n}-A)I_{n}=\chi_{A}(\lambda)I_{n}$
+		
+		En identifiant les coefficients, on a 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{lll}
+					M_{n-1}&=&I_{n}\\
+					M_{n-2}&=&A+a_{n-1}I_{n}\\
+					M_{n-3}&=&A^{2}+a_{n-1}A+a_{n-2}I_{n}\\
+					\vdots\\
+					M_{n-k}&=&A^{k-1}+a_{n-1}A^{k-2}+\dots+a_{n-k+1}I_{n}\\
+					\vdots\\
+					M_{0}&=&A^{n-1}+a_{n-1}A^{n-2}+\dots+a_{1}I_{n}
+				\end{array}
+			\right.
+		\end{equation}
+		et $-AM_{0}=a_{0}I_{n}$. En reportant, on a bien $\chi_{A}(A)=O_{\M_{n}(\K)}$: on a une preuve du théorème de Cayley-Hamilton.
+
+		\item Soit $\lambda\in\K$. On forme $\lambda I_{n}-A=(c_{1}(\lambda),\dots,c_{n}(\lambda))$ avec 
+		\begin{equation}
+			c_{j}(\lambda)=\begin{pmatrix}
+				-a_{1,j}\\\dots\\-a_{j-1,j}\\\lambda-a_{j,j}\\-a_{j+1,j}\\\dots\\-a_{n,j}
+			\end{pmatrix}
+		\end{equation}
+
+		On a $\chi_{A}(\lambda)=\det(c_{1}(\lambda),\dots,c_{n}(\lambda))$. $\det$ étant une forme $n$-linéaire, on a 
+		\begin{equation}
+			\chi_{A}'(\lambda)=\sum_{k=1}^{n}\det(c_{1}(\lambda),\dots,c_{k-1}(\lambda),c_{k}'(\lambda),c_{k+1}(\lambda),\dots,c_{n}(\lambda))
+		\end{equation}
+		En développant le terme $k$ par rapport à la $k$-ième colonne, on trouve qu'il vaut $_{k,k}(\lambda I_{n}-A)$. Ainsi,
+		\begin{equation}
+			\boxed{\chi_{A}'(\lambda)=\Tr(\com(\lambda I_{n}-A)^{\mathsf{T}})}
+		\end{equation}
+
+		\item On a donc $a_{1}+2a_{2}\lambda+\dots+(n-1)a_{n-1}\lambda^{n-2}+n\lambda^{n-1}=\sum_{k=0}^{n-1}\lambda^{k}\Tr(M_{k})$ pour tout $\lambda\in\K$ (par linéarité de $\Tr$). Donc pour tout $k\in\llbracket0,n-2\rrbracket$, $\Tr(M_{k})$, $\Tr(M_{k})=(k+1)a_{k+1}$ (et $\Tr(M_{n-1})=\Tr(I_{n})=n$). On a $\Tr(M_{n-2})=(n-1)a_{n-1}=\Tr(A)+na_{n-1}$ donc $a_{n-1}=\Tr(A)$. Puis $\Tr(M_{n-3})=(n-2)a_{n-2}=\Tr(A^{2})+a_{n-1}\Tr(A)+a_{n-2}n$ donc $a_{n-2}=-\frac{\Tr(A^{2})}{2}+\frac{\Tr(A)^{2}}{2}$. De proche en proche, on a $a_{n-k}=f_{k}(\Tr(A),\dots,\Tr(A^{k}))$ avec $f_{k}$ indépendante de $A$.
+		
+		\item D'après ce qui précède, pour tout $k\in\llbracket0,n-1\rrbracket$, $a_{k}=b_{k}$ car $f$ est indépendante de $A$. Donc $\chi_{A}=\chi_{B}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Si $\Tr(A)=\Tr(A^{2})=\dots=\Tr(A^{n})=0$, alors $\chi_{A}=\chi_{0}=X^{n}$ et $A$ est nilpotente. On peut le vérifier à la main sur $\C$: si $(\lambda_{1},\dots,\lambda_{r})$ sont les valeurs propres non nulles distinctes de $A$ et $m_{i}$ la multiplicité de $\lambda_{i}$ dans $\chi_{A}$, alors on a le système
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{lllll}
+				\Tr(A)&=&m_{1}\lambda_{1}+\dots+m_{r}\lambda_{r}&=&0\\
+				\Tr(A^{2})&=&m_{1}\lambda_{1}^{2}+\dots+m_{r}\lambda_{r}^{2}&=&0\\
+				\vdots\\
+				\Tr(A^{r})&=&m_{1}\lambda_{1}^{r}+\dots+m_{r}\lambda_{r}^{r}&=&0
+			\end{array}
+		\right.
+	\end{equation}
+	donc 
+	\begin{equation}
+		\begin{pmatrix}
+			\lambda_{1}&\dots&\lambda_{r}\\
+			\vdots&&\vdots\\
+			\lambda_{1}^{r}&\dots&\lambda_{r}^{r}
+		\end{pmatrix}\begin{pmatrix}
+			m_{1}\\\vdots\\m_{r}
+		\end{pmatrix}=0
+	\end{equation}
+	et la matrice est inversible car les $\lambda_{i}$ sont distincts non nuls. Donc $m_{1}=\dots=m_{r}=0$ et $\Sp_{\C}(A)=\lbrace0\rbrace$ et $\chi_{A}=X^{n}$.
+\end{remark}
+
+\begin{proof}
+	On définit, pour $A=(a_{i,j})\in\M_{n}(\Z)$, $\overline{A}=(\overline{a_{i,j}})\in\M_{n}\left(\Z/p\Z\right)$. Comme $p$ est premier, $\Z/p\Z$ est un corps. On a $\chi_{A}\in\Z/p\Z[X]$ donc il existe $\mathbb{L}$ un sur-corps de $\Z/p\Z$ où $\chi_{A}$ est scindé sur $\mathbb{L}$. On écrit $\chi_{A}=(X-\lambda_{1})\dots(X-\lambda_{n})$ avec $\lambda_{1},\dots,\lambda_{n}\in\mathbb{L}$. On peut trigonaliser $\overline{A}$ sur $\mathbb{L}$ et on a $\Tr(\overline{A}^{p})=\sum_{i=1}^{n}\lambda_{i}^{p}$. Or la caractéristique de $\mathbb{L}$ vaut $p$ donc on a $(x+y)^{p}=x^{p}+y^{p}$ (binôme de Newton et utiliser le fait que $p\mid\binom{p}{k}$ pour $k\in\llbracket1,p-1\rrbracket$). Ainsi,
+	\begin{equation}
+		\Tr(\overline{A}^{p})=\left(\sum_{i=1}^{n}\lambda_{i}\right)^{p}=\Tr(\overline{A})^{p}
+	\end{equation}
+	et on peut appliquer le petit théorème de Fermat: on a bien $\Tr(\overline{A}^{p})=\Tr(\overline{A})$ et en remontant dans $\Z$, 
+	\begin{equation}
+		\boxed{\Tr(A^{p})\equiv\Tr(A)[p]}
+	\end{equation}
+\end{proof}
 
 
 
