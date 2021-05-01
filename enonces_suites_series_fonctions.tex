@@ -1,1 +1,123 @@
 \section{Suites et séries de fonctions}
+
+\begin{exercise}
+    Pour $x\geqslant0$ et $n\in\N^{*}$, on note 
+    $$F_{n}(x)=\frac{1}{n}\prod_{k=1}^{n}\left(n+kx\right)^{\frac{1}{n}}$$
+
+    Étudier la convergence simple et la convergence uniforme de $(F_{n})_{n\geqslant1}$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $-\alpha\notin\N^{*}$. Pour $n\geqslant1$, soit 
+    $$u_{n}(x)=\frac{1\times 3\times\dots\times(2n-1)}{(1+\alpha)\times\dots\times(2n-1+\alpha)}x^{n}$$
+    pour $x\in\R$.
+
+    \begin{enumerate}
+        \item Donner la nature de $\sum_{n\geqslant1}u_{n}(x)$.
+        \item Trouver les valeurs de $\alpha$ telle que $\sum_{n\geqslant1}u_{n}$ converge uniformément sur $[0,1[$.
+        \item Trouver les valeurs de $\alpha$ telle que $\sum_{n\geqslant1}u_{n}$ converge uniformément sur $]-1,0]$
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    On forme 
+    $$f(x)=\sum_{k=0}^{+\infty}\arctan(k+x)-\arctan(k)=\sum_{k=0}^{+\infty}f_{k}(x)$$
+    Quel est le domaine de définition de $f$ ? Montrer que $f$ est $\mathcal{C}^{1}$ sur ce domaine. Donner un équivalent de $f$ en $+\infty$.
+\end{exercise}
+
+\begin{exercise}
+    On pose 
+    $$f(t)=\sum_{n=1}^{+\infty}\ln\left(1-\e^{-nt}\right)$$
+    Montrer que $f$ est définie pour $t>0$ et donner un équivalent de $f(t)$ quand $t\to0^{+}$. On admet l'existence de $I=\lim\limits_{x\to+\infty}\int_{0}^{x}\ln\left(1-\e^{-u}\right)du$.
+\end{exercise}
+
+\begin{exercise}
+    Soit \function{f_n}{\R}{\R}{x}{\frac{n^{2}x^{2}}{1+n^{4}x^{4}}}
+    $(a_{p})_{p\in\N}\in\R^{\N}$ et $g_{n}(x)=\sum_{p=0}^{+\infty}\frac{1}{2^{p}}f_{n}(x-a_{p})$.
+    \begin{enumerate}
+        \item $g_{n}$ est-elle définie ? Étudier la convergence simple de $(g_{n})_{n\in\N}$.
+        \item Soit $[a,b]\subset\R$. Montrer que $(g_{n})_{n\in\N}$ converge uniformément sur $[a,b]$ si et seulement si pour tout $p\in\N$, $a_{p}\notin[a,b]$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Convergence simple de 
+    \begin{equation}
+        f(x)=\sum_{n=1}^{+\infty}\frac{x}{x^{2}+n^{2}}=\sum_{n=1}^{+\infty}f_{n}(x).
+    \end{equation}
+    $f$ est-elle $\mathcal{C}^{1}$ ? Donner la limite de $f$ en $0$ et $+\infty$. Donner un équivalent en $0$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $(f_n)_{n\in\N}$ une suite de fonctions $\mathcal{C}^{1}$ sur $[a,b]$ telle qu'il existe $M\geqslant0$ tel que pour tout $n\in\N$, $\left\lVert f_{n}'\right\rVert_{\infty,[a,b]}\leqslant M$. On suppose que $(f_{n})_{n\in\N}$ converge simplement vers $f$ sur $[a,b]$. Montrer qu'il y a convergence uniforme.
+\end{exercise}
+
+\begin{exercise}
+    Soit $x\geqslant1$. Soit $f_{n}(x)=\sum_{p=1}^{n}\frac{1}{\sqrt{n^{2}+p^{x}}}$. Étudier la convergence.
+\end{exercise}
+
+\begin{exercise}[Produit Eulérien]
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $(\mathcal{A},\left\lVert\cdot\right\rVert)$ une algèbre normée et pour $n\geqslant1$ \function{f_n}{\mathcal{A}}{\mathcal{A}}{a}{\left(1_{\mathcal{A}}+\frac{a}{n}\right)^{n}.}
+        
+        Montrer que 
+        \begin{equation}
+            \left\lVert\sum_{k=0}^{n}\frac{a^{k}}{k!}-f_{n}(a)\right\rVert\leqslant\sum_{k=0}^{n}\frac{\left\lVert a\right\rVert^{k}}{k!}-\left(1+\frac{\left\lVert a\right\rVert}{n}\right)^{n}.
+        \end{equation}
+
+        On pourra montrer que pour tout $(n,k)\in\N\times\left\llbracket0,n\right\rrbracket$, $\frac{1}{n^{k}}\binom{n}{k}\leqslant\frac{1}{k!}$. En déduire que $(f_n)_{n\geqslant1}$ converge simplement vers $\exp$, avec convergence uniforme sur les compacts de $\mathcal{A}$.
+
+        \item On pose pour tout $n\in\N$,
+        \begin{equation}
+            P_{n}(X)=\frac{\left(1+\frac{\i X}{2n+1}\right)^{2n+1}-\left(1-\frac{\i X}{2n+1}\right)^{2n+1}}{2\i}.
+        \end{equation}
+        Montrer que $(P_{n})_{n\in\N}$ converge simplement vers $\sin$ sur $\C$.
+
+        \item Déterminer le degré de $P_{n}$, les racines de $P_{n}$ et son coefficient en $X$. En déduire que 
+        \begin{equation}
+            P_{n}=X\prod_{k=1}^{n}\left(1-\frac{X^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right).
+        \end{equation}
+
+        \item Soit $(a_{n,p})_{(n,p)\in\N^{2}}\in\C^{\N^{2}}$. On suppose que 
+        \begin{enumerate}
+            \item [(i)] Il existe $(\alpha_{n})_{n\in\N}\in\R_{+}^{N}$ avec $\sum_{n=0}^{+\infty}\alpha_n<+\infty$ et pour tout $(n,p)\in\N^{2}$, $\left\lvert a_{n,p}\right\rvert\leqslant\alpha_{n}$.
+            \item [(ii)] $\forall n\in\N$, il existe $\beta_{n}=\lim\limits_{p\to+\infty}a_{n,p}\in\C$.
+        \end{enumerate}
+        Montrer que $\lim\limits_{p\to+\infty}\sum_{n=0}^{+\infty}a_{n,p}=\sum_{n=0}^{+\infty}\beta_{n}$.
+
+        \item En déduire que pour tout $x\in\R$, $\sin(x)=x\prod_{k=1}^{+\infty}\left(1-\frac{x^{2}}{k^{2}\pi^{2}}\right)$. On pourra montrer que pour tout $t\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$, $\left\lvert\tan(t)\right\rvert\geqslant\left\lvert t\right\rvert$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $[a,b]\subset]0,1[$ et \function{f}{\R}{\R}{x}{2x(1-x)}
+    On définit $f^{1}=f$ et pour tout $n\in\N$, $f_{n+1}*f\circ f_{n}$.
+    \begin{enumerate}
+        \item Montrer que $(f_{n})_{n\in\N}$ converge uniformément vers $\frac{1}{2}$ sur $[a,b]$. A-t-on convergence uniforme sur $[0,1]$ ?
+        \item Soit $\Q_{2}=\left\lbrace\frac{p}{2^{n}}\middle|p\in\Z,n\in\N\right\rbrace$. Montrer que pour tout $P\in\R[X]$, pour tout $\varepsilon>0$, il existe $Q\in\Q_{n}[X]$ tel que $\left\lVert P-Q\right\rVert_{\infty,[a,b]}\leqslant\varepsilon$.
+        \item En déduire que pour tout $f\in\mathcal{C}^{0}\left([a,b],\R\right)$, il existe $A\in\Z[X]$ telle que 
+        \begin{equation}
+            \left\lVert f_{n}-A\right\rVert_{\infty,[a,b]}\leqslant \varepsilon.    
+        \end{equation}
+        Peut-on généraliser à d'autres intervalles ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $(u_{n})_{n\in\N}$ une suite d'applications convexes de $I\subset\R\to\R$ qui converge simplement vers $u\colon I\to\R$.
+    \begin{enumerate}
+        \item Soit $[a,b]\subset\mathring{I}$. Montrer qu'il existe $A\in\R$ tel que pour tout $(x,y)\in[a,b]$,
+        \begin{equation}
+            \left\lvert u_{n}(x)-u_{n}(y)\right\rvert\leqslant A\left\lvert x-y\right\rvert.
+        \end{equation}
+        On pourra former $(\alpha,\beta)\in I^{2}$, $\alpha<a<b<\beta$, et étudier les taux d'accroissements des $u_{n}$.
+
+        \item En déduire que $(u_{n})_{n\in\N}$ converge uniformément vers $u$ sur $[a,b]$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $[a,b]\subset\R$ et $E=\mathcal{C}^{0}\left([a,b],\R\right)$ muni de $\left\lVert\cdot\right\rVert_{\infty}$. Soit $\varphi\colon:\R\to\R$ continue. Montrer que \function{\psi}{E}{E}{f}{\varphi\circ f}
+    est continue.
+\end{exercise}
