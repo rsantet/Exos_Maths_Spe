@@ -121,3 +121,66 @@
     Soit $[a,b]\subset\R$ et $E=\mathcal{C}^{0}\left([a,b],\R\right)$ muni de $\left\lVert\cdot\right\rVert_{\infty}$. Soit $\varphi\colon:\R\to\R$ continue. Montrer que \function{\psi}{E}{E}{f}{\varphi\circ f}
     est continue.
 \end{exercise}
+
+\begin{exercise}
+    On pose, sous réserve d'existence,
+    \begin{equation}
+        f(t)=\sum_{n=0}^{+\infty}\frac{\e^{-nt}}{1+n^{2}}=\sum_{n=0}^{+\infty}f_{n}(t).
+    \end{equation}
+    \begin{enumerate}
+        \item Donner le domaine de définition $E$ de $f$.
+        \item $f$ est-elle continue sur $E$ ? Évaluer $\lim\limits_{t\to+\infty}f(t)$.
+        \item Montrer que $f$ est $\mathcal{C}^{\infty}$ sur $E\setminus\left\lbrace0\right\rbrace$. Donner l'équation différentielle satisfaite par $f$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $a\in\R$ et \function{u_n}{[0,1]}{\R}{x}{\frac{x\e^{-nx}}{n^{a}}}
+    \begin{enumerate}
+        \item Montrer que $\sum_{n=1}^{+\infty} u_n$ converge simplement sur $[0,1]$. On note $S(x)=\sum_{n=1}^{+\infty}u_{n}(x)$.
+        \item Pour quelles valeurs de $a$ a-t-on convergence normale sur $[0,1]$ ?
+        \item Calculer $S$ pour $a=1$ et $a=2$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Donner le domaine de définition de
+    \begin{equation}
+        f(x)=\sum_{n=1}^{+\infty}\frac{1}{\sqrt{n}}\times\frac{1}{1+nx^{\frac{3}{2}}}.
+    \end{equation}
+    Étudier la continuité de $f$ sur son domaine de définition. $f$ est-elle intégrable sur son domaine de définition ? 
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Donner le domaine de définition de 
+        \begin{equation}
+            S(x)=\sum_{n=2}^{+\infty}\frac{x\e^{-nx}}{\ln(n)}=\sum_{n=2}^{+\infty}f_{n}(x).
+        \end{equation}
+        \item Montrer que l'on a converge uniforme sur $[0,\infty[$. A-t-on convergence normale ?
+        \item Montrer que $S$ est $\mathcal{C}^{1}$ sur $\R_{+}^{*}$, mais n'est pas dérivable à droite en $0$.
+        \item Montrer que pour tout $k\in\N$, $S(x)=\underset{x\to+\infty}{o}\left(\frac{1}{x^{k}}\right)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Théorème de Weierstrass trigonométrique]
+    On pose, pour $k\in\N$, \function{Q_k}{\R}{\R}{t}{c_k\left(\frac{1+\cos(t)}{2}\right)^{k}} où $c_{k}\in\R$ tel que $\frac{1}{2\pi}\int_{-\pi}^{\pi}Q_{k}(t)\mathrm{d}t=1$.
+    \begin{enumerate}
+        \item Montrer que pour tout $\delta\in]0,\pi]$, $\lim\limits_{k\to+\infty}\sup\limits_{\delta\leqslant\left\lvert t\right\rvert\leqslant\pi}Q_{k}(t)=0$.
+        \item Soit $f$ continue $2\pi$-périodique de $\R$ dans $\C$. On définit 
+        \function{P_k}{\R}{\C}{t}{\frac{1}{2\pi}\int_{-\pi}^{\pi}f(t-s)Q_k(s)\mathrm{d}s.}
+        Montrer que $(P_k)_{k\in\N}$ converge uniformément vers $f$ sur $\R$. On utilisera, en la justifiant, la continuité uniforme de $f$ et son caractère borné sur $\R$.
+        \item On note, pour tout $k\in\Z$, \function{\varepsilon_k}{\R}{\C}{t}{\e^{\i kt}.}
+        On pose $F=\Vect(\varepsilon_{k})_{k\in\Z}$ (\og polynômes trigonométriques\fg $2\pi$-périodiques). Montrer que $F$ est dense dans $E$, $\C$-espace vectoriel des fonctions continues $2\pi$-périodiques pour $\left\lVert\cdot\right\rVert_{\infty}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $(u_n)_{n\in\N}$ une suite monotone de fonctions continues qui converge simplement vers $u$ continue sur un compact $K\subset E$ où $E$ est un espace vectoriel normé.
+    \begin{enumerate}
+        \item Montrer que l'on peut se ramener au cas d'une suite $(f_n)_{n\in\N}$ décroissante de fonctions continues qui converge simplement vers 0.
+        \item Soit $\varepsilon>0$ et pour tout $n\in\N$, $F_{n,\varepsilon}=\left\lbrace x\in K\middle| f_{n}(x)\geqslant\varepsilon\right\rbrace$. Montrer que $F_{n,\varepsilon}$ est fermé, que $F_{n+1,\varepsilon}\subset F_{n,\varepsilon}$ et que $\cap_{n\in\N}F_{n,\varepsilon}=\emptyset$. En déduire qu'il existe $N\in\N$ tel que $F_{N,\varepsilon}=\emptyset$, puis que $(f_{n})_{n\in\N}$ converge uniformément vers 0 sur $K$.
+        \item Prouver le résultat en considérant pour tout $n\in\N$, $x_{n}\in K$ tel que $f_{n}(x_{n})=\max\limits_{x\in K}f_n(x)$.
+    \end{enumerate}
+\end{exercise}

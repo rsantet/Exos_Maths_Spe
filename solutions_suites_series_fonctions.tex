@@ -393,6 +393,32 @@
     \end{enumerate}
 \end{proof}
 
+\begin{remark}
+    En identifiant le coefficient en $x^{3}$, on obtient 
+    \begin{equation}
+        -\frac{1}{6}=-\sum_{k=1}^{+\infty}\frac{1}{k^{2}\pi^{2}},
+    \end{equation}
+    d'où 
+    \begin{equation}
+        \zeta(2)=\frac{\pi^{2}}{6}.
+    \end{equation}
+
+    De même, en identifiant le coefficient en $x^{5}$, on obtient
+    \begin{equation}
+        \frac{1}{120}=\sum_{\substack{(k_{1},k_{2})\in(\N^{*})^{2}\\k_{1}\neq k_{2}}}\frac{1}{k_{1}^{2}k_{2}^{2}\pi^{4}}=\sum_{(k_1,k_2)\in(\N^{*})^{2}}\frac{1}{k_{1}^{2}k_{2}^{2}\pi^{4}}-\sum_{k=1}^{+\infty}\frac{1}{k^{4}\pi^{4}}=\zeta(2)^{2}-\sum_{k=1}^{+\infty}\frac{1}{k^{4}\pi^{4}}.
+    \end{equation}
+    On trouve donc 
+    \begin{equation}
+        \zeta(4)=\frac{\pi^{4}}{90}.
+    \end{equation}
+
+    De la même façon, on montre de manière générale que
+    \begin{equation}
+        \zeta(2p)=a_{p}\pi^{2p},
+    \end{equation}
+    avec $a_p\in\Q$.
+\end{remark}
+
 \begin{proof}
     \phantom{}
     \begin{enumerate}
@@ -467,3 +493,233 @@
 \begin{remark}
     Pour la deuxième partie du raisonnement, on peut aussi invoquer la continuité uniforme de $\varphi$ sur $[-A,A]$.
 \end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour $t\geqslant0$, on a $0\leqslant f_{n}(t)\leqslant\frac{1}{1+n^{2}}$ donc on a convergence normale sur $\R^{+}$. Pour $t<0$, $\lim\limits_{n\to+\infty}(t)=+\infty$ donc la série diverge grossièrement. Ainsi, $E=\R_{+}$.
+        \item Pour tout $n\in\N$, $f_{n}$ est continue et on a convergence normale donc $f$ est continue sur $E$. Pour tout $n\geqslant1$, $\lim\limits_{t\to+\infty}(t)=0$ et $\lim\limits_{t\to+\infty}f_{0}(t)=1$. On peut intervertir par convergence normale, donc $\lim\limits_{t\to+\infty}f_{n}(t)=1$.
+        \item Pour tout $n\in\N$, $f_{n}$ est $\mathcal{C}^{\infty}$ sur $E$. Soit $k\in\N$. Pour tout $t\geqslant0$ et $n\in\N$, on a 
+        \begin{equation}
+            f_{n}^{(k)}(t)=\frac{(-n)^{k}\e^{-nt}}{1+n^{2}}.
+        \end{equation}
+        Soit $\alpha>0$. Pour $t\geqslant\alpha$, on a 
+        \begin{equation}
+            \left\lvert f_{n}^{(k)}(t)\right\rvert\leqslant\frac{\e^{-n\alpha}}{1+n^{2}}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right).
+        \end{equation}
+        Ainsi, $\sum_{n\geqslant0}f_{n}^{(k)}$ converge normalement sur $[\alpha,+\infty[$ pour tout $\alpha>0$, donc $f$ est $\mathcal{C}^{\infty}$ sur $\R_{+}^{*}$.
+        On a pour tout $t>0$,
+        \begin{equation}
+            \boxed{f''(t)+f(t)=\sum_{n=0}^{+\infty}\e^{-nt}=\frac{1}{1-\e^{-t}}.}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a $u_n(0)=0$. Soit $x>0$, on a $\left\lvert u_n(x)\right\rvert=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$ donc on a bien convergence simple sur $[0,1]$.
+        \item On a 
+        \begin{equation}
+            u_n(x)=\frac{(1-nx)\e^{-nx}}{n^{a}}.
+        \end{equation}
+        Ainsi, $u_n$ est croissante de $0$ à $\frac{1}{n}$ et décroît de $\frac{1}{n}$ à 1, et on a $u_n(0)=0$, $u_n(1)=\frac{\e^{-n}}{a}$ et $u_n\left(\frac{1}{n}\right)=\frac{1}{\e n^{a+1}}=\left\lVert u_n\right\rVert_{\infty,[0,1]}$. On a donc convergence normale si et seulement si $a>0$.
+        \item Pour $a=1$ (respectivement $a=2$), $S$ est continue par convergence normale car $u_n$ est $\mathcal{C}^{\infty}$ pour tout $n\geqslant1$. Soit $x>0$, si $g_n(x)=\frac{\e^{-nx}}{n}$ (respectivement $h_n(x)=\frac{\e^{-nx}}{n^{2}}$) et $g(x)=\frac{S(x)}{x}$ (respectivement $h(x)=\frac{S(x)}{x}$), soit $\alpha\in]0,1]$ et $x\in[\alpha,1]$, on a 
+        \begin{equation}
+            \left\lvert g_n'(x)\right\rvert=\left\lvert\e^{-nx}\right\rvert\leqslant\e^{-n\alpha}
+        \end{equation}
+        (respectivement
+        \begin{equation}
+            \left\lvert h_n'(x)\right\rvert\leqslant\left\lvert\frac{\e^{-n\alpha}}{n}\right\rvert
+        \end{equation}
+        et $\left\lvert h_n''(x)\right\rvert\leqslant\e^{-n\alpha}$). Donc $\sum g_n'$ (respectivement $\sum h_n'$ et $\sum h_n''$) converge normalement sur $[\alpha,1]$ pour tout $\alpha\in]0,1]$ donc $g$ est $\mathcal{C}^{1}$ (respectivement $h$ est $\mathcal{C}^{2}$) sur $]0,1]$.
+
+        Pour tout $x\in]0,1]$, on a 
+        \begin{equation}
+            g'(x)=\sum_{n=1}^{+\infty}-\e^{-nx}=\frac{-\e^{-x}}{1-\e^{-x}},
+        \end{equation}
+        et donc (par changement de variable dans l'intégrale)
+        \begin{equation}
+            g(x)=g(1)+\ln\left(1-\e^{-1}\right)-\ln\left(1-\e^{-x}\right).
+        \end{equation}
+        puis $S(x)=xg(x)$. On fait de même pour $a=2$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    Si $x>0$, on a $f_{n}(x)=\frac{1}{\sqrt{n}}\times\frac{1}{+nx^{\frac{3}{2}}}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)$. Ainsi, le domaine de $f$ est $]0,+\infty[$.
+
+    Chaque $f_n$ est continue sur $\R_{+}^{*}$. Soit $a>0$, pour $x\geqslant a$, pour $n\geqslant1$, on a 
+    \begin{equation}
+        0\leqslant f_{n}(x)\leqslant\frac{1}{\sqrt{n}}\times\frac{1}{1+na^{\frac{3}{2}}},
+    \end{equation}
+    et le terme de droite est le terme général d'un série à termes positifs convergente indépendante de $x$. Donc $\sum_{n\geqslant1}f_{n}$ converge normalement ssur $[a,+\infty[$ pour tout $a>0$. Donc $f$ est continue sur $\R_{+}^{*}$.
+
+    On a 
+    \begin{equation}
+        0\leqslant f(x)\leqslant\sum_{n=1}^{+\infty}\frac{1}{(nx)^{\frac{3}{2}}}=\frac{1}{x^{\frac{3}{2}}}\times\zeta\left(\frac{3}{2}\right),
+    \end{equation}
+    donc $f$ est intégrable sur $[1,+\infty[$.
+
+    Fixons $x>0$, soit \function{g_x}{\R_{+}^{*}}{\R}{t}{\frac{1}{\sqrt{t}}\times\frac{1}{1+tx^{\frac{3}{2}}}}
+    $g$ est continue positive et décroissante. Elle est intégrable sur $\R_{+}^{*}$ car est équivalente à $\frac{1}{\sqrt{t}}$ quand $t\to0$, et est un $O\left(\frac{1}{t^{\frac{3}{2}}}\right)$ quand $t\to+\infty$. Pour tout $n\geqslant1$, on a 
+    \begin{equation}
+        g_{x}(n+1)\leqslant\int_{n}^{n+1}g_x(t)\mathrm{d}t\leqslant g_{x}(n)
+    \end{equation}
+    Ainsi, en sommant, on obtient 
+    \begin{equation}
+        f(x)-\frac{1}{1+x^{\frac{3}{2}}}=\sum_{n=1}^{+\infty}\frac{1}{\sqrt{n+1}}\times\frac{1}{1+(n+1)x^{\frac{3}{2}}}\leqslant I(x)=\int_{1}^{+\infty}g_x(t)\mathrm{d}t\leqslant f(x).
+    \end{equation}
+
+    Pour calculer $I(x)$, on fait les changements de variables $u=\sqrt{t}$ puis $v=ux^{\frac{3}{4}}$ pour avoir 
+    \begin{equation}
+        I(x)=\frac{2}{x^{\frac{3}{4}}}\int_{x^{\frac{3}{4}}}^{+\infty}\frac{\mathrm{d}v}{1+v^{2}}\underset{x\to0}{\sim}\frac{\pi}{x^{\frac{3}{4}}}.
+    \end{equation}
+
+    Ainsi, $f(x)\underset{x\to0}{\sim}\frac{\pi}{x^{\frac{3}{4}}}$. Donc $f$ est intégrale sur $]0,1]$. Finalement, $f$ est intégrable sur $\R_{+}^{*}$.
+\end{proof}
+
+\begin{remark}
+    On peut aussi former, pour $n\geqslant1$,
+    \begin{equation}
+        u_{n}=\int_{0}^{+\infty}\frac{\mathrm{d}x}{\sqrt{n}(1+nx^{\frac{3}{2}})}=\frac{1}{n^{\frac{7}{6}}}\int_{0}^{+\infty}\frac{\mathrm{d}u}{1+u^{\frac{3}{2}}},
+    \end{equation}
+    en faisant le changement de variables $u=n^{\frac{2}{3}}x$. $u_n$ est alors le terme général d'une série à termes positifs convergente, et on peut intervertir les signes $\sum$ et $\int$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si $x<0$, on a 
+        \begin{equation}
+            \lim\limits_{n\to+\infty}\frac{x\e^{-nx}}{\ln(n)}=+\infty.
+        \end{equation}
+        Si $x=0$, on a $S(0)=0$. Si $x>0$, on a $\frac{x\e^{-nx}}{\ln(n)}=\underset{n\to+\infty}{\left(\frac{1}{n^{2}}\right)}$, donc on a convergence simple sur $\R_{+}$.
+
+        \item On cherche $\sup\limits_{x\geqslant0}\left\lvert f_n(x)\right\rvert$. Pour tout $x\geqslant0$, on a 
+        \begin{equation}
+            f_{n}'(x)=\frac{(1-nx)}{\ln(n)}\e^{-nx}.
+        \end{equation}
+        Ainsi, le sup est atteint en $x=\frac{1}{n}$. Comme $f_{n}\left(\frac{1}{n}\right)=\frac{1}{n\e\ln(n)}$ est le terme général d'une série à termes positifs divergente (série de Bertrand), on n'a pas convergence normale sur $\R_{+}$.
+
+        Soit $N\geqslant2$, $x\geqslant0$. On a 
+        \begin{align}
+            \sum_{n=N}^{+\infty}f_{n}(x)
+            &\leqslant\frac{x}{\ln(N)}\sum_{n=N}^{+\infty}\e^{-nx},\\
+            &\leqslant\frac{x}{\ln(N)}\frac{\e^{-Nx}}{1-\e^{-x}},\\
+            &\leqslant\frac{x\e^{-x}}{\ln(N)(1-\e^{-x})}\times\frac{\e^{x}}{\e^{x}},\\
+            &\leqslant\frac{x}{\ln(N)(\e^{x}-1)}.
+        \end{align}
+
+        $x\mapsto\frac{x}{\e^{x}-1}\in\mathcal{C}^{0}\left(\R_{+}^{*}\right)$, tend vers 1 quand $x\to0$ et tend vers $0$ quand $x\to+\infty$. Donc cette fonction est bornée par $M\geqslant\e$ et 
+        \begin{equation}
+            \sum_{n=N}^{+\infty}f_{n}(x)\leqslant\frac{M}{\ln(N)}\xrightarrow[N\to+\infty]{}0.
+        \end{equation}
+        On a donc convergence uniforme sur $\R_{+}$.
+
+        \item On a $S(x)=x\times\sum_{n=2}^{+\infty}\frac{\e^{-nx}}{\ln(n)}=x\times\sum_{n=2}^{+\infty}g_n(x)$. $g_n$ est $\mathcal{C}^{1}$, et pour $a>0$, $x\geqslant a$ et $n\geqslant 2$, on a $g_n'(x)=-\frac{n\e^{-nx}}{\ln(n)}$ d'où $\left\lvert g_n'(x)\right\rvert\leqslant \frac{n\e^{-nx}}{\ln(n)}\leqslant\frac{n\e^{-na}}{\ln(n)}$ qui est le terme général d'une série à termes positifs convergente car $a>0$. Donc $\sum_{n=2}^{+\infty}g_{n}'$ converge normalement sur $[a,\infty[$ et $\sum_{n=2}^{+\infty}g_n$ convergen simplement sur $\R_{+}$ donc $\sum_{n\geqslant2}g_{n}$ est $\mathcal{C}^{1}$ sur $\R_{+}^{*}$.
+        
+        On a $\frac{S(x)-S(0)}{x-0}=\sum_{n=2}^{+\infty}g_n(x)=\tau(x)$. $\tau$ est décroissante car les $g_n$ le sont, donc $\tau(x)\xrightarrow[x\to0]{}l\in\overline{\R_{+}}$. Comme $g_{n}\geqslant0$, pour tout $N\geqslant2$ et $x>0$, on a $\sum_{n=2}^{N}g_{n}(x)\leqslant\tau(x)$. Quand $x\to0$, on a donc 
+        \begin{equation}
+            \sum_{n=2}^{N}\frac{1}{\ln(n)}\leqslant l,
+        \end{equation}
+        et quand $N\to+\infty$, on a $l=+\infty$. Ainsi, $S$ n 'est pas dérivable à droite en 0.
+
+        \item On a $x^{k}S(x)=\sum_{n=2}^{+\infty}\frac{x^{k+1}\e^{-nx}}{\ln(n)}=\sum_{n=2}^{+\infty}k_n(x)$. On a 
+        \begin{equation}
+            k_n'(x)=\frac{x^{k}\e^{-nx}}{\ln(n)}\left(k+1-nx\right),
+        \end{equation}
+        donc le sup est atteinte en $x=\frac{k+1}{n}$. Pour tout $x\geqslant K+1$, on a $\left\lvert k_n(x)\right\rvert\leqslant\left\lvert k_n(K+1)\right\rvert\leqslant\frac{(k+1)^{k+1}\e^{-(k+1)n}}{\ln(n)}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$. Donc $\sum_{n\geqslant2}k_n$ converge normalement sur $[k+1,+\infty[$ et on peut intervertir les limites. Ainsi,
+        \begin{equation}
+            \boxed{
+                \lim\limits_{x\to+\infty}x^{k}S(x)=0.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $Q_{k}$ est $\mathcal{C}^{\infty}$, $2\pi$-périodique, paire, $0\leqslant Q_{k}(t)\leqslant c_{k}$, $Q_{k}(-\pi)=Q_{k}(\pi)=0$, $Q_{k}(0)=c_{k}$. $Q_{k}$ est décroissante sur $[0,\pi]$. Pour tout $t\in[\delta,\pi]$, $0\leqslant Q_{k}(t)\leqslant c_{k}\left(\frac{1+\cos(\delta)}{2}\right)^{k}$.
+        On a $I_{k}=\int_{-\pi}^{\pi}\left(\frac{1+\cos(\delta)}{2}\right)^{k}\mathrm{d}t=4\int_{0}^{\frac{\pi}{2}}\sin^{2k}(u)\mathrm{d}u\underset{k\to+\infty}{\sim}2\sqrt{\frac{\pi}{k}}$ (via les intégrales de Wallis). Ainsi, $c_{k}$ est équivalent à $\sqrt{k\pi}$ quand $k\to+\infty$ et $\lim\limits_{k\to+\infty}c_{k}\left(\frac{1+\cos(\delta)}{2}\right)^{k}=0$. Ainsi, on a bien 
+        \begin{equation}
+            \boxed{
+                \lim\limits_{k\to+\infty}\sup\limits_{\delta\leqslant\left\lvert t\right\rvert\leqslant\pi}Q_{k}(t)=0.
+            }
+        \end{equation}
+
+        \item Soit $t\in\R$, 
+        \begin{align}
+            \left\lvert P_{k}(t)-f(t)\right\rvert
+            &=\frac{1}{2\pi}\left\lvert\int_{-\pi}^{\pi}f(t-s)Q_{k}(s)\mathrm{d}s-\int_{-\pi}^{\pi}f(t)Q_{k}(s)\mathrm{d}s\right\rvert,\\
+            &\leqslant\frac{1}{2\pi}\int_{-\pi}^{\pi}\left\lvert f(t-s)-f(t)\right\rvert Q_{k}(s)\mathrm{d}s,
+        \end{align}
+        car $\frac{1}{2\pi}\int_{-\pi}^{\pi}Q_{k}(s)\mathrm{d}s=1$.
+        $f$ est $\mathcal{C}^{0}$ sur $[0,4\pi]$ donc $f$ est uniformément continue sur $[0,4\pi]$. Soit $\varepsilon>0$, il existe $\delta_{1}>0$ tel que pour tout $(t,t')\in[0,4\pi]^{2}$, $\left\lvert t-t'\right\rvert\leqslant\delta_{1}\Rightarrow\left\lvert f(t)-f(t')\right\rvert\leqslant\varepsilon$. Alors pour tout $(t,t')\in\R^{2}$, si $\left\lvert t-t'\right\rvert\leqslant\min\left(\delta_{1},2\pi\right)$, alors $\left\lvert f(t)-f(t')\right\rvert\leqslant\varepsilon$. Donc $f$ est uniformément continue sur $\R$ et bornée sur $\R$ car continue $2\pi$-périodique.
+
+        Soit $\varepsilon>0$ et $\delta>0$ ($\delta<\pi$) tel que pour tout $(t,t')\in[0,4\pi]^{2}$, $\left\lvert t-t'\right\rvert\leqslant\delta\Rightarrow\left\lvert f(t)-f(t')\right\rvert\leqslant\frac{\varepsilon}{2}$. Alors on a 
+        \begin{equation}
+            \left\lvert P_{k}(t)-f(t)\right\rvert\leqslant\underbrace{\frac{1}{2\pi}\int_{[-\pi,\pi]\setminus[-\delta,\delta]}2\left\lVert f\right\rVert_{\infty}Q_{k}(s)\mathrm{d}s}_{\leqslant2\left\lVert f\right\rVert_{\infty}\sup\limits_{\delta\leqslant\left\lvert t\right\rvert \leqslant\pi}Q_{k}(t)\xrightarrow[k\to+\infty]{}0}+\underbrace{\frac{1}{2\pi}\int_{-\delta}^{\delta}\frac{\varepsilon}{2}Q_{k}(s)\mathrm{d}s}_{\leqslant\frac{\varepsilon}{2}},
+        \end{equation}
+        donc il existe $N\in\N$ tel que pour tout $k\geqslant N$, pour tout $t\in\R$, $\left\lvert P_{k}(t)-f(t)\right\rvert\leqslant\varepsilon$. Donc $P_{k}$ converge uniformément vers $f$ sur $\R$.
+
+        \item Montrons que $P_{k}\in F$. On a 
+        \begin{align}
+            P_{k}(t)
+            &=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(t-s)Q_{k}(s)\mathrm{d}s,\\
+            &=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(u)Q_{k}(t-u)\mathrm{d}u,\\
+            &=\frac{1}{2\pi}\frac{c_{k}}{2^{k}}\int_{-\pi}^{\pi}f(u)\left(1+\cos(t-u)\right)^{k}\mathrm{d}u,\\
+            &=\frac{c_{k}}{2^{k+1}\pi}\int_{-\pi}^{\pi}f(u)\sum_{m=-k}^{k}\alpha_{m}\e^{\im(t-u)}\mathrm{d}u,
+        \end{align}
+        où la dernière ligne est obtenue en développant $\cos(t-u)=\frac{\e^{\i(t-u)}+\e^{\i(u-t)}}{2}$.
+        Ainsi, 
+        \begin{equation}
+            P_{k}(t)=\sum_{m=-k}^{k}\left(\frac{c_{k}}{2^{k+1}\pi}\alpha_{m}\int_{-\pi}^{\pi}f(u)\e^{-\i mu}\mathrm{d}u\right)\e^{\i mt}\in F.
+        \end{equation}
+        Donc $F$ est dense dans $E$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Plus généralement, on peut remplacer la suite $Q_{k}$ par une \og approximation de l'unité\fg : il faut une suite $(f_{k})_{k\in\N}$ telle que
+    \begin{enumerate}
+        \item [i)] $\forall k\in\N$, $f_{k}$ est continue et positive,
+        \item [ii)] $\int_{\R}f_{k}=1$,
+        \item [iii)] $\forall\delta >0$, $\lim\limits_{k+\infty}\int_{\R\setminus[-\delta,\delta]}f_{k}=0$.
+    \end{enumerate}
+    Alors si $f$ est uniformément continue et bornée de $\R$ dans $\C$, alors $(f\star f_{k})_{k\in\N}$ converge uniformément vers $f$ sur $\R$.
+\end{remark}
+
+\begin{remark}
+    Soit \function{f}{[-1,1]}{\C}{x}{f(x)}
+    $f$ est continue, on lui associe $g=f\circ \cos$, qui est continue $2\pi$-périodique. Ainsi, $(P_{k}\star g)_{k\in\N}$ converge uniformément vers $g$ sur $\R$ et 
+    \begin{equation}
+        (Q_{k}\star g)(t)=\frac{c_{k}}{2^{k+1}\pi}\int_{-\pi}^{\pi}\left(1+\cos(t-u)\right)^{k}\mathrm{d}u,
+    \end{equation}
+    qui est une fonction de $t$ parie car $g$ l'est. On a $(1+\cos(t-u))^{k}=\left(1+\cos(t)\cos(u)+\sin(t)\sin(u)\right)^{k}$. En développant, on a
+    \begin{equation}
+        (Q_{k}\star g)(t)=A_{k}(\cos(t),\sin(t))=B_{k}(\cos(t)),
+    \end{equation}
+    où $A_{k}\in\C[X,Y]$ (polynôme à deux variables) et $B\in\C[X]$ par parité. Ainsi, $(B_{k})_{k\in\N}$ converge uniformément vers $f$ sur $[-1,1]$: on vient de redémontrer le théorème de Weierstrass.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si $(u_n)$ est croissante, on pose $f_n=u-u_n$. Sinon, on pose $f_n=u_n-u$.
+        \item $f_n$ est continue et $F_{n,\varepsilon}=f_{n}^{-1}\left([\varepsilon,+\infty[\right)$ donc $F_{n,\varepsilon}$ est fermé dans $K$, donc fermé. 
+        
+        Si $x\in F_{n+1,\varepsilon}$, on a $f_n(x)\geqslant f_{n+1}(x)\geqslant\varepsilon$ donc $x\in F_{n,\varepsilon}$. 
+        
+        Soit $x\in K$. Pour tout $\varepsilon>0$, il existe $N\in\N$ tel que $0\leqslant f_{N}(x)\leqslant\frac{\varepsilon}{2}$ donc $x\notin F_{n,\varepsilon}$ et $\cap_{n\in\N}F_{n,\varepsilon}=\emptyset$. Si pour tout $n\in\N$, on a $F_{n,\varepsilon}\neq\emptyset$, alors soit $(x_n)_{n\in\N}\in K^{\N}$ telle que pour tout $n\in\N,x_n\in F_{n,\varepsilon}$. $K$ étant compact, il existe $\varphi\colon\N\to\N$ strictement croissante telle que $\lim\limits_{n\to+\infty}x_{\varphi(n)}=x\in K$. Soit $n\in\N$ et $k\in\N$ tel que $\varphi(k)\geqslant n$. $x_{\varphi(k)}\in F_{\varphi(k),\varepsilon}\subset F_{n,\varepsilon}$. Alors, quand $k\to+\infty$, $x\in F_{n,\varepsilon}$ (fermé) donc $x\in\cap_{n\in\N}F_{n,\varepsilon}=\emptyset$ ce qui est absurde.
+
+        Donc il existe $N\in\N$ tel que $F_{N,\varepsilon}=\emptyset$ et pour tout $n\geqslant N$, $F_{n,\varepsilon}=\emptyset$. Donc pour tout $n\geqslant N$, pour tout $x\in K$, $f(x)<\varepsilon$. Donc $(f_n)_{n\in\N}$ converge uniformément sur $K$.
+
+        \item $f$ est continue sur un compact donc son maximum est atteint et $x_{n}$ existe. $(\left\lVert f_n\right\rVert_{\infty})_{n\in\N}$ est décroissante positive, donc $\left\lVert f_n\right\rVert_{\infty}\xrightarrow[n\to+\infty]{}l\geqslant0$. Soit $\varphi\colon\N\to\N$ strictement croissante telle que $x_{\varphi(n)}\xrightarrow[n\to+\infty]{}x\in K$. Si $l>0$, alors il existe $N_{0}\in\N$ tel que $f_{\varphi(N_0)}(x)\leqslant\frac{l}{2}$. Par continuité de $f_{\varphi(N_0)}$, il existe $\alpha>0$ tel que pour tout $y\in\overline{B(x,\alpha)}$, $f_{\varphi(N_0)}(y)<l$. Il existe $N_{1}\in\N$ tel que pour tout $n\geqslant N_{1}$, $x_{\varphi(n)}\in\overline{B(x,\alpha)}$ donc pour tout $n\geqslant N_{1}$, $f_{\varphi(N_0)}(x_{\varphi(n)})<l$. Pour $n=\max(N_0,N_1)$, on a 
+        \begin{equation}
+            l\leqslant f_{\varphi(n)}(x_{\varphi(n)})\leqslant f_{\varphi(N_{0})}(x_{\varphi(n)})<l,
+        \end{equation}
+        ce qui est absurde. Donc $l=0$ et $(f_n)$ converge uniformément sur $K$.
+    \end{enumerate}
+\end{proof}
