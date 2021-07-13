@@ -1,1 +1,86 @@
 \section{Intégration}
+
+\begin{exercise}
+    Soit $f$ continue strictement positive de $[a,b]\subset\R$ dans $\R_{+}^{*}$ et \function{S}{[a,b]}{\R}{x}{\int_{a}^{x}f}
+    Montrer que pour tout $n\geqslant1$, pour tout $k\in\left\llbracket1,n\right\rrbracket$, il existe un unique $x_{k}\in[a,b]$ tel que $S(x_{k})=k\frac{S(b)}{n}$. Évaluer ensuite $\lim\limits_{n\to+\infty}\sum_{k=1}^{n}f(x_{k})$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $f$ continue non identiquement nulle et $g(x)=\left(\int_{0}^{1}\left\lvert f(t)\right\rvert^{x}\mathrm{d}t\right)^{\frac{1}{x}}$.
+    \begin{enumerate}
+        \item Montrer que $\lim\limits_{x\to+\infty}g(x)=\left\lVert f\right\rVert_{\infty}$.
+        \item On suppose $\left\lvert f\right\rvert>0$, calculer $\lim\limits_{x\to0}g(x)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon[0,a]\to\R$ strictement croissante continue avec $f(0)=0$. Soit $g\colon[0,f(a)]\to[0,a]=f^{-1}$ (continue strictement croissante). Soit $(x,y)\in[0,a]\times[0,f(a)]$. Montrer que 
+    \begin{equation}
+        xy\leqslant\int_{0}^{x}f+\int_{0}^{y}g.    
+    \end{equation} 
+    Expliciter le cas d'égalité.
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de \begin{equation}
+        I=\int_{\frac{1}{2}}^{1}\frac{\ln(x)}{(1+x)\sqrt{1-x^{2}}}\mathrm{d}x.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Pour $n\in\N$, on pose $I_{n}=\int_{0}^{\frac{\pi}{4}}\tan^{n}(x)\mathrm{d}x$.
+    \begin{enumerate}
+        \item Exprimer $I_{n}$ en fonction de $n$.
+        \item Que vaut $\lim\limits_{n\to+\infty}I_{n}$ (sous réserve d'existence) ?
+        \item En déduire $\frac{\pi}{4}$ et $\ln(2)$ comme somme de séries.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $E=\left\lbrace f\in\mathcal{C}^{0}\left([a,b],\R_{+}^{*}\right)\right\rbrace$. On définit \function{\phi}{E}{\R}{f}{\int_{a}^{b}f\times\int_{a}^{b}\frac{1}{f}}
+    \begin{enumerate}
+        \item Montrer que l'on peut définir $m=\min_{f\in E}\phi(f)$ et évaluer $m$. Déterminer les $f\in E$ tels que $\phi(f)=m$.
+        \item Montrer que $f$ n'est pas majorée sur $E$.
+        \item Déterminer $\phi(E)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de $I=\int_{0}^{+\infty}\frac{\sqrt{x}\ln(x)}{(1+x)^{2}}\mathrm{d}x$.
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de $I=\int_{0}^{1}\frac{\ln(t)}{\sqrt{t(1-t)^{3}}}\mathrm{d}t$.
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de $I=\int_{0}^{\frac{\pi}{4}}\frac{\cos^{3}(t)}{\sqrt{\cos(2t)}}\mathrm{d}t$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon[a,b]\to\R$ ou $\C$ continue par morceaux et $g\colon\R\to\R$ ou $\C$ continue par morceaux $T$-périodique ($T>0$). Évaluer $\lim\limits_{\lambda\to+\infty}\int_{a}^{b}f(t)g(\lambda t)\mathrm{d}t$. Cas particulier: pour $f\colon[0,2\pi]\to\R$ continue, évaluer $\lim\limits_{n\to+\infty}\int_{0}^{2\pi}\frac{f(t)}{3+2\cos(nt)}\mathrm{d}t$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon\R_{+}\to\R$ uniformément continue et intégrable.
+    \begin{enumerate}
+        \item Montrer que $\lim\limits_{x\to+\infty}f(x)=0$.
+        \item Montrer que $f^{2}\in\mathcal{L}^{1}(\R_{+})$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit \function{f_n}{\R}{\R}{x}{\frac{n}{\sqrt{\pi}}\e^{-n^{2}x^{2}}}
+    \begin{enumerate}
+        \item Étudier la convergence simple, la convergence uniforme et en moyenne.
+        \item Soit $g$ continue et bornée sur $\R$, évaluer $\lim\limits_{x\to+\infty}\int_{-\infty}^{+\infty}f(t)f_n(t)\d t$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de $I=\int_{1}^{+\infty}\frac{1}{x}-\arcsin\left(\frac{1}{x}\right)\d x$.
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de $I=\int_{0}^{\frac{\pi}{2}}\ln(\sin(t))\d t$. On pourra poser $J=\int_{0}^{\frac{\pi}{2}}\ln(\cos(t))\d t$.
+\end{exercise}

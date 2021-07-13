@@ -1,1 +1,473 @@
 \section{Intégration}
+
+\begin{proof}
+    $S$ est de classe $\mathcal{C}^{1}$ sur $[a,b]$ avec $S'=f>0$. Donc $S$ définit un $\mathcal{C}^{1}$-difféomorphisme de $[a,b]$ dans $[S(a)=0,S(b)]$. COmme pour tout $n\geqslant1$, pour tout $k\in\left\llbracket1,n\right\rrbracket$, $k\frac{S(b)}{n}\in[0,S(b)]$, il existe un unique $x_{k}\in[a,b]$ tel que $S(x_{k})=k\frac{S(b)}{n}$ qui est simplement donné par 
+    \begin{equation}
+        \boxed{
+            x_{k}=S^{-1}\left(k\frac{S(b)}{n}\right).
+        }
+    \end{equation}
+
+    On a 
+    \begin{equation}
+        \frac{1}{n}\sum_{k=1}^{n}f(x_{k})=\frac{1}{S(b)}\left(\frac{S(b)}{n}\sum_{k=1}^{n}f\left(S^{-1}\left(\frac{k}{n}S(b)\right)\right)\right)\xrightarrow[n\to+\infty]{}\frac{1}{S(b)}\int_{0}^{S(b)}f\left(S^{-1}(t)\right)\mathrm{d}t=I.
+    \end{equation}
+    On effectue le changement de variable $u=S^{-1}(t)$ pour obtenir
+    \begin{equation}
+        \boxed{
+            I=\frac{1}{S(b)}\int_{0}^{b}f(u)^{2}\mathrm{d}u.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{remark}
+    On peut se demander si cela reste vrai si $f\geqslant0$. On définit \function{\varphi}{[0,S(b)]}{[a,b]}{y}{\min\left(\left\lbrace x\in[a,b]\middle|y=S(x)\right\rbrace\right)}
+    On a $x_{k}=\varphi\left(k\frac{S(b)}{n}\right)$, $f\circ \varphi$ continue par morceaux sur $[0,S(b)]$ et 
+    \begin{equation}
+        \frac{1}{n}\sum_{k=1}^{n}f\left(\varphi\left(k\frac{S(b)}{n}\right)\right)\xrightarrow[n\to+\infty]{}\frac{1}{S(b)}\int_{0}^{S(b)}\left(f\circ \varphi\right)(t)\mathrm{d}t.
+    \end{equation}
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $x>0$, on a $g(x)\leqslant\left\lVert f\right\rVert_{\infty}$. Soit $t_{0}\in[0,1]$ tel que $\left\lvert f(t_{0})\right\rvert=\left\lVert f\right\rVert_{\infty}$. Soit $\varepsilon>0$. Par continuité de $\left\lvert f\right\rvert$, il existe $[a,b]\subset[0,1]$ avec $a<b$ tel que pour tout $t\in[a,b]$, $0<\left\lvert f(t_{0})\right\rvert-\frac{\varepsilon}{2}<\left\lvert f(t)\right\rvert$.
+
+        D'où 
+        \begin{equation}
+            \left(\int_{0}^{1}\left\lvert f(t)\right\rvert^{x}\mathrm{d}t\right)^{\frac{1}{x}}\geqslant\left(\int_{a}^{b}\left\lvert f(t)\right\rvert^{x}\mathrm{d}t\right)^{\frac{1}{x}}\geqslant(b-a)^{\frac{1}{x}}\left(\left\lvert f(t_{0})\right\rvert-\frac{\varepsilon}{2}\right)\xrightarrow[x\to+\infty]{}\left\lvert f(t_{0})\right\rvert-\frac{\varepsilon}{2}.
+        \end{equation}
+        Alors il existe $X_{1}>0$ tel que pour tout $x\geqslant X_{1}$, $\left\lvert f(t_{}0)\right\rvert-\frac{\varepsilon}{2}-\frac{\varepsilon}{2}=\left\lVert f\right\rVert_{\infty}-\varepsilon\leqslant g(x)$. D'où le résultat.
+
+        \item On pose $h_{x}(t)=\exp(x\ln(\left\lvert f(t)\right\rvert))$ pour tout $t\in[0,1]$. Alors pour tout $t\in[0,1]$, on a $\lim\limits_{x\to0}h_{x}(t)=1$ et pour tout $x>0$, pour tout $t\in[0,1]$ $h_{x}(t)\leqslant\max\left(1,\left\lVert f\right\rVert_{\infty}\right)$ qui est intégrable sur $[0,1]$. D'après le théorème de convergence dominé, on a 
+        \begin{equation}
+            \lim\limits_{x\to0}\int_{0}^{1}\left\lvert f(t)\right\rvert^{x}\mathrm{d}t=1.
+        \end{equation}
+
+        Malheureusement, ce n'est pas suffisant.
+
+        Posons donc $k_{x}(t)=\frac{\left\lvert f(t)\right\rvert^{x}-1}{x}$. Pour $t$ fixé, on a $\lim\limits_{x\to0}k_{x}(t)=\ln\left(\left\lvert f(t)\right\rvert\right)$. De plus, pour tout $0<x\leqslant1$, pour tout $t\in[0,1]$, on a 
+        \begin{equation}
+            \left\lvert\left\lvert f(t)\right\rvert^{x}-1\right\rvert=\left\lvert\e^{x\ln(\left\lvert f(t)\right\rvert)}-\e^{0}\right\rvert 
+            \left\lbrace
+                \begin{array}[]{ll}
+                    \leqslant x\ln(\left\lvert f(t)\right\rvert),&\text{si }\left\lvert f(t)\right\rvert\leqslant1,\\\hline
+                    \leqslant x\ln(\left\lvert f(t)\right\rvert)\e^{x\ln(\left\lvert f(t)\right\rvert)}\\
+                    \leqslant x\ln(\left\lvert f(t)\right\rvert)\e^{\ln(\left\lvert f(t)\right\rvert)},&\text{si }\left\lvert f(t)\right\rvert>1.
+                \end{array}
+            \right.
+        \end{equation}
+
+        Ainsi $k_{x}(t)\leqslant\max\left(\ln\left(\left\lVert f\right\rVert_{\infty}\right), \left\lVert f\right\rVert_{\infty}\ln\left(\left\lVert f\right\rVert_{\infty}\right)\right)$ qui est intégrable sur $[0,1]$. D'après le théorème de convergence dominé,
+        \begin{equation}
+            \lim\limits_{x\to0}\int_{0}^{1}\frac{f(t)^{x}-1}{x}\mathrm{d}t=\int_{0}^{1}\ln\left(\left\lvert f(t)\right\rvert\right)\mathrm{d}t.
+        \end{equation}
+
+        Ainsi,
+        \begin{align}
+            g(x)
+            &=\exp\left(\frac{1}{x}\ln\left(1+x\int_{0}^{1}k_{x}(t)\mathrm{d}t\right)\right),\\
+            &=\exp\left(\frac{1}{x}\left(x\int_{0}^{1}\ln\left(\left\lvert f(t)\right\rvert\right)+\underset{x\to0}{o}(x)\right)\right),\\
+            &=\exp\left(\int_{0}^{1}\ln\left(\left\lvert f(t)\right\rvert\right)\mathrm{d}t+\underset{x\to0}{o}(1)\right)\xrightarrow[x\to0]{}\exp\left(\int_{0}^{1}\ln\left(\left\lvert f(t)\right\rvert\right)\mathrm{d}t\right).
+        \end{align}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On fixe $y\in[0,f(a)]$. On pose \function{\varphi}{[0,a]}{\R}{x}{\int_{0}^{x}f+\int_{0}^{y}g-xy}
+    $\varphi$ est $\mathcal{C}^{1}$ et $\varphi'(x)=f(x)-y$ donc $\varphi$ décroît de $0$ à $g(y)$ puis croît jusqu'en $x=a$. Son minimum vaut alors $\varphi(g(y))=\int_{0}^{x}+\int_{0}^{f(x)}g-xf(x)$ avec $x=g(y)$.
+
+    Si $f$ est $\mathcal{C}^{1}$, alors $g$ l'est aussi car $f$ définit un $\mathcal{C}^{1}$-difféomorphisme de $[0,a]$ dans $[0,f(a)]$. On effectue le changement de variable $u=f(t)$ et on obtient $\varphi(g(y))=\int_{0}^{x}(tf'(t)+f(t))\mathrm{d}t-xf(x)=[tf(t)]_{0}^{x}-xf(x)=0$. De même si $f$ est $\mathcal{C}^{1}$ par morceaux (utiliser la relation de Chasles).
+
+    Plus généralement, on a le lemme
+    \begin{lemma}
+        Soit pour $n\geqslant1$, $f_n:[0,a]\to\R$ affine par morceaux continue telle que pour tout $k\in\left\llbracket0,n\right\rrbracket$, $f_{n}\left(\frac{k}{n}a\right)=f\left(\frac{k}{n}a\right)$. Alors $(f_{n})_{n\geqslant1}$ converge uniformément vers $f$ sur $[0,a]$ et $(f_{n}^{-1})_{n\geqslant1}$ converge uniformément vers $f$ sur $[0,f(a)]$.
+    \end{lemma}
+    \begin{proof}[Preuve du lemme]
+        Soit $\varepsilon>0$. Par continuité uniforme de $f$, il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, pour tout $k\in\left\llbracket0,n-1\right\rrbracket$, pour tout $x\in\left[\frac{ka}{n},\frac{k+1}{n}a\right]$, on a $\left\lvert f(x)-f\left(\frac{k}{n}a\right)\right\rvert\leqslant\frac{\varepsilon}{2}$. Alors 
+        \begin{equation}
+            \left\lvert f(x)-f_n(x)\right\rvert\leqslant\left\lvert f(x)-f\left(\frac{ka}{n}\right)\right\rvert+\left\lvert f_n\left(\frac{k}{n}a\right)-f_n(x)\right\rvert\leqslant\varepsilon.
+        \end{equation}
+        On fait de même pour $(f_n^{-1})_{n\geqslant1}$.
+    \end{proof}
+    $f_n$ et $f_n^{-1}$ sont $\mathcal{C}^{1}$ par morceaux continues et $g_n=f_{n}^{-1}$. On a $\int_{0}^{x}f_{n}+\int_{0}^{f_n(x)}f_n=xf_n(x)$. Quand $n\to+\infty$, par convergence uniforme, on a $\int_{0}^{f_n(x)}g_n=\int_{0}^{f(x)}g_n+\int_{f_n(x)}^{f(x)}g_n$ et le dernier terme est uniformément borné par $\left\lVert f^{-1}\right\rVert_{\infty}\left\lvert f(x)-f_n(x)\right\rvert\xrightarrow[n\to+\infty]{}0$. Ainsi, le cas d'égalité est quand 
+    \begin{equation}
+        \boxed{
+            \int_{0}^{x}f+\int_{0}^{f(x)}g=xf(x).
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On pose $f(x)=\frac{\ln(x)}{(1+x)\sqrt{1-x^{2}}}$. $f$ est continue sur $\left[\frac{1}{2},1\right[$ et $f(x)\underset{x\to1^{-}}{\sim}\frac{x-1}{2\sqrt{2(1-x)}}\xrightarrow[x\to^{1^{-}}]{}0$. On effectue le changement de variable $x=\cos(t)$ d'où $\mathrm{d}t=-\frac{\mathrm{d}x}{\sqrt{1-x^{2}}}$. On a alors 
+    \begin{equation}
+        I=-\int_{\frac{\pi}{3}}^{0}\frac{\ln(\cos(t))}{1+\cos(t)}\mathrm{d}t=\int_{0}^{\frac{\pi}{3}}\frac{\ln(\cos(t))}{2\cos^{2}\left(\frac{t}{2}\right)}\mathrm{d}t.
+    \end{equation}
+    Or $\tan'\left(\frac{t}{2}\right)=\frac{1}{2\cos^{2}\left(\frac{t}{2}\right)}$ donc par intégrations par parties,
+    \begin{equation}
+        I=\left[\ln(\cos(t))\tan\left(\frac{t}{2}\right)\right]_{0}^{\frac{\pi}{3}}-\int_{0}^{\frac{\pi}{3}}\frac{-\sin(t)}{\cos(t)}\tan\left(\frac{t}{2}\right)\mathrm{d}t.
+    \end{equation}
+    Le premier terme vaut $\frac{\ln(\frac{1}{2})}{\sqrt{3}}$.
+    Pour le deuxième terme, on utilise la formule d'addition $\tan\left(\frac{t}{2}+\frac{t}{2}\right)=\frac{2\tan\left(\frac{t}{2}\right)}{1-\tan^{2}\left(\frac{t}{2}\right)}$. Ainsi,
+    \begin{equation}
+        \int_{0}^{\frac{\pi}{3}}\tan(t)\tan\left(\frac{t}{2}\right)\mathrm{d}t=\int_{0}^{\frac{\pi}{3}}\frac{2\tan^{2}\left(\frac{t}{2}\right)}{1-\tan^{2}\left(\frac{t}{2}\right)}\mathrm{d}t=\int_{0}^{\frac{1}{\sqrt{3}}}\frac{4u^{2}}{1-u^{2}}\frac{\mathrm{d}u}{1+u},
+    \end{equation}
+    en ayant effectué le changement de variables $u=\tan\left(\frac{t}{2}\right)$, d'où $\mathrm{d}t=\frac{2\mathrm{d}u}{1+u^{2}}$. Il ne reste plus qu'à faire une décomposition en éléments simples.
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $I_{n}$ est bien définie. On a 
+        \begin{align}
+            I_{n}+I_{n+2}
+            &=\int_{0}^{\frac{\pi}{4}}\tan^{n}(x)(1+\tan^{2}(x))\mathrm{d}x,\\
+            &=[\tan^{n+1}(x)]_{0}^{\frac{\pi}{4}}-n\int_{0}^{\frac{\pi}{4}}\tan^{n}(x)(1+\tan^{2}(x))\mathrm{d}x,\\
+            =1-n(I_{n}+I_{n+2}).
+        \end{align}
+        Donc $I_{n}+I_{n+2}=\frac{1}{n+1}$. On a $I_{0}=\frac{\pi}{4}$. On en déduit que 
+        \begin{equation}
+            I_{2p}=\frac{1}{2p-1}-I_{2p-2}=\dots=(-1)^{p}\left(\frac{\pi}{4}-1+\frac{1}{3}-\frac{1}{5}+\dots+\frac{(-1)^{p}}{2p-1}\right).
+        \end{equation}
+
+        On a $I_{1}=\int_{0}^{\frac{\pi}{4}}\tan(x)\mathrm{d}x=[-\ln(\cos(x))]_{0}^{\frac{\pi}{4}}=\frac{1}{2}\ln(2)$. Ainsi,
+        \begin{equation}
+            I_{2p+1}=(-1)^{p}\left(\frac{\ln(2)}{2}-\frac{1}{2}+\frac{1}{4}-\frac{1}{6}+\dots+\frac{(-1)^{p}}{2p}\right).
+        \end{equation}
+
+        \item On pose $f_n(x)=\tan^{n}(x)$. Si $x\in\left[0,\frac{\pi}{4}\right[$, on a $\lim\limits_{n\to+\infty}f_n(x)=0$. Si $x=\frac{\pi}{4}$, on a $\lim\limits_{n\to+\infty}f_n(x)=1$. Donc $(f_n)_{n\in\N}$ converge simplement vers $f\colon\left[0,\frac{\pi}{4}\right]\to\R$ qui vaut $0$ partout sauf en $\frac{\pi}{4}$ où elle vaut 1.
+        Soit $n\in\N$ et $x\in\left[0,\frac{\pi}{4}\right]$. On a $\left\lvert f_n(x)\right\rvert\leqslant1$ intégrable sur $\left[0,\frac{\pi}{4}\right]$. D'après le théorème de convergence dominée,
+        \begin{equation}
+            \boxed{
+                \lim\limits_{n\to+\infty}I_{n}=0.
+            }
+        \end{equation}
+
+        \item D'après ce qui précède, on a 
+        \begin{equation}
+            \everymath={\displaystyle}
+            \boxed{
+                \begin{array}[]{rcl}
+                    \frac{\pi}{4}&=&\sum_{n=0}^{+\infty}\frac{(-1)^{k}}{2k+1},\\
+                    \ln(2)&=&\sum_{k=0}^{+\infty}\frac{(-1)^{k}}{k+1}.
+                \end{array}
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    On peut donner un équivalent de $I_{n}$. Comme pour tout $x\in\left[0,\frac{\pi}{4}\right]$, on a $0\leqslant\tan(x)\leqslant1$, on a $I_{n+2}\leqslant I_{n}$. Ainsi, 
+    \begin{equation}
+        2I_{n+2}\leqslant I_{n}+I_{n+2}=\frac{1}{n+1}\leqslant 2I_{n},
+    \end{equation}
+    et donc 
+    \begin{equation}
+        \frac{1}{2(n+1)}\leqslant I_n\leqslant\frac{1}{2(n-1)},
+    \end{equation}
+    d'où
+    \begin{equation}
+        \boxed{
+            I_{n}\underset{n\to+\infty}{\sim}\frac{1}{2n}.
+        }
+    \end{equation}
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item D'après l'inégalité de Cauchy-Schwarz appliquée à $\sqrt{f}$ et $\frac{1}{\sqrt{f}}$, on a 
+        \begin{equation}
+            \int_{a}^{b}f\times\int_{a}^{b}\frac{1}{f}\geqslant\left(\int_{a}^{b}1\right)^{2}=(b-a)^{2}.
+        \end{equation}
+        $f\colon x\mapsto 1$ pour tout $x\in[a,b]$ donne l'égalité, et d'après le cas d'égalité de l'inégalité de Cauchy-Schwarz, on a égalité si et seulement si $\sqrt{f}$ et $\frac{1}{\sqrt{f}}$ sont proportionnelles, donc si et seulement si $f$ est constante.
+
+        \item Soit $\alpha\in\R_{+}^{*}\setminus\left\lbrace1\right\rbrace$ et $c<a$. Soit \function{f_{\alpha,c}}{[a,b]}{\R_+^*}{t}{(t-c)^\alpha}
+        On a
+        \begin{align}
+            \phi(f_{\alpha,c})
+            &=\frac{1}{\alpha^{2}-1}\left[(b-c)^{\alpha+1}-(a-c)^{\alpha+1}\right]\left[(a-c)^{-\alpha+1}-(b-c)^{-\alpha+1}\right],\\
+            &\underset{\alpha\to+\infty}{\sim}\frac{1}{\alpha^{2}}\left[(b-c)^{\alpha+1}\times\frac{1}{(a-c)^{\alpha-1}}\right],\\
+            &\underset{\alpha\to+\infty}{\sim}\frac{(b-a)(a-c)}{\alpha^{2}}\left(\frac{b-c}{a-c}\right)^{\alpha}\xrightarrow[\alpha\to+\infty]{}+\infty,
+        \end{align}
+        car $b-c>a-c$.
+
+        \item Soit $f,g\in E^{2}$ et $\lambda\in[0,1]$. $\lambda f+(1-\alpha)g$ est continue et strictement positive. $E$ est convexe dans $\left(\mathcal{C}^{0}\left([a,b],\R_{+}^{*}\right),\left\lVert\cdot\right\rVert_{\infty}\right)$ donc connexe par arcs.
+        
+        Soit $f\in E$ et $(f_n)_{n\in\N}$ suite de fonctions convergent uniformément vers $f$. Par convergence uniforme, on a $\int_{a}^{b}f_n\xrightarrow[n\to+\infty]{}\int_{a}^{b}f$. De plus, pour tout $x\in[a,b]$, on a 
+        \begin{equation}
+            \left\lvert\frac{1}{f_n(x)}-\frac{1}{f(x)}\right\rvert=\frac{\left\lvert f_n(x)-f(x)\right\rvert}{f_n(x)\times f(x)}\leqslant\frac{\left\lVert f_n-f\right\rVert_{\infty}}{\min_{y\in[a,b]f_n(y)\times f(y)}}.
+        \end{equation}
+        Il existe $n_0\in\N$ tel que pour tout $n\geqslant n_0$, $\left\lVert f_n-f\right\rVert_{\infty}\leqslant\frac{\min f}{2}$ et pour tout $x\in[a,b]$, pour tout $n\geqslant n_0$, $f_n(x)\geqslant\frac{\min f}{2}$. Alors 
+        \begin{equation}
+            \left\lVert \frac{1}{f_n}-\frac{1}{f}\right\rVert_{\infty}\leqslant\frac{2\left\lVert f_n-f\right\rVert_{\infty}}{(\min f)^{2}}\xrightarrow[n\to+\infty]{}0.
+        \end{equation}
+        Ainsi, $\int_{a}^{b}\frac{1}{f_n}\xrightarrow[n\to+\infty]{}\int_{a}^{b}\frac{1}{f}$ et $\phi(f_n)\xrightarrow[n\to+\infty]{}\phi(f)$. $\phi$ est donc continue. D'après le théorème des valeurs intermédiaires, on a donc 
+        \begin{equation}
+            \boxed{
+                \phi(E)=[(b-a)^{2},+\infty[.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    Soit \function{f}{]0,+\infty}{\R}{x}{\frac{\sqrt{x}\ln(x)}{(1+x)^{2}}}
+    $f$ est continue. On a $f(x)\xrightarrow[x\to0]{}0$ donc $\int_{0}^{1}f$ converge. On a $f(x)\underset{x\to+\infty}{\sim}\ln(x)\frac{1}{x^{\frac{3}{2}}}=\underset{x\to+\infty}{O}\left(\frac{1}{x^{\frac{5}{4}}}\right)$ donc $\int_{1}^{+\infty}f$ converge.
+
+    On pose $x=u^{2}$ et on obtient 
+    \begin{align}
+        I
+        &=\int_{0}^{+\infty}\frac{2u^{2}\ln(u^{2})}{(1+u^{2})^{2}}\mathrm{d}u,\\
+        &=4\int_{0}^{+\infty}\frac{u^{2}\ln(u)}{(1+u^{2})^{2}}\mathrm{d}u,\\
+        &=2\left(\left[-\frac{1}{(1+u^{2})}\times u\ln(u)\right]_{0}^{+\infty}+\int_{0}^{+\infty}\frac{1}{1+u^{2}}\left(\ln(u)+0\right)\mathrm{d}u\right),\label{it:ipp}\\
+        &=2\left(\int_{0}^{+\infty}\frac{\ln(u)}{1+u^{2}}\mathrm{d}u+\int_{0}^{+\infty}\frac{1}{1+u^{2}}\mathrm{d}u\right).
+    \end{align}
+
+    Noter que l'intégration par parties faite en~\ref{it:ipp} est correcte car tout converge en 0 et $+\infty$ (passer à la limite $\alpha,\beta\to0,+\infty$ pour être plus rigoureux).
+
+    La première intégrale est nulle. En effet, on pose $x=\frac{1}{u}$ d'où $\mathrm{d}x=-\frac{\mathrm{d}u}{u^{2}}$ et donc 
+    \begin{equation}
+        \int_{0}^{+\infty}\frac{\ln(u)}{1+u^{2}}\mathrm{d}u=-\int_{+\infty}^{0}\frac{\ln\left(\frac{1}{x}\right)}{1+\frac{1}{x^{2}}}\frac{\mathrm{d}x}{x^{2}}=-\int_{0}^{+\infty}\frac{\ln(x)}{1+x^{2}}\mathrm{d}x.
+    \end{equation}
+    La deuxième intégrale vaut $\frac{\pi}{2}$. Finalement, on a 
+    \begin{equation}
+        \boxed{
+            I=\pi.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On note $f$ la fonction intégrande. $f$ est continue négative. On a $\left\lvert f(t)\right\rvert\underset{t\to0}{\sim}\left\lvert\frac{\ln(t)}{\sqrt{t}}\right\rvert=\underset{t\to0}{O}\left(\frac{1}{t^{\frac{3}{4}}}\right)$ donc $\int_{0}^{\frac{1}{2}}f$ converge. On a $\left\lvert f(t)\right\rvert\underset{t\to1}{\sim}\frac{1}{\sqrt{1-t}}$ donc $\int_{\frac{1}{2}}^{1}f$ converge.
+
+    On a 
+    \begin{equation}
+        I=\int_{0}^{1}\frac{\ln(t)}{1-t}\frac{\mathrm{d}t}{\sqrt{t(1-t)}}.
+    \end{equation}
+    Comme $t(1-t)=-(t^{2}-t)=-\left(\left(t-\frac{1}{2}\right)^{2}-\frac{1}{4}\right)=\frac{1}{4}\left(1-(2t-1)^{2}\right)$, on pose $2t-1=\cos\theta$. On a alors $t=\frac{\cos\theta+1}{2}$ et $\mathrm{d}\theta=\frac{-2\mathrm{d}t}{\sqrt{1-(2t-1)^{2}}}=\frac{-\mathrm{d}t}{\sqrt{t(1-t)}}$. Ainsi, 
+    \begin{equation}
+        I=\int_{0}^{\pi}\frac{\ln\left(\frac{\cos\theta+1}{2}\right)}{\frac{1-\cos\theta}{2}}\mathrm{d}\theta.
+    \end{equation}
+    On a $\frac{1+\cos\theta}{2}=\cos^{2}\left(\frac{\theta}{2}\right)$ et $\frac{1-\cos\theta}{2}=\sin^{2}\left(\frac{\theta}{2}\right)$. En posant $u=\frac{\theta}{2}$, on a donc 
+    \begin{equation}
+        I=4\int_{0}^{\frac{\pi}{2}}\frac{\ln(\cos u)}{\sin^{2}u}\mathrm{d}u.
+    \end{equation}
+    En fixant $0<\varepsilon<\alpha<1$ et en posant $I_{\varepsilon,\alpha}=\int_{\varepsilon}^{\alpha}f$, on a en faisant une intégration par parties:
+    \begin{equation}
+        I_{\varepsilon,\alpha}=4\left(\left[-\cot u\times\ln(\cos u)\right]_{\varepsilon}^{\alpha}-\int_{\varepsilon}^{\alpha}1\mathrm{d}u\right).
+    \end{equation}
+    Le deuxième terme tend vers $\frac{\pi}{2}$,. Pour le premier, si $\alpha=\frac{\pi}{2}-h$, on a 
+    \begin{equation}
+        -\cot\alpha\ln\cos\alpha=-\tan h\ln\sin h=-\tan h\left[\ln h+\underset{h\to0}{o}(1)\right]\underset{h\to0}{\sim}-h\ln(h)\xrightarrow[h\to0]{}0.
+    \end{equation}
+    De même, on a 
+    \begin{equation}
+        -\cot\varepsilon\ln\cos\varepsilon\underset{\varepsilon\to0}{\sim}-\frac{1}{\varepsilon}\times \frac{-\varepsilon^{2}}{2}\underset{\varepsilon\to0}{\sim}\frac{\varepsilon}{2}\xrightarrow[\varepsilon\to0]{}0.
+    \end{equation}
+
+    Ainsi, 
+    \begin{equation}
+        \boxed{
+            I=-2\pi.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On note $f$ la fonction intégrande. Si $h=\frac{\pi}{4}-t$, on a $\cos(2t)=\cos\left(\frac{\pi}{2}-2h\right)=\sin(2h)\underset{h\to0}{\sim}2h$. Ainsi, 
+    \begin{equation}
+        f(t)\underset{t\to\frac{\pi}{4}}{\sim}\frac{\frac{1}{2\sqrt{2}}}{\sqrt{2\left(\frac{\pi}{4}-t\right)}},
+    \end{equation}
+    donc l'intégrale existe (critère de Riemann).
+
+    En posant $u=\sin(t)$, puis $v=\sqrt{2}u$, puis $\theta=\arcsin(v)$, on a 
+    \begin{align}
+        I
+        &= \int_{0}^{\frac{\pi}{4}}\frac{\left(1-\sin^{2}(t)\right)\cos(t)}{\sqrt{1-2\sin^{2}(t)}}\mathrm{d}t,\\
+        &= \int_{0}^{\frac{\sqrt{2}}{2}}\frac{1-u^{2}}{\sqrt{1-2u^{2}}}\mathrm{d}u,\\
+        &= \int_{0}^{1}\frac{1-\frac{u^{2}}{2}}{\sqrt{2}}\frac{\mathrm{d}u}{\sqrt{1-u^{2}}},\\
+        &= \int_{0}^{\frac{\pi}{2}}\frac{1-\frac{\sin^{2}\theta}{2}}{\sqrt{2}}\mathrm{d}\theta,\\
+        &= \frac{1}{\sqrt{2}}\left(\frac{\pi}{2}-\frac{1}{4}\int_{0}^{\frac{\pi}{2}}1-\cos(2\theta)\mathrm{d}\theta\right),\\
+        &=\frac{1}{\sqrt{2}}\left(\frac{\pi}{2}-\frac{\pi}{8}\right),\\
+        &=\frac{1}{\sqrt{2}}\frac{3\pi}{8}.
+    \end{align}
+\end{proof}
+
+\begin{proof}
+    Si $f=c\in\C$ est constante, on a 
+    \begin{equation}
+        \gamma=\int_{a}^{b}f(t)g(\lambda t)\mathrm{d}t=c\int_{a}^{b}g(\lambda t)\mathrm{d}t.
+    \end{equation}
+    On pose $u=\lambda t$ et on pose $k(\lambda)=\left\lfloor\frac{\lambda b-\lambda a}{T}\right\rfloor\underset{\lambda\to+\infty}{\sim}\frac{\lambda(b-a)}{T}$. Alors 
+    \begin{equation}
+        \gamma=\frac{c}{\lambda}k(\lambda)\int_{0}^{T}g+\frac{c}{\lambda}\int_{\lambda a+k(\lambda)T}^{\lambda b}g.
+    \end{equation}
+    Le deuxième terme est majoré par $\frac{\left\lvert c\right\rvert}{\lambda}T\left\lVert g\right\rVert_{\infty}\xrightarrow[\lambda\to+\infty]{}0$. Finalement,
+    \begin{equation}
+        \lim\limits_{\lambda\to+\infty}\gamma=\frac{c(b-a)}{T}\int_{0}^{T}g=\frac{1}{T}\int_{0}^{T}g\int_{a}^{b}f.
+    \end{equation}
+
+    C'est la même chose pour les fonctions en escalier (par combinaison linéaire).
+
+    Pour une fonction quelconque $f$ continue par morceaux, soit $\varepsilon>0$. Il existe $f_{\varepsilon}$ une fonction en escalier telle que $\left\lVert f-f_{\varepsilon}\right\rVert_{\infty}\leqslant\varepsilon$. On forme 
+    \begin{equation}
+        \Gamma=\left\lvert\int_{a}^{b}(f(t)g(\lambda t))\mathrm{d}t-\frac{1}{T}\int_{0}^{T}g\int_{a}^{b}f\right\rvert.
+    \end{equation}
+
+    On a 
+    \begin{align}
+        \Gamma
+        &=\left\lvert \int_{a}^{b}f_{\varepsilon}(t)g(\lambda t)\mathrm{d}t+\int_{a}^{b}(f(t)-f_{\varepsilon}(t))g(\lambda t)\mathrm{d}t-\frac{1}{T}\int_{0}^{T}g\int_{a}^{b}f_{\varepsilon}-\frac{1}{T}\int_{0}^{T}g\int_{a}^{b}(f-f_{\varepsilon})\right\rvert,\\
+        &\leqslant \left\lvert \int_{a}^{b}f_{\varepsilon}(t)g(\lambda t)\mathrm{d}t-\frac{1}{T}\int_{0}^{T}g\int_{a}^{b}f_{\varepsilon}\right\rvert+\left\lvert \int_{a}^{b}(f(t)-f_{\varepsilon}(t))g(\lambda t)\mathrm{d}t\right\rvert+\left\lvert\frac{1}{T}\int_{0}^{T}g\int_{a}^{b}(f-f_{\varepsilon})\right\rvert.
+    \end{align}
+
+    Il existe $\lambda_{0}\in\R$ tel que pour tout $\lambda\geqslant\lambda_{0}$,
+    \begin{equation}
+        \left\lvert\int_{a}^{b}f_{\varepsilon}(t)g(\lambda t)\mathrm{d}t-\frac{1}{T}\int_{0}^{T}\int_{a}^{b}f_{\varepsilon}\right\rvert\leqslant\frac{\varepsilon}{3}.
+    \end{equation}
+
+    Ainsi, $\Gamma\leqslant\frac{\varepsilon}{3}\times 3=\varepsilon$. Donc 
+    \begin{equation}
+        \boxed{
+            \lim\limits_{\lambda\to+\infty}\int_{a}^{b}f(t)g(\lambda t)\mathrm{d}t=\frac{1}{T}\int_{0}^{T}g\int_{a}^{b}f.
+        }
+    \end{equation}
+
+    Pour le cas particulier, on a $g(t)=\frac{1}{3+2\cos(t)}$. $g$ est $2\pi$-périodique, paire et strictement positive. On pose $x=\tan\left(\frac{t}{2}\right)$, on a $\cos(t)=\frac{1-x^{2}}{1+x^{2}}$ et $\sin(t)=\frac{2x}{1+x^{2}}$. Par parité, on a $\int_{0}^{2\pi}g=2\int_{0}^{\pi}g$, et 
+    \begin{align}
+        \int_{0}^{\pi}g(t)\mathrm{d}t
+        &=\int_{0}^{+\infty}\frac{2\mathrm{d}x}{(1+x^{2})\left(3+2\left(\frac{1-x^{2}}{1+x^{2}}\right)\right)},\\
+        &= 2\int_{0}^{+\infty}\frac{\mathrm{d}x}{x^{2}+5},\\
+        &= \frac{2}{\sqrt{5}}\int_{0}^{+\infty}\frac{\frac{\mathrm{d}x}{\sqrt{5}}}{\left(\frac{x}{\sqrt{5}}\right)^{2}+1},\\
+        &= \frac{2}{\sqrt{5}}\times\frac{\pi}{2},\\
+        &=\frac{\pi}{\sqrt{5}}.
+    \end{align}
+
+    Donc 
+    \begin{equation}
+        \boxed{
+            \lim\limits_{n\to+\infty}\int_{0}^{2\pi}\frac{f(t)}{3+2\cos(nt)}=\frac{1}{\sqrt{5}}\int_{0}^{2\pi}f.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{remark}
+    Pour calculer $I=\int_{0}^{2\pi}\frac{\mathrm{d}t}{3+2\cos(t)}$, on peut écrire
+    \begin{equation}
+        \frac{1}{3+2\cos(t)}=\frac{1}{3+\e^{\i t}+\e^{-\i t}}=\frac{\e^{\i t}}{\e^{2\i t}+3\e^{\i t}+1}.
+    \end{equation}
+    On décompose $F(X)=\frac{X}{X^{2}+3X+1}=\frac{\alpha}{X-\lambda}+\frac{\beta}{X-\mu}$ avec $\lambda=\frac{-3+\sqrt{5}}{2}\in]-1,0[$, $\mu=\frac{-3-\sqrt{5}}{2}\in]-\infty,-1[$, $\alpha=\frac{\lambda}{\lambda-\mu}$, $\beta=\frac{\mu}{\mu-\lambda}$ avec $\lambda-\mu=\sqrt{5}$ et $\lambda=\frac{1}{\mu}$. Ainsi, 
+    \begin{align}
+        \frac{1}{3+2\cos(t)}
+        &=\frac{\lambda}{\sqrt{5}}\frac{1}{\e^{\i t}-\lambda}-\frac{\mu}{\sqrt{5}}\frac{1}{\e^{\i t}-\mu},\\
+        &=\frac{\lambda}{\sqrt{5}}\frac{\e^{-\i t}}{1-\lambda\e^{-\i t}}+\frac{1}{\sqrt{5}}\frac{1}{1-\frac{\e^{\i t}}{\mu}},\\
+        &=\frac{1}{\sqrt{5}}\sum_{n\in\Z}\lambda^{n}\e^{\i nt},
+    \end{align}
+    car $\left\lvert \lambda\e^{-\i t}\right\rvert<1$ et $\left\lvert \frac{\e^{\i t}}{\mu}\right\rvert<1$. Comme on a $\left\lvert \lambda^{n}\e^{\i nt}\right\rvert\leqslant\left\lvert\lambda\right\rvert^{n}$, on a convergence normale sur $[0,2\pi]$ car $\left\lvert\lambda\right\rvert<1$. Ainsi,
+    \begin{equation}
+        \int_{0}^{2\pi}\frac{\mathrm{d}t}{3+2\cos(nt)}=\frac{1}{\sqrt{5}}\sum_{n\in\Z}\lambda^{n}\int_{0}^{2\pi}\e^{\i nt}\mathrm{d}t=\frac{2\pi}{\sqrt{5}}.
+    \end{equation}
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si $f$ ne tend pas vers 0 en $+\infty$, il existe $\varepsilon_{0}>0$ tel que pour tout $A>0$, il existe $x_{A}\geqslant A$ tel que $\left\lvert f(x_{A})\right\rvert>\varepsilon_{0}$. On sait qu'il existe $\alpha_{0}>0$ tel que pour tout $(x_{1},x_{2})\in\left(\R_{+}\right)^{2}$, si $\left\lvert x_{1}-x_{2}\right\rvert\leqslant\alpha_{0}$ alors $\left\lvert f(x_{1})-f(x_{2})\right\rvert\leqslant\frac{\varepsilon_{0}}{2}$. Alors pour tout $A\geqslant0$, pour tout $x\in[x_{A}-\alpha_{0},x_{A}+\alpha_{0}]$, on a $\left\lvert f(x)-f(x_{A})\right\rvert\leqslant\frac{\varepsilon_{0}}{2}$. Donc $f(x)$ est du signe de $f(x_{A})$ et $\left\lvert f(x)\right\rvert>\frac{\varepsilon_{0}}{2}$. Alors on a 
+        \begin{equation}
+            \left\lvert\int_{x_{A}-\alpha_{0}}^{x_{A}+\alpha_{0}}f(x)\mathrm{d}x\right\rvert=\int_{x_{A}-\alpha_{0}}^{x_{A}+\alpha_{0}}\left\lvert f(x)\right\rvert\d x>\varepsilon_{0}\alpha_{0}>0.
+        \end{equation}
+        Or 
+        \begin{equation}
+            \left\lvert \int_{x_{A}-\alpha_{0}}^{x_{A}+\alpha_{0}}f(x)\d x\right\rvert = \left\lvert \int_{x_{A}-\alpha_{0}}^{+\infty}f(x)\d x-\int_{x_{A}+\alpha_{0}}^{+\infty}f(x)\d x\right\rvert\xrightarrow[A\to+\infty]{}0.
+        \end{equation}
+        C'est absurde, donc
+        \begin{equation}
+            \boxed{
+                \lim\limits_{x\to+\infty}f(x)=0.
+            }
+        \end{equation}
+
+        \item Il existe $x_{0}>0$ tel que pour tout $x>x_{0}$, on ait $\left\lvert f(x)\right\rvert<1$. Donc pour tout $x>x_{0}$, on a $\left\lvert f^{2}(x_{0})\right\rvert\leqslant\left\lvert f(x)\right\rvert$ d'où $f^{2}=\underset{+\infty}{O}(f)$ et $f^{2}$ est intégrable.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Si $f$ est à valeurs dans $\C$, alors il faut raisonner sur $\Im(f)$ et $\Re(f)$ et le résultat reste vrai.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si $x=0$, $f_n(0)=\frac{n}{\sqrt{\pi}}\xrightarrow[n\to+\infty]{}+\infty$. Si $x\neq0$, alors $f_n$ converge simplement vers 0. On n'a pas convergence uniforme sur $\R_{+}^{*}$ car on pourrait intervertir les limites en 0.
+        Soit $a>0$, soit $x\in[a,+\infty[$. $f$ étant décroissante sur $\R_{+}^{*}$, on a $\left\lvert f_n(x)\right\rvert\leqslant\frac{n}{\sqrt{\pi}}\e^{-n^{2}a^{2}}\xrightarrow[n\to+\infty]{}0$. On a donc convergence uniforme sur $[a,+\infty[$.
+
+        Notons que $f_n$ est intégrable sur $\R$ et que son intégrable vaut 1. Enfin, pour tout $a>0$, on a $\int_{0}^{+\infty}f_n(x)\d x=\int_{n_0}^{+\infty}\frac{1}{\sqrt{\pi}}\e^{-u^{2}}\d u\xrightarrow[n\to+\infty]{}0$ (reste d'intégrale convergente).
+
+        \item Notons $g_n(u)=\frac{g\left(\frac{u}{n}\right)}{\sqrt{\pi}}\e^{-u^{2}}$ de telle sorte que $\int_{-\infty}^{+\infty}g(t)\frac{n}{\sqrt{\pi}}\e^{-n^{2}t^{2}}\d t=\int_{-\infty}^{+\infty}g_n(u)\d u$.
+        
+        Soit $u$ fixé dans $\R$, on a $\lim\limits_{n\to+\infty}g_n(u)=\frac{g(0)}{\sqrt{\pi}}\e^{-u^{2}}$ par continuité de $g$, et pour tout $n\geqslant1$, pour tout $u\in\R$, on a $\left\lvert g_n(u)\right\rvert\leqslant\frac{\left\lVert g\right\rVert_{\infty}}{\sqrt{5}}\e^{-u^{2}}$ intégrable sur $\R$. D'après le théorème de converge dominée, on peut intervertir limite et intégrale, donc 
+        \begin{equation}
+            \boxed{
+                \lim\limits_{n\to+\infty}\int_{\R}g(t)f_n(t)\d t=g(0)
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Généralement, pour tout $x\in\R$, $(f_n\star g)(x) = \int_{\R}g(x-t)f_n(t)\d t\xrightarrow[n\to+\infty]{}g(x)$ par théorème de convergence dominée.
+\end{remark}
+
+\begin{remark}
+    Si $g$ est bornée et uniformément continue sur $\R$, soit $\varepsilon>0$ et $\alpha>0$ tel que si $\left\lvert t\right\rvert\leqslant\alpha$ alors pour tout $x\in\R$, $\left\lvert g(x-t)-g(x)\right\rvert\leqslant\frac{\varepsilon}{2}$. Alors 
+    \begin{equation}
+        \left\lvert (f_n\star g)(x)-g(x)\right\rvert\leqslant\int_{-\alpha}^{\alpha}\left\lvert g(x-t)-g(x)\right\rvert f_n(t)\d t+\int_{\R\setminus[-\alpha, \alpha]}2\left\lVert g\right\rVert_{\infty}f_n(t)\d t.
+    \end{equation}
+    Le deuxième terme tend vers 0 quand $n\to+\infty$, donc $(f_n\star g)_{n\in\N}$ converge uniformément vers $g$ sur $\R$.
+\end{remark}
+
+\begin{remark}
+    Soit $f\colon\R\to\R_{+}$ continue par morceaux telle que $\int_{\R}f=1$. Soit pour $n\geqslant1$, \function{f_n}{\R}{\R^{+}}{t}{nf(nt)}
+    Par changement de variable, on a $\int_{\R}f_n=1$ et $\lim\limits_{n\to+\infty}\int_{\alpha}^{+\infty}f=0$ pour $\alpha>0$. $(f_n)_{n\in\N}$ est une approximation de l'unité.
+\end{remark}
+
+\begin{proof}
+    Si $x\geqslant2$, on a $\frac{1}{x}\in]0,1]$ donc on peut définir \function{f}{[1,+\infty[}{\R}{x}{\frac{1}{x}-\arcsin\left(\frac{1}{x}\right)}
+    $f$ est continue et $\arcsin(t)\underset{t\to0}{=}t+\frac{t^{3}}{6}+o(t^{3})$ implique $f(x)\underset{x\to+\infty}{\sim}\frac{-1}{6x^{3}}$, donc d'après le critère de Riemann, $\int_{1}^{+\infty}f$ converge.
+
+    Soit $A\geqslant1$, on pose $I_{A}=\int_{1}^{A}\frac{1}{x}-\arcsin\left(\frac{1}{x}\right)\d x=\ln(A)-\int_{1}^{A}\arcsin\left(\frac{1}{x}\right)\d x$. On a 
+    \begin{align}
+        \int_{1}^{A}\arcsin\left(\frac{1}{x}\right)\d x
+        &=[x\arcsin\left(\frac{1}{x}\right)]_{1}^{A}+\int_{1}^{A}\frac{1}{\sqrt{x^{2}-1}}\d x,\\
+        &=\arcsin\left(\frac{1}{A}\right)+\ln(A+\sqrt{A^{2}-1})-\frac{\pi}{2},\\
+        &\underset{A\to+\infty}{=}1+\ln(A)+\ln(2)-\frac{\pi}{2}+o(1),
+    \end{align}
+    donc 
+    \begin{equation}
+        \boxed{
+            I=\lim\limits_{A\to+\infty}=-1+\frac{\pi}{2}-\ln(2).
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On a $\ln(\sin(t))\underset{t\to0}{\sim}\ln(t)\underset{t\to0}{=}O\left(\frac{1}{\sqrt{t}}\right)$ donc $I$ existe, et en posant $u=\frac{\pi}{2}-t$, on a $I=J$. On a 
+    \begin{align}
+        I+J
+        &=\int_{0}^{\frac{\pi}{2}}\ln\left(\frac{\sin(2t)}{2}\right)\d t,\\
+        &=\int_{0}^{\frac{\pi}{2}}\ln(\sin(2t))\d t-\int_{0}^{\frac{\pi}{2}}\ln(2)\d t,\\
+        &=\frac{1}{2}\int_{0}^{\pi}\ln(\sin(u))\d u-\frac{\pi}{2}\ln(2),\\
+        &=I+\int_{\frac{\pi}{2}}^{\pi}\ln(\sin(u))\d u-\frac{\pi}{2}\ln(2).
+    \end{align}
+    On a 
+    \begin{equation}
+        I+\int_{\frac{\pi}{2}}^{\pi}\ln(\sin(u))\d u=\frac{1}{2}I+\frac{1}{2}\int_{0}^{\frac{\pi}{2}}\ln(\sin(v))\d v=I.
+    \end{equation}
+    Finalement, on a $I+J=I-\frac{\pi}{2}\ln(2)$ donc 
+    \begin{equation}
+        \boxed{
+            I=J=-\frac{\pi}{2}\ln(2).
+        }
+    \end{equation}
+\end{proof}
