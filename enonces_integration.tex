@@ -84,3 +84,74 @@
 \begin{exercise}
     Existence et calcul de $I=\int_{0}^{\frac{\pi}{2}}\ln(\sin(t))\d t$. On pourra poser $J=\int_{0}^{\frac{\pi}{2}}\ln(\cos(t))\d t$.
 \end{exercise}
+
+\begin{exercise}
+    Pour $\alpha>1$, on note \function{f_\alpha}{\R_{+}}{\R}{x}{\frac{1}{1+x^{\alpha}\left\lvert\sin(x)\right\rvert}}
+    Montrer que $f_{\alpha}$ est intégrable sur $\R_{+}$. 
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $f\colon[a,b]\to\R$ continue telle que pour tout $n\in\N$, $\int_{a}^{b}f(t)\d t=0$. Montrer que $f=0$.
+        \item Calculer, pour $n\in\N$, $I_{n}=\int_{0}^{+\infty}t^{n}\e^{(\i-1)t}\d t$.
+        \item En déduire $f\colon\R_{+}\to\R$ non nulle telle que pour tout $n\in\N$, $\int_{0}^{+\infty}t^{n}f(t)\d t=0$ (avec pour tout $n\in\N$, $t\to t^{n}f(t)$ intégrables sur $\R_{+}$). 
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Transformée de Laplace]
+    Soit $f\colon\R_{+}\to\R$ ou $\C$ continue par morceaux. On suppose qu'il existe $a\in\R$ telle que $\int_{0}^{+\infty}\e^{-at}f(t)\d t=\mathcal{L}f(a)$ converge. On définit $g(t)=\int_{0}^{t}\e^{-a u}f(u)\d u$.
+    \begin{enumerate}
+        \item Montrer que pour tout $b>a$, $\mathcal{L}f(b)$ converge et que 
+        \begin{equation}
+            \mathcal{L}f(b)=(b-a)\int_{0}^{+\infty}\e^{-(b-a)t}g(t)\d t.
+        \end{equation}
+        \item Soit $h$ vérifiant les mêmes conditions que $f$, montrer que si pour tout $b\geqslant a$, $\mathcal{L}f(b)=\mathcal{L}h(b)$, alors $f=h$ (injectivité de la transformée de Laplace).
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    On dit que $f$ est continue à support compact si $f\colon\R\to\R$ ou $\C$ est continue et il existe $A\geqslant0$ tel que pour tout $x\in\R$, si $\left\lvert x\right\rvert\geqslant A$, $f(x)=0$.
+    \begin{enumerate}
+        \item Montrer que l'on peut définir, pour tout $x\in\R$, $\widehat{f}(x)=\int_{-\infty}^{+\infty}\e^{\i tx}f(t)\d t$, et que $\widehat{f}$ est $\mathcal{C}^{\infty}$ est $\mathcal{C}^{\infty}$ sur $\R$.
+        \item On suppose que $\widehat{f}$ est continue à support compact, montrer que $f=0$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon I\to\R$ continue, montrer que $f$ est convexe si et seulement si pour tout $(a,b)\in I^{2}$ avec $a<b$, $(b-a)f\left(\frac{a+b}{2}\right)\leqslant\int_{a}^{b}f(t)\d t$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $x>0$.
+    \begin{enumerate}
+        \item Montrer que 
+        \begin{equation}
+            \lim\limits_{n\to+\infty}\underbrace{\int_{0}^{n}\left(1-\frac{t}{n}\right)^{n}t^{x-1}\d t}_{I_n(x)}=\Gamma(x)=\int_{0}^{+\infty}t^{x-1}\e^{-t}\d t.
+        \end{equation}
+        \item En déduire que 
+        \begin{equation}
+            \Gamma(x)=\lim\limits_{n\to+\infty}\frac{n!n^{x}}{x(x+1)\dots(x+n)}.
+        \end{equation}
+        \item Montrer que 
+        \begin{equation}
+            \frac{1}{\Gamma(x)}=x\e^{\gamma x}\prod_{k=1}^{+\infty}\left(1+\frac{x}{k}\right)\e^{-\frac{x}{k}},
+        \end{equation}
+        où $\gamma$ est la constante d'Euler.
+        \item Donner un développement en série de $\frac{\Gamma'}{\Gamma}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Théorème de D'Alembert-Gauss par l'indice]
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $f\colon\R\to\C^{*}$ $2\pi$-périodique et $\mathcal{C}^{1}$. On définit l'indice de $f$ par 
+        \begin{equation}
+            d(f)=\frac{1}{2\i\pi}\int_{0}^{2\pi}\frac{f'}{f}.
+        \end{equation}
+        Montrer que $\e^{2\i\pi d(f)}=1$ si et seulement si $d(f)\in\Z$.
+        
+        \item Soit $P\in\C[X]$ de degré $n\geqslant1$, de coefficient $a_n\neq0$, on suppose que $P$ ne s'annule pas sur $\C$. Soit $t\geqslant0$, on pose \function{f_r}{\R}{\C^{*}}{t}{P(r\e^{\i t})}
+        \item Évaluer $d(f_{0})$ et $\lim\limits_{r\to+\infty}d(f_{r})$, montrer que $r\mapsto d(f_{r})$ est continue. Conclure.
+    \end{enumerate}
+\end{exercise}

@@ -471,3 +471,269 @@
         }
     \end{equation}
 \end{proof}
+
+\begin{proof}
+    $f_\alpha$ est positive, continue et $f_\alpha\leqslant1$. $f_\alpha$ est intégrable si et seulement si $\sum u_k$ converge avec 
+        \begin{align}
+            u_k
+            &= \int_{k\pi-\frac{\pi}{2}}^{k\pi+\frac{\pi}{2}}\frac{\d x}{1+x^{\alpha}\left\lvert\sin(x)\right\rvert},\\
+            &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\frac{\d t}{1+(t+k\pi)^{\alpha}\left\lvert\sin(t)\right\rvert},\\
+            &\leqslant\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\frac{\d t}{1+\left(k\pi-\frac{\pi}{2}\right)^{\alpha}\frac{2}{\pi}\left\lvert t\right\rvert},\\
+            &=2\int_{0}^{\frac{\pi}{2}}\frac{\d t}{1+\left(k\pi-\frac{\pi}{2}\right)^{\alpha}\frac{2}{\pi}t},\\
+            &=\frac{\pi}{\left(k\pi-\frac{\pi}{2}\right)^{\alpha}}\ln\left(1+\left(k\pi-\frac{\pi}{2}\right)^{\alpha}\right),\\
+            &\underset{k\to+\infty}{\sim}\frac{\alpha\ln(k)}{(k\pi)^{\alpha}}\underset{k\to+\infty}{=}O\left(\frac{1}{k^{\frac{1+\alpha}{2}}}\right).
+        \end{align}
+        Donc $\sum u_k$ converge et $\int_{0}^{+\infty}f_\alpha(t)\d t$ converge.
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $P\in\R[X]$, $\int_{a}^{b}P(t)f(t)\d t=0$. D'après le théorème de Weierstrass, il existe $(P_n)\in\left(\R[X]\right)^{\N}$ telle que $\left\lVert P_n-f\right\rVert_{\infty}\xrightarrow[n\to+\infty]{}0$ sur $[a,b]$. $(P_nf)_{n\in\N}$ converge uniformément vers $f^{2}$ sur $[a,b]$, donc pour tout $n\in\N$, $\int_{a}^{b}P_nf=0$ donne par convergence uniforme $\int_{a}^{b}f^{2}=0$. Comme $f^{2}$ est continue positive, on a $f^{2}=0$ donc $f=0$.
+        
+        \item Pour tout $n\geqslant1$, on a par intégration par parties,
+        \begin{equation}
+            I_n=\frac{n}{1-\i}I_{n-1}.
+        \end{equation}
+        On a $I_{0}=\frac{1}{1-\i}$. Par récurrence, on a 
+        \begin{equation}
+            I_n=\frac{n!}{(1-\i)^{n+1}}=\frac{n!}{\left(\sqrt{2}\right)^{n+1}}\e^{\i(n+1)\frac{\pi}{4}}.
+        \end{equation}
+        
+        \item Pour $n=4k-1$ pour $k\in\N^{*}$, on a 
+        \begin{equation}
+            \Im(I_{4k-1})=0=\int_{0}^{+\infty}t^{4k-1}\sin(t)\e^{-t}\d t.
+        \end{equation}
+        On pose $u=t^{4}$, $t=u^{\frac{1}{4}}$ et $\d t=\frac{1}{4}u^{-\frac{3}{4}}\d u$. Ainsi, en posant $f(u)=\sin\left(u^{\frac{1}{4}}\right)\e^{-u^{\frac{1}{4}}}$,
+        \begin{equation}
+            \boxed{
+                0=\int_{0}^{+\infty}f(u)u^{k-1}\d u.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $g$ est continue, $\mathcal{C}^{1}$ par morceaux et en tout point de continuité de $f$, on a $g'(t)=\e^{-at}f(t)$. On a $g(0)=0$ et $\lim\limits_{t\to+\infty}g(t)=\mathcal{L}f(a)$. 
+        
+        Soit $X\geqslant0$, on a grâce à une intégration par parties,
+        \begin{align}
+            \int_{0}^{X}\e^{-bt}f(t)\d t
+            &=\int_{0}^{X}\e^{-(b-a)t}\e^{-at}f(t)\d t,\\
+            &=\left[g(t)\e^{-(b-a)t}\right]_{0}^{X}+(b-a)\int_{0}^{X}\e^{-(b-a)t}g(t)\d t.
+        \end{align}
+        Le terme entre crochet s'annule car $g(0)=0$, et $b>a$ donc $g(X)\xrightarrow[X\to+\infty]{}\mathcal{L}f(a)$. $g$ est continue, admet une limite finie en $+\infty$, donc est bornée sur $\R_{+}$. Ainsi,
+        \begin{equation}
+            \left\lvert\e^{-(b-a)t}g(t)\right\rvert\leqslant\left\lVert g\right\rVert_{\infty}\e^{-(b-a)t},
+        \end{equation}
+        qui est intégrable sur $\R_{+}$. Finalement, 
+        \begin{equation}
+            \int_{0}^{+\infty}\e^{-(b-a)}g(t)\d t,    
+        \end{equation}
+        converge absolument et $\int_{0}^{+\infty}\e^{-bt}f(t)\d t$ converge et 
+        \begin{equation}
+            \boxed{
+                \mathcal{L}f(b)=(b-a)\int_{0}^{+\infty}\e^{-(b-a)t}g(t)\d t.
+            }
+        \end{equation}
+
+        \item En raisonnant sur $f-h$, on se ramène à $\mathcal{L}f=0$. Pour tout $b>a$, $\int_{0}^{+\infty}\e^{-(b-a)t}g(t)\d t=0$, donc pour tout $x>0$, $\int_{0}^{+\infty}\e^{-xt}g(t)\d t=0$. Si $g=0$, alors en dérivant, on a $f=0$. On pose $u=\e^{-t}$ qui est un $\mathcal{C}^{1}$ difféomorphisme de $[0,+\infty[\to]0,1]$. On a donc, pour tout $x>0$, $\int_{0}^{1}u^{x-1}g\left(-\ln(u)\right)\d u=0$. Donc pour tout $n\in\N$, $\int_{0}^{1}u^{n}g\left(-\ln(u)\right)\d u=0=\int_{0}^{1}u^{n}k(u)\d u$ avec $k\colon[0,1]\to\R$ définie par $k(0)=\mathcal{L}f(a)$ et $k(x)=g\left(-\ln(x)\right)$ si $x\in]0,1]$. $k$ est continue sur $[0,1]$. D'après le théorème de Weierstrass, $k=0$ donc $g=0$ puis $f=0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $(x,t)\in\R^{2}$, $\left\lvert\e^{\i xt}f(t)\right\rvert=\left\lvert f(t)\right\rvert$ est intégrable sur $\R$ car $f(t)\underset{\left\lvert t\right\rvert\to+\infty}{\sim}0$. $\widehat{f}$ est définie et $\widehat{f}(x)=\int_{-A}^{A}\e^{\i tx}f(t)\d t$.
+        
+        Posons \function{g}{\R^{2}}{\C}{(x,t)}{\e^{\i tx}f(t)}
+        Pour tout $t\in\R$, $x\mapsto g(x,t)$ est $\mathcal{C}^{\infty}$ et pour tout $k\in\N$, $\frac{\partial^{k}g}{\partial x^{k}}=(\i t)^{k}g(x,t)$. On a 
+        \begin{equation}
+            \left\lvert\frac{\partial^{k}g(x,t)}{\partial x^{k}}\right\rvert=\left\lvert t\right\rvert^{k}\left\lvert f(t)\right\rvert,
+        \end{equation}
+        majoration indépendante de $x$ et intégrable sur $[-A,A]$. Donc $\widehat{f}$ est $\mathcal{C}^{\infty}$ et pour tout $k\in\N$, pour tout $x\in\R$, $\widehat{f}^{(k)}(x)=\int_{-A}^{A}(\i t)^{k}\e^{\i tx}f(t)\d t$.
+
+        \item Soit $B>0$ tel que si $x>B$, $\widehat{f}(x)=0$. Soit $x_{0}=B+1$, alors $\widehat{f}=0$ sur $]x_{0}-1,+\infty[$. Pour tout $k\in\N$, on a $\widehat{f}^{(k)}(x_{0})=0=\int_{-A}^{A}t^{k}\e^{\i tx_{0}}f(t)\d t$. D'après le théorème de Weierstrass, on a $f(t)=0$ pour tout $t\in[-A,A]$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    Si $f$ est affine avec $f(x)=\alpha x+\beta$. On a $\int_{a}^{b}f(t)\d t=\alpha\frac{(b^{2}-a^{2})}{2}+\beta(b-a)$ et $(b-a)f\left(\frac{a+b}{2}\right)=(b-a)\left(\alpha\frac{(a+b)}{2}+\beta\right)$ d'où $(b-a)f\left(\frac{a+b}{2}\right)=\int_{a}^{b}f(t)\d t$.
+
+    Notons que l'inégalité de l'énoncé équivaut à pour tout $x\in\mathring{I}$, pour tout $h>0$, on a $a=x-h$ et $b=x+h\in I^{2}$, $2hf(x)\leqslant\int_{x-h}^{x+h}f(t)\d t$.
+
+    Si $f$ est convexe, soit $a<b\in I^{2}$. Soit $\varphi$ affine sur $[a,b]$ telle que $\varphi\left(\frac{a+b}{2}\right)=f\left(\frac{a+b}{2}\right)$. On a 
+    \begin{equation}
+        \varphi'=\lambda=\frac{1}{2}\left(f'_{g}\left(\frac{a+b}{2}\right)+f'_{d}\left(\frac{a+b}{2}\right)\right)\geqslant f'_{g}\left(\frac{a+b}{2}\right),
+    \end{equation}
+    par convexité et en notant $\varphi(t)=\lambda t+\mu$. En notant $\varphi_{1}$ la demi-tangente à $f$ en $\frac{a+b}{2}$, on a pour tout $t\in\left[a,\frac{a+b}{2}\right]$,
+    \begin{equation}
+        \varphi(t)\leqslant\varphi_1(t)\leqslant f(t).
+    \end{equation}
+    $\varphi_{1}$ est affine sur $\left[a,\frac{a+b}{2}\right]$, $\varphi_{1}\left(\frac{a+b}{2}\right)=f\left(\frac{a+b}{2}\right)$ et $\varphi_{1}'\left(\frac{a+b}{2}\right)=f'_{g}\left(\frac{a+b}{2}\right)$. De la même façon, pour tout $t\in\left[\frac{a+b}{2},b\right]$, on a 
+    \begin{equation}
+        \varphi(t)\leqslant\varphi_2(t)\leqslant f(t),
+    \end{equation}
+    avec $\varphi_{2}$ affine sur $\left[\frac{a+b}{2},b\right]$, $\varphi_{2}\left(\frac{a+b}{2}\right)=f\left(\frac{a+b}{2}\right)$ et $\varphi'_{2}\left(\frac{a+b}{2}\right)=f'_{d}\left(\frac{a+b}{2}\right)$. 
+    
+    On a donc $\int_{a}^{b}\varphi(t)\d t=(b-a)f\left(\frac{a+b}{2}\right)\leqslant\int_{a}^{b}f$.
+
+    Réciproquement, si pour tout $a<b$, $(b-a)f\left(\frac{a+b}{2}\right)\leqslant\int_{a}^{b}f(t)\d t$, soient $x<y\in I^{2}$ fixés. On pose $g=f-\varphi$ avec $\varphi(z)=\frac{f(y)-f(x)}{y-x}(z-x)+f(x)$. $g$ vérifie l'inégalité de l'énoncé car pour $\varphi$ on a égalité (car affine). On veut montrer que $g\leqslant0$ sur $[x,y]$. On a $g(x)=g(y)=0$. Soit $g(x_{0})=\max\limits_{t\in[x,y]}g(t)$. Si $g(x_{0})>0$, on a $x_{0}\in]x,y[$ car $g(x)=g(y)=0$. Soit $h>0$ tel que $x_{0}-h$ et $x_{0}+h\in[x,y]$. On applique l'inégalité de l'énoncé à $g$:
+    \begin{equation}
+        2hg(x_{0})\leqslant\int_{x_{0}-h}^{x_{0}+h}g(t)\d t=2g(x_{0}),
+    \end{equation}
+    donc 
+    \begin{equation}
+        \int_{x_{0}-h}^{x_{0}+h}(g(x_{0})-g(t))\d t=0,
+    \end{equation}
+    et l'intégrande est positive et continue. Donc pour tout $t\in[x_{0}-h,x_{0}+h]$, on a $g(t)=g(x_{0})$. On pose $h=\min(y-x_{0},x-x_{0})$. On obtient $g(x)=0=g(x_{0})>0$ (ou $g(y)=g(x_{0})$) ce qui est absurde. Donc $g\leqslant0$ sur $[x,y]$ et $f$ est convexe.
+\end{proof}
+
+\begin{remark}
+    Notons que si pour tout $(h,x)\in\R_{+}\times\mathring{I}$ tels que $(x-h,x+h)\in I^{2}$, $2hf(x)=\int_{x-h}^{x+h}f(t)\d t$, alors pour $x\in\mathring{I}$ et $h$ fixé, $x\mapsto\int_{x-h}^{x+h}f$ est $\mathcal{C}^{1}$ donc $f$ l'est. Par récurrence, $f$ est $\mathcal{C}^{\infty}$, et en dérivant deux fois par rapport à $h$ (pour $x\in \mathring{I}$ fixé), on a 
+    $0=f'(x+h)-f'(x-h)$ donc $f$ est affine.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $f_n\colon]0,+\infty[\to\R$ définie par $f_n(t)=0$ si $t>n$ et $f_n(t)=\left(1-\frac{t}{n}\right)^{n}t^{x-1}$ si $t\leqslant n$. $f_n$ est continue par morceaux, positive, intégrable sur $\R_{+}$ car équivalente à 0 en $+\infty$ et à $t^{x-1}$ en 0.
+        
+        Soit $t\in]0,+\infty[$ fixé, il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, $n>t$ et pour tout $n\geqslant N_{0}$, 
+        \begin{align}
+            f_n(t)
+            &=\left(1-\frac{t}{n}\right)^{n}t^{x-1},\\
+            &=\e^{n\ln\left(1-\frac{t}{n}\right)}t^{x-1},\\
+            &\underset{n\to+\infty}{=}\e^{n\left(-\frac{t}{n}+o\left(\frac{1}{n}\right)\right)}t^{x-1},\\
+            &\xrightarrow[n\to+\infty]{}\e^{-t}t^{x-1}.
+        \end{align}
+
+        On a donc convergence simple vers $f(t)=\e^{-t}t^{x-1}$, fonction continue sur $\R_{+}^{*}$ intégrable sur $\R_{+}^{*}$. Soit $n\geqslant1$ et $t\in[0,n[$, on a 
+        \begin{equation}
+            0\leqslant f_n(t)\leqslant f(t),
+        \end{equation}
+        car $\ln(1+x)\leqslant x$ pour tout $x>-1$.
+        D'après le théorème de convergence dominée, on a bien
+        \begin{equation}
+            \boxed{
+                \lim\limits_{n\to+\infty}I_n=\lim\limits_{n\to+\infty}\int_{0}^{+\infty}f_n(t)\d t=\int_{0}^{+\infty}f(t)\d t.
+            }
+        \end{equation}
+
+        \item On pose $u=\frac{t}{n}$ et on a 
+        \begin{align}
+            I_n(x)
+            &= \int_{0}^{1}(1-u)^{n}(nu)^{x-1}n\d u,\\
+            &=n^{x}\int_{0}^{1}(1-u)^{n}u^{x-1}\d u,\\
+            &=n^{x}\left(\left[(1-u)^{n}\frac{u^{x}}{x}\right]_{0}^{1}+\int_{0}^{1}n(1-u)^{n-1}\frac{u^{x}}{x}\d u\right).
+        \end{align}
+        Le terme entre crochets est nul car $u\geqslant1$ et $x>0$.
+
+        Si on pose $B_n(x)=\int_{0}^{1}(1-u)^{n}u^{x-1}\d u$, on a 
+        \begin{equation}
+            B_n(x)=\frac{n}{x}B_{n-1}(x+1)=\dots=\frac{n!}{x(x+1)\dots(x+n-1)}B_{0}(x+n)=\frac{n!}{x(x+1)\dots(x+n)}.
+        \end{equation}
+        On a donc 
+        \begin{equation}
+            \boxed{
+                \Gamma(x)=\lim\limits_{n\to+\infty}\frac{n!n^{x}}{x(x+1)\dots(x+n).}
+            }
+        \end{equation}
+
+        \item Par définition, on a $\gamma=\lim\limits_{n\to+\infty}\left(1+\frac{1}{2}+\dots+\frac{1}{n}-\ln(n)\right)$. On a 
+        \begin{align}
+            \frac{x(x+1)\dots(x+n)}{1\times2\times\dots\times n}\e^{-x\ln(n)}
+            &\underset{n\to+\infty}{=} x\left[\prod_{k=1}^{n}\left(1+\frac{x}{k}\right)\right]\e^{-x\left(1+\frac{1}{2}+\dots+\frac{1}{n}+o(1)\right)}\e^{\gamma x},\\
+            &\underset{n\to+\infty}{=} x\e^{\gamma x}\prod_{k=1}^{n}\left(1+\frac{x}{k}\right)\e^{-\frac{x}{k}}\times\underbrace{\e^{o(1)}}_{\xrightarrow[n\to+\infty]{}1}.
+        \end{align}
+        Donc on a 
+        \begin{equation}
+            \frac{1}{\Gamma(x)}=x\e^{\gamma x}\prod_{k=1}^{+\infty}\left(1+\frac{x}{k}\right)\e^{-\frac{x}{k}}.
+        \end{equation}
+
+        \item On remarque que $\frac{\Gamma'(x)}{\Gamma(x)}=(\ln\Gamma)'(x)$. On a 
+        \begin{equation}
+            \ln\Gamma(x)=-\ln(x)-\gamma x+\sum_{k=1}^{+\infty}\underbrace{\left(\frac{x}{k}-\ln\left(1+\frac{x}{k}\right)\right)}_{f_k(x)\geqslant0}.
+        \end{equation}
+        On a convergence simple sur $\R_{+}^{*}$. On a pour tout $k>1$, $f_{k}$ est $\mathcal{C}^{1}$, et pour tout $k\geqslant1$, pour tout $x\in]0,+\infty[$, $f'_k(x)=\frac{1}{k}-\frac{1}{k+x}\geqslant0$ car $x>0$.
+
+        Soit $A>0$, pour tout $x\in]0,A]$, on a 
+        \begin{equation}
+            0<f_k(x)\leqslant\frac{1}{k}-\frac{1}{k+A}=\frac{A}{k(k+A)}\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right).
+        \end{equation}
+        Donc pour tout $A>0$, $\sum f_k(x)$ converge normalement sur $]0,A]$. $\ln\Gamma$ est donc $\mathcal{C}^{1}$ (en tant que série de fonction) et on a 
+        \begin{equation}
+            \boxed{
+            \left(\frac{\Gamma'}{\Gamma}\right)(x)=-\frac{1}{x}-\gamma+\sum_{k=1}^{+\infty}\left(\frac{1}{k}-\frac{1}{k+x}\right).}
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    En particulier, comme $\Gamma(1)=1$, on a 
+        \begin{equation}
+            \Gamma'(1)=\left(\frac{\Gamma'}{\Gamma}\right)(1)=-1-\gamma+\sum_{k=1}^{+\infty}\left(\frac{1}{k}-\frac{1}{k+1}\right)=-\gamma,
+        \end{equation}
+    car la série est téléscopique.
+\end{remark}
+
+\begin{remark}
+    On a 
+    \begin{equation}
+        \left(\ln\Gamma\right)''(x)=\frac{\Gamma''\Gamma-\Gamma'^{2}}{\Gamma^{2}}.
+    \end{equation}
+    Par ailleurs,
+    \begin{equation}
+        0\leqslant\Gamma'^{2}(x)=\left(\int_{0}^{+\infty}\ln(t)t^{x-1}\e^{-t}\d t\right)^{2}\leqslant\int_{0}^{+\infty}\ln^{2}(t)t^{x-1}\e^{-t}\d t\times\int_{0}^{+\infty}t^{x-1}\e^{-t}\d t=\Gamma''(x)\Gamma(x),
+    \end{equation}
+    d'après l'inégalité de Cauchy-Schwarz. Ona égalité stricte car $\ln(t)$ n'est pas constante. Ainsi, $\ln\Gamma$ est strictement convexe.
+\end{remark}
+
+\begin{remark}
+    On peut vérifier que $\ln\Gamma$ est l'unique fonction de $\R_{+}^{*}\to\R$ telle que 
+    \begin{enumerate}
+        \item $\ln\Gamma$ est convexe,
+        \item $\forall x>0$, $\left(\ln\Gamma\right)(x+1)=\left(\ln\Gamma\right)(x)+\ln(x)$,
+        \item $\left(\ln\Gamma\right)(1)=0$.
+    \end{enumerate}
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \e^{2\i\pi d(f)}=\exp\left(\int_{0}^{2\pi}\frac{f'(t)}{f(t)}\d t\right).
+        \end{equation}
+        Posons $g(x)=\exp\left(\int_{0}^{x}\frac{f'(t)}{f(t)}\d t\right)$. $g$ est $\mathcal{C}^{1}$ sur $\R$. Pour tout $x\in\R$, on a $f'(x)=\frac{f'(x)}{f(x)}g(x)$. On a $\left(\frac{g}{f}\right)'=\frac{g'f-f'g}{g^{2}}=0$ donc $\frac{g}{f}=\alpha\in\C$. En particulier, $g(0)=g(2\pi)=1$ donc $d(f)\in\Z$.
+
+        \item $f_0$ est constante égale à $P(0)$ donc $d(f_0)=0$ car c'est une fonction constante.
+        Soit $r\geqslant0$, on a 
+        \begin{equation}
+            d(f_r)=\frac{1}{2\i\pi}\int_{0}^{2\pi}\frac{f_r'(t)}{f_r(t)}\d t=\frac{1}{2\i\pi}\int_{0}^{2\pi}\frac{\i r\e^{\i t}P'(r\e^{\i t})}{P(r\e^{\i t})}\d t.
+        \end{equation}
+        On note $g(r,t)$ la fonction intégrande définit sur $\R_{+}\times[0,2\pi]\to\C$. $r\mapsto g(r,t)$ est continue sur $\R_{+}$, et soit $z\in\C$, on a 
+        \begin{equation}
+            P(z)=a_{0}+a_{1}z+\dots+a_nz^{n}.
+        \end{equation}
+        Alors 
+        \begin{equation}
+            h(z)=\frac{zP'(z)}{P(z)}=\frac{a_1 z+\dots+na_nz^{n}}{a_0+a_1z+\dots+a_nz^{n}}
+        \end{equation}
+        est continue sur $\C$ et pour $z\neq0$, on a 
+        \begin{equation}
+            \frac{z P'(z)}{P(z)}=\frac{\frac{a_1}{z^{n-1}}+\dots+na_n}{\frac{a_0}{z^{n}}+a_n}\xrightarrow[\left\lvert z\right\rvert\to+\infty]{}n.
+        \end{equation}
+        Donc $h$ est bornée sur $\C$, soit $M=\left\lVert h\right\rVert_{\infty}$. On a $\left\lvert g(r,t)\right\rvert\leqslant M\in L^{1}\left([0,2\pi]\right)$. Donc $r\mapsto d(f_r)$ est continue et pour $t$ fixé, on a $\lim\limits_{r\to+\infty}g(r,t)=n$. Par convergence dominée, on a $\lim\limits_{r\to+\infty}d(f_r)=n$. $r\mapsto d(f_r)$ est continue à valeurs dans $\Z$ donc constante et $d(f_{0})=0$, $\lim\limits_{r\to+\infty}d(f_r)=n\neq0$: c'est absurde. Donc $P$ s'annule.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Le théorème de relèvement permet d'écrire $f(t)=\rho(t)\e^{\i\theta(t)}$ avec $\rho(t)=\left\lvert f(t)\right\rvert$ et $(\rho,\theta)\colon\R\to\left(\R_{+}^{*},\R\right)$ est $\mathcal{C}^{1}$. On a alors 
+    \begin{equation}
+        \int_{0}^{2\pi}\frac{f'}{f}=\int_{0}^{2\pi}\frac{\rho'}{\rho}+\i\left(\theta(2\pi)-\theta(0)\right).
+    \end{equation}
+    Le premier terme vaus $\left[\ln(\rho)\right]_{0}^{2\pi}=0$ car $\rho=\left\lvert f\right\rvert$ est $2\pi$-périodique, et le deuxième terme vaut $2\i\pi\times$ le nombre de tours que décrit $f$ autour de l'origine.
+\end{remark}
