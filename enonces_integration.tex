@@ -2,7 +2,7 @@
 
 \begin{exercise}
     Soit $f$ continue strictement positive de $[a,b]\subset\R$ dans $\R_{+}^{*}$ et \function{S}{[a,b]}{\R}{x}{\int_{a}^{x}f}
-    Montrer que pour tout $n\geqslant1$, pour tout $k\in\left\llbracket1,n\right\rrbracket$, il existe un unique $x_{k}\in[a,b]$ tel que $S(x_{k})=k\frac{S(b)}{n}$. Évaluer ensuite $\lim\limits_{n\to+\infty}\sum_{k=1}^{n}f(x_{k})$.
+    Montrer que pour tout $n\geqslant1$, pour tout $k\in\left\llbracket1,n\right\rrbracket$, il existe un unique $x_{k}\in[a,b]$ tel que $S(x_{k})=k\frac{S(b)}{n}$. Évaluer ensuite $\lim\limits_{n\to+\infty}\frac{1}{n}\sum_{k=1}^{n}f(x_{k})$.
 \end{exercise}
 
 \begin{exercise}
@@ -73,7 +73,7 @@
     Soit \function{f_n}{\R}{\R}{x}{\frac{n}{\sqrt{\pi}}\e^{-n^{2}x^{2}}}
     \begin{enumerate}
         \item Étudier la convergence simple, la convergence uniforme et en moyenne.
-        \item Soit $g$ continue et bornée sur $\R$, évaluer $\lim\limits_{x\to+\infty}\int_{-\infty}^{+\infty}f(t)f_n(t)\d t$.
+        \item Soit $g$ continue et bornée sur $\R$, évaluer $\lim\limits_{x\to+\infty}\int_{-\infty}^{+\infty}g(t)f_n(t)\d t$.
     \end{enumerate}
 \end{exercise}
 
@@ -154,4 +154,108 @@
         \item Soit $P\in\C[X]$ de degré $n\geqslant1$, de coefficient $a_n\neq0$, on suppose que $P$ ne s'annule pas sur $\C$. Soit $t\geqslant0$, on pose \function{f_r}{\R}{\C^{*}}{t}{P(r\e^{\i t})}
         \item Évaluer $d(f_{0})$ et $\lim\limits_{r\to+\infty}d(f_{r})$, montrer que $r\mapsto d(f_{r})$ est continue. Conclure.
     \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon[0,1]\to\R$ de classe $\mathcal{C}^{2}$. On pose, pour tout $n\in\N^{*}$,
+    \begin{equation}
+        v_n=\sum_{k=1}^{n-1}f\left(\frac{k}{n}\right)+\frac{1}{2n}\left(f(0)+f(1)\right).
+    \end{equation}
+    Donner un développement à l'ordre 2 de $v_n$ quand $n\to+\infty$. On pourra montrer l'égalité de Taylor-Lagrange : si $f$ est de classe $\mathcal{C}^{n}$ sur $[a,b]$, $a<b$, alors il existe $\xi\in]a,b[$ tel que 
+    \begin{equation}
+        f(b)-f(a)-\sum_{k=1}^{n-1}\frac{f^{(k)}(a)}{k!}=\frac{(b-a)^{n}}{n!}f^{(n)}(\xi),
+    \end{equation}
+    et et l'appliquer à $F(x)=\int_{0}^{x}f$.
+\end{exercise}
+
+\begin{exercise}
+    Pour $n\in\N$, on pose 
+    \begin{equation}
+        I_n=\int_{0}^{\frac{\pi}{4}}\tan^{n}(t)\d t.
+    \end{equation}
+    Exprimer $I_n$ sous forme d'une somme, puis donner un équivalent de $I_n$ quand $n\to+\infty$. Qu'en déduit-on sur $\frac{\pi}{4}$ ?
+\end{exercise}
+
+\begin{exercise}
+    Soit \function{f}{]0,1]}{\R}{x}{\int_{x^{2}}^{x}\frac{\e^{t}}{\arcsin(t)}\d t}
+    Analyser la continuité, la dérivabilité et le comportement au voisinage de 0.
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de 
+    \begin{equation}
+        I_n=\int_{-\frac{1}{2}}^{+\infty}\frac{\d x}{(x^{2}+x+1)^{n}},
+    \end{equation}
+    pour $n\geqslant1$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon[0,1]\to\R$ de classe $\mathcal{C}^{1}$. On pose, pour $n\in\N^{*}$,
+    \begin{equation}
+        u_n=\frac{1}{n}\sum_{i=0}^{n-1}f\left(\frac{i}{n}\right)f'\left(\frac{i}{n}\right).
+    \end{equation}
+    Déterminer $\lim\limits_{n\to+\infty}u_n$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $a,b>0$. Montrer que 
+    \begin{equation}
+        \lim\limits_{x\to1}\int_{x^{a}}^{x^{b}}\frac{\d t}{\ln(t)}=\ln\left(\frac{b}{a}\right).
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Soit $\varphi$ convexe de $\R\to\R$ (donc continue). Soit $f\colon[a,b]\to\R$ continue avec $a<b$.
+    \begin{enumerate}
+        \item Montrer que
+        \begin{equation}
+            \varphi\left(\frac{1}{b-a}\int_{a}^{b}f(t)\d t\right)\leqslant\frac{1}{b-a}\int_{a}^{b}\varphi(f(t))\d t.
+        \end{equation}
+
+        \item On suppose de plus $\varphi$ strictement convexe, montrer que l'on a égalité dans ce qui précède si et seulement si $f$ est constante.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Trouver toutes les fonctions $f\colon\R\to\R$ continues telles que pour tout $(x,y)\in\R^{2}$, on a 
+    \begin{equation}
+        \int_{x-y}^{x+y}f(t)\d t=f(x)f(y).
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Soit $f$ continue de $[a,b]$ dans $\R$ avec $a<b$. On pose 
+    \begin{equation}
+        I_n=\left(\int_{a}^{b}\left\lvert f(t)\right\rvert^{n}\right)^{\frac{1}{n}}=\left\lVert f\right\rVert_{n}.
+    \end{equation}
+    Déterminer $\lim\limits_{n\to+\infty}I_n$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $\theta\in\R$ et $\rho\in\R_{+}^{*}\setminus\left\lbrace1\right\rbrace$.
+    \begin{enumerate}
+        \item Montrer que $F(\rho,\theta)=\int_{-\pi}^{\pi}\ln\left\lvert\e^{\i t}-\rho\e^{\i\theta}\right\rvert\d t$ existe.
+        \item Montrer que $F(\rho,\theta)$ ne dépend pas de $\theta$.
+        \item Calculer $F(\rho,\theta)$ en utilisant une somme de Riemann sur $[0,2\pi]$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    On définit $C_{0}$ l'ensemble des fonctions continues à support compact de $\R$ dans $\R$, i.e. si $f\in C_{0}$, alors il existe $A\geqslant0$ tel que pour tout $\left\lvert t\right\rvert\geqslant A$, alors $f(t)=0$. On note $C_{1}$ l'ensemble des fonctions de $C_{0}$ de classe $\mathcal{C}^{1}$.
+    \begin{enumerate}
+        \item Soit $f\colon\R\to\R$ continue telle que pour tout $\varphi\in C_{0}$, $\int_{\R}f\varphi=0$. Montrer que $f=0$.
+        \item Soit $f\colon\R\to\R$ continue telle que pour tout $\varphi\in C_{1}$, $\int_{\R}f\varphi'=0$. Montrer que $f$ est constante.
+        \item Soit $f\in C_{0}$ telle qu'il existe $g\colon\R\to\R$ de classe $\mathcal{C}^{1}$ telle que pour tout $\varphi\in C_{1}$, $\int_{\R}f\varphi'=\int_{\R}g\varphi$. Montrer que $f$ est de classe $\mathcal{C}^{1}$ et $f'=-g$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Existence et calcul de 
+    \begin{equation}
+        I=\int_{0}^{+\infty}\frac{\e^{-t}-\e^{-2t}}{t}\d t,
+    \end{equation}
+    et de 
+    \begin{equation}
+        J=\int_{0}^{+\infty}\frac{\cos(t)-\cos(2t)}{t}\d t.
+    \end{equation}
 \end{exercise}

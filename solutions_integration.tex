@@ -21,11 +21,13 @@
 \end{proof}
 
 \begin{remark}
-    On peut se demander si cela reste vrai si $f\geqslant0$. On définit \function{\varphi}{[0,S(b)]}{[a,b]}{y}{\min\left(\left\lbrace x\in[a,b]\middle|y=S(x)\right\rbrace\right)}
+    On peut se demander si cela reste vrai si $f\geqslant0$ (mais $f\neq 0$). On définit \function{\varphi}{[0,S(b)]}{[a,b]}{y}{\min\left(\left\lbrace x\in[a,b]\middle|y=S(x)\right\rbrace\right)}
     On a $x_{k}=\varphi\left(k\frac{S(b)}{n}\right)$, $f\circ \varphi$ continue par morceaux sur $[0,S(b)]$ et 
     \begin{equation}
         \frac{1}{n}\sum_{k=1}^{n}f\left(\varphi\left(k\frac{S(b)}{n}\right)\right)\xrightarrow[n\to+\infty]{}\frac{1}{S(b)}\int_{0}^{S(b)}\left(f\circ \varphi\right)(t)\mathrm{d}t.
     \end{equation}
+
+    Cela marche aussi si $\left\lbrace t\in[a,b], f(t)=0\right\rbrace$ est discret car $S$ reste strictement croissante. Cela marche aussi si $\int f>0$ (poser $f_p=f+\frac{1}{p}>0$ et passer à la limite).
 \end{remark}
 
 \begin{proof}
@@ -288,9 +290,8 @@
         &= \int_{0}^{\frac{\sqrt{2}}{2}}\frac{1-u^{2}}{\sqrt{1-2u^{2}}}\mathrm{d}u,\\
         &= \int_{0}^{1}\frac{1-\frac{u^{2}}{2}}{\sqrt{2}}\frac{\mathrm{d}u}{\sqrt{1-u^{2}}},\\
         &= \int_{0}^{\frac{\pi}{2}}\frac{1-\frac{\sin^{2}\theta}{2}}{\sqrt{2}}\mathrm{d}\theta,\\
-        &= \frac{1}{\sqrt{2}}\left(\frac{\pi}{2}-\frac{1}{4}\int_{0}^{\frac{\pi}{2}}1-\cos(2\theta)\mathrm{d}\theta\right),\\
-        &=\frac{1}{\sqrt{2}}\left(\frac{\pi}{2}-\frac{\pi}{8}\right),\\
-        &=\frac{1}{\sqrt{2}}\frac{3\pi}{8}.
+        &= \frac{1}{\sqrt{2}}\left(\frac{\pi}{2}-\frac{1}{4}\int_{0}^{\frac{\pi}{2}}(1-\cos(2\theta))\mathrm{d}\theta\right),\\
+        &=\frac{3\pi-1}{8\sqrt{2}}.
     \end{align}
 \end{proof}
 
@@ -735,5 +736,448 @@
     \begin{equation}
         \int_{0}^{2\pi}\frac{f'}{f}=\int_{0}^{2\pi}\frac{\rho'}{\rho}+\i\left(\theta(2\pi)-\theta(0)\right).
     \end{equation}
-    Le premier terme vaus $\left[\ln(\rho)\right]_{0}^{2\pi}=0$ car $\rho=\left\lvert f\right\rvert$ est $2\pi$-périodique, et le deuxième terme vaut $2\i\pi\times$ le nombre de tours que décrit $f$ autour de l'origine.
+    Le premier terme vaut $\left[\ln(\rho)\right]_{0}^{2\pi}=0$ car $\rho=\left\lvert f\right\rvert$ est $2\pi$-périodique, et le deuxième terme vaut $2\i\pi\times$ le nombre de tours que décrit $f$ autour de l'origine.
+\end{remark}
+
+\begin{proof}
+    En appliquant l'inégalité de Taylor avec reste intégral à $f$ de classe $\mathcal{C}^{n}$, on a 
+    \begin{equation}
+        R_n=f(b)-f(a)-\sum_{k=1}^{n-1}\frac{f^{(k)}(a)}{k!}=\int_{a}^{b}\frac{(b-t)^{n-1}}{(n-1)!}f^{(n)}(t)\d t.
+    \end{equation}
+    Soit $m_n=\min\limits_{[a,b]}f^{(n)}$ et $M_n=\max\limits_{[a,b]}f^{(n)}$. Alors 
+    \begin{equation}
+        m_n\frac{\left\lvert b-a\right\rvert^{n}}{n!}\leqslant\left\lvert\int_{a}^{b}\frac{(b-t)^{n-1}}{(n-1)!}f^{(n)}(t)\d t\right\rvert\leqslant M_n\frac{\left\lvert b-a\right\rvert^{n}}{n!}.
+    \end{equation}
+    D'après le théorème des valeurs intermédiaires, il existe $\xi\in]a,b[$ tel que $R_n=\frac{(b-a)^{n}}{n!}f^{(n)}(\xi)$.
+
+    On a 
+    \begin{equation}
+        v_n-\int_{0}^{1}=\sum_{k=0}^{n-1}\frac{1}{2n}\left[f\left(\frac{k}{n}\right)+f\left(\frac{k+1}{n}\right)\right]-\int_{\frac{k}{n}}^{\frac{k+1}{n}}f.
+    \end{equation}
+
+    On prend d'abord $a=\frac{k}{n}$ et $b=\frac{k+1}{n}$, il existe $\xi_k\in\left]\frac{k}{n},\frac{k+1}{n}\right[$ tel que 
+    \begin{equation}
+        F\left(\frac{k+1}{n}\right)-F\left(\frac{k}{n}\right)=\frac{1}{n}f\left(\frac{k}{n}\right)+\frac{1}{2n^{2}}f'\left(\frac{k}{n}\right)+\frac{1}{6n^{3}}f^{(2)}(\xi_k).
+    \end{equation}
+    Puis avec $a=\frac{k+1}{n}$ et $b=\frac{k}{n}$, il existe $\eta_k\in\left]\frac{k}{n},\frac{k+1}{n}\right[$ tel que 
+    \begin{equation}
+        F\left(\frac{k}{n}\right)-F\left(\frac{k+1}{n}\right)=-\frac{1}{n}f\left(\frac{k+1}{n}\right)+\frac{1}{2n^{2}}f'\left(\frac{k+1}{n}\right)-\frac{1}{6n^{3}}f^{(2)}(\eta_k).
+    \end{equation}
+
+    En faisant la différence des deux égalités et en divisant par deux, on a 
+    \begin{align}
+        F\left(\frac{k+1}{n}\right)-F\left(\frac{k}{n}\right)
+        &=\int_{\frac{k}{n}}^{\frac{k+1}{n}}f(t)\d t,\\
+        &=\frac{1}{2n}\left(f\left(\frac{k+1}{n}\right)+f\left(\frac{k}{n}\right)\right)+\frac{1}{4n^{2}}\left(f'\left(\frac{k}{n}\right)-f'\left(\frac{k+1}{n}\right)\right),\\
+        &\qquad+\frac{1}{12n^{3}}\left(f^{(2)(\xi_k)}+f^{(2)}(\eta_k)\right).
+    \end{align}
+    En sommant, on obtient (par le théorème de Riemann car on a une subdivision pointée)
+    \begin{align}
+        v_n-\int_{0}^{1}f
+        &=\sum_{k=0}^{n-1}\frac{1}{4n^{2}}\left(f'\left(\frac{k+1}{n}\right)-f'\left(\frac{k}{n}\right)\right)-\frac{1}{12n^{3}}\left(f^{(2)}(\xi_k)+f^{(2)}(\eta_k)\right),\\
+        &\underset{n\to+\infty}{=}\frac{1}{4n^{2}}\left[f'(1)-f'(0)\right]-\frac{1}{6n^{2}}\left[\int_{0}^{1}f'^{(2)}(t)\d t+o(1)\right],\\
+        &\underset{n\to+\infty}{=}\frac{1}{4n^{2}}\left[f'(1)-f'(0)\right]-\frac{1}{6n^{2}}\left(f'(1)-f'(0)+o(1)\right).
+    \end{align}
+
+    Donc on a
+    \begin{equation}
+        \boxed{
+            v_n=\int_{0}^{1}f+\frac{1}{12n^{2}}\left(f'(1)-f'(0)\right)+\underset{n\to+\infty}{o}\left(\frac{1}{n^{2}}\right).
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On a 
+    \begin{align}
+        I_n
+        &=\int_{0}^{\frac{\pi}{4}}\left(\tan^{2}(x)+1-1\right)\tan^{n-2}(x)\d x,\\
+        &=\int_{0}^{\frac{\pi}{4}}\left(\tan'(x)-1\right)\tan^{n-2}(x)\d x,\\
+        &=\frac{1}{n-1}\left[\tan^{n-1}(x)\right]_{0}^{\frac{\pi}{4}}-I_{n-2}.
+    \end{align}
+    Donc
+    \begin{equation}
+        I_n+I_{n-2}=\frac{1}{n-1}.
+    \end{equation}
+    On a $I_0=\frac{\pi}{4}$ et $I_1=\left[-\ln\left\lvert\cos\right\rvert\right]_{0}^{\frac{\pi}{4}}=\frac{1}{2}\ln(2)$.
+
+    On a donc 
+    \begin{equation}
+        I_{2p}=(-1)^{p}\left(\frac{\pi}{4}-1+\frac{1}{3}-\dots+\frac{(-1)^{p}}{2p+1}\right),
+    \end{equation}
+    et
+    \begin{equation}
+        I_{2p+1}=\frac{(-1)^{p}}{2}\left(\ln(2)-1+\frac{1}{2}-\frac{1}{3}+\dots+\frac{(-1)^{p}}{p}\right).
+    \end{equation}
+
+    D'après le théorème de convergence dominée, on a $I_n\xrightarrow[n\to+\infty]{}0$ donc 
+    \begin{equation}
+        \boxed{
+            \frac{\pi}{4}=\sum_{k=0}^{+\infty}\frac{(-1)^{k}}{2k+1}.
+        }
+    \end{equation}
+
+    Comme on a $2I_{n}\leqslant I_{n}+I_{n-2}=\frac{1}{n-1}\leqslant 2I_{n-2}$ d'où 
+    \begin{equation}
+        \frac{1}{2(n+1)}\leqslant I_n\leqslant\frac{1}{2(n-1)},
+    \end{equation}
+    ainsi 
+    \begin{equation}
+        \boxed{
+            I_n\underset{n\to+\infty}{\sim}\frac{1}{2n}.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On note $g$ la fonction intégrande. $g$ est $\mathcal{C}^{\infty}$ sur $]0,1]$. On a 
+    \begin{equation}
+        f(x)=\int_{\frac{1}{2}}^{x}g(t)\d t-\int_{\frac{1}{2}}^{x^{2}}g(t)\d t,
+    \end{equation}
+    donc $f$ est $\mathcal{C}^{\infty}$ et $f'(x)=g(x)-2xg'(x^{2})$.
+
+    En 0, $\e^{t}$ se comporte comme 1 et $\frac{1}{\arcsin(t)}$ comme en $\frac{1}{t}$. Donc, au voisinage de 0,
+    \begin{equation}
+        h(t)=\frac{\e^{t}}{\arcsin(t)}-\frac{1}{t}=\frac{t\e^{t}-\arcsin(t)}{t\arcsin(t)}\underset{n\to+\infty}{=}\frac{t^{2}+o(t^{2})}{t^{2}+o(t^{2})}\xrightarrow[t\to0^{+}]{}1.
+    \end{equation}
+    Donc $h$ est bornée sur $]0,1]$, soit $M=\sup\limits_{t\in]0,1]}\left\lvert h(t)\right\rvert$. On a 
+    \begin{equation}
+        \left\lvert\int_{x^{2}}^{x}h(t)\d t\right\rvert\leqslant\int_{x}^{x^{2}}\left\lvert h(t)\right\rvert \d t\leqslant M(x-x^{2})\xrightarrow[x\to0]{}0.
+    \end{equation}
+    Comme $\int_{x^{2}}^{x}\frac{\d t}{t}=-\ln(x)$, on a $f(x)\underset{x\to0}{=}-\ln(x)+o(1)$.
+
+    Pour aller plus loin dans le développement limité, on pousse plus loin le développement limité de $h(t)$ dans $0^{+}$.
+\end{proof}
+
+\begin{proof}
+    On note $f$ la fonction intégrande. $x\mapsto x^{2}+x+1$ ne s'annule pas sur $\R$. $f$ est continue sur $\R$ et positive, $f(x)\underset{x\to+\infty}{\sim}\frac{1}{x^{2n}}$. Donc d'après le critère de Riemann, l'intégrale converge absolument.
+
+    Pour le calcul, on on 
+    \begin{equation}
+        x^{2}+x+1=\left(x+\frac{1}{2}\right)^{2}+\frac{3}{4}=\frac{3}{4}\left(\left(\frac{2}{\sqrt{3}}(x+1)\right)^{2}+1\right).
+    \end{equation}
+    On pose $u=\frac{2}{\sqrt{3}}(x+1)$ et on a 
+    \begin{equation}
+        I_n=\frac{\sqrt{3}}{2}\left(\frac{4}{3}\right)^{n}\int_{0}^{+\infty}\frac{\d u}{(1+u^{2})^{n}}.
+    \end{equation}
+
+    On note $J_n$ l'intégrale:
+    \begin{equation}
+        J_n=\int_{0}^{+\infty}\frac{1}{(u^{2}+1)^{n-1}}\frac{\d u}{1+u^{2}}.
+    \end{equation}
+    On pose $\theta=\arctan(u)$, $\mathcal{C}^{1}$-difféomorphisme de $[0,+\infty[\to[0,\frac{\pi}{2}[$. On a $\d\theta=\frac{\d u}{1+u^{2}}$ et $\frac{1}{(1+u^{2})^{n-1}}=\cos^{2n-2}(\theta)$.
+
+    On retrouve les intégrales de Wallis, d'où on en tire 
+    \begin{equation}
+        J_n=\frac{(2n-1)!}{2^{2(n-1)}(n-1)!}\frac{\pi}{2}.
+    \end{equation}
+    Donc 
+    \begin{equation}
+        \boxed{
+            I_n=\frac{\sqrt{3}}{2}\left(\frac{4}{3}\right)^{n}\frac{(2n-1)!}{2^{2(n-1)}(n-1)!}\frac{\pi}{2}.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    Soit $M_{0}=\sup\limits_{[0,1]}\left\lvert f\right\rvert$ et $M_{1}=\sup\limits_{[0,1]}\left\lvert f'\right\rvert$. D'après l'inégalité des accroissements finis, on a
+    \begin{equation}
+        \left\lvert f\left(\frac{i+1}{n}\right)-f\left(\frac{i}{n}\right)\right\rvert\leqslant\frac{M_1}{n}.
+    \end{equation}
+    Donc, par la formule de la somme de Riemann, on a 
+    \begin{equation}
+        \left\lvert u_n-\underbrace{\frac{1}{n}\sum_{i=0}^{n-1}f\left(\frac{i+1}{n}\right)f'\left(\frac{i+1}{n}\right)}_{\xrightarrow[n\to+\infty]{}\int_{0}^{1}ff'}\right\rvert\leqslant\underbrace{\frac{M_1^{2}}{n}}_{\xrightarrow[n\to+\infty]{}0},
+    \end{equation}
+    donc 
+    \begin{equation}
+        \boxed{
+            u_n\xrightarrow[n\to+\infty]{}\frac{1}{2}\left(f^{2}(1)-f^{2}(0)\right).
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    Ici, l'intégrale diverge, mais comme on fait tendre l'intervalle d'intégration à un singleton, cela aura une limite finie.
+
+    Formons \function{f}{\R_{+}^{*}\setminus\left\lbrace1\right\rbrace}{\R}{t}{\frac{1}{\ln(t)}}
+    Si $x<1$, $x^{a}$ et $x^{b}$ sont $<1$, et si $x>1$, alors $x^{a}$ et $x^{b}$ sont $>1$. $\int_{x^{a}}^{x^{b}}f(t)\d t$ est donc bien définie.
+
+    On a 
+    \begin{equation}
+        \frac{1}{\ln(t)}-\frac{1}{t-1}=\frac{1}{\ln(1+(t-1))}-\frac{1}{t-1}=\frac{(t-1)-\ln(1+(t-1))}{(t-1)\ln(1+(t-1))}\underset{t\to1}{\sim}\frac{\frac{(t-1)^{2}}{2}}{(t-1)^{2}}=\frac{1}{2}.
+    \end{equation}
+    Soit $h\colon\R_{+}^{*}\to\R$ définie par $h(t)=\frac{1}{\ln(t)}-\frac{1}{t-1}$ si $t\neq1$ et $h(1)=\frac{1}{2}$. $h$ est continue donc bornée au voisinage de 1. Il existe $\alpha_{0}>0$ et $M_{0}\geqslant0$ tels que pour tout $t\in[1-\alpha_{0},1+\alpha_{0}]$, on ait 
+    \begin{equation}
+        \left\lvert \int_{x^{a}}^{x^{b}}\frac{\d t}{\ln(t)}-\int_{x^{a}}^{x^{b}}\frac{\d t}{t-1}\right\rvert\leqslant M_{0}\left\lvert x^{b}-x^{a}\right\rvert\xrightarrow[x\to1]{}0.
+    \end{equation}
+
+    Or, si $x=1+x'$, on a
+    \begin{align}
+        \int_{x^{a}}^{x^{b}}\frac{\d t}{t-1}
+        &=\left[\ln\left\lvert t-1\right\rvert\right]_{x^{a}}^{x^{b}},\\
+        &=\ln\left\lvert x^{b}-1\right\rvert-\ln\left\lvert x^{a}-1\right\rvert,\\
+        &=\ln\left\lvert (1+x')^{b}-1\right\rvert-\ln\left\lvert (1+x')^{a}-1\right\rvert,\\
+        &\underset{x'\to0}{=}\ln\left\lvert bx"+o(x')\right\rvert-\ln\left\lvert ax'+o(x')\right\rvert,\\
+        &\underset{x'\to0}{=}\ln(b)+\ln(x')+o(1)-\left[\ln(a)+\ln(x')+o(1)\right],\\
+        &\underset{x'\to0}{=}\ln\left(\frac{b}{a}\right)+o(1)\xrightarrow[x'\to0]{}\ln\left(\frac{a}{b}\right).
+    \end{align}
+
+    D'où le résultat.
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $n\geqslant1$, on a 
+        \begin{equation}
+            S_n=\frac{b-a}{n}\sum_{k=0}^{n-1}f\left(a+k\frac{b-a}{n}\right)\xrightarrow[n\to+\infty]{}\int_{a}^{b}f.
+        \end{equation}
+        Par convexité, on a 
+        \begin{equation}
+            \varphi\left(\frac{1}{b-a}S_n\right)\leqslant\sum_{k=0}^{n-1}\frac{1}{n}\varphi\left(f\left(a+k\frac{b-a}{n}\right)\right),
+        \end{equation}
+        donc en passant à la limite $n\to+\infty$, par continuité, on a 
+        \begin{equation}
+            \boxed{
+            \varphi\left(\frac{1}{b-a}\int_{a}^{b}f(t)\d t\right)\leqslant\frac{1}{b-a}\int_{a}^{b}\varphi\circ f(t)\d t.}
+        \end{equation}
+
+        \item Soit $c\in]a,b[$. En cas d'égalité dans ce qui précède, on a 
+        \begin{align}
+            \varphi\left(\frac{1}{b-a}\int_{a}^{b}f(t)\d t\right)
+            &=\varphi\left(\frac{c-a}{b-a}\frac{1}{c-a}\int_{a}^{c}f(t)\d t+\frac{b-c}{b-a}\frac{1}{b-c}\int_{c}^{b}f(t)\d t\right),\\
+            &\leqslant\frac{c-a}{b-a}\varphi\left(\frac{1}{c-a}\int_{a}^{c}f(t)\d t\right)+\frac{b-c}{b-a}\varphi\left(\frac{1}{b-c}\int_{c}^{b}f(t)\d t\right),\\
+            &\leqslant\frac{1}{b-a}\left(\int_{a}^{c}\varphi\circ f(t)\d t+\int_{c}^{b}\varphi\circ f(t)\d t\right)=\frac{1}{b-a}\int_{a}^{b}\varphi\circ f(t)\d t,
+        \end{align}
+        par convexité et par ce qui précède. Par hypothèse, on a égalité partout, Par stricte convexité, on a 
+        \begin{equation}
+            \frac{1}{c-a}\int_{a}^{c}f(t)\d t=\frac{1}{b-c}\int_{c}^{b}f(t)\d t,
+        \end{equation}
+        d'où $(b-c)\int_{a}^{c}g(t)\d t=(c-a)\int_{c}^{b}f(t)\d t$. En dérivant par rapport à $c$, on obtient
+        \begin{equation}
+            (b-a)f(c)-\int_{a}^{c}f(t)\d t=-(c-a)f(c)+\int_{c}^{b}f(t)\d t,
+        \end{equation}
+        soit $(b-a)f(c)=\int_{c}^{b}f(t)\d t$ et $f(c)=\frac{1}{b-a}\int_{a}^{b}f(t)\d t$ pour tout $c\in]a,b[$. Donc $f$ est constante sur $[a,b]$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Pour la première question, on aurait aussi pu passer par des fonctions en escaliers qui converge uniformément vers $f$.
+\end{remark}
+
+\begin{proof}
+    Si $f=0$, ça marche. Sinon, il existe $y_0\in\R$ tel que $f(y_0)\neq0$ et donc, pour tout $x\in\R$, on a 
+    \begin{equation}
+        f(x)=\frac{1}{f(y_0)}\int_{x-y_0}^{x+y_0}f(t)\d t.
+    \end{equation}
+    Par récurrence, $f$ est $\mathcal{C}^{1}$ (d'après l'expression) et si $f$ est $\mathcal{C}^{k}$, alors elle est $\mathcal{C}^{k+1}$, donc $f$ est $\mathcal{C}^{\infty}$. Par ailleurs, $f(y_{0})f(-x)=-f(y_{0})f(y)$ donc $f$ est impaire. On dérive par rapport à $x$: $f(x+y)-f(x-y)=f'(x)f(y)$, et en dérivant à nouveau par rapport à $x$, on a $f'(x+y)-f'(x-y)=f''(x)f(y)$.
+
+    Même chose par rapport à $y$: $f(x+y)-f(x-y)=f(x)f'(y)$ puis $f'-x+y)-f'(x-y)=f(x)f''(y)$. On pose alors $\alpha=\frac{f''(y_0)}{f(y_0)}$, on a $f''(x)-\alpha f(x)=0$.
+
+    Si $\alpha=0$, comme $f$ est impaire, on a $f(x)=ax$ avec $a\in\R$ et en reportant, on a
+    \begin{equation}
+        \int_{x-y}^{x+y}f(t)\d t=a\left[\frac{u^{2}}{2}\right]_{x-y}^{x+y}=2axy.
+    \end{equation}
+    Or $f(x)f(y)=a^{2}xy$ donc ou bien $a=0$, ce qui est exclu, ou bien $a=2$.
+
+    Si $\alpha>0$, on a $f(x)=a_{1}\sinh(\sqrt{\alpha}x)$. En reportant, on a 
+    \begin{equation}
+        \int_{x-y}^{x+y}f(t)\d t=\frac{2a_{1}}{\sqrt{\alpha}}\sinh(\sqrt{\alpha}x)\sinh(\sqrt{\alpha}y),
+    \end{equation}
+    et $f(x)=f(y)=a_{1}^{2}\sinh(\sqrt{\alpha}x)\sinh(\sqrt{\alpha}y)$ d'où $a_{1}=\frac{2}{\sqrt{\alpha}}$.
+
+    Si $\alpha<0$, on trouve $f(x)=a_{2}\sin(\sqrt{-\alpha}x)$ avec $a_{2}=\frac{2}{\sqrt{-\alpha}}$.
+\end{proof}
+
+\begin{proof}
+    Soit $f$ une fonction constante égale à $c$ sur $[a,b]$. On a alors $I_n=(b-a)^{\frac{1}{n}}\left\lvert c\right\rvert\xrightarrow[n\to+\infty]{}\left\lvert c\right\rvert$.
+
+    Plus généralement, on a 
+    \begin{equation}
+        I_n\leqslant\left(\int_{a}^{b}\left\lVert f\right\rVert_{\infty}^{n}\right)^{\frac{1}{n}}=(b-a)^{\frac{1}{n}}\left\lVert f\right\rVert_{\infty}\xrightarrow[n\to+\infty]{}\left\lVert f\right\rVert_{\infty}.
+    \end{equation}
+
+    Soit $\varepsilon>0$, il existe $N_{1}\in\N$ tel que pour tout $n\geqslant N_1$, on a $I_{n}\leqslant\left\lVert f\right\rVert_{\infty}+\varepsilon$. $\left\lvert f\right\rvert$ est continue sur le compact $[a,b]$, donc il existe $t_{0}\in[a,b]$ tel que $\left\lvert f(t_{0})\right\rvert=\left\lVert f\right\rVert_{\infty}$. Par continuité de $\left\lvert f\right\rvert$, il existe $(c,d)\in[a,b]^{2}$ avec $c<d$ tel que pour tout $t\in[c,d]$, on ait $\left\lvert f(t)\right\rvert\geqslant\left\lVert f\right\rVert_{\infty}-\frac{\varepsilon}{2}$.
+
+    On a alors
+    \begin{equation}
+        \int_{a}^{b}\left\lvert f\right\rvert^{n}\geqslant\int_{c}^{b}\left\lvert f\right\rvert^{n}\geqslant(d-c)\left(\left\lVert f\right\rVert_{\infty}-\frac{\varepsilon}{2}\right)^{n},
+    \end{equation}
+    donc 
+    
+    \begin{equation}
+        I_n\geqslant\left(\left\lVert f\right\rVert_{\infty}-\frac{\varepsilon}{2}\right)(d-c)^{\frac{1}{n}}\xrightarrow[n\to+\infty]{}\left\lVert f\right\rVert_{\infty}-\frac{\varepsilon}{2}.
+    \end{equation}
+
+    Il existe donc $N_{2}\in\N$ tel que pour tout $n\geqslant N_{2}$, on a $I_{n}\geqslant\left\lVert f\right\rVert_{\infty}-\varepsilon$. Donc pour tout $n\geqslant\max(N_{1},N_{2})$, on a 
+    \begin{equation}
+        \left\lVert f\right\rVert_{\infty}-\varepsilon\leqslant I_{n}\leqslant \left\lVert f\right\rVert_{\infty}+\varepsilon,
+    \end{equation}
+    donc 
+    \begin{equation}
+        \boxed{
+            \lim\limits_{n\to+\infty}I_{n}=\left\lVert f\right\rVert_{\infty}.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{remark}
+    Soit $u_n=I_{n}^{n}$ avec $f$ continue non nulle. On a $u_n>0$ et $u_n^{\frac{1}{n}}\xrightarrow[n\to+\infty]{}\left\lVert f\right\rVert$. Avec l'inégalité de Cauchy-Schwarz appliquée à $\left\lvert f\right\rvert^{\frac{n}{2}}$ et $\left\lvert f\right\rvert^{\frac{n}{2}+1}$, on a 
+    \begin{equation}
+        0<u_{n+1}=\int_{a}^{b}\left\lvert f\right\rvert^{n+1}\leqslant\sqrt{u_n}\sqrt{u_n+2}
+    \end{equation}
+    d'où 
+    \begin{equation}
+        \frac{u_{n+1}}{u_n}\leqslant\frac{u_{n+2}}{u_{n+1}}.
+    \end{equation}
+
+    $\left(\frac{u_{n+1}}{u_{n}}\right)_{n\geqslant0}$ est croissante et strictement positive, donc converge vers $l\in\overline{\R_{+}^{*}}$. On a 
+    \begin{equation}
+        \ln(u_{n+1})-\ln(u_n)=\ln\left(\frac{u_{n+1}}{u_{n}}\right)\xrightarrow[n\to+\infty]{}\ln(l).
+    \end{equation}
+
+    D'après le théorème de Césaro, on a donc 
+    \begin{equation}
+        \frac{\ln(u_{n})}{n}\xrightarrow[n\to+\infty]{}\ln(l),
+    \end{equation}
+    d'où $\ln\left(u_{n}^{\frac{1}{n}}\right)\xrightarrow[n\to+\infty]{}\ln\left\lVert f\right\rVert_{\infty}=\ln(l)$ par unicité de la limite.
+
+    Donc 
+    \begin{equation}
+        \lim\limits_{n\to+\infty}\frac{u_{n+1}}{u_{n}}=\left\lVert f\right\rVert_{\infty}.
+    \end{equation}
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $t\in[-\pi,\pi]$, comme $\rho\neq1$, on a $\e^{\i t}\neq\rho\e^{\i\theta}$, donc $t\mapsto\left\lvert\e^{\i t}-\rho\e^{\i \theta}\right\rvert>0$ et $t\mapsto\ln\left\lvert\e^{\i t}-\rho\e^{\i\theta}\right\rvert$ est continue, $2\pi$-périodique sur $[-\pi,\pi]$ donc $F(\rho,\theta)$ existe.
+        \item On a 
+        \begin{equation}
+            F(\rho,\theta)=\int_{-\pi}^{\pi}\ln\left\lvert\e^{\i(t-\theta)}-\rho\right\rvert\d t=\int_{-\pi-\theta}^{\pi-\theta}\ln\left\lvert\e^{\i u}-\rho\right\rvert\d u,
+        \end{equation}
+        et comme l'intégrande est une fonction $2\pi$-périodique,
+        \begin{equation}
+            F(\rho,\theta)=\int_{0}^{2\pi}\ln\left\lvert\e^{\i u}-\rho\right\rvert\d u,
+        \end{equation}
+        est indépendant de $\theta$.
+
+        \item Soit $n\geqslant1$, on a 
+        \begin{equation}
+            S_n=\frac{2\pi}{n}\sum_{k=0}^{n-1}\ln\left\lvert\e^{\frac{2\i k\pi}{n}}-\rho\right\rvert=\frac{2\pi}{n}\ln\left(\left\lvert\prod_{k=0}^{n-1}\left(\rho-\e^{\frac{2\i k\pi}{n}}\right)\right\rvert\right)=\frac{2\pi}{n}\ln\left(\left\lvert\rho^{n}-1\right\rvert\right).
+        \end{equation}
+
+        Si $\rho>1$, on a 
+        \begin{align}
+            S_n
+            &=\frac{2\pi}{n}\ln\left(\rho^{n}-1\right),\\
+            &=\frac{2\pi}{n}\left[\ln(\rho^{n})+\ln\left(1-\left(\frac{1}{\rho}\right)^{n}\right)\right]\xrightarrow[n\to+\infty]{}2\pi\ln(\rho).
+        \end{align}
+
+        Donc $F(\rho,\theta)=2\pi\ln(\rho)$.
+
+        Si $\rho<1$, $S_n=\frac{2\pi}{n}\ln(1-\rho^{n})\xrightarrow[n\to+\infty]{}0$ donc $F(\rho,\theta)=0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    On a 
+    \begin{align}
+        F(\rho,0)
+        &=\int_{0}^{2\pi}\ln\left\lvert\cos(u)-\rho+\i\sin(u)\right\rvert\d u,\\
+        &=\frac{1}{2}\int_{0}^{2\pi}\ln\left(\rho^{2}-2\rho\cos(u)+1\right)\d u,\\
+        &=2\pi\ln(\rho)+F\left(\frac{1}{\rho},0\right).
+    \end{align}
+\end{remark}
+
+\begin{remark}
+    On peut se demander si l'on a convergence de $F(1,0)=\frac{1}{2}\int_{-\pi}^{\pi}\ln\left(2(1-\cos(u))\right)\d u$. On vérifie que 
+    \begin{equation}
+        \left\lvert\ln(2(1-\cos(u)))\right\vert\underset{u\to0}{\sim}2\left\lvert\ln u\right\rvert=\underset{u\to0}{o}\left(\frac{1}{\sqrt{u}}\right).
+    \end{equation}
+    Donc $F(1,0)$ converge. Pour le calcul, on a 
+    \begin{align}
+        2F(1,0)
+        &=2\pi\ln(2)+2\int_{0}^{\pi}\ln(1-\cos(u))\d u,\\
+        &=2\pi\ln(2)+4\int_{0}^{\pi}\ln\left(\sin\left(\frac{u}{2}\right)\right)\d u,\\
+        &=2\pi\ln(2)+8\int_{0}^{\frac{\pi}{2}}\ln\left(\sin\left(v\right)\right)\d v.
+    \end{align}
+
+    D'après un exercice précédent, l'intégrale vaut $-\frac{\pi}{2}\ln(2)$ et finalement $F(1,0)=0$.
+\end{remark}
+
+\begin{proof}
+    Toutes les intégrales existent car les fonctions sont à support compact.
+    \begin{enumerate}
+        \item Montrons la contraposée. Soit $\delta\in\R$ tel que $f(\delta)\neq0$. On suppose que $f(\delta)>0$. Par continuité, il existe $\eta\>0$ tel que $f\geqslant0$ sur $[\delta-\eta,\delta+\eta]$. $f\times\varphi$ est continue sur $[\delta-\eta,\delta+\eta]$, positive et $(f\varphi)(\delta)>0$ donc $\int_{\R}f\varphi>0$ (en choisissant $\varphi\geqslant0$ définie sur le support $[\delta-\eta,\delta+\eta]$).
+        \item Montrons un petit lemme: si $\psi\in C_{0}$, il existe $\varphi\in C_{1}$ tel que $\psi=\varphi'$ si et seulement si $\int_{\R}\psi=0$. Pour le sens direct, on a $\int_{\R}\psi=\int_{\R}\varphi'=\lim\limits_{t\to+\infty}\varphi(t)-\lim\limits_{t\to-\infty}\varphi(t)=0$. Pour le sens indirect, on définit $\varphi(x)=\int_{-\infty}^{x}\psi$ (possible car $\psi\in C_{0}$). $\varphi$ est $\mathcal{C}^{1}$ et $\varphi'=\psi$. $\varphi$ est $\mathcal{C}^{1}$ et $\varphi'=\psi$. Soit $A\geqslant0$ tel que pour tout $\left\lvert t\right\rvert\geqslant A$, on a $\psi(t)=0$. Alors pour tout $t\leqslant-A$, on a $\varphi(t)=0$ et pour tout $t\geqslant A$, $\varphi(t)=\int_{-\infty}^{t}\psi=\int_{-A}^{A}\psi=0$. Donc $varphi$ est à support compact.
+        
+        Pour montrer le résultat, montrons la contraposée. Supposons $f$ non constante, il existe $(x_{1},x_{2})\in\R^{2}$ distincts tel que $f(x_{1})\neq f(x_{2})$. Quitte à remplacer $f$ par $f-\frac{f(x_1)+f(x_2)}{2}$, on peut supposer que $f(x_{2})=-f(x_{1})$. Il existe $\eta>0$ tel que pour tout $t\in[x_{1}-\eta,x_{1}+\eta]$, $f(t)\geqslant0$ et pour tout $t\in[x_{2}-\eta,x_{2}+\eta]$, $f(t)\leqslant0$.
+
+        On a $\int_{\R}\psi=0$. On pose $\varphi(t)=\int_{-\infty}^{t}\psi(x)\d x$. Alors $\varphi\in C_{1}$ et $\int_{\R}f\varphi'>0$.
+
+        \item Soit $G$ une primitive de $g$. On a alors, pour tout $\varphi\in C_{1}$,
+        \begin{equation}
+            \int_{\R}g\varphi=\left[G\varphi\right]_{-\infty}^{+\infty}-\int_{\R}G\varphi'=\int_{\R}f\varphi'.
+        \end{equation}
+        D'après ce qui précède, on a, pour tout $\varphi\in C_{1}$, $\int_{\R}(f+G)\varphi'=0$ et donc $f=-G$ à une constante près.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On note \function{f}{\R_{+}^{*}}{\R}{t}{\frac{\e^{-t}-\e^{-2t}}{t}}
+    $f$ est continue, tend vers $1$ en 0 et $f(t)=\underset{t\to+\infty}{o}\left(\frac{1}{t^{2}}\right)$ donc $I$ existe.
+
+    Soit $\varepsilon>0$. On a 
+    \begin{align}
+        \int_{\varepsilon}^{+\infty}\frac{\e^{-t}-\e^{-2t}}{t}\d t
+        &=\int_{\varepsilon}^{+\infty}\frac{\e^{-t}}{t}\d t-\int_{\varepsilon}^{+\infty}\frac{\e^{-2t}}{t}\d t,\\
+        &=\int_{\varepsilon}^{+\infty}\frac{\e^{-t}}{t}\d t-\int_{2\varepsilon}^{+\infty}\frac{\e^{-t}}{t}\d t,\\
+        &=\int_{\varepsilon}^{2\varepsilon}\frac{\e^{-t}}{t}\d t.
+    \end{align}
+
+    La fonction $\frac{\e^{-t}-1}{t}$ tend vers -1 quand $t\to0$, donc elle est bornée au voisinage de 0 et est continue. Donc 
+    \begin{equation}
+        \int_{\varepsilon}^{2\varepsilon}\frac{\e^{-t}-1}{t}=\int_{\varepsilon}^{2\varepsilon}\frac{\e^{-t}}{t}\d t-\ln(2)\xrightarrow[\varepsilon\to0]{}0,
+    \end{equation}
+    donc 
+    \begin{equation}
+        \boxed{
+            I=\ln(2).
+        }
+    \end{equation}
+
+    On note maintenant $f$ la fonction intégrande de $J$. $f$ est continue sur $\R_{+}^{*}$, on a 
+    \begin{equation}
+        f(t)\xrightarrow[t\to0]{}0,    
+    \end{equation}
+    et 
+    \begin{equation}
+        \int_{1}^{X}\frac{\cos(t)}{t}\d t=\underbrace{\left[\frac{\sin(t)}{t}\right]_{1}^{X}}_{\xrightarrow[X\to+\infty]{}-\sin(1)}+\int_{1}^{X}\frac{\sin(t)}{t^{2}}\d t,
+    \end{equation}
+    et l'intégrale de droite converge absolument. Donc $\int_{1}^{+\infty}\frac{\cos(t)}{t}\d t$ converge et de même pour $\int_{1}^{+\infty}\frac{\cos(2t)}{t}\d t$. Donc $J$ existe.
+
+    Soit $\varepsilon>0$ et $X\geqslant \varepsilon$, on a 
+    \begin{align}
+        \int_{\varepsilon}^{X}\frac{\cos(t)-\cos(2t)}{t}\d t
+        &=\int_{\varepsilon}^{X}\frac{\cos(t)}{t}\d t-\int_{\varepsilon}^{X}\frac{\cos(2t)}{t}\d t,\\
+        &=\int_{\varepsilon}^{2\varepsilon}\frac{\cos(t)}{t}\d t-\int_{X}^{2X}\frac{\cos(t)}{t}\d t.
+    \end{align}
+    La deuxième intégrale tend vers 0 quand $X\to+\infty$ (car l'intégrale est semi-convergente), et de même, on a $\int_{\varepsilon}^{2\varepsilon}\frac{\cos(t)-1}{t}\d t\xrightarrow[\varepsilon\to0]{}0$ donc 
+    \begin{equation}
+        \boxed{
+            J=\ln(2).
+        }
+    \end{equation}
+\end{proof}
+
+\begin{remark}
+    Généralement, pour $a<b$ et $f\colon\R_{+}\to\R$ continue, dérivable en 0 et telle que $\int_{1}^{+\infty}\frac{f(t)}{t}\d t$ converge. Alors on a $f(u)=f(0)+uf'(0)+\underset{u\to0}{o}(u)$ et 
+    \begin{equation}
+        \int_{0}^{+\infty}\frac{f(at)-f(bt)}{t}\d t,
+    \end{equation}
+    existe. En notant $g$ la fonction intégrande, $g$ tend vers $(b-a)f'(0)$ en 0. Et en séparant pour $\varepsilon>0$, on a 
+    \begin{equation}
+        \int_{\varepsilon}^{+\infty}\frac{f(at)-f(bt)}{t}\d t=\int_{a\varepsilon}^{b\varepsilon}\frac{f(u)}{u}\d u\xrightarrow[\varepsilon\to0]{}f(0)\ln\left(\frac{b}{a}\right).
+    \end{equation}
 \end{remark}
