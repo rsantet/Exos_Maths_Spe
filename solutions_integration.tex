@@ -1181,3 +1181,476 @@
         \int_{\varepsilon}^{+\infty}\frac{f(at)-f(bt)}{t}\d t=\int_{a\varepsilon}^{b\varepsilon}\frac{f(u)}{u}\d u\xrightarrow[\varepsilon\to0]{}f(0)\ln\left(\frac{b}{a}\right).
     \end{equation}
 \end{remark}
+
+\begin{proof}
+    $f$ est continue par morceaux, positive. On a $0\leqslant f\leqslant2$ donc $f$ est intégrable sur $]0,1]$. On écrit 
+    \begin{equation}
+        I=\sum_{k=1}^{+\infty}\int_{\frac{1}{k+1}}^{\frac{1}{k}}\frac{\d t}{t}-\frac{k}{k(k+1)},
+    \end{equation}
+    et en prenant les sommes partielles et en passant à la limite, on trouve 
+    \begin{equation}
+        \boxed{
+            I=1-\gamma.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    On note \function{g}{\R_{+}^{*}}{\R}{t}{\frac{1}{\e^{t}-1}}
+    $g$ est continue positive sur $\R_{+}^{*}$ et $g(t)=\underset{t\to+\infty}{O}\left(\frac{1}{t^{2}}\right)$/ Donc $f$ est bien définie sur $\R_{+}^{*}$.
+
+    Pour tout $x\in\R_{+}^{*}$, on a 
+    \begin{align}
+        f(x)
+        &=\int_{x}^{+\infty}\frac{\e^{-t}}{1-\e^{-t}}\d t,\\
+        &=\left[\ln\left(1-\e^{-t}\right)\right]_{x}^{+\infty},\\
+        &=-\ln\left(1-\e^{-x}\right).
+    \end{align}
+    $f$ est continue et positive sur $\R_{+}^{*}$. On a $f(x)\underset{x\to0}{=}-\ln(x+o(x))\underset{x\to0}{\sim}-\ln(x)=\underset{x\to0}{O}\left(\frac{1}{\sqrt{x}}\right)$ et $f(x)\underset{x\to+\infty}{\sim}\e^{-x}=\underset{x\to+\infty}{O}\left(\frac{1}{x^{2}}\right)$. D'où l'existence de $I$. On pose $u=\e^{-x}$ soit $x=-\ln(u)$ et $\d x=-\frac{\d u}{u}$. C'est un $\mathcal{C}^{1}$-difféomorphisme de $\R_{+}^{*}$ dans $]0,1[$. On a alors 
+    \begin{equation}
+        I=-\int_{0}^{1}\frac{-\ln(1-u)}{u}\d u=\int_{0}^{1}\frac{-\ln(1-u)}{u}\d u.
+    \end{equation}
+    On pose $v=1-u$ pour avoir 
+    \begin{equation}
+        I=\int_{0}^{1}\frac{-\ln(v)}{1-v}\d v.
+    \end{equation}
+    Pour $v\in]0,1[$, on développe
+    \begin{equation}
+        \frac{-\ln(v)}{1-v}=\sum_{k=0}^{+\infty}-v^{k}\ln(v)=\sum_{k=0}^{+\infty}f_k(v).
+    \end{equation}
+    $f_k$ est positive intégrable sur $]0,1[$.
+
+    On forme $u_k=\int_{0}^{1}\left\lvert f_k(t)\right\rvert\d t$ pour $k\in\N$. Alors $u_k=\int_{0}^{1}-t^{k}\ln(t)\d t=\frac{1}{(k+1)^{2}}$. Donc $\sum u_{k}$ converge et on peut intervertir. Finalement, on a 
+    \begin{equation}
+        \boxed{
+            I=\frac{\pi^{2}}{6}.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{remark}
+    On peut aussi appliquer le théorème de convergence dominée à $\left(\sum_{k=0}^{n}f_k\right)$ car les $f_k$ sont positifs.
+\end{remark}
+
+\begin{remark}
+    On a 
+    \begin{equation}
+        f(x)=\underbrace{\int_{x}^{1}\frac{\d t}{\e^{t}-1}}_{\underset{x\to0}{\sim}\int_{x}^{1}\frac{1}{t}\d t}+\int_{1}^{+\infty}\frac{\d t}{\e^{t}-1}\underset{x\to0}{\sim}-\ln(x)=\underset{x\to0}{O}\left(\frac{1}{\sqrt{x}}\right),
+    \end{equation}
+    car la fonction est positive, et 
+    \begin{equation}
+        f(x)\underset{x\to+\infty}{\sim}\int_{x}^{+\infty}\e^{-t}\d t=\e^{-x}=\underset{x\to+\infty}{O}\left(\frac{1}{x^{2}}\right).
+    \end{equation}
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On pose $f_n(t)=\left(1+\frac{t}{n}\right)^{n}\e^{-t}=\underset{t\to+\infty}{O}\left(\frac{1}{t^{2}}\right)$, continue positive sur $[-n,+\infty[$. $I_n$ est donc bien définie. On pose $u=t+n$, et alors 
+        \begin{align}
+            I_n
+            &=\int_{0}^{+\infty}\frac{u^{n}}{n^{n}}\e^{-u}\e^{n}\d u,\\
+            &=\frac{\e^{n}}{n^{n}}\int_{0}^{+\infty}u^{n}\e^{-u}\d u,\\
+            &=\frac{\e^{n}}{n^{n}}\Gamma(n+1),\\
+            &=\frac{\e^{n}}{n^{n}}n!.
+        \end{align}
+
+        \item On pose $t=\sqrt{n}u$ et on a 
+        \begin{equation}
+            J_n=\sqrt{n}\int_{-\sqrt{n}}^{\sqrt{n}}\e^{n\ln\left(1+\frac{u}{\sqrt{n}}\right)-\sqrt{n}u}\d u.
+        \end{equation}
+        On définit, pour tout $n\in\N^{*}$, $f_n\colon\R\to\R$ par $f(u)=\e^{n\ln\left(1+\frac{u}{\sqrt{n}}\right)-\sqrt{n}u}$ sur $[-\sqrt{n},\sqrt{n}]$ et $0$ ailleurs. $f_n$ est continue par morceaux (intégrable) sur $\R$. Soit $u\in\R$, il existe $N_0\in\N$ tel que pour tout $n\geqslant N_{0}$, $\sqrt{n}\geqslant\left\lvert u\right\rvert$. Alors pour tout $n\geqslant N_0$, on a 
+        \begin{align}
+            f_n(u)
+            &\underset{n\to+\infty}{=}\e^{n\left(\frac{u}{\sqrt{n}}-\frac{u^{2}}{2n}+O\left(\frac{1}{n^{\frac{3}{2}}}\right)\right)-\sqrt{n}u},\\
+            &\underset{n\to+\infty}{=}\e^{-\frac{u^{2}}{2}+O\left(\frac{1}{\sqrt{n}}\right)}\xrightarrow[n\to+\infty]{}\e^{-\frac{u^{2}}{2}}.
+        \end{align}
+
+        Ainsi, on a convergence simple de $f_n\xrightarrow[n\to+\infty]{}f$ sur $\R$ avec $f(u)=\e^{-\frac{u^{2}}{2}}$.
+
+        C'est un cas particulier où trouver la dominante (pour appliquer le théorème de convergence dominée) est difficile. On propose $\varphi(u)=\e^{-\frac{u^{2}}{4}}$ (plus grand que $f$ et toujours intégrable). Soit $n\geqslant1$ et $u\in]-\sqrt{n},\sqrt{n}]$, soit 
+        \begin{equation}
+            g_n(u)=n\ln\left(1+\frac{u}{\sqrt{n}}\right)-\sqrt{n}u-\left(-\frac{u^{2}}{4}\right),
+        \end{equation}
+        dérivable sur $]-\sqrt{n},\sqrt{n}]$. On a 
+        \begin{equation}
+            g'_n(u)=\frac{-\frac{u}{2}\left(1-\frac{u}{\sqrt{n}}\right)}{1+\frac{u}{\sqrt{n}}},
+        \end{equation}
+        donc $g_n'\leqslant0$ si $u\geqslant0$ et $g_n>0$ si $u<0$. Comme $g_n(0)=0$, on a $g_n(u)\leqslant0$ pour tout $u\in]-\sqrt{n},\sqrt{n}]$ et donc pour tout $u\in\R$, $0\leqslant f_n(u)\leqslant\e^{-\frac{u^{2}}{4}}$.
+
+        On peut donc appliquer le théorème de convergence dominée et on a
+        \begin{equation}
+            \boxed{
+                \frac{J_n}{\sqrt{n}}=\int_\R\e^{-\frac{u^{2}}{2}}\d u=\sqrt{2\pi}.
+            }
+        \end{equation}
+
+        \item On pose pour $n\in\N^{*}$,
+        \begin{align}
+            K_n
+            &=\int_{-n}^{+\infty}\left(1+\frac{t}{n}\right)^{n}\e^{-t}\d t,\\
+            &=\frac{\e^{n}}{n^{n}}\int_{2n}^{+\infty}u^{n}\e^{-u}\d u.
+        \end{align}
+        On écrit $u^{n}\e^{-u}=u^{n}\e^{-\frac{u}{2}}\e^{-\frac{u}{2}}=h(u)\e^{-\frac{u}{2}}$. Alors $h$ est dérivable sur $]2n,+\infty[$ et $h'(u)=u^{n-1}\left(n-\frac{u}{2}\right)\e^{-\frac{u}{2}}$ donc 
+        \begin{equation}
+            0\leqslant h(u)\leqslant (2n)^{n}\e^{-n}.
+        \end{equation}
+        Donc 
+        \begin{equation}
+            K_n\leqslant 2^{n}\int_{2n}^{+\infty}\e^{-\frac{u}{2}}\d u =2^{n}\times 2\e^{-n}.
+        \end{equation}
+        Or $\e>2$ donc $\lim\limits_{n\to+\infty}K_n=0$. Donc $K_n=\underset{n\to+\infty}{o}(I_n)$ et $I_n=J_n+K_n$ donc $I_n\underset{n\to+\infty}{\sim}J_n$ et 
+        \begin{equation}
+            \boxed{
+                n!\underset{n\to+\infty}{\sim}\frac{n^{n}}{\e^{n}}\sqrt{2\pi n}.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $x\in\R$, on a $f_x(t)=\underset{t\to+\infty}{O}\left(\frac{1}{t^{2}}\right)$ et $f_x(t)\xrightarrow[t\to0]{}\frac{x^{2}}{2}$ donc $I(x)$ est bien définie.
+        \item Pour $t\in\R_{+}^{*}$, $x\mapsto f_x(t)$ est de classe $\mathcal{C}^{2}$. D'après l'inégalité de Taylor-Lagrange, pour tout $a\neq0$, on a 
+        \begin{equation}
+            \left\lvert\cos(a)-1\right\rvert=\left\lvert\cos(a)-\cos(0)-a\cos'(0)\right\rvert\leqslant\frac{a^{2}}{2}\sup\limits_{[0,a]}\left\lvert\cos''\right\rvert\leqslant\frac{a^{2}}{2}.
+        \end{equation}
+        Donc $\left\lvert 1-\cos(tx)\right\rvert\leqslant\frac{t^{2}x^{2}}{2}$. Ainsi, pour tout $t>0$, on a $\left\lvert f_x(t)\right\rvert\leqslant\frac{x^{2}}{2}\e^{-t}$. Fixons $a\geqslant0$, on a pour tout $x\in[-a,a]$, pour tout $t>0$, $\left\lvert f_x(t)\right\rvert\leqslant\frac{a^{2}}{2}\e^{-t}$, fonction indépendante de $x$ et intégrable sur $\R_{+}$.
+
+        D'après le théorème de continuité, $I$ est continue sur $[-a,a]$, pour tout $a\geqslant0$, donc sur $\R$. On a $\frac{\partial f_x}{\partial x}(t)=\frac{\sin(t)x}{t}\e^{-t}$, $\frac{\partial^{2}f_x}{\partial x^{2}}(t)=\cos(tx)\e^{-t}$. Pour tout $u\in\R$, $\left\lvert\sin(u)\right\rvert\leqslant\left\lvert u\right\rvert$ donc pour tout $t>0$, pour tout $x\in[-a,a]$,
+        \begin{equation}
+            \left\lvert\frac{\partial f_x}{\partial x}(t)\right\rvert\leqslant\left\lvert x\right\rvert\e^{-t}\leqslant a\e^{-t},
+        \end{equation}
+        \begin{equation}
+            \left\lvert\frac{\partial^{2} f_x}{\partial x^{2}}(t)\right\rvert\leqslant\e^{-t}.
+        \end{equation}
+        Donc d'après le théorème de dérivation, $I$ est de classe $\mathcal{C}^{2}$ et on a 
+        \begin{align}
+            I''(x)
+            &=\int_{0}^{+\infty}\cos(tx)\e^{-t}\d t,\\
+            &=\Re\left(\int_{0}^{+\infty}\e^{-(1-\i x)t}\d t\right),\\
+            &=\Re\left(\frac{1}{1-\i x}\right),\\
+            &=\frac{1}{1+x^{2}}.
+        \end{align}
+        Donc $I'(x)=\lambda+\arctan(x)$ avec $\lambda\in\R$. Comme $I'(0)=0$, $I'(x)=\arctan(x)$. On a $I(0)=0$ donc 
+        \begin{align}
+            I(x)
+            &=\int_{0}^{x}\arctan(u)\d u,\\
+            &=\left[u\arctan(u)\right]_{0}^{x}-\int_{0}^{x}\frac{u}{1+u^{2}}\d u,\\
+            &=x\arctan(x)-\frac{1}{2}\ln\left(1+x^{2}\right).
+        \end{align}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    En posant $v=xt$ pour $x>0$, on a 
+    \begin{equation}
+        I(x)=x\int_{0}^{+\infty}\frac{1-\cos(v)}{v^{2}}\e^{-\frac{v}{x}}\d v,
+    \end{equation}
+    et 
+    \begin{equation}
+        \lim\limits_{x\to+\infty}\frac{I(x)}{x}=\int_{0}^{+\infty}\frac{1-\cos(v)}{v^{2}}\d v=\frac{\pi}{2},
+    \end{equation}
+    et par intégration par parties, cette intégrale vaut $\int_{0}^{+\infty}\frac{\sin(v)}{v}\d v$. C'est une autre preuve de l'intégrale de Dirichlet.
+\end{remark}
+
+\begin{proof}
+    Soit $x\geqslant0$, $t\mapsto\frac{\sin(t)}{t}$ définie continue sur $\R$. On a 
+    \begin{equation}
+        \int_{x}^{X}\frac{\sin(t)}{t}\d t=\underbrace{\left[\frac{1-\cos(t)}{t}\right]_{x}^{X}}_{\xrightarrow[X\to+\infty]{}\frac{1-\cos(x)}{x}}+\int_{x}^{X}\frac{1-\cos(t)}{t^{2}}\d t.
+    \end{equation}
+    L'intégrale est absolument convergente, donc $f(x)$ est définie et on a 
+    \begin{equation}
+        f(x)=\frac{\cos(x)-1}{x}+\int_{x}^{+\infty}\frac{1-\cos(t)}{t^{2}}\d t.
+    \end{equation}
+    $f$ est de classe $\mathcal{C}^{1}$ et $f'(x)=-\frac{\sin(x)}{x}$. Soit $X>0$ fixé, on a 
+    \begin{align}
+        \int_{0}^{X}f(x)\d x
+        &=\left[xf(x)\right]_{0}^{X}-\int_{0}^{X}f'(x)x\d x,\\
+        &=Xf(X)+\int_{0}^{X}\sin(x)\d x,\\
+        &=Xf(X)+(1-\cos(X)),\\
+        &=X\int_{X}^{+\infty}\frac{1-\cos(t)}{t^{2}}\d t,\\
+        &=1-X\int_{X}^{+\infty}\frac{\cos(t)}{t^{2}}\d t.
+    \end{align}
+    Par intégrations par parties, on a 
+    \begin{align}
+        \int_{X}^{+\infty}\frac{\cos(t)}{t^{2}}\d t
+        &=\left[\frac{1}{t^{2}}\sin(t)\right]_{X}^{+\infty}+\int_{X}^{+\infty}\frac{2}{t^{2}}\sin(t)\d t,\\
+        &=-\frac{\sin(X)}{X^{2}}+\int_{X}^{+\infty}\frac{2\sin(t)}{t^{3}}\d t,\\
+        &=\underset{X\to+\infty}{O}\left(\frac{1}{X^{2}}\right),
+    \end{align}
+    car la deuxième intégrale est majorée par $\int_{X}^{+\infty}\frac{2}{t^{3}}\d t=\frac{1}{X^{2}}$. Finalement, on a 
+    \begin{equation}
+        \int_{0}^{X}f(x)\d x=1+\underset{X\to+\infty}{O}\left(\frac{1}{X}\right),
+    \end{equation}
+    donc 
+    \begin{equation}
+        \boxed{
+            \int_{0}^{+\infty}f(x)\d x=1.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    Définissons $f_h$ pour $h>0$ par $f_h(t)=f(nh)$ si $t\in[nh,(n+1)h[$ ($n\left\lfloor\frac{t}{h}\right\rfloor$). Pour $h$ fixé, $f(nh)=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$ donc $\phi(h)$ est bien définie. $f_h$ est continue par morceaux et $f_h(t)=\underset{t\to+\infty}{O}\left(\frac{1}{t^{2}}\right)$ donc $f_h$ est intégrable sur $\R_{+}$ et 
+    \begin{equation}
+        \phi(h)=\int_{0}^{+\infty}f_h(t)\d t.
+    \end{equation}
+
+    Soit $t$ fixé, on a $\lim\limits_{h\to0^{+}}h \left\lfloor\frac{t}{h}\right\rfloor=t$. Donc par continuité de $f$, $f_h(t)\xrightarrow[h\to0^{+}]{}f(t)$. 
+
+    On sait qu'il existe $M\in\R_{+}$ tel que pour tout $x>0$, $\left\lvert f(x)\right\rvert\leqslant\frac{M}{x^{2}}$. Donc 
+    \begin{equation}
+        \left\lvert f_h(t)\right\rvert\leqslant\frac{M}{\left(h\left\lfloor\frac{t}{h}\right\rfloor\right)^{2}}\leqslant\frac{M}{\left(t-h\right)^{2}}.
+    \end{equation}
+
+    On s'impose $h<1$. Dans ce cas, pour tout $t>2$, $\left\lvert f_h(t)\right\rvert\leqslant\frac{M}{\left(t-1\right)^{2}}$ est intégrable sur $[2,+\infty[$ et indépendant de $h$. Pour tout $t\in[0,2]$, $\left\lvert f_h(t)\right\rvert\leqslant\left\lVert f\right\rVert_{\infty}$ intégrable sur $[0,2]$ et indépendant de $h$.
+
+    Soit \function{\varphi}{\R_+}{\R}{t}{
+        \left\lbrace
+        \begin{array}[]{ll}
+            \left\lVert f\right\rVert_{\infty} &\text{si }t\in[0,2],\\
+            \frac{M}{(t-1)^{2}} &\text{si }t>2.
+        \end{array}
+        \right.
+    }
+    $\varphi$ est continue par morceaux intégrable sur $\R_{+}$ et indépendante de $h$. Donc, par convergence dominée,
+    \begin{equation}
+        \boxed{
+            \lim\limits_{h\to0}\phi(h)=\int_{0}^{+\infty}f(t)\d t.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    $f$ est impaire donc on se limite à $x>0$. On pose $g(x,t)$ l'intégrande. $t\mapsto g(x,t)$ est continue sur $\R_{+}^{*}$, $g(x,t)\xrightarrow[t\to0]{}x$ et $g(x,t)\underset{t\to+\infty}{\sim}\frac{\e^{(x-1)t}}{2t}$, donc $t\mapsto g(x,t)$ est intégrable sur $\R_{+}^{*}$ si et seulement si $x<1$. Donc le domaine de définition est $]-1,1[$. Enfin, $x\mapsto g(x,t)$ est $\mathcal{C}^{\infty}$.
+
+    On a $\frac{\partial g}{\partial x}(x,t)=\cosh(xt)\e^{-t}=\frac{\e^{(x-1)t}+\e^{-(x+1)t}}{2}$. Fixons $a\in[0,1[$, soit $x\in[0,a]$. Si $t\geqslant1$, on a $0\leqslant \sinh(xt)\leqslant\frac{\e^{xt}}{2}$ et
+    \begin{equation}
+        0\leqslant g(x,t)\leqslant\frac{\e^{(x-1)t}}{2t}\leqslant\frac{\e^{(a-1)t}}{2t}.
+    \end{equation}
+
+    Par ailleurs, $\lim\limits_{u\to0}\frac{\sinh(u)}{u}=1$, donc il existe $M\geqslant0$ tel que si $\left\lvert u\right\vert\leqslant a$, $\left\lvert\frac{\sinh(u)}{u}\right\rvert\leqslant M$. Si $t\in]0,1]$, $xt\in]0,a]$, $0\leqslant g(x,t)\leqslant M_a$. En définissant 
+    \function{\phi_0}{\R_{+}^{*}}{\R_{+}}{t}{
+        \left\lbrace
+            \begin{array}[]{ll}
+                M_a & \text{si }t\in]0,1],\\
+                \frac{\e^{(a-1)t}}{2t} &\text{si } t>1.    
+            \end{array}
+    \right.
+    }
+    $\phi_0$ est intégrable sur $\R_{+}^{*}$ et $\left\lvert g(x,t)\right\rvert\leqslant\phi_0(t)$. Or $\sinh$ est croissante et $\left\lvert g(x,t)\right\rvert\leqslant\frac{\sinh(at)}{t}\e^{-t}$, intégrable sur $\R_{+}^{*}$. Par ailleurs, $\left\lvert\frac{\partial g}{\partial x}(x,t)\right\rvert\leqslant\cosh(at)\e^{-t}$ est intégrable sur $\R_{+}^{*}$ car $a<1$. D'après le théorème de continuité dérivabilité, $f$ est de classe $\mathcal{C}^{1}$ sur $[0,a]$ pour tout $a<1$, donc sur $[0,1[$.
+
+    Alors 
+    \begin{align}
+        f'(x)
+        &=\int_{0}^{+\infty}\cosh(xt)\e^{-t}\d t,\\
+        &=\frac{1}{2}\int_{0}^{+\infty}\left(\e^{(x-1)t}+\e^{-(x+1)t}\right)\d t,\\
+        &=\frac{1}{2}\left(\frac{1}{1-x}+\frac{1}{x+1}\right).
+    \end{align}
+    Comme $f(0)=0$, pour $x\in[0,1[$, $f(x)=\frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)$ et si $x\in]-1,0]$, $f(x)=-f(-x)=\frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)$.
+\end{proof}
+
+\begin{proof}
+    On a $\left\lvert f(x,t)\right\rvert=\frac{\e^{-t}}{\sqrt{t}}=\underset{t\to+\infty}{O}\left(\frac{1}{t^{2}}\right)$ et est équivalent ) $\frac{1}{\sqrt{t}}$ en 0. Donc $F$ existe et est continue sur $\R$. De plus,
+    \begin{equation}
+        \left\lvert\frac{\partial f}{\partial x}(x,t)\right\rvert=\sqrt{t}\e^{-t},
+    \end{equation}
+    est intégrable sur $\R_{+}$. Donc $F$ est $\mathcal{C}^{1}$ et 
+    \begin{align}
+        F'(x)
+        &=\int_{0}^{+\infty}\i\sqrt{t}\e^{t(\i x-1)}\d t,\\
+        &=\left[\frac{\i\sqrt{t}\e^{t(\i x-1)}}{\i x-1}\right]_{0}^{+\infty}-\int_{0}^{+\infty}\frac{\i \e^{t(\i x-1)}}{2\sqrt{t}(\i x-1)}\d t,\\
+        &=-\frac{\i}{2(\i x-1)}F(x).
+    \end{align}
+    On a
+    \begin{equation}
+        \frac{\i}{2(\i x-1)}=\frac{x}{2(x^{2}+1)}-\frac{\i}{2(x^{2}+1)},
+    \end{equation}
+    donc 
+    \begin{equation}
+        F(x)=A\exp\left(-\frac{1}{4}\ln\left(x^{2}+1\right)+\frac{\i}{2}\arctan(x)\right).
+    \end{equation}
+    Comme 
+    \begin{equation}
+        F(0)=A=\int_{0}^{+\infty}\frac{\e^{-t}}{\sqrt{t}}\d t=\sqrt{\pi},
+    \end{equation}
+    on a
+    \begin{equation}
+        \boxed{
+            F(x)=\sqrt{\pi}\exp\left(-\frac{1}{4}\ln\left(x^{2}+1\right)+\frac{\i}{2}\arctan(x)\right).
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \left\lvert\widehat{f}(\nu)\e^{\i\nu x}\e^{-\lambda\left\lvert\lambda\right\rvert}\right\rvert\leqslant\left\lvert \widehat{f}(\nu)\right\rvert.
+        \end{equation}
+        Donc $g_x$ est bien définie. On pose 
+        \begin{equation}
+            h(t,\nu)=f(t)\e^{\i\nu(x-t)}\e^{-\lambda\left\lvert\nu\right\rvert}.
+        \end{equation}
+        On a 
+        \begin{equation}
+            g_x(\lambda)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left(\int_{-\infty}^{+\infty}h(t,\nu)\d t\right)\d\nu,
+        \end{equation}
+        et comme 
+        \begin{equation}
+            \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}\left\lvert h(t,\nu)\right\rvert\d t\d\nu=\int_{\R}\e^{-\lambda\left\lvert\nu\right\rvert}\d\nu\times\int_{\R}\left\lvert f(t)\right\rvert\d t=\frac{2}{\lambda}\int_{\R}\left\lvert f(t)\right\rvert\d t<+\infty,
+        \end{equation}
+        d'après le théorème de Fubini,
+        \begin{align}
+            g_x(\lambda)
+            &=\frac{1}{2\pi}\int_{\R}\left(\int_{\R}\e^{\i\nu(x-t)}\e^{-\lambda\left\lvert\nu\right\rvert}\d \nu\right)f(t)\d t,\\
+            \frac{1}{2\pi}\int_{\R}\left(\int_{-\infty}^{0}\e^{\i\nu(x-t)}\e^{\lambda\nu}\d \nu+\int_{0}^{+\infty}\e^{\i\nu(x-t)}\e^{-\lambda\nu}\right)f(t)\d t,\\
+            &=\frac{1}{2\pi}\int_{\R}\left(\frac{1}{\lambda-\i(t-x)}+\frac{1}{\lambda-\i(x-t)}\right)f(t)\d t,\\
+            &=\frac{1}{2\pi}\int_{\R}\frac{2\lambda f(t)}{\lambda^{2}+(t-x)^{2}}\d t.
+        \end{align}
+
+        On pose $t'=t-x$ et on a bien 
+        \begin{equation}
+            \boxed{
+                g_x(\lambda)=\frac{1}{2\pi}\int_{\R}\frac{2\lambda f(t+x)}{\lambda^{2}+t^{2}}\d t.
+            }
+        \end{equation}
+
+        \item On pose $u=\frac{t}{\lambda}$ pour $\lambda>0$. Alors 
+        \begin{equation}
+            g_x(\lambda)=\frac{1}{2\pi}\int_{\R}\frac{f(\lambda u+x)}{1+u^{2}}\d u,
+        \end{equation}
+        et pour $u$ fixé, $\lim\limits_{\lambda\to0}\frac{2f(\lambda u+x)}{1+u^{2}}=\frac{2f(x)}{1+u^{2}}$ par continuité de $f$. Comme 
+        \begin{equation}
+            \left\lvert \frac{2f(\lambda u+x)}{1+u^{2}}\right\rvert\leqslant\frac{2\left\lVert f\right\rVert_{\infty}}{1+u^{2}},
+        \end{equation}
+        fonction de $u$ intégrable sur $\R$ indépendante de $\lambda$. Par le théorème de continuité, on a
+        \begin{equation}
+            \boxed{
+                \lim\limits_{\lambda\to0}g_x(\lambda)=\frac{1}{2\pi}\int_{\R}\frac{2f(x)}{1+u^{2}}\d u=f(x).
+            }
+        \end{equation}
+
+        \item Pour tout $\nu\in\R$, $\lambda\mapsto\widehat{f}(\nu)\e^{\i\nu x}\e^{-\lambda\left\lvert \nu\right\rvert}$ est continue sur $\R_{+}$, et on a 
+        \begin{equation}
+            \left\lvert \widehat{f}(\nu)\e^{\i\nu x}\e^{-\lambda\left\lvert\nu\right\rvert}\right\rvert\leqslant\left\lvert \widehat{f}(\nu)\right\rvert,
+        \end{equation}
+        fonction indépendante de $\lambda$ intégrable sur $\R$. Par le théorème de continuité, $g_x$ est continue sur $\R_{+}$, donc en 0. Ainsi,
+        \begin{equation}
+            \boxed{
+                g_x(0)=f(x)=\lim\limits_{\lambda\to0}g_x(\lambda)=\frac{1}{2\pi}\int_{\R}\widehat{f}(\nu)\e^{\i\nu x}\d\nu.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    En exemple, soit $a>0$ et \function{f}{\R}{\R}{x}{\e^{-a\left\lvert x\right\rvert}}
+    $f$ est continue, intégrable et bornée. On a 
+    \begin{align}
+        \widehat{f}(\nu)
+        &= \int_{\R}f(t)\e^{-\i\nu t}\d t,\\
+        &=\frac{2a}{a^{2}+\nu^{2}}.
+    \end{align}
+    $\widehat{f}$ est intégrable sur $\R$, donc pour tout $x\in\R$, on a 
+    \begin{equation}
+        2\pi\e^{-a\left\lvert x\right\rvert}=\int_{\R}\frac{2a}{a^{2}+\nu^{2}}\e^{\i\nu x}\d\nu.
+    \end{equation}
+\end{remark}
+
+\begin{remark}
+    Si $\widehat{f}=0$, elle est intégrable et d'après la formule, on a $f=0$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $D_n=1+\sum_{k=1}^{n}2\cos(kt)$ est paire, $2\pi$-périodique et $\mathcal{C}^{\infty}$. Sa moyenne est 1, et comme pour $t\in\R\setminus2\pi\Z$, $\e^{\i t}\neq1$, on a 
+        \begin{align}
+            D_n(t)
+            &=\e^{-\i nt}\sum_{k=0}^{2n}\e^{\i kt},\\
+            &=\e^{-\i nt}\left(\frac{1-\e^{\i(2n+1)t}}{1-\e^{\i t}}\right),\\
+            &=\e^{-\i nt}\frac{\e^{\i \frac{(2n+1)t}{2}}}{\e^{\i \frac{t}{2}}}\left(\frac{\e^{-\i\frac{(2n+1)t}{2}}-\e^{\i\frac{(2n+1)t}{2}}}{\e^{-\i\frac{t}{2}}-\e^{\i\frac{t}{2}}}\right),\\
+            &=\e^{-\i nt}\e^{\i nt}\left(\frac{-2\i\sin\left(\frac{(2n+1)t}{2}\right)}{-2\i\sin\left(\frac{t}{2}\right)}\right),\\
+            &=\frac{\sin\left(\frac{(2n+1)t}{2}\right)}{\sin\left(\frac{t}{2}\right)}.
+        \end{align}
+
+        \item On pose $u=\frac{2t}{2n+1}$.
+        \item Elle est de classe $\mathcal{C}^{1}$ sir $]0,\pi]$. Pour tout $u>0$,
+        \begin{equation}
+            \varphi(u)=\frac{\frac{u}{2}-\sin\left(\frac{u}{2}\right)}{\left(\frac{u}{2}\right)\sin\left(\frac{u}{2}\right)}\underset{u\to0}{\sim}\frac{\frac{1}{6}\left(\frac{u}{2}\right)^{3}}{\left(\frac{u^{2}}{4}\right)}\xrightarrow[u\to0]{}0.
+        \end{equation}
+        On pose $\varphi(0)=0$. $\varphi$ ainsi prolongée est continue sur $[0,2\pi]$. On a 
+        \begin{align}
+            \varphi'(u)
+            &=-\frac{1}{2}\frac{\cos\left(\frac{u}{2}\right)}{\sin^{2}\left(\frac{u}{2}\right)}+\frac{2}{u^{2}},\\
+            &=\frac{4\sin^{2}\left(\frac{u}{2}\right)-u^{2}\cos\left(\frac{u}{2}\right)}{2u^{2}\sin^{2}\left(\frac{u}{2}\right)},\\
+            &\underset{u\to0}{\sim}\frac{u^{4}\left(-\frac{1}{12}+\frac{1}{8}\right)}{\left(\frac{u^{4}}{2}\right)}\xrightarrow[u\to0]{}\frac{1}{12}.
+        \end{align}
+
+        D'après le théorème de prolongement de la dérivée, $\varphi$ est $\mathcal{C}^{1}$ sur $[0,\pi]$.
+
+        \item On a 
+        \begin{align}
+            \int_{0}^{\pi}\varphi(u)\sin\left((2n+1)\frac{u}{2}\right)\d u
+            &=\left[-\frac{2}{n+1}\cos\left((2n+1)\frac{u}{2}\right)\varphi(u)\right]_{0}^{\pi}\nonumber\\
+            &\qquad+\frac{2}{n+1}\int_{0}^{\pi}\varphi'(u)\cos\left((2n+1)\frac{u}{2}\right)\d u,\\
+            &\xrightarrow[n\to+\infty]{}0,
+        \end{align}
+        car $\varphi$ et $\varphi'$ sont bornées. De plus,
+        \begin{align}
+            \int_{0}^{\pi}\varphi(u)\sin\left((2n+1)\frac{u}{2}\right)\d u
+            &=\int_{0}^{\pi}D_n(u)\d u-\int_{0}^{\pi}\frac{2\sin\left((2n+1)\frac{u}{2}\right)}{u}\d u,\\
+            &=\frac{1}{2}\int_{-\pi}^{\pi}D_n(u)\d u-2u_n,\\
+            &=\pi-2u_n.
+        \end{align}
+        Donc
+        \begin{equation}
+            \boxed{
+                \lim\limits_{n\to+\infty}u_n=\frac{\pi}{2}=\int_{0}^{+\infty}\frac{\sin(t)}{t}\d t.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Soit $f\colon I\to\R$ ou $\C$ intégrable sur un intervalle $I$. On a $\lim\limits_{\lambda\to+\infty}\int_{I}f(t)\e^{\i\lambda t}\d t=0$.
+
+    En effet, soit $\varepsilon>0$, il existe $[a,b]\subset I$ tel que $\int_{I\setminus[a,b]}\left\lvert f\right\rvert\leqslant\frac{\varepsilon}{2}$. Alors 
+    \begin{equation}
+        \left\lvert\int_{I}f(t)\e^{\i\lambda t}\d t\right\rvert\leqslant\int_{I\setminus[a,b]}\left\lvert f\right\rvert+\left\lvert\int_{[a,b]}f(t)\e^{\i\lambda t}\d t\right\rvert,
+    \end{equation}
+    et le deuxième terme tend vers 0 quand $\lambda\to \pm\infty$, donc inférieur à $\frac{\varepsilon}{2}$ pour $\lambda$ suffisamment grand. En particulier, si $f$ est intégrable sur $\R$, on a $\lim\limits_{\lambda\to+\infty}\widehat{f}(\lambda)=0$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $g$ est de classe $\mathcal{C}^{1}$. On a $g'(t)=f(t)\e^{-at}$, $g(0)=0$ et $\lim\limits_{t\to+\infty}g(t)=Lf(a)$. Donc $g$ est bornée sur $\R_{+}$. Soit $X>0$, on a
+        \begin{equation}
+            \int_{0}^{X}f(t)\e^{-(a+x)t}\d t=\left[\e^{-xt}g(t)\right]_{0}^{X}+x\int_{0}^{X}g(t)\e^{-xt}\d t.
+        \end{equation}
+        Le terme entre crochet tend vers $0$ quand $X\to+\infty$ car $x>0$ et $\left\lvert g(t)\e^{-xt}\right\rvert\leqslant\left\lVert g\right\rVert_{\infty}\left\lvert\e^{-xt}\right\rvert=\underset{t\to+\infty}{O}\left(\frac{1}{t^{2}}\right)$. Donc $t\mapsto g(t)\e^{-xt}$ est intégrable sur $\R_{+}$. Donc $Lf(a+x)=\int_{0}^{+\infty}f(t)\e^{-\i t(a+x)}\d t$ existe et vaut $x\int_{0}^{+\infty}g(t)\e^{-xt}\d t$.
+
+        \item On pose $u=\e^{-t}$, $\mathcal{C}^{1}$-difféomorphisme de $[0,+\infty[\to]0,1]$. On a alors 
+        \begin{equation}
+            Lf(a+x)=x\int_{0}^{1}g\left(-\ln(u)\right)u^{x-1}\d u.
+        \end{equation}
+        Or $\lim\limits_{u\to0^{+}}g\left(-\ln(u)\right)=Lf(a)$. On définit \function{h}{[0,1]}{\R \text{ ou }\C}{u}{
+            \left\lbrace
+                \begin{array}[]{ll}
+                    g\left(-\ln(u)\right) & \text{si }u\neq 0,\\
+                    LF(a) & \text{si }u=0.
+                \end{array}
+            \right.
+        }
+        $h$ est continue et $Lf(a+x)=x\int_{0}^{1}h(u)u^{x-1}\d u$. Si pour tout $x>0$, $Lf(a+x)=0$, on a pour tout $>0$, $\int_{0}^{1}h(u)u^{x-1}\d u=0$. Par combinaison linéaire, pour tout $P\in\C[X]$, $\int_{0}^{1}\ln(u)P(u)=0$. D'après le théorème de Weierstrass, on prend $(P_n)_{n\in\N}$ une suite de polynômes qui converge uniformément sur $[0,1]$ vers $\overline{h}$. Donc $\int_{0}^{1}\left\lvert h\right\rvert^{2}=0$ donc $h=0$. Ainsi, $g=0$ et $g'(t)=0=f(t)\e^{-at}$ donc $f=0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Il suffit qu'il existe $a_{0}\in\R$ tel que pour tout $n\in\N^{*}$, $Lf(a_{0}+n)=0$.
+\end{remark}

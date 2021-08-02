@@ -259,3 +259,124 @@
         J=\int_{0}^{+\infty}\frac{\cos(t)-\cos(2t)}{t}\d t.
     \end{equation}
 \end{exercise}
+
+\begin{exercise}
+    On note \function{f}{]0,1]}{\R}{t}{\frac{1}{t}-\left\lfloor\frac{1}{t}\right\rfloor}
+    Calculer 
+    \begin{equation}
+        I=\int_{0}^{1}f(t)\d t.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Existence de \function{f}{\R_{+}^{*}}{\R}{x}{\int_{x}^{+\infty}\frac{\d t}{\e^{t}-1}}
+    Montrer que 
+    \begin{equation}
+        I=\int_{0}^{+\infty}f(x)\d x,
+    \end{equation}
+    est définie et donner sa valeur.
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $n\geqslant1$, calculer 
+        \begin{equation}
+            I_n=\int_{n}^{+\infty}\left(1+\frac{t}{n}\right)^{n}\e^{-t}\d t.
+        \end{equation}
+        \item DOnner un équivalent en $+\infty$ de 
+        \begin{equation}
+            J_n=\int_{-n}^{n}\left(1+\frac{t}{n}\right)^{n}\e^{-t}\d t.
+        \end{equation}
+        On rappelle que $\int_\R\e^{-u^{2}}\d u=\sqrt{\pi}$.
+
+        \item En déduire la formule de Stirling.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Montrer que pour tout $x\in\R$, 
+        \begin{equation}
+            I(x)=\int_{0}^{+\infty}\frac{1-\cos(tx)}{t^{2}}\e^{-t}\d t=\int_{0}^{+\infty}f_x(t)\d t,
+        \end{equation}
+        est définie.
+        \item Montrer que $I$ est de classe $\mathcal{C}^{2}$ sur $\R$.
+        \item Calculer $I(x)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Montrer que pour tout $x\geqslant0$, on peut définir $f(x)=\int_{x}^{+\infty}\frac{\sin(t)}{t}\d t$. Prouver l'existence et calculer $I=\int_{0}^{+\infty}f(x)\d x$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon\R_{+}\to\R$ continue telle que $f(x)=\underset{x\to+\infty}{O}\left(\frac{1}{x^{2}}\right)$. On pose, pour $h>0$, 
+    \begin{equation}
+        \phi(h)=\sum_{n=0}^{+\infty}hf(nh).
+    \end{equation}
+    Calculer $\lim\limits_{h\to0^{+}}\phi(h)$.
+\end{exercise}
+
+\begin{exercise}
+    Déterminer le domaine de définition et calculer 
+    \begin{equation}
+        f(x)=\int_{0}^{+\infty}\frac{\sinh(xt)}{t}\e^{-t}\d t.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Déterminer le domaine de définition et calculer 
+    \begin{equation}
+        F(x)=\int_{0}^{+\infty}f(x,t)\d t=\int_{0}^{+\infty}\frac{\e^{t(\i x-1)}}{\sqrt{t}}\d t.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}[Transformée de Fourier]
+    Soit $f$ continue, bornée de $\R$ dans $\C$ intégrable sur $\R$. On peut définir \function{\widehat{f}}{\R}{\C}{\nu}{\int_{-\infty}^{+\infty}f(t)\e^{-\i\nu t}\d t}
+    On suppose que $\widehat{f}$ est intégrable sur $\R$ et on veut montrer que pour tout $x\in\R$,
+    \begin{equation}
+        f(x)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\widehat{f}(\nu)\e^{\i\nu x}\d\nu.
+    \end{equation}
+
+    \begin{enumerate}
+        \item On définit, pour tout $\lambda\geqslant0$ et $x\in\R$,
+        \begin{equation}
+            g_x(\lambda)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\widehat{f}(\nu)\e^{\i\nu x}\e^{-\lambda\left\lvert \nu\right\rvert}\d\nu.
+        \end{equation}
+        Montrer que pour $\lambda>0$, on a 
+        \begin{equation}
+            g_x(\lambda)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\frac{2\lambda}{\lambda^{2}+t^{2}}f(x+t)\d t.
+        \end{equation}
+        \item Montrer que $\lim\limits_{\lambda\to0}g_x(\lambda)=f(x)$.
+        \item Conclure.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Intégrale de Dirichlet]
+    \phantom{}
+    \begin{enumerate}
+        \item On forme, pour $n\in\N$, \function{D_n}{\R}{\C}{t}{\sum_{k=-n}^{n}\e^{\i kt}}
+        Montrer que $D_n$ est paire, $\mathcal{C}^{\infty}$, $2\pi$-périodique, et calcule $\frac{1}{2\pi}\int_{0}^{2\pi}D_n(t)\d t$. Montrer que pour tout $t\in\R\setminus2\pi\Z$, on a 
+        \begin{equation}
+            D_n(t)=\frac{\sin\left((2n+1)\frac{t}{2}\right)}{\sin\left(\frac{t}{2}\right)}.
+        \end{equation}
+
+        \item On pose $u_n=\int_{0}^{(2n+1)\frac{\pi}{2}}\frac{\sin(t)}{t}\d t$. Montrer que 
+        \begin{equation}
+            u_n=\int_{0}^{\pi}\frac{\sin\left((2n+1)\frac{u}{2}\right)}{u}\d u.
+        \end{equation}
+
+        \item Montrer que l'on peut prolonger $u\mapsto \frac{1}{\sin\left(\frac{u}{2}\right)}-\frac{1}{\left(\frac{u}{2}\right)}$ en une fonction $\mathcal{C}^{1}$, notée $\varphi$, sur $[0,1]$.
+        \item Calculer $\lim\limits_{n\to+\infty}\int_{0}^{\pi}\varphi(u)\sin\left((2n+1)\frac{u}{2}\right)\d u$. Conclure.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Transformée de Laplace]
+    Soit $f$ continue de $\R_{+}\to\R$ ou $\C$. On suppose qu'il existe $a\in\R$ tel que $\int_{0}^{t}f(t)\e^{-a t}\d t$ converge.
+    \begin{enumerate}
+        \item Montrer que pour tout $x>0$, on peut définir $Lf(a+x)=\int_{0}^{+\infty}f(t)\e^{-(a+x)t}\d t$ et que $Lf(a+x)=x\int_{0}^{+\infty}g(t)\e^{-xt}\d t$, où $g(t)=\int_{0}^{t}f(v)\e^{-av}\d v$.
+        \item On suppose que pour tout $x\geqslant 0$, $Lf(a+x)=0$, montrer que $f=0$. On pourra montrer que $Lf(a+x)=x\int_{0}^{1}h(u)u^{x-1}\d u$, où $h\colon[0,1]\to\R$ ou $\C$ est continue.
+    \end{enumerate}
+\end{exercise}
