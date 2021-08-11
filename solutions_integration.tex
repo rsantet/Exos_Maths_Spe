@@ -1654,3 +1654,33 @@
 \begin{remark}
     Il suffit qu'il existe $a_{0}\in\R$ tel que pour tout $n\in\N^{*}$, $Lf(a_{0}+n)=0$.
 \end{remark}
+
+\begin{proof}
+    Pour $x>0$, $\sum g_n(x)$ est alternée car $\left\lvert g_n(x)\right\rvert=\e^{-a_n x}$ est décroissante car $a_n\leqslant a_{n+1}$ et tend vers 0 car $\lim\limits_{n\to+\infty}a_n=+\infty$. Donc $g$ est bien définie sur $\R_{+}^{*}$.
+
+    Pour tout $n\in\N$, $g_n$ est continue sur $\R_{+}^{*}$ et pour tout $N\in\N$, d'après le critère spécial des séries alternées,
+    \begin{equation}
+        \left\lvert\sum_{n=N}^{+\infty}(-1)^{n}\e^{-a_n x}\right\rvert\leqslant\e^{-a_N x}.
+    \end{equation}
+
+    Soit $\alpha>0$. Alors pout tout $x\geqslant\alpha$, pour tout $N\in\N$,
+    \begin{equation}
+        \left\lvert\sum_{n=N}^{+\infty}(-1)^{n}\e^{-a_n x}\right\rvert\leqslant\e^{-a_N x}\leqslant\e^{-a_N \alpha}\xrightarrow[N\to+\infty]{}0,
+    \end{equation}
+    car $\alpha>0$ et $\lim\limits_{N\to+\infty}a_N=+\infty$.
+
+    Ainsi, $\sum g_n$ converge uniformément sur $[\alpha,+\infty[$, donc $g$ est continue sur $[\alpha,+\infty[$ pour tout $\alpha>0$ donc sur $\R_{+}^{*}$. De plus, toujours d'après le critère spécial des séries alternées, pour tout $x>0$,
+    \begin{equation}
+        \left\lvert g(x)\right\rvert\leqslant\e^{-a_0 x},
+    \end{equation}
+    fonction de $x$ intégrable sur $\R_{+}^{*}$ car continue et est $\underset{x\to+\infty}{O}\left(\frac{1}{x^{2}}\right)$. Donc $g$ est intégrable sur $\R_{+}^{*}$. 
+    
+    On forme $u_n=\int_{0}^{+\infty}\left\lvert g_n(x)\right\rvert\d x=\int_{0}^{+\infty}\e^{-a_n x}\d x=\frac{1}{a_n}$. On n'est pas sûr que $\sum\frac{1}{a_n}$ converge. Mais on a 
+    \begin{equation}
+        0\leqslant\sum_{n=0}^{N}(-1)^{n}\e^{-a_n x}=S_N(x)\leqslant\e^{-a_0 x},
+    \end{equation}
+    fonction intégrable sur $\R_{+}^{*}$. D'après le théorème de convergence dominée, on a 
+    \begin{equation}
+        \lim\limits_{N\to+\infty}\int_{0}^{+\infty}S_N(x)\d x=\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{a_n}=\int_{0}^{+\infty}g(x)\d x.
+    \end{equation}
+\end{proof}
