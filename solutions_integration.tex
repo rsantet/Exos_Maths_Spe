@@ -1155,7 +1155,7 @@
     \begin{equation}
         \int_{1}^{X}\frac{\cos(t)}{t}\d t=\underbrace{\left[\frac{\sin(t)}{t}\right]_{1}^{X}}_{\xrightarrow[X\to+\infty]{}-\sin(1)}+\int_{1}^{X}\frac{\sin(t)}{t^{2}}\d t,
     \end{equation}
-    et l'intégrale de droite converge absolument. Donc $\int_{1}^{+\infty}\frac{\cos(t)}{t}\d t$ converge et de même pour $\int_{1}^{+\infty}\frac{\cos(2t)}{t}\d t$. Donc $J$ existe.
+    et l'intégrale de droite converge absolument. Donc $\int_{1}^{+\infty}\frac{\cos(t)}{t}\d t$ converge, et c'est donc aussi le cas pour $\int_{1}^{+\infty}\frac{\cos(2t)}{t}\d t$. Donc $J$ existe.
 
     Soit $\varepsilon>0$ et $X\geqslant \varepsilon$, on a 
     \begin{align}
@@ -1507,7 +1507,7 @@
         \begin{align}
             g_x(\lambda)
             &=\frac{1}{2\pi}\int_{\R}\left(\int_{\R}\e^{\i\nu(x-t)}\e^{-\lambda\left\lvert\nu\right\rvert}\d \nu\right)f(t)\d t,\\
-            \frac{1}{2\pi}\int_{\R}\left(\int_{-\infty}^{0}\e^{\i\nu(x-t)}\e^{\lambda\nu}\d \nu+\int_{0}^{+\infty}\e^{\i\nu(x-t)}\e^{-\lambda\nu}\right)f(t)\d t,\\
+            &=\frac{1}{2\pi}\int_{\R}\left(\int_{-\infty}^{0}\e^{\i\nu(x-t)}\e^{\lambda\nu}\d \nu+\int_{0}^{+\infty}\e^{\i\nu(x-t)}\e^{-\lambda\nu}\right)f(t)\d t,\\
             &=\frac{1}{2\pi}\int_{\R}\left(\frac{1}{\lambda-\i(t-x)}+\frac{1}{\lambda-\i(x-t)}\right)f(t)\d t,\\
             &=\frac{1}{2\pi}\int_{\R}\frac{2\lambda f(t)}{\lambda^{2}+(t-x)^{2}}\d t.
         \end{align}
