@@ -1,1 +1,138 @@
-\section{Séries entières}
+\documentclass[12pt]{article}
+\usepackage{style/style}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\vspace*{\fill}
+	\Huge \textit{\textbf{Exercices MP/MP$^*$\\ Séries Entières}}
+	\vspace*{\fill}
+\end{titlepage}
+
+\begin{exercise}
+    Donner le rayon de convergence de 
+    \begin{enumerate}
+        \item $\sum_{n\geqslant1}\left(\cosh\left(\frac{1}{n}\right)\right)^{n^{\alpha}}z^{n}$,
+        \item $\sum_{n\geqslant1}\left(1+\frac{(-1)^{n}}{n^{2}}\right)^{n^{3}}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $(\theta_{1},\dots,\theta_{p})\in[0,2\pi[^{p}$ des réels distincts, $(m_{1},\dots,m_{p})\in(\N^{*})^{p}$. Montrer que 
+        \begin{equation}
+            \left(u_n=\sum_{k=1}^{p}m_{k}\e^{\i n\theta_{k}}\right)_{n\in\N}
+        \end{equation}
+        ne tend pas vers 0.
+
+        \item Soit $A\in\M_{p}(\C)$ et $a_n=\Tr(A^{n})$. Donner le rayon de convergence et la somme de $\sum a_{n}z^{n}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Donner le rayon de convergence et calculer la somme (en cas de convergence) de 
+    \begin{equation}
+        \sum_{n\geqslant1}\frac{z^{n}}{\sum_{k=1}^{n}k^{2}}=\sum_{n=\geqslant1}\frac{6z^{n}}{n(n+1)(2n+1)}.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    On définit \function{f}{]-1,+\infty[}{\R}{t}{
+        \left\lbrace
+            \begin{array}[]{ll}
+                \frac{t}{\ln(1+t)} & \text{si }t\neq0,\\
+                1 & \text{si }t=0.
+            \end{array}
+        \right.
+    }
+
+    Montrer que $f$ est développable en série entière sur $]-1,1[$, en déduire que $f$ est $\mathcal{C}^{\infty}$. On pourra former $\int_{0}^{1}(1+t)^{u}\d u=I(t)$.
+\end{exercise}
+
+\begin{exercise}
+    Donner le rayon de convergence de $\sum_{n\geqslant1}a_{n}z^{n}$ où 
+    \begin{equation}
+        a_n=\left(\sum_{k=1}^{n}\frac{1}{k}\right)^{\ln(n)}.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Donner le rayon de convergence de $\sum a_{n}z^{n}$ où $a_n$ est le nombre de diviseurs $n$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $(a_n)_{n\in\N}\in\left(\R_{+}^{*}\right)^{\N}$ telle que 
+    \begin{equation}
+        \lim\limits_{n\to+\infty}\frac{a_{n-1}a_{n+1}}{a_{n}^{2}}=l\in\R.
+    \end{equation}
+    Déterminer le rayon de convergence de $\sum a_{n}z^{n}$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $z\in\C$ tel que $\left\lvert z\right\rvert<1$. On pose $\phi(z)=\sum_{n=1}^{+\infty}(-1)^{n-1}\frac{z^{n}}{n}$. Déterminer $\e^{\phi(z)}$.
+\end{exercise}
+
+\begin{exercise}
+    Donner le rayon de convergence et calculer la somme (sur le disque ouvert de convergence) de 
+    \begin{equation}
+        \sum_{n=0}^{+\infty}\frac{z^{n}}{\cos\left(\frac{2n\pi}{3}\right)}.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Soit $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ des suites réelles, on suppose
+    \begin{enumerate}[label=\roman*)]
+        \item pour tout $n\in\N$, $b_n\geqslant0$,
+        \item $a_n\underset{+\infty}{\sim}b_n$,
+        \item le rayon de convergence de $\sum b_{n}z^{n}$ vaut 1,
+        \item $\sum b_{n}$ diverge.
+    \end{enumerate}
+
+    On forme sur $[0,1[$, $f(x)=\sum_{n=0}^{+\infty}a_{n}x^{n}$ et $g(x)=\sum_{n=0}^{+\infty}b_{n}x^{n}$.
+
+    \begin{enumerate}
+        \item Montrer que $\lim\limits_{x\to1^{-}}g(x)=+\infty$.
+        \item Montrer que $f(x)=\underset{x\to1^{-}}{\sim}g(x)$.
+        \item Donner un équivalent simple quand $x\to1^{-}$ de $h_p(x)=\sum_{n=1}^{+\infty}n^{p}x^{n}$ avec $p\in\N$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $f(x)=\sum_{n=0}^{+\infty}a_nx^{n}$ de rayon de convergence 1. On suppose que $\lim\limits_{x\to1^{-}}=S\in\R$ et que $a_n=\underset{+\infty}{o}\left(\frac{1}{n}\right)$. Montrer que $\sum a_{n}$ converge et vaut $S$. On pourra étudier $f\left(1-\frac{1}{n}\right)$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon\C\to\C$ développable en série entière avec un rayon de convergence $\rho>0$ telle que $f(0)\neq0$. Montrer qu'il existe une fonction $T$, développable en série entière, et $r>0$, telle que si $\left\lvert z\right\rvert<r$, $f(z)=\e^{T(z)}$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $a\in\R\setminus\Q$, on pose pour tout $n\geqslant1$, $a_n=\frac{1}{\sin(n\pi a)}$. Soit $R_a$ le rayon de convergence de $\sum a_{n}z^{n}$.
+    \begin{enumerate}
+        \item Montrer que $R_a\leqslant1$.
+        \item Évaluer $R_a$ lorsque $a$ est irrationnel algébrique.
+        \item Existe-t-il $a$ tel que $R_a=0$ ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $(a_{1},\dots,a_{N})\in\N^{\N}$ premiers entre eux dans leur ensemble. Pour $n\in\N$, on note $c_n=\left\lvert\left\lbrace (p_1,\dots,p_N)\in\N^{N}\middle| p_1a_1+\dots p_Na_N=n\right\rbrace\right\rvert$. Donner un équivalent simple de $c_n$ quand $n\to+\infty$.
+\end{exercise}
+
+\begin{exercise}
+    Soit \function{f}{\R}{\R}{x}{\sqrt{1+x+x^{2}}}
+    Montrer que $f$ est développable en série entière, et donner le rayon de convergence de la série entière obtenue. On pourra dériver $f^{2}(x)$.
+\end{exercise}
+
+\begin{exercise}
+    Soit $f\colon[0,A[\to\R$ de classe $\mathcal{C}^{\infty}$ telle que pour tout $n\in\N$, pour tout $t\in[0,1[$, $f^{(n)}(t)\geqslant0$.
+    \begin{enumerate}
+        \item Soit $x\in[0,A[$, montrer que $\sum_{k\geqslant0}\frac{f^{(k)}(0)}{k!}x^{k}$ converge.
+        \item On pose, pour $n\in\N$ et $x\in[0,A[$, $R_n(x)=\int_{0}^{x}\frac{(x-t)^{n}}{n!}f^{(n+1)}(t)\d t$. Montrer que si $x<y<A$, on a $0\leqslant R_n(x)\leqslant\left(\frac{x}{y}\right)^{n}R_n(y)$.
+        \item En déduire que $f$ est développable en série entière sur $[0,A[$.
+        \item Application à $\tan$.
+    \end{enumerate}
+\end{exercise}
+
+\end{document}
