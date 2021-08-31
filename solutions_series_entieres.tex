@@ -1,1 +1,442 @@
-\section{Séries entières}
+\documentclass[12pt]{article}
+\usepackage{style/style_sol}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\vspace*{\fill}
+	\Huge \textit{\textbf{Solutions MP/MP$^*$\\ Séries Entières}}
+	\vspace*{\fill}
+\end{titlepage}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On pose, pour tout $n\geqslant1$, $u_n=\left(\cosh\left(\frac{1}{n}\right)\right)^{n^{\alpha}}>0$. On va chercher un équivalent. On a $u_n=\e^{n^{\alpha}\ln\left(\cosh\left(\frac{1}{n}\right)\right)}$. Comme $\cosh(x)\underset{0}{=}1+\frac{x^{2}}{2}+O(x^{4})$, on a 
+        \begin{align}
+            \ln\left(\cosh\left(\frac{1}{n}\right)\right)
+            &\underset{+\infty}{=}\ln\left(1+\frac{1}{2n^{2}}+O\left(\frac{1}{n^{4}}\right)\right),\\
+            &\underset{+\infty}{=}\frac{1}{2n^{2}}+O\left(\frac{1}{n^{4}}\right).
+        \end{align}
+
+        Ainsi, $u_n\underset{+\infty}{=}\e^{\frac{n^{\alpha-2}}{2}+O\left(n^{\alpha-4}\right)}$. Donc :
+        \begin{itemize}
+            \item si $\alpha<2$, $\lim\limits_{n\to+^infty}u_n=1$ et $R=1$,
+            \item si $\alpha=2$, $\lim\limits_{n\to+^infty}u_n=\e^{\frac{1}{2}}$ et $R=1$,
+            \item si $\alpha>2$, on a 
+            \begin{equation}
+                \frac{u_{n+1}}{u_n}\underset{+\infty}{=}\e^{\left(\frac{(n+1)^{\alpha-2}}{2}\right)-\frac{n^{\alpha-2}}{2}+O\left(n^{\alpha-4}\right)}.
+            \end{equation}
+            Or
+            \begin{align}
+                \left(n+1\right)^{\alpha-2}-n^{\alpha-2}
+                &= n^{\alpha-2}\left(\left(1+\frac{1}{n}\right)^{\alpha-2}-1\right),\\
+                &\underset{+\infty}{=}n^{-2}\left(\frac{\alpha-2}{n}+O\left(\frac{1}{n^{3}}\right)\right),\\
+                &\underset{+\infty}{=}\left(\alpha-2\right)n^{\alpha-3}+O\left(n^{\alpha-4}\right).
+            \end{align}
+
+            Donc $\frac{u_{n+1}}{u_{n}}\underset{+\infty}{=}\e^{\frac{(\alpha-2)n^{\alpha-3}}{2}+O\left(n^{\alpha-4}\right)}$.
+            Ainsi,
+            \begin{itemize}
+                \item si $\alpha<3$, $\lim\limits_{n\to+\infty}\frac{u_{n+1}}{u_{n}}=1$ et $R=1$,
+                \item si $\alpha=3$, $\lim\limits_{n\to+\infty}\frac{u_{n+1}}{u_{n}}=\e^{\frac{1}{2}}$ et $R=\e^{-\frac{1}{2}}$,
+                \item si $\alpha>3$, comme $\frac{(\alpha-2)n^{\alpha-3}}{2}+O\left(n^{\alpha-4}\right)\underset{+\infty}{\sim}\frac{(\alpha-2)}{2}n^{\alpha-3}$, il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$,
+                \begin{equation}
+                    \frac{(\alpha-2)n^{\alpha-3}}{2}+O\left(n^{\alpha-4}\right)\geqslant \frac{\alpha-2}{4}n^{\alpha-3}\xrightarrow[+\infty]{}+\infty.
+                \end{equation}
+                Ainsi, $\lim\limits_{n\to+\infty}\frac{u_{n+1}}{u_{n}}=+\infty$ et $R=0$.
+            \end{itemize}
+        \end{itemize}
+
+        \item On note $u_n=\e^{n^{2}\ln\left(1+\frac{(-1)^{n}}{n^{2}}\right)}>0$. Comme $\ln(1+x)\underset{0}{=}x+O(x^{2})$, on a $u_n\underset{+\infty}{=}\e^{(-1)^{n}n+O\left(\frac{1}{n}\right)}\underset{+\infty}{\sim}\e^{(-1)^{n}n}=v_n$. On ne peut pas appliquer la règle de d'Alembert à $v_n$, ça ne va pas converger. Mais on peut encadrer $v_n$ : $0<v_n\leqslant\e^{n}$ et donc $R\geqslant\frac{1}{\e}$. On a $\frac{u_n}{\e^{n}}\underset{+\infty}{=}\e^{n\left((-1)^{n}-1\right)+O\left(\frac{1}{n}\right)}$ et $\frac{u_{2n}}{\e^{2n}}\xrightarrow[n\to+\infty]{}1$ donc $\sum \frac{u_{n}}{\e^{n}}$ diverge. Ainsi, $R=\frac{1}{\e}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On remarque
+        \begin{equation}
+            \underbrace{\begin{pmatrix}
+                u_n\\
+                u_{n+1}\\
+                \dots\\
+                u_{n+p-1}
+            \end{pmatrix}}_{X_n}
+            =
+            \underbrace{
+                \begin{pmatrix}
+                    m_1 & \dots & m_p\\
+                    m_{1}\e^{\i\theta_{1}} & \dots & m_p\e^{\i\theta_{p}}\\
+                    \vdots & & \vdots\\
+                    m_1\e^{\i(p-1)\theta_p} & & m_p\e^{\i(p-1)\theta_p}
+                \end{pmatrix}
+            }_{A}
+            \underbrace{
+                \begin{pmatrix}
+                    \e^{\i n\theta_1}\\
+                    \vdots\\
+                    \e^{\i n\theta_p}
+                \end{pmatrix}
+            }_{Y_n}.
+        \end{equation}
+
+        $A$ est inversible car $\det(A)=\left(\prod_{i=1}^{p}m_{i}\right)\times\text{VdM}(\e^{\i\theta_1},\dots,\e^{\i\theta_p})\neq0$. Donc si $u_n\xrightarrow[n\to+\infty]{}0$, on a $X_n\xrightarrow[n\to+\infty]{}0$ et $Y_n=A^{-1}X_{n}\xrightarrow[n\to+\infty]{}0$ ce qui n'est pas car $\left\lVert Y_n\right\rVert_{\infty}=1$.
+
+        \item On pose $\rho(A)=\max\limits_{\lambda\in\Sp(A)}\left\lvert\lambda\right\rvert$. Si $\chi_{A}=(X-\lambda_{1})\dots(X-\lambda_{p})$ avec $\left\lvert \lambda_{1}\right\rvert=\dots=\left\lvert\lambda_{j}\right\rvert=\rho(A)$ et $\left\lvert\lambda_{i}\right\rvert<\rho(A)$ pour tout $i\in\left\lbrace j+1,\dots,p\right\rbrace$. On écrit $a_n=\sum_{i=1}^{p}\lambda_{i}^{n}=\sum_{i=1}^{j}\lambda_{i}^{n}+\sum_{i=j+1}^{p}\lambda_{i}^{n}$. D'après la règle de d'Alembert, on a $R\geqslant\frac{1}{\rho(A)}$ (et $R=+\infty$ si $\rho(A)=0$ et $A$ est nilpotente). De plus, on a 
+        \begin{equation}
+            \frac{a_n}{\rho(A)^{n}}=\sum_{k=1}^{j}m_{k}\e^{\i n\theta_k}+\sum_{i=j+1}^{p}\left(\frac{\lambda_{i}}{\rho(A)}\right)^{n},
+        \end{equation}
+        et le premier terme ne tend pas vers 0 d'après ce qui précède tandis que le deuxième tend vers 0. Donc $\sum \frac{a_{n}}{\rho(A)}$ diverge grossièrement, donc $R=\frac{1}{\rho(A)}$.
+
+        Soit $z\in\C$ avec $\left\lvert z\right\rvert<\frac{1}{\rho(A)}$, on a 
+        \begin{align}
+            \sum_{n=0}^{+\infty}a_{n}z^{n}
+            &=\sum_{i=1}^{p}\left(\sum_{n=0}^{+\infty}\lambda_{i}^{n}z^{n}\right),\\
+            &=\sum_{i=1}^{p}\frac{1}{1-\lambda_{i}z},\\
+            &=\Tr\left(I_{p}-z A\right)^{-1},
+        \end{align}
+        car pour tout $i\in\left\llbracket1,p\right\rrbracket,\left\lvert \lambda_{i}z\right\rvert<1$ et on peut trigonaliser dans la même base $A$ et $I_{p}-zA$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    D'après la règle de d'Alembert, on a $R=1$. De plus, $\left\lvert a_n\right\rvert=\underset{+\infty}{O}\left(\frac{1}{n^{3}}\right)$ donc il y a convergence uniforme sur $\overline{D(0,1)}$. Ainsi, la somme $S$ est continue sur $\overline{D(0,1)}$. Soit $t\in]-1,1[$, comme $\frac{1}{X(X+1)(2X+1)}=\frac{a}{X}+\frac{b}{X+1}+\frac{c}{2X+1}$ avec $a=b=1$ et $c=4$, on a 
+    \begin{equation}
+        \frac{S(t)}{6}=\sum_{n=1}^{+\infty}\left(\frac{t^{n}}{n}+\frac{t^{n}}{n+1}-4\frac{t^{n}}{2n+1}\right)=-\ln(1-t)+\left(\frac{-\ln(1-t)}{t}-1\right)-4\underbrace{\sum_{n=1}^{+\infty}\frac{t^{n}}{2n+1}}_{g(t)}.
+    \end{equation}
+
+    Si $t>0$, on a $\sqrt{t}g(t)=\sum_{n=1}^{+\infty}\frac{(\sqrt{t})^{2n+1}}{2n+1}$. On pose $h(x)=\sum_{n=1}^{+\infty}\frac{x^{2n+1}}{2n+1}$, $\mathcal{C}^{\infty}$ sur $[0,1[$ et $h(0)=0$. On a $h'(x)=\sum_{n=1}^{+\infty}x^{2n}=\frac{x^{2}}{1-x^{2}}=-1-\frac{1}{2}\frac{1}{x+1}+\frac{1}{2}\frac{1}{x-1}$ donc $h(x)=-x-\frac{1}{2}\ln(x+1)+\frac{1}{2}\ln(x-1)$ d'où $g(t)=-\sqrt{t}-\frac{1}{2}\ln(\sqrt{t}+1)+\frac{1}{2}\ln(\sqrt{t}-1)$.
+
+    Si $t<0$, $\sqrt{-t}g(t)=\sum_{n=1}^{+\infty}\frac{(-1)^{n}\sqrt{-t}^{2n+1}}{2n+1}=\arctan(\sqrt{-t})-\sqrt{-t}$. Donc $g(t)=\frac{\arctan(\sqrt{-t})}{\sqrt{-t}}-1$. L'expression de $S$ reste valable en -1 et 1 par continuité de $S$.
+\end{proof}
+
+\begin{proof}
+    Soit $t\in]-1,1[$, on a 
+    \begin{align}
+        I(t)
+        &=\int_{0}^{1}\e^{u\ln(1+t)}\d u,\\
+        &=\left[\frac{1}{\ln(1+t)}\e^{u\ln(1+t)}\right]_{u=0}^{u=1},\\
+        &=\frac{1+t}{\ln(1+t)}-\frac{1}{\ln(1+t)},\\
+        &=\frac{t}{\ln(1+t)}=f(t).
+    \end{align}
+
+    Soit $u\in[0,1]$, on a $(1+t)^{u}=\sum_{n=0}^{+\infty}\frac{u(u-1)\dots(u-n+1)}{n!}t^{n}=\sum_{n=0}^{+\infty}f_n(u)$. $f_n$ est continue sur $[0,1]$. On a 
+    \begin{align}
+        \left\lvert f_n(u)\right\rvert
+        &=\frac{u(1-u)\dots(n-1-u)}{n!}\left\lvert t\right\rvert^{n},\\
+        &\leqslant\frac{(n-1)!}{n!}\left\lvert t\right\rvert^{n},\\
+        &=\frac{1}{n}\left\lvert t\right\rvert^{n},\\
+        &\leqslant\left\lvert t\right\rvert^{n},
+    \end{align}
+    car pour tout $u\in[0,1]$, $0\leqslant k-u\leqslant k$. Comme $\left\lvert t\right\rvert<1$, $\left\lvert t\right\rvert^{n}$ est le terme général d'une série convergente. Donc $\sum f_{n}$ converge normalement sur $[0,1]$ et on peut intervertir :
+    \begin{equation}
+        f(t)=\sum_{n=0}^{+\infty}\underbrace{\left(\int_{0}^{1}\frac{u(u-1)\dots(u-n+1)}{n!}\d u\right)}_{a_n}t^{n},
+    \end{equation}
+    encore vrai pour $t=0$ car $a_{0}=1$. Donc $f$ est développable en série entière sur $]-1,1[$ et $f$ est $\mathcal{C}^{\infty}$ sur $]-1,1[$. Par ailleurs, $f$ est $\mathcal{C}^{\infty}$ sur $\left[\frac{1}{2},+\infty\right[$, donc $f$ est $\mathcal{C}^{\infty}$ sur $]-1,+\infty[$.
+\end{proof}
+
+\begin{remark}
+    On a 
+    \begin{equation}
+        a_n=\frac{(-1)^{n}}{n!}\int_{0}^{1}u(1-u)\dots(n-1-u)\d u.
+    \end{equation}
+    De plus,
+    \begin{align}
+        \left\lvert a_{n+1}\right\rvert
+        &=\frac{1}{(n+1)!}\int_{0}^{1}u(1-u)\dots(n-1-u)\underbrace{(n-u)}_{\leqslant n}\d u,\\
+        &\leqslant \frac{1}{n!}\int_{0}^{1}u(1-u)\dots(n-1-u)\d u=\left\lvert a_n\right\rvert.
+    \end{align}
+
+    Enfin, $\left\lvert a_n\right\rvert\leqslant\frac{(n-1)!}{n!}=\frac{1}{n}$. D'après le critère spécial des séries alternées, $\sum a_{n}$ converge. Puis $\sum a_{n}t^{n}$ converge uniformément sur $[0,1]$ (majorer le reste par le critère spécial des séries alternées), donc il y a convergence et continuité en 1. On vérifie que $\left\lvert a_n\right\rvert=\frac{1}{n}\int_{0}^{1}u\e^{\sum_{k=1}^{n-1}\ln\left(1-\frac{u}{k}\right)}\d u=\frac{1}{n}\int_{0}^{1}\e^{-\ln(n)u+g_n(u)}$, où $g_n(u)$ est majorée par $M$ indépendant de $n$ et de $u$. Ainsi, par convergence dominée, $\left\lvert a_n\right\rvert\underset{+\infty}{\sim}\frac{1}{n}\int_{0}^{1}\frac{u}{n^{u}}\d u$, terme général d'une série divergente.
+\end{remark}
+
+\begin{proof}
+    On a $a_n=\e^{\ln(n)\ln\left(\sum_{k=1}^{n}\frac{1}{k}\right)}\underset{+\infty}{=}\e^{\ln(n)\ln\left(\ln(n)+\gamma+o(1)\right)}$.
+    On a 
+    \begin{align}
+        \ln\left(\ln(n)+\gamma+o(1)\right)
+        &=\ln(\ln(n))+\ln\left(1+\frac{\gamma}{\ln(n)}+O\left(\frac{1}{\ln(n)}\right)\right),\\
+        &=\ln(\ln(n))+\frac{\gamma}{\ln(n)}+o\left(\frac{1}{\ln(n)}\right).
+    \end{align}
+
+    Donc $a_n=\e^{\ln(n)\ln(\ln(n))+\gamma+o(1)}\underset{+\infty}{\sim}\e^{\gamma}\underbrace{\e^{\ln(n)\ln(\ln(n))}}_{b_n}$. On a 
+    \begin{equation}
+        \frac{b_{n+1}}{b_n}=\e^{\ln(n+1)\ln(\ln(n+1))-\ln(n)\ln(\ln(n))},
+    \end{equation}
+    mais 
+    \begin{equation}
+        \ln(n+1)=\ln(n)+\ln\left(1+\frac{1}{n}\right)\underset{+\infty}{=}\ln(n)+O\left(\frac{1}{n}\right),    
+    \end{equation}
+    et
+    \begin{equation}
+        \ln(n+1)\ln(\ln(n+1))=\ln(n)\ln(\ln(n+1))+\underbrace{O\left(\frac{\ln(\ln(n+1))}{n}\right)}_{=o(1)\xrightarrow[+\infty]{}0},
+    \end{equation}
+    puis
+    \begin{align}
+        \ln(\ln(n+1))
+        &\underset{+\infty}{=}\ln\left(\ln(n)+O\left(\frac{1}{n}\right)\right),\\
+        &\underset{+\infty}{=}\ln(\ln(n))+\ln\left(1+O\left(\frac{1}{n\ln(n)}\right)\right),\\
+        &\underset{+\infty}{=}\ln(\ln(n))+O\left(\frac{1}{n\ln(n)}\right).
+    \end{align}
+
+    Donc $\ln(n+1)\ln(\ln(n+1))-\ln(n)\ln(\ln(n))=\underset{+\infty}{o}(1)$, et $\frac{b_{n+1}}{b_{n}}\lim\limits_{n\to+\infty}1$, d'où $R=1$.
+
+    De plus, $\lim\limits_{n\to+\infty}a_n=+\infty$ donc il y a divergence sur le cercle de convergence.
+\end{proof}
+
+\begin{remark}
+    On peut aussi écrire $a_n\leqslant n^{\ln(n)}=\e^{(\ln(n))^{2}}=c_n$, et 
+    \begin{equation}
+        \frac{c_{n+1}}{c_{n}}=\e^{\left(\ln(n+1)\right)^{2}-\left(\ln(n)\right)^{2}}\underset{+\infty}{=}\e^{\left(\ln(n)+O\left(\frac{1}{n}\right)\right)^{2}-(\ln(n))^{2}}\xrightarrow[n\to+\infty]{}1.
+    \end{equation}
+    Donc $\sum c_{n}z^{n}$ a pour rayon de convergence 1, donc $R\geqslant1$, et $\sum a_{n}$ diverge donc $R=1$.
+\end{remark}
+
+\begin{proof}
+    Le nombre de diviseurs est compris entre 1 et $n$. Comme $\sum z^{n}$ et $\sum nz^{n}$ ont un rayon de convergence égal à 1, on a $R=1$ par encadrement.
+\end{proof}
+
+\begin{proof}
+    On pose $u_n=\frac{a_{n+1}}{a_{n}}$. Alors $\frac{a_{n-1}a_{n+1}}{a_{n}^{2}}=\frac{u_{n}}{u_{n-1}}$. 
+    \begin{itemize}
+        \item Si $l<1$, alors d'après la règle de d'Alembert, $\sum u_{n}$ converge donc $\lim\limits_{n\to+\infty}u_{n}=0$ donc $R=+\infty$.
+        \item Si $l>1$, il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, $\frac{u_{n}}{u_{n-1}}\geqslant\frac{l+1}{2}$ et pour tout $n\geqslant N_{0}$, $u_{n}\geqslant u_{N_{0}}\times\left(\frac{l+1}{2}\right)^{n-N_{0}}\xrightarrow[n\to+\infty]{}+\infty$ donc $R=0$.
+        \item Si $l=1$ : si $a_n=n!$, on a $u_n=n+1$ donc $R=0$, si $a_n=\frac{1}{n!}$, on a $u_n=\frac{1}{n+1}$ donc $R=+\infty$, si $a_n=\lambda^{n}$ avec $\lambda>0$, on a $u_n=\lambda$ et $R=\frac{1}{\lambda}$. Donc on ne peut rien dire.
+    \end{itemize}
+\end{proof}
+
+\begin{proof}
+    D'après la règle de d'Alembert, avec $a_{n}=\frac{(-1)^{n}}{n}$, on a $\left\lvert \frac{a_{n+1}}{a_{n}}\right\rvert=\frac{n}{n+1}\xrightarrow[n\to+\infty]{}1$ donc le rayon de convergence de $\phi$ est $R=1$ donc $\phi$ est bien définie.
+
+    Fixons $z\in\C^{*}$ avec $\left\lvert z\right\rvert<1$, formons \function{f}{[0,1]}{\C}{t}{\e^{\phi(tz)}}
+    $z$ étant fixé, le rayon de convergence de la série entière $\sum_{n\geqslant1}(-1)^{n-1}\frac{t^{n}z^{n}}{n}=\phi(tz)$ vaut $\frac{1}{\left\lvert z\right\rvert}>1$, donc l'application $t\mapsto\phi(tz)$ est $\mathcal{C}^{\infty}$ sur $[0,1]\subset\left]-\frac{1}{\left\lvert z\right\rvert},\frac{1}{\left\lvert z\right\rvert}\right[$. $f$ est donc $\mathcal{C}^{\infty}$ sur $[0,1]$ et pour tout $t\in[0,1]$,
+    \begin{equation}
+        f'(t)=\sum_{n=1}^{+\infty}(-1)^{n-1}z^{n}t^{n-1}\times f(t)=\frac{z}{1+tz}f(t),
+    \end{equation}
+    car $\left\lvert zt\right\rvert<1$ et $f(0)=1$. On pose $g(t)=1+tz$. Alors $g'(t)=z=\frac{z}{1+tz}g(t)$ et $g(0)=1$. Ainsi, par unicité (d'après le théorème de Cauchy-Lipschitz), pour tout $t\in[0,1]$, $f(t)=g(t)$. En particulier, $f(1)=\e^{\phi(z)}=1+z$.
+\end{proof}
+
+\begin{remark}
+    On vient de définir, pour $\left\lvert z\right\rvert<1$, $\phi(z)$ qui est un logarithme complexe continue de $1+z$. Si $1+z=\rho\e^{\i\theta}$ avec $\theta\in]-\pi,\pi[$, $\phi(z)=\ln(\rho)+\i\theta$.
+\end{remark}
+
+\begin{proof}
+    On a $a_n=\frac{1}{\cos\left(\frac{2n\pi}{3}\right)}$ et $1\leqslant\left\lvert a_n\right\rvert\leqslant2$ donc $R=1$. Si $\left\lvert z\right\rvert<1$, on a 
+    \begin{equation}
+        \sum_{n=0}^{+\infty}z^{3n}-2\left(\sum_{n=0}^{+\infty}-z^{3n+1}+z^{3n+2}\right)=\frac{1}{1-z^{3}}+\frac{2z}{1-z^{3}}-\frac{2z^{2}}{1-z^{3}}=\frac{1+2z-2z^{2}}{1-z^{3}}.
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a $b_n\geqslant0$ donc $g$ est croissante sur $[0,1[$. $g$ admet donc une limite $l\in\overline{\R}_{+}$ en $1^{-}$. Pour tout $x<1$, $g(x)\leqslant l$. Pour tout $N\in\N$, pour tout $x\in[0,1[$, comme $b_nx^{n}\geqslant0$, on a $\sum_{n=0}^{N}b_{n}x^{n}\leqslant g(x)\leqslant l$. $N$ étant fixé, quand $x\to1$, on a $\sum_{n=0}^{N}b_n\leqslant l$ et quand $N\to+\infty$, on a $l=+\infty$.
+        \item Soit $\varepsilon>0$, il existe $n_0\in\R$, pour tout $n\geqslant n_0$, $\left\lvert a_n-b_n\right\rvert<\frac{\varepsilon}{2}\times b_n$. Pour tout $x\in[0,1[$, on a $\left\lvert f(x)-g(x)\right\rvert\leqslant\sum_{n=0}^{n_{0}-1}\left\lvert a_n-b_n\right\rvert x^{n}$ + $\sum_{n=n_0}^{+\infty}\left\lvert a_n-b_n\right\rvert x^{n}$. Le terme de gauche est en polynôme en $x$ qui a une limite finie en $1^{-}$, le terme de droite majoré par $\frac{\varepsilon}{2}\sum_{n=n_0}^{+\infty}b_nx^{n}\leqslant\frac{\varepsilon}{2}g(x)$, car les $b_n$ sont positifs. Ainsi, ce terme de droite est un $\underset{x\to1^{-}}{O}(g(x))$ donc majoré par $\frac{\varepsilon}{2}g(x)$ pour $x$ suffisamment proche de 1, d'où $\left\lvert f(x)-g(x)\right\rvert\leqslant\varepsilon g(x)$ et $f(x)\underset{1^{-}}{\sim}g(x)$.
+        \item On a $n^{p}\underset{+\infty}{\sim}n(n-1)\dots(n-p+1)$, donc 
+        \begin{equation}
+            h_p(x)\underset{1}{\sim}\sum_{n=0}^{+\infty}n(n-1)\dots(n-p+1)x^{n}=\sum_{n=p}^{+\infty}n(n-1)\dots(n-p+1)x^{n},
+        \end{equation}
+        et $f(x)=\frac{1}{1-x}=\sum_{n=0}^{+\infty}x^{n}$, $f'(x)=\frac{1}{(1-x)^{2}}=\sum_{n=1}^{+\infty}nx^{n-1}$. De proche en proche, on a $f^{(p)}(x)=\frac{p!}{(1-x)^{p+1}}=\sum_{n=p}^{+\infty}n\dots(n-p+1)x^{n-p}$, d'où 
+        \begin{equation}
+            \boxed{
+                h_p(x)\underset{1}{\sim}\frac{p!}{(1-x)^{p+1}}.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    Soit $\varepsilon>0$. Il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, $\left\lvert a_n\right\rvert\leqslant\frac{\varepsilon}{n}$. Alors si $S_n=\sum_{h=0}^{n}a_h$, on a 
+    \begin{equation}
+        \left\lvert S_n-S\right\rvert\leqslant \left\lvert S_n-f\left(1-\frac{1}{n}\right)\right\rvert+\left\lvert f\left(1-\frac{1}{n}\right)-S\right\rvert.
+    \end{equation}
+    Puisque $f\left(1-\frac{1}{n}\right)\xrightarrow[n\to+\infty]{}S$, il existe $N_{1}\in\N$ tel que pour tout $n\geqslant N_{1}$, $\left\lvert f\left(1-\frac{1}{n}\right)-S\right\rvert\leqslant\frac{\varepsilon}{4}$. Pour $n\geqslant N_{0}$, on a alors 
+    \begin{equation}
+        \left\lvert S_n-f\left(1-\frac{1}{n}\right)\right\rvert\leqslant A_n+B_n+C_n,
+    \end{equation}
+    avec $A_n=\sum_{h=0}^{N_{0}}\left\lvert a_h\right\rvert\left(1-\left(1-\frac{1}{n}\right)^{h}\right)\xrightarrow[n\to+\infty]{}0$ et il existe $N_{1}$ pour tout $n\geqslant N_{1}$, $A_n\leqslant\frac{\varepsilon}{4}$. On a 
+    \begin{align}
+        B_n
+        &= \sum_{h=N_{0}+1}^{n}\left\lvert a_{h}\right\rvert\left(1-\left(1-\frac{1}{n}\right)^{h}\right),\\
+        &\leqslant\frac{\varepsilon}{4}\sum_{h=N_{0}+1}^{n}\left(\frac{1}{h}\times h\left(1-\left(1-\frac{1}{n}\right)\right)\right),\\
+        &\leqslant\frac{\varepsilon}{4}\sum_{h=N_{0}}^{n}\frac{1}{n},\\
+        &\leqslant\frac{\varepsilon}{4}\times\frac{n-N_{0}}{n},\\
+        &\leqslant\frac{\varepsilon}{4}.
+    \end{align}
+    Cela est dû au fait que $x\mapsto1-x^{h}$ est concave sur $[0,1]$ donc $\left(1-\left(1-\frac{1}{n}\right)^{h}\right)\leqslant h\left(1-\left(1-\frac{1}{n}\right)\right)$ (ou par accroissement fini). Enfin, on a 
+    \begin{align}
+        C_n
+        &=\sum_{h\geqslant n}a_h\left(1-\frac{1}{n}\right)^{h},\\
+        &\leqslant\frac{\varepsilon}{4}\sum_{h\geqslant n}\frac{\left(1-\frac{1}{n}\right)^{h}}{h},\\
+        &\leqslant\frac{\varepsilon}{4n}\sum_{h\geqslant n}\left(1-\frac{1}{n}\right)^{h},\\
+        &\leqslant\frac{\varepsilon}{4n}\sum_{h=0}^{+\infty}\left(1-\frac{1}{n}\right)^{h},\\
+        &=\frac{\varepsilon}{4}.
+    \end{align}
+
+    Ainsi, on a $\left\lvert S_n-S\right\rvert\leqslant\varepsilon$ et donc $S_n\xrightarrow[n\to+\infty]{}S$.
+\end{proof}
+
+\begin{remark}
+    C'est une réciproque du lemme d'Abel radial i.e.~si $\sum a_n$ converge alors \begin{equation}
+        \lim\limits_{x\to1^{-}}\sum_{n=0}^{+\infty}a_nx^{n}=\sum_{n=0}^{+\infty}a_n.
+    \end{equation}
+\end{remark}
+
+\begin{remark}
+    Ce n'est pas valable par exemple pour $a_n=(-1)^{n}$, car $f(x)=\frac{1}{1+x}\xrightarrow[x\to1^{-}]{}\frac{1}{2}$ mais $\sum(-1)^{n}$ diverge.
+\end{remark}
+
+\begin{proof}
+    On note $f(z)=\sum_{n=0}^{+\infty}a_{n}z^{n}$ avec $a_0=f(0)=\rho\e^{\i\theta}\neq0$. Alors
+    \begin{equation}
+        f(z)=f(0)\left(1+\underbrace{\sum_{n=1}^{+\infty}\frac{a_n}{a_0}z^{n}}_{=g(z)}\right),
+    \end{equation}
+    avec $g(z)\xrightarrow[z\to0]{}0$ car $g$ est somme d'une série entière donc continue. Il existe $r>0$, si $\left\lvert z\right\rvert<r$, $\left\lvert g(z)\right\rvert<1$. Alors on a vu, d'après l'Exercice 8, que l'on a 
+    \begin{equation}
+        f(z)=\exp\left(\ln\rho+\i\theta+\sum_{p=1}^{+\infty}(-1)^{p-1}\frac{g(z)^{p}}{p}\right).
+    \end{equation}
+    Pour $p\in\N$ fixé, on peut développer chaque terme $g(z)^{p}=\sum_{n=0}^{+\infty}a_{n,p}z^{n}$ (produit de Cauchy). On vérifie alors (théorème de Fubini) que l'on peut intervertir les sommations.
+\end{proof}
+
+\begin{remark}
+    Autre méthode : si $T$ existe avec $T(z)=\sum_{n=0}^{+\infty}b_nz^{n}$. Pour $t\in]-r,r[$, on a $f(t)=\e^{T(t)}$. En dérivant, on a $f'(t)=T'(t)f(t)=\left(\sum_{n}(n+1)b_{n+1}t^{n}\right)f(t)$. Par unicité de développement, et par produit de Cauchy, pour tout $n\in\N$, on a 
+    \begin{align}
+        (n+1)a_{n+1}
+        &=\sum_{h=0}^{n}(h+1)b_{h+1}a_{n-h},\\
+        &=(n+1)b_{n+1}\underbrace{a_{0}}_{\neq0}+\sum_{h=1}^{n}hb_{h}a_{n-h+1}.
+    \end{align}
+    On a $b_{0}=T(0)$, on choisit $b_{0}$ tel que $\e^{b_{0}}=a_{0}\neq0$ et on définit univoquement $(b_n)_{n\in\N}$ par récurrence. On vérifie alors, en majorant, que $\sum b_{n}z^{n}$ a un rayon de convergence $r>0$ (montrer qu'il existe $M\geqslant0,A\geqslant0$ tels que pour tout $n\in\N$, $\left\lvert b_n\right\rvert AM^{n}$). Alors $f'(t)=T'(t)f(t)$ et en posant $g(t)=\e^{T(t)}$, on a $g=f$ par unicité via le théorème de Cauchy-Lipschitz.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $n\geqslant1$, on a $\left\lvert\frac{1}{\sin(n\pi a)}\right\rvert\geqslant1$, donc $R_a\leqslant1$.
+        \item On rappelle que si $a$ est irrationnel algébrique de degré $d\geqslant2$, il existe $C>0$ tel que pour tout $\frac{p}{q}\in\Q$, on a $\left\lvert a-\frac{p}{q}\right\rvert\geqslant\frac{C}{q^{d}}$. Soit $n\in\N^{*}$. On fixe $p\in\N$ tel que $n\pi a-p\pi\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$. On a alors
+        \begin{align}
+            \left\lvert \sin(n\pi a)\right\rvert
+            &=\left\lvert\sin(n\pi a-p\pi)\right\rvert,\\
+            &\geqslant\frac{2}{\pi}\left\lvert n\pi a-p\pi\right\rvert,\\
+            &\geqslant2\left\lvert na-p\right\rvert,\\
+            &\geqslant2n\frac{C}{n^{d}}=\frac{2C}{n^{d-1}},
+        \end{align}
+        car par concavité, on a pour tout $t\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right],\left\lvert\sin(t)\right\rvert\geqslant\frac{2}{\pi}\left\lvert t\right\rvert$. On a donc $\left\lvert a_n\right\rvert\leqslant\frac{n^{d-1}}{2C}$, et comme le rayon de convergence de $\sum \frac{n^{d-1}}{2C}z^{d-1}$ vaut 1, on a $R_a=1$.
+        \item On a $\left\lvert\sin(n!\pi e)\right\vert=\left\lvert\sin\left(n!\pi\sum_{k=0}^{+\infty}\frac{1}{k!}\right)\right\rvert\underset{+\infty}{=}\left\lvert\sin\left(\frac{\pi}{n+1}+O\left(\frac{1}{n^{2}}\right)\right)\right\rvert\underset{+\infty}{\sim}\frac{\pi}{n}$. Pour $x\in]0,1]$, $\sum nx^{n!}$ converge. L'idée est donc de former $a$ tel que pour tout $x\in]0,1]$, on puisse extraire 
+        \begin{equation}
+            \left(\frac{x^{\sigma(n)}}{\sin\left(\sigma(n)\pi a\right)}\right)_{n\in\N},
+        \end{equation} 
+        qui ne tend pas vers 0.
+        
+        \begin{lemma}
+            \label{lem:serie_entiere_1}
+            Soit $(a_n)_{n\in\N}\in\left(\N^{*}\right)^{\N}$ strictement croissante, et 
+            \begin{equation}
+                a=\sum_{n=0}^{+\infty}\frac{1}{a_0\dots a_n}.
+            \end{equation}
+            On a 
+            \begin{equation}
+                a-\sum_{k=0}^{N}\frac{1}{a_0\dots a_k}\underset{N\to+\infty}{\sim}\frac{1}{a_0\dots a_{N+1}}.
+            \end{equation}
+        \end{lemma}
+        \begin{proof}[Preuve du Lemme~\ref{lem:serie_entiere_1}]
+            On a pour tout $n\in\N^{*}$, $\frac{1}{a_{0}\dots a_{n}}\leqslant\frac{1}{a_{0}a_{1}^{n}}$ et $a_{1}\geqslant2$ donc $\sum_{n\geqslant0}\frac{1}{a_{0}\dots a_{n}}$ converge. On a
+            \begin{equation}
+                \left\lvert a-\sum_{n=0}^{N}\frac{1}{a_{0}\dots a_{n}}\right\rvert=\sum_{k=N+1}^{+\infty}\frac{1}{a_0\dots a_k},
+            \end{equation}
+            donc 
+            $\frac{1}{a_0\dots a_{N+1}}\leqslant \sum_{k=N+1}^{+\infty}\frac{1}{a_0\dots a_k}\leqslant\frac{1}{a_0\dots a_N}\sum_{k=1}^{+\infty}\frac{1}{a_{N+1}^{k}}=\frac{1}{a_0\dots a_N}\times\frac{1}{a_{N+1}}\times\frac{1}{1-\frac{1}{a_{N+1}}}$. Donc 
+            \begin{equation}
+                a-\sum_{k=0}^{N}\frac{1}{a_0\dots a_k}\underset{N\to+\infty}{\sim}\frac{1}{a_0\dots a_{N+1}}.
+            \end{equation}
+        \end{proof}
+
+        On a donc $(a_{0}\dots a_{N})a-\underbrace{(a_0\dots a_{N})\sum_{k=0}^{N}\frac{1}{a_{0}\dots a_{k}}}_{\in\N}\underset{N\to+\infty}{\sim}\frac{1}{a_{N+1}}$. Ainsi,
+        \begin{equation}
+            \left\lvert\sin\left(\underbrace{(a_0\dots a_N)}_{=\sigma(N)}\pi a\right)\right\rvert=\left\lvert\sin\left((a_0\dots a_N)\pi a-(a_0\dots a_N)\sum_{k=0}^{N}\frac{\pi}{a_{0}a_{k}}\right)\right\rvert\underset{N\to+\infty}{\sim}\frac{\pi}{a_{N+1}}.
+        \end{equation}
+        Pour $x\in]0,1]$, on a $\frac{x^{\sigma(N)}}{\left\lvert\sin(\sigma(N)\pi a)\right\rvert}\underset{N\to+\infty}{\sim}\frac{1}{\pi}\exp\left(\sigma(N)\ln(x)+\ln(a_{N+1})\right)$. Il suffit de choisir $a_{N+1}$ tel que $\ln(a_{N+1})\geqslant N(a_{0}\dots a_{N})$, par exemple $a_{N+1}=\left\lfloor \e^{N(a_{0}\dots a_{N})}\right\rfloor+1$. Donc pour tout $x\in]0,1]$, $\lim\limits_{N\to+\infty}\frac{x^{\sigma(N)}}{\left\lvert\sin(\sigma(N)\pi a)\right\rvert}=+\infty$. Ainsi, $R_a=0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    Pour $\left\lvert z\right\rvert<1$, par produit de Cauchy, ces séries sont définies et absolument convergentes, par sommabilité,
+    \begin{equation}
+        \left(\sum_{p_1=0}^{+\infty}z^{a_1 p_1}\right)\times\dots\times\left(\sum_{p_N=0}^{+\infty}z^{a_Np_N}\right)-\frac{1}{(1-z^{a_1})\dots(1-z^{a_N})}=\sum_{(p_1,\dots,p_N)\in\N^{N}}z^{a_1p_1+\dots+a_Np_N}.
+    \end{equation}
+    Par associativé, on regroupe selon les valeurs de l'exposant et on note l'expression précédente $\sum_{n=0}^{+\infty}c_nz^{n}$. On factorise la fraction rationnelle [les pôles sont des racines de l'unité] :
+    \begin{equation}
+        \frac{1}{\prod_{\xi\in\U}(z-\xi)^{m\left(\xi\right)}},
+    \end{equation}
+    avec $m(1)=N$, $m\left(\xi\right)<N$ si $\xi\neq1$ car $a_1\wedge\dots\wedge a_N=1$ : si $\xi^{a_1}=\dots=\xi^{a_N}=1$, l'ordre de $\xi$ divise $a_1,\dots,a_N$ donc divise $a_1\wedge\dots\wedge a_N=1$. Cette expression vaut alors 
+    $\sum_{k=1}^{N}\frac{\alpha_{1,k}}{(-z+1)^{k}}+\sum_{\xi\in\U\setminus\left\lbrace1\right\rbrace}\left(\sum_{k=1}^{N-1}\frac{\alpha_{\xi,k}}{(-z+\xi)^{k}}\right)$ (somme finie). Pour $\left\lvert z\right\rvert<1$, on a 
+    \begin{equation}
+        \frac{1}{\left(-z+\xi\right)^{k}}=\left(-\frac{1}{\xi}\right)^{k}\sum_{n=0}^{+\infty}\frac{(n-k+1)\dots(n+1)}{(k-1)!}\left(\frac{z}{\xi}\right)^{n}.
+    \end{equation}
+    Ainsi, le coefficient en $z^{n}$ et équivalent à $\frac{n^{k-1}}{(k-1)!}\left(-\frac{1}{\xi}\right)^{k}$ en $+\infty$. Donc $c_n$ est un polynôme en $n$, équivalent en $+\infty$ à $\alpha_{1,N}\times \frac{n^{N-1}}{(n-1)!}$.
+
+    Si $F=\frac{1}{(1-X^{a_1})\dots (1-X^{a_N})}$, en évaluant $(1-X)^{N}F$ et en prenant la limite en $X\to 1$, on a $\frac{X^{a_k}-1}{X-1}=1+X+\dots+X^{a_k-1}\xrightarrow[X\to1]{}a_k$. Finalement, $\alpha_{1,N}=\frac{1}{\prod_{k=1}^{n}a_k}$ et $c_n\geqslant1$ pour $n$ suffisamment grand. Ainsi,
+    \begin{equation}
+        \boxed{
+            c_n\underset{+\infty}{\sim}\frac{n^{N-1}}{\left(\prod_{k=1}^{N}a_k\right)(N-1)!}.
+        }
+    \end{equation}
+\end{proof}
+
+\begin{proof}
+    $f$ est $\mathcal{C}^{\infty}$ sur $\R$ par somme et composée. Pour $x\neq1$, on a 
+    \begin{equation}
+        f(x)=\sqrt{\frac{1-x^{3}}{1-x}}=\sqrt{1-x^{3}}\times\sqrt{\frac{1}{1-x}},
+    \end{equation}
+    produit de deux fonctions développable en série entière sur $]-1,1[$. Il existe donc $(a_n)_{n\in\N}\in\R^{\N}$ telle que pour tout $x\in]-1,1[$, $f(x)=\sum_{n=0}^{+\infty}a_nx^{n}$. On a $f^{2}(x)=1+x+x^{2}$ et $(f^{2})'(x)=2f'(x)f(x)=1+2x$ d'où pour tout $x\in]-1,1[$,
+    \begin{equation}
+        2\left(\sum_{n=0}^{+\infty}(n+1)a_{n+1}x^{n}\right)\left(\sum_{n=0}^{+\infty}a_nx^{n}\right)=1+2x,
+    \end{equation}
+    encore vrai pour $z\in D(0,1)$ par unicité du développement en série entière.
+
+    Si $R>1$, me rayon de convergence de $\sum(n+1)a_{n+1}z^{n}$ est $R$. On aurait alors pour tout $z\in D(0,R)$
+    \begin{equation}
+        2\left(\sum_{n=0}^{+\infty}(n+1)a_{n+1}z^{n}\right)\left(\sum_{n=0}^{+\infty}a_nz^{n}\right)=1+2z,
+    \end{equation}
+    i.e.~si $S(z)=\sum_{n=0}^{+\infty}a_nz^{n}$, alors $2S'(z)S(z)=1+2z$. En $\j$, on a $2S'(\j)S(\j)=1+2\j$. Comme pour tout $x\in]-1,1[$, $S^{2}(x)=1+x+x^{2}$, par unicité, on a pour tout $z\in D(0,R)$, $S^{2}(z)=1+z+z^{2}$. Donc $S^{2}(\j)=1+\j+\j^{2}=0$ d'où $S(\j)=0$ : impossible car sinon $0=1+2\j$. Ainsi, $R=1$.
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $\sum_{k\in\N}\frac{f^{(k)(0)}}{k!}x^{k}$ est une série à termes positifs, d'après la formule de Taylor reste intégral, on a 
+        \begin{equation}
+            f(x)=\underbrace{\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}x^{k}}_{S_n(x)}+\underbrace{\int_{0}^{x}\frac{(x-t)^{n}}{n!}f^{(n+1)}(t)\d t}_{R_n(x)\geqslant0}.
+        \end{equation}
+        On a $0\leqslant S_n(x)\leqslant f(x)$, donc la série converge et la suite $(R_n(x))_{n\in\N}$ converge aussi.
+
+        \item On pose $t=xu$ et on a 
+        \begin{equation}
+            R_n(x)=x^{n+1}\int_{0}^{1}\frac{(1-u)^{n}}{n!}f^{(n+1)}(u)\d u.
+        \end{equation}
+        Pour tout $t\in[0,A[$, $f^{(n+2)}(t)\geqslant0$, $f^{(n+1)}$ est croissante. On a donc 
+        \begin{equation}
+            0\leqslant R_n(x)\leqslant\frac{x^{n+1}}{y^{n+1}}y^{n+1}\int_{0}^{1}\frac{(1-u)^{n}}{n!}f^{(n+1)}(xu)\d u,    
+        \end{equation}
+        d'où $0\leqslant R_n(x)\leqslant\left(\frac{x}{y}\right)^{n+1}R_n(y)$.
+
+        \item $(R_n(y))_{n\in\N}$ est bornée d'après a), donc $R_n(x)\xrightarrow[x\to0]{}0$ d'où $f(x)=\sum_{k=0}^{+\infty}\frac{f^{(k)}(0)}{k!}x^{k}$.
+        
+        \item On a $\tan\geqslant0$ sur $\left[0,\frac{\pi}{2}\right[$ et $\tan'=1+\tan^{2}\geqslant0$. Soit $n\in\N$, on suppose que pour tout $k\in\left\llbracket0,n\right\rrbracket$, $\tan^{(k)}\geqslant0$ sur $\left[0,\frac{\pi}{2}\right[$. On dérive $n$ fois, d'après la formule de Leibniz, on a 
+        \begin{equation}
+            \tan^{(n+1)}=\sum_{k=0}^{n}\binom{n}{k}\tan^{(k)}\tan^{(n-k)}\geqslant0.
+        \end{equation}
+        Par imparité, on a pour tout $t\in\left[0,\frac{\pi}{2}\right[$
+        \begin{equation}
+            \tan(x)=\sum_{k=0}^{+\infty}\frac{\tan^{(k)}(0)}{k!}x^{k}=\sum_{q=0}^{+\infty}\frac{\tan^{(2p+1)}(0)}{(2p+1)!}x^{2p+1}.
+        \end{equation}
+        Par imparité, c'est aussi vrai sur $\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Si $\tan(x)=\sum_{k=0}^{+\infty}a_k x^{k}$, $\tan'=1+\tan^{2}$ fournit, pour tout $n\geqslant1$, $(n+1)a_{n+1}=\sum_{k=0}^{n}a_{k}a_{n-k}$.
+\end{remark}
+
+\end{document}

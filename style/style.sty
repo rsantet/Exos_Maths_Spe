@@ -1,10 +1,10 @@
-\documentclass[12pt]{article}
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{enumitem}
 \usepackage{color}
 \definecolor{bluearmy}{RGB}{16, 66, 146}
 \usepackage{url}
@@ -24,7 +24,7 @@
 \renewcommand{\baselinestretch}{1.5}
 
 \usepackage{amsthm}
-\newtheorem{exercise}{Exercice}[section]
+\newtheorem{exercise}{Exercice}
 
 \newcommand{\K}{\mathbb{K}} \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}} \newcommand{\Q}{\mathbb{Q}}
@@ -49,35 +49,3 @@
 		\end{array}
 	\end{equation}
 }
-
-%\includeonly{enonces_integration}
-
-\begin{document}
-
-\begin{titlepage}
-	\centering
-	\vspace*{\fill}
-	\Huge \textit{\textbf{Exercices MP/MP$^*$}}
-	\vspace*{\fill}
-\end{titlepage}
-
-\cleardoublepage
-
-\tableofcontents
-
-\include{enonces_algebre_generale}
-\include{enonces_series}
-\include{enonces_probabilites}
-\include{enonces_calcul_matriciel}
-\include{enonces_reduction}
-\include{enonces_evn}
-\include{enonces_fonctions_variable_reelle}
-\include{enonces_suites_series_fonctions}
-\include{enonces_integration}
-\include{enonces_series_entieres}
-\include{enonces_prehilbertien}
-\include{enonces_euclidien}
-\include{enonces_calcul_differentiel}
-\include{enonces_equations_differntielles_lineaires}
-
-\end{document}

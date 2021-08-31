@@ -1,4 +1,3 @@
-\documentclass[12pt]{article}
 \usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -44,11 +43,10 @@
 %% Théorème
 \usepackage{amsthm}
 \renewcommand{\qedsymbol}{\hfill$\blacksquare$}
-\newcounter{proofcounter}[section]
-\addto\captionsfrench{\renewcommand\proofname{\stepcounter{proofcounter}\color{bluearmy}\emph{\textbf{Solution~\thesection.\theproofcounter}}}}
-\newtheorem{remark}{Remarque}[section]
-\numberwithin{equation}{section}
-\newtheorem{lemma}{Lemme}[section]
+\newcounter{proofcounter}
+\addto\captionsfrench{\renewcommand\proofname{\refstepcounter{proofcounter}\color{bluearmy}\emph{\textbf{Solution~\theproofcounter}}}}
+\newtheorem{remark}{Remarque}
+\newtheorem{lemma}{Lemme}
 
 %% Raccourcis mathématiques
 \newcommand{\K}{\mathbb{K}} \newcommand{\R}{\mathbb{R}}
@@ -74,40 +72,3 @@
 		\end{array}
 	\end{equation}
 }
-
-%\includeonly{solutions_integration}
-
-\begin{document}
-
-\begin{titlepage}
-	\centering
-	\vspace*{\fill}
-	\Huge \textit{\textbf{Solutions Exercices MP/MP$^*$}}
-	\vspace*{\fill}
-\end{titlepage}
-
-\cleardoublepage
-
-\tableofcontents
-
-\cleardoublepage
-
-\include{solutions_algebre_generale}
-\include{solutions_series}
-\include{solutions_probabilites}
-\include{solutions_calcul_matriciel}
-\include{solutions_reduction}
-\include{solutions_evn}
-\include{solutions_fonctions_variable_reelle}
-\include{solutions_suites_series_fonctions}
-\include{solutions_integration}
-\include{solutions_series_entieres}
-\include{solutions_prehilbertien}
-\include{solutions_euclidien}
-\include{solutions_calcul_differentiel}
-\include{solutions_equations_differentielles_lineaires}
-
-\cleardoublepage
-\listoffigures
-
-\end{document}
