@@ -365,7 +365,7 @@
     \begin{equation}
         \left(\sum_{p_1=0}^{+\infty}z^{a_1 p_1}\right)\times\dots\times\left(\sum_{p_N=0}^{+\infty}z^{a_Np_N}\right)-\frac{1}{(1-z^{a_1})\dots(1-z^{a_N})}=\sum_{(p_1,\dots,p_N)\in\N^{N}}z^{a_1p_1+\dots+a_Np_N}.
     \end{equation}
-    Par associativé, on regroupe selon les valeurs de l'exposant et on note l'expression précédente $\sum_{n=0}^{+\infty}c_nz^{n}$. On factorise la fraction rationnelle [les pôles sont des racines de l'unité] :
+    Par associativité, on regroupe selon les valeurs de l'exposant et on note l'expression précédente $\sum_{n=0}^{+\infty}c_nz^{n}$. On factorise la fraction rationnelle [les pôles sont des racines de l'unité] :
     \begin{equation}
         \frac{1}{\prod_{\xi\in\U}(z-\xi)^{m\left(\xi\right)}},
     \end{equation}
@@ -438,5 +438,664 @@
 \begin{remark}
     Si $\tan(x)=\sum_{k=0}^{+\infty}a_k x^{k}$, $\tan'=1+\tan^{2}$ fournit, pour tout $n\geqslant1$, $(n+1)a_{n+1}=\sum_{k=0}^{n}a_{k}a_{n-k}$.
 \end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item D'après le critère spécial des séries alternées, $a_n$ est du signe de $(-1)^{n}$, et $a_n\xrightarrow[n\to+\infty]{}0$. De plus, il existe $M>0$ tel que pour tout $n\geqslant1$, $\left\lvert a_n\right\rvert\leqslant M$. Donc par comparaison, $R\geqslant1$.
+        
+        D'autre part, on a $\left\lvert a_n\right\rvert+\left\lvert a_{n+1}\right\rvert=\frac{1}{n}$ et $\left\lvert a_n\right\rvert=\sum_{k=0}^{+\infty}\frac{1}{(n+2k)(n+1+2k)}$. On a $\left\lvert a_{n+1}\right\rvert\leqslant\left\lvert a_n\right\rvert$. On a alors $2\left\lvert a_{n+1}\right\rvert\leqslant\frac{1}{n}\leqslant2\left\lvert a_n\right\rvert$, et $\frac{1}{2n}\leqslant\left\lvert a_n\right\rvert\leqslant\frac{1}{2(n-1)}$. D'où $\left\lvert a_n\right\rvert\underset{+\infty}{\sim}\frac{1}{2n}$ et $R=1$. $a_n(-1)^{n}=\left\lvert a_n\right\rvert$ est le terme général d'une série divergente.
+
+        Pour tout $\theta\in\R$ tel que $\e^{\i\theta}\neq1$, on a $a_n\left(-\e^{\i\theta}\right)^{n}=\left\lvert a_n\right\rvert\e^{\i n\theta}$. $n\mapsto\left\lvert a_n\right\rvert$ est décroissante tandis que $n\mapsto\e^{\i n\theta}$ est bornée. D'après la règle d'Abel, $\sum a_{n}\left(-\e^{\i\theta}\right)^{n}$ converge. On a convergence sur le cercle sauf en -1.
+
+        \item On a toujours $\left\lvert a_n\right\rvert\leqslant3^{\frac{n-1}{3}}$. Si $b_n=3^{\frac{n-1}{3}}$, $\sum b_nz^{n}$ a un rayon de convergence égal à $\frac{1}{\sqrt[3]{3}}$. Donc $R\geqslant\frac{1}{\sqrt[3]{3}}$. De plus, $a_{3p+1}\left(\frac{1}{\sqrt[3]{3}}\right)^{3p+1}=3^{p}\times\frac{1}{3^{p}}\times\frac{1}{\sqrt[3]{3}}=3^{-\frac{1}{3}}$. Donc $\sum a_n\left(\frac{1}{\sqrt[3]{3}}\right)^{n}\not\to0$ quand $\nrightarrow+\infty$. Donc $R=3^{-\frac{1}{3}}$.
+        
+        Sur le cercle, si $z=3^{-\frac{1}{3}}\e^{\i\theta}$ avec $\theta\in\R$, on a $\left\lvert a_{3p+1}z^{3p+1}\right\rvert=3^{-\frac{1}{3}}$ donc $a_{n}z^{n}\nrightarrow0$ : il y a divergence.
+
+        Pour le calcul effectif, si $z\in\C$ tel que $\left\lvert z\right\rvert<3^{-\frac{1}{3}}$, on a 
+        \begin{equation}
+            \sum_{n=0}^{+\infty}a_{n}z^{n}=\sum_{p=0}^{+\infty}\frac{(-1)^{p}}{2^{p}}z^{3p}+\sum_{p=0}^{+\infty}3^{p}z^{3p+1}=\frac{1}{1+\frac{z^{3}}{2}}+\frac{z}{1-3z^{3}}.
+        \end{equation}
+
+        \item Soit $n\geqslant0$, on a $\frac{1}{3}\int_{0}^{1}t^{n}\d t\leqslant a_n\leqslant\int_{0}^{1}t^{n}\d t$. Ainsi, d'après la règle de d'Alembert, on a $R=1$.
+        \item 
+        Comme $a_n\geqslant\frac{1}{3}\frac{1}{n+1}$, en $x=R$, $\sum a_nx^{n}=\sum a_n$ est divergente. 
+        
+        $\sum a_n(-R)^{n}$ est alternée, et comme $t^{n+1}\leqslant t^{n}$ pour tout $t\in[0,1]$, $n\mapsto\left\lvert a_n\right\rvert$ décroît vers 0. Donc $\sum a_n(-R)^{n}$ est convergente d'après le critère spécial des séries alternées. 
+
+        Pour le calcul, soit $x\in]-1,1[$. Soit \function{f_n}{[0,1]}{\R}{t}{\frac{(tx)^{n}}{1+t+t^{2}}}
+        $f_n$ est continue sur $[0,1]$ et $\left\lvert f_n(t)\right\rvert\leqslant\left\lvert x\right\rvert^{n}$ terme général d'une série à termes positifs convergente. Donc $\sum f_n$ converge normalement donc uniformément sur $[0,1]$, on peut intervertir :
+        \begin{equation}
+            \sum_{n=0}^{+\infty}\int_{0}^{1}\frac{t^{n}}{1+t+t^{2}}\d t x^{n}=\int_{0}^{1}\frac{1}{1+t+t^{2}}\times \frac{1}{1-tx}\d t.
+        \end{equation}
+        On pose $F(X)=\frac{1}{1+X+X^{2}}\times\frac{1}{1-Xx}=\frac{\alpha X+\beta}{1+X+X^{2}}+\frac{\gamma}{1-Xx}$. Si $x\neq0$, on a $\gamma=\frac{x^{2}}{1+x+x^{2}}$ et $\lim\limits_{X\to+\infty}XF(X)=0=\alpha-\frac{\gamma}{x}$ et $\alpha=\frac{x}{1+x+x^{2}}$. Enfin, $F(0)=1=\beta+\gamma$ donc $\beta=\frac{1}{1+x+x^{2}}$. Finalement, on a 
+        \begin{equation}
+            S(x)=\frac{1}{1+x+x^{2}}\times\left[\int_{0}^{1}\frac{xt+1+x}{1+t+t^{2}}\d t+x^{2}\int_{0}^{1}\frac{\d t}{1-tx}\right].
+        \end{equation}
+        Le calcul est laissé aux soins du lecteur.
+
+        Pour la valeur en -1, on note que pour tout $x\in[0,1[$, $\sum_{n=0}^{+\infty}(-1)^{n}a_nx^{n}=S(-x)$. D'après le critère spécial des séries alternées, le $n$-ième reste est majoré par $a_n\to0$ donc on a convergence uniforme et $\lim\limits_{x\to1}S(-x)=\sum_{n=0}^{+\infty}(-1)^{n}a_n$ (continuité en -1).
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On partitionne les relations d'équivalence sur $\left\llbracket1,n+1\right\rrbracket$ selon le cardinal de la classe de $n+1$, $k$. On a alors $\omega_{n+1}=\sum_{k=0}^{n}\binom{n}{k}\omega_{n-k}=\sum_{k=0}^{n}\binom{n}{k}\omega_k$ (choisir les $k$ éléments en relation avec $n+1$). On a $\omega_{0}=1=0^{0}$. Soit $n\in\N$, supposons que pour tout $k\leqslant n$, on ait $\omega_{k}\leqslant k^{k}$. Alors 
+        \begin{equation}
+            \omega_{n+1}\leqslant\sum_{k=0}^{n}\binom{n}{k}k^{k}\leqslant\sum_{k=0}^{n}\binom{n}{k}n^{k}=(1+n)^{n}\leqslant(n+1)^{n+1}.
+        \end{equation}
+        Donc pour tout $n\in\N$, on a $\omega_{n}\leqslant n^{n}$.
+
+        On a $\frac{\omega_{n}}{n!}\leqslant\frac{n^{n}}{n!}\underset{+\infty}{\sim}\frac{\e^{n}}{\sqrt{2\pi n}}$ donc $R\geqslant\frac{1}{\e}>0$.
+
+        \item Pour tout $n\leqslant n_0$, $\frac{\omega_n r^{n}}{n!}\leqslant A$. Soit $n\geqslant n_0$, supposons que pour tout $k\leqslant n$, $\omega_k x^{k}\leqslant Ak!$. Alors on a 
+        \begin{align}
+            \omega_{n+1}r^{n+1}
+            &=\sum_{k=0}^{n}\binom{n}{k}\omega_{k}r^{k}r^{n+1-k},\\
+            &\leqslant n!Ar\sum_{k=0}^{n}\frac{r^{n-k}}{(n-k)!},\\
+            &\leqslant n! A r\e^{r}\leqslant (n+1)! A.
+        \end{align}
+        Donc pour tout $n\in\N$, $\frac{\omega_n}{n!}\leqslant \frac{A}{r^{n}}$. On a donc $R\geqslant r$ pour tout $r\geqslant 1$ donc $R=+\infty$.
+
+        \item Soit $x\in\R$, on a 
+        \begin{align}
+            f'(x)
+            &=\sum_{n=0}^{+\infty}(n+1)\frac{\omega_{n+1}}{(n+1)!}z^{n},\\
+            &=\sum_{n=0}^{+\infty}\frac{\omega_{n+1}}{n!}z^{n},\\
+            &=\sum_{n=0}^{+\infty}\sum_{k=0}^{n}\frac{\omega_{k}}{k!}\frac{1}{(n-k)!}x^{n},\\
+            &=\e^{x}f(x).
+        \end{align}
+
+        Donc il existe $K\in\R$ tel que pour tout $x\in\R$, $f(x)=K\e^{\e^{x}}$, et $K=\frac{f(0)}{\e}=\frac{1}{\e}$. On a donc 
+        \begin{equation}
+            f(x)=\frac{1}{\e}\e^{\e^{x}}=\frac{1}{\e}\sum_{k=0}^{+\infty}\frac{\e^{kx}}{k!}=\frac{1}{\e}\sum_{k=0}^{+\infty}\sum_{n=0}^{+\infty}\underbrace{\frac{1}{k!}\frac{(kx)^{n}}{n!}}_{a_{k,n}}.
+        \end{equation}
+        On a $\sum_{k=0}^{+\infty}\sum_{n=0}^{+\infty}\left\lvert a_{k,n}\right\rvert=\e^{\e^{\left\lvert x\right\rvert}}<+\infty$. D'après le théorème de Fubini, on a donc 
+        \begin{equation}
+            f(x)=\frac{1}{\e}\sum_{n=0}^{+\infty}\sum_{k=0}^{+\infty}\frac{(kx)^{n}}{k!n!},
+        \end{equation}
+        et donc pour tout $n\in\N$, on a 
+        \begin{equation}
+            \boxed{
+                \omega_{n}=\frac{1}{\e}\sum_{k=0}^{+\infty}\frac{k^{n}}{k!}.
+            }
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $n\geqslant1$, on a $p_n\leqslant\sum_{j=1}^{n}p_{n-j}$ (car $p_{n-j}$ est le nombre maximal de possibilité si le premier terme vaut $j$, $t_{1}=j$). On a $p_0=2^{0}$ et par récurrence forte, soit $n\in\N^{*}$, supposons que pour tout $k\in\left\llbracket0,n-1\right\rrbracket$, $p_{k}\leqslant2^{k}$, alors 
+        \begin{equation}
+            p_n\leqslant\sum_{j=0}^{n-1}p_j\leqslant\sum_{j=0}^{n-1}2^{j}=2^{n}-1.
+        \end{equation}
+        Donc pour tout $n\in\N$, $p_n\leqslant 2^{n}$. D'après la règle de d'Alembert, $R\geqslant\frac{1}{2}$. De plus, pour tout $n\in\N$, $p_n\geqslant1$ donc $R\leqslant 1$.
+
+        \item Soit $x\in[0,R[$, on a $x<1$. Alors $0\leqslant-\ln\left(1-x^{k}\right)\underset{k\to+\infty}{\sim}x^{k}$, terme générale d'une série à termes positifs convergente car $x<1$. Donc $\prod_{k\geqslant1}\frac{1}{1-x^{k}}$ converge.
+        
+        Soit $N\geqslant1$, on a 
+        \begin{align}
+            \prod_{k=1}^{N}\frac{1}{1-x^{k}}
+            &=\prod_{k=1}^{N}\left(\sum_{n_k=0}^{+\infty}(x^{k})^{n_k}\right),\\
+            &=\sum_{(n_{1},\dots,n_{N})\in\N^{N}}x^{n_{1}+2n_{2}+\dots+Nn_{N}},\\
+            &=\sum_{n=0}^{+\infty}\alpha_{n,N}x^{n},
+        \end{align}
+        où $\alpha_{n,N}=\left\lvert\left\lbrace(n_1,\dots,n_N)\in\N^{N}\middle| n_1+2n_2+\dots+Nn_{N}=n\right\rbrace\right\rvert$. Par sommabilité, on a $\alpha_{n,N}=\left\lvert\left\lbrace\text{partitions }(t_k)_{k\geqslant1}\text{ de }n\middle| t_1\leqslant N\right\rbrace\right\rvert\leqslant p_n$, et si $n\leqslant N, \alpha_{n,N}=p_n$. 
+        
+        On a $f(x)=\sum_{n=0}^{N}p_nx^{n}+\sum_{n=N+1}^{+\infty}\alpha_{n,N}x^{n}$ d'où $\prod_{k=1}^{N}\frac{1}{1-x^{k}}\leqslant f(x)$. Ainsi,
+        \begin{equation}
+            0\leqslant f(x)-\prod_{k=1}^{N}\frac{1}{1-x^{k}}\leqslant\sum_{n=N+1}^{+\infty}\left(p_n-\alpha_{n,N}\right)x^{n}\leqslant\sum_{n=N+1}^{+\infty}p_n x^{n}\xrightarrow[N\to+\infty]{}0,
+        \end{equation}
+        reste d'une série convergente. Donc 
+        \begin{equation}
+            f(x)=\prod_{k=1}^{+\infty}\frac{1}{1-x^{k}}.
+        \end{equation}
+
+        Soit $z\in D(0,R)$, 
+        \begin{equation}
+            \left\lvert f(z)-\prod_{k=1}^{N}\frac{1}{1-z^{k}}\right\rvert\leqslant\sum_{n=N+1}^{+\infty}\left(p_n-\alpha_{n,N}\right)\left\lvert z\right\rvert^{n}\leqslant\sum_{n=N+1}^{+\infty}p_n\left\lvert z\right\rvert^{n}\xrightarrow[N\to+\infty]{}0.
+        \end{equation}
+
+        Cela reste vrai sur $D(0,R)$.
+
+        \item Si $x\in[0,1[$, on peut développer et on obtient
+        \begin{equation}
+            \prod_{k=1}^{+\infty}\frac{1}{1-x^{k}}=\sum_{n=0}^{+\infty}a_nx^{n},
+        \end{equation}
+        et par unicité, $a_n=p_n$ pour tout $n\in\N$ donc $R=1$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a $f(z_{0}+r\e^{\i t})=\sum_{n=0}^{+\infty}a_n r^{n}\e^{\i nt}=\sum_{n=0}^{+\infty}f_n(t)$. On a pour tout $n\in\N$, $\left\lvert f_n(t)\right\rvert=\left\lvert a_n\right\rvert r^{n}$, et comme $r<d(z_{0},\partial U)$ donc $\sum \left\lvert a_n\right\rvert r^{n}$ converge. On a convergence normale des $(f_n)_{n\in\N}$ sur $[0,2\pi]$.
+        Ainsi,
+        \begin{equation}
+            \int_{0}^{2\pi}f\left(z_{0}+r\e^{\i t}\right)\d t=\sum_{n=0}^{+\infty}a_n r^{n}\int_{0}^{2\pi}\e^{\i nt}\d t=2\pi a_0=2\pi f(z_{0}).
+        \end{equation}
+        Donc 
+        \begin{equation}
+            \boxed{
+                f(z_{0})=\frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_0+r\e^{\i t}\right)\d t.
+            }
+        \end{equation}
+
+        \item $\overline{U}$ est un compact donc $\left\lvert f\right\rvert$ atteint son maximum sur $\overline{U}$. De plus, pour tout $r\in[0,d(z_{0},\partial U)]$ et pour tout $t\in[0,2\pi]$, on a $\left\lvert f\left(z_{0}+r\e^{\i t}\right)\right\rvert\leqslant\left\lVert f\right\rVert_{\infty}$, intégrable sur $[0,2\pi]$ et $f$ continue. Donc d'après le théorème de continuité, $f(z_{0})=\frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_0+R\e^{\i t}\d t\right)$ où $R=d(z_{0},\partial U)$.
+        
+        Si $\left\lvert f\right\rvert$ atteint son maximum en $z_{0}\in U$, on a 
+        \begin{equation}
+            \left\lvert f(z_{0})\right\rvert=\left\lVert f\right\rVert_{\infty}=\left\lvert \frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_{0}+R\e^{\i t}\right)\d t\right\rvert\leqslant\frac{1}{2\pi}\int_{0}^{2\pi}\left\lvert f\left(z_{0}+R\e^{\i t}\right)\right\rvert\d t\leqslant\left\lVert f\right\rVert_{\infty}.
+        \end{equation}
+
+        On a donc égalité partout : $\frac{1}{2\pi}\int_{0}^{2\pi}\left(\left\lVert f\right\rVert_{\infty}-\left\lvert f\left(z_0+R\e^{\i t}\right)\right\rvert\right)\d t=0$. Comme l'intégrande est une fonction continue positive, donc pour tout $t\in[0,2\pi]$, $\left\lVert f\right\rVert_{\infty}=f\left(z_{0}+R\e^{\i t}\right)$. On a $d\left(C(0,R),\partial U\right)=0$ et comme $C(0,R)$ est un compact la distance est atteinte : il existe $t_{0}\in[0,2\pi]$ tel que $z_{0}+R\e^{\i t_0}\in\partial U$, donc $\left\lvert f\right\rvert$ atteint son maximum et son minimum sur $\partial U$.
+
+        \item Si $f=0$ sur $\partial U$, alors $f=0$ sur $\overline{U}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    S'il existe $z_{0}\in U$ tel que $\left\lvert f(z_{0})\right\rvert=\left\lVert f\right\rVert_{\infty}$, on a pour tout $r\leqslant R$,
+    \begin{equation}
+        \left\lvert f(z_{0})\right\rvert=\left\lVert f\right\rVert_{\infty}=\left\lvert \frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_{0}+r\e^{\i t}\right)\d t\right\rvert\leqslant\frac{1}{2\pi}\int_{0}^{2\pi}\left\lvert f\left(z_{0}+r\e^{\i t}\right)\right\rvert\d t\leqslant\left\lVert f\right\rVert_{\infty}.
+    \end{equation}
+
+    On en déduit que pour tout $t\in[0,2\pi]$, $\left\lvert f\left(z_0+r\e^{\i t}\right)\right\rvert=\left\lvert f(z_{0})\right\rvert$, et on a aussi $\arg\left(f\left(z_{0}+r\e^{\i t}\right)\right)\equiv\arg\left(f(z_0)\right)[2\pi]$. Donc $f\left(z_{0}+r\e^{\i t}\right)=f(z_{0})$, et on peut vérifier que $f$ est constante.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Passer au $\ln$ de la valeur absolue, équivalent, convergence géométrique.
+        \item On cherche une équation fonctionnelle satisfaite par $f$.
+        On a $f(qz)=\prod_{k=1}^{+\infty}\left(1-q^{k+1}z\right)=\prod_{k=2}^{+\infty}\left(1-q^{k}z\right)$ donc $(1-qz)f(qz)=f(z)$.
+        Si $f$ est développable en série entière avec $f(z)=\sum_{n=0}^{+\infty}a_nz^{n}$ pour tout $z\in D(0,R)$ avec $R>0$, on a par unicité du développement, $a_n(q^{n}-1)=a_{n-1}q^{n}$ et comme $\left\lvert q\right\rvert<1$, pour tout $n\in\N^{*}$, $q^{n}\neq1$ d'où $a_{n}=a_{n-1}\frac{q^{n}}{q^{n}-1}=\prod_{i=1}^{n}\frac{q^{i}}{q^{i}-1}$.
+
+        Réciproquement si pour tout $n\in\N$, $a_n=\prod_{i=1}^{n}\frac{q^{i}}{q^{i}-1}$, alors pour tout $n\in\N$, $a_n\neq0$ et par la règle de d'Alembert, $R=+\infty$. Si $S\colon\C\to\C$ est définie apr $\S(z)=\sum_{n=0}^{+\infty}a_n z^{n}$, en reportant les calculs, $S$ vérifie la même équation fonctionnelle que $f$. En itérant, on a $S(z)=\prod_{i=1}^{n}(1-q^{i}z)S(q^{n}z)$. $S$ étant continue en 0 (car développable en série entière sur $\C$), on a $S(q^{n}z)\xrightarrow[n\to+\infty]{}S(0)=a_0=1$. En passant à la limite, on a donc $S(z)=f(z)$ et $f$ est développable en série entière.
+
+        \item Si $f(z)\neq0$ et $f(qz)\neq0$, on pose $g(z)=\frac{1}{f(z)}$. On a alors $g(qz)=(1-qz)g(z)$, et on procède de même façon qu'à la question précédente. On trouve alors $R=\frac{1}{\left\lvert q\right\rvert}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Par continuité, $a_0=f(z_{0})=0$. Supposons qu'il existe $n\geqslant1$ tel que $a_n\neq0$. Soit $n_{0}=\min\left\lbrace n\in\N\middle| a_n\neq0\right\rbrace$. Il vient, si $\left\lvert h\right\rvert<r_0$, 
+        \begin{equation}
+            f(z_{0}+h)=\sum_{k\geqslant n_{0}}^{+\infty}a_k h^{k}=a_{n_{0}}h^{n_{0}}\left(1+\underbrace{\sum_{k=1}^{+\infty}\frac{a_{k+n_0}}{a_{n_{0}}}h^{k}}_{g(h)}\right).
+        \end{equation}
+
+        $g$ est continue (série entière de rayon de convergence plus grand que $r_0>0$) et $g(0)=0$ donc il existe $\alpha_{0}>0$ tel que si $\left\lvert h\right\rvert\leqslant\alpha_{0}$, alors $\left\lvert g(h)\right\rvert\leqslant\frac{1}{2}$. Alors $1+g(h)\neq0$ et si $h\neq0$, $f(z_{0}+h)=a_{n_{0}}h^{n_{0}}\left(1+g(h)\right)\neq0$. Il existe $N\in\N$ tel que pour tout $k\geqslant N$, $\left\lvert \xi_{k}-z_{0}\right\rvert\leqslant\alpha_{0}$, d'où pour tout $k\geqslant N$, $f(\xi_{k})\neq0$, ce qui est absurde. Les $(a_n)_{n\in\N}$ sont donc tous non nuls.
+
+        \item Soit $z_1\in U$. Il existe $\gamma\colon[0,1]\to U$ continue telle que $\gamma(0)=z_{0}$ et $\gamma(1)=z_{1}$. Soit $t_{0}=\sup\left\lbrace t\in[0,1]\middle|\forall x\in[0,t],f(\gamma(x))=0\right\rbrace$. Supposons $t_{0}\neq1$. Par définition de la borne supérieure, pour tout $x\in[0,t_0[$, $f(\gamma(x))=0$. On peut appliquer ce qui précède à $\gamma(t_0)$ à la place de $z_{0}$ : il existe $\alpha_{0}$ tel que pour tout $z\in D(\gamma(t_{0}),\alpha_{0})$ tel que $f(z)=0$. Par continuité de $\gamma$, il existe $\beta>0$ tel que si $\left\lvert t-t_{0}\right\rvert<\beta$, alors $\left\lvert\gamma(t)-\gamma(t_{0})\right\rvert\leqslant\alpha_{1}$/ Pour $t=t_{0}+\frac{\beta}{2}$, on a $f(\gamma(t))=0$ pour tout $x\in[0,t]$. C'est absurde. Donc $t_{0}=1$ et $f(z_{1})=0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Deux fonctions analytiques définies sur un ouvert connexe par arcs et qui coïncident sur une suite injective convergente sont égales.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a $f(x)=\ln\left(\left(x-\cos(\theta)\right)^{2}+\sin^{2}(\theta)\right)$. L'argument est positif et égal à 0 si et seulement si $x=\cos(\theta)$ et $\sin(\theta)=0$, ce qui est absurde car $\theta\in]0,\pi[$. $f$ est définie sur $\R$ et est $\mathcal{C}^{\infty}$.
+        On a
+        \begin{equation}
+            f'(x)=\frac{2(x-\cos(\theta))}{1-2x\cos(\theta)+x^{2}}=\frac{2(x-\cos(\theta))}{\left(x-\e^{\i\theta}\right)\left(x+\e^{\i\theta}\right)}=\frac{a}{x-\e^{\i\theta}}+\frac{b}{x-\e^{-\i\theta}}.
+        \end{equation},
+        où $a=\frac{2\left(\e^{\i\theta}-\cos(\theta)\right)}{\e^{\i\theta}-\e^{-\i\theta}}=\frac{2\i\sin(\theta)}{2\i\sin(\theta)}=1$ et $b=\overline{a}=1$.
+
+        On sait alors que $f'(x)=\frac{1}{x-\e^{\i\theta}}+\frac{1}{x-\e^{-\i\theta}}$ est développable en série entière avec un rayon de convergence égal à 1 (fonction rationnelle dont 0 n'est pas un pôle). Soit $x\in]-1,1[$, on a 
+        \begin{align}
+            f'(x)
+            &=-\e^{-\i\theta}\times\frac{1}{1-x\e^{-\i\theta}}-\e^{\i\theta}\times\frac{1}{1-x\e^{\i\theta}},\\
+            &=-\e^{-\i\theta}\sum_{k=0}^{+\infty}\left(x\e^{-\i\theta}\right)^{k}-\e^{\i\theta}\sum_{k=0}^{+\infty}\left(x\e^{\i\theta}\right)^{k},\\
+            &=\sum_{k=0}^{+\infty}\left(-\left(\e^{-\i\theta}\right)^{k+1}-\left(\e^{\i\theta}\right)^{k+1}\right)x^{k},\\
+            &=\sum_{k=0}^{+\infty}\left(-2\cos\left((k+1)\theta\right)\right)x^{k}.
+        \end{align}
+        On a $f(0)=0$. Ainsi, pour tout $x\in]-1,1[$, $f(x)=\sum_{k=1}^{+\infty}\frac{x^{k}}{k}\times\left(-2\cos(k\theta)\right)$.
+
+        \item D'après la règle d'Abel, on a convergence pour $x=1$ donc $\sum_{n\geqslant1}\frac{\cos(n\theta)}{n}$ converge, et on a convergence uniforme sur $[0,1]$. $f$ est alors continue en 1 et on a 
+        \begin{equation}
+            \sum_{k=1}^{+\infty}\frac{\cos(k\theta)}{k}=-\frac{1}{2}f(1)=-\frac{1}{2}\ln\left(2-2\cos(\theta)\right).
+        \end{equation}
+
+        \item Pour $x\in]-1,1[$ pour tout $\theta\in[0,\pi]$, $x^{2}-2x\cos(\theta)+1=\left(x-\cos(\theta)\right)^{2}+\sin^{2}(\theta)$ qui est égal à 0 si et seulement si $x=\cos(\theta)$ et $\theta\in\left\lbrace0,\pi\right\rbrace$ : impossible car $x\in]-1,1[$. On a 
+        \begin{equation}
+            I(x)=\int_{0}^{\pi}\left(-2\sum_{k=1}^{+\infty}\frac{x^{k}}{k}\cos(k\theta)\right)\d\theta=\int_{0}^{\pi}f_k(\theta)\d\theta.
+        \end{equation}
+
+        On pose $u_k=\int_{0}^{\pi}\left\lvert f_k(\theta)\right\rvert\d\theta\leqslant\frac{x^{k}}{k}\times\pi$, terme général d'une série convergente car $\left\lvert x\right\rvert<1$, donc $\sum u_{k}$ converge. On peut donc intervertir :
+        \begin{equation}
+            I(x)=-2\sum_{k=1}^{+\infty}\frac{x^{k}}{k}\int_{0}^{\pi}\cos(k\theta)\d\theta=0.
+        \end{equation}
+        Pour $\left\lvert x\right\rvert>1$, on a 
+        \begin{equation}
+            I(x)=\int_{0}^{\pi}\left(\ln(x^{2})+\ln\left(1-\frac{2\cos(\theta)}{x}+\frac{1}{x^{2}}\right)\right)\d\theta=2\pi\ln\left(\left\lvert x\right\rvert\right).
+        \end{equation}
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Pour $x=1$, on a 
+    \begin{align}
+        \ln(2-2\cos(\theta))
+        &=\ln(2)+\ln(1-\cos(\theta)),\\
+        &\underset{\theta\to0}{=}\ln(2)+\ln\left(\frac{\theta^{2}}{2}+o(\theta^{2})\right),\\
+        &\underset{\theta\to0}{=}2\ln(\theta)+O(1)+\ln(2),\\
+        &\underset{\theta\to0}{\sim}2\ln(\theta),\\
+        &\underset{\theta\to0}{O}\left(\frac{1}{\sqrt{\theta}}\right).
+    \end{align}
+
+    $I(1)$ est donc bien définie et $I(1)=\pi\ln(2)+\int_{0}^{\pi}\ln\left(2\sin^{2}\left(\frac{\theta}{2}\right)\right)$. On se ramène à $\int_{0}^{\frac{\pi}{2}}\ln(\sin(\theta))\d\theta$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On pose $a_k=0$ si $k\not\in\left\lbrace p_n,n\in\N\right\rbrace$ et $a_k=1$ sinon. On a toujours $\left\lvert a_k\right\rvert\leqslant 1$, donc $R\geqslant1$. De plus, $\sum_{n\geqslant}1^{p_n}=+\infty$, donc $R=1$.
+        \item Soit $\varepsilon>0$, il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_0$, $\frac{n}{p_n}\leqslant\frac{\varepsilon}{2}$ et donc $p_n\geqslant\frac{2n}{\varepsilon}$. Soit $x\in[0,1[$. Pour tout $n\geqslant N_0$, on a $x^{p_n}\leqslant x^{\frac{2n}{\varepsilon}}$. Ainsi,
+        \begin{equation}
+            f(x)=\sum_{n=0}^{N_0-1}x^{p_n}+\sum_{n=N_0}^{+\infty}x^{p_n}\leqslant\sum_{n=0}^{N_0-1}x^{p_n}+\sum_{n=N_0}^{+\infty}x^{\frac{2n}{\varepsilon}}=\sum_{n=0}^{N_0-1}x^{p_n}+\frac{1}{1-x^{\frac{2}{\varepsilon}}}.
+        \end{equation}
+        On a $\lim\limits_{x\to1^{-}}(1-x)\sum_{n=0}^{N_0-1}x^{p_n}=0$, donc il existe $\alpha_{1}>0$ tel que pour tout $x\in[1-\alpha_{1}[$, $(1-x)\sum_{n=0}^{N_0-1}x^{p_n}\leqslant\frac{\varepsilon}{3}$, et 
+        \begin{equation}
+            \frac{1-x}{1-x^{\frac{2}{\varepsilon}}}=\frac{u}{1-\left(1-\frac{2u}{\varepsilon}+\underset{u\to0}{o}(u)\right)}\xrightarrow[u\to0]{}\frac{\varepsilon}{2},
+        \end{equation}
+        en posant $u=1-x$. Ainsi, il existe $\alpha_{2}>0$ tel que pour tout $x\in[1-\alpha_{2},1[$, $\frac{1-x}{1+x^{\frac{2}{\varepsilon}}}\leqslant\frac{2\varepsilon}{3}$. Ainsi, en posant $\alpha=\min\left(\alpha_{1},\alpha_{2}\right)$, si $x\in[1-\alpha,1[$, alors $f(x)(1-x)\leqslant\varepsilon$.
+
+        \item On suppose $\lim\limits_{x\to1^{-}}(1-x)f(x)=0$. On pose, pour tout $k\geqslant1,x_{k}=1-\frac{1}{k}$. Alors on a 
+        \begin{align}
+            (1-x_k)f(x_k)
+            &=\frac{1}{k}\left(\sum_{n=0}^{N_0-1}\left(1-\frac{1}{k}\right)^{p_n}\right)+\sum_{n=k}^{+\infty}\left(1-\frac{1}{k}\right)^{p_n},\\
+            &\geqslant \sum_{n=k}^{+\infty}\frac{1}{k}\left(1-\frac{1}{k}\right)^{p_n},\\
+            &\geqslant\sum_{n=k}^{+\infty}\frac{1}{n}\left(1-\frac{1}{k}\right)^{p_n}.
+        \end{align}
+        Donc $\lim\limits_{k\to+\infty}\sum_{n=k}^{+\infty}\frac{1}{n}\left(1-\frac{1}{k}\right)^{p_n}=0$.
+
+        %% A voir
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    On suppose que $R_{1}$ et $R_{2}$, les rayons de convergence de $U(z)$ et $V(z)$ sont strictement positifs. Soit $R=\min(R_1,R_2)>0$. Pour tout $n\in\N$, pour tout $z\in D(0,R)$, on a $u_{n+1}z^{n+1}=\left(u_nz^{n}-v_nz^{n}\right)z$ et $v_{n+1}z^{n+1}=\left(u_nz^{n}-2v_nz^{n}\right)z$. On somme sur $\N$ et on obtient
+    \begin{equation}
+        \begin{array}[]{rcl}
+            U(z)-u_0 &=& z\left(U(z)-V(z)\right),\\
+            V(z)-v_0 &=& z\left(U(z)-2V(z)\right).
+        \end{array}
+    \end{equation}
+
+    Ainsi,
+    \begin{equation}
+        \begin{array}[]{rcl}
+            U(z)(z-1)-zV(z) &=& -U_0,\\
+            zU(z)-V(z)(2z+1) &=& -V_0.
+        \end{array}
+    \end{equation}
+
+    Le déterminant du système est 
+    \begin{equation}
+        \begin{vmatrix}
+            z-1 & -z\\
+            z -(2z+1)
+        \end{vmatrix}=-z^{2}+z+1.
+    \end{equation}
+    Le discriminant est $\Delta=5$. Soit $z_{1}=\frac{1-\sqrt{5}}{2}$ et $z_2=\frac{1+\sqrt{5}}{2}$. On a $\left\lvert z_1\right\rvert=\frac{\sqrt{5}-1}{2}<\left\lvert z_2\right\rvert$.
+
+    Si $z\not\in\left\lbrace z_1,z_2\right\rbrace$, on peut utiliser les formules de Cramer. Ainsi,
+    \begin{equation}
+        \begin{array}[]{l}
+            U(z) = \frac{
+                \begin{vmatrix}
+                    -u_0 & -z\\
+                    -v_0 & -(2z+1)
+                \end{vmatrix}
+            }{-z^{2}+z+1}=\frac{(2z+1)u_0-v_0z}{-z^{2}+z+1},\\
+            V(z)= \frac{
+                \begin{vmatrix}
+                    z-1 & -u_0\\
+                    z & -v_0
+                \end{vmatrix}
+            }{-z^{2}+z+1}=\frac{-v_0(z-1)+u_0z}{-z^{2}+z+1}.
+        \end{array}
+    \end{equation}
+
+    Réciproquement, en définissant ainsi $U$ et $V$, ce sont des fractions rationnelles de $z_1$ et $z_2$ donc développable en séries entières avec un rayon de convergence à $\left\lvert z_1\right\rvert=\frac{\sqrt{5}-1}{2}$. En remontant les calculs, les coefficients vérifient les relations de récurrence.
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si $\theta\in\left\lbrace0,\pi\right\rbrace$, $f(z)=0$. Sinon, on a $f(z)=\frac{\sin(\theta)}{\left(z-\e^{\i\theta}\right)\left(z-\e^{-\i\theta}\right)}\in\R(z)$. On prend $\left\lvert z\right\rvert<1$. Il existe $(A,B)\in\C^{2}$ tel que $f(z)=\frac{A}{z-\e^{\i\theta}}+\frac{B}{z-\e^{-\i\theta}}$. On trouve $A=-\frac{\i}{2}$ et $B=\overline{A}=\frac{\i}{2}$. En remplaçant, on a 
+        \begin{align}
+            f(z)
+            &= \frac{\i}{2}\left(\frac{1}{z-\e^{-\i\theta}}-\frac{1}{z-\e^{\i\theta}}\right),\\
+            &= \frac{\i}{2}\left(-\frac{\e^{\i\theta}}{1-z\e^{\i\theta}}+\frac{\e^{-\i\theta}}{1-z\e^{-\i\theta}}\right),\\
+            &=\frac{\i}{2}\left(\sum_{n=0}^{+\infty}\left(-\e^{\i\theta}\left(z\e^{\i\theta}\right)^{n}+\e^{-\i\theta}\left(z\e^{-\i\theta}\right)^{n}\right)\right),\\
+            &=\sum_{n=0}^{+\infty}\sin\left((n+1)\theta\right)z^{n}.
+        \end{align}
+
+        \item Pour $\left\lvert z\right\rvert<1$, défini car $z\not\in\left\lbrace\e^{\i\theta},\e^{-\i\theta}\right\rbrace$, on a 
+        \begin{equation}
+            I(z)=\int_{0}^{+\infty}\sum_{n=0}^{+\infty}\underbrace{\sin\left((n+1)\theta\right)z^{n}}_{f_n(\theta)}\d\theta.
+        \end{equation}
+        Comme $\left\lvert f_n(\theta)\right\rvert\leqslant\left\lvert z\right\rvert^{n}$, terme général d'une série à termes positifs convergentes car $\left\lvert z\right\rvert<1$, $\sum f_n$ convergent normalement sur $[0,\pi]$. On peut donc intervertir, et on a 
+        \begin{equation}
+            I(z)=\sum_{n=0}^{+\infty}\int_{0}^{\pi}\sin\left((n+1)\theta\right)\d\theta=2\sum_{k=0}^{+\infty}\frac{z^{2k}}{2k+1}.
+        \end{equation}
+        Pour $x\in]-1,1[$, soit $g(x)=xI(x)=2\sum_{k=0}^{+\infty}\frac{x^{2k+1}}{2k+1}$. On a $g'(x)=\frac{2}{1-x^{2}}=\frac{1}{1-x}+\frac{1}{1+x}$. On a $g(0)=0$, donc $g(x)=\ln\left(\frac{1+x}{1-x}\right)$ et $I(x)=\frac{1}{x}\ln\left(\frac{1+x}{1-x}\right)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Si $\left\lvert x\right\rvert>1$, on a $I(x)=\frac{1}{x^{2}}I\left(\frac{1}{x}\right)=\frac{1}{x}\ln\left(\frac{x+1}{x-1}\right)$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a $\mathbb{E}(Y^{k})=\sum_{p=1}^{n}p^{k}\mathbb{P}\left(Y=p\right)$ pour tout $k\in\left\llbracket1,n\right\rrbracket$. Ainsi,
+        \begin{equation}
+            \begin{pmatrix}
+                \mathbb{E}(Y)\\
+                \vdots\\
+                \mathbb{E}(Y^{n})\\
+            \end{pmatrix}=
+            \underbrace{
+                \begin{pmatrix}
+                    1&2&\dots&n\\
+                    \vdots&2^{2}&\dots&n^{2}\\
+                    \vdots & \vdots &\vdots & \vdots\\
+                    1&2^{n}&\dots&n^{n}
+                \end{pmatrix}
+            }_{A}
+            \begin{pmatrix}
+                \mathbb{P}(Y=1)\\
+                \dots\\
+                \mathbb{P}(Y=n)
+            \end{pmatrix}.
+        \end{equation}
+        On a $\det(A)=n! \text{VdM}(1,\dots,n)\neq0$. $A$ est inversible puis
+        \begin{equation}
+            \begin{pmatrix}
+                \mathbb{P}(Y=1)\\
+                \dots\\
+                \mathbb{P}(Y=n)
+            \end{pmatrix}=
+            A^{-1}
+            \begin{pmatrix}
+                \mathbb{E}(Y)\\
+                \vdots\\
+                \mathbb{E}(Y^{n})\\
+            \end{pmatrix}.
+        \end{equation}
+
+        Donc $\left(\mathbb{E}(Y^{k})\right)_{k\in\left\llbracket1,n\right\rrbracket}$ caractérise la loi de $Y$.
+
+        \item Soit $n\geqslant1$. On a $k^{n}\mathbb{P}(Y=k)=\underset{K\to+\infty}{O}\left(\frac{1}{k^{2}}\right)$ (car $a<1$). Donc $Y$ possède un moment à tout ordre. Formons la série génératrice de $Y$: $G_Y(t)=\sum_{k=0}^{+\infty}\mathbb{P}\left(Y=k\right)t^{k}$ de rayon $R$ supérieur à $\frac{1}{a}$. $G_Y$ est $\mathcal{C}^{\infty}$ sur $\left[0,\frac{1}{a}\right[$. Ainsi,
+        \begin{equation}
+            \begin{array}[]{rcl}
+                G_Y'(1) &=&\sum_{k=0}^{+\infty}y\mathbb{P}(Y=k)=\mathbb{E}(Y),\\
+                G_Y''(1) &=& \sum_{k=0}^{+\infty}k(k-1)\mathbb{P}(Y=k)=\mathbb{E}(Y^{2})-\mathbb{E}(Y),\\
+                \vdots\\
+                G_Y^{(n)}(1) &=& \sum_{k=0}^{+\infty}k(k-1)\dots(k-n+1)\mathbb{P}(Y=k)=\mathbb{E}(Y^{n})+\sum_{k=0}^{+\infty}A(k)\mathbb{P}(Y=k),
+            \end{array}
+        \end{equation}
+        avec $A\in\Z[X]$ de degré inférieur ou égal à $n-1$. Donc $\left(\mathbb{E}(Y^{n})\right)_{n\in\N^{*}}$ déterminent $\left(G_Y(1)\right)_{n\in\N^{*}}$.
+
+        \begin{lemma}
+            \label{lem:2}
+            Soit $f(z)=\sum_{n=0}^{+\infty}a_nz^{n}$ de rayon de convergence supérieur ou égal à $R$. Soit $z_0\in D(0,R)$, alors il existe $(b_n)_{n\in\N}\in\C^{\N}$ tel que pour tout $h\in D(0,R-\left\lvert z_0\right\rvert)$, $f(z_{0}+h)=\sum_{n=0}^{+\infty}b_n h^{n}$.
+        \end{lemma}
+        \begin{proof}[Preuve du lemme~\ref{lem:2}]
+            Soit $h\in D(0,R-\left\lvert z_0\right\rvert)$, on a $\left\lvert z_{0}+h\right\rvert\leqslant\left\lvert z_0\right\rvert+\left\lvert h\right\rvert<R$. On a donc 
+            \begin{equation}
+                f(z_{0}+h)=\sum_{n=0}^{+\infty}a_n (z_{0}+h)^{n}=\sum_{n=0}^{+\infty}a_n\sum_{k=0}^{+\infty}\binom{n}{k}z_{0}^{n-k}h^{k}=\sum_{n=0}^{+\infty}\sum_{k=0}^{+\infty}\alpha_{n,k}h^{k},
+            \end{equation}
+            avec $\alpha_{n,k}=\binom{n}{k}a_nz_{0}^{n-k}$ si $k\leqslant n$ et 0 sinon. Or 
+            \begin{equation}
+                \sum_{n=0}^{+\infty}\sum_{k=0}^{+\infty}\left\lvert \alpha_{n,k}\right\rvert\left\lvert h\right\rvert^{k}=\sum_{n=0}^{+\infty}\left\lvert a_n\right\rvert\sum_{k=0}^{n}\binom{n}{k}\left\lvert z_{0}\right\rvert^{n-k}\left\lvert h\right\rvert^{k}=\sum_{n=0}^{+\infty}\left\lvert a_n\right\rvert\left(\left\lvert h\right\rvert+\left\lvert z_{0}\right\rvert\right)^{n}<+\infty,
+            \end{equation}
+            
+            car $\left\lvert h\right\rvert+\left\lvert z_{0}\right\rvert<R$. D'après le théorème de Fubini, on a $f(z_{0}+h)=\sum_{k=0}^{+\infty}\underbrace{\left(\sum_{n=0}^{+\infty}\alpha_{n,k}\right)}_{b_k}h^{k}$.
+        \end{proof}
+
+        On a pour tout $h\in\R$ tel que $\left\lvert h\right\rvert<\frac{1}{a}-1$. On a $G_Y(1+h)=\sum_{n=0}^{+\infty}b_nh^{n}$ et $b_n=\frac{G_Y^{(n)}(1)}{n!}$. Or $\mathbb{P}(Y=k)=k!G_Y^{(k)}(0)$. On peut encore développer $G_Y$ au voisinage de $2-\frac{1}{a}$, et de proche en proche, au voisinage de $1-2^{k}\left(\frac{1}{a}-1\right)$, jusqu'à 0. On retrouve ainsi la loi de $Y$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Pour tout $t\in[0,2\pi]$, on a $\left\lvert r\e^{\i t}\right\rvert>\left\lvert z\right\rvert$, donc $r\e^{\i t}-z\neq0$ et $g$ est bien définie. Soit 
+        \function{F}{[0,1]\times[0,2\pi]}{\C}{(\lambda,t)}{
+            \frac{f\left((1-\lambda)z+\lambda r\e^{\i t}\right)-f(z)}{r\e^{\i t}-z}r\e^{\i t}
+        }
+        $F$ est continue sur $[0,1]\times[0,2\pi]$ et $[0,1]\times[0,2\pi]$ est compact donc $F$ est bornée. Ainsi, $g$ est continue (théorème de continuité des intégrales à paramètres). 
+
+        On a $\frac{\partial F}{\partial \lambda}(\lambda,t)=f'\left((1-\lambda)z+\lambda r\e^{\i t}\right)r\e^{\i t}$. C'est une fonction continue sur $[0,1]\times[0,2\pi]$, donc bornée. D'après le théorème de Leibniz, $g$ est de classe $\mathcal{C}^{1}$. Ainsi, pour tout $\lambda\in]0,1]$, on a 
+        \begin{equation}
+            g'(\lambda)=\int_{0}^{2\pi}f'\left((1-\lambda)z+\lambda r\e^{\i t}\right)r\e^{\i t}\d t=\left[\frac{1}{\i\lambda}f\left((1-\lambda)z+\lambda r\e^{\i t}\right)\right]_{0}^{2\pi}=0,
+        \end{equation}
+        par continuité de $g'$, c'est aussi vrai en $\lambda=0$. Donc $g$ est constante sur $[0,1]$. De plus, $g(0)=0=g(1)=\int_{0}^{2\pi}\frac{f\left(r\e^{\i t}\right)-f(z)}{r\e^{\i t}-z}r\e^{\i t}\d t$. Donc 
+        \begin{equation}
+            f(z)\int_{0}^{2\pi}\frac{r\e^{\i t}}{r\e^{\i t}-z}\d t=\int_{0}^{2\pi}\frac{f\left(r\e^{\i t}\right)-f(z)}{r\e^{\i t}-z}r\e^{\i t}\d t.
+        \end{equation}
+        Pour tout $t\in[0,2\pi]$, on a $\frac{r\e^{\i t}}{r\e^{\i t}-z}=\frac{1}{1-\frac{z}{r}\e^{\i t}}$. Comme $\left\lvert\frac{z}{r}\right\rvert<1$, on a 
+        \begin{equation}
+            \frac{r\e^{\i t}}{r\e^{\i t}-z}=\sum_{n=0}^{+\infty}\left(\frac{z\e^{-\i t}}{r}\right)^{n}.
+        \end{equation}
+        De plus, $\left\lvert \frac{z\e^{-\i t}}{r}\right\rvert^{n}=\left\lvert\frac{z}{r}\right\rvert^{n}$, terme général d'une série à termes positifs convergente indépendant de $t$, et on a 
+        \begin{equation}
+            \left\lvert f\left(r\e^{\i t}\right)\frac{z\e^{-\i t}}{r}\right\rvert^{n}\leqslant\left\lVert f\right\rVert_{\infty,\mathcal{C}(0,r)}\left\lvert\frac{z}{r}\right\rvert^{n}.
+        \end{equation}
+
+        Ainsi, on a 
+        \begin{equation}
+            f(z)\times\sum_{n=0}^{+\infty}\int_{0}^{2\pi}\left(\frac{z\e^{-\i t}}{r}\right)^{n}\d t=\sum_{n=0}^{+\infty}\int_{0}^{2\pi}\left(f\left(r\e^{\i t}\right)\frac{z\e^{-\i t}}{r}\right)^{n}\d t=\sum_{n=0}^{+\infty}\left(\frac{z}{r}\right)^{k}\underbrace{\int_{0}^{2\pi}\e^{-\i nt}\d t}_{2\pi\delta_{n,0}}.
+        \end{equation}
+
+        Ainsi,
+        \begin{equation}
+            f(z)=\sum_{n=0}^{+\infty}\left(\frac{z}{r}\right)^{n}\int_{0}^{2\pi}f\left(r\e^{\i t}\right)\e^{-\i nt}\d t.
+        \end{equation}
+
+        Ceci valant pour $t\in]0,R[$ fixé, pour tout $z\in D(0,r)$, $f(z)=\sum_{n=0}^{+\infty}a_n z^{n}$. Donc pour tout $n\in\N$, $a_n=\frac{f^{(n)}(0)}{n!}$, qui ne dépend pas de r. Ainsi, $f$ est développable en série entière sur tout $D(0,R)$.
+
+        \item On applique ce qui précède à $h\mapsto f(z_{0}+h)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    $f$ est $\mathcal{C}^{1}$ au sens complexe si et seulement si $f$ est développable en série entière au voisinage de tout point $z_{0}\in U$ (avec un rayon de convergence plus grand que $d(z_{0},\partial U)$) si et seulement si $f$ est $\mathcal{C}^{\infty}$ au sens complexe.
+\end{remark}
+
+\begin{remark}[Théorème de Liouville]
+    Si $f$ est $\mathcal{C}^{1}$ au sens complexe de $\C\to\C$, alors il existe $(a_n)_{n\in\N}$ telle que pour tout $z\in\C$, $f(z)=\sum_{n=0}^{+\infty}a_nz^{n}$ (rayon de convergence $+\infty$) et pour tout $r>0$,
+    \begin{equation}
+        a_n=\frac{1}{2\pi r^{n}}\int_{0}^{2\pi}f\left(r\e^{\i t}\right)\e^{-\i nt}\d t.
+    \end{equation}
+    Si de plus $f$ est bornée sur $\C$ et pour tout $n\geqslant1$, pour tout $r>0$, on a $\left\lvert a_n\right\rvert\leqslant\frac{\left\lVert f\right\rVert_{\infty}}{r^{n}}$. Quand $r\to+\infty$, on a $a_n=0$ donc $f$ est constante.
+
+    Application : soit $P\in\C[X]$ non constant. Comme $\lim\limits_{\left\lvert z\right\rvert}\left\lvert P(z)\right\rvert=+\infty$. On sait qu'il existe $m=\min\limits_{z\in\C}\left\lvert P(z)\right\rvert$, et si $m>0$, $f=\frac{1}{P}$ est $\mathcal{C}^{1}$ au sens complexe et bornée sur $\C$ donc constante : impossible. On vient de redémontrer le théorème de d'Alembert Gauss.
+\end{remark}
+
+\begin{proof}
+    Soit $x\neq0$. Si, pour tout $p\in\N$, $u_p=\left\lvert\frac{x^{3p}}{(3p)!}\right\rvert>0$, on a 
+    \begin{equation}
+        \frac{u_{p+1}}{u_{p}}=\frac{x^{3}}{(3p+1)(3p+2)-3p+3}\xrightarrow[p\to+\infty]{}0.
+    \end{equation}
+    Donc le rayon de convergence est $R=+\infty$.
+
+    Notons $S_1(x)=\sum_{n=0}^{+\infty}\frac{x^{3n+1}}{(3n+1)!}$ et $S_2(x)=\sum_{n=0}^{+\infty}\frac{x^{3n+2}}{(3n+2)!}$. On a 
+    \begin{equation}
+        \begin{array}[]{rcl}
+            S_0(x)+S_1(x)+S_2(x) &=& \sum_{n=0}^{+\infty}\frac{x^{n}}{n!}=\e^{x},\\
+            S_0(x)+\j S_{1}(x)+\j^{2}S_{2}(x) &=& \e^{\j x},\\
+            S_0(x)+\j^{2} S_{1}(x)+\j S_{2}(x) &=& \e^{\j^{2} x}.
+        \end{array}
+    \end{equation}
+
+    En effet, $\j=\j^{3n+1}$ et $\j^{2}=\j^{3n+2}$ pour tout $n\in\N$. En sommant, on a $3S_{0}(x)=\e^{x}+\e^{\j x}+\e^{\j^{2}x}$. Donc 
+    \begin{equation}
+        \boxed{
+            S_0(x)=\frac{1}{3}\left(\e^{x}+\e^{-\frac{1}{2}x}+2\cos\left(\frac{\sqrt{3}}{2}x\right)\right).
+        }
+    \end{equation}
+\end{proof}
+
+\begin{remark}
+    Autre méthode possible : on a $S_2'(x)=S_1(x)$ et $S_1'(x)=S_0(x)$. Donc $S_{2}''(x)+S_2'(x)+S_2(x)=\e^{x}$. L'équation homogène a pour solution générale $\lambda \e^{\j x}+\mu\e^{\j^{2}x}$, avec une solution particulière $P(x)\e^{x}$, avec $P$ constante car $1$ n'est pas racine de $X^{2}+X+1$. On trouve $\frac{\e^{x}}{3}$, donc $S_2(x)=\frac{\e^{x}}{3}+\lambda\e^{\j x}+\mu\e^{\j^{2}x}$, on identifie $S_2(0)=0$ et $S_2'(0)=0$, puis $S_0=S_2''$.
+\end{remark}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Si \function{f_1}{\R}{\R}{x}{f(x)}
+        on a pour tout $n\in\N$, $a_n=\frac{f_1^{(n)}(0)}{n!}\in\R$.
+        \item Soit $\theta\in[0,\pi]$, on a 
+        \begin{align}
+            v\left(r\e^{\i\theta}\right)
+            &=\sum_{n=0}^{+\infty}a_n\Im\left(r^{m}\e^{\i\theta n}\right),\\
+            &=\sum_{n=0}^{+\infty}a_n r^{n}\sin\left(n\theta\right),
+        \end{align}
+        car les $a_n\in\R$.
+
+        Pour $m\geqslant1$ fixé, on a
+        \begin{equation}
+            v\left(r\e^{\i\theta}\right)\sin(m\theta)=\sum_{n=0}^{+\infty}a_n r^{n}\sin(n\theta)\sin(m\theta)=\sum_{n=0}^{+\infty}f_n(\theta),
+        \end{equation}
+        avec $f_n$ continue sur $[0,\pi]$. Pour tout $n\in\N$, pour tout 
+        $\theta\in[0,\pi]$, $\left\lvert f_n(\theta)\right\rvert\leqslant\left\lvert a_n r^{n}\right\rvert$, terme général d'une série à termes positifs convergente car $R=+\infty$. Donc $\sum f_n$ converge normalement sur $[0,\pi]$, on peut intervertir
+        \begin{align}
+            \int_{0}^{\pi}v\left(r\e^{\i\theta}\right)\sin(m\theta)\d\theta
+            &=\sum_{n=0}^{+\infty}a_n r^{n}\int_{0}^{\pi}\sin(n\theta)\sin(m\theta)\d\theta,\\
+            &=a_m r^{m}\frac{\pi}{2}.
+        \end{align}
+        
+        \item
+        \begin{lemma}
+            \label{lem:3}
+            Pour tout $m\in\N$, on a $\left\lvert\sin(m\theta)\right\rvert\leqslant m\left\lvert\sin(\theta)\right\rvert$.
+        \end{lemma}
+        \begin{proof}[Preuve du lemme~\ref{lem:3}]
+            Par récurrence, car 
+            \begin{align}
+                \left\lvert\sin\left((m+1)\theta\right)\right\rvert
+                &=\left\lvert\sin(m\theta)\cos(\theta)+\sin(\theta)\cos(m\theta)\right\rvert,\\
+                &\leqslant \left\lvert\sin(m\theta)\right\rvert+\left\lvert\sin(\theta)\right\rvert,\\
+                &\leqslant (m+1)\left\lvert\sin(\theta)\right\rvert.
+            \end{align}
+        \end{proof}
+
+        Donc 
+        \begin{equation}
+            \left\lvert r^{m}a_m\right\rvert\leqslant\frac{2}{\pi}\int_{0}^{\pi}\left\lvert v(r\e^{\i\theta})\right\rvert m\left\lvert \sin(\theta)\right\rvert\d\theta.
+        \end{equation}
+        $\sin$ est positif sur $[0,\pi]$, et pour tout $\theta\in]0,\pi[$, si $v(r\e^{\i\theta})=0$, $f(r\e^{\i\theta})\in\R$ donc $r\e^{\i\theta}\in\R$ ce qui est exclu. Ainsi, $v(r\e^{\i\theta})$ a un signe constant sur $[0,pi]$, et 
+        \begin{equation}
+            \left\lvert\int_{0}^{\pi}v(r\e^{\i\theta})\sin(m\theta)\d\theta\right\rvert=\int_{0}^{\pi}\left\lvert v(r\e^{\i\theta})\right\rvert\sin(\theta)\d\theta.
+        \end{equation}
+
+        Finalement, on a $\left\lvert r^{m}a_m\right\rvert\leqslant mr\left\lvert a_1\right\rvert$, d'où $\left\lvert a_m\right\rvert\leqslant\frac{m}{r^{m-1}}\left\lvert a_1\right\vert$. Pour $m\geqslant2$, lorsque $r\to+\infty$, on obtient $a_m=0$. Donc $f$ est affine.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item On a 
+        \begin{equation}
+            \int_{0}^{2\pi}r^{\left\lvert k\right\rvert}f\left(\e^{\i(x-t)}\right)\d t=\int_{0}^{2\pi}\sum_{n=0}^{+\infty}\underbrace{a_n\e^{\i n(x-t)+\i kt}}r^{\left\lvert k\right\rvert}_{f_n(t)}\d t.
+        \end{equation}
+        $f_n$ est continue sur $[0,2\pi]$, avec $\left\lvert f_n(t)\right\rvert\leqslant\left\lvert a_n r^{\left\lvert k\right\rvert}\right\rvert$ terme général d'une série à termes positifs convergente. donc $\sum_{n\geqslant0}f_n(t)$ converge normalement sur $[0,2\pi]$. Ainsi,
+        \begin{align}
+            \int_{0}^{2\pi}r^{\left\lvert k\right\rvert}\e^{\i kt}f\left(\e^{\i(x-t)}\right)\d t
+            &=\sum_{n=0}^{+\infty}a_n\e^{\i nx}r^{\left\lvert k\right\rvert}\int_{0}^{2\pi}\e^{\i kt}\e^{-\i nt}\d t,\\
+            &=
+            \left\lbrace
+                \begin{array}[]{ll}
+                    2\pi r^{\left\lvert k\right\rvert}a_{k}\e^{\i kx} &\text{si }k\geqslant0,\\
+                    0 &\text{sinon.}
+                \end{array}
+            \right.
+        \end{align}
+
+        Puis 
+        \begin{equation}
+            \int_{0}^{+\infty}P_r(t)f\left(\e^{\i(x-t)}\right)\d t=\int_{0}^{2\pi}\sum_{k=-\infty}^{+\infty}\underbrace{r^{\left\lvert k\right\rvert}\e^{\i kt}f\left(\e^{\i (x-t)}\right)}_{g_k(t)}\d t.
+        \end{equation}
+        $g_k$ est continue sur $[0,2\pi]$, et $\left\lvert g_k(t)\right\rvert\leqslant r^{\left\lvert k\right\rvert}\left\lVert f\right\rVert_{\infty,\overline{D(0,1)}}$ et $\sum_{k\in\Z}r^{\left\lvert k\right\rvert}<\infty$. On a donc convergence normale sur $[0,2\pi]$, et 
+        \begin{align}
+            \int_{0}^{2\pi}P_r(t)f\left(\e^{\i(x-t)}\right)\d t
+            &=\sum_{k=-\infty}^{+\infty} r^{\left\lvert k\right\rvert}\int_{0}^{2\pi}\e^{\i kt}f\left(\e^{\i(x-t)}\right)\d t,\\
+            &=\sum_{k=0}^{+\infty} 2\pi r^{k}a_k\e^{\i kx},\\
+            &=2\pi f\left(r\e^{\i x}\right).
+        \end{align}
+
+        \item On a 
+        \begin{align}
+            P_r(x)
+            &=\sum_{k=0}^{+\infty}r^{k}\e^{\i kx}+\sum_{k=0}^{+\infty}r^{k}\e^{-\i kx}-1,\\
+            &=\frac{1}{1-r\e^{\i x}}+\frac{1}{1-r\e^{-\i x}}-1,\\
+            &=\frac{1-r^{2}}{1+r^{2}-2r\cos(x)},
+        \end{align}
+        et $1+r^{2}-2r\cos(x)=\left(1-r\cos(x)\right)^{2}+r^{2}\sin^{2}(x)>0$, donc $P_r>0$. On applique le résultat du a) pour $f=1$ et on obtient 
+        \begin{equation}
+            \frac{1}{2\pi}\int_{0}^{2\pi}P_r(t)\d t=1.
+        \end{equation}
+
+        \item Si $f(\U)\subset\U$, prenons $z\in D(0,1)$, soit $z+r\e^{\i x}$, $r\in[0,1[$ et $x\in\R$,
+        \begin{align}
+            \left\lvert f\left(r\e^{\i x}\right)\right\rvert 
+            &= \left\lvert \frac{1}{2\pi}\int_{0}^{2\pi}P_r(t)f\left(\e^{\i(x-t)}\right)\d t\right\rvert,\\
+            &\leqslant\frac{1}{2\pi}\int_{0}^{2\pi}P_r(t)\left\lvert f\left(\e^{\i(x-t)}\right)\right\rvert\d t,\\
+            &\leqslant\frac{1}{2\pi}\int_{0}^{2\pi}P_r(t)\d t=1.
+        \end{align}
+        Donc $f(z)\in\overline{D(0,1)}$ et $f\left(\overline{D(0,1)}\right)\subset\overline{D(0,1)}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item L'espérance vaut la série harmonique $H_n\underset{n\to+\infty}{\sim}\ln(n)$ par linéarité. Par indépendance, la variance vaut $\sum_{k=1}^{n}\frac{1}{k}\left(1-\frac{1}{k}\right)\underset{n\to+\infty}{\sim}\ln(n)$.
+        \item On a 
+        \begin{equation}
+            \left(\left\lvert \frac{R_n}{\ln(n)}-1\right\rvert\right)\subset \underbrace{\left(\left\lvert \frac{R_n}{\ln(n)}-\frac{\mathbb{E}(R_n)}{\ln(n)}\right\rvert>\frac{\varepsilon}{2}\right)}_{B_n}\bigcup\underbrace{\left(\left\lvert\frac{\mathbb{E}(R_n)}{\ln(n)}-1\right\rvert>\frac{\varepsilon}{2}\right)}_{C_n}.
+        \end{equation}
+        $C_n$ est nul à partir d'un certain rang car $\lim\limits_{n\to+\infty}\frac{\mathbb{E}(R_n)}{\ln(n)}=1$. De plus, 
+        \begin{equation}
+            B_n=\left(\left\lvert R_n-\mathbb{E}(R_n)\right\rvert\frac{\varepsilon}{2}\ln(n)\right),    
+        \end{equation}
+        donc d'après l'inégalité de Bienaymé-Tchebychev, $B_n<\frac{4\mathbb{V}(R_n)}{\varepsilon^{2}\ln^{2}(n)}\underset{n\to+\infty}{\sim}\frac{4}{\varepsilon^{2}\ln(n)}\xrightarrow[n\to+\infty]{}0$.
+
+        \item On a 
+        \begin{align}
+            G_{R_n}(t)
+            &=\mathbb{E}\left(t^{R_n}\right),\\
+            &=\prod_{k=1}^{n}\mathbb{E}(t^{\chi_{A_k}}),\\
+            &=\prod_{k=1}^{n}\left(1-\frac{1}{k}+\frac{t}{k}\right),\\
+            &=\frac{t}{n!}\prod_{k=1}^{n}\left(k-1+t\right),
+        \end{align}
+        car les $(\chi_{A_k})_{k\geqslant1}$ sont indépendants. $\mathbb{P}(R_n=1)$ est le coefficient en $t$ de $G_{R_n}$, et vaut donc $\frac{(n-1)!}{n!}=\frac{1}{n}$. De même, $\mathbb{P}(R_n=2)$ est le coefficient en $t^{2}$ de $G_{R_n}$ et vaut donc $\frac{1}{n!}\sum_{k=2}^{n}\frac{(n-1)!}{k-1}=\frac{1}{n}\sum_{k=1}^{n-1}\frac{1}{k}$.
+
+        \item On a $T_n=\sum_{k=na+1}^{nb}\chi_{A_k}$, donc 
+        \begin{equation}
+            G_{T_n}(t)=\prod_{k=na+1}^{nb}\left(1-\frac{1}{k}+\frac{t}{k}\right).
+        \end{equation}
+        Ainsi, $\ln\left(G_{T_n}(t)\right)=\sum_{k=na+1}^{nb}\ln\left(1+\frac{t-1}{k}\right)$. Pour $x>1$, soit $g(x)=\ln(1+x)-x+\frac{x^{2}}{2}$. On a $g'(x)=\frac{x^{2}}{1+x}\geqslant0$ et $g(0)=0$ donc $g\geqslant0$.
+
+        On a 
+        \begin{equation}
+            \sum_{k=na+1}^{nb}\frac{t-1}{k}-\frac{1}{2}\sum_{k=na+1}^{nb}\left(\frac{t-1}{k}\right)^{2}\leqslant\ln\left(G_n(t)\right)\leqslant\sum_{k=na+1}^{nb}\frac{t-1}{k}.
+        \end{equation}
+        Comme $0\leqslant\frac{1}{2}\sum_{k=na+1}^{nb}\left(\frac{t-1}{k}\right)^{2}\leqslant\frac{(t-1)^{2}}{2}\sum_{k=na+1}^{+\infty}\frac{1}{k^{2}}\xrightarrow[n\to+\infty]{}0$, et $\sum_{k=na+1}^{nb}\frac{t-1}{k}=(t-1)(H_{nb}-H_{na})\xrightarrow[n\to+\infty]{}(t-1)\ln\left(\frac{b}{a}\right)$.
+        Donc $\lim\limits_{n\to+\infty}G_{T_n}(t)=\e^{\ln\left(\frac{b}{a}\right)(t-1)}$. Il s'agit de la fonction génératrice d'une variable aléatoire suivant une loi de Poisson de paramètre $\ln\left(\frac{a}{b}\right)$.
+    \end{enumerate}
+\end{proof}
 
 \end{document}

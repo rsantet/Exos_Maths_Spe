@@ -1695,4 +1695,17 @@
     \end{equation}
 \end{proof}
 
+\begin{proof}
+    Soit $x>0$, notons $f_n(x)=(-1)^{n}\e^{-a_n x}$ continue. $\sum_{n\in\N}f_n(x)$ est une série alternée. Pour tout $n\in\N$, on a $\left\lvert f_{n+1}(x)\right\rvert=\e^{-a_{n+1} x}\leqslant\left\lvert f_n(x)\right\rvert$ car $(a_n)_{n\in\N}$ est croissante, $\lim\limits_{n\to+\infty}\left\lvert f_n(x)\right\rvert=0$ car $\lim\limits_{n\to+\infty}a_n=+\infty$ et $x>0$. Donc $S(x)$ est définie sur $\R_{+}^{*}$.
+
+    Pour tout $n\in\N$, $f_n$ est continue. Soit $\alpha>0$, pour tout $x\in[\alpha,+\infty[$, $\left\lvert\sum_{n=N}^{+\infty}f_n(x)\right\rvert\leqslant\e^{-a_{N}x}\leqslant\e^{-a_N \alpha}\xrightarrow[N\to+\infty]{}0$ d'après le critère spécial des séries alternées. Il y a donc convergence uniforme sur $[\alpha,+\infty[$, donc $S$ est continue sur $\R_{+}^{*}$. On a $\left\lvert S(x)\right\rvert\leqslant\e^{-a_0 x}$ intégrable sur $\R_{+}^{*}$ (encore une fois via le critère spécial des séries alternées). Donc $S$ est intégrable sur $\R_{+}^{*}$. Enfin, d'après le critère spécial des séries alternées, $\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{a_n}$ existe.
+
+    Problème : $\sum\int\left\lvert f_n\right\rvert$ ne converge pas forcément, on ne peut pas appliquer le théorème d'interversion.
+    On le fait donc à la main : pour tout $N\in\N$, on a 
+    \begin{equation}
+        \sum_{n=0}^{N}\int_{0}^{+\infty}f_n(x)\d x\xrightarrow[N\to+\infty]{}\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{a_n}.
+    \end{equation}
+    Soit $R_N(x)=\sum_{n=N}^{+\infty}f_n(x)\d x$. On a $\left\lvert R_N(x)\right\rvert\leqslant\e^{-a_N x}\leqslant \e^{-a_0 x}$ indépendant de $N$ et intégrable sur $\R_{+}^{*}$. D'après le théorème de convergence dominée, on peut intervertir, d'où $\lim\limits_{N\to+\infty}\int_{0}^{+\infty}\sum_{n=N}^{+\infty}f_n(x)\d x=0$.
+\end{proof}
+
 \end{document}

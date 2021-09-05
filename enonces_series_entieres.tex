@@ -14,7 +14,7 @@
     Donner le rayon de convergence de 
     \begin{enumerate}
         \item $\sum_{n\geqslant1}\left(\cosh\left(\frac{1}{n}\right)\right)^{n^{\alpha}}z^{n}$,
-        \item $\sum_{n\geqslant1}\left(1+\frac{(-1)^{n}}{n^{2}}\right)^{n^{3}}$.
+        \item $\sum_{n\geqslant1}\left(1+\frac{(-1)^{n}}{n^{2}}\right)^{n^{3}}z^{n}$.
     \end{enumerate}
 \end{exercise}
 
@@ -82,7 +82,7 @@
 \end{exercise}
 
 \begin{exercise}
-    Soit $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ des suites réelles, on suppose
+    Soit $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ des suites réelles, on suppose que
     \begin{enumerate}[label=\roman*)]
         \item pour tout $n\in\N$, $b_n\geqslant0$,
         \item $a_n\underset{+\infty}{\sim}b_n$,
@@ -94,7 +94,7 @@
 
     \begin{enumerate}
         \item Montrer que $\lim\limits_{x\to1^{-}}g(x)=+\infty$.
-        \item Montrer que $f(x)=\underset{x\to1^{-}}{\sim}g(x)$.
+        \item Montrer que $f(x)\underset{x\to1^{-}}{\sim}g(x)$.
         \item Donner un équivalent simple quand $x\to1^{-}$ de $h_p(x)=\sum_{n=1}^{+\infty}n^{p}x^{n}$ avec $p\in\N$.
     \end{enumerate}
 \end{exercise}
@@ -132,6 +132,174 @@
         \item On pose, pour $n\in\N$ et $x\in[0,A[$, $R_n(x)=\int_{0}^{x}\frac{(x-t)^{n}}{n!}f^{(n+1)}(t)\d t$. Montrer que si $x<y<A$, on a $0\leqslant R_n(x)\leqslant\left(\frac{x}{y}\right)^{n}R_n(y)$.
         \item En déduire que $f$ est développable en série entière sur $[0,A[$.
         \item Application à $\tan$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Déterminer le rayon de convergence de $\sum a_nz^{n}$ si
+    \begin{enumerate}
+        \item $a_n=\sum_{k=n}^{+\infty}\frac{(-1)^{k}}{k}$.
+        \item pour tout $p\in\N$, $a_{3p}=\frac{(-1)^{p}}{2^{p}}$, $a_{3p+1}=3^{p}$ et $a_{3p+2}=0$. Calculer la somme.
+        \item $a_n=\int_{0}^{1}\frac{t^{n}}{1+t+t^{2}}\d t$, et calcul. Quelle est la valeur en -1 ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    On pose $\omega_{0}=1$. Pour tout $n\geqslant1$, $\omega_n$ est le nombre de relations d'équivalence sur $\left\llbracket1,n\right\rrbracket$. On s'intéresse à la série entière $\sum \frac{\omega_n}{n!}z^{n}=\sum a_nz^{n}$, de rayon de convergence $R$, de somme notée $f(z)$.
+    \begin{enumerate}
+        \item Montrer que pour tout $n\in\N$, $\omega_{n+1}=\sum_{k=0}^{n}\binom{n}{k}\omega_k$ et que $\omega_{n}\leqslant n^{n}$ et $R>0$.
+        \item Soit $r>1$ et $n_0=\left\lfloor r\e^{r}\right\rfloor$. On pose $A=\max\limits_{k\leqslant n_0}\frac{\omega_k}{k!}r^{k}$. Montrer que pour tout $n\in\N$, $\frac{\omega_nt^{n}}{n!}\leqslant A$, en déduire $R$.
+        \item Montrer que pour tout $x\in]-R,R[$, $f'(x)=\e^{x}f(x)$, déduire $f(x)$ et une expression de $\omega_n$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    On appelle \og partition\fg d'un entier $n\geqslant0$ toute suite décroissante d'entiers naturels $(t_k)_{k\geqslant1}$ telle que $\sum_{k=1}^{+\infty}t_k=n$ (somme finie). On note $p_n$ le nombre de partitions de $n$. Soit $R$ le rayon de convergence de $\sum_{n\geqslant0}p_n z^{n}=f(z)$.
+    \begin{enumerate}
+        \item Montrer que $R>0$.
+        \item Montrer que pour tout $x\in[0,R[$, on a $f(x)=\prod_{k=1}^{+\infty}\frac{1}{1-x^{k}}$, est-ce encore vrai pour $z\in D(0,R)$ ?
+        \item Évaluer $R$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $U$ un ouvert bornée non vide de $\C$ et $f\colon\overline{U}\to\C$ continue sur $\overline{U}$ analytique sur $U$, c'est-à-dire que pour tout $z_0\in U$, il existe $(a_n)_{n\in\N}\in\C^{\N}$ telle que pour tout $h\in\C$ tel que $\left\lvert h\right\rvert<d(z_{0},\partial U)$, $f(z_{0}+h)=\sum_{n=0}^{+\infty}a_n h^{n}$.
+    \begin{enumerate}
+        \item Montrer que pour tout $z_{0}\in U$ et $r\in[0,d(z_{0},\partial U)[$, on a 
+        \begin{equation}
+            f(z_{0})=\frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_0+r\e^{\i t}\right)\d t.
+        \end{equation}
+        \item En déduire que $\left\lvert f\right\rvert$ atteint son maximum et son minimum sur $\partial U$.
+        \item Que peut-on dire si $f=0$ sur $\partial U$ ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Montrer que l'on peut, pour $q\in\C$, $\left\lvert q\right\rvert<1$ fixé, pour tout $z\in\C$, on a $f(z)=\prod_{k=1}^{+\infty}\left(1-q^{k}z\right)$.
+        \item Montrer que $f$ est développable en série entière.
+        \item De même pour $\frac{1}{f}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $U$ un ouvert de $\C$ et $f\colon U\to\C$ analytique sur $U$ (développable en série entière au voisinage de tout point de $U$).
+    \begin{enumerate}
+        \item Soit $z_{0}\in U$ et $r_0>0, (a_{n})_{n\in\N}$ tels que si $h\in D(0,r_0)$, $f(z_{0}+h)=\sum_{n=0}^{+\infty}a_n h^{n}$. On suppose qu'il existe $\left(\xi_{k}\right)_{k\in\N}\in U^{\N}$ telle que 
+        \begin{enumerate}[label=(\roman*)]
+            \item pour tout $k\in\N$, $\xi_{k}\neq z_{0}$,
+            \item $\lim\limits_{n\to+\infty}\xi_{k}=z_{0}$,
+            \item pour tout $k\in\N$, $f(\xi_{k})=0$.
+        \end{enumerate}
+        Montrer que pour tout $n\in\N$, $a_n=0$.
+
+        \item On suppose de plus que $U$ est connexe par arcs. Montrer que $f=0$ sur $U$. Est-ce encore vrai si $\left(\xi_{k}\right)$ ne converge pas ?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $\theta\in]0,\pi[$.
+    \begin{enumerate}
+        \item Montrer que $f(x)=\ln\left(1-2x\cos(\theta)+x^{2}\right)$ est développable en série entière en 0.
+        \item Qu'en déduit-on relativement à $\sum_{n\geqslant1}\frac{\cos(n\theta)}{n}$ ?
+        \item Calculer $I(x)=\int_{0}^{\pi}\ln\left(1-2x\cos(\theta)+x^{2}\right)\d\theta$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $(p_n)_{n\in\N}$ une suite strictement croissante d'entiers naturels.
+    \begin{enumerate}
+        \item Donner le rayon de convergence de $\sum_{n\geqslant0}x^{p_n}$. On pose $f(x)=\sum_{n\geqslant0}x^{p_n}$.
+        \item On suppose que $n=\underset{n\to+\infty}{o}(p_n)$. Montrer que $\lim\limits_{x\to1^{-}}(1-x)f(x)=0$.
+        \item Réciproque ? %% A voir
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $(u_0,v_0)\in\C^{2}$, et pour tout $n\in\N$, $u_{n+1}=u_n-v_n$ et $v_{n+1}=u_n-2v_n$. DOnner le rayon de convergence et les sommes des séries entières $U(z)=\sum_{n=0}^{+\infty}u_nz^{n}$ et $V(z)\sum_{n=0}^{+\infty}v_nz^{n}$.
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Donner le développement en série entière de $f(z)=\frac{\sin(\theta)}{z^{2}-2z\cos(\theta)+1}$ avec $\theta\in[0,2\pi[$.
+        \item En déduire $I(z)=\int_{0}^{\pi}\frac{\sin(\theta)\d\theta}{z^{2}-z=2z\cos(\theta)+1}.$
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $Y$ une variable aléatoire à valeurs dans $\left\llbracket1,n\right\rrbracket$. Montrer que $\left(\mathbb{E}\left(Y^{k}\right)\right)_{k\in\left\llbracket1,n\right\rrbracket}$ caractérise la loi de $Y$.
+        \item Soit $Y$ une variable aléatoire à valeurs dans $\N$. On suppose qu'il existe $a\in[0,1[$ tel que $\mathbb{P}\left(Y=k\right)=\underset{k\to+\infty}{O}(a^{k})$. Montrer que pour tout $n\in\N^{*}$, $Y^{n}$ a une espérance finie et que $\left(\mathbb{E}(Y^{n})\right)_{n\geqslant1}$ caractérise la loi de $Y$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $U$ un ouvert de $\C$ et $f\colon U\to\C$ $\mathcal{C}^{1}$ au sens complexe, c'est-à-dire que pour tout $z_{0}\in U$, il existe $f'(z_{0})=\lim\limits_{\substack{h\to0\\ h\in\C^{*}}}\frac{f(z_{0}+h)-f(z_{0})}{h}$ et $f'\colon U\to\C$ est continue.
+    \begin{enumerate}
+        \item Montrer que \function{g}{[0,1]}{\C}{\lambda}{
+            \int_{0}^{2\pi}\frac{f\left((1-\lambda)z+\lambda r\e^{\i t}\right)-f(z)}{r\e^{\i t}-z}r\e^{\i t}\d t
+            }
+            est constante. En déduire que $f(z)=\sum_{n=0}^{+\infty}a_nz^{n}$ avec 
+            \begin{equation}
+                a_n=\frac{1}{2\pi r^{n}}\int_{0}^{2\pi}f\left(r\e^{\i t}\e^{-\i nt}\right)\d t.
+            \end{equation}
+            \item Montrer que pour tout $z_{0}\in U$, on a pour $R=d(z_{0},\partial U)$, il existe $(b_n)_{n\in\N}\in\C^{\N}$ tel que pour tout $h\in D(0,R)$, $f(z_{0}+h)=\sum_{n=0}^{+\infty}b_n h^{n}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Calculer, en précisant le domaine de définition,
+    \begin{equation}
+        S_0(x)=\sum_{n=0}^{+\infty}\frac{x^{3n}}{(3n)!}.
+    \end{equation}
+\end{exercise}
+
+\begin{exercise}
+    Soit $f(z)=\sum_{n=0}^{+\infty}a_nz^{n}$. On suppose que pour tout $z\in\C$, $z\in\R$ si et seulement si $f(z)\in\R$.
+    \begin{enumerate}
+        \item Montrer que pour tout $n\in\N$, $a_n\in\R$.
+        \item On pose $v(z)=\Im(f(z))$. Montrer que pour tout $m\geqslant1$, pour tout $r>0$,
+        \begin{equation}
+            \pi r^{m}a_m=2\int_{0}^{\pi}v\left(r\e^{\i\theta}\right)\sin(m\theta)\d\theta,
+        \end{equation}
+        puis que $\left\lvert r^{m}a_m\right\rvert\leqslant mr\left\lvert a_1\right\rvert$.
+        \item En déduire que $f$ est affine.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $\sum a_n z^{n}$ une série entière telle que $\sum\left\lvert a_n\right\rvert$ converge. On définit \function{f}{\overline{D(0,1)}}{\C}{z}{\sum_{n=0}^{+\infty}}
+    On note $P_{r,n}(x)=\sum_{k=-n}^{n}r^{\left\lvert k\right\rvert}\e^{\i kx}$, et pour $r\in[0,1[$, $P_r(x)=\sum_{k=-\infty}^{+\infty}r^{\left\lvert k\right\rvert}\e^{\i kx}$. Il s'agit du noyau de Poisson.
+
+    \begin{enumerate}
+        \item Montrer que pour tout $x\in\R$, pour tout $n\in\N$, pour tout $r\in[0,1[$, 
+        \begin{equation}
+            \frac{1}{2\pi}\int_{0}^{2\pi}r^{\left\lvert k\right\rvert}\e^{\i kx}f\left(\e^{\i(x-t)}\right)\d t=a_k r^{k}\e^{\i kx}.
+        \end{equation}
+        
+        En déduire que
+        \begin{equation}
+            \frac{1}{2\pi}\int_{0}^{2\pi}P_r(t)f\left(\e^{\i(x-t)}\right)\d t=f\left(r\e^{\i x}\right).
+        \end{equation}
+
+        \item Quel est le signe de $P_r$ ? Calculer $\frac{1}{2\pi}\int_{0}^{2\pi}P_r-t)\d t$.
+        \item Montrer que si $f(\U)\subset\U$, alors $f\left(\overline{D(0,1)}\right)\subset\overline{D(0,1)}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Soit $(\Omega,\mathcal{T},\mathbb{P})$ un espace probabilisé, $(A_n)_{n\geqslant1}\in\mathcal{T}^{\N^{*}}$ indépendants tels que pour tout $n\geqslant1$, $\mathbb{P}\left(A_n\right)=\frac{1}{n}$. On pose $R_n=\chi_{A_{k}}$.
+    \begin{enumerate}
+        \item Donner l'espérance et la variance de $R_n$, et donner à chaque fois un équivalent.
+        \item Montrer que pour tout $\varepsilon>0$, 
+        \begin{equation}
+            \lim\limits_{n\to+\infty}\mathbb{P}\left(\left\lvert\frac{R_n}{\ln(n)}-1\right\rvert>\varepsilon\right)=0.
+        \end{equation}
+        \item Donner la fonction génératrice $G_{R_n}$. En déduire $\mathbb{P}(R_n=1)$ et $\mathbb{P}(R_n=2)$.
+        \item Soit $a<b\in\left(\N^{*}\right)^{2}$ et $T_n=R_{nb}-R_{na}$. Donner la fonction génératrice $G_{T_n}$. Déterminer, pour $t\geqslant1$, $\lim\limits_{n\to+\infty}G_{T_n}(t)$. On pourra montrer que pour tout $x\geqslant0$, $x-\frac{x^{2}}{2}\leqslant\ln(1+x)\leqslant x$.
     \end{enumerate}
 \end{exercise}
 
