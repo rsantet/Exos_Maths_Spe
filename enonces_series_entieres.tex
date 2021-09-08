@@ -303,4 +303,103 @@
     \end{enumerate}
 \end{exercise}
 
+\begin{exercise}[Marches aléatoires sur $\Z^{d}$]
+    Soit $X\sim\mathcal{B}(p)$ avec $p\in]0,1[$. Soit $X_n\sim X$ avec $(X_n)_{n\geqslant1}$ indépendants, et $S_n=\sum_{k=1}^{n}X_n$ (avec $S_0=0$).
+    Soit
+    \begin{equation}
+        T=
+        \left\lbrace
+            \begin{array}[]{ll}
+                \min\left\lbrace n\geqslant1\middle| S_n=0\right\rbrace, &\text{s'il existe }n\geqslant1, S_n=0,\\
+                +\infty & \text{sinon.}
+            \end{array}
+        \right.
+    \end{equation}
+    On note $\pi=\P(T<+\infty)$ : probabilité de retour à l'origine en temps fini.
+
+    \begin{enumerate}
+        \item 
+        \begin{enumerate}
+            \item Justifier qu'en posant pour tout $t\in[0,1[$, on peut définit $f(t)=\sum_{n=0}^{+\infty}\P(S_n=0)t^{n}$ et $g(t)=\sum_{k=1}^{+\infty}\P(T=k)t^{k}$ $\mathcal{C}^{\infty}$ sur $[0,1[$.
+            \item Montrer que $g$ admet une limite finie quand $t\to 1^{-}$ que l'on exprimera en fonction de $\pi$.
+        \end{enumerate}
+
+        \item Justifier que, pour $(k,m)\in(\N^{*})^{2}$, $(S_{m+1}-S_m,\dots,S_{m+k}-S_m)\sim(S_1,\dots,S_k)$.
+        
+        \item 
+        \begin{enumerate}
+            \item Montrer que pour tout $n\geqslant1$, $\P(S_n=0)=\sum_{k=1}^{n}\P(T=k)\P(S_{n-k}=0)$.
+            \item En déduire que pour tout $t\in[0,1[$, $f(t)=1+f(t)g(t)$.
+        \end{enumerate}
+        On suppose que $(S_n)_{n\geqslant0}$ est une marche de Bernouilli de paramètre $p$.
+        \item 
+        \begin{enumerate}
+            \item Montrer que pour tout $n\in\N$, $\P(S_{2n+1}=0)$ et $\P(S_n=0)=\binom{2n}{n}(pq)^{n}$.
+            \item Montrer que pour tout $t\in[0,1[$, $f(t)=\frac{1}{\sqrt{1-4pqt^{2}}}$.
+        \end{enumerate}
+
+        \item 
+        \begin{enumerate}
+            \item Calculer $g(t)=\sum_{n=0}^{+\infty}\P(T=k)t^{k}$ pour $t\in[0,1]$ et montrer que $\pi=1-\left\lvert p-q\right\rvert$.
+            \item Déterminer la loi de $T$.
+        \end{enumerate}
+
+        \item 
+        \begin{enumerate}
+            \item Montrer que si $p=\frac{1}{2}$, $\mathbb{E}(T)=+\infty$.
+            \item On suppose que $p\neq\frac{1}{2}$, calculer l'espérance conditionnelle de $T$ sachant $T<+\infty$ : 
+            \begin{equation}
+                \mathbb{E}_{T<+\infty}(T)=\frac{\mathbb{E}(T\times \mathbf{1}_{T<+\infty})}{\P(T=+\infty)}.
+            \end{equation}
+        \end{enumerate}
+
+        \item Déterminer les $p\in]0,1[$ tels que $\pi =1$.
+        \item Montrer que l'on a équivalence entre 
+        \begin{enumerate}[label=(\roman*)]
+            \item $\sum_{n=0}^{+\infty}\P(S_n=0)=+\infty$,
+            \item $f(t)\xrightarrow[t\to1^{-}]+\infty$,
+            \item $(S_n)_{n\geqslant0}$ est récurrente (c'est-à-dire $\pi=1$).
+        \end{enumerate}
+
+        On note $N_n=\sum_{k=1}^{n}\mathbf{1}_{\left\lbrace S_k=0\right\rbrace}$ le nombre de retours à l'origine avant l'instant $n$, et $N=\sum_{k=1}^{+\infty}\mathbf{1}_{\left\lbrace S_k=0\right\rbrace}$ le nombre de retours à l'origine à valeurs dans $\N\cup\left\lbrace+\infty\right\rbrace$. $(N_n)_{n\geqslant1}$ converge simplement vers $N$ dans $\N\cup\left\lbrace+\infty\right\rbrace$ et pour tout $n\geqslant1$, $N_n\leqslant N$.
+
+        Si $\Omega$ est dénombrable, 
+        \begin{equation}
+            \mathbb{E}(N_n)=\sum_{\omega\in\Omega}N_n(\omega)\P(\lbrace\omega\rbrace)=\sum_{\omega\in\Omega}f_\omega(n).
+        \end{equation}
+        Pour tout $n\in\N$, $f_\omega(n)\xrightarrow[n\to+\infty]{}N(\omega)\P(\lbrace\omega\rbrace)\geqslant0$ et $\left\lvert f_\omega(n)\right\rvert\leqslant N(\omega)\P(\lbrace\omega\rbrace)$. Si $\mathbb{E}(N)<+\infty$, $\sum f_\omega$ converge normalement sur $\N$ et on peut intervertir. Si $\mathbb{E}(N)=+\infty$, soit $A>0$, il existe $\chi$ fini inclus dans $\Omega$ tel que $\sum_{\omega\in\chi}N(\omega)\P(\lbrace\omega\rbrace)\geqslant 2A$ et ($\chi$ finie) $\lim\limits_{n\to+\infty}N_n(\omega)\P(\lbrace\omega\rbrace)=\sum_{\omega\in\chi}N(\omega)\P(\lbrace\omega\rbrace)$. Donc il existe $N_0\in\N$ tel que pour tout $n\geqslant N_0$, $\sum_{\omega\in\chi}N_n(\omega)\P(\lbrace\omega\rbrace)\geqslant A$ et 
+        \begin{equation}
+            \mathbb{E}(N_n)\geqslant\sum_{\omega\in\chi}N_n(\omega)\P(\lbrace\omega\rbrace)\geqslant A,
+        \end{equation}
+        car $N_n\geqslant0$ donc $\lim\limits_{n\to+\infty}\mathbb{E}(N_n)=\mathbb{E}(N)=+\infty$.
+
+        \item 
+        \begin{enumerate}
+            \item On suppose que $(S_n)_{n\geqslant 0}$ est transitoire (i.e.~$p\neq\frac{1}{2}$, on a alors $\pi=1-\left\lvert p-q\right\rvert\neq1$). Montrer que $\mathbb{E}(N)=\frac{\pi}{1-\pi}$. En déduire que $\left\lbrace n\in\N\middle| S_n=0\right\rbrace$ est presque sûrement fini.
+            \item On suppose que $p=\frac{1}{2}$. Que vaut $\mathbb{E}(N)$ ?
+        \end{enumerate}
+
+        \item Pour $x\in\Z^{d}$, on note $N_n^{x}=\left\lvert\left\lbrace j\in\left\llbracket1,n\right\rrbracket, S_j=x\right\rbrace\right\rvert$ (nombre de passage par $x$ entre les instants 1 et $n$). Montrer que pour tout $n\in\N$, $\mathbb{E}(N_n^{x})\leqslant\mathbb{E}(N)$. On introduira 
+        \begin{equation}
+            T^{x}=
+            \left\lbrace
+                \begin{array}[]{ll}
+                    \min\left\lbrace n\geqslant 1\middle| S_n=x\right\rbrace, &\text{s'il existe }n\geqslant1, S_n=x,\\
+                    +\infty, &\text{sinon,}
+                \end{array}
+            \right.
+        \end{equation}
+        le premier passage en $x$, et on formera 
+        \begin{equation}
+            \begin{array}[]{rcl}
+                g_{x,n}(t) &=& \sum_{k=1}^{n}\P(T^{x}=k)t^{k},\\
+                f_{n,x}(t) &=& \sum_{k=0}^{n}\P(S_{k}=x)t^{k},
+            \end{array}
+        \end{equation}
+        et on établira une formule reliant $g_{n,x}$ à $f_{n,x}$ de manière analogue à la question 3.
+
+        \item On suppose la marche $(S_n)_{n\geqslant0}$ transitoire (donc la probabilité $\pi$ de retour à l'origine en temps fini est strictement inférieure à $1$). Montrer que $\left\lVert S_n\right\rVert\xrightarrow[n\to+\infty]{}+\infty$ presque sûrement.
+    \end{enumerate}
+\end{exercise}
+
 \end{document}

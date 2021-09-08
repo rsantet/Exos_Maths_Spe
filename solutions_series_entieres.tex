@@ -1098,4 +1098,168 @@
     \end{enumerate}
 \end{proof}
 
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item 
+        \begin{enumerate}
+            \item Soit $a_n=\P(S_n=0)$. On a $0\leqslant a_n\leqslant1$ donc le rayon de convergence de $f$ est plus grand que 1 et $f$ est définie et $\mathcal{C}^{\infty}$, de même pour $g$.
+            \item Soit $g_k(t)=\P(T=k)t^{k}$. Pour tout $t\in[0,1]$, on a $\left\lvert g_k(t)\right\rvert\leqslant\P(T=k)$, terme général d'une série à termes positifs convergente indépendant de $t$, car $\sum_{k=0}^{+\infty}\P(T=k)=\pi\leqslant1$, donc $\sum g_k$ converge normalement sur $[0,1]$. Donc $\lim\limits_{t\to1^{-}}g(t)=\sum_{k=1}^{+\infty}\P(T=k)=\pi$.
+        \end{enumerate}
+
+        \item On a $(S_{m+1}-S_m,\dots,S_{m+k}-S_{m})=(X_{m+1},X_{m+1}+X_{m+2},\dots,X_{n+1}+\dots+X_{m+k})$. $X_{m+1}+\dots X_{m+r}$ a pour loi la convoluée de la loi de $X$ r fois par elle-même car $X_i\sim X$ et les $(X_i)_{1\geqslant i}$ sont indépendants. Donc $X_m+\dots+X_{m+r}\sim X_1+\dots+X_r$, d'où le résultat.
+        
+        \item 
+        \begin{enumerate}
+            \item $\P(S_n=0)=\sum_{k=1}^{n}\P(T=k)\P_{T=k}(S_n=0)$ car si on revient à 0 à l'instant $n$, le 1er retour en 0 a eu lieu à un instant $k\in\left\llbracket1,n\right\rrbracket$. D'après ce qui précède, on a donc 
+            \begin{equation}
+                \P_{T=k}(S_n=0)=\P_{S_k=0}(S_n-S_k=0)=\P(S_{n-k}=0).
+            \end{equation}
+
+            \item Posons $P(T=0)=0$, d'où $g(t)=\sum_{k=0}^{+\infty}\P(T=k)t^{k}$ et pour tout $n\geqslant1$,
+            \begin{equation}
+                \sum_{k=0}^{n}\P(T=k)\P(S_{n-k}=0)=\P(S_n=0),
+            \end{equation}
+            puis par produit de Cauchy, 
+            \begin{equation}
+                f(t)=\P(S_0=0)+\sum_{n=1}^{+\infty}\P(S_n=0)t^{n}=1+f(t)g(t).
+            \end{equation}
+        \end{enumerate}
+
+        \item 
+        \begin{enumerate}
+            \item Soit $j=\left\lvert\left\lbrace i\in\left\llbracket1,n\right\rrbracket\middle|X_i=1\right\rbrace\right\rvert$. On a $S_n=j-(n-j)=2j-n$ (on est allé $j$ fois à droite et $n-j$ fois à gauche). Si $n=2p+1$, $S_n=S_{2p+1}=2j-2p-1\neq0$. Pour que $S_{2n}=0$, il faut et il suffit que $j=n$, ce qui revient à une loi binomiale $\mathcal{B}(2n,p)$ d'où $\P(S_{2n}=0)=\binom{2n}{n}(pq)^{n}$.
+            
+            \item On a $f(t)=\sum_{n=0}^{+\infty}\P(S_n=0)t^{n}=\sum_{n=0}^{+\infty}\binom{2n}{n}(pq)^{n}t^{2n}$. Comme $p\in]0,1[$, $p(1-p)=pq\leqslant\frac{1}{4}$, et si $t\in[0,1[$, 
+            \begin{align}
+                \frac{1}{\sqrt{1-4pqt^{2}}}
+                &=(1-4pq^{2})^{-1},\\
+                &=\sum_{n=0}^{+\infty}\frac{(-1)^{n}\left(-\frac{1}{2}\right)\left(-\frac{1}{2}-1\right)\dots\left(-\frac{1}{2}-n+1\right)}{n!}(4pqt^{2})^{n},\\
+                &=\sum_{n=0}^{+\infty}\frac{\frac{1}{2}\left(1+\frac{1}{2}\right)\dots\left(n-1+\frac{1}{2}\right)}{n!}(4pqt^{2})^{n},\\
+                &=\sum_{n=0}^{+\infty}\frac{1\times 3\dots \times (2n-1)}{2^{n}n!}(4pqt^{2})^{n},\\
+                &=\sum_{n=0}^{+\infty}\frac{(2n)!}{2^{2n}(n!)^{2}}(4pqt^{2})^{n},\\
+                &=\sum_{n=0}^{+\infty}\binom{2n}{n}p^{n}q^{n}t^{2n}=f(t).
+            \end{align}
+        \end{enumerate}
+
+        \item 
+        \begin{enumerate}
+            \item Pour tout $t\in]0,1[$, on a 
+            \begin{equation}
+                g(t)=\frac{f(t)-1}{f(t)}=1-\sqrt{1-4pqt^{2}},
+            \end{equation}
+            car $f(t)\neq0$. D'après 1.(b), on a 
+            \begin{equation}
+                \pi=\lim\limits_{t\to1^{-}}g(t)=1-\sqrt{1-4p(1-p)}=1-\left\lvert 2p-1\right\rvert=1-\left\lvert p-q\right\rvert,
+            \end{equation}
+            et $\pi=1$ si et seulement si $p=q=\frac{1}{2}$.
+
+            \item Pour tout $t\in[0,1]$, $g(t)=1-\sqrt{1-4p(1-p)}$. Or $\left\lvert pqt^{2}\right\rvert<1$ donc $g$ est développable en série entière sur $[0,1[$, et on a 
+            \begin{align}
+                g(t)
+                &=1-\left(1+\sum_{n=1}^{+\infty}\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\dots\left(\frac{1}{2}-n+1\right)}{n!}(-4pqt^{2})^{n}\right),\\
+                &=\sum_{n=1}^{+\infty}\frac{1\times 1\times 3\times\dots\times(2n-3)}{2^{n}n!}(4pqt^{2})^{n},\\
+                &=\sum_{n=1}^{+\infty}\frac{(2n-2)!}{2^{n-1}(n-1)!2^{n}n!}4^{n}(pq)^{n}t^{2n},\\
+                &=\sum_{n=1}^{+\infty}\frac{(2n-2)!}{n(n-1)!^{2}}4(pq)^{n}t^{2n}.
+            \end{align}
+            Par unicité du développement, on a $\P(T=2n+1)=0$ et $\P(T=2n)=\binom{2n-2}{n-1}\frac{4(pq)^{n}}{n}$.
+        \end{enumerate}
+
+        \item 
+        \begin{enumerate}
+            \item Si $p=\frac{1}{2}$, on a $\pi=1$ d'où $\P(T=+\infty)=0$. Donc 
+            \begin{equation}
+                \mathbb{E}(T)=\sum_{n=1}^{+\infty}\binom{2n-2}{n-1}\frac{2n}{n4^{n-1}}=\sum_{n=0}^{+\infty}\binom{2n}{n}\frac{1}{4^{n}}.
+            \end{equation}
+            Or $\binom{2n}{n}\frac{1}{4^{n}}=\frac{(2n)!}{(n!)^{2}}\frac{1}{4^{n}}\underset{n\to+\infty}{\sim}\frac{(2n)^{2n}}{n^{2n}}\frac{\sqrt{4\pi n}}{2\pi n}\frac{1}{4^{n}}\underset{n\to+\infty}{\sim}\frac{1}{\sqrt{\pi n}}$, terme général d'une série divergente, d'où le résultat.
+
+            \item Si $p\neq\frac{1}{2}$, on a 
+            \begin{equation}
+                \mathbb{E}(T\times \mathbf{1}_{T<+\infty})=\sum_{k=1}^{+\infty}k\P(T=k)=g'(1)=\frac{4pq}{\sqrt{1-4pq}},
+            \end{equation}
+            car $g(t)=1-\sqrt{1-4pqt^{2}}$. On a $\P(T<+\infty)=\pi=1-\left\lvert p-q\right\rvert$ et comme $\sqrt{1-4pq}=\left\lvert p-q\right\rvert$, d'où 
+            \begin{equation}
+                \mathbb{E}_{T<+\infty}(T)=\frac{4pq}{\left\lvert p-q\right\rvert(1-\left\lvert p-q\right\rvert)}.
+            \end{equation}
+        \end{enumerate}
+
+        \item $\pi=1$ si et seulement si $p=\frac{1}{2}$ d'après 6.
+        
+        \item $f$ est croissante sur $[0,1[$ donc il existe $l\in\overline{\R}$ telle que $\lim\limits_{t\to1^{-}}f(t)=l=\sup\limits_{t<1}f(t)$.
+        
+        \begin{itemize}
+            \item Si $\sum_{n=0}^{+\infty}\P(S_n=0)=+\infty$, soit $N\in\N$, on a $\sum_{n=0}^{N}\P(S_n=0)t^{n}\leqslant f(t)\leqslant l$. $N$ étant fixé, on peut faire tendre vers 1 d'où $\sum_{n=0}^{+\infty}\P(S_n=0)\leqslant l$. Lorsque $N\to+\infty$, on obtient $\lim\limits_{t\to1^{-}}f(t)=+\infty$.
+            
+            \item Si $(S_n)_{n\geqslant0}$ n'est pas récurrente, alors $\pi\neq1$ et $p\neq\frac{1}{2}$. Pour tout $t\in[0,1[$,
+            \begin{equation}
+                f(t)=\frac{1}{\sqrt{1-4pqt^{2}}}\xrightarrow[t\to1^{-}]{}\frac{1}{\sqrt{1-4pq}},
+            \end{equation}
+            défini car $4pq=4p(1-p)<1$.
+
+            \item Si $p=\frac{1}{2}$, $\P(S_n=0)=\binom{2n}{n}\frac{1}{4^{n}}$ d'après 4.(a), et $\P(S_n=0)\underset{n\to+\infty}{\sim}\frac{1}{\sqrt{\pi n}}$, terme général d'une série divergente donc $\sum_{n=0}^{+\infty}\P(S_n=0)=+\infty$.
+        \end{itemize}
+
+        \item 
+        \begin{enumerate}
+            \item On a 
+            \begin{align}
+                \mathbb{E}(N)
+                &=\lim\limits_{n\to+\infty}\mathbb{E}(N_n),\\
+                &=\sum_{k=1}^{+\infty}\mathbb{E}(\mathbf{1}_{\left\lbrace S_n=0\right\rbrace}),\\
+                &=\sum_{k=1}^{+\infty}\P(S_k=0),\\
+                &=f(1)-\P(S_0=0),\\
+                &=f(1)-1.
+            \end{align}
+            Or $f(1)=1+f(1)g(1)$ et $g(1)=\pi$, donc $f(1)=\frac{1}{1-\pi}$, d'où 
+            \begin{equation}
+                \mathbb{E}(N)=\frac{\pi}{1-\pi}.
+            \end{equation}
+
+            \item Si $p=\frac{1}{2}$, $\sum\P(S_n=0)$ diverge donc $\mathbb{E}(N)=+\infty$.
+        \end{enumerate}
+
+        \item Pour tout $k\geqslant1$, on a 
+        \begin{equation}
+            \P(S_k=x)=\sum_{j=0}^{k}\P(T^{x}=j)\P_{T^{x}=j}(S_k=x).
+        \end{equation}
+        Par produit de polynômes, $f_{n,x}(t)=\P(S_0=x)+\sum_{k=1}^{n}\P(S_k=x)t^{k}$ et $\P(S_0=x)=0$ car $x\neq0$. Soit 
+        \begin{equation}
+            f_{n,x}(t)=\sum_{k=1}^{n}\P(T^{x}=j)\P(X_{k-j}=0)t^{k},
+        \end{equation}
+        pour $t\in[0,1]$. Soit $f_n(t)=\sum_{k=0}^{n}\P(S_k=0)t^{k}$, on a 
+        \begin{equation}
+            f_n(t)g_{n,x}(t)=\left(\sum_{l=0}^{n}\P(S_l=0)t^{k}\right)\left(\sum_{j=0}^{n}\P(T^{x}=j)t^{j}\right),
+        \end{equation}
+        donc $f_{n,x}(t)\leqslant f_n(t)g_{n,x}(t)$. Or $N_{n,x}=\sum_{j=1}^{n}\mathbf{1}_{\left\lbrace S_j=x\right\rbrace}$ et 
+        \begin{equation}
+            \mathbb{E}(N_{n,x})=f_{n,x}(1)\leqslant f_n(1)g_{n,x}(1)=\mathbb{E}(N_{n})\sum_{k=1}^{n}\P(T^{x}=k)\leqslant\mathbb{E}(N_{n}),
+        \end{equation}
+        donc $\mathbb{E}(N_{n,x})\leqslant\mathbb{E}(N_{n})$.
+
+        \item 
+        \begin{equation}
+            \left\lbrace \left(\left\lVert S_n\right\rVert\right)_{n\geqslant1}\right\rbrace=\left\lbrace\exists A\geqslant0\middle|\left\lbrace n\in\N\middle|\left\lVert S_n\right\rVert\leqslant A\right\rbrace\text{ est fini}\right\rbrace=\mathcal{A}.    
+        \end{equation}
+        Comme $S_n$ est à valeur dans $\Z^{d}$, il y a un nombre fini de points dans $\overline{B(0,A)}$. On a 
+        \begin{equation}
+            \mathcal{A}=\left\lbrace x\in\Z^{d}\middle|\left\lbrace n\in\N\middle| S_n=x\right\rbrace\text{ est fini}\right\rbrace.
+        \end{equation}
+        Soit $x\in\Z^{d}$ fixé, et $\mathcal{A}^{x}=\left\lbrace\left\lbrace n\in\N\middle| S_n=x\right\rbrace\text{ est infini}\right\rbrace$, on a 
+        \begin{equation}
+            \mathcal{A}\biguplus_{x\in\Z^{d}}\mathcal{A},
+        \end{equation}
+        (union disjointe) et $\P(\mathcal{A})=\sum_{x\in\Z^{d}}\P(\mathcal{A}^{x})$ dénombrable.
+
+        Soit $N^{x}=\left\lvert\left\lbrace j\in\N\middle| S_j=x\right\rbrace\right\rvert$ (à valeurs dans $\N\cup \lbrace+\infty\rbrace$). $(N_{n}^{x})_{n\geqslant1}$ converge vers $N^{x}$ en croissant. Or $(\mathbb{E}(N_{n}^{x}))_{n\geqslant1}$ converge vers $\mathbb{E}(N^{x})$ dans $\R_{+}\cup\lbrace+\infty\rbrace$, et comme il s'agit d'une marche transitoire, on a 
+        \begin{equation}
+            \mathbb{E}(N_{n}^{x})\leqslant\mathbb{E}(N_{n})\leqslant\mathbb{E}(N)<+\infty,
+        \end{equation}
+        donc $\mathbb{E}(N^{x})$ est fini et 
+        \begin{equation}
+            \mathbb{E}(N^{x})=\sum_{k=1}^{+\infty}k\P(N^{x}=k)+(+\infty)\underbrace{\P(N^{x}=+\infty)}_{\P(\mathcal{A}^{x})}.
+        \end{equation}
+        Nécessairement, $\P(\mathcal{A}^{x})=0$ pour tout $x\in\Z^{d}$ et $\P(\mathcal{A})=0$.
+    \end{enumerate}
+\end{proof}
+
 \end{document}
