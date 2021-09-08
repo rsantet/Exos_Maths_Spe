@@ -10,4 +10,236 @@
 	\vspace*{\fill}
 \end{titlepage}
     
+\begin{exercise}
+	Soit $X=\begin{pmatrix}
+		x_1\dots x_n
+	\end{pmatrix}^{\mathsf{T}}\in\mathcal{M}_{n,1}(\R)$ tel que $\left\lVert X\right\rVert_{2}=1$. On lui associe $H_X=I_n-2XX^{\mathsf{T}}$.
+	\begin{enumerate}
+		\item Reconnaître l'endomorphisme canoniquement associée à $H_x$ (géométriquement).
+		\item Montrer que $(H_X)_{X\in S(0,1)}$ engendre $O_n(\R)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(a,b,c)\in\R^{3}$ et $a\begin{pmatrix}
+		a &b&c\\
+		c&a&b\\
+		b&c&a
+	\end{pmatrix}$.
+	\begin{enumerate}
+		\item Montrer que $A\in SO_{3}(\R)$ si et seulement s'il existe $p\in\left[0,\frac{4}{27}\right]$ telle que $a,b,c$ soient les racines de $X^{3}-X^{2}+p$.
+		\item Déterminer alors les ingrédients de cette rotation.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(\lambda_{1},\dots,\lambda_{n})\in\left(\R_{+}^{*}\right)^{n}$ distincts, et $A_n=\left(\frac{1}{\lambda_{i}+\lambda_{j}}\right)_{1\leqslant i,j\leqslant n}$.
+	\begin{enumerate}
+		\item Montrer que $A_n$ est diagonalisable sur $\R$.
+		\item Montrer que $A_n\in S_n^{++}(\R)$.
+		\item On choisit pour tout $k\in\left\llbracket 1,n\right\rrbracket$, $\lambda_{k}=k-\frac{1}{2}$, montrer que $\lim\limits_{n\to+\infty}\det(A_n)=0$.
+	\end{enumerate} 
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrer que $\Vect(O_n(\R))=\mathcal{M}_{n}(\R)$.
+		\item On définit \function{N}{\mathcal{M}_{n}(\R)}{\R}{A}{\sup\limits_{U\in O_n(\R)}\left\lvert \Tr(AU)\right\rvert}
+		Montrer que $N$ est définie et que c'est une norme sur $\mathcal{M}_{n}(\R)$.
+		\item Montrer que pour tout $(A,V)\in\mathcal{M}_{n}(\R)\times O_n(\R)$, on a $N(VA)=N(A)$.
+		\item Soit $S\in S_n^{+}(\R)$, calculer $N(S)$.
+		\item Montrer que pour tout $A\in\mathcal{M}_{n}(\R)$, $N(A)=\Tr(\sqrt{AA^{\mathsf{T}}})$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in S_n(\R)^{2}$ telle que pour tout $X\in\mathcal{M}_{n,1}(\R)$,
+	\begin{equation}
+		0\leqslant X^{\mathsf{T}}AX\leqslant X^{\mathsf{T}}BX.
+	\end{equation}
+	Montrer que $0\leqslant \det(A)\leqslant \det(B)$. On montrera que si $A\in GL_{n}(\R)$, $A^{-1}B$ est semblable à $\sqrt{A^{-1}}V\sqrt{A^{-1}}=C$ et on vérifiera que $\min\Sp_{\R}(C)\geqslant1$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(r,s)$ deux rotations de $\R^{3}$, reconnaître $r'=s\circ r\circ s^{-1}$. A quelles conditions nécessaires et suffisantes $r$ et $s$ commutent-elles ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $D=\left\lbrace A\in O_n(\R)\middle| I_n+A\in GL_n(\R)\right\rbrace$ et $D'=\left\lbrace M\in \mathcal{M}_n(\R)\middle| M^{\mathsf{T}}=-M\right\rbrace$.
+	\begin{enumerate}
+		\item Montrer que $D\subset SO_n(\R)$.
+		\item Soit \function{\varphi}{D}{\mathcal{M}_n(\R)}{A}{(I_n-A)(I_n+A)^{-1}}
+		Montrer que $\varphi$ définit une bijection de $D$ dans $D'$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in S_n^{+}(\R)^{2}$, montrer que $\sqrt[n]{\det(A)}+\sqrt[n]{\det(B)}\leqslant\sqrt[n]{\det(A+B)}$. Si $A$ est inversible, on montrera que $A^{-1}B$ est semblable à $C=\sqrt{A^{-1}}B\sqrt{A^{-1}}$, puis que $\varphi\colon x\mapsto\ln(1+\e^{x})$ est strictement convexe. Donner le cas d'égalité (pour $A$ inversible).
+\end{exercise}
+
+\begin{exercise}
+	Soit $A\in S_n^{+}(\R)$ telle que pour tout $i\neq j$, $a_{i,j}<0$. Pour $X\in\mathcal{M}_{n,1}(\R)$, on note $\left\lvert X\right\rvert=\begin{pmatrix}
+		\left\lvert x_1\right\rvert\\\vdots\\\left\lvert x_n\right\rvert
+	\end{pmatrix}$.
+	\begin{enumerate}
+		\item Montrer que pour tout $X\in\mathcal{M}_{n,1}(\R)$, $0\leqslant\left\lvert X\right\rvert^{\mathsf{T}}A\left\lvert X\right\rvert\leqslant X^{\mathsf{T}}AX$.
+		\item Montrer que si $X\neq0$ et $AX=0$, alors pour tout $X\in\mathcal{M}_{n,1}(\R)$, $Y^{\mathsf{T}}A\left\lvert X\right\rvert=0$ et en déduire que pour tout $i\in\left\llbracket1,n\right\rrbracket$, $x_i\neq0$.
+		\item Montrer que $\rg(A)\geqslant n-1$.
+		\item Soit $\lambda=\min\Sp(A)$, montrer que $\lambda$ est valeur propre simple de $A$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $u\in\mathcal{L}(E)$ dans $E$ euclidien tel que $\Tr(u)=0$. Montrer qu'il existe $(e_{1},\dots,e_n)$ une base orthonormée de $E$ telle que pour tout $i\in\left\llbracket1,n\right\rrbracket$, $(u(e_i)|e_i)=0$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ euclidien, $u\in\mathcal{L}(E)$. On dit que $u$ est antisymétrique si et seulement si pour tout $(x,y)\in E^{2}$, $(u(x)|y)=-(x|u(y))$.
+	\begin{enumerate}
+		\item Montrer que $u$ est antisymétrique si et seulement si pour tout $x\in E$, $(u(x)|x)=0$.
+		\item Montrer que $u$ est antisymétrique si et seulement si sa matrice $A\in\mathcal{A}_{n}(\R)$ dans une base orthonormée de $E$.
+		\item Montrer que $\Sp(u)\subset\left\lbrace0\right\rbrace$, et que si la dimension de $E$ est impaire, $\Sp(u)=\left\lbrace0\right\rbrace$.
+		\item Montrer qu'il existe $B$ base orthonormée de $E$, il existe $r\in\N$, il existe $(a_{1},\dots,a_{n})\in\R^{n}$ tels que 
+		\begin{equation}
+			\mat_{B}(u)=
+			\begin{pmatrix}
+				0 & -a_1\\
+				a_{1} & 0\\
+				&&\ddots\\
+				&&&0&-a_2\\
+				&&&a_2 &0\\
+				&&&&&0\\
+				&&&&&&\ddots\\
+				&&&&&&&0
+			\end{pmatrix}.
+		\end{equation}
+		\item Montrer $\exp(\mathcal{A}_{n}(\R))=SO_{n}(\R)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Montrer que $\exp$ induit une bijection de $S_n(\R)\to S_n^{++}(\R)$. On note $\ln$ la réciproque.
+		\item Justifier que $\exp$ est continue sur $\mathcal{M}_n(\R)$.
+		\item Soit $M\in S_n^{++}(\R)$, $(M_k)_{k\in\N}$ une suite de matrices de $S_n^{++}(\R)$ telle que $\lim\limits_{k\to+\infty}M_k=M$. Soit $\alpha=\min(\Sp(M))>0$ et $\beta=\max(\Sp(M))$. Montrer qu'il existe $k_{0}\in\N$ tel que pour tout $k\geqslant k_{0}$, pour tout $X\in S(0,1)$, 
+		\begin{equation}
+			\frac{\alpha}{2}\leqslant X^{\mathsf{T}}M_k X\leqslant \beta+1.
+		\end{equation}
+		\item En déduire que $(\ln(M_k))_{k\in\N}$ est bornée.
+		\item Prouver que $\exp\colon S_n(\R)\to S_n^{++}(\R)$ est un homéomorphisme.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A\in S_n(\R)$, de valeurs propres $\lambda_1\leqslant\dots\leqslant\lambda_n$. Pour $F$ sous-espace vectoriel de $\R^{n}$, on pose 
+	\begin{equation}
+		\Phi(F)=\max\limits_{X\in F}\frac{(AX|X)}{X^{\mathsf{T}}AX}.
+	\end{equation}
+
+	Montrer que pour tout $k\in\left\lbrace1,\dots,n\right\rbrace$, on a 
+	\begin{equation}
+		\lambda_k=\min\limits_{\substack{F\text{ sev de }\R^{n}\\\dim(F)=k}}\Phi(F).
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in S_n(\R)$. On suppose que $\Sp(A)=\left\lbrace a_{1,1},\dots,a_{n,n}\right\rbrace$. Montrer que $A$ est diagonale. On pourra considérer $i_{0}\in\left\lbrace 1,\dots,n\right\rbrace$ tel que $a_{i_{0},i_{0}}=\min(a_{i,i})_{1\leqslant i\leqslant n}$ et former \function{\varphi}{(\R^{n})^{2}}{\R}{(X,Y)}{\varphi(X,Y)=Y^{\mathsf{T}}(A-a_{i_{0},i_{0}}I_n)X}
+\end{exercise}
+
+\begin{exercise}[Intercalation des valeurs propres]
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in S_n(\R)$, $\lambda_{1}\leqslant \dots\leqslant \lambda_{n}$ ses valeurs propres. Soit $A'=(a_{i,j})_{1\leqslant i,j\leqslant n-1}\in S_{n-1}(\R)$ et $\mu_{1}\leqslant\dots\leqslant\mu_{n-1}$ ses valeurs propres.
+
+	Montrer que $\lambda_{1}\leqslant\mu_{1}\leqslant\lambda_{2}\leqslant\dots\leqslant\lambda_{k}\leqslant\mu_k\leqslant\lambda_{k+1}\leqslant\dots\leqslant\mu_{n-1}\leqslant\lambda_n$.
+
+	On pourra utiliser le résultat de l'Exercice 13.
+\end{exercise}
+
+\begin{exercise}
+	Soit $C$ un convexe d'un $\R$-espace vectoriel, on dit que $x\in C$ est extrémal si et seulement si pour tout $(y,z)\in C^{2}$, si $x=\frac{x+y}{2}$, alors $x=y=z$. On munit $\R^{n}$ de $\left\lVert\cdot\right\rVert_{2}$ et $\mathcal{L}(\R^{n})$ de norme $\vertiii{\cdot}$ associée.
+
+	\begin{enumerate}
+		\item Montrer que si $u\in O(E)$, $u$ est extrémal dans $\overline{B_{\vertiii{\cdot}}(0,1)}=\left\lbrace v\in\mathcal{L}(E)\middle|\vertiii{v}\leqslant1\right\rbrace$.
+		\item Soit $u\in\overline{B_{\vertiii{\cdot}}(0,1)}$ qui n'est pas une isométrie. Montrer qu'il existe $(v,w)\in\mathcal{L}(E)^{2}$ tel que $v\in O(E)$, $w\in S^{+}(E)$, $\Sp(w)\subset[0,1]$ et il existe $\lambda\in\Sp(w)$ tel que $\lambda\in[0,1[$. En déduire que $u$ n'est pas extrémal.
+		\item Montrer qu'il n'existe pas de produit scalaire sur $\mathcal{L}(E)$ tel que $\vertiii{\cdot}$ soit la norme euclidienne associée.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $(A,B)\in S_n(\R)$ tel que $A^{3}=B^{3}$ (ou $A^{5}=B^{5}$ ou $A^{2k+1}=B^{2k+1}$). Montrer que $A=B$.
+\end{exercise}
+
+\begin{exercise}
+	Soit la forme quadratique définie sur $\R^{n+1}$ 
+	\function{q}{(\R^{n+1})^{2}}{\R}{(x_0,\dots,x_n)}{\sum_{(i,j)\in\left\llbracket0,n\right\rrbracket}\frac{x_i x_j}{i+j+1}}
+	Montrer que c'est un produit scalaire.
+\end{exercise}
+
+\begin{exercise}
+	Soit $(E,\left\lVert\cdot\right\rVert_{2})$ un espace euclidien de dimension $n\in\N^{*}$. 
+	
+	Montrer qu'il existe $(x_1,\dots,x_{n+1})\in E^{n+1}$ tel que pour tout $i\neq j$, $\left\lVert x_i-x_j\right\rVert=1$.
+\end{exercise}
+
+\begin{exercise}
+	Soit \function{q}{\R^{n}}{\R}{(x_1,\dots,x_n)}{\sum_{i=1}^{n}x_{i}^{2}-\alpha\left(\sum_{i=1}^{n}x_{i}\right)^{2}}
+	Pour quelles valeurs de $\alpha$ $q$ est-elle une forme quadratique définie positive ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace euclidien, $(e_1,\dots,e_p)\in E^{p}$ tel que pour tout $i\neq j$, $(e_i|e_j)\leqslant0$.
+	\begin{enumerate}
+		\item Soit $(\lambda_1,\dots,\lambda_p)\in\R^{p}$, montrer que si $\sum_{i=1}^{p}\lambda_i e_i=0$, alors $\sum_{i=1}^{n}\left\lvert \lambda_i\right\rvert e_i=0$.
+		\item Montrer que s'il existe $\varepsilon\in E$ tel que pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, $(\varepsilon,e_i)>0$ alors $(e_1,\dots,e_p)$ est libre.
+		\item Montrer que si $(e_1,\dots,e_p)$ est une base de $E$ et si $x=\sum_{i=1}^{p}x_i e_i$ avec pour  tout $i\in\left\lbrace1,\dots,p\right\rbrace$, $(x|e_i)>0$ alors pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, $x_i>0$. On pourra former $(-x, e_1,\dots, e_p)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Famille obtusangle]
+	Soit $E$ euclidien de dimension $n$. Quel est le cardinal maximal $r_n$ d'une famille $(x_1,\dots,x_p)\i, E^{p}$ telle que pour tout $i\neq j$, $(x_i|x_j)<0$ ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ euclidien de dimension $n$.
+	\begin{enumerate}
+		\item Montrer qu'il existe $(u_1,\dots,u_n)\in E^{n}$ unitaire tel que pour tout $i\neq j$, $\left\lVert u_i-u_j\right\rVert=1$.
+		\item Montrer que $(u_1,\dots,u_n)$ est une base de $E$.
+		\item Soit $(e_1,\dots,e_n)$ la famille résultant du processus d'orthonormalisation de Gram-Schmidt de $(u_1,\dots,u_n)$. Montrer qu'il existe $(b_1,\dots,b_n,a_1,\dots,a_n)\in(\R^{n})^{2}$ tel que pour tout $j\in\left\llbracket1,n\right\rrbracket$, $u_j=\sum_{1\leqslant i<j}b_{i}e_i+a_{j}e_j$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace euclidien, $p\in\N$, $(x_1,\dots,x_p,y_1,\dots,y_p)\in E^{2p}$. Montrer qu'il existe $u\in O(E)$ tel que pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, $y_i=u(x_i)$ si et seulement si pour tout $(i,j)\in\left\lbrace1,\dots,p\right\rbrace^{2}$, $(y_i|y_j)=(x_i|x_j)$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ euclidien, et $f\in\mathcal{L}(E)$ tel que pour tout $x\in E$, $\left\lVert f(x)\right\rVert\leqslant\left\lVert x\right\rVert$. Montrer que 
+	\begin{equation}
+		E=\ker(f-id)\overset{\perp}{\oplus}\im(f-id).
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un espace euclidien, $C$ une partie convexe fermée non vide de $E$.
+	\begin{enumerate}
+		\item Montrer que pour tout $x\in E$, il existe $c_x\in C$ tel que $d(x,C)=\left\lVert x-c_x\right\rVert$. On note $c_x=p_{C}(x)$.
+		\item Montrer que $p_{C}(x)$ est l'unique vecteur dans $C$ tel que pour tout $y\in C$, $(x-p_C(x)|y-p_C(x))\leqslant0$.
+		\item Montrer que $p_C\colon E\to C$ est $1$-Lipschitzienne.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $G$ un sous-groupe fini de $GL(\K^{n})$ ($\K=\R$ ou $\C$).
+	\begin{enumerate}
+		\item Pour tout $(x,y)\in(\K^{n})^{2}$, on forme 
+		\begin{equation}
+			\varphi(x,y)=\sum_{g\in G}(gx|gy).
+		\end{equation}
+		Montrer que c'est un produit scalaire sur $\K^{n}$, et que pour tout $g_0\in G$, pour tout $(x,y)\in \K^{n}$, $\varphi(g_0x,g_0y)=\varphi(x,y)$.
+		\item Montrer que pour tout $f\in G$, on a $\Tr(f^{-1})=\overline{\Tr(f)}$.
+		\item Soit $G$ un sous-groupe fini de $SL_{2}(\R)$. Montrer que $G$ est cyclique.
+	\end{enumerate}
+\end{exercise}
+
 \end{document}

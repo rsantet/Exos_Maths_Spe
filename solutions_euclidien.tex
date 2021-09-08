@@ -10,4 +10,929 @@
 	\vspace*{\fill}
 \end{titlepage}
 
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $Y\in\mathcal{M}_{n,1}(\R)$. $XX^{\mathsf{T}}Y=(X|Y)X$ est la projection orthogonale de $Y$ sur $\R X$. Donc $H_X$ est la matrice de la réflexion par rapport à $X^{\perp}$.
+		\item C'est une conséquence du théorème de réduction.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $A\in SO_{3}(\R)$ si et seulement si 
+		\begin{equation}
+			\label{eq:1}
+			\begin{array}[]{rcl}
+				a^{2}+b^{2}+c^{2} &=& 1,\\
+				ab+ac+bc &=& 0,\\
+				a^{3}+b^{3}+c^{3}-3abc &=& 1,
+			\end{array}
+		\end{equation}
+		(vecteurs colonnes unitaires, vecteurs colonnes orthogonaux, déterminant égal à 1).
+		$a,b,c$ racines de $X^{3}-X^{2}+p$ si et seulement si $X^{3}-X^{2}+p=(X-a)(X-b)(X-c)=X^{3}-X^{2}(a+b+c)+X(ab+bc+ac)-abc$ si et seulement 
+		\begin{equation}
+			\label{eq:2}
+			\begin{array}[]{rcl}
+				a+b+c &=& 1,\\
+				ab+bc+cd &=& 0,\\
+				-abc&\in&\left[0,\frac{4}{27}\right].
+			\end{array}
+		\end{equation}
+
+		Ainsi, si on a~\eqref{eq:1}, on a $(a+b+c)^{2}=a^{2}+b^{2}+c^{2}+2(ab+ac+bc)=1$ donc $a+b+c=\pm1=\varepsilon\in\left\lbrace-1,1\right\rbrace$.
+		De plus,
+		\begin{align}
+			(a+b+c)^{3}
+			&= a^{3}+b^{3}+c^{3}+3(ab^{2}+ba^{2}+ac^{2}+ca^{2}+bc^{2}+cb^{2})+6abc,\\
+			&=1+3abc+6abc+3a(1-a^{2})+3b(1-b^{2})+3c(1-c^{2}),\\
+			&=1+3abc-3-9abc+3(a+b+c)+6abc,\\
+			&=3(a+b+c)-2,
+		\end{align}
+		donc $\varepsilon^{2}=3\varepsilon-2$ donc $\varepsilon=1$ et $a+b+c=1$.
+
+		On a $b+c=1-a,bc=-ab-ac=-a(b+c)=a(a-1)$, et $-abc=a^{2}(1-a)=\varphi(a)\geqslant0$, car $a^{2}+b^{2}+c^{2}=1$ donc $a\in[-1,1]$. On a $-abc=\varphi(a)=\varphi(b)=\varphi(c)$, et $a+b+c)=1$ donc un des trois au moins est positif. Comme $\varphi$ est compris entre $0$ et $\frac{4}{27}$ sur $[0,1]$, on a $-abc\in\left[0,\frac{4}{27}\right]$.
+
+		Si on a~\eqref{eq:2}, on a $(a+b+c)^{2}=1=a^{2}+b^{2}+c^{2}=2(ab+bc+ac)=a^{2}+b^{2}+c^{2}$. On a $(a+b+c)^{3}=1=a^{3}+b^{3}+c^{3}-3(a^{3}+b^{3}+c^{3})+3(a+b+c)+6abc$ donc $a^{3}+b^{3}+c^{3}-3abc=1$.
+
+		\item On a $A\begin{pmatrix}
+			1\\1\\1
+		\end{pmatrix}=(a+b+c)\begin{pmatrix}
+			1\\1\\1
+		\end{pmatrix}=\begin{pmatrix}
+			1\\1\\1
+		\end{pmatrix}$ donc l'axe de rotation est $\R\begin{pmatrix}
+			1\\1\\1
+		\end{pmatrix}$. On a $\Tr(A)=3a=1+2\cos(\theta)$, donc $\cos(\theta)=\frac{3a-1}{2}$, et $\sin(\theta)=(Af_1|f_2)=[f_3,f_1,Af_2]$ avec $f_3=\frac{1}{\sqrt{3}}\begin{pmatrix}
+			1\\1\\1
+		\end{pmatrix}$ et $f_1=\frac{1}{\sqrt{2}}\begin{pmatrix}
+			1\\-1\\0
+		\end{pmatrix}$ et $f_2=f_3\wedge f_1$. On laisse les calculs au lecteur.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $A_n\in S_n(\R)$ donc est diagonalisable sur $\R$.
+		\item Soit $X=\begin{pmatrix}
+			x_1\\ \dots\\ x_n
+		\end{pmatrix}$. On a 
+		\begin{align}
+			X^{\mathsf{T}}A_n X
+			&=\sum_{(i,j)\in\left\llbracket1,n\right\rrbracket^{2}}\frac{x_i x_j}{\lambda_i+\lambda_j},\\
+			&=\int_{0}^{1}\sum_{(i,j)\in\left\llbracket1,n\right\rrbracket^{2}}x_{i}t^{\lambda_{i}-\frac{1}{2}}x_jt^{\lambda_{j}-\frac{1}{2}}\d t,\\
+			&=\int_{0}^{1}\left(\sum_{i=1}^{n}x_it^{\lambda_{i}-\frac{1}{2}}\right)^{2}\d t\geqslant0.
+		\end{align}
+		Si $X^{\mathsf{T}}A_nX=0$, alors pour tout $t\in]0,1]$, $\sum_{i=1}^{n}x_it^{\lambda_i-\frac{1}{2}}=0$ donc pour tout $y\in]-\infty,0]$, $\sum_{i=1}^{n}x_i \e^{\left(\lambda_{i}-\frac{1}{2}\right)y}=0$. Or $\left(y\mapsto\e^{\left(\lambda_{i}-\frac{1}{2}\right)y}\right)_{1\leqslant i\leqslant n}$ forme une famille libre comme vecteurs propres de la dérivation. Donc pour tout $i\in\left\llbracket1,n\right\rrbracket$, $x_i=0$ et $X=0$.
+
+		\item On a $A_n\in S_n^{+}(\R)$ donc d'après l'inégalité d'Hadamard, on a 
+		\begin{equation}
+			0\leqslant\det(A_n)\leqslant\prod_{k=1}^{n}\frac{1}{2k-1}\xrightarrow[n\to+\infty]{}0,
+		\end{equation}
+		car si $u_n=\prod_{k=1}^{n}\frac{1}{2k-1}$, on a $\frac{u_{n+1}}{u_{n}}\xrightarrow[n\to+\infty]{}0$ donc $\sum u_n$ converge donc $u_n\xrightarrow[n\to+\infty]{}0$.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	On rappelle que si $A$ est symétrique complexe, elle n'est pas nécessairement diagonalisable, par exemple $A=\begin{pmatrix}
+		\i &1\\ 1 &-\i
+	\end{pmatrix}$. On a $\chi_{A}=X^{2}$ et $A\neq 0$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a 
+		\begin{equation}
+			E_{i,i}=\frac{1}{2}\left(I_n+\diag(-1,\dots,-1,1,-1\dots,-1)\right)\in\Vect(O_n(\R)),
+		\end{equation}
+		où le 1 est à l'indice $i$.
+		De plus, si $i\neq j$, on a 
+		\begin{equation}
+			E_{i,j}=\frac{1}{2}(A+B),
+		\end{equation}
+		où 
+		\begin{equation}
+			A = \left(
+				\begin{array}{*{11}c}
+				1       & 0      & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & 0\\
+				0       & \ddots &\\
+				\vdots  &        & 1\\
+				\vdots  &        &   & 0 & \dots & \dots & \dots &1\\
+				\vdots  &        &   & \vdots  & 1 & & &\vdots\\
+				\vdots  &        &   & \vdots  &   &\ddots & &\vdots\\
+				\vdots  &        &   & \vdots  &   &      & 1 &\vdots\\
+				\vdots  &        &   & 1 & \dots & \dots & \dots &0\\
+				\vdots  &        &   &       &  & & & &1\\
+				\vdots  &        &   &       &  &  & & & &\ddots \\
+				0       & \dots  & \dots  & \dots  & \dots  & \dots &\dots &\dots &\dots & 0 & 1
+				\end{array}
+			\right),
+		\end{equation}
+		et 
+		\begin{equation}
+			B = 
+			\left(
+			\begin{array}{*{11}c}
+				-1       & 0      & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & 0\\
+				0       & \ddots &\\
+				\vdots  &        & -1\\
+				\vdots  &        &   & 0 & \dots & \dots & \dots &1\\
+				\vdots  &        &   & \vdots  & -1 & & &\vdots\\
+				\vdots  &        &   & \vdots  &   &\ddots & &\vdots\\
+				\vdots  &        &   & \vdots  &   &      & -1 &\vdots\\
+				\vdots  &        &   & -1 & \dots & \dots & \dots &0\\
+				\vdots  &        &   &       &  & & & &-1\\
+				\vdots  &        &   &       &  &  & & & &\ddots \\
+				0       & \dots  & \dots  & \dots  & \dots  & \dots &\dots &\dots &\dots & 0 & -1
+				\end{array}
+			\right),
+		\end{equation}
+		avec les changements aux quadrants correspondants aux $j$-èmes et $i$-èmes lignes et colonnes. Comme $A$ et $B$ sont des matrices de permutation, on a $E_{i,j}\in\Vect(O_n(\R))$.
+
+		\item $O_n(\R)$ est compact, et $U\mapsto \Tr(AU)$ est continue sur $O_n(\R)$, donc bornée et donc $N$ est bien définie. $N$ vérifie l'homogénéité et l'inégalité triangulaire. Vérifions la séparation : soit $A\in\mathcal{M}_{n}(\R)$ telle que $N(A)=0$. Pour tout $U\in O_n(\R)$, $\Tr(AU)=0$. Par combinaison linéaire, on a pour tout $(i,j)\in\left\llbracket1,n\right\rrbracket^{2}$, $\Tr(AE_{i,j})=a_{i,j}=0$ donc $A=0$. Donc $N$ est bien une norme.
+		\item Soit \function{\iota}{O_n(\R)}{O_n(\R)}{U}{UV}
+		$\iota$ est bijective car $O_n(\R)$ est un groupe. Donc 
+		\begin{align}
+			N(VA)
+			&= \sup\limits_{U\in O_n(\R)}\left\lvert \Tr(AUV)\right\rvert,\\
+			&= \sup\limits_{U\in O_n(\R)}\left\lvert \Tr(AU)\right\rvert,\\
+			&= N(A).
+		\end{align}
+
+		\item Soient $\lambda_{1},\dots,\lambda_{n}$ valeurs propres (positives) de $S$. Soit $(\varepsilon_{1},\dots,\varepsilon_{n})$ une base orthonormée de $\R^{n}$ telle que pour tout $i\in\left\llbracket1,n\right\rrbracket$, $S\varepsilon_{i}=\lambda_{i}\varepsilon_{i}$. Soit $U\in O_n(\R)$, on a 
+		\begin{align}
+			\left\lvert \Tr(Su)\right\rvert
+			&=\left\lvert \Tr(US)\right\rvert,\\
+			&=\left\lvert\sum_{i=1}^{n}(US\varepsilon_{i}|\varepsilon_{i})\right\rvert,\\
+			&\leqslant\sum_{i=1}^{n}\lambda_{i}\left\lVert U\varepsilon_{i}\right\rVert\left\lVert \varepsilon_{i}\right\rVert,\\
+			&\leqslant\sum_{i=1}^{n}\lambda_{i},
+		\end{align}
+		et la borne supérieur est atteinte pour $U=I_n$. Donc $N(S)=\Tr(S)$.
+
+		\item Soit $S=\sqrt{AA^{\mathsf{T}}}\in S_n^{+}(\R)$. D'après la décomposition polaire, il existe $O\in O_n(\R)$ telle que $A=SO$. Alors on a $N(A)=N(S)=\Tr(\sqrt{AA^{\mathsf{T}}})$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	$A$ et $B$ sont symétriques réelles donc diagonalisables. Si $Ax=\lambda X$ avec $X\neq0$, alors $X^{\mathsf{T}}AX=\lambda\left\lVert X\right\rVert^{2}\geqslant0$ donc $\lambda\geqslant0$ : les valeurs propres de $A$ et $B$ sont positives.
+
+	Si $A\not\in GL_{n}(\R)$, $\det(A)=0$ et $\det(B)=\prod_{\mu\in\Sp(B)}\mu\geqslant0$. Si $A\in GL_{n}(\R)$, on a $A\in S_n^{++}(\R)$, d'où 
+	\begin{equation}
+		A^{-1}B=\sqrt{A^{-1}}\sqrt{A^{-1}}B\sqrt{A^{-1}}\sqrt{A}=\sqrt{A^{-1}}C\sqrt{A},
+	\end{equation}
+	car $\sqrt{A^{-1}}=\sqrt{A}^{-1}$ (preuve en diagonalisant). Soit $X$ un vecteur unitaire. On a 
+	\begin{equation}
+		X^{\mathsf{T}}CX=\underbrace{X^{\mathsf{T}}\sqrt{A^{-1}}}_{Y^{\mathsf{T}}}B\underbrace{\sqrt{A^{-1}}X}_{Y}\geqslant Y^{\mathsf{T}}AY=X^{\mathsf{T}}\sqrt{A^{-1}}A\sqrt{A^{-1}}X=X^{\mathsf{T}}X=1.
+	\end{equation}
+	Si $\lambda\in\Sp(B)$, soit $X$ unitaire tel que $CX=\lambda X$. Il vient $X^{\mathsf{T}}CX=\lambda\geqslant1$.
+	Comme $C\in S_n(\R)$, on a $\det(C)=\prod_{\lambda\in\Sp(B)}\lambda\geqslant1$ donc $\det(B)\geqslant\det(A)$.
+\end{proof}
+
+\begin{remark}
+	Si on a égalité, alors $\Sp(C)=\left\lbrace1\right\rbrace$, donc $C=I_n$ et $A=B$.
+\end{remark}
+
+\begin{proof}
+	$SO(\R^{3})$ est un groupe donc $r'\in SO(\R^{3})$. Si $r$ est la rotation d'axe orienté par $f_{3}$ (unitaire) et d'angle $\theta$, alors $r'(s(f_{3}))=s(f_{3})$ donc $r'$ est une rotation d'axe orienté par $s(f_{3})$ d'angle $\theta'$. On a $\Tr(r')=\Tr(r)$ donc $\theta'=\pm\theta$. Soit $f_{1}\in f_{3}^{\perp}$ unitaire et $f_{2}=f_{3}\wedge f_{1}$. On a $\sin(\theta)=(r(f_{1})|f_2)=[f_3,f_1,r(f_1)]$. Comme $s$ est une isométrie, $s(f_1)$ est unitaire et orthogonal à $s(f_3)$ donc 
+	\begin{equation}
+		\sin(\theta')=[s(f_3),s(f_1),\underbrace{s(r(f_1))}_{r'(s(f_1))}]=\underbrace{\det(s)}_{1}\times\underbrace{[f_3,f_1,r(f_1)]}_{\sin(\theta)},
+	\end{equation}
+	donc $\theta=\theta'$.
+
+	Supposons que $r$ et $s$ commutent alors $r'=r$, donc $s(f_{3})\in\Vect(f_{3})$ et $s$ est une isométrie donc $s(f_{3})\in\left\lbrace f_3,-f_3\right\rbrace$. Si $s(f_3)=f_3$, $r$ et $s$ ont même axe. Si $s(f_3)=-f_3$, $-1\in\Sp(s)$ et $s$ est un retournement et $r$ aussi (car $r$ et $s$ jouent des rôles symétriques), et l'axe de $r$ est perpendiculaire à celui de $s$.
+
+	Réciproquement, si $r$ et $s$ sont de même axe, elles commutent. Si ce sont deux retournements par rapport à deux axes orthogonaux, dans une base orthonormée directe adaptée, elles ont pour matrice $\begin{pmatrix}
+		1&0&0\\0&-1&0\\0&0&-1
+	\end{pmatrix}$ et $\begin{pmatrix}
+		-1&0&0\\0&1&0\\0&0&-1
+	\end{pmatrix}$, et donc $r$ et $s$ commutent.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item D'après le théorème de réduction, il existe $P\in O_n(\R)$ tel que 
+		\begin{equation}
+			\underbrace{A}_{\in D}=P\diag(R_{\theta_1},\dots,R_{\theta_r},1\dots,1)\underbrace{P^{-1}}_{P^{\mathsf{T}}},
+		\end{equation}
+		car $-1\not\in\Sp_\R(A)$, où $R_{\theta}$ une matrice de rotation d'angle $\theta$. Donc $\det(A)=1$ et donc $A\in SO_n(\R)$ et $D\subset O_n(\R)$.
+
+		\item Soit $M\in\mathcal{M}_n(\R)$, on a $\varphi(A)=M$ si et seulement si $M(I_n+A)=I_n-A$. Si c'est le cas, en transposant, on a
+		\begin{align}
+			\left(M(I_n+A)\right)^{\mathsf{T}}
+			&=\left(I_n+A\right)^{\mathsf{T}}M^{\mathsf{T}},\\
+			&=\left(I_n+A^{-1}\right)M^{\mathsf{T}},\\
+			&=\left(I_n-A\right)^{\mathsf{T}},\\
+			&=I_n-A^{-1},
+		\end{align}
+		et $A\in GL_n(\R)$, donc $\left(A+I_n\right)^{\mathsf{T}}M=A-I_n$ donc 
+		\begin{equation}
+			M^{\mathsf{T}}=(A+I_n)^{-1}(A-I_n)=(A-I_n)(A+I_n)^{-1},
+		\end{equation}
+		car si $BC=CB$ et $C$ inversible, alors $BC^{-1}=C^{-1}B$.
+
+		Ainsi, $M^{\mathsf{T}}=-M$ donc $\varphi$ est bien définie de $D$ dans $D'$.
+
+		Soit $M\in D'$, on a $M=\varphi(A)$ si et seulement si $M(I_n+A)=I_n-A$ si et seulement si $(M+I_n)A=I_n-M$.
+		\begin{lemma}
+			\label{lem:1}
+			Si $\lambda\in\Sp_{\R}M$, alors $\lambda=0$.
+		\end{lemma}
+		\begin{proof}[Preuve du~\ref{lem:1}]
+			Soit $X$ vecteur propre associé à $\lambda$. On a 
+			\begin{equation}
+				\underbrace{X^{\mathsf{T}}MX}_{\in\R}=\lambda\underbrace{\left\lVert X\right\rVert^{2}}_{>0}=\left(X^{\mathsf{T}}MX\right)^{\mathsf{T}}=X^{\mathsf{T}}M^{\mathsf{T}}X=-X^{\mathsf{T}}MX=-\lambda\underbrace{\left\lVert X\right\rVert^{2}}_{>0},
+			\end{equation}
+			donc $\lambda=0$.
+		\end{proof}
+
+		On en déduit que $M+I_n$ est inversible, et donc $A=(M+I_n)^{-1}(I_n-M)$. Il vient 
+		\begin{align}
+			A^{\mathsf{T}}
+			&=(I_n+M)(I_n-M)^{-1},\\
+			&=(I_n-M)^{-1}(I_n+M),\\
+			&=A^{-1},
+		\end{align}
+		et donc $A$ est orthogonale.
+
+		Si $I_n+A$ n'est pas inversible, il existe $X\neq0$ tel que $AX=-X$ et $0=M(I_n+A)X=(I_n-A)X$ donc $AX=X$ : impossible car $X\neq0$. Donc $I_n+A$ est inversible.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Soit $A$ inversible, $A\in S_n^{++}(\R)$ et $\sqrt{A^{-1}}=\sqrt{A}^{-1}$. Alors 
+	\begin{equation}
+		A^{-1}B=\sqrt{A^{-1}}\underbrace{\sqrt{A^{-1}}B\sqrt{A^{-1}}}_{C}\sqrt{A},
+	\end{equation}
+	donc $A^{-1}B$ est semblable à $C$.
+
+	On a $X^{\mathsf{T}}CX=\underbrace{X^{\mathsf{T}}\sqrt{A^{-1}}}_{Y^{\mathsf{T}}}B\underbrace{\sqrt{A^{-1}}X}_{Y}\geqslant0$ donc $C\in S_n^{+}(\R)$.
+
+	On a l'inégalité de l'énoncé si et seulement si $1+\sqrt[n]{\det(A^{-1}B)}\leqslant\sqrt[n]{\det(I_n+A^{-1}B)}$ si et seulement si $1+\sqrt[n]{\det(C)}\leqslant\sqrt[n]{\det(I_n+C)}$. Notons $(\lambda_{1},\dots,\lambda_{n})\in\Sp_\R(C)\subset\R$. L'inégalité équivaut à 
+	\begin{equation}
+		1+\left(\prod_{i=1}^{n}\lambda_{i}\right)^{\frac{1}{n}}\leqslant\left(\prod_{i=1}^{n}\left(1+\lambda_{i}\right)\right)^{\frac{1}{n}}.
+	\end{equation}
+	S'il existe $i\in\left\llbracket1,n\right\rrbracket$ tel que $\lambda_{i}=0$, l'inégalité est vraie. Si pour tout $i\in\left\llbracket1,n\right\rrbracket$, $\lambda_{i}>0$, alors l'inégalité équivaut à 
+	\begin{equation}
+		\underbrace{\ln\left(1+\exp\left(\frac{1}{n}\sum_{i=1}^{n}\ln(\lambda_{i})\right)\right)}_{\varphi\left(\frac{1}{n}\sum_{i=1}^{n}\ln(\lambda_{i})\right)}\leqslant\underbrace{\frac{1}{n}\sum_{i=1}^{n}\ln\left(1+\exp\left(\ln(\lambda_{i})\right)\right)}_{\frac{1}{n}\sum_{i=1}^{n}\varphi\left(\ln(\lambda_{i})\right)}.
+	\end{equation}
+
+	Comme $\varphi'(x)=\frac{\e^{x}}{1+\e^{x}}=1-\frac{1}{1+\e^{x}}$ et $\varphi''(x)=\frac{\e^{x}}{1+\e^{x}}>0$, $\varphi$ est strictement convexe d'où l'inégalité.
+
+	De plus, si on a égalité, $\lambda_{1}=\dots=\lambda_{n}$, et $C$ étant diagonalisable, il existe $\lambda\geqslant0$ tel que $C=\lambda I_n$, d'où $B=\lambda A$.
+
+	Si $A$ n'est pas inversible, soit pour $p\geqslant1$, $A_p=\frac{1}{p}I_n+A\in S_n^{++}(\R)$ car $\Sp(A_p)=\Sp(A)+\frac{1}{p}\subset\R_{+}^{*}$. Alors pour tout $p\in\N^{*}$, on a 
+	\begin{equation}
+		\sqrt[n]{\det(A_p)}+\sqrt[n]{\det(B)}\leqslant\sqrt[n]{\det(A_p+B)},
+	\end{equation}
+	et en passant à la limite $p\to+\infty$, on obtient l'inégalité.
+\end{proof}
+
+\begin{remark}
+	On a $\sqrt[n]{\det\left(\frac{A+B}{2}\right)}=\frac{1}{2}\sqrt[n]{\det(A+B)}\geqslant\frac{1}{2}\left(\sqrt[n]{\det(A)}+\sqrt[n]{\det(B)}\right)$. On peut en déduire (par continuité et dichotomie) que $A\mapsto\sqrt[n]{\det(A)}$ de $S_n^{+}(\R)$ dans $\R$ est concave.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $\left(AX\right)_{i}=\sum_{j=1}^{n}a_{i,j}x_j$ et 
+		\begin{equation}
+			X^{\mathsf{T}}AX=\sum_{i=1}^{n}\sum_{j=1}^{n}x_{i}x_{j}a_{i,j}=\sum_{i=1}^{n}x_{i}^{2}a_{i,i}+\sum_{i\neq j}x_{i}x_{j}a_{i,j}.
+		\end{equation}
+		Ainsi, comme $A\in S_n^{+}(\R)$, 
+		\begin{equation}
+			0\leqslant \left\lvert X\right\rvert^{\mathsf{T}}A\left\lvert X\right\rvert=\sum_{i=1}^{n}\left\lvert x_i\right\rvert^{2}a_{i,i}+\sum_{i\neq j}\left\lvert x_i\right\rvert\left\lvert x_j\right\rvert a_{i,j}.
+		\end{equation}
+		Or, pour $i\neq j$, $\left\lvert x_i\right\rvert\left\lvert x_j\right\rvert a_{i,j}\leqslant x_i x_j a_{i,j}$. Donc 
+		\begin{equation}
+			\left\lvert X\right\rvert^{\mathsf{T}}A\left\lvert X\right\rvert\leqslant X^{\mathsf{T}}AX.
+		\end{equation}
+
+		\item Si $AX=0$, d'après ce qui précède on a $\left\lvert X\right\rvert^{\mathsf{T}}A\left\lvert X\right\rvert=0$. Formons \function{\varphi}{\mathcal{M}_{n,1}(\R)^{2}}{\R}{(X,Y)}{Y^{\mathsf{T}}AX}
+		$\varphi$ est une forme bilinéaire symétrique positive de forme quadratique associée $q$. D'après l'inégalité de Cauchy-Schwarz, on a 
+		\begin{equation}
+			\left\lvert\varphi(Y,\left\lvert X\right\rvert)\right\rvert\leqslant\sqrt{q(Y)}\underbrace{\sqrt{q(\left\lvert X\right\rvert)}}_{=0}=0.
+		\end{equation}
+		Donc $Y^{\mathsf{T}}A\left\lvert X\right\rvert=0$ pour tout $Y\in\R^{n}$. Donc $A\left\lvert X\right\rvert\in\left(\R^{n}\right)^{\perp}=\left\lbrace0\right\rbrace$ d'où $A\left\lvert X\right\rvert=0$.
+
+		Pour tout $i\in\left\llbracket1,n\right\rrbracket$, $\sum_{j=1}^{n}a_{i,j}\left\lvert x_j\right\rvert=0$ donc $\sum_{j\neq i}a_{i,j}\left\lvert x_j\right\rvert+a_{i,i}\left\lvert x_i\right\rvert=0$. Si $\left\lvert x_i\right\rvert=0$, pour tout $j\neq i$, $\left\lvert x_j\right\rvert=0$ : impossible. Donc pour tout $i\in\left\llbracket1,n\right\rrbracket x_i\neq0$.
+
+		\item Soit $X=\begin{pmatrix}
+			x_1\\\vdots\\x_n
+		\end{pmatrix}$ et $Y=\begin{pmatrix}
+			y_1\\\vdots\\y_n
+		\end{pmatrix}\in\left(\ker(A)\setminus\left\lbrace0\right\rbrace\right)^{2}$. Alors $Y-\frac{y_1}{x_1}X\in\ker(A)$ et sa première coordonnée est nulle donc $Y=\frac{y_1}{x_1}X$, donc $\dim(\ker(A))\leqslant A$ et $\rg(A)\geqslant n-1$.
+
+		\item Soit $A'=A-\lambda I_n$. Soit $\lambda_{1}\in\Sp(A')$, on a $\Sp(A')=\Sp(A)-\lambda$. Or $\lambda=\min\Sp(A)$, donc pour tout $\lambda'\in\Sp(A')$, $\lambda'\geqslant0$ et donc $A'\in S_n^{+}(\R)$ et vérifie les hypothèses de $A$. On a $0<\dim(\ker(A'))\leqslant1$ et 0 est valeur propre donc $\dim(\ker(A-\lambda I_n))=1$ : $\lambda$ est une valeur propre simple.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Par récurrence sur $\dim(E)=n$ : c'est vrai si $\dim(E)=1$ car dans ce cas, $u=0$. Soit $n\geqslant1$, supposons le résultat vrai en dimension $n$ et soit $E$ de dimension $n+1$. Soit $(\varepsilon_{1},\dots,\varepsilon_{n+1})$ une base orthonormée de $E$. On a $\Tr(u)=\sum_{i=1}^{n}(u(\varepsilon_{i})|\varepsilon_{i})=0$. Soit \function{f}{S(0,1)}{\R}{x}{(u(x)|x)}. $f$ est continue et $S(0,1)$ est connexe par arc. Nécessairement, il existe $x\in S(0,1)$ tel que $(u(x)|x)=0$. On pose $e_1=x$, et dans une base orthonormée adaptée à $E=\R_{1}\overset{\perp}{\oplus}\left(\R e_{1}\right)^{\perp}$,
+	\begin{equation}
+		\mat_{B}(u)=\begin{pmatrix}
+			0&\star\\\star &A
+		\end{pmatrix}.
+	\end{equation}
+	$\Tr(A)=0$, et par hypothèse de récurrence, il existe $B_{1}$ une base orthonormée de $(\R e_1)^{\perp}$ (de dimension $n$) telle que $\mat(p\circ u, B_1)=\begin{pmatrix}
+		0&\star\\
+		\star&0
+	\end{pmatrix}$ où $p$ est la projection orthogonale sur $(\R e_{1})^{\perp}$. D'où le résultat.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $u$ est antisymétrique, avec $y=x$, on a $(u(x)|x)=0$. Réciproquement, si pour tout $x\in E$, $(u(x)|x)=0$, alors pour tout $(x,y)\in E^{2}$, $(u(x+y)|x+y)=0=(u(x)|x)+(u(y)|y)+(u(x)|y)+(u(y)|x)$, d'où $(u(x)|y)=-(x|u-y)$.
+		\item Soit $B$ une base orthonormée et $A=\mat_{B}(u)$. $u$ est antisymétrique si et seulement si pour tout $(x,y)\in(\R^{n})^{2}$, $Y^{\mathsf{T}}AX=-X^{\mathsf{T}}AY=-X^{\mathsf{T}}A^{\mathsf{T}}X$. Donc, pour $X$ et $Y$ les vecteurs dans la base canonique, on a $A^{\mathsf{T}}=A$, et la réciproque est vraie.
+		\item Soit $\lambda\in\Sp(u)$ et $x\neq0$ vecteur propre associé. On a $(u(x)|x)=0=\lambda\left\lVert x\right\rVert^{2}$. Comme $x\neq0$, on a $\lambda=0$, donc $\Sp(u)\subset\left\lbrace0\right\rbrace$.
+		
+		Si $\dim(E)$ est impair, $\chi_{u}$ est de degré impair, donc admet une racine réelle (par le théorème des valeurs intermédiaires), donc $0\in\Sp(u)$.
+
+		\item Par récurrence sur $\dim(E)=n$. Si $n=1$, $\mat_B(u)=(0)$. Soit $n\in\N$, supposons le résultat vrai pour $\dim(E)\leqslant n$. Soit $E$ de dimension $n+1$ et $u\in\mathcal{L}(E)$ antisymétrique.
+		\begin{lemma}
+			\label{lem:2}
+			Si $F$ est stable par $u$, $F^{\perp}$.
+		\end{lemma}
+		\begin{proof}[Preuve du~\ref{lem:2}]
+			Soit $x\in F^{\perp}$ et $y\in F$. On a $(u(x)|y)=-(\underbrace{x}_{\in F^{\perp}}|\underbrace{u(y)}_{\in F})=0$.
+		\end{proof}
+
+		Rappelons par ailleurs qu'il existe $F$ stable par $u$ de dimension 1 ou 2, dans une base orthonormée $B_1$ de $F$ : $\mat_{B_1}(u_{\mid F})=(0)$ si $\dim(F)=1$, et $\mat_{B_2}(u_{\mid F})=\begin{pmatrix}
+			0&a\\ -a&0
+		\end{pmatrix}$ avec $a\in\R$ si $\dim(F)=2$. On applique l'hypothèse de récurrence à $F^{\perp}$.
+
+		\item Soit $A\in\mathcal{A}_n(\R)$. On a 
+		\begin{equation}
+			\exp(A)^{\mathsf{T}}=\sum_{k=0}^{+\infty}\frac{\left(A^{k}\right)^{\mathsf{T}}}{k!}=\sum_{k=1}^{+\infty}\frac{(-A)^{k}}{k!}=\exp(-A)=\exp(A)^{-1},
+		\end{equation}
+		car $A\mapsto A^{\mathsf{T}}$ est linéaire et $\mathcal{A}_n(\R)$ de dimension finie donc continue.
+
+		$\exp(A)\in O_n(\R)$, $\det(\exp(A))=\exp(\Tr(A))=\exp(0)=1$ en trigonalisant sur $\C$. Ainsi, $\exp(A)\in SO_n(\R)$.
+
+		Soit $M\in SO_{n}(\R)$, il existe $P\in O_n(\R)$ et $\sigma_1,\dots,\sigma_k\in\R^{k}$, il existe $n_1\in\N$ tel que 
+		\begin{equation}
+			M=P\diag(R_{\theta_1},\dots,R_{\theta_k},-1,\dots,-1,1,\dots,1),
+		\end{equation}
+		où $-1$ apparaît $n_1$ fois, avec $n_1$ pair car $\det(M)=1$, donc 
+		\begin{equation}
+			M=P\diag(R_{\theta_1},\dots,R_{\theta_k},R_{\pi},\dots,R_{\pi},1,\dots,1),
+		\end{equation}
+		où l'on rappelle que mes $R_{\theta}$ représente une matrice de rotation d'angle $\theta$ en dimension 2. Soit $a\in\R$, on a 
+		\begin{equation}
+			\begin{pmatrix}
+				0&-a\\a&0
+			\end{pmatrix}=aR_{\frac{\pi}{2}}.
+		\end{equation}
+		Comme $R_{\frac{\pi}{2}}^{2}=-I_2, R_{\frac{pi}{2}}^{3}-R_{\frac{\pi}{2}}$ et $R_{\frac{\pi}{2}}^{4}=I_2$, on a pour tout $k\in\N$,
+		\begin{equation}
+			\begin{pmatrix}
+				0&-a\\a&0
+			\end{pmatrix}^{2k}=(-1)^{k}a^{2k}I_2,
+		\end{equation}
+		et
+		\begin{equation}
+			\begin{pmatrix}
+				0&-a\\a&0
+			\end{pmatrix}^{2k+1}=(-1)^{k}a^{2k+1}\begin{pmatrix}
+				0&-1\\1&0
+			\end{pmatrix}.
+		\end{equation}
+
+		Donc 
+		\begin{align}
+			\exp\begin{pmatrix}
+				0&-a\\a&0
+			\end{pmatrix}
+			&=\sum_{k=0}^{+\infty}(-1)^{k}\left(\frac{a^{2k}}{(2k)!}I_2+\frac{a^{2k+1}}{(2k+1)!}\begin{pmatrix}
+				0&-1\\1&0
+			\end{pmatrix}\right),\\
+			&=\cos(a)I_2+\sin(a)\begin{pmatrix}
+				0&-1\\1&0
+			\end{pmatrix}=R_a.
+		\end{align}
+
+		Ainsi, $M=P\exp(\underbrace{\diag(R_{\theta_1},\dots,\theta_k,R_\pi,\dots,R_\pi,0,\dots,0)}_{A'\in\mathcal{A}_n(\R)})P^{-1}=\exp(\underbrace{PA'P^{-1}}_{\in \mathcal{A}_n(\R)})$, donc $M\in\exp(\mathcal{A}_n(\R))$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $A\in S_n(\R)$. Il existe $P\in O_n(\R)$ tel que 
+		\begin{equation}
+			A=P\diag(\lambda_{1},\dots,\lambda_{n})P^{-1},
+		\end{equation}
+		d'où 
+		\begin{equation}
+			\exp(A)=P\diag(\e^{\lambda_{1}},\dots,\e^{\lambda_{n}})P^{-1} \in S_n^{++}(\R).
+		\end{equation}
+
+		Soit $B\in S_n^{++}(\R)$, alors il existe $P\in O_n(\R)$ tel que 
+		\begin{equation}
+			B=P\diag(\mu_{1},\dots,\mu_{n})P^{-1},
+		\end{equation}
+		avec $\mu_{i}>0$ pour tout $i\in\left\llbracket 1,n\right\rrbracket$. Soit 
+		\begin{equation}
+			A=P\diag(\ln(\mu_{1}),\dots,\ln(\mu_{n}))P^{-1}.
+		\end{equation}
+		Alors $\exp(A)=B$.
+
+		Soit $(A_{1},A_{2})\in S_n(\R)$ tel que $\exp(A_1)=\exp(A_2)=B$. Soient $(u_1,u_2)\in\mathcal{L}(\R^{n})^{2}$ correspondant à $A_1$ et $A_2$, et $v\in\mathcal{L}(\R^{n})$ correspondant à $B$. On vérifie que les sous-espaces propres de $u_1$ et $u_2$ sont ceux de $v$. Il s'ensuit que $u_1=u_2$. En effet, si $A\in\Sp(u_1)$, et si $u_1(x)=\lambda_{1}x$, alors $\exp(u_1)(x)=v(x)=\e^{\lambda}x$ donc $\ker(u_1-\lambda_i id)\subset\ker(v-\e^{\lambda}id)$. $u_1$ étant diagonalisable, si les valeurs propres distinctes sont $\lambda_{1},\dots,\lambda_{r}$, alors 
+		\begin{equation}
+			\R^{n}=\bigoplus_{i=1}^{r}\ker(u_i-\lambda_i id)\subset\bigoplus_{i=1}^{r}\ker(v-\e^{\lambda_i}id)\subset\R^{n}.
+		\end{equation}
+		D'où $\ker(u_i-\lambda_i id)=\ker(v-\e^{\lambda_i}id)$ pour tout $i\in\left\lbrace 1,\dots,r\right\rbrace$.
+
+		\item On a $\exp(A)=\sum_{k=0}^{+\infty}\frac{A^{k}}{k!}$, c'est la somme d'une série de fonctions continues qui converge normalement sur les compacts.
+		
+		\item On munit $\mathcal{M}_n(\R)$ de $\vertiii{M}=\sup\limits_{\left\lVert X\right\rVert=1}\left\lVert MX\right\rVert$. Soit $X\in S(0,1)$, pour tout $k\in\N$, on a 
+		\begin{align}
+			\left\lvert X^{\mathsf{T}}M_kX-X^{\mathsf{T}}MX\right\rvert
+			&=\left\lvert\left((M_k-M)(X)|X\right)\right\rvert,\\
+			&\leqslant \left\lVert (M_k-M)(X)\right\rVert,\\
+			&\leqslant\vertiii{M_k-M}.
+		\end{align}
+		Il existe $k_{0}\in\N$ tel que pour tout $k\geqslant k_0$, $\vertiii{M_k-M}\leqslant\min\left(\frac{\alpha}{2},1\right)$. On a pour tout $k\geqslant k_0$, $\alpha\leqslant X^{\mathsf{T}}MX\leqslant \beta$ d'où 
+		\begin{equation}
+			\alpha-\frac{\alpha}{2}=\frac{\alpha}{2}\leqslant X^{\mathsf{T}}M_k X\leqslant \beta+1.
+		\end{equation}
+
+		\item 
+		\begin{lemma}
+			\label{lem:3}
+			Soit $A\in S_n(\R)$, on a $\vertiii{A}=\max\limits_{\lambda\in\Sp(A)}\left\lvert\lambda\right\rvert$, noté $\rho(A)$.	
+		\end{lemma}
+		\begin{proof}[Preuve du lemme~\ref{lem:3}]
+			Soit $(\varepsilon_1,\dots,\varepsilon_n)$ une base orthonormale qui diagonalise $A$ avec $A\varepsilon_{i}=\lambda_{i}\varepsilon_{i}$. Soit $X=\sum_{i=1}^{n}x_i\varepsilon_i\in S(0,1)$, on a $AX=\sum_{i=1}^{n}\lambda_i x_i\varepsilon_i$. Alors 
+			\begin{equation}
+				\left\lVert AX\right\rVert^{2}=\sum_{i=1}^{n}\left(\lambda_i x_i\right)^{2}\leqslant\rho(A)^{2}\underbrace{\left\lVert X\right\rVert^{2}}_{=1},
+			\end{equation}
+			et $\left\lVert AX\right\rVert^{2}=\rho(A)$ pour $X$ vecteur propre associé à une des valeurs propres de valeur absolue maximale.
+		\end{proof}
+
+		D'après ce qui précède, pour tout $k\geqslant k_0$, $\Sp(\mu_k)\subset\left[\frac{\alpha}{2},\beta+1\right]$. Donc 
+		\begin{equation}
+			\Sp(\ln(M_k))\subset\left[\ln\left(\frac{\alpha}{2}\right),\ln(\beta+1)\right].
+		\end{equation}
+		Alors $\vertiii{\ln(M_k)}\leqslant\max\left(\left\lvert\ln\left(\frac{\alpha}{2}\right)\right\rvert,\left\lvert\ln\left(\beta+1\right)\right\rvert\right)$, pour tout $k\geqslant k_0$.
+
+		\item $\left(\ln(M_k)\right)_{k\in\N}$ est bornée en dimension finie, donc admet une valeur d'adhérence $A$. Pr, pour tout $k\in\N$, $\ln(M_k)\in S_n(\R)$ fermé car sous-espace vectoriel de $\mathcal{M}_n(\R)$ en dimension finie. Donc $A\in S_n(\R)$. En notant l'extraction $\sigma$, on a $\ln\left(M_{\sigma(k)}\right)\xrightarrow[k\to+\infty]{}A$ donc $M_{\sigma(k)}\xrightarrow[k\to+\infty]{}\exp(A)=M$ par continuité de l'exponentielle.
+		
+		De plus, par injectivité, on a bien $A=\ln(M)$. La suite $\left(\ln(M_k)\right)_{k\in\N}$ admet une unique valeur d'adhérence $\ln(M)$, donc converge vers $\ln(M)$.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Généralement, soient $E$ et $F$ de dimension finie. Soit $A$ un fermé de $E$, et $f\colon A\subset E\to B\subset F$ bijective continue. On suppose que si $(\eta_k)_{k\in\N}\in B^{\N}$ est bornée, alors $(f^{-1}(\eta_k))_{k\in\N}\in A^{\N}$ est bornée. Alors $f^{-1}$ est continue.
+\end{remark}
+
+\begin{proof}
+	$S_F(0,1)$ est compacte, et $X\mapsto(AX|X)$ est continue, donc admet un maximum sur $S_F(0,1)$ et $\Phi(F)$ est bien définie. 
+
+	Soit $(\varepsilon_{1},\dots,\varepsilon_{n})$ une base orthonormée qui diagonalise $A$ : pour tout $i\in\left\llbracket 1,n\right\rrbracket$, $A\varepsilon_{i}=\lambda_i\varepsilon_{i}$.
+
+	Soit $F$ un sous-espace vectoriel de $\R^{n}$ tel que $\dim(F)=k$. Soit $X)\sum_{i=1}^{n}X_i\varepsilon_{i}\in S_F(0,1)$. Alors $(AX|X)=\sum_{i=1}^{n}\lambda_i x_i^{2}$.
+
+	Soit $E_k=\Vect(\varepsilon_k,\dots,\varepsilon_{n})$, $\dim(E_k)=n-k+1$. Nécessairement, $E_k\cap F\neq\left\lbrace0\right\rbrace$, car sinon $\dim(E_k+F)=n+1$. 
+
+	Soit $x=\sum_{i=k}^{n}x_i\varepsilon_i\in E_k\cap F$ unitaire. Alors 
+	\begin{equation}
+		(AX|X)=\sum_{i=k}^{n}\lambda_i x_i^{2}\geqslant \lambda_k\sum_{i=k}^{n}x_i^{2}=\lambda_k.
+	\end{equation}
+	Donc $\Phi(F)\geqslant \lambda_k$.
+
+	Soit $F_k=\Vect(\varepsilon_1,\dots,\varepsilon_k)$ de dimension $f$. Pour tout $x\in F_k$ unitaire, on a $(AX|X)=\sum_{i=}^{k}\lambda_i x_i^{2}\leqslant \lambda_k$.
+
+	$\lambda_k$ est atteint pour $x=\varepsilon_k$, d'où $\lambda_k=\min\limits_{\substack{F\text{ sev de }\R^{n}\\ \dim(F)=k}}\Phi(F)$.
+\end{proof}
+
+\begin{proof}
+	Comme les valeurs propres de $A$ sont $a_{1,1},\dots,a_{n,n}$, on a
+	\begin{equation}
+		\Tr(A^{2})=\sum_{i=1}^{n}a_{i,i}^{2}=\Tr(A^{\mathsf{T}}A)=\sum_{(i,j)\in\left\lbrace1,\dots,n\right\rbrace}a_{i,j}^{2},
+	\end{equation}
+	et donc pour tout $i\neq j$, $a_{i,j}=0$.
+\end{proof}
+
+\begin{proof}
+	Soit $F'$ un sous-espace vectoriel de dimension $k$ de $\R^{n-1}$, on lui associe $F=F'\times\left\lbrace0\right\rbrace$ de dimension $k$ de $\R^{n}$.
+
+	Soit $X'=\begin{pmatrix}
+		x_1\\\vdots\\x_{n-1}
+	\end{pmatrix}\in F'$ et $X=\begin{pmatrix}
+		x_1\\\vdots\\x_{n-1}\\0
+	\end{pmatrix}$. On a 
+	\begin{equation}
+		(A'X'|X')=\sum_{(i,j)\in\left\lbrace1,\dots,n-1\right\rbrace^{2}}a_{i,j}x_{i}x_{j}=(AX|X),
+	\end{equation}
+	et $\left\lVert X'\right\rVert=\left\lVert X\right\rVert$.
+
+	Donc $\Phi'(F')=\Phi(F)\geqslant\lambda_{k}$. Ceci est valable pour tout sous-espace vectoriel $F'$ de $\R^{n-1}$ de dimension $k$, donc $\mu_k\geqslant\lambda_k$.
+
+	Soit $G$ un sous-espace vectoriel de dimension $k+1$ de $\R^{n}$. 
+	\begin{itemize}
+		\item Si $G\subset\R^{n-1}\times\left\lbrace0\right\rbrace$, on a comme précédemment, en notant 
+		\begin{equation}
+			G'=\left\lbrace(x_1,\dots,x_{n-1})\in\R^{n-1}\middle|(x_1,\dots,x_{n-1},0)\in G\right\rbrace,	
+		\end{equation}
+		un sous-espace vectoriel de $\R^{n-1}$ de dimension $k+1$ et comme précédemment, on a $\Phi(G)=\Phi'(G')\geqslant\mu_{k+1}\geqslant\mu_k$.
+		\item Si $G\not\subset\R^{n-1}\times\left\lbrace0\right\rbrace$, on forme 
+		\begin{equation}
+			G_1=G\bigcap\R^{n-1}\times\left\lbrace0\right\rbrace.
+		\end{equation}
+		On a $\dim(G)+\dim(\R^{n-1}\times\left\lbrace0\right\rbrace)-\dim(G_1)=\dim\left(G+\R^{n-1}\times\left\lbrace0\right\rbrace\right)=n$, donc $\dim(G_1)=k$.
+
+		Comme $G_1\subset G$, on a $\Phi(G)\geqslant\Phi(G_1)\geqslant\mu_k$. Dan tous les cas, $\Phi(G)\geqslant\mu_k$ donc $\lambda_{k+1}\geqslant\mu_k$.
+	\end{itemize}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Supposons qu'il existe $(v,w)\in\left(\overline{B_{\vertiii{\cdot}}(0,1)}\right)^{2}$ tel que $u=\frac{v+w}{2}$. Pour tout $x\in\R^{n}$, on a $\left\lVert v(x)\right\rVert\leqslant\left\lVert x\right\rVert$ et $\left\lVert w(x)\right\rVert\leqslant\left\lVert x\right\rVert$, car $\vertiii{v}\leqslant1$ et $\vertiii{w}\leqslant1$. Donc 
+		\begin{equation}
+			\left\lVert u(x)\right\rVert=\left\lVert x\right\rVert\leqslant\left\lVert\frac{1}{2}\left(v(x)+w(x)\right)\right\rVert\leqslant\frac{\left\lVert v(x)\right\rVert+\left\lVert w(x)\right\rVert}{2}\leqslant\left\lVert x\right\rVert.
+		\end{equation}
+
+		On a donc $\left\lVert v(x)\right\rVert=\left\lVert x\right\rVert=\left\lVert w(x)\right\rVert$ et il existe $\lambda_x\geqslant0$ tel que $v(x)=\lambda_x w(x)$ (égalité dans Minkowski). Donc $\lambda_x=1$, et ceci étant pour tout $x\in\R^{n}$, on a $v=w=u$. Donc $u$ est extrémal.
+
+		\item Soit $B=(e_1,\dots,e_n)$ une base orthonormée de $\R^{n}$ et $A=\mat_{B}(u)$. On pose $S=\sqrt{A^{\mathsf{T}}A}\in S_n^{+}(\R)$. On sait qu'il existe $\theta\in O_n(\R)$ tel que $A=\theta\times S$ (décomposition polaire). Pour tout $X\in S(0,1)$, comme $\vertiii{A}\leqslant1$, on a $\left\lVert AX\right\rVert\leqslant1$. Par ailleurs, pour tout $X\in S(0,1)$, $X^{\mathsf{T}}S^{2}X=(AX|AX)=\left\lVert AX\right\rVert^{2}\leqslant1$. Donc $\Sp(S^{2})\subset[0,1]$ et $\Sp(S)\subset[0,1]$ car $S\in S_n(\R)$. Si $\Sp(S)=\left\lbrace1\right\rbrace$, on a $S=I_n$, et $A=\theta\in O_n(\R)$ ce qui n'est pas. Donc il existe $\lambda\in\Sp(S)$ tel que $\lambda\in[0,1[$.
+		
+		Dans une base orthonormée $B'$ qui diagonalise $S$, on a $A'=\mat_{B'}(u)=\theta '\times\diag(\lambda_1,\dots,\lambda_n)$ avec $\lambda_i\in[0,1]$ et $\lambda_1<1$.
+
+		Si $\lambda_{1}\neq0$, soit $\varepsilon=\min\left(\lambda_1,1-\lambda_1\right)$, on pose $S^{+}=\diag(\lambda_1-\varepsilon,\lambda_2,\dots,\lambda_n)$ et $S^{-}=\diag(\lambda_1+\varepsilon,\lambda_2,\dots,\lambda_n)$, $B=\theta'\times S^{+}$, $C=\theta'\times S^{-}$, $A'=\frac{B+C}{2}$ et $B\neq C\neq A$. Comme les valeurs propres de $S^{+}$ et $S^{-}$ sont dans $[0,1]$, on a $\vertiii{S^{+}}\leqslant 1$, $\vertiii{S^{-}}\leqslant1$. Et $\vertiii{\theta'}=1$, d'où $\vertiii{B}\leqslant1$ et $\vertiii{C}\leqslant1$. Donc $u$ n'est pas extrémal.
+
+		Si $\lambda_1=0$, $S^{+}=\diag(-1,\lambda_2,\dots,\lambda_n)$ et $S^{-}=\diag(1,\lambda_2,\dots,\lambda_n)$, et parallèlement, $u$ n'est pas extrémal. Les points extrémaux sont les isométries.
+
+		\item Soit $\left\lVert\cdot\right\rVert_2$ une norme euclidienne. Si $\left\lVert X\right\rVert_{2}<1$, alors $X$ n'est pas extrémal et il existe $(\lambda,\mu)\in[0,1[^{2}$ tel que $X=\frac{\lambda X+\mu X}{2}$.
+		
+		Soit $X$ tel que $\left\lVert X\right\rVert_{2}=1$, si $X=\frac{Y+Z}{2}$ avec $\left\lVert Y\right\rVert_{2}\leqslant1$ et $\left\lVert Z\right\rVert_{2}\leqslant1$. On a 
+		\begin{equation}
+			\left\lVert X\right\rVert_{2}=1=\left\lVert\frac{Y+Z}{2}\right\rVert_{2}\leqslant\frac{\left\lVert Y\right\rVert_{2}+\left\lVert Z\right\rVert_{2}}{2}\leqslant1.
+		\end{equation}
+		On a égalité partout, comme pour la première question, on a $Y=Z=X$. Les points extrémaux sont les points de la sphère unité. En prenant $A=\diag(1,0,\dots,0)$, on a $\vertiii{A}=1$ mais $A$ n'est pas une isométrie pour $n\geqslant2$. Donc la norme triple n'est pas une norme euclidienne.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Si $A=P\diag(\lambda_1,\dots,\lambda_n)P^{-1}$ alors $A^{3}=P\diag(\lambda_1^{3},\dots,\lambda_n^{3})P^{-1}$. $\sqrt[3]{}$ étant injectif, on a $\Sp_{\R}(A)=\Sp_{\R}(B)$. Soit $\lambda_1,\dots,\lambda_i$ les valeurs propres distinctes de $A$. Soient $u$ et $v$ canoniquement associés à $A$ et $B$. $u$ et $v$ sont diagonalisables. Soit $x\in\ker(u-\lambda_i id)$. On a $u(x)=\lambda_i x$, on a $u^{3}(x)=\lambda_{i}^{3}x$, donc $\ker(u-\lambda_i id)\subset\ker(u^{3}-\lambda_i^{3}id)$ car les $(\lambda_j^{3})_{1\leqslant j\leqslant i}$ sont distincts. On a 
+	\begin{equation}
+		\R^{n}=\bigoplus_{i=1}^{r}\ker(u-\lambda_i id)\subset\bigoplus_{i=1}^{r}\ker(u^{3}-\lambda_i^{3}id)\subset\R^{n},
+	\end{equation}
+	donc $\ker(u-\lambda_i id)=\ker(u^{3}-\lambda_i^{3}id)=\ker(v^{3}-\lambda_i^{3}id)=\ker(v-\lambda_i id)$. $u$ et $v$ ont les mêmes valeurs propres et même sous-espaces propres, donc sont égaux et $A=B$.
+\end{proof}
+
+\begin{proof}
+	Soit \function{\varphi}{(\R^{n+1})^{2}}{\R}{(x=(x_0,\dots,x_n),y=(x_0,\dots,y_n))}{\sum_{(i,j)\in\left\llbracket0,n\right\rrbracket^{2}}\frac{x_iy_i}{i+j+1}}
+	C'est une forme bilinéaire symétrique. $q$ dérive de $\varphi$. Soit $x\in\R^{n+1}\setminus\left\lbrace0\right\rbrace$, on a 
+	\begin{align}
+		q(x)
+		&=\sum_{(i,j)\in\left\llbracket0,n\right\rrbracket^{2}}x_{i}x_{j}\int_{0}^{1}t^{i+j}\d t,\\
+		&=\int_{0}^{1}\sum_{(i,j)\in\left\llbracket0,n\right\rrbracket^{2}}x_ix_jt^{i+j}\d t,\\
+		&=\int_{0}^{1}\left(\sum_{i=0}^{n}x_it^{i}\right)^{2}\d t\geqslant0.
+	\end{align}
+	Si l'intégrale est nulle, alors $\sum_{i=0}^{n}x_it^{i}=0$ pour tout $t\in[0,1]$. C'est un polynôme en $t$ ayant une infinité de racines sur $[0,1]$, c'est donc le polynôme nul donc pour tout $i\in\left\llbracket0,n\right\rrbracket$, $x_i=0$ donc $x=0$.
+\end{proof}
+
+\begin{proof}
+	Pour $n=1$, on considère $x_0=0$ et $\left\lVert x_1\right\rVert=1$. Si $c_1=\frac{x_1+x_2}{2}=\frac{x_2}{2}$. Alors 
+	\begin{equation}
+		\left\lVert c_1-x_1\right\rVert=\left\lVert c_1-x_2\right\rVert=\frac{1}{2}.
+	\end{equation}
+
+	Soit pour $n\geqslant1$, $H_n$ : \og Pour $E$ de dimension $n$, il existe $(x_1,\dots,x_{n+1})\in E^{n+1}$, pour tout $i\neq j$, $\left\lVert x_i-x_j\right\rVert=1$ et pour $c_n=\frac{(x_1+\dots+x_{n+1})}{n+1}$, il existe $r_n$ tel que pour tout $i\in\left\llbracket1,n+1\right\rrbracket$, $\left\lVert x_i-c_n\right\rVert=r_n$\fg.
+
+	Supposons $H_n$ est vraie. Soit $E_n$ de dimension $n+1$ et soit $H$ un hyperplan de $E$. Il existe $(x_1,\dots,x_{n+1},c_n,r_n)$ vérifiant $H_n$. Soit $u$ un vecteur unitaire orthogonal à $H$. Soit $D$ la droite passant par $c_n$ et de vecteur directeur $u$ : $D=\left\lbrace c_n+tu\middle| t\in\R\right\rbrace$. Pour tout $i\in\left\llbracket1,n+1\right\rrbracket$, pour tout $t\in\R$, 
+	\begin{equation}
+		\left\lVert x_i-(x_n+tu)\right\rVert^{2}=\left\lVert x_i-c_n\right\rVert^{2}+t^{2}=r_n^{2}+t^{2}.
+	\end{equation}
+	Posons $x_{n+2}=c_n+\sqrt{1-r_n^{2}}u$. Pour tout $i\in\left\llbracket 1,n+1\right\rrbracket$, $\left\lVert x_{n+2}-x_i\right\rVert=1$. Soit 
+	\begin{equation}
+		c_{n+1}=\frac{x_1+\dots+x_{n+2}}{n+2}=\frac{n+1}{n+2}c_n+\frac{1}{n+2}x_{n+2}=c_n+\frac{\sqrt{1-r_n^{2}}}{n+2}u.
+	\end{equation}
+
+	Pour $i\in\left\llbracket1,n+1\right\rrbracket$, on a 
+	\begin{align}
+		\left\lVert c_{n+1}-x_{i}\right\rVert^{2}
+		&=\frac{1-r_n^{2}}{(n+2)^{2}}+r_n^{2},\\
+		&=\frac{1+((n+2)^{2}-1)r_n^{2}}{(n+2)^{2}},\\
+		&=\frac{1+(n+1)(n+3)r_n^{2}}{(n+2)^{2}}.
+	\end{align}
+
+	On pose $r_{n+1}=\sqrt{\frac{1+(n+1)(n+3)r_n^{2}}{(n+2)^{2}}}$, puis 
+	\begin{equation}
+		\left\lVert c_{n+1}-x_{n+2}\right\rVert^{2}=\left(\frac{\sqrt{1-r_n^{2}}}{n+2}-\sqrt{1-r_n^{2}}\right)^{2}=\frac{1-r_n^{2}}{(n+2)^{2}}(n+1)^{2}.
+	\end{equation}
+
+	On a 
+	\begin{align}
+		r_n^{2}
+		&=\left\lVert \frac{x_1+\dots+x_{n+1}}{n+1}-x_1\right\rVert^{2},\\
+		&=\frac{1}{(n+1)^{2}}\left\lVert\sum_{i=2}^{n+1}(x_{i}-x_1)\right\rVert^{2},\\
+		&=\frac{1}{(n+2)^{2}}\times\left(n+2\sum_{2\leqslant i<j\leqslant n+1}(x_i-x_1|x_j-x_i)\right).
+	\end{align}
+	On a, pour tout $i\neq j\neq 1$, 
+	\begin{equation}
+		\left\lVert x_i-x_j\right\rVert^{2}=1=\left\lVert (x_i-x_1)+(x_1-x_j)\right\rVert^{2}=2+2(x_i-x_1|x_1-x_j),
+	\end{equation}
+	d'où $(x_i-x_1|x_j-x_1)=\frac{1}{2}$, puis 
+	\begin{equation}
+		r_n^{2}=\frac{1}{(n+1)^{2}}\left(n+\frac{n(n-1)}{2}\right)=\frac{n}{2(n+1)},
+	\end{equation}
+	et
+	\begin{align}
+		r_{n+1}^{2}
+		&=\frac{1+\frac{n(n+3)}{2}}{(n+2)^{2}},\\
+		&=\frac{n(n+3)+2}{2(n+2)^{2}},\\
+		&=\frac{n+1}{2(n+2)}\in[0,1[.
+	\end{align}
+	Et en reportant, 
+	\begin{align}
+		\left\lVert c_{n+1}-x_{n+2}\right\rVert^{2}
+		&=\frac{(n+1)^{2}}{(n+2)^{2}}(1-r_n^{2}),\\
+		&=\frac{(n+1)^{2}}{(n+2)^{2}}(1-\frac{n}{2(n+1)}),\\
+		&=\frac{(n+2)(n+1)^{2}}{(n+2)^{2}2(n+1)},\\
+		&=\frac{n+1}{2(n+2)},\\
+		&=r_{n+1}.
+	\end{align}
+\end{proof}
+
+\begin{remark}[Méthode directe]
+	Soit $E$ euclidien de dimension $n+1$. Soit $(e_1,\dots,e_{n+1})$ une base orthonormée de $E$. On a $\frac{\left\lVert e_i-e_j\right\rVert}{2}=1$ pour $i\neq j$. Soit 
+	\begin{equation}
+		H=\left\lbrace x=x_1 e_1+\dots+x_{n+1}e_{n+1}\in E\middle| x_{1}+\dots+x_{n+1}=0\right\rbrace,	
+	\end{equation} 
+	hyperplan de $E$. On a $\dim(E)=n$, pour tout $i\in\left\lbrace1,\dots,n+1\right\rbrace$, soit $y_i=\frac{1}{\sqrt{2}}\left(e_i-c\right)\in H$ avec $c=\frac{e_1+\dots+e_{n+1}}{n+1}$ et pour tout $i\neq j$, $\left\lVert y_i-y_j\right\rVert=1$.
+\end{remark}
+
+\begin{proof}
+	On définit
+	\function{\varphi}{(\R^{n})^{2}}{\R}{((x_1,\dots,x_n),(y_1,\dots,y_n))}{\sum_{i=1}^{n}x_iy_i-\alpha\left(\sum_{i=1}^{n}\alpha_{i}\right)\left(\sum_{i=1}^{n}y_i\right)}
+	Alors $\varphi(x,x)=q(x)$, et d'après l'inégalité de Cauchy-Schwarz pour le produit scalaire canonique de $\R^{n}$, pour tout $(x_1,\dots,x_n)\in\R^{n}$, on a 
+	\begin{equation}
+		\left(\sum_{i=1}^{n}x_{i}\right)^{2}\leqslant n\sum_{i=1}^{n}x_{i}^{2},
+	\end{equation}
+	d'où $\sum_{i=1}^{n}x_{i}^{2}\geqslant\frac{1}{n}\left(\sum_{i=1}^{n}x_{i}\right)^{2}$.
+
+	\begin{itemize}
+		\item Si $\alpha<\frac{1}{n}$, on a $q(x_1,\dots,x_n)\geqslant\left(1-n\alpha\right)\sum_{i=1}^{n}x_{i}^{2}\geqslant0$ et so $q(x_1,\dots,x_n)=0$, alors $\sum_{i=1}^{n}x_{i}^{2}=0$ donc les $x_i$ sont nuls.
+		\item Si $\alpha\geqslant\frac{1}{n}$, on a $q(1,\dots,1)=n-\alpha n^{2}=n(1-\alpha n)\leqslant0$.
+	\end{itemize}
+	Finalement, $q$ est une forme quadratique définie positive si et seulement si $\alpha<\frac{1}{n}$.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $\sum_{i=1}^{n}\lambda_i e_i=0$, on a 
+		\begin{equation}
+			\left\lVert\sum_{i=1}^{n}\lambda_i e_i\right\rVert^{2}=0=\sum_{i=1}^{n}\lambda_i^{2}\left\lVert e_i\right\rVert^{2}+\sum_{\substack{i\neq j\\i=1}}^{n}\lambda_i \lambda_j(e_i|e_j).
+		\end{equation}
+		On a alors 
+		\begin{equation}
+			0\leqslant\left\lVert\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert e_i\right\rVert^{2}=\sum_{i=1}^{n}\lambda_{i}^{2}\left\lVert e_i\right\rVert^{2}+\sum_{\substack{i\neq j\\ i=1}}^{n}\left\lvert \lambda_i\right\rvert\left\lvert \lambda_j\right\rvert(e_i|e_j)\leqslant0,
+		\end{equation}
+		car $\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert\geqslant\lambda_i\lambda_j$ et $(e_i|e_j)\leqslant0$ donc $\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert(e_i|e_j)\leqslant\lambda_i\lambda_j(e_i|e_j)$. Ainsi, $\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert e_i=0$.
+
+		Notons que $\sum_{i\neq j}\left(\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert-\lambda_i\lambda_j\right)(e_i|e_j)=0$ et chaque terme est négatif, donc pour tout $i\neq j$, $\left(\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert-\lambda_i\lambda_j\right)(e_i|e_j)=0$. Si $(e_i|e_j)<0$, $\lambda_i$ et $\lambda_j$ sont donc de mêmes signes.
+
+		\item On suppose que $\sum_{i=1}^{p}\lambda_i e_i=0$, alors $\sum_{i=1}^{p}\left\lvert \lambda_i\right\rvert e_i=0$ et $(\varepsilon|\sum_{i=1}^{n}\left\lvert \lambda_i\right\rvert e_i)=0=\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert(\varepsilon|e_i)$ et chaque terme de la somme est positif, donc pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, on a $\lambda_i=0$ et $(e_1,\dots,e_p)$ est libre.
+		
+		\item On a $(-x|e_i)<0$ donc $(-x,e_1,\dots,e_p)$ vérifie l'hypothèse. On a $1\times(-x)+\sum_{i=1}^{p}x_i e_i=0$ et d'après ce qui précède, $-x+\sum_{i=1}^{p}\left\lvert x_i\right\rvert e_i=0$ donc $x=\sum_{i=1}^{p}\left\lvert x_i\right\rvert e_i=\sum_{i=1}^{p}x_i e_i$ et par unicité, pour tout $i\in\left\lbrace1,\dots,\right\rbrace$, $\left\lvert x_i\right\rvert=x_i\geqslant0$.
+		
+		Soit $i_0\in\left\lbrace1,\dots,p\right\rbrace$ tel que $x_{i_0}=0$. On a 
+		\begin{equation}
+			(x|e_{i_0})=\sum_{\substack{i=1\\ i\neq i_0}}^{p}x_i(e_i|e_{i_0})>0,
+		\end{equation}
+		ce qui est absurde donc pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, $x_i>0$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\begin{itemize}
+		\item En dimension 1, soit $E=\Vect(u)$ avec $u$ unitaire. Soit $(x_1,\dots,x_p)\in E^{p}$, $\dim(E)=1$ donc pour tout $i\left\llbracket1,p\right\rrbracket$, $x_i=\lambda_i u$ avec $\lambda_i\in\R$, et pour $i\neq j\in\left\llbracket1,p\right\rrbracket^{2}$, $(x_i|x_j)=\lambda_i\lambda_j$, d'où $p\leqslant2$ si on veut $(x_i|x_j)<0$ pour tout $i\neq j\in\left\llbracket1,p\right\rrbracket^{2}$. Or $(u,-2)$ est obtusangle donc $r_1=2$.
+		\item En dimension 2, on suppose $r_2=3$.
+	\end{itemize}
+
+	Par récurrence, supposons $r_n=n+1$ pour $n\in\N^{*}$. Soit $E$ un espace euclidien de dimension $n+1$ et soit $(x_1,\dots,x_p)\in E^{p}$ une famille obtusangle maximale (avec $p\geqslant2$). En particulier, $x_1\neq0$. Soit $H=x_1^{\perp}$ de dimension $n$ et pour tout $i\in\left\llbracket2,p\right\rrbracket$, $x_i'=p_H(x_i)$. Pour tout $i\in\left\llbracket2,p\right\rrbracket$, on a $x_i=x_i'+y_i$ avec $y_i=\lambda_i x_1$ avec $(x_i|x_1)=\lambda_i\left\lVert x_1\right\rVert^{2}<0$ donc $\lambda_i<0$, et pour tout $i\neq j\in\left\llbracket2,p\right\rrbracket^{2}$, $(x_i|x_j)=(x_i'|x_j')+\underbrace{\lambda_i\lambda_j\left\lVert x_1\right\rVert^{2}}_{>0}<0$, donc $(x_{i}'|x_{j}')<0$.
+
+	Par hypothèse de récurrence, on a donc $p-1\leqslant n+1$ d'où $p\leqslant n+2$ d'où $r_{n+1}\leqslant n+2$.
+
+	De plus soit $H$ un hyperplan (quelconque) de $E$. Par hypothèse de récurrence, il existe alors $(x_2',\dots,x_{n+2}')\in H^{n+1}$ obtusangle.
+	Soit $x_1$ un vecteur orthogonal à $H$. Soit $\varepsilon>0$ et pour tout $i\in\left\llbracket2,n+2\right\rrbracket$, $x_{i}=x_{i}'-\varepsilon x_1$. On a $(x_i'|x_1)<0$ et $(x_i|x_j)=(x_i'|x_j')+\varepsilon^{2}$ pour tout $i\neq j\in\left\llbracket2,n+2\right\rrbracket$. Il suffit de prendre 
+	\begin{equation}
+		\varepsilon=\frac{1}{2}\min_{i\neq j\in\left\llbracket2,n+2\right\rrbracket^{2}}\left(\sqrt{-(x_i'|x_j')}\right)>0,
+	\end{equation}
+	donc on a bien $r_{n+1}=n+2$.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item En posant $u_0=0$ cela revient à trouver $(u_0,\dots,u_n)\in E^{n+1}$ tel que pour tout $i\neq j$, $\left\lVert u_i-u_j\right\rVert=1$. On sait que dans $\R^{n+1}$ euclidien, soit la base canonique de $(e_1,\dots,e_{n+1})$ on a pour tout $i\neq j$, $\left\lVert\frac{e_i}{\sqrt{2}}-\frac{e_j}{\sqrt{2}}\right\rVert=1$. Soit donc 
+		\begin{equation}
+			c=\frac{e_1+\dots+e_{n+1}}{(n+1)\sqrt{2}},
+		\end{equation}
+		et $H=\left\lbrace(x_1,\dots,x_{n+1})\in\R^{n+1}\middle|\sum_{i=1}^{n+1}x_i=0\right\rbrace$ hyperplan. Soit $v_i=\frac{e_i}{\sqrt{2}}-c\in H$ et pour tout $i\neq j$, $\left\lVert v_i-v_j\right\rVert=1$.
+
+		On a ainsi $n+1$ vecteurs dans $H$ (de dimension $n$) tels que $\left\lVert v_i-v_j\right\rVert=1$. On pose pour tout $i\in\left\lbrace1,\dots,\right\rbrace$, $u_i=v_i-v_{n+1}$ unitaires et pour tout $i\neq j\in\left\lbrace1,\dots,n\right\rbrace$, $\left\lVert u_i-u_j\right\rVert=1$.
+
+		\item Soit $(\lambda_1,\dots,\lambda_n)\in\R^{n}$ tel que $\sum_{i=1}^{n}\lambda_i u_i=0$. On a $\left\lVert u_i-u_j\right\rVert^{2}=1=\left\lVert u_i\right\rVert^{2}-2(u_i|u_j)+\left\lVert u_j\right\rVert^{2}$ donc $(u_i|u_j)=\frac{1}{2}$. Pour $j\in\left\llbracket1,n\right\rrbracket$, on a $\sum_{i=1}^{n}\lambda_i(u_i|u_j)=0$ donc $\lambda_j+\frac{1}{2}\sum_{\substack{i=1\\i\neq j}}\lambda_i=0$.
+		Posons $S=\sum_{i=1}^{n}\lambda_i$. On a $\lambda_j=-S$, donc $\sum_{j=1}^{n}\lambda_j=-nS=S$ donc $S=0$ et pour tout $j\in\left\llbracket,1,n\right\rrbracket$, $\lambda_j=0$. Ainsi, $(u_1,\dots,u_n)$ est une base.
+
+		\item A priori, on peut écrire 
+		\begin{equation}
+			u_j=\sum_{i=1}^{j-1}b_{i,j}e_i+a_{j}e_{j}=\sum_{i=1}^{j-1}(eu_j|e_i)e_i+a_{j}e_j.
+		\end{equation}
+		Soit $i\in\left\llbracket1,n-1\right\rrbracket$,, montrons que pour $j\neq k>i$, $(u_j|e_i)=(u_k|e_i)$ si et seulement si $(u_j-u_k|e_i)=0$. On a $e_i\in\Vect(u_1,\dots,u_i)$ (procédé de Gram-Schmidt) et pour tout $j\in\left\llbracket1,i\right\rrbracket$, 
+		\begin{equation}
+			(u_j-u_k|u_l)=(u_j|u_l)-(u_k|u_l)=\frac{1}{2}-\frac{1}{2}=0,
+		\end{equation}
+		car $j\neq l$, $k\neq l$ et $l\leqslant i<j,k$. Par combinaison linéaire, $(u_j-u_k|e_i)=0$, d'où le résultat.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	S'il existe $u\in O(E)$ tel que pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, $y_i=u(x_i)$, alors on a directement 
+	\begin{equation}
+		(y_i|y_j)=(u(x_i)|u(x_j))=(x_i|x_j),
+	\end{equation}
+	pour tout $(i,j)\in\left\lbrace1,\dots,p\right\rbrace^{2}$.
+
+	Réciproquement, si pour tout $(i,j)\in\left\llbracket1,p\right\rrbracket^{2}$, $(x_i|x_j)=(y_i|y_j)$, alors soient $F=\Vect(x_{i})_{1\leqslant i\leqslant p}$ et $(x_1,\dots,x_n)$ une base de $F$ (quitte à renuméroter).
+
+	\begin{lemma}
+		\label{lem:4}
+		Soit $\mathrm{Gram}(z_1,\dots,z_p)=((z_i|z_j))_{1\leqslant i,j\leqslant p}$ de colonnes $C_1,\dots,C_n$. Soit $(\alpha_{1},\dots,\alpha_{p})\in\C^{p}$, alors on a $\alpha_{1}C_1+\dots+\alpha_{p}C_p=0$ si et seulement si $\alpha_{1}z_{1}+\dots+\alpha_{p}z_{p}=0$.
+	\end{lemma}
+	\begin{proof}[Preuve du lemme~\ref{lem:4}]
+		On a $\alpha_{1}C_{1}+\dots+\alpha_{p}C_{p}=0$ si et seulement si $\sum_{j=1}^{p}\alpha_{j}z_{j}\in\left\lbrace z_1,\dots,z_p\right\rbrace^{\perp}$ si et seulement si $\sum_{j=1}^{p}\alpha_j z_j=0$; car $C_j=\begin{pmatrix}
+			(z_1|z_j)\\\vdots\\(z_p|z_j)
+		\end{pmatrix}$ pour tout $j\in\left\llbracket1,p\right\rrbracket$.
+	\end{proof}
+
+	D'après le lemme, on a $\mathrm{Gram}(y_1,\dots,y_r)=\mathrm{Gram}(x_1,\dots,x_r)\in GL_r(\R)$ donc $(y_1,\dots,y_r)$ est libre. D'autre part, pour tout $i\in\left\llbracket r+1,p\right\rrbracket$, il existe $(\alpha_{1,i},\dots,\alpha_{p,i})\in\R^{p}$,
+	\begin{equation}
+		x_i=\alpha_{1,i}x_1+\dots+\alpha_{r,i}x_r.
+	\end{equation}
+	D'après le lemme, on a $y_i=\alpha_{1,i}y_1+\dots+\alpha_{r,i}y_r$. Soit $(\varepsilon_{r+1},\dots,\varepsilon_p)$ une base orthonormée de $\Vect(x_{1},\dots,x_r)^{\perp}=F^{\perp}$ et $(f_{r+1},\dots,f_{n})$ une base orthonormée de $\Vect(y_1,\dots,y_r)^{\perp}$.
+
+	Soit $u$ telle que pour tout $i\in\left\llbracket1,r\right\rrbracket$, $u(x_i)=y_i$, et pour tout $i\in\left\llbracket r+1,n\right\rrbracket$, $u(\varepsilon_i)=f_i$, $u\in\mathcal{L}(E)$.
+
+	On a bien pour tout $i\in\left\llbracket r+1,p\right\rrbracket$, $u(x_i)=y_i$. Soit enfin $x\in E$, avec 
+	\begin{equation}
+		x=\underbrace{\alpha_1 x_1+\dots+\alpha_r x_r}_{\in F}+\underbrace{\alpha_{r+1}\varepsilon_{r+1}+\dots+\alpha_{n}\varepsilon_{n}}_{\in F^{\perp}}.	
+	\end{equation}
+	
+	On a alors 
+	\begin{equation}
+		u(x)=\underbrace{\alpha_1 y_1+\dots+\alpha_{r}y_r}_{\in\Vect(y_i)_{1\leqslant i\leqslant r}}+\underbrace{\alpha_{r+1}f_{r+1}+\dots+\alpha_n f_n}_{\in \Vect(y_i)_{1\leqslant i\leqslant r}^{\perp}}.
+	\end{equation}
+
+	Enfin,
+	\begin{align}
+		\left\lVert u(x)\right\rVert^{2}
+		&=\left\lVert \alpha_{1}y_{1}+\dots+\alpha_{r}y_{r}\right\rVert^{2}+\left\lVert \alpha_{r+1}f_{r+1}+\dots+\alpha_{n}f_{n}\right\rVert^{2},\\
+		&=\sum_{(i,j)\in\left\llbracket1,r\right\rrbracket^{2}}\alpha_{i}\alpha_{j}\underbrace{(y_i|y_j)}_{(x_i|x_j)}+\sum_{i=r+1}^{n}\alpha_{i}^{2},\\
+		&=\left\lVert \alpha_{1}x_{1}+\dots+\alpha_{r}x_{r}\right\rVert^{2}+\left\lVert \sum_{i=r+1}^{n}\alpha_{i}\varepsilon_{i}\right\rVert^{2},\\
+		&=\left\lVert x\right\rVert^{2},
+	\end{align}
+	donc $u\in O(E)$.
+\end{proof}
+
+\begin{proof}
+	\begin{lemma}
+		\label{lem:5}
+		S'il existe $M\geqslant0$ tel que pour tout $k\in\N$, $\vertiii{f^{k}}\leqslant M$, alors $E=\ker(f-id)\oplus\im(f-id)$ et $\left(\frac{id+f+\dots+f^{k}}{k+1}\right)_{k\in\N}$ converge vers $\pi$, projecteur sur $\ker(f-id)$ parallèlement à $\im(f-id)$.
+	\end{lemma}
+	\begin{proof}[Preuve du lemme~\ref{lem:5}]
+		Soit $x\in E$, on a 
+		\begin{equation}
+			(id-f)\left(\frac{id+f+\dots+f^{k}}{k+1}\right)(x)=\frac{(id-f^{k+1})}{k+1}(x)\xrightarrow[k\to+\infty]{}0,
+		\end{equation}
+		car $\frac{\left\lVert f^{k+1}(x)\right\rVert}{k+1}\leqslant\frac{M\left\lVert x\right\rVert}{k+1}\xrightarrow[k\to+\infty]{}0$.
+
+		Soit $y\in\ker(f-id)\cap\im(f-id)$, il existe $x\in E$ tel que $f(x)-x=y$ et $f(y)=y$, donc 
+		\begin{equation}
+			\frac{(id+f+\dots+f^{k})}{k+1}(y)=y=\left(\frac{id+f+\dots+f^{k}}{k+1}\right)(f-id)(x)\xrightarrow[k\to+\infty]{}0.
+		\end{equation}
+		Donc $y=0$. Comme on est en dimension finie, on a 
+		\begin{equation}
+			E=\ker(f-id)\oplus\im(f-id).
+		\end{equation}
+
+		Soit $x\in E$, il existe $(y,z)\in\ker(f-id)\times\im(f-id)$ tel que $x=z+y$. Il existe $x_1\in E$ tel que $z=f(x_1)-x_1$. Alors 
+		\begin{equation}
+			\frac{(id+f\dots+f^{k})}{k+1}(x)=y+\frac{(f^{k+1}-id)}{k+1}(x_1)\xrightarrow[k\to+\infty]{}y.
+		\end{equation}
+	\end{proof}
+	
+	Ici, on a pour tout $k\in\N$, pour tout $x\in E$, $\left\lVert f^{2}(x)\right\rVert=\left\lVert f\circ f(x)\right\rVert\leqslant\left\lVert f(x)\right\rVert\leqslant\left\lVert x\right\rVert$. Par récurrence, pour tout $k\in\N$, $\left\lVert f^{k}(x)\right\rVert\leqslant\left\lVert x\right\rVert$. On peut donc appliquer le lemme précédent. De plus, pour tout $k\in\N$, pour tout $x\in E$, $\left\lVert\frac{id+f+\dots+f^{k}}{k+1}(x)\right\rVert\leqslant\left\lVert x\right\rVert$.
+
+	\begin{lemma}
+		\label{lem:6}
+		Si $E=F\oplus G$ et $F$ et $G$ ne sont pas orthogonaux. Soit $\Pi_{F\sslash G}$. Alors il existe $x\in E$ tel que $\left\lVert \Pi(x)\right\rVert\geqslant\left\lVert x\right\rVert$.
+	\end{lemma}
+	\begin{proof}[Preuve du leùùe~\ref{lem:6}]
+		Soit $(y,z)\in F\times G$ tel que $(y|z)\neq0$. Supposons (quitte à remplacer $z$ par $-z$) $(y|z)<0$. Soit $t\in\R$, on a 
+		\begin{equation}
+			\left\lVert y+tz\right\rVert^{2}-\left\lVert y\right\rVert^{2}=2t(y|z)+t^{2}\left\lVert z\right\rVert^{2}\underset{t\to0^{+}}{\sim}2t(y|z)<0.
+		\end{equation}
+		Comme $\left\lVert y\right\rVert^{2}=\left\lVert\Pi(y+tz)\right\rVert^{2}$, il existe $t>0$ tel que $\left\lVert y-tz\right\rVert\leqslant\left\lVert\Pi(y+tz)\right\rVert$.
+	\end{proof}
+
+	D'après le lemme précédent, $\ker(f-id)$ et $\im(f-id)$ sont orthogonaux.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $y\in C$ et $K=\overline{B(x,\left\lVert y-x\right\rVert)}\cap C$. $K$ est un compact, car fermé borné en dimension fini, et non vide car $y\in K$. Soit $z\mapsto d(x,z)=\left\lVert x-z\right\rVert$ de $\K$ dans $\R$. Elle est continue (car 1-Lipschitzienne) sur un compact donc admet un minimum atteint en $z_0$. On a $\left\lVert x-z_0\right\rVert\leqslant\left\lVert x-y \right\rVert$. Si $z\in C\setminus K$, on a $\left\lVert z-x\right\rVert>\left\lVert x-y\right\rVert\geqslant\left\lVert z_0-x\right\rVert$.
+		
+		Pour l'unicité, soient $z_1,z_2\in C$ tels que $d(x,C)=\left\lVert x-z_1\right\rVert=\left\lVert x-z_2\right\rVert$. On a $\frac{z_1+z_2}{2}\in C$ par convexité, on a
+		\begin{align}
+			\left(x-\frac{z_1+z_2}{2}|z_1-z_2\right)
+			&=\frac{1}{2}\left((x-z_1)+(x-z_2)|(x-z_2)-(x-z_1)\right),\\
+			&=\frac{1}{2}\left\lvert\left\lVert x-z_1\right\rVert^{2}-\left\lVert x-z_2\right\rVert^{2}\right\rvert,\\
+			&=0,
+		\end{align}
+		donc $z_1-z_2$ est orthogonal à $x-\frac{z_1+z_2}{2}$. D'après le théorème de Pythagore, on a 
+		\begin{equation}
+			\left\lVert x-z_1\right\rVert^{2}=\left\lVert x-\frac{z_1+z_2}{2}\right\rVert^{2}+\left\lVert \frac{z_1-z_2}{2}\right\rVert^{2}\geqslant\left\lVert x-z_1\right\rVert^{2}+\left\lVert \frac{z_1-z_2}{2}\right\rVert^{2}.
+		\end{equation}
+		Nécessairement, $z_1=z_2$
+
+		\item Soit $y\in C$. Pour tout $t\in[0,1]$, on a 
+		\begin{equation}
+			\left\lVert tp_C(x)+(1-t)y-x\right\rVert^{2}=\left\lVert (1-t)(y-p_C(x))-(x-p_C(x))\right\rVert^{2}\geqslant\left\lVert x-p_C(x)\right\rVert^{2},
+		\end{equation}
+		et le terme de gauche vaut 
+		\begin{equation}
+			\left\lVert x-p_C(x)\right\rVert^{2}+\underbrace{(1-t)^{2}\left\lVert y-p_C(x)\right\rVert^{2}-2(1-t)\left(x-p_C(x)|y-p_C(x)\right)}_{\varphi(t)}.
+		\end{equation}
+		On a donc $\varphi(t)\geqslant0$ pour tout $t\in[0,1]$. Si $(x-p_C(x)|y-p_C(x))>0$, on aurait $\varphi(t)\underset{t\to1^{-}}{\sim}-2(1-t)(x-p_C(x)|y-p_C(x))<0$: impossible. Donc $(x-p_C(x)|y-p_C(x))\leqslant0$.
+
+		Soit $z\in C$ tel que pour tout $y\in C$, $(x-z|y-z)\leqslant0$, alors pour tout $y\in C$, on a 
+		\begin{equation}
+			\left\lVert x-y\right\rVert^{2}=\left\lVert x-z\right\rVert^{2}+\left\lVert z-y\right\rVert^{2}+2(x-z|z-y)\geqslant\left\lVert x-z\right\rVert^{2},
+		\end{equation}
+		donc par unicité de $p_C(x)$, $z=p_C(x)$.
+
+		\item Soit $x_1,x_2\in E$. Si $p_C(x_1)=p_C(x_2)$, on a $0=\left\lVert p_C(x_1)+p_C(x_2)\right\rVert\leqslant\left\lVert x_1-x_2\right\rVert$. Si non, soit $H=\Vect(p_C(x_2)-p_C(x_1))^{\perp}$, on a 
+		\begin{equation}
+			\begin{array}[]{rcl}
+				x_1-p_C(x_1)&=&\lambda_1(p_C(x_1)-p_C(x_2))+y_1,\\
+				x_2-p_C(x_2)&=&\lambda_2(p_C(x_1)-p_C(x_2))+y_2,\\
+			\end{array}
+		\end{equation}
+		avec $y_1,y_2\in H$. Alors 
+		\begin{equation}
+			0\geqslant(x_1-p_C(x_1)|p_C(x_2)-p_C(x_1))=\lambda_1\left\lVert p_C(x_2)-p_C(x_1)\right\rVert^{2},
+		\end{equation}
+		donc $\lambda_1\leqslant0$ et de même, $\lambda_2\leqslant0$.
+		Alors on a
+		\begin{align}
+			\left\lVert x_1-x_2\right\rvert^{2}
+			&=\left\lVert x_1-p_C(x_1)+p_C(x_1)-p_C(x_2)+p_C(x_2)-x_2\right\rVert^{2},\\
+			&=\left\lVert (1-\lambda_1-\lambda_2)(p_C(x_1)-p_C(x_2)+y_1-y_2)\right\rVert^{2},\\
+			&=\underbrace{\left\lvert1-\lambda_1-\lambda_2\right\rvert^{2}}_{\geqslant1}\times\left\lVert p_C(x_1)-p_C(x_2)\right\rVert^{2}+\left\lVert y_1-y_2\right\rVert^{2},\\
+			&\geqslant\left\lVert p_C(x_1)-p_C(x_2)\right\rVert^{2},
+		\end{align}
+		d'après le théorème de Pythagore. Donc $p_C\colon E\to C$ est $1$-Lipschitzienne.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Dans la question 2), si $x\not\in C$, on considère $H$ l'hyperplan passant par $p_C(x)$ et orthogonal à $x-p_C(x)$. $C$ est de l'autre côté de $H$ par rapport à $x$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $\varphi$ est linéaire par rapport à la seconde variable car $G\subset\mathcal{L}(\K^{n})$. De plus, on a 
+		\begin{equation}
+			\varphi(y,x)=\sum_{g\in G}(g(y)|g(x))=\sum_{g\in G}\overline{(g(x)|g(y)}=\overline{\varphi(x,y)},
+		\end{equation}
+		et $\varphi(x,x)=\sum_{g\in G}\left\lVert g(x)\right\rVert^{2}\geqslant0$. Enfin, si $\varphi(x,x)=0$ alors pour tout $g\in G$, $\left\lVert g(x)\right\rVert=0$. En particulier, pour $g=id$, on a $x=0$. Donc $\varphi$ est un produit scalaire.
+
+		Soit $g_0\in G$. Comme $g\mapsto g\circ g_0$ est bijectif de réciproque $g\mapsto g\circ g_0^{-1}$, le résultat en découle.
+
+		\item Soit $B$ une base de $\K^{n}$ orthonormée pour $\varphi$ (existe d'après le procédé de Gram-Schmidt). Soit $f\in G$ et $M=\mat_{B}(f)$ est orthogonale (si $\K=\R$) ou unitaire (si $\K=\C$). Donc $M^{\mathsf{T}}M=I_n$ (respectivement $\overline{M}^{\mathsf{T}}M=I_n$), d'où $M^{-1}=M^{\mathsf{T}}$ (respectivement $M^{-1}=\overline{M}^{\mathsf{T}}$), donc $\Tr(f^{-1})=\overline{\Tr(f)}$.
+		
+		\item Soit $B$ base de $\R^{2}$ orthonormée pour $\varphi$ associée à $G$, $P$ la matrice de passage de la base canonique de $\R^{2}$ à $B$. Pour tout $M\in G$, $P^{-1}MP\in SO_{2}(\R)$ et $G'=\left\lbrace P^{-1}MP\middle| M\in G\right\rbrace$ est un sous-groupe fini de $SO_2(\R)$. OR $(SO_2(\R),\times)$ est isomorphe à $(\U,\times)$ (via $R_\theta\mapsto\e^{\i\theta}$)/ Spot $M$ un sous-groupe de cardinal $n$ de $(\U,\times)$, d'après le théorème de Lagrange, pour tout $z\in H$, $z^{n}=1$ donc $H\subset\U_n$ et par isomorphisme, $G$ est cyclique.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	On a aussi, pour tout $f\in G,\left\lvert\det(f)\right\rvert=1$ car $\overline{M}^{\mathsf{T}}M=I_n$.
+\end{remark}
+
+\begin{remark}
+	Il existe des sous-groupes finis de $GL_2(\R)$ non commutatifs. Par exemple, le groupe des isométries du triangle (3 rotations, 3 symétries), isomorphe à $(\sigma_3,\circ)$ non-commutatif.
+\end{remark}
+
 \end{document}

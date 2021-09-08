@@ -9,5 +9,59 @@
 	\Huge \textit{\textbf{Exercices MP/MP$^*$\\ Espaces préhilbertiens}}
 	\vspace*{\fill}
 \end{titlepage}
+
+\begin{exercise}
+	Soit $E=\mathcal{C}^{2}([0,1],\R)$ et \function{\varphi}{E^{2}}{\R}{(f,g)}{\int_{0}^{1}fg+g'g'}
+	\begin{enumerate}
+		\item Montrer que $\varphi$ est un produit scalaire.
+		\item Soit $V=\left\lbrace f\in E\middle| f(0)=f(1)=0\right\rbrace$ et $W=\left\lbrace g\in E\middle| g''=g\right\rbrace$. Montrer que $V$ et $W$ sont supplémentaires orthogonaux. Pour $h\in E$, déterminer $p_{W}(h)$ (projection orthogonale sur $W$).
+		\item Soit $(\alpha,\beta)\in\R^{2}$ et $E_{\alpha,\beta}=\left\lbrace h\in E\middle| h(0)=\alpha\text{ et }h(1)=\beta\right\rbrace$. Déterminer 
+		\begin{equation}
+			\inf\limits_{h\in E_{\alpha,\beta}}\int_{0}^{1}h^{2}+h'^{2}.
+		\end{equation}
+	\end{enumerate}
+\end{exercise}
     
+\begin{exercise}
+	Soit $a\neq0$ et \function{\Delta}{\R[X]}{\R[X]}{P}{P(X+a)-P(X)}
+	\begin{enumerate}
+		\item Déterminer $\ker(\Delta)$. Si $P\in\R[X]\setminus\R_{0}[X]$, que vaut $\deg(\Delta P)$ ?
+		\item Soit \function{\varphi}{\R[X]^{2}}{\R}{(P,Q)}{\sum_{k=0}^{+\infty}\Delta^{k}P(0)\Delta^{k}Q(0)}
+		Montrer que $\varphi$ est bien définie, et que c'est un produit scalaire.
+
+		\item Exhiber une base orthonormée $(P_n)_{n\in\N}$ de $\R[X]$ telle que pour tout $n\in\N$, $\deg(P_n)=n$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Trouver 
+	\begin{equation}
+		\min\limits_{(a,b)\in\R^{2}}\int_{0}^{\frac{\pi}{2}}\left(\sin(x)-ax-b\right)^{2}\d x=I(a,b).
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E=\R[X]$, $(a_n)_{n\in\N}\in\R^{\N}$. On définit 
+	\begin{equation}
+		(P|Q)=\sum_{k=0}^{+\infty}P^{(k)}(a_k)Q^{(k)}(a_k).
+	\end{equation}
+	\begin{enumerate}
+		\item Montrer que $(\cdot|\cdot)$ est un produit scalaire.
+		\item Existence et unicité d'une base orthonormée $(P_n)_{n\in\N}$ telle que pour tout $n\in\N$, $\deg(P_n)=n$ et le coefficient dominant de $P_n$ et strictement positif.
+		\item Déterminer, pour $(k,j)\in\N^{2}$, $P_j^{(k)}(a_k)$.
+		\item Montrer que 
+		\begin{equation}
+			P_n(x)=\int_{a_{0}}^{x}\int_{a_1}^{t_1}\dots\int_{a_{n-1}}^{t_{n-1}}\d t_{n}\d t_{n-1}\dots\d t_{2}\d t_{1}.
+		\end{equation}
+		\item Déterminer $P_n$ si pour tout $n\in\N$, $a_n=n\alpha$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Calculer 
+	\begin{equation}
+		\inf\limits_{(a,b,c)\in\R^{3}}\int_{0}^{+\infty}\left(ax^{2}-bx+c-\sin(x)\right)^{2}\e^{-x}\d x.
+	\end{equation}
+\end{exercise}
+
 \end{document}
