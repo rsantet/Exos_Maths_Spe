@@ -10,4 +10,468 @@
 	\vspace*{\fill}
 \end{titlepage}
 
+\begin{proof}
+	$f$ est $\mathcal{C}^{\infty}$ sur $\R^{3}\setminus\left\lbrace(0,0,0)\right\rbrace$. Pour $(x,y,z)\neq(0,0,0)$, posons 
+	\begin{equation}
+		(x,y,z)=\left\lVert (x,y,z)\right\rVert_{2}(x',y',z').	
+	\end{equation}
+	On a 
+	\begin{equation}
+		f(x,y,z)=\frac{\left\lVert (x,y,z)\right\rVert_{2}^{3}(x'^{3}+y'^{3}-x'y'^{2}+y'z'^{2}+x'y'z')}{\left\lVert(x,y,z)\right\rVert_{2}^{2}}.
+	\end{equation}
+	Comme $\left\lVert (x',y',z')\right\rVert_{2}=1=x'^{2}+y'^{2}+z'^{2}$, on a $(x',y',z')\in[-1,1]^{3}$ et 
+	\begin{equation}
+		\left\lvert f(x,y,z)\right\rvert\leqslant5\left\lVert (x,y,z)\right\rVert_{2}\xrightarrow[\left\lVert (x,y,z)\right\rVert_{2}\to0]{}0.
+	\end{equation}
+	D'où la continuité de $f$ en $(0,0,0)$.
+
+	On étudie les dérivées partielles en $(0,0,0)$. On forme $x\mapsto f(x,0,0)=x$, donc $\frac{\partial f}{\partial x}(0,0,0)$ existe et vaut 1, puis $y\mapsto f(0,y,0)=y$ donc $\frac{\partial f}{\partial y}(0,0,0)$ existe et vaut 1 et enfin $z\mapsto f(0,0,z)=0$ donc $\frac{\partial f}{\partial z}(0,0,0)$ existe et vaut 0. Donc si $f$ est différentiable en $(0,0,0)$, nécessairement \function{df_{(0,0,0)}}{\R^{3}}{\R}{(h,k,l)}{h+k}
+
+	Pour $(h,k,l)\neq(0,0,0)$, on a 
+	\begin{align}
+		f(h,k,l)-f(0,0,0)-(h+k)
+		&=\frac{h^{3}+k^{3}-hk^{2}+kl^{2}+hkl-h^{3}-hk^{2}-hl^{2}-k^{3}-kh^{2}-kl}{h^{2}+k^{2}+l^{2}},\\
+		&=\frac{-2hk^{2}+hkl-hl^{2}-kh^{2}}{h^{2}+k^{2}+l^{2}}.
+	\end{align}
+	On pose $(h,k,l)=\left\lVert (h,k,l)\right\rVert_{2}(h',k',l')$ avec $\left\lVert (h',k',l')\right\rVert_{2}=1$. Soit 
+	\begin{equation}
+		\varphi(h,k,l)=\frac{f(h,k,l)-f(0,0,0)-(h+k)}{\left\lVert(h,k,l)\right\rVert_{2}}=-2h'k'^{2}+h'k'l'-h'l'^{2}-k'h'^{2}.
+	\end{equation}
+	
+	Pour $(h,k,l)=t(1,1,0)$, on a 
+	\begin{equation}
+		\varphi(t,t,0)=-\frac{3}{\sqrt{3}{2}}\xrightarrow[t\to0]{}0.
+	\end{equation}
+	Donc $f$ n'est pas différentiable en $(0,0,0)$, et n'est donc pas $\mathcal{C}^{1}$ non plus.
+\end{proof}
+
+\begin{remark}
+	On peut aussi, en fixant $(h,k,l)\in\R^{3}$, on étudie \function{\psi}{\R}{\R}{t}{f((0,0,0)+t(h,k,l))=t\frac{h^{3}+k^{3}-hk^{2}+kl^{2}+hkl}{h^{2}+k^{2}+l^{2}}}
+	$\psi$ est dérivable en 0, et 
+	\begin{equation}
+		D_{(h,k,l)}f(0,0,0)=\frac{h^{3}+k^{3}-hk^{2}+kl^{2}+hkl}{h^{2}+k^{2}+l^{2}},
+	\end{equation}
+	non linéaire selon $(h,k,l)$. Donc $f$ n'est pas différentiable en $(0,0,0)$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a pour tout $(a,b)\in\R^{2}$, on a $\min(a,b)=\frac{a+b-\left\lvert a-b\right\rvert}{2}$. Par récurrence, on montre que $\psi$ est continue.
+		\item Supposons $\psi$ différentiable en $x_0$. Soit $i\in J$, on a $\psi-\varphi_i\leqslant0$ sur $U$ et $(\psi-\varphi_i)(x_0)=0$, donc $\psi-\varphi_i$ admet un extremum en $x_0$, donc $d(\psi-\varphi_i)_{x_0}=0$ et $d\psi_{x_0}=d\varphi_{{i}_{x_0}}$.
+		
+		Supposons qu'il existe $l\in\mathcal{L}(\R^{n},\R)$ tel que $d\varphi_{i_{x_0}}=l$ pour tout $i\in J$. D'abord, on a pour tout $j\not\in J$, $\varphi_j(x_0)>\psi(x_0)$, donc par continuité de $\varphi_j-\psi$ il existe $\eta_j>0$ tel que 
+		\begin{equation}
+			\forall x\in B(x_0,\eta_j),\quad (\varphi_j-\psi)(x)>0.
+		\end{equation}
+		On pose alors $\eta=\min\limits_{j\not\in J}(\eta_j)$. Alors pour tout $x\in B(x_0,\eta)$, il existe $i\in J$, $\psi(x)=\varphi_i(x)$.
+
+		Soit $\varepsilon>0$, pour tout $i\in J$, il existe $\delta_{i}>0$ tel que si $\left\lVert h\right\rVert<\delta_{i}$,
+		\begin{equation}
+			\left\lvert\varphi_i(x_0+h)-\varphi_i(x_0)-l(h)\right\rvert\leqslant\varepsilon\left\lVert h\right\rVert.
+		\end{equation}
+
+		On pose $\delta=\min\limits_{i\in H}(\delta_i)$. Donc si $\left\lVert h\right\rVert\leqslant\min(\delta,\eta)$, on a 
+		\begin{equation}
+			\left\lvert\psi(x_0+h)-\psi(x_0)-l(h)\right\rvert\leqslant\varepsilon\left\lVert h\right\rVert,
+		\end{equation}
+		car $\psi(x_0+h)$ est un des $\varphi_i(x_0+h)$. Donc $\psi$ est bien différentiable en $x_0$, et pour tout $i\in J$, $d\psi_{x_0}=l=d\varphi_{i_{x_0}}$.
+
+		\item Fixons $x_0\in U, h\in\R^{n}$. Pour le même $\eta$ que précédemment, on a pour tout $x\in B(x_{0},\eta)$, il existe $i\in J$ tel que $d\psi_{x}=d\varphi_{i_{x}}$. Alors 
+		\begin{equation}
+			\left\lvert d\psi_x(h)-d\psi_{x_{0}}(h)\right\rvert\leqslant\max\limits_{i\in J}\left\lvert d\varphi_{i_{x}}(h)-d\varphi_{i_{x_{0}}}\right\rvert\xrightarrow[x\to x_0]{}0.
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	C'est faux pour un nombre infini de fonctions, par exemple la fonction nulle partout sauf sur $\left[0,\frac{2}{n}\right]$ où elle est affine par morceaux et vaut $-1$ en $\frac{1}{n}$.
+\end{remark}
+
+\begin{proof}
+	$f$ est $\mathcal{C}^{\infty}$ sur $\R^{n}$. Soit $A=\left(\frac{1}{i+j+1}\right)_{1\leqslant i,j\leqslant n}\in S_n(\R)$. On a alors $f(X)=X^{\mathsf{T}}AX$. Si $X\neq 0$, on a 
+	\begin{align}
+		f(X)
+		&=\sum_{(i,j)\in\left\llbracket1,n\right\rrbracket^{2}}x_{i}x_{j}\int_{0}^{1}t^{i+j}\d t,\\
+		&=\int_{0}^{1}\sum_{(i,j)\in\left\llbracket1,n\right\rrbracket^{2}}x_i x_j t^{i}t^{j}\d t,\\
+		&=\int_{0}^{1}\left(\sum_{i=1}^{n}x_i t^{i}\right)^{2}\d t\geqslant0.
+	\end{align}
+	Or $\left(\sum_{i=1}^{n}x_i t^{i}\right)^{2}$ est continue positive, donc $f(X)=0$ si et seulement si $\left(\sum_{i=1}^{n}x_i t^{i}\right)^{2}=0$, pour tout $t\in[0,1]$, donc $x_i=0$ pour tout $i\in\left\llbracket1,n\right\rrbracket$. Ainsi, $A$ est définie positive.
+
+	Soient $\lambda_1\leqslant\dots\leqslant\lambda_n$ les valeurs propres de $A$. On a pour tout $X\in\R^{n}$, $\lambda_1\left\lVert X\right\rVert^{2}\leqslant f(X)$, donc $\lim\limits_{\left\lVert X\right\rVert\to+\infty}f(X)=+\infty$. Donc $f$ n'admet pas de maximum global sur $H_0$, mais un minimum global.
+
+	Si $f$ présente un extremum en $X_0\in H_0$, soit alors $H=(h_1,\dots,h_n)\in H_0$. Soit \function{\varphi}{\R}{\R}{t}{f(X_0+t H)}
+	$\varphi$ présente un extremum en $t=0$, donc $\varphi'(0)=0$ et $(\nabla f(X_0)| H)=0$.
+
+	On a $\nabla f(X_0)=2AX_0$ (terme en $t$ du polynôme $f(X_0+tH)$) et $(2AX_{0}|H)=0$ pour tout $H\in H_0$, donc $AX_0\in H_0^{\perp}=\Vect((1,\dots,1))$ et il existe $\lambda\in\R$ tel que $AX_{0}=\lambda\begin{pmatrix}
+		1\\\vdots\\1
+	\end{pmatrix}$. Comme $A\in GL_{n}(\R)$ car $A\in S_{n}^{++}(\R)$, on a 
+	\begin{equation}
+		X_0=\lambda A^{-1}\begin{pmatrix}
+			1\\\vdots\\1
+		\end{pmatrix},
+	\end{equation}
+	et $X_0\in H_0$ donc $\left(X_0\middle|\begin{pmatrix}
+		1\\\vdots\\1
+	\end{pmatrix}\right)=1$, donc il y a un unique extremum sur $H_0$, qui est un minimum absolu : 
+	\begin{equation}
+		X_0=\frac{
+			A^{-1}\begin{pmatrix}
+				1\\\vdots\\1
+			\end{pmatrix}
+		}{
+			\left(
+				A^{-1}\begin{pmatrix}
+					1\\\vdots\\1
+				\end{pmatrix}\middle|
+				\begin{pmatrix}
+					1\\\vdots\\1
+				\end{pmatrix}
+			\right)
+		}.
+	\end{equation}
+\end{proof}
+
+\begin{proof}
+	Soit $\Delta=\left\lbrace(x,y)\in\R^{2}\middle| x\neq0\right\rbrace$ ouvert. $f$ est$\mathcal{C}^{\infty}$ sur $\Delta$.
+
+	Soit $y_0\in\R$, pour $r\geqslant0$ et $\theta\in\R$, on a 
+	\begin{equation}
+		f\left(r\cos(\theta),y_0+t\sin(\theta)\right)=
+		\left\lbrace
+			\begin{array}[]{ll}
+				0 &\text{si }r=0\text{ ou }\theta\equiv\frac{\pi}{2}[\pi],\\
+				r^{2}\cos^{2}(\theta)\sin\left(\frac{y_0+r\sin(\theta)}{r\cos(\theta)}\right) &\text{sinon}.
+			\end{array}
+		\right.
+	\end{equation}
+	Dans tous les cas, $\left\lvert f(r\cos(\theta),y_0+r\sin(\theta))\right\rvert\leqslant r^{2}\xrightarrow[r\to0]{}0.$ Donc $f$ est continue en $(0,y_0)$.
+
+	Pour l'existence des dérivées partielles en $(0,y_0)$ : on forme $x\mapsto f(x,y_0)$ et on se demande si elle est dérivable en 0.
+	Pour $x\neq 0$, on a 
+	\begin{equation}
+		\frac{f(x,y_0)-f(0,y_0)}{x}=x\sin\left(\frac{y_0}{x}\right),
+	\end{equation}
+	donc 
+	\begin{equation}
+		\left\lvert \frac{f(x,y_0)-f(0,y_0)}{x}\right\rvert\leqslant\left\lvert x\right\rvert\xrightarrow[x\to0]{}0.
+	\end{equation}
+	Donc $\frac{\partial f}{\partial x}(0,y_0)$ existe et vaut 0.
+
+	Soit $y\mapsto f(0,y)=0$, donc $\frac{\partial f}{\partial y}(0,y)$ existe et vaut 0.
+
+	Si $f$ est différentiable en $(0,y_0)$, nécessairement on a \function{df_{(0,y_0)}}{\R^{2}}{\R}{(h,k)}{h\frac{\partial f}{\partial x}(0,y_0)+k\frac{\partial f}{\partial y}(0,y_0)=0}
+
+	Étudions donc 
+	\begin{equation}
+		f(h,y_0+k)-f(0,y_0)=\varphi(h,k)=
+		\left\lbrace 
+			\begin{array}[]{ll}
+				h^{2}\sin\left(\frac{y_0+k}{h}\right), &\text{si }h\neq0,\\
+				0, &\text{si }h=0.
+			\end{array}
+		\right.
+	\end{equation}
+
+	Alors $\left\lvert\varphi(h,k)\right\rvert\leqslant\left\lVert (h,k)\right\rVert_{2}^{2}$, donc $\varphi(h,k)=\underset{(h,k)\to(0,0)}{o}((h,k))$ donc $f$ est différentiable en $(0,0)$.
+
+	Pour tout $(x_0,y_0)\in\Delta$, on a 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\frac{\partial f}{\partial x}(x_0,y_0) &=&2x_0\sin\left(\frac{y_0}{x_0}\right)-y_0\cos\left(\frac{y_0}{x_0}\right),\\
+			\frac{\partial f}{\partial y}(x_0,y_0)=x_0\cos\left(\frac{y_0}{x_0}\right).
+		\end{array}
+	\end{equation}
+
+	Pour $r\geqslant0$ et $\theta\in\R$, on a 
+	\begin{equation}
+		\frac{\partial f}{\partial x}(r\cos(\theta),r\sin(\theta))=
+		\left\lbrace
+			\begin{array}[]{ll}
+				0, &\text{si }r\cos(\theta)=0,\\
+				2r\cos(\theta)\sin\left(\frac{y_0+r\sin(\theta)}{r\cos(\theta)}\right),&\text{sinon.}
+			\end{array}
+		\right.
+	\end{equation}
+	Si $y_0\neq0$, pour $\theta=0$, on a $\frac{\partial f}{\partial x}(r,y_0)=-y_0\cos\left(\frac{y_0}{x}\right)$, qui n'a pas de limite en $r\to0$. Si $y_0=0$, on a $\left\lvert\frac{\partial f}{\partial x}(r\cos\theta,r\sin\theta)\right\rvert\leqslant 3r\xrightarrow[r\to0]{}0$. Donc $f$ n'est pas de classe $\mathcal{C}^{1}$ et on a toujours $\frac{\partial f}{\partial y}(x_0,y_0)=0$.
+\end{proof}
+
+\begin{proof}
+	Soit $X_0=(x_{1}^{0},\dots,x_{n}^{0})\in\R^{n}$. Si $\left\lVert\cdot\right\rVert_{1}$ est différentiable en $X_0$, alors pour tout $i\in\left\lbrace1,\dots,n\right\rbrace$, 
+	\begin{equation}
+		x_i\mapsto \left\lVert(x_1^{0},\dots,x_i,\dots,x_n^{0})\right\rVert=\left\lvert x_i\right\rvert+\sum_{j\neq i_0}\left\lvert x_j^{0}\right\rvert,
+	\end{equation}
+	est dérivable en $x_{i}^{0}$. Nécessairement, $x_{i}^{0}\neq0$ pour tout $i\in\left\lbrace1,\dots,n\right\rbrace$.
+	Réciproquement, si pour tout $i\in\left\lbrace1,\dots,n\right\rbrace$, $x_{i}^{0}\neq0$, notons $\varepsilon_{i}=1$ si $x_i^{0}>0$ et $\varepsilon_i=-1$ sinon. Pour $X$ suffisamment proche de $X_0$, pour tout $i\in\left\lbrace1,\dots,n\right\rbrace$, $x_i$ est du signe de$ sx_{i}^{0}$ et $\left\lVert X\right\rVert_{1}=\sum_{i=1}^{n}\varepsilon_{i}x_{i}$, localement linéaire donc différentiable et 
+	\begin{equation}
+		d\left\lVert \cdot\right\rVert_{1}(X_0)\colon h=(h_1,\dots,h_n)\mapsto\sum_{i=1}^{n}\varepsilon_{i}h_i.
+	\end{equation}
+
+	S'il existe un unique indice $i_{0}\in\left\lbrace 1,\dots,n\right\rbrace$ tel que $\left\lvert x_{i_{0}}^{0}\right\rvert)\left\lVert X_0\right\rVert_{\infty}$, pour tout $k\in\left\lbrace1,\dots,n\right\rbrace\setminus\left\lbrace i_0\right\rbrace$, on a $\left\lvert x_j^{0}\right\rvert<\left\lvert x_{i_0}^{0}\right\rvert$ ($\neq0$ car sinon $x_1^{0}=\dots=x_n^{0}=0$ mais $n\geqslant2$). Pour $X=(x_1,\dots,x_n)$ suffisamment proche de $X_0$, comme $x_j\mapsto\left\lvert x_j\right\rvert-\left\lvert x_{i_{0}}\right\rvert$ est continue et strictement négative en $x_{0}$, pour tout $j\in\left\lbrace1,\dots,n\right\rbrace\setminus\left\lbrace i_0\right\rbrace$, $\left\lvert x_j\right\rvert<\left\lvert x_{i_0}\right\rvert$. Donc $\left\lVert X\right\rVert_{\infty}=\left\lvert x_{i_0}\right\rvert=\varepsilon_{i_0}x_{i_0}$, linéaire donc $\left\lVert \cdot\right\rVert_{\infty}$ est différentiable en $X_0$.
+
+	S'il existe $i_1\neq i_2\in\left\lbrace 1,\dots,n\right\rbrace^{2}$ tel que $\left\lvert x_{i_{1}}^{0}\right\rvert=\left\lvert x_{i_{2}}^{0}\right\rvert=\left\lVert X_{0}\right\rVert_{\infty}$, quitte à remplacer âr $-X_0$ on suppose $x_{i_{1}}^{0}>0$. Soit 
+	\function{\varphi}{\R}{\R}{t}{\left\lVert X_0+(0,\dots,0,t,0,\dots,0)\right\rVert=
+	\left\lbrace
+		\begin{array}[]{ll}
+			t+x_{i_{1}}, &\text{si }t>0,\\
+			\left\lvert x_{i_{2}}\right\rvert=x_{i_{1}},&\text{si }t<0.
+		\end{array}
+	\right.
+	}
+	$\varphi$ n'est pas dérivable en 0, donc $\left\lVert\cdot\right\rVert_{\infty}$ est non différentiable en $X^{0}$.
+\end{proof}
+
+\begin{proof}
+	Soit $i_0\in\left\lbrace1,\dots,n\right\rbrace$. On prend $(\varepsilon_1,\dots,\varepsilon_{n-1})\in[0,1]^{n-1}\setminus\left\lbrace(0,\dots,0)\right\rbrace$. On veut prolonger par continuité en $(0,\dots,0,1,0,\dots,0)$ où le $1$ est en $i_{0}$-ième position. On a
+	\begin{align}
+		\frac{\prod_{i=1}^{n-1}\varepsilon_i\times\left(1-\left(\varepsilon_1+\dots+\varepsilon_{n-1}\right)\right)}{\prod_{\substack{i=1\\i\neq i_0}}^{n}\left(1-\varepsilon_i\right)\times\left(\varepsilon_1+\dots+\varepsilon_n\right)}
+		&\underset{(\varepsilon_1,\dots,\varepsilon_n)\to(0,\dots,0)}{\sim}\frac{\prod_{i=1}^{n-1}\varepsilon_i}{\varepsilon_{1}+\dots+\varepsilon_{n-1}},\\
+		&\leqslant\left\lVert(\varepsilon_1,\dots,\varepsilon_{n-1})\right\rVert_{1}^{n-2}\xrightarrow[(\varepsilon_1,\dots,\varepsilon_n)\to0]{}0,
+	\end{align}
+	car $n\geqslant3$.
+
+	On note $\Sigma_n$ le simplexe.
+	On peut définir \function{f}{\Sigma_n}{\R}{(x_1,\dots,x_n)}{
+		\left\lbrace
+			\begin{array}[]{ll}
+				\frac{\prod_{i=1}^{n}x_i}{\prod_{i=1}^{n}(1-x_i)} &\text{si }\forall i\in\left\lbrace1,\dots,n\right\rbrace, x_i\neq1,\\
+				0&\text{sinon.}
+			\end{array}
+		\right.
+	}
+	$f$ est continue sur le compact $\Sigma_{n}$ donc atteint son maximum sur $\Sigma_n$.
+
+	On a $f\left(\frac{1}{n},\dots,\frac{1}{n}\right)>0$ donc le maximum est strictement positif et est atteint en 
+	\begin{equation}
+		X_0=(x_{1}^{0},\dots,x_{n}^{0})\in]0,1[^{n}.	
+	\end{equation}
+
+	Soit $h=(h_1,\dots,h_n)$ tel que $\sum_{i=1}^{n}h_i=0$. Pour $\left\lvert t\right\rvert$ suffisamment petit, on a $X_0+th\in\Sigma_n$ et $\varphi\colon t\mapsto f(X_0+th)$ admet un extremum en 0. On a $\varphi'(0)=0=(\nabla f(X_0)|h)$, vrai pour tout $h$ tel que $\sum_{i=1}^{n}h_i=0$, donc pour tout $h\in\left\lbrace(1,\dots,1)\right\rbrace^{\perp}$. Donc $\nabla f(X_0)\in\Vect(1,\dots,1)$. Par symétrie, on a $\frac{\partial f}{\partial x_1}(X_0)=\dots=\frac{\partial f}{\partial x_n}(X_0)$. Soit $i\in\left\lbrace1,\dots,n\right\rbrace$, on a 
+	\begin{equation}
+		f(x_1,\dots,x_n)=\left(-1+\frac{1}{1-x_i}\right)\prod_{\substack{j=1\\j\neq i}}^{n}\frac{x_j}{1-x_j}.
+	\end{equation}
+
+	On a donc 
+	\begin{equation}
+		\frac{\partial f}{\partial x_i}(X_0)=\frac{1}{(1-x_i^{0})^{2}}\prod_{\substack{j=1\\ j\neq i}}^{n}\frac{x_j^{0}}{1-x_j^{0}}=\frac{1}{x_{i_{0}(1-x_i^{0})}}\times\prod_{j=1}^{n}\frac{x_j^{0}}{1-x_j^{0}}.
+	\end{equation}
+	Ainsi, pour $i_1\neq i_2$, 
+	\begin{equation}
+		\frac{1}{x_{i_{1}}(1-x_{i_{1}})}=\frac{1}{x_{i_{2}}(1-x_{i_{2}})}.
+	\end{equation}
+	Soit \function{\psi}{]0,1[}{\R}{t}{t(1-t)}. Alors $x_{i_{2}}^{0}=x_{i_{1}}^{0}$ ou $1-x_{i_{1}}$. Dans le deuxième cas, on a $x_{i_{1}}^{0}+x_{i_{2}}^{0}=1$ et pour tout $i\not\in\left\lbrace i_{1},i_{2}\right\rbrace$, $x_i=0$, ce qui n'est pas car le maximum est strictement positif.
+
+	Donc $x_1^{0}=\dots=x_{n}^{0}=\frac{1}{n}$ et donc 
+	\begin{equation}
+		\sup\left\lbrace\frac{\prod_{i=1}^{n}x_i}{\prod_{i=1}^{n}\left(1-x_i\right)}\middle| (x_1,\dots,x_n)\in(\R_{+})^{n},\sum_{i=1}^{n}x_i=1\right\rbrace=\left(\frac{1}{n-1}\right)^{n}.
+	\end{equation}
+\end{proof}
+
+\begin{remark}
+	En notant $\alpha_{n}=\left(\frac{1}{n-1}\right)^{n}$, on a 
+	\begin{equation}
+		\alpha_n=\e^{-n\ln(n-1)}=\e^{-n\left(\ln(n)+\ln\left(1-\frac{1}{n}\right)\right)}\underset{n\to+\infty}{\sim}\frac{\e}{n^{n}}.
+	\end{equation}
+\end{remark}
+
+\begin{proof}
+	On pose \function{f^{\star}}{\R^{2}}{\R}{(r,\theta)}{f(r\cos\theta,r\sin\theta)}
+	$f^{\star}$ est de classe $\mathcal{C}^{1}$ par composition. On a 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\frac{\partial f^{\star}}{\partial r} &=& \frac{\partial f}{\partial x}\cos(\theta)+\frac{\partial f}{\partial y}\sin(\theta),\\
+			\frac{\partial f^{\star}}{\partial \theta} &=& \frac{\partial f}{\partial x}\left(-r\sin\theta\right)+\frac{\partial f}{\partial y}r\cos\theta.
+		\end{array}
+	\end{equation}
+	Ainsi, $r\frac{\partial f^{\star}}{\partial r}=r\frac{\partial f}{\partial x}+y\frac{\partial f}{\partial y}$. En reportant, on a donc 
+	\begin{equation}
+		r\frac{\partial f^{\star}}{\partial r}+r^{2}=0.
+	\end{equation}
+
+	Pour $r>0$, on a $\frac{\partial f^{\star}}{\partial r}=-r$, encore vrai pour $r\geqslant0$ par continuité de $\frac{\partial f^{\star}}{\partial r}$. Ainsi,
+	\begin{equation}
+		f^{\star}(r,\theta)=-\frac{r^{2}}{2}+g(\theta),
+	\end{equation}
+	avec $g$ de classe $\mathcal{C}^{1}$.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $k\in\N$, $\Tr(M^{k})$ est un polynomiale en coefficients de $M$. Soit $(M,H)\in\mathcal{M}_n(\R)^{2}$, formons \function{\varphi}{\R}{\R^{n}}{t}{f(M+tH)}
+		Soit $k\in\N$, $\Tr((M+tH)^{k})$ est un polynôme, et la dérivée en 0 est le terme en $t$. Ce coefficient vaut 
+		\begin{equation}
+			\sum_{i=1}^{k}\Tr(M^{i-1}HM^{k-i})=k\Tr(M^{k-1}H).
+		\end{equation}
+		Donc $df_{M}(H)=\varphi'(0)=(\Tr(H),\dots,n\Tr(M^{n-1}H))$.
+
+		\item On a $df_{M}\in\mathcal{L}(M_n(\R),\R^{n})$. D'après le théorème du rang, on a $\rg(df_{M})=n^{2}-\dim(\ker(df_{M}))$. Or 
+		\begin{align}
+			\ker(df_{M})
+			&=\left\lbrace H\in\mathcal{M}_n(\R)\middle| \Tr(H)=\Tr(MH)=\dots=\Tr(M^{n-1}H)=0\right\rbrace,\\
+			&=\left\lbrace H\in\mathcal{M}_n(\R)\middle| \forall P\in\R_{n-1}[X],\Tr(P(M)H)=0\right\rbrace.
+		\end{align}
+
+		D'après le théorème de Cayley-Hamilton, pour tout $A\in\R[X]$, il existe $P\in\R_{n-1}[X]$ tel que $A(M)=P(M)$ où $P$ est le reste de la division euclidienne de $A$ par $\chi_{M}$. Ainsi, 
+		\begin{equation}
+			\ker(df_{M})=\left\lbrace H\in\mathcal{M}_n(\R)\middle|\forall P\in\R[X],\Tr(P(M)H)=0\right\rbrace.
+		\end{equation}
+		Or $(A,B)\mapsto\Tr(A^{\mathsf{T}}B)$ est un produit scalaire, donc 
+		\begin{equation}
+			\ker(df_{M})=\left\lbrace H\in\mathcal{M}_n(\R)\middle|\forall P\in\R[X],(\underbrace{P(M)^{\mathsf{T}}}_{P(M^{\mathsf{T}}}|H)=0\right\rbrace=\R[M^{\mathsf{T}}]^{\perp}.
+		\end{equation}
+		Comme $\dim(\R[M^{\mathsf{T}}])=\deg\Pi_{M^{\mathsf{T}}}=\def\Pi_{M}$. Ainsi, $\rg(df_{M})=\deg\Pi_{M}$.
+
+		\item A priori, pour tout $M\in\mathcal{M}_n(\R)$, $\Pi_M\mid \chi_M$ et 
+		\begin{equation}
+			C=\left\lbrace M\in\mathcal{M}_n(\R)\middle|\deg\Pi_M=n\right\rbrace=\left\lbrace M\in\mathcal{M}_n(\R)\middle|\rg(df_M)=n\right\rbrace.
+		\end{equation}
+
+		\begin{lemma}
+			\label{lem:1}
+			Si $\rg(A)=p$, il existe $\alpha>0$ tel que pour tout $M\in B(A,\alpha)$, $\rg(M)\geqslant p$.
+		\end{lemma}
+		\begin{proof}[Preuve du lemme~\ref{lem:1}]
+			Il existe une sous-matrice carrée de taille $p$ inversible extraite de $A$.
+		\end{proof}
+
+		Soit $M_0\in C$, $\rg(df_{M_0})=n$, on applique le lemme à $\mat(df_{M_{0}},B,B')$ où $B$ est la base de $\mathcal{M}_n(\R)$ et $B'$ est la base de $\R^{n}$. $f$ étant $\mathcal{C}^{1}$, $M\mapsto df_M$ est continue et il existe $\alpha$ tel que si $\left\lVert M-M_0\right\rVert\leqslant\alpha$, alors $\rg(df_M)\geqslant n$. Or $df_M\colon\mathcal{M}_n(\R)\to\R^{n}$, donc $\rg(df_M)\leqslant n$ et $B(M_0,\alpha)\subset C$. Donc $C$ est ouvert.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	On forme \function{f^{\star}}{\R^{\star}\times[-\pi,\pi]\left\lbrace-\frac{\pi}{2},\frac{\pi}{2}\right\rbrace}{\R}{(r,\theta)}{f(r\cos\theta,r\sin\theta)}
+	On a 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\frac{\partial f^{\star}}{\partial r}&=&\frac{\partial f}{\partial x}\cos\theta+\frac{\partial f}{\partial y}\sin\theta,\\
+			\frac{\partial f^{\star}}{\partial \theta}&=&\frac{\partial f}{\partial x}\left(-r\sin\theta\right)+\frac{\partial f}{\partial y}r\cos\theta.
+		\end{array}
+	\end{equation}
+
+	Donc $r\frac{\partial f^{\star}}{\partial r}=x\frac{\partial f}{\partial x}+y\frac{\partial f}{\partial y}$. En reportant, on a 
+	\begin{equation}
+		r\frac{\partial f^{\star}}{\partial r}=\frac{1}{\cos^{2}\theta r^{2}},
+	\end{equation}
+	donc $\frac{\partial f^{\star}}{\partial r}=\frac{1}{r^{3}\cos^{2}\theta}$ en intégrant par rapport à $r$ ($\theta$ constant). Ainsi,
+	\begin{equation}
+		f^{\star}(r,\theta)=-\frac{1}{2r^{2}\cos^{2}\theta}+g(\theta),
+	\end{equation}
+	avec $g$ de classe $\mathcal{C}^{1}$. Pour $(x,y)\in\R^{*}\times\R\setminus\left\lbrace (x,0)\middle| x\leqslant0\right\rbrace$, on a 
+	\begin{equation}
+		\theta=2\arctan\left(\frac{y}{x+\sqrt{x^{2}+y^{2}}}\right).
+	\end{equation}
+	Donc 
+	\begin{equation}
+		f(x,y)=-\frac{1}{2x^{2}}+h\left(\frac{y}{x+\sqrt{x^{2}+y^{2}}}\right),
+	\end{equation}
+	avec $h$ de classe $\mathcal{C}^{1}$.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Par convexité de $f$, pour tout $t\in[0,1]$, 
+		\begin{equation}
+			\begin{array}[]{rcl}
+				f(ty+(1-t)x) &\leqslant &tf(y)+(1-t)f(x),\\
+				f(x+(t(y-x)))&\leqslant & f(x)+t(f(y)-f(x)).
+			\end{array}
+		\end{equation}
+		On a $df_{x}(y-x)=\lim\limits_{t\to0}\frac{f(x+t(y-x))-f(x)}{t}$, or pout tout $t\in]0,1]$, on a 
+		\begin{equation}
+			\frac{f(x+t(y-x))-f(x)}{t}\leqslant f(y)-f(x).
+		\end{equation}
+		Donc $df_{x}(y-x)\leqslant f(y)-f(x)$.
+
+		\item Si $x$ est point critique de $f$, on a $df_{x}=0$. Donc pour tout $y\in U$, $f(y)\geqslant f(x)$ donc $f$ présente un minimum absolu. La réciproque est vraie car $U$ est ouvert.
+		
+		\item soit $(x,y)\in E^{2}$, soit $t\in[0,1]$. On a $f(x)=f(y)=\min\limits_{U}f$. Par convexité de $f$, on a 
+		\begin{equation}
+			f(tx+(1-t)y)\leqslant tf(x)+(1-t)f(y)=f(y),
+		\end{equation}
+		donc $f(tx+(1-t)y)=f(y)=\min\limits_{U}f$.
+
+		\item On a $E=\left\lbrace x\in\R^{n}\middle| df_{x}=0\right\rbrace=df^{-1}(\left\lbrace0\right\rbrace)$. $E$ est fermé car $df$ est continue (application linéaire en dimension finie).
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Si $f$ est $\alpha$-homogène, soit $g(t)=f(tx)=t^{\alpha}f(x)$. On a 
+	\begin{equation}
+		f'(t)=\alpha t^{\alpha-1}f(x)=df_{tx}(x)=\sum_{i=1}^{n}x_i\frac{\partial f}{\partial x_i}(tx_1,\dots,tx_n).
+	\end{equation}
+	Pour $t=1$, on a le résultat.
+
+	Réciproquement, soient $g_1(t)=f(tx)$ et $g_2(t)=t^{\alpha}f(x)$. On a 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			g_1'(t) &=&\sum_{i=1}^{n}x_i\frac{\partial f}{\partial x_i}(tx),\\
+			g_2'(t) &=& \alpha t^{\alpha-1}f(x).
+		\end{array}
+	\end{equation}
+	Donc $tg_2'(t)=\alpha g_2(t)$ et $tg_1'(t)=\sum_{i=1}^{n}tx_i\frac{\partial f}{\partial x}(tx)=\alpha f(tx)=\alpha g_1(t)$.
+
+	$g_1$ et $g_2$ sont solutions d'une même équation différentiable et $g_1(1)=g_2(1)$ donc $g_1=g_2$.
+\end{proof}
+
+\begin{remark}
+	\phantom{}
+	\begin{itemize}
+		\item Une application linéaire est 1-homogène.
+		\item Un produit scalaire est 2-homogène.
+		\item $(x,y,z)\to xy^{2}-4x^{3}+xyz$ est 3-homogène.
+	\end{itemize}
+\end{remark}
+
+\begin{proof}
+	$f$ est $\mathcal{C}^{1}$ sur $\R^{3}$. On a $f(x,x,x)=3x^{2}-x^{3}\xrightarrow[x\pm\infty]{}\pm\infty$. $X=(x,y,z)$ est un point critique si et seulement si 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\frac{\partial f}{\partial x}&=&0,\\
+			\frac{\partial f}{\partial y}&=&0,\\
+			\frac{\partial f}{\partial z}&=&0,
+		\end{array}
+	\end{equation}
+	si et seulement si 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			2x &=& yz,\\
+			2y &=& xz,\\
+			2z &=& xy,			
+		\end{array}
+	\end{equation}
+	si et seulement si 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			z&=&\frac{x^{2}z}{4},\\
+			x&=&\frac{xz^{2}}{4},\\
+			y&=&\frac{xz}{2},
+		\end{array}
+	\end{equation}
+	si et seulement si $z=x=y0$ ou $(x,y,z)\in\left\lbrace (\pm2,\pm2,\pm2)\right\rbrace$ et $y=\frac{xz}{2}$.
+
+	\begin{itemize}
+		\item En (0,0,0), soit $X=(x,y,z)$, soit $X'=\frac{X}{\left\lVert X\right\rVert_{2}}$. On a $f(X)=\left\lVert X\right\rVert_{2}^{2}-\left\lVert X\right\rVert_{2}^{3}x'y'z'$. Or $\left\lvert x'y'z'\right\rvert\leqslant 1$ car $\left\lVert X'\right\rVert_{2}=1$. Donc $f(X)=\left\lVert X\right\rVert_{2}^{2}+\underset{X\to0}{o}\left(\left\lVert X\right\rVert_{2}^{2}\right)\underset{X\to0}{\sim}\left\lVert X\right\rVert_{2}^{2}$. Donc $f(X)\geqslant0=f(0)$ au voisinage de 0. On a donc un minimum local en 0.
+		
+		\item En (2,2,2), on a 
+		\begin{align}
+			f(2+h,2+k,2+l)-f(2,2,2)
+			&=(2+h)^{2}+(2+k)^{2}+(2+l)^{2}-(2+h)(2+k)(2+l)-4,\\
+			&=\underbrace{h^{2}+k^{2}+l^{2}-2hk-2kl-2hl}_{q(h,k,l)}-\underbrace{hkl}_{=\underset{(h,k,l)\to(0,0,0)}{o}(\left\lVert (h,k,l)\right\rVert_{2}^{2})}.
+		\end{align}
+		On a 
+		\begin{equation}
+			q(h,k,l)=(h,k,l)\underbrace{\begin{pmatrix}
+				1&-1&-1\\-1&1&-1\\-1&-1&1
+			\end{pmatrix}}_{A}\begin{pmatrix}
+				h\\k\\l
+			\end{pmatrix}.
+		\end{equation}
+		On a $A=2I_{3}-\begin{pmatrix}
+			1&1&1\\1&1&1\\1&1&1
+		\end{pmatrix}$ semblable à $\diag(2,2,-1)$. Les valeurs propres de $A$ sont de signes opposés donc $q(h,k,l)$ change de signe donc $f$ admet un point col en (2,2,2) : pas d'extremum. Par exemple, $q(h,0,0)=h^{2}>0$ et $q(h,h,h)=-3h^{2}<0$ pour $h\neq0$.
+	\end{itemize}
+\end{proof}
+
 \end{document}

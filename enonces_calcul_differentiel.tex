@@ -10,4 +10,105 @@
 	\vspace*{\fill}
 \end{titlepage}
 
+\begin{exercise}
+	Étudier la continuité, la différentiabilité et la classe de 
+	\function{f}{\R^{3}}{\R}{(x,y,z)}{
+		\left\lbrace
+			\begin{array}[]{rcl}
+				\frac{x^{3}+y^{3}-xy^{2}+yz^{2}+xyz}{x^{2}+y^{2}+z^{2}} &\text{si }(x,y,z)\neq(0,0,0),\\
+				0 &\text{sinon.}
+			\end{array}
+		\right.
+	}
+\end{exercise}
+
+\begin{exercise}
+	Soit $U$ ouvert de $\R^{n}$, $(\varphi_1,\dots,\varphi_{k})\in\left(\mathcal{C}^{0}(U,\R)\right)^{k}$.
+	\begin{enumerate}
+		\item Montrer que $\psi=\min\limits_{1\leqslant i\leqslant k}(\varphi_i)$ est continue.
+		\item Soit $x_0\in U$, si les $(\varphi_i)_{1\leqslant i\leqslant k}$ sont différentiables en $x_0$, donner une condition nécessaire et suffisante pour que $\psi$ le soit. On pourra former 
+		\begin{equation}
+			J=\left\lbrace i\in\left\llbracket1,k\right\rrbracket,\psi(x_0)=\varphi_i(x_0)\right\rbrace.
+		\end{equation}
+		\item Si les $(\varphi_i)_{1\leqslant i\leqslant k}$ sont $\mathcal{C}^{1}$ sur $U$ et $\psi$ est différentiable, montrer que $\psi$ est $\mathcal{C}^{1}$ sur $U$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	On définit 
+	\function{f}{\R^{n}}{\R}{
+		X=\begin{pmatrix}
+			x_1\\\vdots\\x_n
+		\end{pmatrix}
+	}{
+		f(X)=\sum_{(i,j)\in\left\llbracket1,n\right\rrbracket^{2}}\frac{x_i x_j}{i+j+1}
+	}
+	Soit $H_0=\left\lbrace(x_1,\dots,x_n)\in\R^{n}\middle|\sum_{i=1}^{n}x_i=1\right\rbrace$. Déterminer les extrema de $f$ sur $H_0$.
+\end{exercise}
+
+\begin{exercise}
+	Étudier la continuité, différentiabilité, classe de \function{f}{\R^{2}}{\R}{(x,y)}{
+		\left\lbrace
+			\begin{array}[]{ll}
+				x^{2}\sin\left(\frac{y}{x}\right),&\text{si }x\neq0,\\
+				0 &\text{sinon}.
+			\end{array}
+		\right.
+	}
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant 2$, en quels points de $\R^{n}$, $\left\lVert\cdot\right\rVert_{1}$ et $\left\lVert\cdot\right\rVert_{\infty}$ sont-elles différentiables ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant3$. Trouver 
+	\begin{equation}
+		\sup\left\lbrace\frac{\prod_{i=1}^{n}x_i}{\prod_{i=1}^{n}\left(1-x_i\right)}\middle| (x_1,\dots,x_n)\in(\R_{+})^{n},\sum_{i=1}^{n}x_i=1\right\rbrace.
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Trouver les fonctions $f\colon\R^{2}\to\R$ de classe $\mathcal{C}^{1}$ telle que pour tout $(x,y)\in\R^{2}$
+	\begin{equation}
+		x\frac{\partial f}{\partial x}(x,y)+y\frac{\partial f}{\partial y}(x,y)+x^{2}+y^{2}=0.
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Soit \function{f}{\mathcal{M}_n(\R)}{\R^n}{M}{(\Tr(M),\Tr(M^{2}),\dots,\Tr(M^{n}))}
+	\begin{enumerate}
+		\item Montrer que $f$ est $\mathcal{C}^{\infty}$, calculer sa différentielle.
+		\item Quel est le rang de $df_{M}$ ? On l'exprimera en fonction du degré du polynôme minimal de $M$, $\Pi_{M}$.
+		\item Montrer que $C=\left\lbrace M\in\mathcal{M}_n(\R)\middle|\Pi_{M}=\chi_{M}\right\rbrace$ est un ouvert de $\mathcal{M}_n(\R)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Trouver toutes les applications $f\colon\R^{\star}\times\R\to\R$ de classe $\mathcal{C}^{1}$ telles que pour tout $(x,y)\in\R^{*}\times\R$, 
+	\begin{equation}
+		x\frac{\partial f}{\partial x}(x,y)+y\frac{\partial f}{\partial y}(x,y)=\frac{1}{x^{2}}.
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Soit $U$ un ouvert convexe de $\R^{n}$ et $f\colon U\to\R$ convexe et $\mathcal{C}^{1}$.
+	\begin{enumerate}
+		\item Montrer que pour $(x,y)\in U^{2}$, $f(y)\geqslant f(x)+df_{x}(y-x)$.
+		\item Montrer que tout point critique de $f$ est un minimum absolu.
+		\item Montrer que l'ensemble $E$ des points critiques de $f$ est convexe.
+		\item On suppose $U=\R^{n}$, montrer que $E$ est fermé.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $\alpha\in\R$, on dit que $f\colon\R^{n}\to\R$ est homogène de degré $\alpha$ ou $\alpha$-homogène si et seulement si pour tout $(x,t)\in\R^{n}\times\R_{+}^{*}$, $f(tx)=t^{\alpha}f(x)$.
+
+	Soit $f\colon\R^{n}\to\R$ $\mathcal{C}^{1}$, montrer que $f$ est $\alpha$-homogène si et seulement si pour tout $x=(x_1,\dots,x_n)\in\R^{n}$, $\sum_{i=1}^{n}x_i\frac{\partial f}{\partial x_i}(x_1,\dots,x_n)=\alpha f(x)$.
+\end{exercise}
+
+\begin{exercise}
+	Étudier les extrema de \function{f}{\R^{3}}{\R}{(x,y,z)}{x^{2}+y^{2}+z^{2}-xyz}.
+\end{exercise}
+
 \end{document}
