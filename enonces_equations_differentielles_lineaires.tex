@@ -1,0 +1,260 @@
+\documentclass[12pt]{article}
+\usepackage{style/style}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\vspace*{\fill}
+	\Huge \textit{\textbf{Exercices MP/MP$^*$\\ Équations différentielles linéaires}}
+	\vspace*{\fill}
+\end{titlepage}
+
+\begin{exercise}
+	Résoudre, sur un intervalle à préciser,
+	\begin{equation}
+		y''+2xy'+(1+x^{2})y=0.
+	\end{equation}
+	On pourra chercher $\varphi$ de classe $\mathcal{C}^{1}$ telle que si $u(y)=y'+\varphi y$, alors $u\circ u(y)=y''+2xy'+(1+x^{2})y$.
+\end{exercise}
+
+\begin{exercise}
+	Résoudre, sur un intervalle $I$ à préciser,
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{rcl}
+				tx' &=& x-3y+3z,\\
+				ty' &=& -2x-6y+13z,\\
+				tz' &=& -x-4y+8z.
+			\end{array}
+		\right.
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A\in\mathcal{A}_n(\R)$ antisymétrique et $V'(x)=AV(x)$.
+	\begin{enumerate}
+		\item Soit $u\in\R^{n}$, et $V$ solution de l'équation différentielle telle que $V(0)=u$. Évaluer $\left\lVert V(x)\right\rVert_{2}$.
+		\item Soit $(V_1,\dots,V_n)$ $n$ solutions de l'équation différentielle. Évaluer $\det_{B}(V_1(x),\dots,V_n(x))=W(x)$ où $B$ désigne une base orthonormée directe.
+		\item À quelle condition nécessaire et suffisante existe-t-il $u\in\R^{n}$ tel que pour tout $x\in\R$, $(u,V(x))$ est liée ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Résoudre, sur un intervalle à préciser, le système différentiel
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{rcl}
+				x' &=& -4x-2y+\frac{2}{\e^{t}-1},\\
+				y' &=& 6x+3y-\frac{3}{\e^{t}-1}.
+			\end{array}
+		\right.
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Pour $\lambda\in\R$, on considère l'équation différentielle 
+	\begin{equation}
+		xf'(x)+\lambda f(x)=\frac{1}{x+1}.
+	\end{equation}
+	\begin{enumerate}
+		\item Déterminer les solutions de cette équation différentielle qui ont une limite finie en 0, et les solutions développables en séries entières (au voisinage de 0).
+		\item Calculer $S=\sum_{n\in\N}\frac{(-1)^{n}}{8^{n}(3n+1)}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in\mathcal{M}_n(\R)$.
+	\begin{enumerate}
+		\item Montrer que pour tout $i\neq j$, $a_{i,j}\geqslant0$ si et seulement si pour tout $t\in\R_{+}$, $\exp(tA)\in\mathcal{M}_n(\R_{+})$.
+		\item On suppose que l'on est dans ce cas. Soit $f\colon\R_{+}\to(\R_{+})^{n}$, $\mathcal{C}^{0}$ et soir $x_{0}\in(\R_{+})^{n}$. Montrer que l'unique solution du problème de Cauchy 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{rcl}
+					x'(t)&=&Ax(t)+f(t),\\
+					x(0&=&x_0,
+				\end{array}
+			\right.
+		\end{equation}
+		prend ses valeurs dans $(\R_{+})^{n}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $n\geqslant1$ et $f_1,\dots,f_n$ $n$ fonctions de $[a,b]$ dans $\R$, $\mathcal{C}^{0}$ sur $[a,b]$ et $\mathcal{C}^{\infty}$ sur $]a,b[$. On pose 
+	\begin{equation}
+		W(x)=
+		\begin{vmatrix}
+			f_1(x) &\dots &f_n(x)\\
+			f_1'(x) &\dots &f_n'(x)\\
+			\vdots&\vdots&\vdots\\
+			f_1^{(n-1)}(x) &\dots &f_n^{(n-1)}(x)
+		\end{vmatrix}.
+	\end{equation}
+	Montrer que $X$ ne s'annule pas sur $[a,b]$ si et seulement si $(a_0,\dots,a_{n-1})\in\mathcal{C}^{0}(]a,b[,\R)^{n}$ tel que $(f_1,\dots,f_n)$ forme une base de solution de $y^{(n)}+a_{n-1}(x)+y^{(n-1)}+\dots+a_0(x)y=0$.
+\end{exercise}
+
+\begin{exercise}
+	Résoudre, en précisant l'intervalle, $y''+y=\left\lvert\sin(x)\right\rvert$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $A\colon A\to\mathcal{A}_n(\R)$ continue et $X_0\in O_n(\R)$ et $X\colon X\to\mathcal{M}_n(\R)$ $\mathcal{C}^{1}$ solution de $X'(t)=A(t)X(t)$ avec $X(0)=X_0$. Montrer que pour tout $t\in\R$, $X(t)\in O_n(\R)$.
+\end{exercise}
+
+\begin{exercise}
+	Résoudre $2xy''+y'-y=0$.
+\end{exercise}
+
+\begin{exercise}
+	Résoudre $y''-y=\frac{1}{\cosh(x)}$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=\mathcal{M}_n(\C)$ telle que pour tout $\lambda\in\Sp_{\C}(A)$, $\Re(\lambda)<0$. Montrer que 
+	\begin{equation}
+		\lim\limits_{t\to+\infty}\exp(tA)=0.
+	\end{equation}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f$ continue périodique de période $T>0$. Soit $\omega>0$. À quelles conditions nécessaires et suffisantes (sur $f$) existe-t-il une solution $T$-périodique de $y''+\omega^{2}y=f$ ?
+\end{exercise}
+
+\begin{exercise}
+	Résoudre $x^{2}y''-2x(1-x)y'+2(1+x)y=0$.
+\end{exercise}
+
+\begin{exercise}
+	Soit $f\colon\R\to\R$ de classe $\mathcal{C}^{1}$ telle que $\lim\limits_{t\to+\infty}f'(t)+f(t)=0$. Montrer que $\lim\limits_{t\to+\infty}f(t)=0$. Est-ce encore vrai si $\lim\limits_{t\to+\infty}f'(t)-f(t)=0$ ?
+\end{exercise}
+
+\begin{exercise}
+	Soit $B\in\mathcal{M}_n(\K)$ et $A\colon\R\to\mathcal{M}_n(\K)$ solution de pour tout $t\in\R$, $A'(t)=A(t)B-BA(t)=[A(t),B]$ (crochet de Lie). Montrer que pour tout $t\in\R$, $A(t)$ est semblable à $A(0)$.
+\end{exercise}
+
+\begin{exercise}
+	Dans $\mathcal{M}_n(\K)$, on pose $[A,B]=AB-BA$. On pose $X_1(t)=\exp(tA)$, $X_2(t)=\exp(tB)X_1(t)$ et $X_3(t)=\exp(-t(A+B))X_2(t)$ pour tout $t\in\R$.
+	\begin{enumerate}
+		\item Montrer que l'on peut définir $\varphi\colon\R\to\mathcal{M}_n(\K)$ de classe $\mathcal{C}^{1}$ tel que pour tout $t\in\R$, 
+		\begin{equation}
+			X_3'(t)=\exp(-t(A+B))\varphi(t)\exp(tB)\exp(tA),
+		\end{equation}
+		et évaluer $\varphi'(t)$.
+
+		\item On suppose $[A,[A,B]]=[B,[A,B]]=0$. Calculer $\varphi(t)$ puis $X_3(t)$. Montrer enfin que 
+		\begin{equation}
+			\exp(A+B)=\exp(A)\exp(B)\exp\left(-\frac{1}{2}[B,A]\right).
+		\end{equation}
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soient $p,q\colon I\to\R$ et $y''(x)+p(x)y'(x)+q(x)y=0$. Soit $y$ une solution non nulle de l'équation différentielle. On note $X=\left\lbrace x\in I\middle| y(x)=0\right\rbrace$.
+	\begin{enumerate}
+		\item Montrer que tous les points de $X$ sont isolés.
+		\item Montrer que si $I$ est compact, $X$ est fini.
+		\item Si $I=[a,b[$ avec $b\in\R\cup\left\lbrace+\infty\right\rbrace$, si $X$ est infini, montrer que l'on peut ordonner $X$ en une suite $X=(x_n)_{n\in\N}$ avec $x_n<x_{n+1}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	\phantom{}
+	\begin{enumerate}
+		\item Soient $p,q\colon I\subset\R\to\R$ continues avec $y''+p(x)y'+q(x)y=0$. Soit $(y_1,y_2)$ une base de solution de l'équation différentielle. Montrer que si $a<b$ sont deux zéros consécutifs de $y_1$ ($y_1$ ne s'annule pas sur $]a,b[$), alors $y_2$ s'annule une seule fois sur $]a,b[$. Et réciproquement : on dit que les zéros de $y_1$ et $y_2$ sont entrelacés.
+		
+		\item Soient $r_1,r_2\colon I\to\R$ continues et 
+		\begin{equation}
+			\begin{array}[]{rcl}
+				y''+r_1 y&=&0,\\
+				y''+r_2 y&=&0.
+			\end{array}
+		\end{equation}
+
+		Soit $y_1$ une solution non nulle de la première équation différentielle. Soient $a<b$ deux zéros consécutifs de $y_1$. Soit $y_2$ une solution de la deuxième équation différentielle. Montrer que $y_2$ s'annule au moins une fois sur $]a,b[$.
+
+		Application : s'il existe $\omega>0$ tel que pour tout $t\in I$, $r_1(t)<\omega^{2}$, montrer que l'écart entre deux zéros consécutifs de $y_1$ est plus grand que $\frac{\pi}{\omega}$. Et si pour tout $t\in I$, $r_1(t)\geqslant\omega'^{2}$ avec $\omega'>0$ ?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $p\colon\R\to\R$ continue $T$-périodique avec $T>0$. Soit l'équation différentielle $y''+py=0$, on note $S$ l'ensemble de ces solutions.
+	\begin{enumerate}
+		\item Montrer qu'il existe $A\in\R$ tel que pour tout $y\in S$, pour tout $x\in\R$, $y(x+2T)-2Ay(x+T)+y(x)=0$. On pourra étudier \function{\mathcal{T}_T}{S}{\mathcal{C}^{2}(\R,\R)}{y}{
+			\begin{array}[]{lllcl}
+				\mathcal{T}_T(y)&\colon&\R&\to&\R\\
+				&&x&\mapsto&y(x+T)
+			\end{array}
+		}
+		vérifier que $\mathcal{T}_T\in\mathcal{L}(S)$ et déterminer $\chi_{\mathcal{T}_T}$.
+
+		\item Montrer que si $\left\lvert A\right\rvert<1$, alors toutes les solutions de $E$ sont bornées.
+		\item Examiner le cas $\left\lvert A\right\rvert\geqslant1$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $f\colon\R\to\R$ continue telle que $\lim\limits_{\left\lvert x\right\rvert\to+\infty}f(x)=0$. Soit $y''-y=f$. 
+	\begin{enumerate}
+		\item Montrer que l'équation différentielle admet une unique solutions bornée $y_0$.
+		\item Évaluer $\lim\limits_{\left\lvert x\right\rvert\to+\infty}y_0(x)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $q\colon[a,+\infty[\to\R$ continue et $p[a,+\infty[\colon\R_{+}^{*}$ de classe $\mathcal{C}^{1}$, et l'équation différentielle 
+	\begin{equation}
+		p(t)x''+p'(t)x'(t)+q(t)x=0.
+	\end{equation}
+	\begin{enumerate}
+		\item Soit $x\colon[a,+\infty[\to\R$ de classe $\mathcal{C}^{1}$ telle que pour tout $t\in[a,+\infty[$, $(x(t),x'(t))\neq(0,0)$. Montrer qu'il existe $r,\theta\colon[a,+\infty[\to\R$ de classe $\mathcal{C}^{1}$ telle que pour tout $t\in[a,+\infty[$,
+		\begin{equation}
+			\begin{array}[]{rcl}
+				p(t)x'(t)&=&r(t)\cos(\theta(t)),\\
+				x(t)&=&r(t)\sin(\theta(t)).
+			\end{array}
+		\end{equation}
+
+		\item Montrer que l'équation différentielle équivaut à un système
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{rcl}
+					r'&=&f(r,\theta,t),\\
+					\theta'&=&g(r,\theta,t).
+				\end{array}
+			\right.
+		\end{equation}
+
+		\item Si $p=1,q>0$ et $\int_{a}^{+\infty}q(t)\d t$ diverge, montrer que $x$ est solution de l'équation différentielle non nulle s'annulant une infinité de fois.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $E$ un sous-espace vectoriel de dimension $n\in\N^{*}$ de $\mathcal{C}^{\infty}(\R,\C)$. Montrer l'équivalence
+	\begin{enumerate}[label=(\roman*)]
+		\item $E$ est stable par dérivation,
+		\item il existe $(a_{0},\dots,a_{n-1})\in\C^{n}$ tel que $E$ est l'ensemble solution de l'équation différentielle $y^{(n)}+a_{n-1}y^{(n-1)}+\dots+a_{0}y=0$,
+		\item $E$ est stable par translation, c'est-à-dire que pour tout $a\in\R$, pour tout $f\in E$, \function{\mathcal{T}_{a}(f)}{\R}{\C}{x}{f(x+a)} est dans $E$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit \begin{equation}
+		E=\left\lbrace E\in\mathcal{C}^{\infty}([0,1],\R)\middle| f(0)=f(1)=0\right\rbrace.
+	\end{equation}
+	Soit $\Delta\in\mathcal{C}^{\infty}([0,1],\R_{+}^{*})$ et \function{v}{E}{\mathcal{C}^{\infty}([0,1],\R)}{f}{\frac{1}{\Delta}f''=v(f)}
+	Notons que si $v(f)=\lambda f$ alors $v(f)\in E$.
+	\begin{enumerate}
+		\item Montrer que s'il existe $\lambda\in\R$ et $v\in E\setminus\left\lbrace 0\right\rbrace$ tel que $v(f)=\lambda f$, alors $\lambda<0$. Définir un produit scalaire $\left\langle\cdot,\cdot\right\rangle$ sur $E$ tel que si $v(f)=\lambda f$ et $v(g)=\mu g$ et $\lambda\neq \mu$ alors $\left\langle f,g\right\rangle=0$.
+		\item On prolonge $\Delta$ en $\widetilde{\Delta}\in\mathcal{C}^{\infty}(\R_{+}^{*},\R)$ tel que $\Delta(x)=1$ pour tout $x\geqslant2$. Montrer que pour tout $\gamma<0$, il existe un unique $f_{\gamma}\in\mathcal{C}^{\infty}(\R_{+},\R)$ tel que $f_{\gamma}(0)=0$.
+		\item Montrer que $f_{\gamma}$ admet une suite (dénombrable) de racines simples notées 
+		\begin{equation}
+			x_{0}(\gamma)=0<x_{1}(\gamma)<\dots<x_{n}(\gamma)<\dots,
+		\end{equation}
+		et telle que $\lim\limits_{n\to+\infty}x_n(\gamma)=+\infty$.
+
+		\item Montrer que pour tout $n\geqslant1$, $\lim\limits_{\gamma\to0}x_n(\gamma)=+\infty$.
+	\end{enumerate}
+\end{exercise}
+
+\end{document}

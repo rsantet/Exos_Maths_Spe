@@ -10,4 +10,1257 @@
 	\vspace*{\fill}
 \end{titlepage}
 
+\begin{proof}
+
+	L'équation différentielle est linéaire homogène sous forme résolue du second ordre. D'après le théorème de Cauchy-Lipschitz, l'ensemble solution est un $\R$-espace vectoriel de dimension 2.
+
+	Soit $\varphi$ de classe $\mathcal{C}^{1}(\R,\R)$ et \function{u}{\mathcal{C}^{1}(\R,\R)}{\mathcal{C}^{0}(\R,\R)}{y}{y'+\varphi y}
+	On définit ensuite 
+	\function{u\circ u}{\mathcal{C}^{2}(\R,\R)}{\mathcal{C}^{0}(\R,\R)}{y}{(y'+\varphi y)'+\varphi(y' + \varphi y)=y''+ y'(2\varphi)+(\varphi' +\varphi^{2})y}
+	On pose $\varphi(x)=x$. Alors l'équation différentielle équivaut à $u\circ u(y)=0$. On a $u(z)=0$ si et seulement si $z'+xz=0$ si et seulement s'il existe $c\in\R$ tel que pour tout $x\in\R$, $z(x)=C\e^{-\frac{x^{2}}{2}}$.
+
+	On cherche la solution générale sous la forme $y(x)=d(x)\e^{-\frac{x^{2}}{2}}$. En reportant, cela équivaut à $d'(x)\e^{-\frac{x^{2}}{2}}=c\e^{-\frac{x^{2}}{2}}$, et cela équivaut au fait qu'il existe $d\in\R$ tel que $d(x)=cx+d$.
+	Donc l'ensemble solution est 
+	\begin{equation}
+		\left\lbrace x\mapsto(cx+d)\e^{-\frac{x^{2}}{2}}\middle| (c,d)\in\R^{2}\right\rbrace.
+	\end{equation}
+\end{proof}
+
+\begin{proof}
+	C'est une équation homogène linéaire. Soit 
+	\begin{equation}
+		A=
+		\begin{pmatrix}
+			1&-3&3\\
+			-2&-6&13\\
+			-1&-4&8
+		\end{pmatrix}.
+	\end{equation}
+
+	Le système équivaut à $tY'=aY$ où \function{Y}{I=\R_{+}^{*}\text{ ou }\R_{-}^{*}}{\R^{3}}{t}{
+		\begin{pmatrix}
+			x(t)\\y(t)\\z(t)
+		\end{pmatrix}
+	}
+
+	Sur $I$, le système équivaut à $Y'=\frac{1}{t}AY$, équation homogène à valeurs dans $\R^{3}$. D'après le théorème de Cauchy-Lipschitz, l'ensemble solution est un $\R$-espace vectoriel de dimension 3. On a 
+	\begin{align}
+		\chi_{A}
+		&=
+		\begin{vmatrix}
+			X-1&3&-3\\
+			2&X+6&-13\\
+			&1&4&X-8
+		\end{vmatrix},\\
+		&=
+		\begin{vmatrix}
+			X-1 &3&0\\
+			2&X+6&X-7\\
+			1&4&X-4	
+		\end{vmatrix},\\
+		&=
+		\begin{vmatrix}
+			X-1 &-4X+7&0\\
+			2&X-2&X-7\\
+			1&0&X-4
+		\end{vmatrix},\\
+		&=(-4X+7)(X-7)+(X-4)\left((X-1)(X-2)-2(-4X+7)\right),\\
+		&=X^{3}-3X^{2}+3X-1,\\
+		&=(X-1)^{3}.
+	\end{align}
+	$A$ est trigonalisable mais non diagonalisable car non semblable à $I_{3}$. On a 
+	\begin{equation}
+		(A-I_3)\begin{pmatrix}
+			x\\y\\z
+		\end{pmatrix}=\begin{pmatrix}
+			0\\0\\0
+		\end{pmatrix}\Longleftrightarrow
+		\left\lbrace
+			\begin{array}[]{rcl}
+				-3y+3z &=& 0,\\
+				-2x-7y+13z &=& 0,\\
+				-x-4y+7z &=&0. 
+			\end{array}
+		\right.
+		\Longleftrightarrow
+		\left\lbrace
+			\begin{array}[]{rcl}
+				y&=&z,\\
+				x&=&3y
+			\end{array}
+		\right.
+	\end{equation}
+	On prend pour vecteur propre $f_1=\begin{pmatrix}
+		3\\1\\1
+	\end{pmatrix}$. On a $(A-I_3)^{3}=0$ d'après le théorème de Cayley-Hamilton, et $\dim(\ker(A-I_3))=1$. On a 
+	\begin{equation}
+		(A-I_3)^{2}=
+		\begin{pmatrix}
+			0&-3&3\\
+			-2&-7&13\\
+			-1&-4&7
+		\end{pmatrix}
+		\begin{pmatrix}
+			0&-3&3\\
+			-2&-7&13\\
+			-1&-4&7
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			3&9&-18\\
+			1&3&-6\\
+			1&3&-6
+		\end{pmatrix}.
+	\end{equation}
+
+	On choisit $f_3$ tel que $(A-I_3)^{2}f_3\neq\begin{pmatrix}
+		0\\0\\0
+	\end{pmatrix}$, par exemple $f_3=\begin{pmatrix}
+		1\\0\\0
+	\end{pmatrix}$. On pose $f_2=(A-I_3)f_3=\begin{pmatrix}
+		0\\-2\\-1
+	\end{pmatrix}$, et on a $f_1=(A-I_3)^{2}f_3
+	=
+	\begin{pmatrix}
+		3\\1\\1
+	\end{pmatrix}$.
+
+	Soit 
+	\begin{equation}
+		P=\begin{pmatrix}
+			3&0&1\\
+			1&-2&0\\
+			1&-1&0
+		\end{pmatrix}\in GL_{3}(\R).
+	\end{equation}
+	Alors 
+	\begin{equation}
+		A_{1}=P^{-1}AP=\begin{pmatrix}
+			1&1&0\\
+			0&1&1\\
+			0&0&1
+		\end{pmatrix}.
+	\end{equation}
+
+	On pose $Y_1=P^{-1}Y=\begin{pmatrix}
+		x_1\\y_1\\z_1
+	\end{pmatrix}$. Alors le système équivaut à 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{rcl}
+				tx_1' &=& x_1+y_1,\\
+				ty_1' &=& y_1+z_1,\\
+				tz_1' &=& z_1.
+			\end{array}
+		\right.
+	\end{equation}
+	On trouve $z_1(t)=\alpha\e^{\ln\left\lvert t\right\rvert}=C t$ pour tout $t\in I$ (avec $C=\pm\alpha$). En reportant, on a $y_1'=\frac{1}{t}y_1+C$, donc si $y_1(t)=D(t)\times t$, on a $D'(t)\times t=C$ d'où $D(t)=C\ln\left\lvert t\right\rvert+D$. Enfin, on a $x_1'=\frac{1}{t}x_1+C\ln\left\lvert t\right\rvert+D$.
+
+	Donc si $x_1(t)=E(t)\times t$, on a $E'(t)\times t=C\ln\left\lvert t\right\rvert+D$. Si $I=\R_{+}^{*}$, on a 
+	\begin{equation}
+		E(t)=C\int_{1}^{t}\frac{\ln(u)}{u}\d u+D\ln(t)+E,
+	\end{equation}
+	avec $\int_{1}^{t}\frac{\ln(u)}{u}\d u=\frac{1}{2}\ln^{2}(t)$. Ainsi, on a $E(t)=\frac{C}{2}\ln^{2}(t)+D\ln(t)+E$, d'où 
+	\begin{equation}
+		x_1(t)=\frac{C}{2}t\ln^{2}\left\lvert t\right\rvert+Dt\ln\left\lvert t\right\rvert+E\times t.
+	\end{equation}
+
+	Puis $Y=PY_{1}$, prolongeable (avec une classe $\mathcal{C}^{1}$) en 0 si et seulement si $C=D=0$ si et seulement si $Y_1(t)=\begin{pmatrix}
+		tE\\0\\0
+	\end{pmatrix}$.
+\end{proof}
+
+\begin{remark}
+	Sur $I=\R_{+}^{*}$ ou $\R_{-}^{*}$, on a 
+	\begin{align}
+		tY_1'=A_1Y_1
+		&\Longleftrightarrow Y_1'-\frac{1}{t}A_1Y_1=0,\\
+		&\Longleftrightarrow \exp(-\ln(t)A_1)(Y_1'-\frac{1}{t}A_1 Y_1)=(Y_1(t)\exp(-\ln(t)A_1))'=0,\\
+		&\Longleftrightarrow \exists Y_0\in\R^{3}, \forall t\in I, \exp(-\ln\left\lvert t\right\rvert A_1)Y_1(t)=Y_0,\\
+		&\Longleftrightarrow \exists Y_0\in\R^{3}, \forall t\in I, Y_1(t)=\exp(\ln\left\lvert t\right\rvert A_1)Y_0.
+	\end{align}
+	On a $A_1=I_3+\underbrace{
+		\begin{pmatrix}
+			0&1&0\\0&0&1\\0&0&0
+		\end{pmatrix}
+	}_{N}$ avec $N^{2}=
+	\begin{pmatrix}
+		0&0&\\0&0&0\\0&0&0
+	\end{pmatrix}$ et $N^{3}=0$. Ainsi, 
+	\begin{equation}
+		\exp(\ln\left\lvert t\right\rvert A_1)=\underbrace{\e^{\ln\left\lvert t\right\rvert}}_{\pm t}\times\left(I_3+\ln\left\lvert t\right\rvert N+\frac{\ln^{2}\left\lvert t\right\rvert}{2}N^{2}\right).
+	\end{equation}
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $V(x)=\e^{xA}u$ sur $\R$. Pour tout $x\in\R$, on a $xA\in\mathcal{A}_n(\R)$ et 
+		\begin{align}
+			\exp(xA)^{\mathsf{T}}
+			&=\exp((xA)^{\mathsf{T}}),\\
+			&=\exp(-xA),\\
+			&=\exp(xA)^{-1},
+		\end{align}
+		donc $\exp(xA)\in SO_n(\R)$ et $\left\lVert V(x)\right\rVert_{2}=\left\lVert u\right\rVert_{2}$.
+
+		\item D'après le théorème de Cauchy-Lipschitz, pour tout $x_0\in\R$, \function{\Theta_{x_0}}{S_{\R}}{\R^{n}}{V}{V(x_0)} est un isomorphisme (où $S_{\R}$ est l'ensemble solution).
+		
+		Ainsi,
+		\begin{itemize}
+			\item ou bien $(V_1,\dots,V_n)$ est liée et pour tout $x\in\R$, $W(x)=0$,
+			\item ou bien $(V_1,\dots,V_n)$ est libre et pour tout $x\in\R$, $B(x)=(V_1(x),\dots,V_n(x))$ est une base de $\R^{n}$ et $W(x)\neq0$. Alors 
+			\begin{align}
+				W'(x)
+				&=\sum_{i=1}^{n}\det_{B}(V_1(x),\dots,V_i'(x),\dots,V_n(x)),\\
+				&=\sum_{i=1}^{n}\det_{B(x)}(V_1(x),\dots,AV_i(x),\dots,V_n(x))W(x),\\
+				&=\sum_{i=1}^{n}a_{i,i}W(x),\\
+				&=W(x)\times\Tr(A),\\
+				&=0.
+			\end{align}
+			Donc $W(x)=c$.
+		\end{itemize}
+
+		\item On suppose $u\neq0$. Comme pour tout $x\in\R$, $\exp(xA)\in O_n(\R)$. $(u,\exp(xA)u)$ est liée si et seulement s'il existe $\varepsilon(x)\in\left\lbrace-1,1\right\rbrace$ telle que $\varepsilon(x)\in\left\lbrace-1,1\right\rbrace$, $\exp(xA)u=\varepsilon(x)u$. On a $(\exp(xA)u|u)=\varepsilon(x)\left\lVert u\right\rVert_{2}^{2}$ donc $x\mapsto\varepsilon(x)$ est continue à valeurs dans $\left\lbrace-1,1\right\rbrace$ donc constante.
+		
+		\begin{lemma}
+			\label{lem:1}
+			On a $\Sp_{\R}A\subset\left\lbrace0\right\rbrace$, et il existe $P\in O_n(\R)$ et $(\alpha_1,\dots,\alpha_p)\in(\R^{*})^{p}$ tel que 
+			\begin{equation}
+				P^{-1}AP=P^{\mathsf{T}}AP=\begin{pmatrix}
+					0&-\alpha_1\\
+					\alpha_1&0\\
+					&&\ddots\\
+					&&&0&-\alpha_p\\
+					&&&\alpha_p&0\\
+					&&&&&\ddots\\
+					&&&&&&0
+				\end{pmatrix}=A_1.
+			\end{equation}
+		\end{lemma}
+		\begin{proof}[Preuve du lemme~\ref{lem:1}]
+			Si $Ax=\lambda X$, alors 
+			\begin{equation}
+				(AX|X)=X^{\mathsf{T}}AX=\lambda\left\lVert X\right\rVert_{2}^{2}=(X^{\mathsf{T}}AX)^{\mathsf{T}}=X^{\mathsf{T}}(-A)X=-\lambda\left\lVert X\right\rVert_{2}^{2}.
+			\end{equation}
+			Donc $\lambda=0$.
+
+			Le deuxième résultat s'obtient par récurrence sur $n$.
+		\end{proof}
+
+		On a donc 
+		\begin{equation}
+			\exp(xA)=P\exp(xA_1)P^{-1}=P\begin{pmatrix}
+				R_{x\alpha_1}\\
+				&\ddots\\
+				&&R_{x\alpha_p}\\
+				&&&1\\
+				&&&&\ddots\\
+				&&&&&1
+			\end{pmatrix}P^{-1},
+		\end{equation}
+		avec $\alpha_{i}\neq0$, où $R_{\theta}$ indique la matrice de rotation en dimension 2 d'angle $\theta$. Ainsi, pour que $\exp(xA)u=u$ pour tout $x\in\R$, il faut et il suffit que $u\in\ker(A)$ (pour ne pas être affecté par les matrices de rotation).
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Si $(V_1(0),\dots,V_n(0))$ est une base orthonormée directe, pour tout $x\in\R$, pour tout $i\in\left\lbrace1,\dots,n\right\rbrace$, $\left\lVert V_i(x)\right\rVert_{2}=\left\lVert V_i(0)\right\rVert_{2}=1$ et en dérivant, on a $(V_i(x)|V_j(x))=\varphi_{i,j}(x)$.
+
+	On a 
+	\begin{align}
+		\varphi_{i,j}'(x)
+		&=(V_i'(x)|V_j(x))+(V_i(x)|V_j'(x)),\\
+		&=V_j(x)^{\mathsf{T}}AV_i(x)+V_j^{\mathsf{T}}\underbrace{A^{\mathsf{T}}}_{-A}V_i(x),\\
+		&=0.
+	\end{align}
+	Donc $\varphi_{i,j}=0$ donc $\varphi_{i,j}(x)=0$ pour tout $x\in\R$. Enfin, \begin{equation}
+		\det_{B}(V_1(x),\dots,V_n(x))=\det_{B}(V_1(0),\dots,V_n(0))=1.	
+	\end{equation}
+	Donc pour tout $x\in\R$, $(V_1(x),\dots,V_n(x))$ est une base orthonormée directe.
+\end{remark}
+
+\begin{proof}
+	On résout sur $I=\R_{+}^{*}$ ou $\R_{-}^{*}$. Posons 
+	\begin{equation}
+		A=\begin{pmatrix}
+			-4&-2\\
+			6&3
+		\end{pmatrix},
+	\end{equation}
+	$Y\colon t\mapsto\begin{pmatrix}
+		x(t)\\y(t)
+	\end{pmatrix}$, $B\colon t\mapsto\frac{1}{\e^{t}-1}\begin{pmatrix}
+		2&-3
+	\end{pmatrix}$.
+
+	$(x,y)$ est solution du système différentiel sur $I$ si et seulement si pour tout $t\in I$, $Y'(t)=AY(t)+B(t)$.
+
+	On réduit $A$ : $\chi_{A}=X^{2}+X=X(X+1)$ est scindé à racines simples, donc $A$ est diagonalisable. On a 
+	\begin{equation}
+		A\begin{pmatrix}
+			a\\b
+		\end{pmatrix}=0\Longleftrightarrow 
+		\left\lbrace
+			\begin{array}[]{rcl}
+				-4a-2b&=&0,\\
+				6a+3b&=&0,
+			\end{array}
+		\right.
+	\end{equation}
+	si et seulement si $2a=b$. On pose $f_0=\begin{pmatrix}
+		1\\-2
+	\end{pmatrix}$, vecteur propre de $A$ associé à 0. On a 
+	\begin{equation}
+		(A+I_2)\begin{pmatrix}
+			a\\b
+		\end{pmatrix}=0\Longleftrightarrow
+		\left\lbrace
+			\begin{array}[]{rcl}
+				-4a-2b &=&0,\\
+				6a+3b &=&0,
+			\end{array}
+		\right.
+	\end{equation}
+	si et seulement si $3x=-2y$. On pose $f_{-1}=\begin{pmatrix}
+		2\\-3
+	\end{pmatrix}$.
+
+	Soit $P=\begin{pmatrix}
+		1&2\\
+		-2&-3
+	\end{pmatrix}$, on a $P^{-1}AP=A_1=\begin{pmatrix}
+		0&0\\
+		0&-1
+	\end{pmatrix}$, et on pose $Y_1=P^{-1}Y=\begin{pmatrix}
+		x_1\\y_1
+	\end{pmatrix}$. De plus, on a 
+	\begin{equation}
+		B(t)=\frac{1}{\e^{t}-1}\begin{pmatrix}
+			2\\-3
+		\end{pmatrix}=\frac{1}{\e^{t}-1}f_{-1},
+	\end{equation}
+	donc $P^{-1}B(t)=\frac{1}{\e^{t}-1}\begin{pmatrix}
+		0\\1
+	\end{pmatrix}=B_1(t)$.
+
+	Ainsi, le système différentiel équivaut sur $I$ à pour tout $t\in I$, $Y_1'(t)=A_1 Y_1(t)+B_1(t)$, d'où pour tout $t\in I$,
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{rcl}
+				x_1'(t)&=&0,\\
+				y_1'(t)&=&-y_1(t)+\frac{1}{\e^{t}-1}.
+			\end{array}
+		\right.
+	\end{equation}
+	Ainsi, il existe $\alpha\in\R$ tel que pour tout $t\in I$, $x_1(t)=\alpha$. D'autre part, on trouve $y_1(t)=\e^{t}\left(\ln(\left\lvert\e^{t}-1\right\rvert)+\gamma\right)$, avec $\gamma\in\R$.
+
+	Pour déterminer $x$ et $y$, on calcule ensuite $Y=PY_{1}$.
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On résout sur $I=\R_{+}^{*}$ou $]-1,0[$. Sur $I$, l'équation différentielle équivaut à 
+		\begin{equation}
+			f'(x)+\frac{\lambda}{x}f(x)=\frac{1}{x(x+1)},
+		\end{equation}
+		d'équation homogène associée $y'=-\frac{\lambda}{x}y$. Les solutions de l'équation homogène sont $x\mapsto\beta\e^{-\lambda\ln\left\lvert x\right\rvert}=\frac{\beta}{\left\lvert x\right\rvert^{\lambda}}$ où $\beta\in\R$.
+		Pour une solution générale de la forme $y(x)=\frac{\beta(x)}{\left\lvert x\right\rvert^{\lambda}}$ avec $x\mapsto\beta(x)$ de classe $\mathcal{C}^{1}$ sur $I$, on a $\frac{\beta'(x)}{\left\lvert x\right\rvert^{\lambda}}=\frac{1}{x(x+1)}=\frac{1}{x}-\frac{1}{x+1}$. Commencent les disjonctions de cas où l'on note $f(x)=\frac{\beta(x)}{\left\lvert x\right\rvert^{\lambda}}$ une solution.
+
+		\begin{itemize}
+			\item \underline{Si $I=\R_{+}^{*}$}, on a $\beta'(x)=x^{\lambda-1}-\frac{x^{\lambda}}{x+1}$.
+			
+			\begin{itemize}
+				\item \underline{Si $\lambda\neq0$}, il existe $\beta\in\R$ tel que $\beta(x)=\frac{x^{\lambda}}{\lambda}-\int_{1}^{x}\frac{u^{\lambda}}{u+1}\d u+\beta$ et $f(x)=\frac{1}{\lambda}-\frac{1}{x^{\lambda}}\int_{1}^{x}\frac{u^{\lambda}}{1+u}\d u+\frac{\beta}{x^{\lambda}}$. $\lim\limits_{x\to0}\frac{\beta}{x^{\lambda}}$ est finie si et seulement si $\lambda>0$. Comme $\frac{u^{\lambda}}{u+1}\underset{u\to0}{\sim}u^{\lambda}$ donc $\int_{1}^{0}\frac{u^{\lambda}}{u+1}\d u$ converge si et seulement si $\lambda>-1$ (critère de Riemann).
+				
+				\begin{itemize}
+					\item \underline{Si $\lambda\in]-1,0[$}, $\frac{1}{x^{\lambda}}\xrightarrow[x\to0]{}0$ et $\int_{1}^{x}\frac{u^{\lambda}}{1+u}\d u\xrightarrow[x\to0]{}\int_{1}^{0}\frac{u^{\lambda}}{1+u}\d u$ donc $f(x)\xrightarrow[x\to0]{}\frac{1}{\lambda}$ qui est une limite finie (sans condition sur $\beta$).
+					
+					\item \underline{Si $\lambda>0$}, notons que si $f$ a une limite finie en 0, il faut que 
+					\begin{equation}
+						\frac{1}{x^{\lambda}}\left(\int_{1}^{x}\frac{u^{\lambda}}{1+u}\d u-\beta\right)\xrightarrow[x\to0]{}\text{quelque chose de fini.}
+					\end{equation}
+					Or $\frac{1}{x^{\lambda}}\xrightarrow[x\to0]{}+\infty$, donc il faut 
+					\begin{equation}
+						\left(\int_{1}^{x}\frac{u^{\lambda}}{1+u}\d u-\beta\right)\xrightarrow[x\to0]{}0,
+					\end{equation}
+					d'où 
+					\begin{equation}
+						\beta=-\int_{0}^{1}\frac{u^{\lambda}}{1+u}\d u.
+					\end{equation}
+
+					Réciproquement, si $\beta=-\int_{0}^{1}\frac{u^{\lambda}}{1+u}\d u$, on a 
+					\begin{align}
+						f(x)
+						&=\frac{1}{\lambda}-\frac{1}{x^{\lambda}}\left(\int_{1}^{x}\frac{u^{\lambda}}{1+u}\d u+\int_{0}^{1}\frac{u^{\lambda}}{1+u}\d u\right),\\
+						&=\frac{1}{\lambda}-\frac{1}{x^{\lambda}}\int_{0}^{x}\frac{u^{\lambda}}{1+u}\d u,\\
+						&=\frac{1}{\lambda}-\int_{0}^{x}\frac{\left(\frac{u}{x}\right)^{\lambda}}{1+u}\d u,\\
+						&=\frac{1}{\lambda}-\int_{0}^{1}\frac{v^{\lambda}}{1+vx}x\d v.
+					\end{align}
+
+					Or 
+					\begin{equation}
+						\int_{0}^{1}\frac{v^{\lambda}}{1+vx}x\d v=x\int_{0}^{1}\frac{v^{\lambda}}{1+vx}\d v,
+					\end{equation}
+					et pour tout $(x,v)\in I\times[0,1]$, $\left\lvert\frac{v^{\lambda}}{1+vx}\right\rvert\leqslant v^{\lambda}$, intégrable sur $[0,1]$. D'aès le théorème de convergence dominée, on a donc 
+					\begin{equation}
+						\int_{0}^{1}\frac{v^{\lambda}}{1+vx}\d v\xrightarrow[x\to0]{}\int_{0}^{1}v^{\lambda}\d v=\frac{1}{\lambda+1},
+					\end{equation}
+					d'où $x\int_{0}^{1}\frac{v^{\lambda}}{1+v}\d v\xrightarrow[x\to0]{}0$ et $f(x)\xrightarrow[x\to0]{}\frac{1}{\lambda}$. 
+
+					Donc $f$ a une limite finie en 0 si et seulement si $\beta=-\int_{0}^{1}\frac{u^{\lambda}}{1+u}\d u$.
+
+					\item \underline{Si $\lambda<-1$}, on a $\frac{\beta}{x^{\lambda}}\xrightarrow[x\to0]{}0$ et $\frac{u^{\lambda}}{1+u}\underset{u\to0}{\sim}u^{\lambda}$. Par intégration des relations de comparaisons (applicable car les intégrandes sont positives), on a 
+					\begin{equation}
+						\int_{x}^{1}\frac{u^{\lambda}}{1+u}\d u\underset{x\to0}{\sim}\int_{x}^{1}u^{\lambda}\d u=\frac{1}{\lambda+1}\left(1-x^{\lambda+1}\right)\underset{x\to0}{\sim}\frac{x^{\lambda+1}}{\lambda+1},
+					\end{equation}
+					et
+					\begin{equation}
+						-\frac{1}{x^{\lambda}}\int_{x}^{1}\frac{u^{\lambda}}{1+u}\d u\underset{x\to0}{\sim}\frac{1}{1+\lambda}\frac{x^{\lambda+1}}{x^{\lambda}}\xrightarrow[x\to0]{}0,
+					\end{equation}
+					d'où $f(x)\xrightarrow[x\to0]{}\frac{1}{\lambda}$.
+
+					\item \underline{Si $\lambda=-1$}, on a 
+					\begin{align}
+						f(x)
+						&=-1-x\int_{1}^{x}\frac{\d u}{1+u}+\beta x,\\
+						&=-1-x\ln(x+1)+\ln(2)+\beta x,\\
+						&\xrightarrow[x\to0]{}\ln(2)-1.
+					\end{align}
+				\end{itemize}
+
+				\item \underline{Si $\lambda=0$}, on a 
+				\begin{equation}
+					\beta'(x)=\frac{1}{x}-\frac{1}{x+1}
+				\end{equation}
+				et $\beta(x)=\ln\left(\frac{x}{1+x}\right)+\beta$. On a alors $f(x)=\frac{\beta(x)}{x^{0}}=\ln\left(\frac{x}{1+x}\right)+\beta\xrightarrow[x\to0]{}-\infty$, sans condition sur $\beta$.
+			\end{itemize}
+
+			\item \underline{Si $I=]-1,0[$}, on vérifie que c'est la même chose.
+		\end{itemize}
+
+		Si $f(x)=\sum_{n\in\N}a_n x^{n}$ est solution avec un rayon de convergence $R>0$, on a $xf'(x)=\sum_{n\in\N}na_nx^{n}$. Ainsi, pour tout $x\in]-R,R[$, on a
+		\begin{equation}
+			xf'(x)+\lambda f(x)=\sum_{n\in\N}(n+\lambda)a_nx^{n}=\frac{1}{1+x}=\sum_{n\in\N}(-1)^{n}x^{n}.
+		\end{equation}
+		Par unicité du développement en série entière, on a pour tout $n\in\N$,
+		\begin{equation}
+			a_n=\frac{(-1)^{n}}{\lambda+n},
+		\end{equation}
+		donc si $\lambda\not\in\Z_{-}$, on a une solution développable en série entière autour de 0.
+
+		Réciproquement, avec cette définition des $(a_n)$ et de $f$, on a un rayon de convergence $R=1$ (par la règle de d'Alembert) et $f$ est solution de l'équation différentielle sur $]-1,1[$.
+
+		\item On choisit $\lambda=\frac{1}{3}>0$. Les $(a_n)_{n\in\N}$ sont donc définis. Soit 
+		\begin{equation}
+			S(x)=\sum_{n\in\N}a_nx^{n}=\sum_{n\in\N}\frac{(-1)^{n}x^{n}}{\frac{1}{3}+n}.
+		\end{equation}
+		$S$ est solution de l'équation différentielle sur $]-1,1[$, et on connaît sa forme d'après l'étude menée à la première question. Comme $\lambda>0$, $S$ a une limite finie en 0 donc $S$ est entièrement déterminée (car on n'a pas le choix pour la constante $\beta$) :
+		\begin{equation}
+			S(x)=3+\frac{1}{x^{\frac{1}{3}}}\int_{0}^{x}\frac{u^{\frac{1}{3}}}{1+u}\d u.
+		\end{equation}
+		On pose $v=u^{\frac{1}{3}}$, d'où 
+		\begin{equation}
+			\int_{0}^{x}\frac{u^{\frac{1}{3}}}{1+u}\d u=3\int_{0}^{x^{3}}\frac{3v^{3}\d v}{v^{3}+1}=9\left(\int_{0}^{x^{3}}\d v-\int_{0}^{x^{3}}\frac{\d v}{v^{3}+1}\right).
+		\end{equation}
+		On décompose ensuite $\frac{1}{X^{3}+1}$ en éléments simples pour calculer l'intégrale.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour le sens indirect, on a $\exp(tA)=\sum_{k\in\N}\frac{t^{k}A^{k}}{k!}$. Pour $i\neq j$, $(\exp(tA))_{i,j}$ est une série entière en $t$ et on a 
+		\begin{equation}
+			(\exp(tA))_{i,j}=0+t a_{i,j}+t^{2}(A^{2})_{i,j}+\dots\underset{t\to0}{\sim}t a_{i,j}.
+		\end{equation}
+		Par hypothèse, $(\exp(tA))_{i,j}\geqslant 0$ donc pour $t\to0^{+}$, on a $a_{i,j}\geqslant0$.
+		
+		Réciproquement, on considère $\beta=\max\limits_{1\leqslant i\leqslant n}(-a_{i,i})$. Posons $A'=A+\beta I_n\in\mathcal{M}_n(\R^{+})$. Pour tout $t\geqslant 0$, $tA'\in\mathcal{M}_n(\R^{+})$ donc $\exp(tA')\in\mathcal{M}_n(\R_{+})$. Comme $A$ et $I_n$ commutent, on a 
+		\begin{align}
+			\exp(tA')
+			&=\exp(tA+\beta tI_n),\\
+			&=\exp(tA)\exp(t\beta I_n),\\
+			&=\exp(tA)\times\e^{t\beta},
+		\end{align}
+		donc $\exp(tA)=\underbrace{\e^{-t B}}_{\in\R_{+}}\exp(tA')\in\mathcal{M}_n(\R_{+})$.
+
+		\item Le théorème de Cauchy-Lipschitz s'applique. Posons $\varphi\colon t\mapsto\exp(-t A)x(t)$, définie et dérivable sur $\R_{+}$. $x$ est solution du problème de Cauchy
+		\begin{align}
+			&\Longleftrightarrow 
+			\left\lbrace
+				\begin{array}[]{rcll}
+					x'(t)&=&A x(t)+f(t), &\forall t\in\R_{+},\\
+					x(0)&=&0,
+				\end{array}
+			\right.,\\
+			&\Longleftrightarrow 
+			\left\lbrace
+				\begin{array}[]{rcll}
+					\exp(-tA)(x'(t)-Ax(t))&=&\exp(-tA)f(t), &\forall t\in\R_{+},\\
+					\varphi(0)&=&0,
+				\end{array}
+			\right.,\\
+			&\Longleftrightarrow 
+			\varphi(t)=x_0+\int_{0}^{t}\exp(-u A)f(u)\d u,\forall t\in\R_{+},\\
+			&\Longleftrightarrow 
+			x(t)=\exp(tA)\left(x_0+\int_{0}^{t}\exp(-u A)f(u)\d u\right),\forall t\in\R_{+},\\
+			&\Longleftrightarrow 
+			x(t)=\exp(tA)+\exp(tA)\int_{0}^{t}\exp(-u A)f(u)\d u,\forall t\in\R_{+}.
+		\end{align}
+		Or $\exp(t A)x_0\in(\R_{+})^{n}$ d'après la première question, et 
+		\begin{equation}
+			\exp(tA)\int_{0}^{t}\exp(-u A)f(u)\d u=\int_{0}^{t}\exp((t-u)A)f(u)\d u.
+		\end{equation}
+		Pour tout $u\in[0,t]$, $(t-u)>0$ donc $\exp((t-u)A)\in\mathcal{M}_n(\R_{+})$ et ainsi, $c(t)\in(\R_{+})^{n}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Le sens indirect est normalement du cours, il suffit de considérer l'isomorphisme \function{\Theta_{t_0}}{S_{(H),]a,b[}}{\R^{n}}{f}{(f(x),f'(x),\dots,f^{(n-1)}(x))}
+	où $S_{(H),]a;b[}$ est l'ensemble des solutions de l'équation homogène sur $]a,b[$ avec une condition particulière en $t_{0}$.
+
+	Réciproquement, si $W$ ne s'annule pas, notons $L_i(x)=\begin{pmatrix}
+		f_{1}^{(i)(x)}\\ f_{2}^{(i}(x)\\\vdots\\f_n^{(i)}(x)
+	\end{pmatrix}$ (ce sont les lignes de $W$ mises en colonne). On a 
+	\begin{equation}
+		W(x)=\det(L_0(x),L_1(x),\dots, L_{n-1}(x)),
+	\end{equation}
+	et comme $W$ ne s'annule pas, pour tout $x\in]a,b[$, $(L_0(x),\dots,L_{n-1}(x))$ est une base de $\R^{n}$. Ainsi, il existe $a_0(x),\dots,a_{n-1}(x))\in\R^{n}$ telle que 
+	\begin{align}
+		\begin{pmatrix}
+			f_{1}^{(n)}(x)\\\vdots\\ f_{n}^{(n)}(x)
+		\end{pmatrix}
+		&=\sum_{i=1}^{n}a_{i}(x) L_i(x),\\
+		=\begin{pmatrix}
+			L_0(x),L_1(x),\dots, L_{n-1}(x)
+		\end{pmatrix}
+		\begin{pmatrix}
+			a_0(x)\\\vdots\\a_{n-1}(x)
+		\end{pmatrix},\\
+		&=\underbrace{\begin{pmatrix}
+			f_1(x) & f_1'(x)_{R(x)} &\dots & f_{1}^{(x-1)}(x)\\
+			\vdots & \vdots & &\vdots\\
+			f_{n-1}(x) & f_{n-1}'(x) & \dots & f_{n-1}^{(n-1)}(x)
+		\end{pmatrix}}_{R(x)}\begin{pmatrix}
+			a_0(x)\\\vdots\\a_{n-1}(x)
+		\end{pmatrix}.
+	\end{align}
+
+	Les $f_i$ étant $\mathcal{C}^{n}$, $x\mapsto R(x)$ est continue et $A\mapsto A^{-1}$ est $\mathcal{C}^{0}$ sur $\mathcal{M}_n(\R)$ donc $x\mapsto R(x)^{-1}$ est continue sur $]a,b[$ donc $x\mapsto R(x)^{-1}\begin{pmatrix}
+		f_1^{(n)}(x)\\\vdots\\f_{n}^{(n)}(x)
+	\end{pmatrix}=\begin{pmatrix}
+		a_0(x)\\\vdots\\a_{n-1}(x)
+	\end{pmatrix}$ est continue sur $]a,b[$. En d'autres termes, les $(a_i)_{i\in\left\llbracket0,n-1\right\rrbracket}$ sont continues sur $]a,b[$.
+\end{proof}
+
+\begin{proof}
+	$\left\lvert\sin\right\rvert$ est continue sur $\R$, donc le théorème de Cauchy-Lipschitz sur $\R$. L'équation homogène a $(\cos,\sin)$ pour base de solutions. On cherche des solutions sous la forme $y(x)=a(x)\cos(x)+b(x)\sin(x)$, avec $a'(x)\cos(x)+b'(x)\sin(x)=0$.
+
+	$y$ est solution sur $\R$ si et seulement si 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			a'(x)\cos(x)+b'(x)\sin(x)&=&0,\\
+			-a'(x)\sin(x)+b'(x)\cos(x)&=&\left\lvert\sin(x)\right\rvert.
+		\end{array}
+	\end{equation}
+	
+	
+	\begin{equation}
+		\begin{array}[]{l}
+			\cos(x)\times\text{première ligne}-\sin(x)\times\text{deuxième ligne}\\
+			\sin(x)\times\text{première ligne}+\cos(x)\times\text{deuxième ligne}
+		\end{array}
+	\end{equation}
+	donne 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			a'(x) &=& -\sin(x)\left\lvert\sin(x)\right\rvert=\varepsilon_{x}\sin^{2}(x),\\
+			b'(x) &=& \cos(x)\left\lvert\sin(x)\right\rvert=-\varepsilon_{x}\cos(x)\sin(x),
+		\end{array}
+	\end{equation}
+	avec $\varepsilon_{x}=1$ si $x\in[k\pi,(k+1)\pi]$ pour $k$ impair, et $\varepsilon_{x}$ si $k$ est pair.
+
+	Sur $I_k=[k\pi,(k+1)\pi]$, on a $a(x)=\varepsilon_k\times\frac{1}{2}\left(x-\frac{\sin(2x)}{2}\right)+a_k$ et $b(x)=\varepsilon_{k}\times\frac{1}{2}\left(-\frac{\cos(2x)}{2}\right)+b_k$. On a 
+	\begin{equation}
+		y(x)=\frac{\varepsilon_k}{2}\left(\left(x-\frac{\sin(2x)}{2}\right)\cos(x)-\frac{\cos(2x)}{2}\sin(x)\right)+a_k\cos(x)+b_k\sin(x).
+	\end{equation}
+
+	Par continuité, $\lim\limits_{x\to k\pi^{-}}y(x)=\frac{\varepsilon_{k}}{2}\left(k\pi(-1)^{k}\right)+a_k(-1)^{k}$ et $\lim\limits_{x\to k\pi^{+}}y(x)=-\frac{\varepsilon_k}{2}(k\pi(-1)^{k})+a_{k+1}(-1)^{k}$ (on a $\varepsilon_{k+1}=-\varepsilon_k$). Donc $a_{k+1}=a_{k}+\varepsilon_{k}k\pi$. De même pour les $b_k$, on étudie la continuité de la dérivée.
+
+	On détermine ainsi $a_k$ et $b_k$ en fonction de $a_0$ et $b_0$, par exemple pour tout $k\in\Z$, $a_k=a_0+\sum_{j=0}^{k-1}\varepsilon_j	(j\pi)$.
+\end{proof}
+
+\begin{remark}
+	Autre méthode : $\left\lvert\sin\right\rvert$ est $\mathcal{C}^{1}$-PM continue $2\pi$-périodique paire. On admet que pour tout $x\in\R$, 
+	\begin{equation}
+		\left\lvert\sin(x)\right\rvert=\sum_{n=0}^{+\infty}\alpha_n \cos(nx),
+	\end{equation}
+	avec 
+	\begin{equation}
+		\alpha_n=\frac{2}{\pi}\int_{0}^{\pi}\sin(t)\cos(nt)\d t.
+	\end{equation}
+	On résout ensuite $y''+y=\cos(nx)$ pour tout $n\in\N$, et on somme en vérifiant que la solution obtenue est de classe $\mathcal{C}^{2}$.
+\end{remark}
+
+\begin{proof}
+	On pose $\varphi(t)=X(t)^{\mathsf{T}}X(t)$. En dérivant, on a 
+	\begin{equation}
+		\varphi'(t)=X(t)^{\mathsf{T}}X(t)+X(t)^{\mathsf{T}}X'(t)=-X^{\mathsf{T}}A(t)X(t)+X^{\mathsf{T}}A(t)X(t)=0.
+	\end{equation}
+	Comme $\varphi(0)=I_n$, on a pour tout $t\in\R$, $\varphi(t)=I_n$ donc $X(t)\in O_n(\R)$.
+\end{proof}
+
+\begin{remark}
+	Soit $Y\colon \R\to\mathcal{M}_{n,1}(\R)$ solution de $Y'(t)=A(t)Y(t)$ avec $Y(0)=Y_0$, de même $Y(t)^{ \mathsf{T}}Y(t)=\left\lVert Y(t)\right\rVert^{2}=\left\lVert Y_0\right\rVert^{2}$ donc $Y(t)$ est tracé sur une sphère.
+\end{remark}
+
+\begin{remark}
+	Réciproquement, soit $X\colon\R\to O_n(\R)$ de classe $\mathcal{C}^{1}$. En dérivant $X(t)^{\mathsf{T}}X(t)=I_n$, on a $X'(t)X(t)^{\mathsf{T}}+X(t)X'(t)^{\mathsf{T}}=0$ et $X(t)^{\mathsf{T}}=X(t)^{-1}$, donc 
+	\begin{equation}
+		X'(t)X(t)^{-1}=-X(t)X'(t)^{\mathsf{T}}=-(X'(t)X(t)^{-1})^{\mathsf{T}},
+	\end{equation}
+	donc $X'(t)=A(t)X(t)$ avec $A(t)$ antisymétrique.
+\end{remark}
+
+\begin{proof}
+	Sur $I=\R_{+}^{*}$ ou $\R_{-}^{*}$, le théorème de Cauchy-Lipschitz s'applique. Si $y(x)=\sum_{n=0}^{+\infty}a_n x^{n}$ est solution sur $]-R,R[$ avec $R>0$, on a $y'(x)=\sum_{n=0}^{+\infty}(n+1)a_{n+1}x^{n}$ et $y''(x)=\sum_{n=1}^{+\infty}n(n+1)a_{n+1}x^{n}$. En reportant, et par unicité du développement en série entière, on a 
+	\begin{equation}
+		2(n+1)n a_{n+1}+(n+1)a_{n+1}-a_n=0.
+	\end{equation}
+	Donc pour tout $n\in\N$, $a_{n+1}=\frac{a_n}{(n+1)(2n+1)}$ donc 
+	\begin{equation}
+		a_n=\frac{2^{n}}{(2n)!}a_0.
+	\end{equation}
+
+	Réciproquement, définissons ainsi les $a_n$, avec par exemple $a_0=1$. On a $R=+\infty$ (règle de d'Alembert). En remontant les calculs, $y_1(x)=\sum_{n=0}^{+\infty}\frac{2^{n}x^{n}}{(2n)!}$ est solution sur $I$.
+
+	Si $I=\R_{+}^{*}$, on a $y_1(x)=\cosh(\sqrt{2x})$. On vérifie alors que $y_2(x)=\sinh(\sqrt{2x})$ est solution.
+
+	Si $I=\R_{-}^{*}$, on a $y_1(x)=\cos(\sqrt{-2x})$. On vérifie que $\sin(\sqrt{-2x})$ est solution.
+
+	Les solutions maximales sont donc :
+	\begin{itemize}
+		\item sur $\R_{+}^{*}$, $\lambda\cosh(\sqrt{2x})+\mu\sinh(\sqrt{2x})$ avec $\mu\neq0$,
+		\item sur $\R_{-}^{*}$, $\alpha\cos(\sqrt{-2x})+\beta\sin(\sqrt{-2x})$ avec $\beta\neq0$,
+		\item sur $\R$, $\lambda\cosh(\sqrt{2x})$ sur $\R_{+}$ et $\lambda\cos(\sqrt{-2x})$ sur $\R_{-}$ d'où $\lambda\sum_{n=0}^{+\infty}\frac{x^{n}2^{n}}{(2n)!}$, de classe $\mathcal{C}^{\infty}$ car développable en série entière.
+	\end{itemize}
+\end{proof}
+
+\begin{proof}
+	Le théorème de Cauchy-Lipschitz s'applique sur $\R$. $(\sinh,\cosh)$ est nue base de l'ensemble solutions de l'équation homogène. Soit $\varphi(x)=\lambda(x)\cosh(x)+\mu(x)\sinh(x)$ avec la condition $\lambda'\cosh+\mu'\sinh=0$. $\varphi$ est solution si et seulement si 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{rcl}
+				\lambda'(x)\cosh(x)+\mu'(x)\sinh(x) &=&0,\\
+				\lambda'(x)\sinh(x)+\mu'(x)\cosh(x) &=&\frac{1}{\cosh(x)}.
+			\end{array}
+		\right.
+	\end{equation}
+
+	$\cosh(x)\times\text{première ligne}-\sinh(x)\times\text{deuxième ligne}$ et $\sinh(x)\times\text{première ligne}-\cosh(x)\times\text{deuxième ligne}$ donne 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{rcl}
+				\lambda'(x) &=& -\tanh(x),\\
+				\mu'(x) &=& 1.
+			\end{array}
+		\right.
+	\end{equation}
+	Donc $\lambda(x)=-\ln(\cosh(x))+\lambda$ et $\mu(x)=x+\mu$.
+
+	On a 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\varphi(x) &=& \cosh(x)(\lambda-\ln(\cosh(x)))+\sinh(x)(x+\mu),\\
+			\varphi'(x) &=& \sinh(x)\left(\lambda-\ln(\cosh(x))\right)+\cosh(x)(x+\mu).
+		\end{array}
+	\end{equation}
+
+	Et $\varphi(0)=0$ si et seulement si $\lambda=0$ et $\varphi'(0)=0$ si et seulement si $\mu=0$.
+\end{proof}
+
+\begin{proof}
+	D'après la décomposition de Dunford, il existe $D$ diagonalisable et $N$ nilpotente qui commutent telles que $A=D+N$, avec $\chi_{D}=\chi_{A}$.
+	Alors 
+	\begin{equation}
+		\exp(tA)=\underbrace{\exp(tD)}_{P^{-1}\diag(\e^{t}\lambda_i)_{1\leqslant i\leqslant}P}\underbrace{\exp(tN)}_{\left(I_n+tN+\dots+\frac{t^{n-1}N^{n-1}}{(n-1)!}\right)}\xrightarrow[t\to+\infty]{}0.
+	\end{equation}
+\end{proof}
+
+\begin{proof}
+	$(\sin,\cos)$ est une base de solution de l'équation homogène sur $\R$. Soit 
+	\begin{equation}
+		\varphi(t)=\lambda(t)\sin(\omega t)+\mu(t)\cos(\omega t),
+	\end{equation}
+	avec $\lambda'(t)\sin(\omega t)+\mu'(t)\cos(\omega t)=0$. $\varphi$ est solution si et seulement si $\varphi''+\omega^{2}\varphi=f$ et 
+	\begin{equation}
+		\lambda'(t)\cos(\omega t)-\mu'(t)\sin(\omega t)=\frac{f(t)}{\omega}.
+	\end{equation}
+
+	On fait $\sin(\omega t)$ fois la première ligne + $\cos(\omega t)$ fois la deuxième ligne donne 
+	\begin{equation}
+		\lambda'(t)=\frac{f(t)}{\omega}\cos(\omega t).
+	\end{equation}
+	$\cos(\omega t)$ fois la première ligne - $\sin(\omega t)$ fois la deuxième ligne donne 
+	\begin{equation}
+		\mu'(t)=-\frac{f(t)}{\omega}\sin(\omega t).
+	\end{equation}
+	Ainsi,
+	\begin{equation}
+		\varphi(t)=\int_{0}^{t}\frac{f(u)}{\omega}\sin(\omega(t-u))\d u+\lambda\sin(\omega t)+\mu\cos(\omega t).
+	\end{equation}
+	$\varphi$ est $T$-périodique si et seulement si pour tout $t\in\R$, $\varphi(t+T)=\varphi_1(t)=\varphi(t)$. Or $\varphi_1(t)$ est solution car $f$ est $T$-périodique. On a $\varphi_1=\varphi$ si et seulement si $\varphi_1(0)=\varphi(0)$ et $\varphi_1(T)=\varphi(T)$ d'après le théorème de Cauchy-Lipschitz, si et seulement si $\varphi(T)=\varphi(0)$ et $\varphi'(T)=\varphi'(0)$.
+
+	Ainsi, on doit avoir 
+	\begin{equation}
+		\int_{0}^{T}\frac{f(u)}{\omega}\sin(\omega(T-u))\d u+\lambda\sin(\omega T)+\mu\cos(\omega T)=\mu.
+	\end{equation}
+	Comme $\varphi'(t)=\lambda(t)\omega\cos(\omega t)-\mu(t)\omega\sin(\omega t)$, donc 
+	\begin{equation}
+		\varphi'(t)=\int_{0}^{t}f(u)\cos(\omega(t-u))\d u+\lambda\omega\cos(\omega T)-\mu\omega\sin(\omega t).
+	\end{equation}
+	Donc on doit avoir 
+	\begin{equation}
+		\int_{0}^{T}f(u)\cos(\omega(T-u))\d u+\lambda\omega\cos(\omega T)-\mu\omega\sin(\omega T)=\lambda\omega.
+	\end{equation}
+
+	C'est un système de deux équations à deux inconnues et une unique solution $T$-périodique si et seulement si le déterminant 
+	\begin{equation}
+		\begin{vmatrix}
+			\sin(\omega T)&\cos(\omega T)-1\\
+			\omega(\cos(\omega T)-1)& -\omega\sin(\omega t)
+		\end{vmatrix}=\omega\left(-\sin^{2}(\omega T)-\left(\cos(\omega T)-1\right)^{2}\right)=\omega\left(-2+2\cos(\omega T)\right),
+	\end{equation}
+	est non nul si et seulement si $\cos(\omega T)\neq1$.
+\end{proof}
+
+\begin{proof}
+	Soit $I=\R_{+}^{*}$ ou $\R_{-}^{*}$. Le théorème de Cauchy-Lipschitz s'applique sur $I$ et la dimension de l'espace des solutions de l'équation homogène est 2. Notons que si une solution est polynomiale de degré $n$, alors le coefficient en $x^{n+1}$ de $x^{2}y''(x)-2x(1+x)y'(x)+2(1+x)y(x)$ est $0=-2na_n+2a_n$. Nécessairement $n=1$ et $y_1$ est affine. On vérifie que $y_1(x)=x$ est solution. On cherche ensuite une solution de la forme $y_2(x)=C(x)y_1(x)=C(x)x$ avec $C$ non constante. En reportant, on trouve 
+	\begin{equation}
+		C''(x)+\left(2\left(1+\frac{2}{x}\right)\right)C'(x)=0.
+	\end{equation}
+
+	On trouve par exemple $C(x)=\int_{\varepsilon}^{x}\frac{\e^{-2 u}}{u^{4}}\d u$. On choisit $\varepsilon=1$ si $I=\R_{+}^{*}$ et $\varepsilon=-1$ si $I=\R_{-}^{*}$.
+
+	\begin{equation}
+		\int_{\varepsilon}^{x}\frac{\e^{-2u}}{u^{4}}\d u\underset{x\to0}{\sim}\int_{\varepsilon}^{x}\frac{\d u}{u^{4}}\underset{x\to0}{\sim}\frac{-1}{3x^{3}}.
+	\end{equation}
+	Donc $y_2$ n'a pas de limite en 0. $\lambda y_1$ sont les seules solutions maximales sur $\R$.
+\end{proof}
+
+\begin{proof}
+	On pose $g(t)=f'(t)+f(t)$. L'équation homogène a pour solution $y(t)=\lambda\exp(-t)$ d'où $f(t)=\lambda(t)\exp(-t)$ avec 
+	\begin{equation}
+		(f'+f)(t)=g(t)=\lambda'(t)\exp(-t).
+	\end{equation}
+	On a $\lambda(t)=\int_{0}^{t}\exp(t) g(u)\d u+\lambda$. Si $F(t)=\int_{0}^{t}g(u)\exp(u)\d u$, soit $\varepsilon>0$. Il existe $A>0$ tel que pour tout $t>A$, $\left\lvert g(t)\right\rvert\leqslant\varepsilon$. Alors 
+	\begin{equation}
+		F(t)=\underbrace{\e^{-t}\int_{0}^{A}g(u)\e^{u}\d u}_{\xrightarrow[t\to+\infty]{}0}+\int_{A}^{t}g(u)\e^{u-t}\d u,
+	\end{equation}
+	et le second terme est majoré en valeur absolue par $\frac{\varepsilon}{2}\int_{A-t}^{0}\e^{u}\d u=\frac{\varepsilon}{2}\left(1-\e^{A-t}\right)\leqslant\frac{\varepsilon}{2}$. D'où le résultat.
+
+	Contre exemple pour la deuxième question : $\e^{t}$.
+\end{proof}
+
+\begin{proof}
+	Soit \function{\varphi}{\mathcal{M}_n(\K)}{\mathcal{M}_n(\K)}{M}{MB-BM}
+	On a $A'(t)=\varphi(A(t))$, c'est une équation différentielle homogène linéaire. $\varphi$ est à coefficients constants, on sait alors que 
+	\begin{equation}
+		A(t)=\exp(t\varphi)(A(0)).
+	\end{equation}
+	On a $\exp(t\varphi)=\sum_{k=0}^{+\infty}\frac{t^{k}}{k!}\varphi^{k}$. Soit \function{\varphi_1}{\mathcal{M}_n(\K)}{\mathcal{M}_n(\K)}{M}{MB} et \function{\varphi_2}{\mathcal{M}_n(\K)}{\mathcal{M}_n(\K)}{M}{-BM}
+	On a $\varphi=\varphi_1+\varphi_2$, et 
+	\begin{equation}
+		\left(\varphi_1\circ\varphi_2\right)(M)=-BMB=(\varphi_2\circ\varphi_1)(M).
+	\end{equation}
+	Ainsi, $\exp(t\varphi)=\exp(\varphi_1)\exp(t\varphi_2)$. On a \function{\varphi_1^{k}}{\mathcal{M}_n(\K)}{\mathcal{M}_n(\K)}{M}{MB^{k}} et \function{\varphi_1^{k}}{\mathcal{M}_n(\K)}{\mathcal{M}_n(\K)}{M}{(-1)^{k}B^{k}M} 
+
+	On Si $A(0)=A_0$, on a
+	\begin{equation}
+		\exp(t\varphi_1)\left(\exp(t\varphi_2)(A(0))\right)=\exp(t\varphi_1)\exp(-tB)(A_0).
+	\end{equation}
+	On a 
+	\begin{equation}
+		\exp(t\varphi_{1})(M)=M\exp(tB).
+	\end{equation}
+	Ainsi,
+	\begin{equation}
+		A(t)=\exp(-tB)A_0\exp(tB),
+	\end{equation}
+	donc $A(t)$ est semblable à $A_0$.
+\end{proof}
+
+\begin{remark}
+	Si $A_0$ et $B$ commutent alors $A(t)=A_0$ donc pour tout $t\in\R$, $A(t)$ et $B$ commutent.
+\end{remark}
+
+\begin{remark}
+	Onp eut aussi résoudre en écrivant 
+	\begin{equation}
+		\underbrace{\e^{tB}(A'(t)+BA(t))}_{C'(t)}=\underbrace{\e^{tB}A(t)}_{C(t)}B.
+	\end{equation}
+
+	Donc $C'(t)=C(t)B$ puis $C'(t)\exp(-tB)-C(t)B\exp(-tB)=0=D'(t)$ avec $D(t)=\exp(-tB)$. Ainsi, $D(t)=D(0)$, d'où $C(t)=C(0)\exp(tB)$ puis 
+	\begin{equation}
+		A(t)=\exp(-tB)A(0)\exp(tB).
+	\end{equation}
+\end{remark}
+
+\begin{remark}
+	Si on a maintenant $A'(t)=A(t)B(t)-B(t)A(t)$, soit pour $k\in\N$, $\varphi_k(t)=\Tr(A^{k}(t))$. Alors 
+	\begin{align}
+		\varphi_k'(t)
+		&=\Tr(-\sum_{i=0}^{k-1}A^{i}(t)A'(t)A^{k-1-i}(t)),\\
+		&=\sum_{i=0}^{k-1}\Tr(A'(t)A^{k-1}(t)),\\
+		&=k\Tr(A'(t)A^{k-1}(t)),\\
+		&=k\left(\Tr(A(t)B(t)A^{k-1}(t))-\Tr(B(t)A^{k}(t))\right).
+	\end{align}
+	Donc $\varphi_k'(t)=0$, donc $t\mapsto\Tr(A^{k}(t))$ est constant.
+
+	Or les coefficients de $\chi_{A}$ sont des polynômes en $(\Tr(A^{k})_{1\leqslant k\leqslant n-1})$, donc $\chi_{A(t)}$ est constant.
+
+	Si $\chi_{A_{0}}=\prod_{k=1}^{n}(X-\lambda_k)$ est scindé à racines simples, alors pour tout $t\in\R$, $A(t)$ est semblable à $\diag(\lambda_i)$ donc à $A_0$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a 
+		\begin{align}
+			X_3'(t)
+			&=-\exp(-t(A+B))(A+B)\exp(tB)\exp(tA)\\
+			&\qquad+\exp\left(-t(A+B)\right)\left(B\exp(tB)\exp(tA)+\exp(tB)A\exp(tA)\right)\nonumber,\\
+			&=\exp(-t(A+B))\left(-(A+B)+B+\exp(tB)A\exp(-tB)\right)\exp(tB)\exp(tA).
+		\end{align}
+
+		Donc $\varphi(t)=-A+\exp(tB)A\exp(-tB)$ est de classe $\mathcal{C}^{1}$. De plus, on a 
+		\begin{align}
+			\varphi'(t)
+			&=\exp(tB)BA\exp(-tB)-\exp(tB)AB\exp(-tB),\\
+			&=\exp(tB)[B,A]\exp(-tB).
+		\end{align}
+
+		\item $[B,[A,B]]=0$ donc $B$ commute avec $[B,A]$. Ainsi, $\varphi'(t)=[B,A]$ et 
+		\begin{equation}
+			\varphi(t)=t(BA-AB)+\varphi(0)=t(AB-BA).
+		\end{equation}
+		Puis on a ($A$ et $B$ commutent avec $[A,B]$)
+		\begin{align}
+			\chi_{3}'(t)
+			&=t\exp(-t(A+B))[B,A]\exp(tB)\exp(tA),\\
+			&=t[B,A]\chi_3(t).
+		\end{align}
+
+		Ainsi,
+		\begin{equation}
+			\exp\left(-\frac{t^{2}}{2}[B,A]\right)\left(X_3'(t)-t[B,A]\chi_3(t)\right)=C'(t)=0,
+		\end{equation}
+		avec $C(t)=\exp\left(-\frac{t^{2}}{2}[B,A]\right)\chi_{3}(t)$, donc 
+		\begin{equation}
+			\chi_3(t)=\exp\left(\frac{t^{2}}{2}[B,A]\right)\chi_3(0)=\exp\left(\frac{t^{2}}{2}[B,A]\right).
+		\end{equation}
+
+		Ainsi,
+		\begin{equation}
+			\exp\left(t(A+B)\right)=\exp(tB)\exp(tA)\exp\left(-\frac{t^{2}}{2}[B,A]\right),
+		\end{equation}
+		et pour $t=1$,
+		\begin{equation}
+			\exp(A+B)=\exp(B)\exp(A)\exp\left(-\frac{1}{2}[B,A]\right).
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $X=\emptyset$, c'est bon. Sinon, soit $x_0\in X$. Si $y'(x_0)=0$, $y$ est solution de l'équation différentielle avec $y(x_0)=y'(x_0)=0$ et 0 est aussi solution. Par unicité venant du théorème de Cauchy-Lipschitz, on a $y=0$ ce qui n'est pas. Donc $y'(x_0)\neq0$ et par continuité de $y'$ $y'>0$ au voisinage de $x_0$ donc $y$ est localement injective.
+		
+		\item Supposons $\left\lvert X\right\rvert=+\infty$. Soit $(x_n)_{n\in\N}\in X^{\N}$ injective. Comme $X_n\subset I$, $x_n\in I$ pour tout $n\in\N$, donc il existe $\sigma\colon\N\to\N$ strictement croissante telle que $(x_{\sigma(n)})_{n\in\N}$ converge vers $x\in I$.
+		
+		Or $y(x_{\sigma(n)})=0$ pour tout $n\in\N$ donc par continuité de $y$, on a $y(x)=0$. Ainsi, pour tout $a>0$, il existe $x_n\in X$ tel que $x_n\in]x-a,x+a[$, impossible d'après la première question.
+
+		\item Stratégie : on va montrer que $X$ est dénombrable, qu'il existe $x_0\in X$ tel que pour tout $x\in X$, $x_0\leqslant x$, et ainsi de suite par récurrence sur $X\setminus\left\lbrace x_0\right\rbrace$.
+		
+		Pour tout $B<0$, soit $\widetilde{I})[a,B]$. On a $\left\lvert X\cap\widetilde{I}\right\rvert<\infty$. On a 
+		\begin{equation}
+			I=\bigcup_{n\in\N}\underbrace{[B_n, B_{n+1}]}_{I_n},
+		\end{equation}
+		avec $B_0=a$ et $(B_n)$ strictement croissante, $B_n\xrightarrow[n\to+\infty]{}B$. Alors 
+		\begin{equation}
+			X=\bigcup_{n\in\N}\underbrace{I_n\cap X}_{{\text{fini}}}.
+		\end{equation}
+		Donc $X$ est dénombrable. On a $X_n=I_n\cap X$. Chaque $X_n$ s'ordonne en $x_1^{(n)}<\dots<x_{r_n}^{(n)}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Le Wronskien $W_{y_1,y_2}(t)=(y_1 y_2'-y_1' y_2)(t)$ garde un signe constant. On a $W_{y_1,y_2}(a)=-y_1'(a)y_2(a)$ et $W_{y_1,y_2}(0)=-y_1'(b)y_2(b)$. $y_1'(a)$ et $y_1'(b)$ sont différents de 0 par unicité du théorème de Cauchy-Lipschitz (sinon $y_1=0$).
+		
+		Si $y_1>0$ sur $]a,b[$ : si $y_1'(a)<0$, par continuité de $y_1'$, $y_1'$ reste négatif à droite de $a$ donc $y_1$ y est strictement décroissante donc négative : impossible. Donc $y_1(a)>0$. De même, $y_1'(b)<0$. Or le Wronskien ne change pas de signe et 
+		\begin{equation}
+			y_1'(a)y_1'(b)y_2(a) y_2(b)=W_{y_1,y_2}(a)\times W_{y_1,y_2}(b)>0.
+		\end{equation}
+		Donc $y_2(a) y_2(b)<0$. Comme $y_2$ est continue, le théorème des valeurs intermédiaires s'applique et $y_2$ s'annule sur $]a,b[$. 
+
+		Si $y_1<0$, on applique ce qui précède à $-y_1$.
+
+		Si $y_2$ s'annulait deux fois sur $]a,b[$, comme $y_1$ et $y_2$ jouent des rôles symétriques, $y_1$ s'annulerait une fois sur $]a,b[$ : impossible.
+
+		\item Soit $H=y_1 y_2'-y_2 y_1'$. On a 
+		\begin{equation}
+			H'=y_1 y_2''-y_2 y_1''=(r_1-r_2)y_1 y_2.
+		\end{equation}
+
+		Supposons que $y_1>0$ sur $]a,b[$. Su $y_2$ ne s'annule pas sur $]a,b[$, supposons par exemple que $y_2>0$ sur $]a,b[$. Alors $H'<0$ sur $]a,b[$, $H$ est strictement décroissante sur $[a,b]$, et $H(0)=-y_2(a) y_1'(a)<0$, $H(b)=-y_2(b) y_1'(b)>0$ : impossible. Donc $y_2$ s'annule au moins une fois sur $]a,b[$.
+
+		Application : si pour tout $t\in I$, $r_1(t)<\omega^{2}$, soit $a<b$ deux zéros consécutifs de $y_1$ et $y_2(t)=\sin(\omega(t-a))$. Les zéros de $y_2$ sont les $a+\frac{k\pi}{\omega}$ d'où un écart plus grand que $\frac{\pi}{\omega}$.
+
+		Soit $a$ un zéro de $y_1$. En échangeant les rôles joués par $r_1$ et $r_2$ : $y=\sin(\omega'(t-a))$ s'annule en $0$ et $a+\frac{\pi}{\omega}$ (deux zéros consécutifs). Donc l'écart entre deux zéros consécutifs de $y_1$ est plus petit que $\frac{\pi}{\omega}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Il est clair que $\mathcal{T}_{T}$ est linéaire. Pour tout $Y\in S$, pour tout $x\in\R$, on a 
+		\begin{equation}
+			(\mathcal{T}_{T}(y))''(x)+p(x)\mathcal{T}_{T}(y)(x)=y''(x+T)+p(x+T)y(x+T)=0,
+		\end{equation}
+		donc $\mathcal{T}_{T}(y)\in\mathcal{L}(S)$. Via le théorème de Cauchy-Lipschitz, $\dim(S)=2$. Posons $A=\frac{\Tr(\mathcal{T}_T)}{2}$. D'après le théorème de Cayley-Hamilton, 
+		\begin{equation}
+			X^{2}-2AX+\det(\mathcal{T}_T)
+		\end{equation}
+		annule $\mathcal{T}_T$. Soit alors $(y_1,y_2)$ la base de $S$ telle que $y_1(0)=1$, $y_1'(0)=0$, $y_2(0)=0$ et $y_2'(0)=1$.
+
+		Si $y=\alpha y_1+\beta y_2\in S$, alors $y(0)=\alpha$ et $y'(0)=\beta$ donc $y=y(0)y_1+y'(0)y_2$. Ainsi, 
+		\begin{equation}
+			\mathcal{T}_T(y_1)=y_1(T)y_1+y_1'(T)y_2=\mathcal{T}_T(y_1)(0) y_1+\mathcal{T}_T(y_1)'(0) y_2,
+		\end{equation}
+		d'où 
+		\begin{equation}
+			\mat_{(y_1,y_2)}(\mathcal{T}_T)=\begin{pmatrix}
+				y_{1}(T) & y_2(T)\\
+				y_1'(T) & y_2'(T)
+			\end{pmatrix}.
+		\end{equation}
+
+		Ainsi, $\det(\mathcal{T}_{T})=y_1(T)y_2'(T)-y_1'(T)y_2(T)=W_{y_1,y_2}(T)$ où $W$ est le Wronskien. On a 
+		\begin{align}
+			W_{y_1,y_2}'(x)
+			&=y_1(x)y_2''(x)-y_1''(x)y_2(x),\\
+			&=-y_1(x)p(x)y_2(x)+y_1(x)p(x)y_2(x),\\
+			&=0.
+		\end{align}
+		Donc $W_{y_1,y_2}$ est constant et $W_{y_1,y_1}(0)=1$ donc $\det(\mathcal{T}_T)=1$. Ainsi, 
+		\begin{equation}
+			\chi_{\mathcal{T}_T}=X^{2}-2AX+1.
+		\end{equation}
+
+		On a $A=\frac{\Tr(\mathcal{T}_T)}{2}=\frac{1}{2}(y_1(T)+y_2'(T))$ donc pour tout $y\in S$, pour tout $x\in\R$, $y(x+2T)-2Ay(x+T)+y(x)=0$.
+
+		\item On a $\chi_{\mathcal{T}_T}=X^{2}-2AX+1$. On a $\Delta=4(A^{2}-1)<0$ si $\left\lvert A\right\rvert<1$. On a deux racines complexes conjuguées $\mu$ et $\overline{\mu}$. De plus, $\mu\overline{\mu}=1=\det(\mathcal{T}_T)$ donc $\mu\in\U$. Ainsi, il existe $\theta\in]0,\pi[$ tel que $\Sp_{\C}(\mathcal{T}_T)=\left\lbrace\e^{\i\theta},\e^{-\i\theta}\right\rbrace$. Donc $\mat_{(y_1,y_2)}(\mathcal{T}_T)$ est semblable sur $\R$ à
+		\begin{equation}
+			R_{\theta}=\begin{pmatrix}
+				\cos(\theta) & -\sin(\theta)\\
+				\sin(\theta) & \cos(\theta)
+			\end{pmatrix}
+		\end{equation}
+
+		Soit $(f_1,f_2)$ la base de $S$ telle que $\mat_{(f_1,f_2)}(\mathcal{T}_{T})=R_{\theta}$. Pour tout $n\in\Z$, 
+		\begin{equation}
+			\mat_{(f_1,f_2)}(\mathcal{T}_{T}^{n})=R_{n\theta}.
+		\end{equation}
+
+		Si $f=af_1+bf_2$, on a 
+		\begin{equation}
+			\mathcal{T}_T^{n}(f)=(a\cos(n\theta)-b\sin(n\theta))f_1+(a\sin(\theta)+b\cos(n\theta))f_2=f(x+nT).
+		\end{equation}
+
+		Pour tout $x\in[0,T]$, pour tout $n\in\Z$,
+		\begin{equation}
+			\left\lvert f(x+nT)\right\rvert\leqslant
+			\sqrt{a^{2}+b^{2}}
+			\left(\left\lVert f_{1}\right\rVert_{\infty,[0,T]}+\left\lVert f_2\right\rVert_{\infty,[0,T]}\right),
+		\end{equation}
+		donc $f$ est bornée.
+
+		\item Si $\left\lvert A\right\rvert>1$, on a $\delta>0$ et 
+		\begin{equation}
+			\Sp(\mathcal{T}_T)=\left\lbrace\lambda,\frac{1}{\lambda}\right\rbrace,
+		\end{equation}
+		avec $\left\lvert\lambda\right\rvert\in]0,1[$. Il existe $(f_1,f_2)$ base de $S$ telle que $\mathcal{T}_{T}(f_1)=\lambda f_1$ et $\mathcal{T}_{T}(f_2)=\frac{1}{\lambda}f_2$. 
+
+		Ainsi, si $f=af_1+bf_2$, pour tout $x\in[0,T]$, pour tout $n\in\Z$, on a 
+		\begin{equation}
+			\left\lvert f(x+nT)\right\rvert=\left\lvert \lambda^{n}af_1(x)+\frac{b}{\lambda^{n}}f_2(x)\right\rvert\xrightarrow[n\to+\infty]{}+\infty,
+		\end{equation}
+		donc toutes les solutions non nulles sont non bornées.
+
+		Si $A=1$, on a $\chi_{\mathcal{T}_{T}}=(X-1)^{2}$. Ou bien $\mathcal{T}_{T}=id$ et dans ce cas toutes les solutions sont $T$-périodiques donc bornées (car continues). Ou bien il existe une base $(f_1,f_2)$ de $S$ telle que 
+		\begin{equation}
+			\mat_{(f_1,f_2)}(\mathcal{T}_{T})=\begin{pmatrix}
+				1&1\\
+				0&1
+			\end{pmatrix}.
+		\end{equation}
+		On a 
+		\begin{equation}
+			\mat_{(f_1,f_2)}(\mathcal{T}_{T}^{n})=\begin{pmatrix}
+				1&n\\0&1
+			\end{pmatrix}.
+		\end{equation}
+
+		Ainsi, il existe des solutions non nulles périodiques et des solutions non bornées.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $(x\mapsto\e^{x},x\mapsto\e^{-x})$ est une base de $S$ (espace des solutions de l'équation différentielle). On cherche la solution générale sous la forme 
+		\begin{equation}
+			y(x)=\lambda(x)\e^{x}+\mu(x)\e^{-x},
+		\end{equation}
+		avec $\lambda'(x)\e^{x}+\mu'(x)\e^{-x}=0$ et $\lambda'(x)\e^{x}-\mu'(x)\e^{-x}=f(x)$.
+
+		Donc $\lambda'(x)=\frac{1}{2}f(x)\e^{-x}$ et $\mu'(x)=-\frac{1}{2}f(x)\e^{x}$. Donc il existe $(\lambda,\mu)\in\R^{2}$ tel que pour tout $x\in\R$,
+		\begin{equation}
+			y(x)=\frac{1}{2}\left(\left(\int_{0}^{x}f(t)\e^{-t}\d t\right)\e^{x}+\lambda\e^{x}+\left(\int_{0}^{x}f(t)\e^{t}\d t+\mu\right)\e^{-x}\right).
+		\end{equation}
+
+		Soit $\varepsilon>0$. Il existe $A\geqslant0$ tel que pour tout $t\geqslant A$, $\left\lvert f(t)\right\rvert\leqslant\varepsilon$. Alors pour tout $x\geqslant A$, on a 
+		\begin{equation}
+			\left\lvert\int_{0}^{x}f(t)\e^{t}\d t\e^{-x}\right\rvert\leqslant\varepsilon\left\lvert 1-\e^{-x}\right\rvert\leqslant\varepsilon,
+		\end{equation}
+		donc $\lim\limits_{x\to+\infty}\int_{0}^{x}f(t)\e^{t}\d t\e^{-x}=0$.
+
+		Si $y$ est bornée, nécessairement $\lim\limits_{x\to+\infty}\int_{0}^{x}f(t)\e^{-t}\d t+\lambda=0$. Donc 
+		\begin{equation}
+			\lambda=-\int_{0}^{+\infty}f(t)\e^{-t}\d t,
+		\end{equation}
+		définie car $f$ est bornée. De même, 
+		\begin{align}
+			\lim\limits_{x\to-\infty}\int_{0}^{x}f(t)\e^{-t}\d t\e^{x}
+			&=\lim\limits_{x'\to+\infty}\left(-\int_{0}^{x'}f(-u)\e^{u}\d u\right)\e^{-x'},\\
+			&=0.
+		\end{align}
+		Donc $\mu=\int_{-\infty}^{0}f(t)\e^{t}\d t$ (définie car $f$ est bornée). Alors 
+		\begin{equation}
+			y(x)=\frac{1}{2}\left(-\int_{x}^{+\infty}f(t)\e^{-t}\d t\e^{x}+\int_{-\infty}^{x}f(t)\e^{t}\d t\e^{-x}\right).
+		\end{equation}
+
+		Réciproquement, posons 
+		\begin{equation}
+			y_0(x)=\frac{1}{2}\left(-\int_{x}^{+\infty}f(t)\e^{-t}\d t\e^{x}+\int_{-\infty}^{x}f(t)\e^{t}\d t\e^{-x}\right).
+		\end{equation}
+
+		On a 
+		\begin{equation}
+			\int_{x}^{+\infty}f(t)\e^{-t}\d t\e^{x}=\int_{x}^{+\infty}f(t)\e^{x-t}\d t=\int_{0}^{+\infty}f(u+x)\e^{-u}\d u.
+		\end{equation}
+		Pour tout $x\in\R$, $\left\lvert f(u+x)\e^{-u}\right\rvert\leqslant\left\lVert f\right\rVert_{\infty,\R}\e^{-u}$, intégrable. D'après le théorème de convergence dominée, on a 
+		\begin{equation}
+			\lim\limits_{\left\lvert x\right\rvert\to+\infty}\int_{x}^{+\infty}f(t)\e^{-t}\d t\e^{x}=0.
+		\end{equation}
+		De même, on a 
+		\begin{equation}
+			\lim\limits_{\left\lvert x\right\rvert\to+\infty}\int_{-\infty}^{x}f(t)\e^{t}\d t\e^{-x}=0.
+		\end{equation}
+		Donc $y_0(x)\xrightarrow[\left\lvert x\right\rvert\to+\infty]{}0$. Donc $y_0$ est bornée et sa limite est 0.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Comme $p\colon[a,+\infty[\to\R_{+}^{*}$, l'équation différentielle équivaut à $x''+\frac{p'}{p}x'+\frac{q}{p}x=0$ et le théorème de Cauchy-Lipschitz s'applique.
+		
+		La première partie vient de l'unicité du théorème de Cauchy-Lipschitz. La deuxième vient du théorème de relèvement.
+
+		\item Il vient
+		\begin{equation}
+			\begin{array}[]{rcl}
+				(px')'&=&px''+p'x'=r'\cos\theta-r\theta'\sin\theta,\\
+				x' &=& r'\sin\theta+r\theta'\cos\theta=\frac{r\cos\theta}{p}.
+			\end{array}
+		\end{equation}
+		$x$ est solution si et seulement si $(xp)'=-qx=-qr\sin\theta$ si et seulement si 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{rcl}
+					r'\cos\theta+r(q-\theta')\sin\theta &=&0,\\
+					r'\sin\theta+r\left(\theta'-\frac{1}{p}\right)\cos\theta&=&0,
+				\end{array}
+			\right.
+		\end{equation}
+		si et seulement si 
+		\begin{equation}
+			\left\lbrace
+			\begin{array}[]{rcl}
+				r'&=&r\sin\theta\cos\theta\left(\frac{1}{p}-q\right),\\
+				\theta'&=&q\sin^{2}\theta+\frac{1}{p}\cos^{2}\theta.
+			\end{array}
+			\right.
+		\end{equation}
+
+		\item Si $p=1$, on a 
+		\begin{equation}
+			\left\lbrace
+				\begin{array}[]{rcl}
+					\theta'&=&q\sin^{2}\theta+\cos^{2}\theta,\\
+					r'=r\sin\theta\cos\theta\left(1-q\right).
+				\end{array}
+			\right.
+		\end{equation}
+		On a $\theta'>0$ donc $\theta$ est strictement croissante et admet une limite $l\in\overline{\R}$ en $+\infty$. Si $l<+\infty$, on a 
+		\begin{equation}
+			\int_{a}^{t}\theta'(t)\d u=\theta(t)-\theta(a)\xrightarrow[t\to+\infty]{}l-\theta(a).
+		\end{equation}
+
+		De plus, 
+		\begin{align}
+			\int_{a}^{t}\theta'(u)\d u
+			&=\int_{a}^{t}q(u)\sin^{2}(\theta(u))\d u+\int_{a}^{t}\cos^{2}(\theta(u))\d u,\\
+			&\geqslant\int_{a}^{t}q(u)\sin^{2}(\theta(u))\d u,\\
+			&\underset{u\to+\infty}{\sim}q(u)\sin^{2}(l).
+		\end{align}
+
+		Comme $\int_{a}^{t}q(u)\d u$ diverge, nécessairement, $\int_{a}^{t}\theta'(u)\d u$ étant finie, on a $\sin^{2}(l)=0$ donc $\cos^{2}(l)=1$ et 
+		$\int_{a}^{t}\cos^{2}(\theta(u))\d u\xrightarrow[t\to+\infty]{}+\infty$ : contradiction. 
+
+		Nécessairement, $l=+\infty$, puis par le théorème des valeurs intermédiaires, pour tout $k\in\N$ tel que $k\pi\geqslant a$, il existe un unique $t_k\in[a,+\infty[$ tel que $\theta(t_k)=k\pi$ et $x(t_k)=0$. Donc $x$ s'annule une infinité de fois.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Si (ii), soit $a\in\R$, alors pour tout $f\in E$, $(\mathcal{T}_a(f))'=\mathcal{T}_a(f')$. Alors pour tout $x\in\R$,
+	\begin{equation}
+		f^{(n)}(x+a)+a_{n-1}f^{(n-1)}(x+a)+\dots+a_{0}f(x+a)=0,
+	\end{equation}
+	donc $\mathcal{T}_{a}(f)\in E$, d'où (iii).
+
+	Si (i), on note $\chi_{\Delta}(X)=\sum_{i=0}^{n-1}a_{i}X^{i}+X^{n}$ le polynôme caractéristique de $\Delta\colon f\mapsto f'\in\mathcal{L}(E)$. D'après le théorème de Cayley-Hamilton, on a $\chi_{\Delta}(\Delta)=0_{\mathcal{L}(E)}$. Donc pour tout $f\in E$, 
+	\begin{equation}
+		\chi_{\Delta}(\Delta)(f)=f^{(n)}+a_{n-1}f^{(n-1)}+\dots+a_{0}f=O_{E},
+	\end{equation}
+	donc $E$ est inclus dans l'ensemble solution. Puis, d'après le théorème de Cauchy-Lipschitz, la dimension de l'espace des solutions est $n=\dim(E)$ donc on a bien égalité. D'où (ii).
+
+	Si (iii), notons que s'il existe $(_1,\dots,x_n)\in\R^{n}$ tel que pour tout $f\in E$, $f(x_1)=\dots=f(x_n)=0$, alors $f=0$. En effet, soit pour tout $x\in\R$, \function{\delta_x}{\mathcal{C}^{\infty}(\R,\C)}{\C}{f}{f(x)} une forme linéaire sur $E$.
+	D'après le théorème de caractérisation des formes linéaires, il existe $g_x\in E$ tel que pour tout $f\in E$, $\delta_x(f)=f(x)=(g_x|f)$ (produit scalaire complexe a priori). Soit $f\in E$, si pour tout $x\in\R$, $(g_x|f)=0$ alors $f=0$. Ainsi, $\left(\Vect((g_x)_{x\in\R})\right)^{\perp}=\left\lbrace0\right\rbrace$. Donc $\Vect((g_x)_{x\in\R})=E$. Donc $(g_x)_{x\in\R}$ est une famille génératrice de $E$, ainsi il existe $(x_1,\dots,x_n)\in\R^{n}$ tel que $(g_{x_1},\dots,g_{x_n})$ est une base de $E$, donc $(\delta_{x_1},\dots,\delta_{x_n})$ est une base de $\mathcal{L}(E,\C)$ (ensemble des formes linéaires sur $E$ de dimension $n$). En effet, c'est une famille libre car si $\sum_{i=1}^{n}\lambda_i \delta_{x_i}=0$ alors pour tout $f\in E$, $\left(\sum_{i=1}^{n}\lambda_i g_{x_i}\middle| f\right)=0$ donc $\sum_{i=1}^{n}\lambda_i g_{x_i}=0$ et $\lambda_1=\dots=\lambda_n=0$.
+	Alors pour tout $x\in\R$, il existe $(\lambda_1,\dots,\lambda_n)\in\C^{n}$ tel que $\delta_x=\lambda_1(x)\delta_{x_1}+\dots+\lambda_n(x)\delta_{x_n}$. Donc si $f(x_1)=\dots=f(x_n)=0$, alors pour tout $x\in\R$, $f(x)=\delta_x(f)=\sum_{i=1}^{n}\lambda_i\delta_{x_i}(f)=0$ d'où $f=0$.
+
+	Ensuite, notons qu'il existe $(h_1,\dots,h_n)$ base de $E$ telle que pour tout $f\in E$, $f=\sum_{i=1}^{n}f(x_i)h_i$. En admettant ce résultat, on définit 
+	\begin{equation}
+		g=\sum_{i=1}^{n}f'(x_i)h_i,
+	\end{equation}
+	et pour tout $i\in\left\llbracket1,n\right\rrbracket$, $f'(x_i)=g(x_i)$. Pour tout $x\in E$, on a 
+	\begin{equation}
+		f'(x)=\lim\limits_{p\to+\infty}p\left(\mathcal{T}_{\frac{1}{p}}(f)(x)-f(x)\right).
+	\end{equation}
+	Si $\delta_x=\sum_{i=1}^{n}\lambda_i \delta_{x_i}$, on a 
+	\begin{align}
+		p\left(\mathcal{T}_{\frac{1}{p}}(f)(x)-f(x)\right)
+		&=p\left(f\left(x+\frac{1}{p}\right)-f(x)\right),\\
+		&=\delta_x\left(\mathcal{T}_{\frac{1}{p}}(f)-f\right),\\
+		&=\sum_{i=1}^{n}\lambda_i\delta_{x_i}\left(p\left(\mathcal{T}_{\frac{1}{p}}(f)-f\right)\right),\\
+		&=\sum_{i=1}^{n}\lambda_i p\left(f\left(x_i+\frac{1}{p}\right)-f(x_i)\right),\\
+		&\xrightarrow[p\to+\infty]{}\sum_{i=1}^{n}\lambda_i f'(x_i),\\
+		&=\sum_{i=1}^{n}\lambda_i g(x_i),\\
+		&=g(x),\\
+		&=f'(x).
+	\end{align}
+
+	D'où (i).
+\end{proof}
+
+\begin{remark}
+	En notant le polynôme minimal $\Delta$ $\Pi_{\Delta}$, on a $\deg(\Pi_{\Delta})=n$. En effet, si $\Pi_{\Delta}=b_0+b_1 X+\dots+b_{m-1}X^{m-1}+X^{m}$ avec $m\leqslant n$ (d'après le théorème de Cayley-Hamilton), alors $E$ est inclus dans l'ensemble solution de l'équation différentielle $b_0+b_1 y+\dots+b_{m-1}y^{(m-1)}+y^{(m)}=0$ qui est de dimension $m$. Or $\dim(E)=n$ et $m\leqslant n$, donc $m=n$ et $\chi_{\Delta}=\pi_{\Delta}$.
+\end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Il existe $(m,M)\in(\R_{+}^{*})^{2}$ tel que $m\leqslant \Delta\leqslant M$. Si $\lambda=0$, $f$ est affine et $f(0)=f(1)=0$ implique $f=0$. Si $\lambda>0$, on a 
+		\begin{equation}
+			\lambda mf\leqslant f''=\lambda\Delta f\leqslant \lambda Mf.
+		\end{equation}
+		Posons $g$ solution de $g''=\lambda mg$ et $h$ solution de $f''=\lambda Mh$, avec $g(0)=h(0)=0$, $g'(0)=h'(0)=f'(0)$. On a 
+		\begin{equation}
+			\begin{array}[]{rcl}
+				g(t) &=& \frac{f'(0)}{\sqrt{\lambda m}}\sinh\left(\sqrt{\lambda m}t\right),\\
+				h(t) &=& \frac{f'(0)}{\sqrt{\lambda M}}\sinh\left(\sqrt{\lambda M}t\right).
+			\end{array}
+		\end{equation}
+		Donc $g(1)\neq0$ et $h(1)\neq0$. On a 
+		\begin{equation}
+			0\leqslant (f-g)''-\lambda m(f-g)=f''-\lambda mf.
+		\end{equation}
+		Si $f_1=f-g$, on a $f_1''-\lambda m f_1=\varepsilon\geqslant0$ et $f_1(0)=f_1'(0)=0$. Résolvons $f_1''-\lambda mf_1=\varepsilon_{1}$ avec $f_1'(0)=f_1(0)=0$. On a 
+		\begin{equation}
+			f_1(t) = \lambda(t)\sinh\left(\sqrt{\lambda m}t\right)+\mu(t)\cosh\left(\sqrt{\lambda m}t\right),
+		\end{equation}
+		avec $\lambda'(t)\sinh\left(\sqrt{\lambda m}t\right)+\mu'(t)\cosh\left(\sqrt{\lambda m}t\right)=0$. Il vient 
+		\begin{equation}
+			\sqrt{\lambda m}\left(\lambda'(t)\cosh\left(\sqrt{\lambda m}t\right)\right)+\mu'(t)\sinh\left(\sqrt{\lambda m}t\right)=\varepsilon_{1}(t).
+		\end{equation}
+		D'où 
+		\begin{equation}
+			\begin{array}[]{rcl}
+				\lambda'(t) &=& \frac{1}{\sqrt{\lambda m}}\cosh\left(\sqrt{\lambda m}t\right)\varepsilon_{1}(t),\\
+				\mu'(t) &=& -\frac{1}{\sqrt{\lambda m}}\sinh\left(\sqrt{\lambda m}t\right)\varepsilon_{1}(t).
+			\end{array}
+		\end{equation}
+		On a $f_1(0)=0$ donc $\mu(0)=0$ et $f_1'(0)=0$ donc $\lambda(0)=0$. Finalement,
+		\begin{equation}
+			f_1(t)=\frac{1}{\sqrt{\lambda m}}\int_{0}^{t}\left(\sinh\left(\sqrt{\lambda m}u\right)\cosh\left(\sqrt{\lambda m}u\right)-\cosh\left(\sqrt{\lambda m}u\right)\sinh\left(\sqrt{\lambda m}u\right)\right)\varepsilon_{1}(u)\d u=\frac{1}{\sqrt{\lambda m}}\int_{0}^{t}\sinh\left(\sqrt{\lambda m}(t-u)\right)\varepsilon_{1}(u)\d u\geqslant0.
+		\end{equation}
+
+		Donc $f\geqslant g$. De même, $f\leqslant h$. Donc quelle que soit la valeur de $f'(0)$, on a $f(1)>0$ ou $f(1)<0$. Ainsi, $\lambda\leqslant0$.
+
+		On pose $\left\langle f,g\right\rangle=\int_{0}^{1}\Delta fg$. C'est un produit scalaire car $\Delta>0$. Vérifions que $v$ est autoadjoint pour ce produit scalaire : 
+		\begin{equation}
+			\left\langle v(f), g\right\rangle=\int_{0}^{1}f''(t)g(t)\d t=\underbrace{\left[f(t)g(t)\right]_{0}^{1}}_{=0\text{ car }g\in E}-\int_{0}^{1}f'(t)g'(t)\d t,
+		\end{equation}
+		expression symétrique en $f$ et $g$. Donc $\left\langle v(f), g\right\rangle=\left\langle f, v(g)\right\rangle$. Si $v(f)=\lambda f$ et $v(g)=\lambda g$, on a alors $\lambda\left\langle f,g\right\rangle=\mu\left\langle f,g\right\rangle$ donc si $\lambda\neq\mu$, on a $\left\langle f,g\right\rangle=0$.
+
+		\item C'est une conséquence immédiate du théorème de Cauchy-Lipschitz.
+		\item Sur $[2,+\infty[$ on a $f''=\gamma f$ et $\gamma<0$ d'après la première question. Donc il existe $(A,\varphi)\int\R\times\R$ tel que pour tout $t\in[2,+\infty[$, $f(t)=A\sin\left(\sqrt{-\gamma}t+\varphi\right)$.
+		
+		Si $A=0$, $f$ est solution du problème de Cauchy $f''=\gamma\Delta f$ avec $f(2)=f'(2)=0$ donc $f=0$ par unicité du théorème de Cauchy-Lipschitz, ce qui est absurde car $f'(0)=1$. Donc $A\neq0$ et $f$ s'annule en $\frac{k\pi-\varphi}{\sqrt{-\gamma}}$ avec $k\in\N$ sur $[2,+\infty[$.
+
+		Sur $[0,2]$, si $f$ s'annule une infinité de fois, il existe $(a_n)_{n\in\N}$ une suite injective de $[0,2]$ telle que $f(a_n)=0$ pour tout $n\in\N$. On extrait $(a_{\sigma(n)})_{n\in\N}$ qui converge vers $a\in[0,2]$. $f$ étant continue sur $[0,2]$, $f(a)=0$ et d'après le théorème de Rolle, pour tout $n\in\N$, il existe $b_n\in]a,a_{\sigma(n)}[$ (ou bien $]a_{\sigma(n)},a[$) tel que $f'(b_n)=\gamma$. Par continuité de $f'$, puisque $b_n\to0$, on a $f'(a)=0$. $f$ est alors solution du problème de Cauchy $y''=\gamma\Delta y$ avec $y(a)=y'(a)=0$. Par unicité du théorème de Cauchy-Lipschitz, $f=0$ ce qui est absurde car $f'(0)=1$. Donc $f$ s'annule un nombre fini de fois sur $[0,2]$.
+
+		\item Soit $A>0$. Sur $[0,A]$, notons $M=\sup\limits_{[0,A]}\left\lvert \Delta\right\rvert$. Sur $[0,x_{1}(\gamma)]$, $f_{\gamma}$ est positive (car ne change pas de signe et $f_{\gamma}'(0)=1$). Notons $t_{\gamma}\in[0,x_{1}(\gamma)]$ tel que $f_{\gamma}(t_{\gamma})=\max\limits_{t\in[0,x_{1}(\gamma)]}f_{\gamma}(t)$. Pour tout $t\in]0,x_{1}(\gamma)[$, on a 
+		\begin{equation}
+			f_{\gamma}''(t)=\Delta(t)\gamma f_{\gamma}(t)<0,
+		\end{equation}
+		donc $f_{\gamma}$ est concave sur $[0,x_{1}(\gamma)]$. Ainsi, pour tout $t\in[0,x_{1}(\gamma)]$, $f_{\gamma}(t)\leqslant t$ (en-dessous de la tangente en 0). Donc $f_{\gamma}(t_{\gamma})\leqslant t_{\gamma}\leqslant x_{1}(\gamma)$. Alors pour tout $t\in[0,x_{1}(\gamma)]$, on a 
+		\begin{equation}
+			0\leqslant f(t)\leqslant x_1(\gamma)(\gamma)\leqslant A,
+		\end{equation}
+		et $\gamma MA\leqslant f_{\gamma}''(t)\leqslant0$. D'après l'inégalité des accroissements finis, on a 
+		\begin{align}
+			1=\left\lvert f'(t_{\gamma})-f'(0)\right\rvert
+			&\leqslant\left\lvert\gamma\right\rvert MAt_{\gamma},\\
+			&\leqslant\left\lvert\gamma\right\rvert MAx_{1}(\gamma),
+		\end{align}
+		donc 
+		\begin{equation}
+			x_{1}(\gamma)\geqslant\frac{1}{MA\left\lvert\gamma\right\rvert}\xrightarrow[\gamma\to0]{}+\infty.
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Autre méthode pour la première question : comme $f(0)=f(1)=0$ et $f\neq0$, il existe $x_0\in]0,1[$, $f(x_0)\neq0$. Quitte à remplacer $f$ par $-f$ on suppose $f(x_0)>0$. Alors $\max\limits_{[0,1]}f>0$ et il existe $x_1\in]0,1[$ tel que $f(x_1)=\max\limits_{[0,1]}f$. Il vient $f'(x_1)=0$ et si $\lambda>0$, on a $f''(x_1)=\lambda\Delta(x_1)f(x_1)>0$. Un développement limité fournit 
+	\begin{equation}
+		f(x_1+h)-f(x_1)\underset{h\to0}{\sim}\frac{h^{2}}{2}f'(x_1)>0,
+	\end{equation}
+	ce qui contredit le fait que $f(x_1)=\max\limits_{t\in[0,1]}f(t)$.
+\end{remark}
+
 \end{document}

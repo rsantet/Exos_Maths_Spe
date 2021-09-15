@@ -457,9 +457,12 @@
 		\item En (2,2,2), on a 
 		\begin{align}
 			f(2+h,2+k,2+l)-f(2,2,2)
-			&=(2+h)^{2}+(2+k)^{2}+(2+l)^{2}-(2+h)(2+k)(2+l)-4,\\
-			&=\underbrace{h^{2}+k^{2}+l^{2}-2hk-2kl-2hl}_{q(h,k,l)}-\underbrace{hkl}_{=\underset{(h,k,l)\to(0,0,0)}{o}(\left\lVert (h,k,l)\right\rVert_{2}^{2})}.
+			&=(2+h)^{2}+(2+k)^{2}+(2+l)^{2}\\
+			&\qquad-(2+h)(2+k)(2+l)-4,\nonumber\\
+			&=\underbrace{h^{2}+k^{2}+l^{2}-2hk-2kl-2hl}_{q(h,k,l)}-hkl.
 		\end{align}
+
+		Le dernier terme est un terme négligeable devant $\left\lVert (h,k,l)\right\rVert_{2}^{2}$ quand $(h,k,l)\to0$.
 		On a 
 		\begin{equation}
 			q(h,k,l)=(h,k,l)\underbrace{\begin{pmatrix}
@@ -472,6 +475,243 @@
 			1&1&1\\1&1&1\\1&1&1
 		\end{pmatrix}$ semblable à $\diag(2,2,-1)$. Les valeurs propres de $A$ sont de signes opposés donc $q(h,k,l)$ change de signe donc $f$ admet un point col en (2,2,2) : pas d'extremum. Par exemple, $q(h,0,0)=h^{2}>0$ et $q(h,h,h)=-3h^{2}<0$ pour $h\neq0$.
 	\end{itemize}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Si $g$ est continue, $x\mapsto g(x,x)$ est continue et $f$ est $\mathcal{C}^{1}$.
+		
+		Réciproquement, si $f$ est $\mathcal{C}^{1}$, soit $(x,y)\in\R^{2}$. Soit \function{\gamma}{[0,1]}{\R}{t}{x+t(y-x)}
+		$f\circ \gamma$ est $\mathcal{C}^{1}$. On a alors 
+		\begin{align}
+			f(y)-f(x)
+			&=f(\gamma(1))-f(\gamma(0)),\\
+			&=\int_{0}^{1}(f\circ\gamma)'(t)\d t,\\
+			&=\int_{0}^{1}(y-x)f'(\gamma(t))\d t.
+		\end{align}
+		Donc si $x\neq y$, $g(x,y)=\frac{f(y)-f(x)}{y-x}=\int_{0}^{1}f'(x+t(y-x))\d t$, vrai aussi si $x=y$. On a, pour $t\in[0,1]$ fixé, $(x,y)\mapsto f'(x+t(y-x))$ est continue car $f$ est $\mathcal{C}^{1}$. Par ailleurs, soit $R>0$ tel que $(x,y)\in[-R,R]^{2}$, notons $M_R=\left\lVert f'\right\rVert_{\infty,[-R,R]}$. Pour tout $t\in[0,1]$, $x+t(y-x)\in[-R,R]$ et $\left\lvert f'(x+t(y-x))\right\rvert\leqslant M_R$ intégrable sur $[0,1]$. D'après le théorème de continuité des intégrales à paramètres, $g$ est continue.
+
+		\item Si $g$ est $\mathcal{C}^{1}$, alors $f$ est $\mathcal{C}^{2}$.
+		Réciproquement, si $f$ est $\mathcal{C}^{2}$, fixons $(x_0,y_0)\in\R^{2}$. Soit 
+		\begin{equation}
+			\varphi_1(x)=g(x,y_0)=\int_{0}^{1}f'(x+t(y_0-x))\d t.
+		\end{equation}
+		On note $F(x,t)$ l'intégrande. On a $\frac{\partial F}{\partial x}(x,t)=(1-t)f''(x+t(y_0-x))$. Soit $R\geqslant\max(\left\lvert y_0\right\rvert,\left\lvert x_0\right\rvert+1)$ et $x\in[-R,R]$. Alors pour tout $t\in[0,1]$, $x+t(y_0-x)\in[-R,R]$. Soit $M_2=\left\lVert f''\right\rVert_{\infty,[-R,R]}$. D'où $\left\lvert\frac{\partial F}{\partial x}(x,t)\right\rvert\leqslant(1-t)M_2$ intégrable sur $[0,1]$. 
+
+		Donc $\varphi_1$ est dérivable en $x_0$, et on a 
+		\begin{equation}
+			\varphi'(x_0)=\frac{\partial g}{\partial x}(x_0,y_0)=\int_{0}^{1}(1-t)f''(x_0+t(y_0-x_0))\d t.
+		\end{equation}
+		De même, comme $g(y,x)=g(x,y)$, on a 
+		\begin{equation}
+			\frac{\partial g}{\partial y}(x_0,y)=\int_{0}^{1}tf''(x_{0}+t(y_{0}-x_{0}))\d t.
+		\end{equation}
+
+		De plus, on vérifie la continuité des dérivées partielles (par rapport à $(x,y)$) grâce au théorème de continuité d'une intégrale à paramètre. Donc $g$ est $\mathcal{C}^{1}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	Soit $(x_0,y_0)\in U$, $z_0=x_0+\i y_0$ et $h=h_1+\i h_2\in\C$. $f$ est dérivable au sens complexe si et seulement s'il existe $f'(z_0)=a+\i b\in\C$ tel que $f(z_0+h)=f(z_0)+h(a+\i b)+\underset{h\to0}{o}(h)$ si et seulement si 
+	\begin{equation}
+		\widetilde{f}_1(x_0+h_1,y_0+h_2)+\i\widetilde{f}_2(x_0+h_1,y_0+h_2)=\widetilde{f}_1	(x_0,y_0)+\i\widetilde{f}_2(x_0,y_0)+(h_1+\i h_2)(a+\i b)+\underset{h\to0}{o}(h),
+	\end{equation}
+	si et seulement si 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{rcl}
+				\widetilde{f}_1(x_0+h_1,y_0+h_2) &=&\widetilde{f}_1(x_0,y_0)+h_1a-h_2b+\underset{h\to0}{o}(h),\\
+				\widetilde{f}_2(x_0+h_1,y_0+h_2) &=&\widetilde{f}_2(x_0,y_0)+h_1b+h_2a+\underset{h\to0}{o}(h),
+			\end{array}
+		\right.
+	\end{equation}
+	si et seulement si $\widetilde{f}_1$ et $\widetilde{f}_2$ sont différentiables en $(x_0,y_0)$ et 
+	\begin{equation}
+		\left\lbrace
+			\begin{array}[]{ll}
+				\frac{\partial \widetilde{f}_1}{\partial x}(x_0,y_0)=a, &\frac{\partial \widetilde{f}_1}{\partial y}(x_0,y_0)=-b,\\
+				\frac{\partial \widetilde{f}_2}{\partial x}(x_0,y_0)=b, \frac{\partial \widetilde{f}_2}{\partial y}(x_0,y_0) =a.
+			\end{array}
+		\right.,
+	\end{equation}
+	si et seulement si $\widetilde{f}$ est différentiable en $(x_0,y_0)$ et $J_{\widetilde{f}}(x_0,y_0)=\begin{pmatrix}
+		a&-b\\b&a
+	\end{pmatrix}$ si et seulement si $d\widetilde{f}_{(x_0,y_0)}$ est une similitude directe si et seulement si $\widetilde{f}$ est différentiable en $(x_0,y_0)$ et (équations de Cauchy-Riemann)
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\frac{\partial \widetilde{f}_1}{\partial x} &=& \frac{\partial \widetilde{f}_2}{\partial y},\\
+			\frac{\partial \widetilde{f}_1}{\partial y} &=& -\frac{\partial \widetilde{f}_2}{\partial x}.
+		\end{array}
+	\end{equation}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Pour tout $(x,y)\in U$, on a 
+		\begin{equation}
+			\Delta f_n(x,y)=\Delta f(x,y)+\frac{4}{n}=\frac{4}{n}>0.
+		\end{equation}
+
+		Si le $\sup\limits_{\overline{U}}f_n$ est atteint en un point de l'intérieur, $(x_n,y_n)$ alors en ce point on a annulation des dérivées partielles. Comme $\Delta f_n(x_n,y_n)>0$, on a $\frac{\partial^{2}f_n}{\partial x^{2}}(x_n,y_n)>0$ ou $\frac{\partial^{2}f_n}{\partial y^{2}}(x_n,y_n)>0$. Supposons par symétrie $\frac{\partial^{2}f_n}{\partial x^{2}}(x_n,y_n)>0$, alors pour $h$ suffisamment petit,
+		\begin{equation}
+			f_n(x_n+h,y_n)=f_n(x_n,y_n)+h\underbrace{\frac{\partial f_n}{\partial x}(x_n,y_n)}_{=0}+\frac{h^{2}}{2}\underbrace{\frac{\partial^{2} f}{\partial x^{2}}(x_n,y_n)}_{>0}+\underset{h\to0}{o}(h),
+		\end{equation}
+		alors $f_n(x_n+h,y_n)>0f_n(x_n,y_n)$ pour $h$ suffisamment petit. C'est absurde car on avait supposé $f_n(x_n,y_n)=\sup\limits_{\overline{U}}f_n$. Donc $\sup\limits_{\overline{U}}f_n$ est atteint sur $\partial U$.
+
+		\item Soit $((x_n,y_n))_{n\in\N}$ une suite de points de $\partial U$ telle que $f_n(x_n,y_n)=\sup\limits_{\overline{U}}f_n$. $\partial U$ est fermé borné dans $\R^{2}$ donc compact. On extrait une suite $((x_{\sigma(n)},y_{\sigma(n)}))_{n\in\N}$ convergente vers $(x_{\infty},y_{\infty})\in\partial U$. De cette dernière, on a 
+		\begin{equation}
+			f(x_{\sigma(n)},y_{\sigma(n)})=f_{\sigma(n)}(x_{\sigma(n)},y_{\sigma(n)})-\underbrace{\frac{1}{\sigma(n)}(x_{\sigma(n)}^{2}+y_{\sigma(n)}^{2})}_{\xrightarrow[n\to+\infty]{}0},
+		\end{equation}
+		car $\overline{U}$ borné. $f$ étant continue, on a 
+		\begin{equation}
+			\lim\limits_{n\to+\infty}f_{\sigma(n)}(x_{\sigma(n)},y_{\sigma(n)})=f(x_{\infty},y_{\infty}).
+		\end{equation}
+		Soit $(x,y)\in\overline{U}$, on a 
+		\begin{equation}
+			f_{\sigma(n)}(x,y)\leqslant f_{\sigma(n)}\leqslant (x_{\sigma(n)},y_{\sigma(n)}).
+		\end{equation}
+		Par passage à la limite, $f(x,y)\leqslant f(x_{\infty},y_{\infty})$ et donc 
+		\begin{equation}
+			f(x_{\infty},y_{\infty})=\max\limits_{\overline{U}}f.
+		\end{equation}
+
+		\item On forme $h=f-g$ continue sur $\overline{U}$, harmonique sur $U$ et $h_{\mid\partial U}=0$. D'après ce qui précède, $h(x)\leqslant0$ pour tout $x\in\overline{U}$. On peut ainsi appliquer le résultat à $-h=g-f$, donc pour tout $x\in\overline{U}$, $h(x)\leqslant 0$ d'où $h(x)\geqslant0$ pour tout $x\in\overline{U}$. Finalement, on $f=g$.
+		\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	On vient de montrer l'unicité d'une solution éventuelle au problème de Dirichlet : $\Delta f=0$ sur $U$, $f=\widetilde{f}$ sur $\partial U$ avec $\widetilde{f}\colon\partial U\to\R$ continue.
+
+	On peut montrer l'existence sur $\overline{D(0,1)}$.
+	Soit \function{\widetilde{f}}{C(0,1)}{\C}{z=\e^{\i\theta}}{\widetilde{f}(\e^{\i\theta})} continue, alors \function{f}{\R}{\C}{\theta}{\widetilde{f}(\e^{\i\theta})} continue $2\pi$-périodique.
+
+	On pose $c_n(g)=\frac{1}{2\pi}\int_{0}^{2\pi}g(\theta)\e^{-\i n\theta}\d\theta$ pour tout $n\in\Z$. On a$ \sum_{n\in\Z}\left\lvert c_n(g)\right\rvert^{2}<\infty$. On définir, pour tout $r\in[0,1[$, pour tout $\theta\in\R$,
+	\begin{equation}
+		f(r\e^{\i\theta})=\sum_{n=-\infty}^{+\infty}c_n(g)r^{n}\e^{\i n\theta},
+	\end{equation}
+	harmonique sur $\overline{D(0,1)}$ et vérifie $f_{\mid\partial U}=\widetilde{f}$, $f(x+\i y)=\sum_{n=-\infty}^{+\infty}c_n(g)(x+\i y)^{n}$ : $\Delta f=0$. Notons que l'on a 
+	\begin{equation}
+		f(r\e^{\i\theta})=\frac{1}{2\pi}\int_{0}^{2\pi}f(t)P_r(\theta-i)\d t,
+	\end{equation}
+	avec 
+	\begin{equation}
+		P_r(x)=\sum_{n=-\infty}^{+\infty}r^{\left\lvert n\right\rvert}\e^{\i nx}=\frac{1-r^{2}}{1-(2\cos(x))r+r^{2}}.
+	\end{equation}
+\end{remark}
+
+\begin{proof}
+	On a 
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\frac{\partial}{\partial r} &=& \frac{\partial}{\partial x}\cos\theta+\frac{\partial}{\partial y}\sin\theta,\\
+			\frac{\partial}{\partial\theta} &=& \frac{\partial}{\partial x}(-r\sin\theta)+\frac{\partial}{\partial y}(r\cos\theta),
+		\end{array}
+	\end{equation}
+	Ainsi,
+	\begin{equation}
+		\begin{array}[]{rcl}
+			\frac{\partial}{\partial x}&=&\cos\theta\frac{\partial}{\partial r}-\frac{\sin\theta}{r}\frac{\partial}{\partial\theta},\\
+			\frac{\partial}{\partial y}&=&\sin\theta\frac{\partial}{\partial r}+\frac{\cos\theta}{r}\frac{\partial}{\partial\theta}.
+		\end{array}
+	\end{equation}
+
+	En réinjectant, on a 
+	\begin{align}
+		\frac{\partial^{2}}{\partial x^{2}}
+		&=\cos\theta\frac{\partial}{\partial r}\left(\cos\theta\frac{\partial}{\partial r}-\frac{\sin\theta}{r}\frac{\partial}{\partial\theta}\right)-\frac{\sin\theta}{r}\frac{\partial}{\partial\theta}\left(\cos\theta\frac{\partial}{\partial r}-\frac{\sin\theta}{r}\frac{\partial}{\partial\theta}\right),\\
+		&=\cos^{2}\theta\frac{\partial^{2}}{\partial r^{2}}+\frac{\cos\theta\sin\theta}{r^{2}}\frac{\partial}{\partial\theta}\\
+		&\qquad-\frac{\cos\theta\sin\theta}{r}\frac{\partial^{2}}{\partial r\partial\theta}+\frac{\sin^{2}\theta}{r}\frac{\partial}{\partial r}\\
+		&\qquad-\frac{\sin\theta\cos\theta}{r}\frac{\partial^{2}}{\partial\theta\partial r}+\frac{\sin\theta\cos\theta}{r^{2}}\frac{\partial}{\partial\theta}\\
+		&\qquad+\frac{\sin^{2}\theta}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}}.
+	\end{align}
+
+	On fait les mêmes calculs pour $\frac{\partial^{2}}{\partial y^{2}}$ :
+	\begin{align}
+		\frac{\partial^{2}}{\partial y^{2}}
+		&=\sin^{2}\theta\frac{\partial^{2}}{\partial r^{2}}-\frac{\sin\theta\cos\theta}{r^{2}}\frac{\partial}{\partial\theta}\\
+		&\qquad +\frac{\sin\theta\cos\theta}{r}\frac{\partial^{2}}{\partial r\partial\theta}+\frac{\cos^{2}\theta}{r}\frac{\partial}{\partial r}\\
+		&\qquad +\frac{\cos\theta\sin\theta}{r}\frac{\partial^{2}}{\partial\theta\partial r}-\frac{\cos\theta\sin\theta}{r^{2}}\frac{\partial}{\partial\theta}\\
+		&\qquad +\frac{\cos^{2}\theta}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}}.
+	\end{align}
+
+	Finalement, on a 
+	\begin{equation}
+		\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}=\frac{\partial^{2}}{\partial r^{2}}+\frac{1}{r}\frac{\partial}{\partial r}+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}}=\frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial}{\partial r}\right)+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}}.
+	\end{equation}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $G$ est $\mathcal{C}^{2}$ (l'hypothèse de domination est vérifiée sur les compacts). On a 
+		\begin{equation}
+			G'(r)=\frac{1}{2\pi}\int_{0}^{2\pi}\frac{\partial\widetilde{f}_1}{\partial r}(r,\theta)\d\theta.
+		\end{equation}
+		On a 
+		\begin{align}
+			\frac{1}{r}\frac{\d}{\d r}\left(r\frac{\d G}{\d r}\right)
+			&=\frac{1}{2\pi r}\int_{0}^{2\pi}\frac{\partial}{\partial r}\left(r\frac{\partial \widetilde{f}_1}{\partial f}\right)(r,\theta)\d\theta,\\
+			&=-\frac{1}{2\pi r^{2}}\int_{0}^{2\pi}\frac{\partial^{2}\widetilde{f}_1}{\partial\theta^{2}}(r,\theta)\d\theta,\\
+			&=-\frac{1}{2\pi r^{2}}\left[\frac{\partial \widetilde{f}_1}{\partial\theta}(,r\theta)\right]_{\theta=0}^{\theta=2\pi},\\
+			&=0.
+		\end{align}
+		\item 
+		$r\mapsto rG'(r)$ est constant pour $r>0$, et continue en $0$, donc $G'$ est nulle donc $G$ est constant. Ainsi, $G(r)=f(x_0,y_0)$.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item Soit $\gamma\colon]-\alpha,\alpha[\to O_n(\R)$ de classe $\mathcal{C}^{1}$ tel que $\gamma'(0)=A$ et $\gamma(0)=I_n$. On a $\gamma(t)^{\mathsf{T}}\gamma(t)=I_n$. En dérivant, on a 
+		\begin{equation}
+			\gamma'(t)^{\mathsf{T}}\gamma(t)+\gamma(t)^{\mathsf{T}}\gamma'(t)=0,
+		\end{equation}
+		donc $A^{\mathsf{T}}+A=0$. Ainsi, $A\in\mathcal{A}_n(\R)$.
+
+		Réciproquement, soit $A\in\mathcal{A}_n(\R)$, on définit \function{\gamma}{\R}{\mathcal{M}_n(\R)}{t}{\exp(tA)} de classe $\mathcal{C}^{1}$. On a $\gamma(0)=I_n$ et $\gamma'(0)=A$. De plus, 
+		\begin{equation}
+			\exp(tA)^{\mathsf{T}}\exp(tA)=\exp(t(A^{\mathsf{T}}+A))=I_n,
+		\end{equation}
+		donc $\gamma\colon\R\to O_n(\R)$ et $A\in\mathcal{T}_{I_n}(O_n(\R))$. Notons que $\det(\exp(tA))=\exp(\Tr(tA))=1$ donc $\exp(tA)\in SO_n(\R)$.
+
+		\item On a $A\in\mathcal{T}_\theta(O_n(\R))$ si et seulement s'il existe \function{\gamma}{]-\alpha,\alpha[}{O_n(\R)}{t}{\gamma(t)} tel que $\gamma(0)=\theta$ et $\gamma'(0)=A$ si et seulement s'il existe \function{\gamma_1}{]-\alpha,\alpha[}{O_n(\R)}{t}{\theta^{-1}\gamma(t)} tel que $\gamma_1(O)=I_n$ et $\gamma_1'(0)=\theta^{-1}A$ si et seulement si $\theta^{-1}A\in\mathcal{A}_n(\R)$ (d'après ce qui précède) et 
+		\begin{equation}
+			\mathcal{T}_{\theta}(O_n(\R))=\theta\mathcal{A}_n(\R).
+		\end{equation}
+
+		\item $O_n(\R)$ est compact (fermé et borné en dimension finie). Donc $d(M,O_n(\R))$ est atteinte.
+		
+		Soit $\theta_{0}$ tel que $d(M,O_n(\R))=\left\lVert\theta_{0}-M\right\rVert_{2}$, c'est-à-dire que \function{\iota}{O_n(\R)}{\R}{\theta}{\left\lVert\theta-M\right\rVert_{2}^{2}}. Soit \function{\gamma}{]-\alpha,\alpha[}{O_n(\R)}{t}{\gamma(t)} de classe $\mathcal{C}^{1}$ tel que $\gamma(0)=\theta_0$ et $\gamma'(0)=A$. Alors $\theta^{-1}A\in\mathcal{A}_n(\R)$ d'après ce qui précède.
+
+		\function{f}{]-\alpha,\alpha[}{\R}{t}{\left\lVert \gamma(t)-M\right\rVert_{2}^{2}} atteint un minimum en 0, donc 
+		\begin{align}
+			f'(0)
+			&=0,\\
+			&=\d\left\lVert\cdot\right\rVert_{2_{\theta_0-M}}^{2}(A),\\
+			&=(\nabla(\left\lVert\cdot\right\rVert_{2}^{2})(\theta_0-M)|A),\\
+			&=2(\theta_0-M|A).
+		\end{align}
+		C'est vrai pour tout $A\in\mathcal{M}_n(\R)$ tel que $\theta_{0}^{-1}A\in\mathcal{A}_n(\R)$ donc pour tout $B\in\mathcal{A}_n(\R)$; $(\theta_0-M|\theta_0 B)=(\theta_0-\theta(\theta_0^{-1}M)|\theta_0B)=0$.
+
+		Comme $\theta\in O_n(\R)$, on a pour tout $B\in\mathcal{A}_n(\R)$, $(I_n-\theta_0^{-1}M|B)=0$ donc $I_n-\theta_{0}^{-1}M\in\left(\mathcal{A}_n(\R)\right)^{\perp}=\mathcal{S}_n(\R)$ (car pour tout $(B,S)\in\mathcal{A}_n(\R)\times \mathcal{S}_n(\R)$, $(B|S)=\Tr(B^{\mathsf{T}}S)=-\Tr(BS)$ donc $(B|S)=0$ et $\dim\mathcal{A}_n(\R)+\dim\mathcal{S}_n(\R)=n^{2}$).
+
+		Donc $\theta_{0}^{-1}M\in\mathcal{S}_n(\R)$. Il existe donc $S_0\in\mathcal{S}_n(\R)$ tel que $M=\theta_0 S_0$. On a $M^{\mathsf{T}}M=S_0^{\mathsf{T}}\theta_0^{\mathsf{T}}\theta_0 S_0=S_0^{2}$. Ainsi,
+		\begin{align}
+			\left\lVert\theta_0-M\right\rVert_{2}^{2}
+			&=(\theta_0-\theta_0 S_0|\theta_0-\theta_0 S_0),\\
+			&=(I_n-S_0| I_n-S_0),\\
+			&=\Tr((I_n-S_0)^{2}),\\
+			&=\Tr(I_n-2S_0+S_0^{2}),\\
+			&=n-2\Tr(S_0)+\sum_{i=1}^{n}\lambda_i^{2},\\
+			&=\sum_{i=1}^{n}\left(\lambda_i-1\right)^{2},
+		\end{align}
+		où $(\lambda_i)_{1\leqslant i\leqslant n}$ sont les valeurs propres de $S_0$ (qui sont les racines des valeurs propres de $M^{\mathsf{T}}M$).
+
+		Réciproquement, si $M=\theta S$, on a $S^{\mathsf{T}}S=M^{2}=S_0^{\mathsf{T}}S_0=S_{0}^{2}$ : c'est encore minimal.
+	\end{enumerate}
 \end{proof}
 
 \end{document}
