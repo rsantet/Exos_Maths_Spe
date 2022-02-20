@@ -1708,4 +1708,20 @@
     Soit $R_N(x)=\sum_{n=N}^{+\infty}f_n(x)\d x$. On a $\left\lvert R_N(x)\right\rvert\leqslant\e^{-a_N x}\leqslant \e^{-a_0 x}$ indépendant de $N$ et intégrable sur $\R_{+}^{*}$. D'après le théorème de convergence dominée, on peut intervertir, d'où $\lim\limits_{N\to+\infty}\int_{0}^{+\infty}\sum_{n=N}^{+\infty}f_n(x)\d x=0$.
 \end{proof}
 
+\begin{proof}
+    On a convergence normale de la série, puis on passe par la partie imaginaire de l'exponentielle. On trouve que 
+    \begin{equation*}
+        \sum_{n=1}^{+\infty}\frac{\sin(nx)}{3^{n}}=\frac{3}{10-6\cos(x)}.
+    \end{equation*}
+    L'intégrale vaut
+    \begin{equation*}
+        2\int_{0}^{\pi}\sum_{k=1}^{+\infty}f_k(x)\d x,
+    \end{equation*}
+    avec $f_k(x)=\frac{\sin(kx)}{3^{k}}\sin(x)$. On a convergence normale sur $\R$, on peut intervertir. On utilise la formule du produit des sinus: $\sin(k)x\sin(nx)=\frac{1}{2}\left(\cos(k-n)x-\cos(k+n)x\right)$. Ainsi, l'intégrale vaut 0 si $k\neq n$ et $\pi$ sinon. On conclut grâce au calcul précédent.
+\end{proof}
+
+\begin{remark}
+    Généralement, si $I_n=\int_{0}^{\pi}f(x)\sin(nx)\d x$ avec $f(x)=\sum_{k\in\Z}c_k\e^{\i kx}$ et $\sum_{k\in\Z}\left\lvert c_k\right\rvert<+\infty$, on peut intervertir par convergence normale le signe $\sum$ et $\int$.
+\end{remark}
+
 \end{document}
