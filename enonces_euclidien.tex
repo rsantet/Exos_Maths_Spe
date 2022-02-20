@@ -66,7 +66,10 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit $D=\left\lbrace A\in O_n(\R)\middle| I_n+A\in GL_n(\R)\right\rbrace$ et $D'=\left\lbrace M\in \mathcal{M}_n(\R)\middle| M^{\mathsf{T}}=-M\right\rbrace$.
+	Soit $D=\left\lbrace A\in O_n(\R)\middle| I_n+A\in GL_n(\R)\right\rbrace$ et 
+	\begin{equation*}
+		D'=\left\lbrace M\in \mathcal{M}_n(\R)\middle| M^{\mathsf{T}}=-M\right\rbrace.
+	\end{equation*}
 	\begin{enumerate}
 		\item Montrer que $D\subset SO_n(\R)$.
 		\item Soit \function{\varphi}{D}{\mathcal{M}_n(\R)}{A}{(I_n-A)(I_n+A)^{-1}}
@@ -145,7 +148,10 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in S_n(\R)$. On suppose que $\Sp(A)=\left\lbrace a_{1,1},\dots,a_{n,n}\right\rbrace$. Montrer que $A$ est diagonale. On pourra considérer $i_{0}\in\left\lbrace 1,\dots,n\right\rbrace$ tel que $a_{i_{0},i_{0}}=\min(a_{i,i})_{1\leqslant i\leqslant n}$ et former \function{\varphi}{(\R^{n})^{2}}{\R}{(X,Y)}{\varphi(X,Y)=Y^{\mathsf{T}}(A-a_{i_{0},i_{0}}I_n)X}
+	Soit $A=(a_{i,j})_{1\leqslant i,j\leqslant n}\in S_n(\R)$. On suppose que $\Sp(A)=\left\lbrace a_{1,1},\dots,a_{n,n}\right\rbrace$. Montrer que $A$ est diagonale. On pourra considérer $i_{0}\in\left\lbrace 1,\dots,n\right\rbrace$ tel que 
+	\begin{equation*}
+		a_{i_{0},i_{0}}=\min(a_{i,i})_{1\leqslant i\leqslant n},
+	\end{equation*}et former \function{\varphi}{(\R^{n})^{2}}{\R}{(X,Y)}{\varphi(X,Y)=Y^{\mathsf{T}}(A-a_{i_{0},i_{0}}I_n)X}
 \end{exercise}
 
 \begin{exercise}[Intercalation des valeurs propres]
@@ -239,6 +245,15 @@
 		Montrer que c'est un produit scalaire sur $\K^{n}$, et que pour tout $g_0\in G$, pour tout $(x,y)\in \K^{n}$, $\varphi(g_0x,g_0y)=\varphi(x,y)$.
 		\item Montrer que pour tout $f\in G$, on a $\Tr(f^{-1})=\overline{\Tr(f)}$.
 		\item Soit $G$ un sous-groupe fini de $SL_{2}(\R)$. Montrer que $G$ est cyclique.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Soit $A=(a_{i,j})\in \mathcal{S}_{n}^{+}(\R)$.
+	\begin{enumerate}
+		\item Montrer que $0\leqslant\det(A)\leqslant\prod_{i=1}^{n}a_{i,i}$. Étudier le cas d'égalité.
+		\item Soit $M=(m_{i,j})\in\mathcal{M}_{n}(\R)$, montrer que $\left\lvert\det(M)\right\rvert\leqslant\prod_{j=1}^{n}\sqrt{\sum_{i=1}^{n}m_{i,j}^{2}}$. Étudier le cas d'égalité.
+		\item Soit $B\in\mathcal{S}_{n}^{++}(\R)$ tel que $\det(B)=1$. Montrer que $\Tr(AB)\geqslant n\left(\det A\right)^{\frac{1}{n}}$. Étudier le cas d'égalité.
 	\end{enumerate}
 \end{exercise}
 

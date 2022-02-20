@@ -696,13 +696,22 @@
 		\begin{equation}
 			0\leqslant\left\lVert\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert e_i\right\rVert^{2}=\sum_{i=1}^{n}\lambda_{i}^{2}\left\lVert e_i\right\rVert^{2}+\sum_{\substack{i\neq j\\ i=1}}^{n}\left\lvert \lambda_i\right\rvert\left\lvert \lambda_j\right\rvert(e_i|e_j)\leqslant0,
 		\end{equation}
-		car $\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert\geqslant\lambda_i\lambda_j$ et $(e_i|e_j)\leqslant0$ donc $\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert(e_i|e_j)\leqslant\lambda_i\lambda_j(e_i|e_j)$. Ainsi, $\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert e_i=0$.
+		car $\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert\geqslant\lambda_i\lambda_j$ et $(e_i|e_j)\leqslant0$ donc $\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert(e_i|e_j)\leqslant\lambda_i\lambda_j(e_i|e_j)$. Ainsi, 
+		\begin{equation*}
+			\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert e_i=0.
+		\end{equation*}
 
 		Notons que $\sum_{i\neq j}\left(\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert-\lambda_i\lambda_j\right)(e_i|e_j)=0$ et chaque terme est négatif, donc pour tout $i\neq j$, $\left(\left\lvert\lambda_i\right\rvert\left\lvert\lambda_j\right\rvert-\lambda_i\lambda_j\right)(e_i|e_j)=0$. Si $(e_i|e_j)<0$, $\lambda_i$ et $\lambda_j$ sont donc de mêmes signes.
 
-		\item On suppose que $\sum_{i=1}^{p}\lambda_i e_i=0$, alors $\sum_{i=1}^{p}\left\lvert \lambda_i\right\rvert e_i=0$ et $(\varepsilon|\sum_{i=1}^{n}\left\lvert \lambda_i\right\rvert e_i)=0=\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert(\varepsilon|e_i)$ et chaque terme de la somme est positif, donc pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, on a $\lambda_i=0$ et $(e_1,\dots,e_p)$ est libre.
+		\item On suppose que $\sum_{i=1}^{p}\lambda_i e_i=0$, alors $\sum_{i=1}^{p}\left\lvert \lambda_i\right\rvert e_i=0$ et 
+		\begin{equation*}
+			(\varepsilon|\sum_{i=1}^{n}\left\lvert \lambda_i\right\rvert e_i)=0=\sum_{i=1}^{n}\left\lvert\lambda_i\right\rvert(\varepsilon|e_i)
+		\end{equation*}et chaque terme de la somme est positif, donc pour tout $i\in\left\lbrace1,\dots,p\right\rbrace$, on a $\lambda_i=0$ et $(e_1,\dots,e_p)$ est libre.
 		
-		\item On a $(-x|e_i)<0$ donc $(-x,e_1,\dots,e_p)$ vérifie l'hypothèse. On a $1\times(-x)+\sum_{i=1}^{p}x_i e_i=0$ et d'après ce qui précède, $-x+\sum_{i=1}^{p}\left\lvert x_i\right\rvert e_i=0$ donc $x=\sum_{i=1}^{p}\left\lvert x_i\right\rvert e_i=\sum_{i=1}^{p}x_i e_i$ et par unicité, pour tout $i\in\left\lbrace1,\dots,\right\rbrace$, $\left\lvert x_i\right\rvert=x_i\geqslant0$.
+		\item On a $(-x|e_i)<0$ donc $(-x,e_1,\dots,e_p)$ vérifie l'hypothèse. On a 
+		\begin{equation*}
+			1\times(-x)+\sum_{i=1}^{p}x_i e_i=0,
+		\end{equation*}et d'après ce qui précède, $-x+\sum_{i=1}^{p}\left\lvert x_i\right\rvert e_i=0$ donc $x=\sum_{i=1}^{p}\left\lvert x_i\right\rvert e_i=\sum_{i=1}^{p}x_i e_i$ et par unicité, pour tout $i\in\left\lbrace1,\dots,\right\rbrace$, $\left\lvert x_i\right\rvert=x_i\geqslant0$.
 		
 		Soit $i_0\in\left\lbrace1,\dots,p\right\rbrace$ tel que $x_{i_0}=0$. On a 
 		\begin{equation}
@@ -767,15 +776,24 @@
 
 	\begin{lemma}
 		\label{lem:4}
-		Soit $\mathrm{Gram}(z_1,\dots,z_p)=((z_i|z_j))_{1\leqslant i,j\leqslant p}$ de colonnes $C_1,\dots,C_n$. Soit $(\alpha_{1},\dots,\alpha_{p})\in\C^{p}$, alors on a $\alpha_{1}C_1+\dots+\alpha_{p}C_p=0$ si et seulement si $\alpha_{1}z_{1}+\dots+\alpha_{p}z_{p}=0$.
+		Soit $\mathrm{Gram}(z_1,\dots,z_p)=((z_i|z_j))_{1\leqslant i,j\leqslant p}$ de colonnes $C_1,\dots,C_n$. Soit 
+		\begin{equation*}
+			(\alpha_{1},\dots,\alpha_{p})\in\C^{p},
+		\end{equation*}alors on a $\alpha_{1}C_1+\dots+\alpha_{p}C_p=0$ si et seulement si $\alpha_{1}z_{1}+\dots+\alpha_{p}z_{p}=0$.
 	\end{lemma}
 	\begin{proof}[Preuve du lemme~\ref{lem:4}]
-		On a $\alpha_{1}C_{1}+\dots+\alpha_{p}C_{p}=0$ si et seulement si $\sum_{j=1}^{p}\alpha_{j}z_{j}\in\left\lbrace z_1,\dots,z_p\right\rbrace^{\perp}$ si et seulement si $\sum_{j=1}^{p}\alpha_j z_j=0$; car $C_j=\begin{pmatrix}
+		On a $\alpha_{1}C_{1}+\dots+\alpha_{p}C_{p}=0$ si et seulement si 
+		\begin{equation*}
+			\sum_{j=1}^{p}\alpha_{j}z_{j}\in\left\lbrace z_1,\dots,z_p\right\rbrace^{\perp},
+		\end{equation*}si et seulement si 
+		\begin{equation*}
+			\sum_{j=1}^{p}\alpha_j z_j=0,
+		\end{equation*} car $C_j=\begin{pmatrix}
 			(z_1|z_j)\\\vdots\\(z_p|z_j)
 		\end{pmatrix}$ pour tout $j\in\left\llbracket1,p\right\rrbracket$.
 	\end{proof}
 
-	D'après le lemme, on a $\mathrm{Gram}(y_1,\dots,y_r)=\mathrm{Gram}(x_1,\dots,x_r)\in GL_r(\R)$ donc $(y_1,\dots,y_r)$ est libre. D'autre part, pour tout $i\in\left\llbracket r+1,p\right\rrbracket$, il existe $(\alpha_{1,i},\dots,\alpha_{p,i})\in\R^{p}$,
+	D'après le lemme, on a ainsi $\mathrm{Gram}(y_1,\dots,y_r)=\mathrm{Gram}(x_1,\dots,x_r)\in GL_r(\R)$ donc $(y_1,\dots,y_r)$ est libre. D'autre part, pour tout $i\in\left\llbracket r+1,p\right\rrbracket$, il existe $(\alpha_{1,i},\dots,\alpha_{p,i})\in\R^{p}$,
 	\begin{equation}
 		x_i=\alpha_{1,i}x_1+\dots+\alpha_{r,i}x_r.
 	\end{equation}
@@ -934,5 +952,23 @@
 \begin{remark}
 	Il existe des sous-groupes finis de $GL_2(\R)$ non commutatifs. Par exemple, le groupe des isométries du triangle (3 rotations, 3 symétries), isomorphe à $(\sigma_3,\circ)$ non-commutatif.
 \end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On a $Sp(A)\subset\R^{+}$ et $A$ est diagonalisable sur $\R$ donc $\det(A)=\prod_{\lambda\in\Sp(A)}\lambda\geqslant 0$. Si $A$ est inversible, on écrit $A=P^{-1}\diag(\lambda_{1},\dots,\lambda_{n})P$ avec $P$ orthogonale, et on pose $\sqrt{A}=P^{-1}\diag(\sqrt{\lambda_{1}},\dots,\sqrt{lambda_{n}})P$, inversible car $A$ l'est. Alors $A=Gram(\sqrt{A}e_1,\dots,\sqrt{A}e_n)$ (matrice de Gram). Notons $(\varepsilon_{1},\dots,\varepsilon_{n})$ la base orthonormale obtenue par le procédé de Gram-Schmidt à partir de $(\sqrt{A}e_{1},\dots,\sqrt{A}e_{n})$, libre car $\sqrt{A}$ est inversible. Soit $A$ la matrice de passage entre ces deux bases (triangulaire supérieure au vu du procédé de Gram-Schmidt), i.e. $Q=(\sqrt{A}e_j|\varepsilon_i)=(\alpha_{i,j})$. Alors $\sum_{k=1}^{n}\alpha_{k,i}\alpha_{k,j}=a_{i,j}$ (coordonnées dans une base orthonormée). Ainsi, $A=Q^{\mathsf{T}}Q$, et
+		\begin{equation*}
+			\det(A)=\det(Q)^{2}=\prod_{i=1}^{n}\alpha_{i,i}^{2}=\prod_{i=1}^{n}\left(\sqrt{A}e_i|\varepsilon_i\right)^{2}\leqslant\prod_{i=1}^{n}a_{i,i},
+		\end{equation*}
+		d'après l'inégalité de Cauchy-Schwarz. On a égalité si et seulement si pour tout i, $\sqrt{A}e_i\in\Vect(\varepsilon_i)$ si et seulement si $(\sqrt{A}e_1,\dots,\sqrt{A}e_n)$ est orthogonale si et seulement si $A$ est diagonale.
+
+		\item On pose $A=M^{\mathsf{T}}M\in\mathcal{S}_n^{+}(\R)$. On a $\det(M)^{2}=\det(A)\leqslant\prod_{i=1}^{n}\left\lVert Me_{i}\right\rVert^{2}$, d'où l'inégalité. On a égalité si et seulement si les colonnes de $M$ sont orthogonales.
+		\item Soit $(e_1,\dots,e_n)$ la base orthonormée qui diagonalise $B$: $Be_i=\mu_i e_i$. Alors on a 
+		\begin{equation*}
+			\Tr(AB)=\sum_{i=1}^{n}(ABe_i|e_i)=\sum_{i=1}^{n}\mu_i(Ae_i|e_i)\geqslant n\sqrt[n]{\prod_{i=1}^{n}\mu_i(Ae_i|e_i)},
+		\end{equation*}
+		d'après l'inégalité arithmético-géométrique. D'où le résultat car $\det(B)=1$.
+	\end{enumerate}
+\end{proof}
 
 \end{document}
