@@ -413,7 +413,7 @@
 \end{proof}
 
 \begin{remark}
-	Si $(X_{1},\dots,X_{n})$ (respectivement $(Y_{1},\dots,Y_{n})$) est une base de vecteurs propres de $A$ (respectivement de $B^{\mathsf{T}}$), alors $(X_{i}Y_{j}^{\mathsf{T}})_{1\leqslant i,j\leqslant n}$ est une base de vecteurs propres pour $\Phi_{A,B}$.
+	Si $(X_{1},\dots,X_{n})$ (respectivement $(Y_{1},\dots,Y_{n})$) est une base de vecteurs\\propres de $A$ (respectivement de $B^{\mathsf{T}}$), alors $(X_{i}Y_{j}^{\mathsf{T}})_{1\leqslant i,j\leqslant n}$ est une base de vecteurs propres pour $\Phi_{A,B}$.
 \end{remark}
 
 \begin{remark}
@@ -786,7 +786,10 @@
 			1&\omega^{n-1}&\dots&(\omega^{n-1})^{n-1}
 		\end{pmatrix}
 	\end{equation}
-	et $P^{-1}J_{n}P=\diag(1,\omega,\dots,\omega^{n-1})$. On a donc $P^{-1}A(a_{0},\dots,a_{n})P=\diag(Q(1),Q(\omega),\dots,Q(\omega^{n-1}))$ où $Q=\sum_{k=0}^{n-1}a_{k}X^{k}$.
+	et $P^{-1}J_{n}P=\diag(1,\omega,\dots,\omega^{n-1})$. On a donc 
+	\begin{equation*}
+		P^{-1}A(a_{0},\dots,a_{n})P=\diag(Q(1),Q(\omega),\dots,Q(\omega^{n-1})),
+	\end{equation*} où $Q=\sum_{k=0}^{n-1}a_{k}X^{k}$.
 	Donc $A$ est diagonalisable de valeurs propres $Q(1),\dots,Q(\omega^{n-1})$ et donc
 	\begin{equation}
 		\boxed{\det(A)=\prod_{k=0}^{n-1}Q(\omega^{k})}
@@ -831,7 +834,10 @@
 			0&\dots&0&1&0
 		\end{pmatrix}
 	\end{equation}
-	qui est une matrice nilpotente d'indice $n$. Matriciellement, on a $\ker(f^{k})=\Vect(e_{n-k+1},\dots,e_{n})$.
+	qui est une matrice nilpotente d'indice $n$. Matriciellement, on a 
+	\begin{equation*}
+		\ker(f^{k})=\Vect(e_{n-k+1},\dots,e_{n}).
+	\end{equation*}
 \end{proof}
 
 \begin{proof}
@@ -870,7 +876,11 @@
 	\end{equation}
 	et les sous-espaces caractéristiques $F_{i}$ sont stables par $u$. Soit $v_{i}=u_{\mid F_{i}}-\lambda_{i}id_{F_{i}}$. On a $\chi_{u}=\prod_{i=1}^{r}\chi_{u_{\mid F_{i}}}$ (matrice diagonale par blocs dans un base adaptée). $(X-\lambda_{i})^{n}$ annule $u_{\mid F_{i}}$ et $\Sp_{F_{i}}(u_{\mid F_{i}})=\lbrace\lambda_{i}\rbrace$. Alors $\chi_{u_{\mid F_{i}}}=(X-\lambda_{i})^{\dim(F_{i})}$. En reportant, on a $\dim(F_{i})=n_{i}$. De plus, $V_{i}^{n_i}=0$ donc $v_{i}$ est nilpotent. On a donc $\dim(\ker(v_{i}))=\dim(\ker(u-\lambda_{i}id_{E}))=1$. Donc il existe $x_{i}\in F_{i}$ tel que $(x_{i},v_{i}(x_{i}),\dots,v_{i}^{n_{i}-1}(x_{i}))$ soit une base de $F_{i}$.
 
-	On forme $x=\sum_{i=1}^{r}x_{i}$. Soit $(\alpha_{0},\dots,\alpha_{r-1})$ tel que $\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x)=0=\sum_{i=1}^{r}\left(\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x_{i})\right)$. Les $F_{i}$ sont en somme directe donc 
+	On forme $x=\sum_{i=1}^{r}x_{i}$. Soit $(\alpha_{0},\dots,\alpha_{r-1})$ tel que 
+	\begin{equation*}
+		\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x)=0=\sum_{i=1}^{r}\left(\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x_{i})\right).	
+	\end{equation*}
+	Les $F_{i}$ sont en somme directe donc 
 	\begin{equation}
 		\sum_{j=0}^{n-1}\alpha_{j}u^{j}(x_{i})=0
 	\end{equation}
@@ -981,7 +991,10 @@
 	si $l\neq k$. Nécessairement, on a $\mu=\e^{\frac{2\i k\pi}{q}}$, donc $B=A$ car $B$ est diagonalisable et $\Sp_{\C}(B)=\left\lbrace\e^{\frac{2\i k\pi}{q}}\right\rbrace$. Donc $A$ est un point isolé de $\mathcal{G}_{q}$.
 
 	Soit maintenant $A\in\mathcal{G}_{q}$, on suppose que $A$ n'est pas une matrice scalaire, donc $\left\lvert\Sp_{\C}(A)\right\rvert\geqslant2$. Soit $\lambda\in\left(\Sp_{\C}(A)\right)$.
-	Il existe $P\in GL_{n}(\C)$ telle que $P^{-1}AP=\diag(\lambda,\dots,\lambda,\mu_{1},\dots,\mu_{r})$ avec $\mu_{1},\dots,\mu_{r}\neq\lambda$. Soit $\varepsilon>0$, posons 
+	Il existe $P\in GL_{n}(\C)$ telle que 
+	\begin{equation*}
+		P^{-1}AP=\diag(\lambda,\dots,\lambda,\mu_{1},\dots,\mu_{r}),
+	\end{equation*}avec $\mu_{1},\dots,\mu_{r}\neq\lambda$. Soit $\varepsilon>0$, posons 
 	\begin{equation}
 		A_{\varepsilon}=P
 		\begin{pmatrix}
@@ -1332,7 +1345,14 @@
 \end{proof}
 
 \begin{remark}
-	Si on se limite à $\R^{p}$, en définissant $\varphi_{p}(s_{1},\dots,s_{p})=(s_{1},\frac{s_{1}+s_{2}}{2},\dots,\frac{s_{1}+\dots+s_{p}}{p})$. Alors en écrivant la matrice de $\varphi_{p}$ dans la base canonique, on a $\chi_{\varphi_{p}}=(X-1)(X-\frac{1}{2})\dots(X-\frac{1}{p})$.
+	Si on se limite à $\R^{p}$, en définissant 
+	\begin{equation*}
+		\varphi_{p}(s_{1},\dots,s_{p})=(s_{1},\frac{s_{1}+s_{2}}{2},\dots,\frac{s_{1}+\dots+s_{p}}{p}),	
+	\end{equation*}
+	alors en écrivant la matrice de $\varphi_{p}$ dans la base canonique, on a 
+	\begin{equation*}
+		\chi_{\varphi_{p}}=(X-1)(X-\frac{1}{2})\dots(X-\frac{1}{p}).
+	\end{equation*}
 \end{remark}
 
 \begin{proof}
@@ -1629,7 +1649,7 @@
 		=\diag(\mu_{1}A,\dots,\mu_{p}A)=M_{1}
 	\end{equation}
 
-	Si de plus $A$ est diagonalisable, il existe $P\in GL_{n}(\K)$ tel que $P^{-1}AP=\diag(\lambda_{1},dots,\lambda_{n})$. Alors 
+	Si de plus $A$ est diagonalisable, il existe $P\in GL_{n}(\K)$ tel que $P^{-1}AP=\diag(\lambda_{1},\dots,\lambda_{n})$. Alors 
 	\begin{equation}
 		\diag(P^{-1},\dots,P^{-1})M_{1}\diag(P,\dots,P)=\diag(\mu_{1},\lambda_{1},\dots,\mu_{1},\lambda_{n},\dots,\mu_{p}\lambda_{1},\dots,\mu_{p}\lambda_{n})
 	\end{equation}
@@ -1760,12 +1780,12 @@
 			\end{pmatrix}P^{-1}
 		\end{equation}
 
-		Tout d'abord, on a $\left\lvert a+c\j+b\j^{2}\right\rvert\leqslant\left\lvert a\right\rvert+\left\lvert b\right\rvert+\left\lvert c\right\rvert=1$ et on a égalité si et seulement si $a,c\j$ et $b\j^{2}$ ont le même argument si et seulement si $\left\lbrace a,b,c\right\rbrace\in\left\lbrace\left\lbrace1,0,0\right\rbrace,\left\lbrace0,1,0\right\rbrace,\left\lbrace0,0,1\right\rbrace\right\rbrace$.
-
+		Tout d'abord, on a $\left\lvert a+c\j+b\j^{2}\right\rvert\leqslant\left\lvert a\right\rvert+\left\lvert b\right\rvert+\left\lvert c\right\rvert=1$ et on a égalité si et seulement si $a,c\j$ et $b\j^{2}$ ont le même argument si et seulement si 
+		\begin{equation*}
+			\left\lbrace a,b,c\right\rbrace\in\left\lbrace\left\lbrace1,0,0\right\rbrace,\left\lbrace0,1,0\right\rbrace,\left\lbrace0,0,1\right\rbrace\right\rbrace.
+		\end{equation*}
 		Si $a=1$ et $b=c=0$, la suite $(A^{n})_{n\in\N}$ converge.
-
 		Si $(b=1$ et $a=c=0$) ou ($c=1$ et $a=b=0$), $(A^{n})_{n\in\N}$ diverge.
-
 		Sinon,
 		\begin{equation}
 			\boxed{
