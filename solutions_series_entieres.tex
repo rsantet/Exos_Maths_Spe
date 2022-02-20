@@ -149,7 +149,10 @@
         &\leqslant \frac{1}{n!}\int_{0}^{1}u(1-u)\dots(n-1-u)\d u=\left\lvert a_n\right\rvert.
     \end{align}
 
-    Enfin, $\left\lvert a_n\right\rvert\leqslant\frac{(n-1)!}{n!}=\frac{1}{n}$. D'après le critère spécial des séries alternées, $\sum a_{n}$ converge. Puis $\sum a_{n}t^{n}$ converge uniformément sur $[0,1]$ (majorer le reste par le critère spécial des séries alternées), donc il y a convergence et continuité en 1. On vérifie que $\left\lvert a_n\right\rvert=\frac{1}{n}\int_{0}^{1}u\e^{\sum_{k=1}^{n-1}\ln\left(1-\frac{u}{k}\right)}\d u=\frac{1}{n}\int_{0}^{1}\e^{-\ln(n)u+g_n(u)}$, où $g_n(u)$ est majorée par $M$ indépendant de $n$ et de $u$. Ainsi, par convergence dominée, $\left\lvert a_n\right\rvert\underset{+\infty}{\sim}\frac{1}{n}\int_{0}^{1}\frac{u}{n^{u}}\d u$, terme général d'une série divergente.
+    Enfin, $\left\lvert a_n\right\rvert\leqslant\frac{(n-1)!}{n!}=\frac{1}{n}$. D'après le critère spécial des séries alternées, $\sum a_{n}$ converge. Puis $\sum a_{n}t^{n}$ converge uniformément sur $[0,1]$ (majorer le reste par le critère spécial des séries alternées), donc il y a convergence et continuité en 1. On vérifie que
+    \begin{equation*}
+        \left\lvert a_n\right\rvert=\frac{1}{n}\int_{0}^{1}u\e^{\sum_{k=1}^{n-1}\ln\left(1-\frac{u}{k}\right)}\d u=\frac{1}{n}\int_{0}^{1}\e^{-\ln(n)u+g_n(u)}
+    \end{equation*}, où $g_n(u)$ est majorée par $M$ indépendant de $n$ et de $u$. Ainsi, par convergence dominée, $\left\lvert a_n\right\rvert\underset{+\infty}{\sim}\frac{1}{n}\int_{0}^{1}\frac{u}{n^{u}}\d u$, terme général d'une série divergente.
 \end{remark}
 
 \begin{proof}
@@ -265,7 +268,10 @@
         &\leqslant\frac{\varepsilon}{4}\times\frac{n-N_{0}}{n},\\
         &\leqslant\frac{\varepsilon}{4}.
     \end{align}
-    Cela est dû au fait que $x\mapsto1-x^{h}$ est concave sur $[0,1]$ donc $\left(1-\left(1-\frac{1}{n}\right)^{h}\right)\leqslant h\left(1-\left(1-\frac{1}{n}\right)\right)$ (ou par accroissement fini). Enfin, on a 
+    Cela est dû au fait que $x\mapsto1-x^{h}$ est concave sur $[0,1]$ donc 
+    \begin{equation*}
+        \left(1-\left(1-\frac{1}{n}\right)^{h}\right)\leqslant h\left(1-\left(1-\frac{1}{n}\right)\right),
+    \end{equation*}(ou par accroissement fini). Enfin, on a 
     \begin{align}
         C_n
         &=\sum_{h\geqslant n}a_h\left(1-\frac{1}{n}\right)^{h},\\
@@ -341,7 +347,11 @@
             \end{equation}
         \end{lemma}
         \begin{proof}[Preuve du Lemme~\ref{lem:serie_entiere_1}]
-            On a pour tout $n\in\N^{*}$, $\frac{1}{a_{0}\dots a_{n}}\leqslant\frac{1}{a_{0}a_{1}^{n}}$ et $a_{1}\geqslant2$ donc $\sum_{n\geqslant0}\frac{1}{a_{0}\dots a_{n}}$ converge. On a
+            On a pour tout $n\in\N^{*}$, $\frac{1}{a_{0}\dots a_{n}}\leqslant\frac{1}{a_{0}a_{1}^{n}}$ et $a_{1}\geqslant2$ donc 
+            \begin{equation*}
+                \sum_{n\geqslant0}\frac{1}{a_{0}\dots a_{n}}    
+            \end{equation*}
+            converge. On a
             \begin{equation}
                 \left\lvert a-\sum_{n=0}^{N}\frac{1}{a_{0}\dots a_{n}}\right\rvert=\sum_{k=N+1}^{+\infty}\frac{1}{a_0\dots a_k},
             \end{equation}
@@ -583,7 +593,11 @@
             }
         \end{equation}
 
-        \item $\overline{U}$ est un compact donc $\left\lvert f\right\rvert$ atteint son maximum sur $\overline{U}$. De plus, pour tout $r\in[0,d(z_{0},\partial U)]$ et pour tout $t\in[0,2\pi]$, on a $\left\lvert f\left(z_{0}+r\e^{\i t}\right)\right\rvert\leqslant\left\lVert f\right\rVert_{\infty}$, intégrable sur $[0,2\pi]$ et $f$ continue. Donc d'après le théorème de continuité, $f(z_{0})=\frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_0+R\e^{\i t}\d t\right)$ où $R=d(z_{0},\partial U)$.
+        \item $\overline{U}$ est un compact donc $\left\lvert f\right\rvert$ atteint son maximum sur $\overline{U}$. De plus, pour tout $r\in[0,d(z_{0},\partial U)]$ et pour tout $t\in[0,2\pi]$, on a $\left\lvert f\left(z_{0}+r\e^{\i t}\right)\right\rvert\leqslant\left\lVert f\right\rVert_{\infty}$, intégrable sur $[0,2\pi]$ et $f$ continue. Donc d'après le théorème de continuité, 
+        \begin{equation*}
+            f(z_{0})=\frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_0+R\e^{\i t}\d t\right),    
+        \end{equation*}
+        où $R=d(z_{0},\partial U)$.
         
         Si $\left\lvert f\right\rvert$ atteint son maximum en $z_{0}\in U$, on a 
         \begin{equation}
@@ -602,7 +616,11 @@
         \left\lvert f(z_{0})\right\rvert=\left\lVert f\right\rVert_{\infty}=\left\lvert \frac{1}{2\pi}\int_{0}^{2\pi}f\left(z_{0}+r\e^{\i t}\right)\d t\right\rvert\leqslant\frac{1}{2\pi}\int_{0}^{2\pi}\left\lvert f\left(z_{0}+r\e^{\i t}\right)\right\rvert\d t\leqslant\left\lVert f\right\rVert_{\infty}.
     \end{equation}
 
-    On en déduit que pour tout $t\in[0,2\pi]$, $\left\lvert f\left(z_0+r\e^{\i t}\right)\right\rvert=\left\lvert f(z_{0})\right\rvert$, et on a aussi $\arg\left(f\left(z_{0}+r\e^{\i t}\right)\right)\equiv\arg\left(f(z_0)\right)[2\pi]$. Donc $f\left(z_{0}+r\e^{\i t}\right)=f(z_{0})$, et on peut vérifier que $f$ est constante.
+    On en déduit que pour tout $t\in[0,2\pi]$, $\left\lvert f\left(z_0+r\e^{\i t}\right)\right\rvert=\left\lvert f(z_{0})\right\rvert$, et on a aussi 
+    \begin{equation*}
+        \arg\left(f\left(z_{0}+r\e^{\i t}\right)\right)\equiv\arg\left(f(z_0)\right)[2\pi].    
+    \end{equation*}
+    Donc $f\left(z_{0}+r\e^{\i t}\right)=f(z_{0})$, et on peut vérifier que $f$ est constante.
 \end{remark}
 
 \begin{proof}
@@ -610,7 +628,10 @@
     \begin{enumerate}
         \item Passer au $\ln$ de la valeur absolue, équivalent, convergence géométrique.
         \item On cherche une équation fonctionnelle satisfaite par $f$.
-        On a $f(qz)=\prod_{k=1}^{+\infty}\left(1-q^{k+1}z\right)=\prod_{k=2}^{+\infty}\left(1-q^{k}z\right)$ donc $(1-qz)f(qz)=f(z)$.
+        On a 
+        \begin{equation*}
+            f(qz)=\prod_{k=1}^{+\infty}\left(1-q^{k+1}z\right)=\prod_{k=2}^{+\infty}\left(1-q^{k}z\right),
+        \end{equation*}donc $(1-qz)f(qz)=f(z)$.
         Si $f$ est développable en série entière avec $f(z)=\sum_{n=0}^{+\infty}a_nz^{n}$ pour tout $z\in D(0,R)$ avec $R>0$, on a par unicité du développement, $a_n(q^{n}-1)=a_{n-1}q^{n}$ et comme $\left\lvert q\right\rvert<1$, pour tout $n\in\N^{*}$, $q^{n}\neq1$ d'où $a_{n}=a_{n-1}\frac{q^{n}}{q^{n}-1}=\prod_{i=1}^{n}\frac{q^{i}}{q^{i}-1}$.
 
         Réciproquement si pour tout $n\in\N$, $a_n=\prod_{i=1}^{n}\frac{q^{i}}{q^{i}-1}$, alors pour tout $n\in\N$, $a_n\neq0$ et par la règle de d'Alembert, $R=+\infty$. Si $S\colon\C\to\C$ est définie apr $\S(z)=\sum_{n=0}^{+\infty}a_n z^{n}$, en reportant les calculs, $S$ vérifie la même équation fonctionnelle que $f$. En itérant, on a $S(z)=\prod_{i=1}^{n}(1-q^{i}z)S(q^{n}z)$. $S$ étant continue en 0 (car développable en série entière sur $\C$), on a $S(q^{n}z)\xrightarrow[n\to+\infty]{}S(0)=a_0=1$. En passant à la limite, on a donc $S(z)=f(z)$ et $f$ est développable en série entière.
@@ -689,7 +710,7 @@
         &\underset{\theta\to0}{O}\left(\frac{1}{\sqrt{\theta}}\right).
     \end{align}
 
-    $I(1)$ est donc bien définie et $I(1)=\pi\ln(2)+\int_{0}^{\pi}\ln\left(2\sin^{2}\left(\frac{\theta}{2}\right)\right)$. On se ramène à $\int_{0}^{\frac{\pi}{2}}\ln(\sin(\theta))\d\theta$.
+    $I(1)$ est donc bien définie et $I(1)=\pi\ln(2)+\int_{0}^{\pi}\ln\left(2\sin^{2}\left(\frac{\theta}{2}\right)\right)$. On se ramène ainsi au calcul de $\int_{0}^{\frac{\pi}{2}}\ln(\sin(\theta))\d\theta$.
 \end{remark}
 
 \begin{proof}
@@ -841,7 +862,8 @@
                 G_Y'(1) &=&\sum_{k=0}^{+\infty}y\mathbb{P}(Y=k)=\mathbb{E}(Y),\\
                 G_Y''(1) &=& \sum_{k=0}^{+\infty}k(k-1)\mathbb{P}(Y=k)=\mathbb{E}(Y^{2})-\mathbb{E}(Y),\\
                 \vdots\\
-                G_Y^{(n)}(1) &=& \sum_{k=0}^{+\infty}k(k-1)\dots(k-n+1)\mathbb{P}(Y=k)=\mathbb{E}(Y^{n})+\sum_{k=0}^{+\infty}A(k)\mathbb{P}(Y=k),
+                G_Y^{(n)}(1) &=& \sum_{k=0}^{+\infty}k(k-1)\dots(k-n+1)\mathbb{P}(Y=k)\\
+                &&=\mathbb{E}(Y^{n})+\sum_{k=0}^{+\infty}A(k)\mathbb{P}(Y=k),
             \end{array}
         \end{equation}
         avec $A\in\Z[X]$ de degré inférieur ou égal à $n-1$. Donc $\left(\mathbb{E}(Y^{n})\right)_{n\in\N^{*}}$ déterminent $\left(G_Y(1)\right)_{n\in\N^{*}}$.
@@ -860,7 +882,10 @@
                 \sum_{n=0}^{+\infty}\sum_{k=0}^{+\infty}\left\lvert \alpha_{n,k}\right\rvert\left\lvert h\right\rvert^{k}=\sum_{n=0}^{+\infty}\left\lvert a_n\right\rvert\sum_{k=0}^{n}\binom{n}{k}\left\lvert z_{0}\right\rvert^{n-k}\left\lvert h\right\rvert^{k}=\sum_{n=0}^{+\infty}\left\lvert a_n\right\rvert\left(\left\lvert h\right\rvert+\left\lvert z_{0}\right\rvert\right)^{n}<+\infty,
             \end{equation}
             
-            car $\left\lvert h\right\rvert+\left\lvert z_{0}\right\rvert<R$. D'après le théorème de Fubini, on a $f(z_{0}+h)=\sum_{k=0}^{+\infty}\underbrace{\left(\sum_{n=0}^{+\infty}\alpha_{n,k}\right)}_{b_k}h^{k}$.
+            car $\left\lvert h\right\rvert+\left\lvert z_{0}\right\rvert<R$. D'après le théorème de Fubini, on a 
+            \begin{equation*}
+                f(z_{0}+h)=\sum_{k=0}^{+\infty}\underbrace{\left(\sum_{n=0}^{+\infty}\alpha_{n,k}\right)}_{b_k}h^{k}.
+            \end{equation*}
         \end{proof}
 
         On a pour tout $h\in\R$ tel que $\left\lvert h\right\rvert<\frac{1}{a}-1$. On a $G_Y(1+h)=\sum_{n=0}^{+\infty}b_nh^{n}$ et $b_n=\frac{G_Y^{(n)}(1)}{n!}$. Or $\mathbb{P}(Y=k)=k!G_Y^{(k)}(0)$. On peut encore développer $G_Y$ au voisinage de $2-\frac{1}{a}$, et de proche en proche, au voisinage de $1-2^{k}\left(\frac{1}{a}-1\right)$, jusqu'à 0. On retrouve ainsi la loi de $Y$.
@@ -1262,4 +1287,11 @@
     \end{enumerate}
 \end{proof}
 
+\begin{proof}
+    On vérifie d'abord que $\sum_{n\in\N}\P(X=n)=1$. Ensuite, si $u_n=\P(X=n)$, l'étude de l'équation caractéristique donne $u_n=\lambda_{1}\left(\frac{1}{2}\right)^{n}+\lambda_{2}\left(\frac{1}{3}\right)^{n}$, et on trouve $\lambda_{1}=-3\alpha+2$ et $\lambda_{2}=4\alpha-2$ grâce à la condition initiale et la condition $\sum_{n}u_n=1$. Noter que $u_n\sim\frac{\lambda_1}{2^n}$ donc il faut (pour que cela reste positif) $0<\alpha<2/3$. On écrit ensuite $G_X(t)=\sum_{n}u_nt^{n}$. Grâce à l'équation caractéristique, on a 
+    \begin{equation*}
+        G_X(t)=\frac{6u_0+6u_1t-5tu_0}{6-5t+t^{2}},
+    \end{equation*}
+    et le rayon de convergence est 2. L'espérance est $G_X'(1)$ et la variance est $G_X''(1)-G_X'(1)^{2}+G_X'(1)$.
+\end{proof}
 \end{document}
