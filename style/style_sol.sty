@@ -32,13 +32,13 @@
 \tikzsetexternalprefix{figs/}
 
 %% Géométrie
-\textwidth=18cm \textheight=23cm \oddsidemargin=-1.00cm
-\evensidemargin=-1.00cm
-\parindent=1cm
-\topmargin=-2cm
-\setlength{\parindent}{2em}
-\setlength{\parskip}{1em}
-\renewcommand{\baselinestretch}{1.5}
+\usepackage{stmaryrd}
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
+\newlength{\minipagewidth}
+\setlength{\minipagewidth}{\textwidth}
+\setlength{\fboxsep}{3mm}
+\usepackage{a4wide}
+\usepackage[active]{srcltx}
 
 %% Théorème
 \usepackage{amsthm}
