@@ -1243,7 +1243,7 @@
 \end{proof}
 
 \begin{proof}
-    On a $f(I_{n})=f(I_{n})^{2}$ donc $f(I_{n}\in\lbrace0,1\rbrace$. Si $f(I_{n})=0$, alors $f=0$ ce qui est exclu.
+    On a $f(I_{n})=f(I_{n})^{2}$ donc $f(I_{n})\in\lbrace0,1\rbrace$. Si $f(I_{n})=0$, alors $f=0$ ce qui est exclu.
 
     Si $M$ est inversible, on a 
     \begin{equation}
@@ -1302,5 +1302,14 @@
 
     Si de plus $f$ est continue, $\varphi$ aussi et on peut montrer qu'il existe $k\in\R$ tel que pour tout $z\in\C^{*}$, $\varphi(z)=z^{k}$.
 \end{remark}
+
+\begin{proof}
+    Rappelons que $F_1,\dots,F_k$ $k$ sous-espaces vectoriels de $E$ sont en somme directe si et seulement si 
+    \function{\varphi}{F_1\times\dots\times F_k}{E}{(x_1,\dots,x_k)}{\sum_{i=1}^{k}x_i} est injective si et seulement si (théorème du rang) $\dim(F_1\times\dots\times F_k)=\dim(\im(\varphi))$ et $\im\varphi=\sum_{i=1}^{k}F_i$ si et seulement si $\dim(\sum_{i=1}^{k}F_i)=\sum_{i=1}^{k}\dim(F_i)$.
+
+    Dans notre cas, $\im\left(\sum_{i=1}^{k}A_i\right)=\K^{n}\subset\sum_{i=1}^{n}\im(A_i)\subset\K^{n}$ donc $\dim\left(\sum_{i=1}^{k}A_i\right)=n$. De plus, $\sum_{i=1}^{k}\dim(\im(A_i))=\sum_{i=1}^{k}\rg(A_i)=\sum_{i=1}^{k}\Tr(A_i)=\Tr\left(\sum_{i=1}^{k}A_i\right)=n$. Donc $\left(\im(A_i)\right)_{1\leqslant i\leqslant k}$ sont en somme directe et $\oplus_{i=1}^{k}\im(A_i)=\K^{n}$.
+
+    On a $A_iA_j=0$ si et seulement si $\im(A_j)\subset\ker(A_i)$. La matrice $I_n-A_i=\sum_{\substack{j=1\\j\neq i}}^{k}A_j$ représente le projecteur sur $\ker(A_i)$ parallèlement à $\im(A_i)$ donc $\ker(A_i)=\im(I_n-A)=\im\left(\sum_{j\neq i}A_j\right)=\oplus_{j\neq i}\im(A_j)$. Ainsi, pour tout $i\neq j$, $\im(A_j)\subset\ker(A_i)$ et $A_iA_j=0$.
+\end{proof}
 
 \end{document}
