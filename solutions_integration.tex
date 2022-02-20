@@ -1724,4 +1724,14 @@
     Généralement, si $I_n=\int_{0}^{\pi}f(x)\sin(nx)\d x$ avec $f(x)=\sum_{k\in\Z}c_k\e^{\i kx}$ et $\sum_{k\in\Z}\left\lvert c_k\right\rvert<+\infty$, on peut intervertir par convergence normale le signe $\sum$ et $\int$.
 \end{remark}
 
+\begin{proof}
+    $x^{2}-2x\cos(t)+1=(x-\cos(t))^{2}+\sin^{2}(t)\geqslant0$ et est nul si et seulement si $t=k\pi$ et $x=\cos t=(-1)^{k}$. Ainsi, si $x\not\in\left\lbrace-1,1\right\rbrace$, $I(x)$ est bien définie. Par ailleurs, on a $x^{2}-2x\cos(t)+1=(x-\e^{\i t})(x-\e^{-\i t})>0$. On passe ensuite par la somme de Riemann:
+    \begin{equation*}
+        I(x)=\lim\limits_{n\to+\infty}\frac{2\pi}{n}\sum_{k=0}^{n-1}\ln\left(\left\lvert x-\e^{\frac{2\i k\pi}{n}}\right\rvert\left\lvert x-\e^{-\frac{2\i k\pi}{n}}\right\rvert\right)=\lim\limits_{n\to+\infty}\frac{4\pi}{n}\ln\left\lvert x^{n}-1\right\rvert.
+    \end{equation*}
+    Ainsi, si $x\in]-1,1[$, $I(x)=0$. Si $\left\lvert x\right\rvert>1$, $\ln\left\lvert x^{n}-1\right\rvert=\ln\left\lvert x\right\rvert^{n}+\ln\left\lvert 1-\frac{1}{x^{n}}\right\rvert$ donc le résultat est $4\pi\ln\left\lvert x\right\rvert$.
+
+    Si $x=1$, comme $\ln(1-\cos(t))\sim2\ln(t)$ en 0, $I(1)$ est bien définie. On passe ensuite par le calcul de $\int_{0}^{\frac{\pi}{2}}\ln\cos t\d t$.
+\end{proof}
+
 \end{document}
