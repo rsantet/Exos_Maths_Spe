@@ -375,7 +375,10 @@
         \begin{equation}
             p_{N}(n)=p\times p_{N}(n+1)+(1-n)\times p_{N}(n-1)
         \end{equation}
-        et l'équation caractéristique est $X^{2}-\frac{1}{p}X+\frac{1-p}{p}$ et le discriminant vaut $\Delta=\left(\frac{1}{p}-2\right)^{2}\geqslant0$. Donc les solutions sont $r_{1}=1$ et $r_{2}=\frac{q}{p}$. Ainsi, pour tout $n\in\left\llbracket 1,N-1\right\rrbracket$,
+        et l'équation caractéristique est $X^{2}-\frac{1}{p}X+\frac{1-p}{p}$ et le discriminant vaut 
+        \begin{equation*}
+            \Delta=\left(\frac{1}{p}-2\right)^{2}\geqslant0.
+        \end{equation*}Donc les solutions sont $r_{1}=1$ et $r_{2}=\frac{q}{p}$. Ainsi, pour tout $n\in\left\llbracket 1,N-1\right\rrbracket$,
         \begin{equation}
             p_{N}(n)=\lambda+\mu\left(\frac{q}{p}\right)^{n}
         \end{equation}
@@ -772,7 +775,10 @@
         \end{equation}
         A chaque fois, on vérifie que $\sum_{k=1}^{6}\P(X=k)=\sum_{k=1}^{6}\P(Y=k)=1$.
 
-        Pour les calculs de variance et d'espérance, on calcule $\sum_{k=1}^{6}k\P(X=k)$ et $\sum_{k=1}^{6}k^{2}\P(X=k)-\left(\sum_{k=1}^{6}k\P(X=k)\right)$, de même pour $Y$.
+        Pour les calculs de variance et d'espérance, on calcule $\sum_{k=1}^{6}k\P(X=k)$ et 
+        \begin{equation*}
+            \sum_{k=1}^{6}k^{2}\P(X=k)-\left(\sum_{k=1}^{6}k\P(X=k)\right),
+        \end{equation*}de même pour $Y$.
 
         \item Soit $(i,j)\in\llbracket1,6\rrbracket^{2}$, si $i<j$ on a $\P((X=i)\cap (Y=j))=0$ mais $P(X=i)\P(Y=j)\neq0$, on n'a donc pas indépendance.
         
@@ -1188,7 +1194,7 @@
     \begin{enumerate}
         \item Comme $\E(Y)<+\infty$, on a d'après le théorème de Fubini et le fait que $\left(X=l\right)_{l\in\N}$ est un système complet d'événements:
         \begin{equation}
-            \boxed{\E(Y)=\sum_{l=0}^{+\infty}l\P(Y=l)\sum_{l=0}^{+\infty}\sum_{k=0}^{+\infty}\P_{(X=k)}(Y=l)\P(X=k)=\sum_{k=0}^{+\infty}\E_{(X=k)}(Y)\P(X=k)}
+            \E(Y)=\sum_{l=0}^{+\infty}l\P(Y=l)\sum_{l=0}^{+\infty}\sum_{k=0}^{+\infty}\P_{(X=k)}(Y=l)\P(X=k)=\sum_{k=0}^{+\infty}\E_{(X=k)}(Y)\P(X=k).
         \end{equation}
 
         \item Pour $\lambda=X_{n+1}$ et $X=X_{n}$, et en utilisant le fait que les poules sont indépendantes, on a 
@@ -1525,5 +1531,28 @@
         \end{align}
     \end{enumerate}
 \end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item $R_n$="les $n$ premiers tirages sont rouges". Avec la formule des probabilités conditionnelles,
+        \begin{equation*}
+            \P(R_n)=\P(R_1)\P_{R_1}(R_2)\dots\P_{R_{n-1}}(R_n)=\frac{1}{2}\times\frac{3}{4}\times\dots\times\frac{2n-1}{2n}.
+        \end{equation*}
+        car $R_n\subset R_{n-1}$.
+        \item $R=\cap_{n\in\N^{*}}R_n$, suite décroissante d'évènements. Donc 
+        \begin{equation*}
+            \P(R)=\lim\limits_{n\to+\infty}\P(R_n)=\prod_{n=1}^{+\infty}\left(\frac{2n-1}{2n}\right),
+        \end{equation*}
+        et $\ln(\P(R_n))=\sum_{k=1}^{n}\ln\left(1-\frac{1}{2k}\right)\xrightarrow[n\to+\infty]{}-\infty$ car le terme est équivalent à $\frac{-1}{2k}<0$ donc $\P(R)=0$.
+
+        \item Par symétrie, la probabilité de tirer une boule rouge ou une blanche est la même, leur somme égale à 1, donc on a une probabilité de $\frac{1}{2}$.
+        \item On refait les mêmes calculs qu'à la premier étape, si ce n'est que $\ln(\P(R_n))=\sum_{k=1}^{n}\ln\left(1-\frac{2}{4+k(k+1)}\right)$ converge donc $\P(R)>0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    Soit une suite infinie (dénombrable) de tirages de pile ou face indépendantes suivant chacun une loi Bernoulli de paramètre $p\in(0,1)$. La probabilité qu'une séquence donnée de $N$ résultats apparaisse une infinité de fois vaut 1 d'après le lemme de Borel-Cantelli.
+\end{remark}
 
 \end{document}
