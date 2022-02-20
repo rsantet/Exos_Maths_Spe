@@ -107,7 +107,7 @@
 		u_{n}
 		&=\exp\Bigl(n^{2}\ln\Bigl(\frac{e^{\frac{1}{n}\ln(a)}+e^{\frac{1}{n}\ln(b)}}{2}\Bigr)\Bigr)\\
 		&=\exp\Bigl(n^{2}\ln\Bigl(1+\frac{1}{2n}\ln(ab)+\frac{1}{4n^2}(\ln(a)^{2}+\ln(b)^{2})\Bigr)+o\Bigl(\frac{1}{n^{2}}\Bigr)\Bigr)\\
-		&=\exp\Bigl(\frac{n}{2}\ln(ab)+\frac{1}{4}(\ln(a)^{2}+\ln(b)^{2}+o(1))\Bigr)
+		&=\exp\Bigl(\frac{n}{2}\ln(ab)+\frac{1}{4}(\ln(a)^{2}+\ln(b)^{2})-\frac{1}{8}\ln(ab)^2+o(1)\Bigr)
 	\end{align}
 
 	Si $ab>1$, on a 
@@ -963,18 +963,18 @@
 	\phantom{}
 	\begin{enumerate}
 		\item $u_{n}>0$ et 
-		\begin{equation}u_{n}=e^{n^{\alpha}\ln\left(1-\frac{1}{n}\right)}=e^{n^{\alpha}\left(-\frac{1}{n}+O\left(\frac{1}{n^{2}}\right)\right)}=e^{-n^{\alpha-1}}+O\left(n^{\alpha-2}\right)\end{equation}
+		\begin{equation}u_{n}=e^{n^{\alpha}\ln\left(1-\frac{1}{n}\right)}=e^{n^{\alpha}\left(-\frac{1}{n}+O\left(\frac{1}{n^{2}}\right)\right)}=e^{-n^{\alpha-1}+O\left(n^{\alpha-2}\right)}\end{equation}
 
 		Si $\alpha<1$, $u_{n}\xrightarrow[n\to+\infty]{}1$ donc 
 		\begin{equation}\boxed{\sum u_{n}\text{ diverge grossièrement.}}\end{equation}
 
-		Si $\alpha=1$, $u_{n}\xrightarrow[n\to+\infty]{}\frac{1}{2}$ donc 
+		Si $\alpha=1$, $u_{n}\xrightarrow[n\to+\infty]{}\frac{1}{\e}$ donc 
 		\begin{equation}\boxed{\sum u_{n}\text{ diverge grossièrement.}}\end{equation}
 
 		Si $\alpha>1$, on a 
 		\begin{equation}-n^{\alpha-1}+O\left(n^{\alpha-2}\right)\underset{n\to+\infty}{\sim}-n^{\alpha-1}\end{equation}
 		donc il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$,
-		\begin{equation}-n^{\alpha-1}+O\left(n^{\alpha-1}\right)\leqslant\frac{-n^{\alpha-1}}{2}\end{equation}
+		\begin{equation}-n^{\alpha-1}+O\left(n^{\alpha-2}\right)\leqslant\frac{-n^{\alpha-1}}{2}\end{equation}
 		d'où 
 		\begin{equation}u_{n}\leqslant e^{-\frac{n^{\alpha-1}}{2}}=\underset{n\to+\infty}{o}\left(\frac{1}{n^{2}}\right)\end{equation}
 		donc 
@@ -991,7 +991,7 @@
 		Alors 
 		\begin{equation}\sin(n!\pi e)=(-1)^{\left\lfloor n!e\right\rfloor}\sin(\alpha_{n}\pi)\end{equation}
 		On écrit 
-		\begin{equation}n!e=\sum_{k=0}^{n-2}\frac{n!}{k!}+n+1+\frac{1}{n+1}+\sum_{k=n+1}^{+\infty}\frac{n!}{k!}\end{equation}
+		\begin{equation}n!e=\sum_{k=0}^{n-2}\frac{n!}{k!}+n+1+\frac{1}{n+1}+\sum_{k=n+2}^{+\infty}\frac{n!}{k!}\end{equation}
 
 		On pose $v_{n}=\sum_{k=0}^{n}\frac{1}{k!}$ et $w_{n}=v_{n}+\frac{1}{n\times n!}$. On a 
 		\begin{equation}v_{n}\leqslant e\leqslant w_{n}\end{equation}
@@ -1582,7 +1582,7 @@
 	Ainsi, $x_{n}=\underset{n\to+\infty}{O}(\ln(n))$. En reportant, on a 
 	\begin{equation}x_{n}=\ln(n+\underset{n\to+\infty}{O}(\ln(n)))=\ln(n)+\ln(1+\underset{n\to+\infty}{O}\left(\frac{\ln(n)}{n}\right))=\ln(n)+\underset{n\to+\infty}{o}(1)\end{equation}
 	donc 
-	\begin{equation}\boxed{n\underset{n\to+\infty}{\sim}\ln(n)}\end{equation}
+	\begin{equation}\boxed{x_n\underset{n\to+\infty}{\sim}\ln(n)}\end{equation}
 
 	En reportant, on a 
 	\begin{equation}\boxed{x_{n}=\ln(n)+\frac{\ln(n)}{n}+\underset{n\to+\infty}{o}\left(\frac{\ln(n)}{n}\right)}\end{equation}

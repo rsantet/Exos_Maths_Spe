@@ -1133,7 +1133,7 @@
             \item On a $f(t)=\sum_{n=0}^{+\infty}\P(S_n=0)t^{n}=\sum_{n=0}^{+\infty}\binom{2n}{n}(pq)^{n}t^{2n}$. Comme $p\in]0,1[$, $p(1-p)=pq\leqslant\frac{1}{4}$, et si $t\in[0,1[$, 
             \begin{align}
                 \frac{1}{\sqrt{1-4pqt^{2}}}
-                &=(1-4pq^{2})^{-1},\\
+                &=(1-4pqt^{2})^{-1},\\
                 &=\sum_{n=0}^{+\infty}\frac{(-1)^{n}\left(-\frac{1}{2}\right)\left(-\frac{1}{2}-1\right)\dots\left(-\frac{1}{2}-n+1\right)}{n!}(4pqt^{2})^{n},\\
                 &=\sum_{n=0}^{+\infty}\frac{\frac{1}{2}\left(1+\frac{1}{2}\right)\dots\left(n-1+\frac{1}{2}\right)}{n!}(4pqt^{2})^{n},\\
                 &=\sum_{n=0}^{+\infty}\frac{1\times 3\dots \times (2n-1)}{2^{n}n!}(4pqt^{2})^{n},\\
@@ -1154,15 +1154,15 @@
             \end{equation}
             et $\pi=1$ si et seulement si $p=q=\frac{1}{2}$.
 
-            \item Pour tout $t\in[0,1]$, $g(t)=1-\sqrt{1-4p(1-p)}$. Or $\left\lvert pqt^{2}\right\rvert<1$ donc $g$ est développable en série entière sur $[0,1[$, et on a 
+            \item Pour tout $t\in[0,1]$, $g(t)=1-\sqrt{1-4p(1-p)t^2}$. Or $\left\lvert pqt^{2}\right\rvert<1$ donc $g$ est développable en série entière sur $[0,1[$, et on a 
             \begin{align}
                 g(t)
                 &=1-\left(1+\sum_{n=1}^{+\infty}\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\dots\left(\frac{1}{2}-n+1\right)}{n!}(-4pqt^{2})^{n}\right),\\
                 &=\sum_{n=1}^{+\infty}\frac{1\times 1\times 3\times\dots\times(2n-3)}{2^{n}n!}(4pqt^{2})^{n},\\
                 &=\sum_{n=1}^{+\infty}\frac{(2n-2)!}{2^{n-1}(n-1)!2^{n}n!}4^{n}(pq)^{n}t^{2n},\\
-                &=\sum_{n=1}^{+\infty}\frac{(2n-2)!}{n(n-1)!^{2}}4(pq)^{n}t^{2n}.
+                &=\sum_{n=1}^{+\infty}\frac{(2n-2)!}{n(n-1)!^{2}}2(pq)^{n}t^{2n}.
             \end{align}
-            Par unicité du développement, on a $\P(T=2n+1)=0$ et $\P(T=2n)=\binom{2n-2}{n-1}\frac{4(pq)^{n}}{n}$.
+            Par unicité du développement, on a $\P(T=2n+1)=0$ et $\P(T=2n)=\binom{2n-2}{n-1}\frac{2(pq)^{n}}{n}$.
         \end{enumerate}
 
         \item 
@@ -1246,7 +1246,7 @@
         \end{equation}
         Soit $x\in\Z^{d}$ fixé, et $\mathcal{A}^{x}=\left\lbrace\left\lbrace n\in\N\middle| S_n=x\right\rbrace\text{ est infini}\right\rbrace$, on a 
         \begin{equation}
-            \mathcal{A}\biguplus_{x\in\Z^{d}}\mathcal{A},
+            \mathcal{A}=\biguplus_{x\in\Z^{d}}\mathcal{A},
         \end{equation}
         (union disjointe) et $\P(\mathcal{A})=\sum_{x\in\Z^{d}}\P(\mathcal{A}^{x})$ dénombrable.
 
