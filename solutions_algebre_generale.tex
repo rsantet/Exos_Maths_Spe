@@ -451,9 +451,7 @@
 	\phantom{}
 	\begin{enumerate}
 		\item Pour $g\in G$, $\tau_{g}$ est bijective de réciproque $\tau_{g^{-1}}$. On a notamment $\tau_{g\cdot g'}=\tau_{g}\circ\tau_{g'}$ donc $\tau$ est un morphisme. Si $g\in G$ est tel que $\tau_{g}=id$, pour tout $x\in G$, on a $gx=x$ donc $g=e_{G}$. Donc $\tau$ est un morphisme injectif et 
-		\begin{equation}
-			\boxed{\text{G est isomorphe à }\im\tau=\tau(G)\text{, sous-groupe de }\Sigma(G)\text{, lui-même isomorphe à }\Sigma_{n}}
-		\end{equation}
+		$G$ est isomorphe à $\im\tau=\tau(G)$, sous-groupe de $\Sigma(G)$, lui-même isomorphe à $\Sigma_{n}$.
 		
 		\item Soit \function{f}{\Sigma_{n}}{GL_{n}(\C)}{\sigma}{(\delta_{i,\sigma(j)})_{1\leqslant i,j\leqslant n}=P_{\sigma}}
 		$P_{\sigma}$ est la matrice de permutation associée à $\sigma$. $f$ est un morphisme, et est injectif, donc 
@@ -1236,12 +1234,8 @@
 
 	Lorsque $81\mid n$, on a $21\mid 1\dots 1$. 
 	
-	Cherchons plus précisément les ordres de $\overline{10}$ dans $((\Z/7\Z)^{*},\times)$ et de $\widetilde{10}$ dans $((\Z/27\Z)^{\times},\times)$.
-	Dans $(\Z/7\Z)^{*}$, groupe de cardinal 6, on vérifie que l'ordre de 10 est 6. Dans l'autre groupe, on vérifie que l'ordre de $\widetilde{10}$ est 3. Ainsi, $21\mid 1\dots 1$ si et seulement si $6\mid n$.
-
-	\begin{equation}
-		\boxed{\text{Il y a donc une infinité de multiples de 21 qui s'écrivent avec uniquement des 1 en base 10.}}
-	\end{equation}
+	Cherchons plus précisément les ordres de $\overline{10}$ dans le groupe $((\Z/7\Z)^{*},\times)$ et de $\widetilde{10}$ dans $((\Z/27\Z)^{\times},\times)$.
+	Dans $(\Z/7\Z)^{*}$, groupe de cardinal 6, on vérifie que l'ordre de 10 est 6. Dans l'autre groupe, on vérifie que l'ordre de $\widetilde{10}$ est 3. Ainsi, $21\mid 1\dots 1$ si et seulement si $6\mid n$. Il y a donc une infinité de multiples de 21 qui s'écrivent avec uniquement des 1 en base 10.
 \end{proof}
 
 \begin{remark}
@@ -1598,6 +1592,10 @@
 			\boxed{\text{D'où la réciproque.}}
 		\end{equation}
 	\end{enumerate}
+\end{proof}
+
+\begin{proof}
+	On a $2p\mid k-1$ si et seulement si $2\mid k-1$ et $p\mid k-1$. Comme $k\mid2^{p}-1$ impair donc $k$ est impair et $2\mid k-1$. De plus, dans le groupe $\left(\Z/k\Z\right)^{\star}$, $k\mid 2^{p}-1$ donc $\bar{2}^{p}=\bar{1}$. Ainsi l'ordre de 2 divise p et $\bar{2}\neq\bar{1}$ car $p$ est premier donc l'ordre de $2$ est $p$. Par le petit théorème de Fermat, $\bar{2}^{k-1}=\bar{1}$ et $\bar{2}$ est inversible dans $\Z/k\Z$ donc $p\mid k-1$.
 \end{proof}
 
 \end{document}
