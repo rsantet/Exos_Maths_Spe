@@ -25,16 +25,16 @@
 
 \begin{exercise}
     Soit $f\colon[0,a]\to\R$ strictement croissante continue avec $f(0)=0$. Soit $g\colon[0,f(a)]\to[0,a]=f^{-1}$ (continue strictement croissante). Soit $(x,y)\in[0,a]\times[0,f(a)]$. Montrer que 
-    \begin{equation}
+    \begin{equation*}
         xy\leqslant\int_{0}^{x}f+\int_{0}^{y}g.    
-    \end{equation} 
+    \end{equation*} 
     Expliciter le cas d'égalité.
 \end{exercise}
 
 \begin{exercise}
-    Existence et calcul de \begin{equation}
+    Existence et calcul de \begin{equation*}
         I=\int_{\frac{1}{2}}^{1}\frac{\ln(x)}{(1+x)\sqrt{1-x^{2}}}\mathrm{d}x.
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
@@ -92,7 +92,10 @@
 \end{exercise}
 
 \begin{exercise}
-    Existence et calcul de $I=\int_{0}^{\frac{\pi}{2}}\ln(\sin(t))\d t$. On pourra poser $J=\int_{0}^{\frac{\pi}{2}}\ln(\cos(t))\d t$.
+    Existence et calcul de $I=\int_{0}^{\frac{\pi}{2}}\ln(\sin(t))\d t$. On pourra poser 
+    \begin{equation*}
+        J=\int_{0}^{\frac{\pi}{2}}\ln(\cos(t))\d t.
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
@@ -113,9 +116,9 @@
     Soit $f\colon\R_{+}\to\R$ ou $\C$ continue par morceaux. On suppose qu'il existe $a\in\R$ telle que $\int_{0}^{+\infty}\e^{-at}f(t)\d t=\mathcal{L}f(a)$ converge. On définit $g(t)=\int_{0}^{t}\e^{-a u}f(u)\d u$.
     \begin{enumerate}
         \item Montrer que pour tout $b>a$, $\mathcal{L}f(b)$ converge et que 
-        \begin{equation}
+        \begin{equation*}
             \mathcal{L}f(b)=(b-a)\int_{0}^{+\infty}\e^{-(b-a)t}g(t)\d t.
-        \end{equation}
+        \end{equation*}
         \item Soit $h$ vérifiant les mêmes conditions que $f$, montrer que si pour tout $b\geqslant a$, $\mathcal{L}f(b)=\mathcal{L}h(b)$, alors $f=h$ (injectivité de la transformée de Laplace).
     \end{enumerate}
 \end{exercise}
@@ -136,17 +139,17 @@
     Soit $x>0$.
     \begin{enumerate}
         \item Montrer que 
-        \begin{equation}
+        \begin{equation*}
             \lim\limits_{n\to+\infty}\underbrace{\int_{0}^{n}\left(1-\frac{t}{n}\right)^{n}t^{x-1}\d t}_{I_n(x)}=\Gamma(x)=\int_{0}^{+\infty}t^{x-1}\e^{-t}\d t.
-        \end{equation}
+        \end{equation*}
         \item En déduire que 
-        \begin{equation}
+        \begin{equation*}
             \Gamma(x)=\lim\limits_{n\to+\infty}\frac{n!n^{x}}{x(x+1)\dots(x+n)}.
-        \end{equation}
+        \end{equation*}
         \item Montrer que 
-        \begin{equation}
+        \begin{equation*}
             \frac{1}{\Gamma(x)}=x\e^{\gamma x}\prod_{k=1}^{+\infty}\left(1+\frac{x}{k}\right)\e^{-\frac{x}{k}},
-        \end{equation}
+        \end{equation*}
         où $\gamma$ est la constante d'Euler.
         \item Donner un développement en série de $\frac{\Gamma'}{\Gamma}$.
     \end{enumerate}
@@ -156,9 +159,9 @@
     \phantom{}
     \begin{enumerate}
         \item Soit $f\colon\R\to\C^{*}$ $2\pi$-périodique et $\mathcal{C}^{1}$. On définit l'indice de $f$ par 
-        \begin{equation}
+        \begin{equation*}
             d(f)=\frac{1}{2\i\pi}\int_{0}^{2\pi}\frac{f'}{f}.
-        \end{equation}
+        \end{equation*}
         Montrer que $\e^{2\i\pi d(f)}=1$ si et seulement si $d(f)\in\Z$.
         
         \item Soit $P\in\C[X]$ de degré $n\geqslant1$, de coefficient $a_n\neq0$, on suppose que $P$ ne s'annule pas sur $\C$. Soit $t\geqslant0$, on pose \function{f_r}{\R}{\C^{*}}{t}{P(r\e^{\i t})}
@@ -168,21 +171,21 @@
 
 \begin{exercise}
     Soit $f\colon[0,1]\to\R$ de classe $\mathcal{C}^{2}$. On pose, pour tout $n\in\N^{*}$,
-    \begin{equation}
+    \begin{equation*}
         v_n=\sum_{k=1}^{n-1}f\left(\frac{k}{n}\right)+\frac{1}{2n}\left(f(0)+f(1)\right).
-    \end{equation}
+    \end{equation*}
     Donner un développement à l'ordre 2 de $v_n$ quand $n\to+\infty$. On pourra montrer l'égalité de Taylor-Lagrange : si $f$ est de classe $\mathcal{C}^{n}$ sur $[a,b]$, $a<b$, alors il existe $\xi\in]a,b[$ tel que 
-    \begin{equation}
+    \begin{equation*}
         f(b)-f(a)-\sum_{k=1}^{n-1}\frac{f^{(k)}(a)}{k!}=\frac{(b-a)^{n}}{n!}f^{(n)}(\xi),
-    \end{equation}
+    \end{equation*}
     et et l'appliquer à $F(x)=\int_{0}^{x}f$.
 \end{exercise}
 
 \begin{exercise}
     Pour $n\in\N$, on pose 
-    \begin{equation}
+    \begin{equation*}
         I_n=\int_{0}^{\frac{\pi}{4}}\tan^{n}(t)\d t.
-    \end{equation}
+    \end{equation*}
     Exprimer $I_n$ sous forme d'une somme, puis donner un équivalent de $I_n$ quand $n\to+\infty$. Qu'en déduit-on sur $\frac{\pi}{4}$ ?
 \end{exercise}
 
@@ -193,34 +196,34 @@
 
 \begin{exercise}
     Existence et calcul de 
-    \begin{equation}
+    \begin{equation*}
         I_n=\int_{-\frac{1}{2}}^{+\infty}\frac{\d x}{(x^{2}+x+1)^{n}},
-    \end{equation}
+    \end{equation*}
     pour $n\geqslant1$.
 \end{exercise}
 
 \begin{exercise}
     Soit $f\colon[0,1]\to\R$ de classe $\mathcal{C}^{1}$. On pose, pour $n\in\N^{*}$,
-    \begin{equation}
+    \begin{equation*}
         u_n=\frac{1}{n}\sum_{i=0}^{n-1}f\left(\frac{i}{n}\right)f'\left(\frac{i}{n}\right).
-    \end{equation}
+    \end{equation*}
     Déterminer $\lim\limits_{n\to+\infty}u_n$.
 \end{exercise}
 
 \begin{exercise}
     Soit $a,b>0$. Montrer que 
-    \begin{equation}
+    \begin{equation*}
         \lim\limits_{x\to1}\int_{x^{a}}^{x^{b}}\frac{\d t}{\ln(t)}=\ln\left(\frac{b}{a}\right).
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
     Soit $\varphi$ convexe de $\R\to\R$ (donc continue). Soit $f\colon[a,b]\to\R$ continue avec $a<b$.
     \begin{enumerate}
         \item Montrer que
-        \begin{equation}
+        \begin{equation*}
             \varphi\left(\frac{1}{b-a}\int_{a}^{b}f(t)\d t\right)\leqslant\frac{1}{b-a}\int_{a}^{b}\varphi(f(t))\d t.
-        \end{equation}
+        \end{equation*}
 
         \item On suppose de plus $\varphi$ strictement convexe, montrer que l'on a égalité dans ce qui précède si et seulement si $f$ est constante.
     \end{enumerate}
@@ -228,16 +231,16 @@
 
 \begin{exercise}
     Trouver toutes les fonctions $f\colon\R\to\R$ continues telles que pour tout $(x,y)\in\R^{2}$, on a 
-    \begin{equation}
+    \begin{equation*}
         \int_{x-y}^{x+y}f(t)\d t=f(x)f(y).
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
     Soit $f$ continue de $[a,b]$ dans $\R$ avec $a<b$. On pose 
-    \begin{equation}
+    \begin{equation*}
         I_n=\left(\int_{a}^{b}\left\lvert f(t)\right\rvert^{n}\right)^{\frac{1}{n}}=\left\lVert f\right\rVert_{n}.
-    \end{equation}
+    \end{equation*}
     Déterminer $\lim\limits_{n\to+\infty}I_n$.
 \end{exercise}
 
@@ -261,29 +264,29 @@
 
 \begin{exercise}
     Existence et calcul de 
-    \begin{equation}
+    \begin{equation*}
         I=\int_{0}^{+\infty}\frac{\e^{-t}-\e^{-2t}}{t}\d t,
-    \end{equation}
+    \end{equation*}
     et de 
-    \begin{equation}
+    \begin{equation*}
         J=\int_{0}^{+\infty}\frac{\cos(t)-\cos(2t)}{t}\d t.
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
     On note \function{f}{]0,1]}{\R}{t}{\frac{1}{t}-\left\lfloor\frac{1}{t}\right\rfloor}
     Calculer 
-    \begin{equation}
+    \begin{equation*}
         I=\int_{0}^{1}f(t)\d t.
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
     Existence de \function{f}{\R_{+}^{*}}{\R}{x}{\int_{x}^{+\infty}\frac{\d t}{\e^{t}-1}}
     Montrer que 
-    \begin{equation}
+    \begin{equation*}
         I=\int_{0}^{+\infty}f(x)\d x,
-    \end{equation}
+    \end{equation*}
     est définie et donner sa valeur.
 \end{exercise}
 
@@ -291,13 +294,13 @@
     \phantom{}
     \begin{enumerate}
         \item Soit $n\geqslant1$, calculer 
-        \begin{equation}
+        \begin{equation*}
             I_n=\int_{n}^{+\infty}\left(1+\frac{t}{n}\right)^{n}\e^{-t}\d t.
-        \end{equation}
+        \end{equation*}
         \item DOnner un équivalent en $+\infty$ de 
-        \begin{equation}
+        \begin{equation*}
             J_n=\int_{-n}^{n}\left(1+\frac{t}{n}\right)^{n}\e^{-t}\d t.
-        \end{equation}
+        \end{equation*}
         On rappelle que $\int_\R\e^{-u^{2}}\d u=\sqrt{\pi}$.
 
         \item En déduire la formule de Stirling.
@@ -308,9 +311,9 @@
     \phantom{}
     \begin{enumerate}
         \item Montrer que pour tout $x\in\R$, 
-        \begin{equation}
+        \begin{equation*}
             I(x)=\int_{0}^{+\infty}\frac{1-\cos(tx)}{t^{2}}\e^{-t}\d t=\int_{0}^{+\infty}f_x(t)\d t,
-        \end{equation}
+        \end{equation*}
         est définie.
         \item Montrer que $I$ est de classe $\mathcal{C}^{2}$ sur $\R$.
         \item Calculer $I(x)$.
@@ -323,42 +326,42 @@
 
 \begin{exercise}
     Soit $f\colon\R_{+}\to\R$ continue telle que $f(x)=\underset{x\to+\infty}{O}\left(\frac{1}{x^{2}}\right)$. On pose, pour $h>0$, 
-    \begin{equation}
+    \begin{equation*}
         \phi(h)=\sum_{n=0}^{+\infty}hf(nh).
-    \end{equation}
+    \end{equation*}
     Calculer $\lim\limits_{h\to0^{+}}\phi(h)$.
 \end{exercise}
 
 \begin{exercise}
     Déterminer le domaine de définition et calculer 
-    \begin{equation}
+    \begin{equation*}
         f(x)=\int_{0}^{+\infty}\frac{\sinh(xt)}{t}\e^{-t}\d t.
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
     Déterminer le domaine de définition et calculer 
-    \begin{equation}
+    \begin{equation*}
         F(x)=\int_{0}^{+\infty}f(x,t)\d t=\int_{0}^{+\infty}\frac{\e^{t(\i x-1)}}{\sqrt{t}}\d t.
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}[Transformée de Fourier]
     Soit $f$ continue, bornée de $\R$ dans $\C$ intégrable sur $\R$. On peut définir \function{\widehat{f}}{\R}{\C}{\nu}{\int_{-\infty}^{+\infty}f(t)\e^{-\i\nu t}\d t}
     On suppose que $\widehat{f}$ est intégrable sur $\R$ et on veut montrer que pour tout $x\in\R$,
-    \begin{equation}
+    \begin{equation*}
         f(x)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\widehat{f}(\nu)\e^{\i\nu x}\d\nu.
-    \end{equation}
+    \end{equation*}
 
     \begin{enumerate}
         \item On définit, pour tout $\lambda\geqslant0$ et $x\in\R$,
-        \begin{equation}
+        \begin{equation*}
             g_x(\lambda)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\widehat{f}(\nu)\e^{\i\nu x}\e^{-\lambda\left\lvert \nu\right\rvert}\d\nu.
-        \end{equation}
+        \end{equation*}
         Montrer que pour $\lambda>0$, on a 
-        \begin{equation}
+        \begin{equation*}
             g_x(\lambda)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\frac{2\lambda}{\lambda^{2}+t^{2}}f(x+t)\d t.
-        \end{equation}
+        \end{equation*}
         \item Montrer que $\lim\limits_{\lambda\to0}g_x(\lambda)=f(x)$.
         \item Conclure.
     \end{enumerate}
@@ -369,14 +372,14 @@
     \begin{enumerate}
         \item On forme, pour $n\in\N$, \function{D_n}{\R}{\C}{t}{\sum_{k=-n}^{n}\e^{\i kt}}
         Montrer que $D_n$ est paire, $\mathcal{C}^{\infty}$, $2\pi$-périodique, et calcule $\frac{1}{2\pi}\int_{0}^{2\pi}D_n(t)\d t$. Montrer que pour tout $t\in\R\setminus2\pi\Z$, on a 
-        \begin{equation}
+        \begin{equation*}
             D_n(t)=\frac{\sin\left((2n+1)\frac{t}{2}\right)}{\sin\left(\frac{t}{2}\right)}.
-        \end{equation}
+        \end{equation*}
 
         \item On pose $u_n=\int_{0}^{(2n+1)\frac{\pi}{2}}\frac{\sin(t)}{t}\d t$. Montrer que 
-        \begin{equation}
+        \begin{equation*}
             u_n=\int_{0}^{\pi}\frac{\sin\left((2n+1)\frac{u}{2}\right)}{u}\d u.
-        \end{equation}
+        \end{equation*}
 
         \item Montrer que l'on peut prolonger $u\mapsto \frac{1}{\sin\left(\frac{u}{2}\right)}-\frac{1}{\left(\frac{u}{2}\right)}$ en une fonction $\mathcal{C}^{1}$, notée $\varphi$, sur $[0,1]$.
         \item Calculer $\lim\limits_{n\to+\infty}\int_{0}^{\pi}\varphi(u)\sin\left((2n+1)\frac{u}{2}\right)\d u$. Conclure.
@@ -393,16 +396,16 @@
 
 \begin{exercise}
     Soit $(a_n)_{n\in\N}\in(\R_{+}^{*})^{\N}$ croissante telle que $\lim\limits_{n\to+\infty}a_n=+\infty$. Montrer que 
-    \begin{equation}
+    \begin{equation*}
         \int_{0}^{+\infty}\sum_{n=0}^{+\infty}(-1)^{n}\e^{-a_n x}\d x=\int_{0}^{+\infty}\sum_{n=0}^{+\infty}g_n(x)\d x=\int_{0}^{+\infty}g(x)\d x=\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{a_n}.
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
     Soit $(a_n)_{n\in\N}\in\left(\R_{+}^{*}\right)^{\N}$ une suite croissance telle que $\lim\limits_{n\to+\infty}a_n=+\infty$. Montrer que l'on a 
-    \begin{equation}
+    \begin{equation*}
         \int_{0}^{+\infty}\underbrace{\sum_{n=0}^{+\infty}(-1)^{n}\e^{-a_n x}}_{S(x)}\d x=\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{a_n}.
-    \end{equation}
+    \end{equation*}
 \end{exercise}
 
 \begin{exercise}
@@ -414,6 +417,11 @@
     \begin{equation*}
         I(x)=\int_{0}^{2\pi}\ln\left(x^{2}-2x\cos(t)+1\right)\d t.
     \end{equation*}
+\end{exercise}
+
+\begin{exercise}
+    Montrer que \function{f}{\R}{\R}{x}{\int_{0}^{+\infty}\e^{-t^{2}}\sin(2xt)\d t}
+    et \function{g}{\R}{\R}{x}{\int_{0}^{x}\e^{t^{2}}\d t\e^{-x^{2}}} sont définies et égales. Donner la limite de $f$ en $+\infty$.
 \end{exercise}
 
 \end{document}
