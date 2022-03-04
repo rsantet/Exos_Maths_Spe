@@ -1885,4 +1885,29 @@
 	\end{enumerate}
 \end{proof}
 
+\begin{proof}
+	On a $0\leqslant r_k:=k-n\lfloor\frac{k}{n}\rfloor<n$ donc $0\leqslant u_k<\frac{n}{k(k+1)}=\mathcal{O}\left(\frac{1}{k^{2}}\right)$ donc $S$ existe. On écrit $k=n\lfloor\frac{k}{n}\rfloor+r_k$, comme $S$ est une série à termes positifs, on regroupe les terms suivant les valeurs de $r_k$ (sommation par paquets). Alors 
+	\begin{align*}
+		S
+		&=
+		\sum_{r=1}^{n-1}\left(\sum_{k=0}^{+\infty}\frac{r}{(jn+r)(jn+r+1)}\right),\\
+		&=
+		\sum_{j=0}^{+\infty}\sum_{r=1}^{n-1}\frac{r}{(jn+r)(jn+r+1)}.
+	\end{align*}
+	Soit $j\in\N^{*}$, on a 
+	\begin{align*}
+		V_j
+		:&=
+		\sum_{r=1}^{n-1}\left(\frac{r}{jn+r}-\frac{r}{jn+r+1}\right),\\
+		&=
+		\sum_{r=1}^{n}\frac{1}{jn+r}-\frac{1}{j+1}.
+	\end{align*}
+
+	On pose $H_m=\sum_{i=1}^{n}\frac{i}{1}$ pour $m\geqslant 1$ et $H_0=0$. On a $H_m=\ln(m)+\gamma+o(1)$ d'où $v_j=H_{n(j+1)}-H_{jn}-\frac{1}{j+1}$. Ainsi,
+	\begin{equation*}
+		\sum_{j=0}^{N-1}V_j=H_{nN}-H_{0}-\sum_{j=0}^{N-1}\frac{1}{j+1}=\ln(n)+o(1),
+	\end{equation*}
+	donc $S=\ln(n)$.
+\end{proof}
+
 \end{document}
