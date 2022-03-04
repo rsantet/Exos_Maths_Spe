@@ -2089,4 +2089,25 @@
 		\end{pmatrix}$. On peut alors calculer $\exp(tA_{1})$.
 	\end{enumerate}
 \end{proof}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item On utilise le fait que $\mathcal{B}$ est une base.
+		\item On calcule le polynôme caractéristique qui vaut $P$. Comme $\mathcal{B}$ est une base, $P$ est nécessairement le polynôme minimal de $f$. Comme $X^{n}-1$ annule $f$, $P\mid X^{n}-1$. Comme $X^{n}-1$ est scindé à racines simples sur $\C$, $f$ est diagonalisable sur $\C$, et les valeurs propres réelles de $f$ sont dans $\left\lbrace-1,1\right\rbrace$. Le polynôme minimal de $f$ est de degré 3, donc il n'est pas scindé à racines simples sur $\R$. Donc $f$ n'est pas diagonalisable sur $\R$.
+		\item $f^{n}=\mathrm{id}_{\R^{3}}$ donc $f$ est inversible. Comme $\chi_{f}=P=X^{3}-cX^{2}-bX-a$, $\det(f)=a\neq0$ donc $f^{-1}=\frac{1}{a}(f^{2}-cf-b\mathrm{id}_{\R^{3}})$.
+		\item $\deg(\chi_{f})=3$ donc d'après le théorème des valeurs intermédiaires, il existe $\lambda\in\R$ telle que $\chi_{f}(\lambda)=0$. S'il existe $\mu\in\R$ avec $\mu\neq\lambda$ tel que $\chi_{f}(\mu)=0$, alors la troisième racine est réelle (car si elle était complexe, on aurait également son conjugué). Mais Le spectre de $f$ sur $\R$ est contenu dans $\left\lbrace-1,1\right\rbrace$, c'est absurde. Donc $\Sp_{\R}(f)=\left\lbrace\lambda\right\rbrace$.
+		\item Les racines de $\chi_{f}$ sur $\C$ sont $\left\lbrace\lambda,\e^{\i\theta},\e^{-\i\theta}\right\rbrace$ avec $\theta\in]0,\pi[$ et $\e^{\i\theta}\in\U_{n}$ (racine de $X^{n}-1$). Donc $\det(f)=\lambda>0$ (respectivement $<0$). Donc $\lambda=1$ (respectivement -1). Si $\det(f)>0$, on a 
+		\begin{equation*}
+			\chi_{f}=(X-1)(X^{2}-2\cos\theta X+1)=X^{3}-cX^{2}-bX-a,
+		\end{equation*}
+		d'où $a=1$, $b=-(1+2\cos\theta)$, $c=(1+2\cos\theta)$.
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Pour $n\geqslant3$, $r=\begin{pmatrix}
+		1&\\&R_{\frac{2\pi}{n}}
+	\end{pmatrix}$ vérifie l'hypothèse.
+\end{remark}
 \end{document}
