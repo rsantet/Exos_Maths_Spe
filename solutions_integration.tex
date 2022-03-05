@@ -1765,4 +1765,23 @@
     On montrer que $g$ est $\mathcal{C}^{\infty}$ et $f$ est dérivable, puis on fait une intégration par parties sur $f'$. On trouve $f'(x)=1-2xf(x)$ et $f(0)=0$. On vérifie que $g$ vérifie aussi ces deux égalités. Par le théorème de Cauchy-Lipschitz, on a $f=g$. Pour la limite, on fait une intégration par parties sur $f$ pour montrer qu'elle est nulle.
 \end{proof}
 
+\begin{proof}
+    On note $f$ l'intégrande définie sur $[1,+\infty[$. $f$ est continue, et intégrable car équivalente à $\frac{-1}{3t^{3}}$ en $+\infty$. Soit $X\geqslant1$, on écrit 
+    \begin{equation*}
+        \int_{1}^{X}f(t)\d t= \ln(X)-g(X),
+    \end{equation*}
+    avec 
+    \begin{align*}
+        g(X)
+        &=
+        \int_{1}^{X}\arcsin\left(\frac{1}{t}\right)\d t,\\
+        &=
+        X\arcsin\left(\frac{1}{X}\right)-\frac{\pi}{2}+\int_{1}^{X}\frac{\d t}{\sqrt[]{t^{2}-1}},
+    \end{align*}
+    en faisant une intégration par parties. On effectue le changement de variable $t=\cosh(u)$ (on a $u=\ln\left(t+\sqrt[]{t^{2}-1}\right)$), et comme $X\arcsin\left(\frac{1}{X}\right)\xrightarrow[X\to+\infty]{}1$, on trouve
+    \begin{equation*}
+        \int_{1}^{+\infty}f(t)\d t=-\ln(2)-1+\frac{\pi}{2}.
+    \end{equation*}
+\end{proof}
+
 \end{document}
