@@ -2110,4 +2110,16 @@
 		1&\\&R_{\frac{2\pi}{n}}
 	\end{pmatrix}$ vérifie l'hypothèse.
 \end{remark}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $J$ est symétrique réelle donc diagonalisable sur $\R$ et les sous-espaces propres sont deux à deux orthogonaux. $\rg(J)=1$ donc $\dim(\ker(J))=n-1$. Ainsi, $0$ est valeurs propre d'ordre $n-1$, puis $\Tr(J)=n$ donc $\Sp_{R}(J)=\left\lbrace0,n\right\rbrace$. On a $\ker(J-n\mathrm{I}_n)=\Vect(1,\dots,1)^{\mathsf{T}}$.
+		\item $MJ=dJ=JM$ et $M^{2}=M+d\mathrm{I}_n$. Comme $\im J=\Vect(1,\dots,1)^{\mathsf{T}}$ et $M\begin{pmatrix}
+			1\\\vdots\\1
+		\end{pmatrix}=d\begin{pmatrix}
+			1\\\vdots\\1
+		\end{pmatrix}$, on a $\im J\subset\ker(M-d\mathrm{I}_n)$. Alors $\ker(M-d\mathrm{I}_n)\neq0$ et $d\in\Sp(M)$. $X^{2}-x-d$ annule $M$ donc $d^{2}=2d$. Ainsi, $d=0$ ou $d=2$.
+	\end{enumerate}
+\end{proof}
 \end{document}
