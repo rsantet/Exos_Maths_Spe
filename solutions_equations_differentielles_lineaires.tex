@@ -1267,4 +1267,16 @@
 	ce qui contredit le fait que $f(x_1)=\max\limits_{t\in[0,1]}f(t)$.
 \end{remark}
 
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}
+		\item $qf$ est intégrable donc $f''$ l'est, ce qui implique et $f'$ admette une limite en $+\infty$, qui est forcément nulle car sinon $f(x)-f(a)=\int_{a}^{x}f'(t)\d t$ tenderait vers $+\infty$ ce qui est en contradiction avec le caractère bornée de $f$.
+		\item Supposons que toute solution sur $\R_{+}$ soit bornée. Alors d'après le théorème de Cauchy-Lipschitz, la dimension de l'ensemble des solutions est 2. Soit $(f_1,f_2)$ une base de solution. Alors 
+		\begin{equation*}
+			W_{f_1,f_2}(x)=(f_1 f_2'-f_1' f_2)(x)
+		\end{equation*}
+		ne s'annule jamais (car $(f_1,f_2)$ est une base de solution) et tend vers 0 en $+\infty$ d'après ce qui précède. Or $W'_{f_1,f_2}(x)=0$ ce qui donne une contradiction entre $W_{f_1,f_2}\neq0$ et  la limite en $+\infty$ de $W_{f_1,f_2}$.
+	\end{enumerate}
+\end{proof}
+
 \end{document}
