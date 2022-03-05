@@ -971,4 +971,21 @@
 	\end{enumerate}
 \end{proof}
 
+\begin{proof}
+	Soit $M_1\in\M_n(\R)$ commutant avec toutes les matrices de $O_n(\R)$. Soit $O=\diag(\varepsilon_1,\dots,\varepsilon_{n})\in\mathcal{O}_n(\R)$ avec $\varepsilon_{i}=\pm1$. Alors $(OM_1)_{ij}=\varepsilon_{i}m^{1}_{ij}$ et $(M_1O)_{ij}=m^{1}_{ij}\varepsilon_{j}$ donc pour tout $i\neq j$, $\varepsilon_{i}m_{ij}^{1}=\varepsilon_{j}m_{ij}^{1}$. Donc $M_{1}$ est diagonale.
+
+	Soit $M_{2}$ commutant avec toutes les matrices de $SO_n(\R)$ avec $n\geqslant3$. En prenant $O_{ij}=\diag(1,\dots,1,-1,1,\dots,1,-1,1,\dots,1)\in SO_n(\R)$ où les 1 sont à la i-ième et j-ième places, alors par le même raisonnement que précédemment, $M_2$ doit être diagonale. De même pour $M_1$.
+
+	Si maintenant on note $R_{ij}$ la rotation dans le plan $\Vect(e_{i},e_{j})$ (base canonique), alors on trouve que tous les coefficients de $M_2$ se doivent d'être les mêmes. Donc $M_2=\lambda\mathrm{I}_n$.
+
+	Pour $n=2$, on sait que 
+	\begin{equation*}
+		SO_2(\R)=\left\lbrace\begin{pmatrix}
+			\cos\theta&-\sin\theta\\\sin\theta&-\cos\theta
+		\end{pmatrix}\,\middle|\,\theta\in\R\right\rbrace.
+	\end{equation*}
+	Si $M_2=\begin{pmatrix}
+		a&b\\c&d
+	\end{pmatrix}$ commute avec toutes ces matrices, alors on vérifie en multipliant par la matrice de rotation d'angle $\frac{\pi}{2}$ que $c=-b$ et $a=d$. Alors $M_2$ est une matrice de similitude directe.
+\end{proof}
 \end{document}
