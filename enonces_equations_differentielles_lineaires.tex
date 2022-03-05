@@ -12,15 +12,15 @@
 
 \begin{exercise}
 	Résoudre, sur un intervalle à préciser,
-	\begin{equation}
+	\begin{equation*}
 		y''+2xy'+(1+x^{2})y=0.
-	\end{equation}
+	\end{equation*}
 	On pourra chercher $\varphi$ de classe $\mathcal{C}^{1}$ telle que si $u(y)=y'+\varphi y$, alors $u\circ u(y)=y''+2xy'+(1+x^{2})y$.
 \end{exercise}
 
 \begin{exercise}
 	Résoudre, sur un intervalle $I$ à préciser,
-	\begin{equation}
+	\begin{equation*}
 		\left\lbrace
 			\begin{array}[]{rcl}
 				tx' &=& x-3y+3z,\\
@@ -28,35 +28,39 @@
 				tz' &=& -x-4y+8z.
 			\end{array}
 		\right.
-	\end{equation}
+	\end{equation*}
 \end{exercise}
 
 \begin{exercise}
 	Soit $A\in\mathcal{A}_n(\R)$ antisymétrique et $V'(x)=AV(x)$.
 	\begin{enumerate}
 		\item Soit $u\in\R^{n}$, et $V$ solution de l'équation différentielle telle que $V(0)=u$. Évaluer $\left\lVert V(x)\right\rVert_{2}$.
-		\item Soit $(V_1,\dots,V_n)$ $n$ solutions de l'équation différentielle. Évaluer $\det_{B}(V_1(x),\dots,V_n(x))=W(x)$ où $B$ désigne une base orthonormée directe.
+		\item Soit $(V_1,\dots,V_n)$ $n$ solutions de l'équation différentielle. Évaluer 
+		\begin{equation*}
+			\det_{B}(V_1(x),\dots,V_n(x))=W(x),	
+		\end{equation*}
+		où $B$ désigne une base orthonormée directe.
 		\item À quelle condition nécessaire et suffisante existe-t-il $u\in\R^{n}$ tel que pour tout $x\in\R$, $(u,V(x))$ est liée ?
 	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 	Résoudre, sur un intervalle à préciser, le système différentiel
-	\begin{equation}
+	\begin{equation*}
 		\left\lbrace
 			\begin{array}[]{rcl}
 				x' &=& -4x-2y+\frac{2}{\e^{t}-1},\\
 				y' &=& 6x+3y-\frac{3}{\e^{t}-1}.
 			\end{array}
 		\right.
-	\end{equation}
+	\end{equation*}
 \end{exercise}
 
 \begin{exercise}
 	Pour $\lambda\in\R$, on considère l'équation différentielle 
-	\begin{equation}
+	\begin{equation*}
 		xf'(x)+\lambda f(x)=\frac{1}{x+1}.
-	\end{equation}
+	\end{equation*}
 	\begin{enumerate}
 		\item Déterminer les solutions de cette équation différentielle qui ont une limite finie en 0, et les solutions développables en séries entières (au voisinage de 0).
 		\item Calculer $S=\sum_{n\in\N}\frac{(-1)^{n}}{8^{n}(3n+1)}$.
@@ -68,21 +72,21 @@
 	\begin{enumerate}
 		\item Montrer que pour tout $i\neq j$, $a_{i,j}\geqslant0$ si et seulement si pour tout $t\in\R_{+}$, $\exp(tA)\in\mathcal{M}_n(\R_{+})$.
 		\item On suppose que l'on est dans ce cas. Soit $f\colon\R_{+}\to(\R_{+})^{n}$, $\mathcal{C}^{0}$ et soir $x_{0}\in(\R_{+})^{n}$. Montrer que l'unique solution du problème de Cauchy 
-		\begin{equation}
+		\begin{equation*}
 			\left\lbrace
 				\begin{array}[]{rcl}
 					x'(t)&=&Ax(t)+f(t),\\
 					x(0&=&x_0,
 				\end{array}
 			\right.
-		\end{equation}
+		\end{equation*}
 		prend ses valeurs dans $(\R_{+})^{n}$.
 	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 	Soit $n\geqslant1$ et $f_1,\dots,f_n$ $n$ fonctions de $[a,b]$ dans $\R$, $\mathcal{C}^{0}$ sur $[a,b]$ et $\mathcal{C}^{\infty}$ sur $]a,b[$. On pose 
-	\begin{equation}
+	\begin{equation*}
 		W(x)=
 		\begin{vmatrix}
 			f_1(x) &\dots &f_n(x)\\
@@ -90,7 +94,7 @@
 			\vdots&\vdots&\vdots\\
 			f_1^{(n-1)}(x) &\dots &f_n^{(n-1)}(x)
 		\end{vmatrix}.
-	\end{equation}
+	\end{equation*}
 	Montrer que $X$ ne s'annule pas sur $[a,b]$ si et seulement si $(a_0,\dots,a_{n-1})\in\mathcal{C}^{0}(]a,b[,\R)^{n}$ tel que $(f_1,\dots,f_n)$ forme une base de solution de $y^{(n)}+a_{n-1}(x)+y^{(n-1)}+\dots+a_0(x)y=0$.
 \end{exercise}
 
@@ -112,9 +116,9 @@
 
 \begin{exercise}
 	Soit $A=\mathcal{M}_n(\C)$ telle que pour tout $\lambda\in\Sp_{\C}(A)$, $\Re(\lambda)<0$. Montrer que 
-	\begin{equation}
+	\begin{equation*}
 		\lim\limits_{t\to+\infty}\exp(tA)=0.
-	\end{equation}
+	\end{equation*}
 \end{exercise}
 
 \begin{exercise}
@@ -137,15 +141,15 @@
 	Dans $\mathcal{M}_n(\K)$, on pose $[A,B]=AB-BA$. On pose $X_1(t)=\exp(tA)$, $X_2(t)=\exp(tB)X_1(t)$ et $X_3(t)=\exp(-t(A+B))X_2(t)$ pour tout $t\in\R$.
 	\begin{enumerate}
 		\item Montrer que l'on peut définir $\varphi\colon\R\to\mathcal{M}_n(\K)$ de classe $\mathcal{C}^{1}$ tel que pour tout $t\in\R$, 
-		\begin{equation}
+		\begin{equation*}
 			X_3'(t)=\exp(-t(A+B))\varphi(t)\exp(tB)\exp(tA),
-		\end{equation}
+		\end{equation*}
 		et évaluer $\varphi'(t)$.
 
 		\item On suppose $[A,[A,B]]=[B,[A,B]]=0$. Calculer $\varphi(t)$ puis $X_3(t)$. Montrer enfin que 
-		\begin{equation}
+		\begin{equation*}
 			\exp(A+B)=\exp(A)\exp(B)\exp\left(-\frac{1}{2}[B,A]\right).
-		\end{equation}
+		\end{equation*}
 	\end{enumerate}
 \end{exercise}
 
@@ -164,12 +168,12 @@
 		\item Soient $p,q\colon I\subset\R\to\R$ continues avec $y''+p(x)y'+q(x)y=0$. Soit $(y_1,y_2)$ une base de solution de l'équation différentielle. Montrer que si $a<b$ sont deux zéros consécutifs de $y_1$ ($y_1$ ne s'annule pas sur $]a,b[$), alors $y_2$ s'annule une seule fois sur $]a,b[$. Et réciproquement : on dit que les zéros de $y_1$ et $y_2$ sont entrelacés.
 		
 		\item Soient $r_1,r_2\colon I\to\R$ continues et 
-		\begin{equation}
+		\begin{equation*}
 			\begin{array}[]{rcl}
 				y''+r_1 y&=&0,\\
 				y''+r_2 y&=&0.
 			\end{array}
-		\end{equation}
+		\end{equation*}
 
 		Soit $y_1$ une solution non nulle de la première équation différentielle. Soient $a<b$ deux zéros consécutifs de $y_1$. Soit $y_2$ une solution de la deuxième équation différentielle. Montrer que $y_2$ s'annule au moins une fois sur $]a,b[$.
 
@@ -203,27 +207,27 @@
 
 \begin{exercise}
 	Soit $q\colon[a,+\infty[\to\R$ continue et $p[a,+\infty[\colon\R_{+}^{*}$ de classe $\mathcal{C}^{1}$, et l'équation différentielle 
-	\begin{equation}
+	\begin{equation*}
 		p(t)x''+p'(t)x'(t)+q(t)x=0.
-	\end{equation}
+	\end{equation*}
 	\begin{enumerate}
 		\item Soit $x\colon[a,+\infty[\to\R$ de classe $\mathcal{C}^{1}$ telle que pour tout $t\in[a,+\infty[$, $(x(t),x'(t))\neq(0,0)$. Montrer qu'il existe $r,\theta\colon[a,+\infty[\to\R$ de classe $\mathcal{C}^{1}$ telle que pour tout $t\in[a,+\infty[$,
-		\begin{equation}
+		\begin{equation*}
 			\begin{array}[]{rcl}
 				p(t)x'(t)&=&r(t)\cos(\theta(t)),\\
 				x(t)&=&r(t)\sin(\theta(t)).
 			\end{array}
-		\end{equation}
+		\end{equation*}
 
 		\item Montrer que l'équation différentielle équivaut à un système
-		\begin{equation}
+		\begin{equation*}
 			\left\lbrace
 				\begin{array}[]{rcl}
 					r'&=&f(r,\theta,t),\\
 					\theta'&=&g(r,\theta,t).
 				\end{array}
 			\right.
-		\end{equation}
+		\end{equation*}
 
 		\item Si $p=1,q>0$ et $\int_{a}^{+\infty}q(t)\d t$ diverge, montrer que $x$ est solution de l'équation différentielle non nulle s'annulant une infinité de fois.
 	\end{enumerate}
@@ -239,18 +243,18 @@
 \end{exercise}
 
 \begin{exercise}
-	Soit \begin{equation}
+	Soit \begin{equation*}
 		E=\left\lbrace E\in\mathcal{C}^{\infty}([0,1],\R)\middle| f(0)=f(1)=0\right\rbrace.
-	\end{equation}
+	\end{equation*}
 	Soit $\Delta\in\mathcal{C}^{\infty}([0,1],\R_{+}^{*})$ et \function{v}{E}{\mathcal{C}^{\infty}([0,1],\R)}{f}{\frac{1}{\Delta}f''=v(f)}
 	Notons que si $v(f)=\lambda f$ alors $v(f)\in E$.
 	\begin{enumerate}
 		\item Montrer que s'il existe $\lambda\in\R$ et $v\in E\setminus\left\lbrace 0\right\rbrace$ tel que $v(f)=\lambda f$, alors $\lambda<0$. Définir un produit scalaire $\left\langle\cdot,\cdot\right\rangle$ sur $E$ tel que si $v(f)=\lambda f$ et $v(g)=\mu g$ et $\lambda\neq \mu$ alors $\left\langle f,g\right\rangle=0$.
 		\item On prolonge $\Delta$ en $\widetilde{\Delta}\in\mathcal{C}^{\infty}(\R_{+}^{*},\R)$ tel que $\Delta(x)=1$ pour tout $x\geqslant2$. Montrer que pour tout $\gamma<0$, il existe un unique $f_{\gamma}\in\mathcal{C}^{\infty}(\R_{+},\R)$ tel que $f_{\gamma}(0)=0$.
 		\item Montrer que $f_{\gamma}$ admet une suite (dénombrable) de racines simples notées 
-		\begin{equation}
+		\begin{equation*}
 			x_{0}(\gamma)=0<x_{1}(\gamma)<\dots<x_{n}(\gamma)<\dots,
-		\end{equation}
+		\end{equation*}
 		et telle que $\lim\limits_{n\to+\infty}x_n(\gamma)=+\infty$.
 
 		\item Montrer que pour tout $n\geqslant1$, $\lim\limits_{\gamma\to0}x_n(\gamma)=+\infty$.
