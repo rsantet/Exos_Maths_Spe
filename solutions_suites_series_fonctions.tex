@@ -12,36 +12,36 @@
 
 \begin{proof}
     Pour $x\geqslant0$, on a $F_{n}(x)>0$, on a 
-    \begin{equation}
+    \begin{equation*}
         \ln\left(F_{n}(x)\right)=\frac{1}{n}\sum_{k=1}^{n}\ln\left(1+\frac{kx}{n}\right)\xrightarrow[n\to+\infty]{}\int_{0}^{1}\ln\left(1+tx\right)dt=G(x)
-    \end{equation}
+    \end{equation*}
 
     On a $G(0)=0$ et pour $x>0$, on a
-    \begin{align}
+    \begin{align*}
         G(x)
         &= \left[\left(t+\frac{1}{x}\right)\ln(1+tx)\right]_{0}^{1}-\int_{0}^{1}\frac{x}{1+tx}\left(t+\frac{1}{x}\right)dt\\
         &=\frac{x+1}{x}\ln(1+x)-1
-    \end{align}
+    \end{align*}
     (utiliser le fait que $G$ est continue sur $[0,1]$ et que $\ln(1+x)\underset{x\to0}{\sim}x$).
 
     Ainsi, $\lim\limits_{n\to+\infty}F_{n}(0)=1=F(0)$.
     Pour $x>0$, $\lim\limits_{n\to+\infty}F_{n}(x)=\left(1+x\right)^{\frac{x+1}{x}}\times\frac{1}{e}=F(x)$.
 
     $F$ est continue sur $[0,1]$. Soit $x\geqslant0$. On écrit 
-    \begin{equation}
+    \begin{equation*}
         \left\lvert F_{n}(x)-F(x)\right\rvert=\left\lvert\e^{G_{n}(x)}-\e^{G(x)}\right\rvert
-    \end{equation}
+    \end{equation*}
 
     
     On a d'après l'inégalité des accroissements finis: 
-    \begin{equation}
+    \begin{equation*}
         \left\lvert F_{n}(x)-F(x)\right\rvert\leqslant\e^{G_{n}(x)}\left\lvert G_{n}(x)-G(x)\right\rvert\leqslant\e^{G_{n}(x)}\times\frac{x}{2n}
-    \end{equation}
+    \end{equation*}
     
     Si $f(t)=\ln\left(1+tx\right)$, on a $f'(t)=\frac{x}{1+tx}\geqslant0$. Donc $f$ est croissante et $G_{n}(x)=\frac{1}{n}\sum_{k=1}^{n}f\left(\frac{k}{n}\right)\leqslant\ln(1+x)$. Finalement, 
-    \begin{equation}
+    \begin{equation*}
         \left\lvert F_{n}(x)-F(x)\right\rvert\leqslant\frac{x(1+x)}{2n}
-    \end{equation}
+    \end{equation*}
     On a donc convergence uniforme sur $[0,A]$ pour tout $A\geqslant0$.
 \end{proof}
 
@@ -50,25 +50,25 @@
     \begin{enumerate}
         \item Si $x=0$, on a $u_{n}(0)=0$ donc $\sum u_{n}(0)$ converge.
         Si $x\neq0$, on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert\frac{U_{n+1}(x)}{U_{n}(x)}\right\rvert=\frac{2n+1}{2n+1+\alpha}\left\lvert x\right\rvert\xrightarrow[n\to+\infty]{}\left\lvert x\right\rvert
-        \end{equation}
+        \end{equation*}
         Ainsi, si $\left\lvert x\right\rvert<1$, d'après la règle de d'Alembert, $\sum u_{n}(x)$ converge absolument. Si $\left\lvert x\right\rvert>1$, il existe un rang $n_{0}$ à partir duquel $\left\lvert U_{n+1}(x)\right\rvert>\left\lvert U_{n}(x)\right\rvert$, donc $(U_{n}(x))_{n\in\N}$ ne converge pas vers 0: $\sum u_{n}(x)$ diverge.
 
         Si $x=1$, il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, on a $\frac{U_{n+1}(1)}{U_{n}(1)}>0$ donc $(u_{n})_{n\geqslant N_{0}}$ gare un signe constant. On a 
-        \begin{equation}
+        \begin{equation*}
             \frac{u_{n+1}(1)}{u_{n}(1)}=\frac{2n+1}{2n+1+\alpha}=1-\frac{\alpha}{2n+1+\alpha}=1-\frac{\alpha}{2n}+\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)
-        \end{equation}
+        \end{equation*}
         Ainsi, d'après la règle de Raabe-Duhamel, on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert U_{n}(1)\right\rvert\underset{n\to+\infty}{\sim}\frac{C}{n^{\frac{\alpha}{2}}}
-        \end{equation}
+        \end{equation*}
         Ainsi, on a convergence si et seulement si $\alpha>2$.
 
         Si $x=-1$, on a toujours $\left\lvert U_{n}(-1)\right\rvert=\left\lvert U_{n}(1)\right\rvert\underset{n\to+\infty}{\sim}\frac{C}{n^{\frac{\alpha}{2}}}$. Si $\sum u_{n}(-1)$ converge, on a $\alpha>0$. Réciproquement, si $\alpha>0$, on a $\left\lvert U_{n}(-1)\right\rvert\xrightarrow[n\to+\infty]{}0$ et $\sum u_{n}(-1)$ est une série alternée. On a donc 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert\frac{u_{n+1}(-1)}{u_{n}(-1)}\right\vert=\frac{2n+1}{2n+1+\alpha}<1
-        \end{equation}
+        \end{equation*}
         donc $\left(\left\lvert u_{n}(-1)\right\vert\right)_{n\in\N}$ est décroissante: d'après le critère spéciale des séries alternées, $\sum u_{n}(-1)$ converge. Ainsi, $\sum u_{n}(-1)$ converge si et seulement si $\alpha>0$.
 
         \item Supposons la convergence uniforme sur $[0,1[$. Comme pour tout $n\geqslant1$, $\lim\limits_{x\to1^{-}}u_{n}(x)=u_{n}(1)$, d'après le théorème d'interversion des limites, comme il ya convergence uniforme au voisinage de 1, $\sum u_{n}(1)$ converge. Donc d'après ce qui précède, on a $\alpha>2$.
@@ -78,9 +78,9 @@
         \item Supposons convergence uniforme sur $]-1,0]$. Comme pour tout $n\geqslant1$, $\lim\limits_{x\to-1^{+}}u_{n}(x)=u_{n}(-1)$. D'après le théorème d'interversion des limites, comme il y a convergence uniforme au voisinage de $-1$, $\sum u_{n}(-1)$ converge. D'après ce qui précède, on a $\alpha>0$. 
         
         Réciproquement, si $\alpha>0$, soit $x\in[-1,0]$, $\sum u_{n}(x)$ est alternée dont le terme général décroît en valeur absolue (et tend vers 0). Donc pour tout $N\geqslant1$, on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert\sum_{n=N}^{+\infty}u_{n}(x)\right\rvert\leqslant\left\lvert u_{N}(x)\right\rvert\leqslant\left\lvert u_{N}(-1)\right\rvert\xrightarrow[N\to+\infty]{}0
-        \end{equation}
+        \end{equation*}
 
         On a donc convergence uniforme de $\sum u_{n}(x)$ sur $[-1,0]$
         \end{enumerate}
@@ -88,63 +88,68 @@
 
 \begin{remark}
     Pour rappel, on redonne la règle de Raabe-Duhamel: si $(v_{n})_{n\in\N}\in\left(\R_{+}\right)^{\N}$ et 
-    \begin{equation}
+    \begin{equation*}
         \frac{v_{n+1}}{v_{n}}=1-\frac{\beta}{n}+\underset{n\to+\infty}{\frac{1}{n^{2}}}
-    \end{equation}
+    \end{equation*}
     alors il existe $C>0$ telle que $v_{n}\underset{n\to+\infty}{\sim}\frac{C}{n^{\beta}}$. En effet, on écrit 
-    \begin{equation}
+    \begin{equation*}
         \ln\left(\left(n+1\right)^{\beta}v_{n+1}\right)-\ln\left(n^{\beta}v_{n}\right)=\beta\ln\left(1+\frac{1}{n}\right)+\ln\left(\frac{v_{n+1}}{v_{n}}\right)=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)
-    \end{equation}
+    \end{equation*}
     donc $(n^{\beta}v_{n})_{n\in\N}$ converge dans $\R_{+}^{*}$.
 \end{remark}
 
 \begin{remark}
     On peut aussi éviter la règle de Raabe-Duhamel. On forme 
-    \begin{equation}
-        \ln\left(\left\lvert u_{n}(1)\right\rvert\right)=\sum_{k=1}^{n}\ln\left\lvert\frac{2k-1}{2k-1+\alpha}\right\rvert=-\frac{\alpha}{2}\sum_{k=1}^{n}\frac{1}{k}+\sum_{k=1}^{n}\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right)=-\frac{\alpha}{2}\ln(n)-\frac{\gamma\alpha}{2}+K+\underset{n\to+\infty}{o}\left(1\right)
-    \end{equation}
+    \begin{align*}
+        \ln\left(\left\lvert u_{n}(1)\right\rvert\right)
+        &=
+        \sum_{k=1}^{n}\ln\left\lvert\frac{2k-1}{2k-1+\alpha}\right\rvert,\\
+        &=
+        -\frac{\alpha}{2}\sum_{k=1}^{n}\frac{1}{k}+\sum_{k=1}^{n}\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right),\\
+        &=-\frac{\alpha}{2}\ln(n)-\frac{\gamma\alpha}{2}+K+\underset{n\to+\infty}{o}\left(1\right)
+    \end{align*}
     donc $\left\lvert u_{n}(1)\right\rvert\underset{n\to+\infty}{\sim}\frac{C}{n^{\frac{\alpha}{2}}}$ avec $C>0$.
 \end{remark}
 
 \begin{proof}
     Pour $k\geqslant \left\lfloor x\right\rfloor$, on a 
-    \begin{equation}
+    \begin{equation*}
         \arctan(k+x)-\arctan(k)\in\left]\frac{-\pi}{2},\frac{\pi}{2}\right[
-    \end{equation}
+    \end{equation*}
     On a 
-    \begin{equation}
+    \begin{equation*}
         f_{k}(x)=\arctan\left(\frac{x}{1+k(k+x)}\right)=\arctan\left(\frac{x}{k^{2}}+\underset{k\to+\infty}{o}\left(\frac{1}{k^{2}}\right)\right)\underset{k\to+\infty}{\sim}\frac{x}{k^{2}}
-    \end{equation}
+    \end{equation*}
 
     Pour tout $x\in\R$, $\sum_{k\in\N}f_{k}(x)$ converge absolument et $f$ définie sur $\R$. Pour tout $k\in\N$, $f_{k}$ est $\mathcal{C}^{1}$ sur $\R$ et 
-    \begin{equation}
+    \begin{equation*}
         f_{k}'(x)=\frac{1}{1+(k+x)^{2}}
-    \end{equation}
+    \end{equation*}
 
-    On fixe $[a,b]\subset\R$, pour tout $x\in[a,b]$, pour tout $k\in\N$, on a \begin{equation}
+    On fixe $[a,b]\subset\R$, pour tout $x\in[a,b]$, pour tout $k\in\N$, on a \begin{equation*}
         \left\lvert k+x\right\rvert\geqslant k-\left\lvert x\right\rvert \geqslant k-\underbrace{\max\left(\left\lvert a\right\rvert,\left\lvert b\right\rvert\right)}_{=M}\geqslant 0    
-    \end{equation}
+    \end{equation*}
     pour $k\geqslant \left\lfloor M+1\right\rfloor$.
 
     On a de plus $0\leqslant f_{k}'(x)\leqslant \frac{1}{1+(k-M)^{2}}$ (terme général d'une série à termes positifs convergente). On $\sum_{k\geqslant\left\lfloor M\right\rfloor+1}f_{k}'$ converge normalement sur $[a,b]$. Enfin, 
-    \begin{equation}
+    \begin{equation*}
         f-\sum_{k=1}^{\left\lfloor M\right\rfloor}f_{k}=\sum_{k=\left\lfloor M\right\rfloor+1}^{+\infty}f_{k}
-    \end{equation}
+    \end{equation*}
     est donc $\mathcal{C}^{1}$ sur $[a,b]$ d'après le théorème de dérivation terme à terme, donc $f$ est $\mathcal{C}^{1}$ sur $[a,b]$ (car $\sum_{k=1}^{\left\lfloor M\right\rfloor}f_{k}$ est une somme finie de fonctions $\mathcal{C}^{1}$ donc est $\mathcal{C}^{1}$ sur $\R$). Ainsi $f$ est $\mathcal{C}^{1}$ sur $\R$.
 
     Soit $n\in\N$ et $N\in\N$, on a 
-    \begin{align}
+    \begin{align*}
         \sum_{k=0}^{N}f_{k}(n)
         &=\sum_{k=0}^{N}\arctan(k+n)-\arctan(k)\\
         &=\sum_{k=n}^{n+N}\arctan(k)-\sum_{k=0}^{N}\arctan(k)\\
         &=\sum_{k=N+1}^{n+N}\arctan(k)-\sum_{k=0}^{n-1}\arctan(k)\\
         &\xrightarrow[N\to+\infty]{}n\frac{\pi}{2}-\sum_{k=0}^{n-1}\arctan(k)=\frac{\pi}{2}+\sum_{k=1}^{n-1}\arctan(\frac{1}{k})=f(n)
-    \end{align}
+    \end{align*}
 
     On a $\arctan\left(\frac{1}{k}\right)\underset{k\to+\infty}{\sim}\frac{1}{k}>0$, d'après le théorème de comparaison des sommes partielles de séries à termes positifs divergente, donc $f(n)\underset{n\to+\infty}{\sim}\ln(n)$. Par ailleurs, $f$ est croissante sur $\R$, donc pour tout $x\geqslant0$, on a 
-    \begin{equation}
+    \begin{equation*}
         \ln\left\lvert x\right\rvert\underset{x\to+\infty}{\sim}f\left(\left\lfloor x\right\rfloor\right)\leqslant f(x)\leqslant f\left(\left\lfloor x\right\rfloor+1\right)\underset{x\to+\infty}{\sim}\ln(x)
-    \end{equation}
+    \end{equation*}
     donc $f(x)\underset{x\to+\infty}{\sim}\ln(x)$.
 \end{proof}
 
@@ -154,56 +159,56 @@
     On définit \function{g_{+}}{\R_{+}^{*}}{\R}{x}{-\ln\left(1-\e^{-xt}\right)\geqslant0}
 
     On a $-f(t)=\sum_{n=1}^{+\infty}g_{t}(x)$. De plus, $g_{t}'(x)=-\frac{t\e^{-xt}}{1-\e^{-xt}}\leqslant0$. $g_{+}$ est décroissante, et on a 
-    \begin{equation}
+    \begin{equation*}
         \int_{n}^{n+1}g_{+}(x)dx\leqslant g_{+}(x)\leqslant\int_{n-1}^{n}g_{+}(x)dx
-    \end{equation}
+    \end{equation*}
 
     On somme de $n=1$ à $+\infty$ (on admet l'existence pour $n=0$). On obtient
-    \begin{equation}
+    \begin{equation*}
         -\ln\left(1-\e^{-xt}\right)=\int_{1}^{+\infty}g_{+}(x)dx\leqslant -f(t)\leqslant\int_{0}^{+\infty}-\ln\left(1-\e^{-xt}\right)dx
-    \end{equation}
+    \end{equation*}
     On pose $u=xt$ et $dx=\frac{du}{t}$ car $t>0$. On a 
-    \begin{equation}
+    \begin{equation*}
         \int_{1}^{+\infty}-\ln\left(1-\e^{-xt}\right)dx=\frac{1}{t}\int_{t}^{+\infty}-\ln\left(1-\e^{u}\right)du\underset{t\to0}{\sim}\frac{1}{t}I
-    \end{equation}
+    \end{equation*}
     et 
-    \begin{equation}
+    \begin{equation*}
         \int_{0}^{+\infty}-\ln\left(1-\e^{-xt}\right)dx=\frac{1}{t}\int_{0}^{+\infty}-\ln\left(1-\e^{-u}\right)du=\frac{I}{t}
-    \end{equation}
+    \end{equation*}
     donc 
-    \begin{equation}
+    \begin{equation*}
         \boxed{
             f(t)\underset{t\to+0^{+}}{\sim}-\frac{I}{t}
         }
-    \end{equation}
+    \end{equation*}
 \end{proof}
 
 \begin{proof}
     \phantom{}
     \begin{enumerate}
         \item On a $\left\lVert f_{n}\right\rVert_{\infty}=\frac{1}{2}$ donc 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert\frac{1}{2^{p}}f_{n}(x-a_{p})\right\rvert\leqslant\frac{1}{2^{p+1}},
-        \end{equation}
+        \end{equation*}
         et $g_{n}(x)$ est définie. Soit $x\in\R$, on pose \function{F_p}{\N}{\R}{n}{\frac{1}{2^{p}}f_n(x-a_p)}
         On a $\left\lvert F_p(n)\right\rvert\leqslant\frac{1}{2^{p+1}}$ et pour $p$ fixé, $\lim\limits_{n\to+\infty}F_p(n)=0$. Donc $\sum_{p\geqslant0}F_p$ converge normalement sur $\N$. D'après le théorème d'interversion des limites, on a 
-        \begin{equation}
+        \begin{equation*}
             \boxed{
                 \lim\limits_{x\to+\infty}f_n(x)=0.
                 }
-        \end{equation}
+        \end{equation*}
 
         \item S'il existe $p_0\in\N$ tel que $a_{p_{0}}\in[a,b]$, alors il existe $N\in\N$ tel que pour tout $n\geqslant N$, $a_{p_{0}}+\frac{1}{n}$ ou $a_{p_{0}}-\frac{1}{n}\in[a,b]$ et $g_{n}(a_{p_{0}}\pm \frac{1}{n})\geqslant \frac{1}{2^{p_{0}+1}}$ (série à termes positifs).
         
         Si pour tout $p\in\N$, $a_{p}\notin[a,b]$, soit $\varepsilon>0$. Il existe $N_{0}\in\N$ tel que $\sum_{p=N_{0}+1}^{+\infty}\frac{1}{2^{p+1}}\leqslant\frac{\varepsilon}{2}$. Alors pour tout $x\in[a,b]$, on a 
-        \begin{equation}
+        \begin{equation*}
             0\leqslant\sum_{p=N_{0}+1}^{+\infty}\frac{1}{2^{p}}f_{n}(x-a_{p})\leqslant\frac{\varepsilon}{2}.
-        \end{equation}
+        \end{equation*}
 
         Notons $\alpha)\min_{\substack{0\leqslant p\leqslant N_{0}\\ x\in[a,b]}}\left\lvert x-a_{p}\right\rvert>0$. Pour tout $x\in[a,b]$, pour tout $p\in\left\llbracket0,N_{0}\right\rrbracket$, $\left\lvert x-a_{p}\right\rvert\geqslant\alpha$ et il existe $N_{1}\in\N$ tel que pour tout $n\geqslant N_{1}$, $\frac{1}{n}\leqslant\alpha$. Alors pour tout $x\in[a,b]$, pour tout $p\in\left\llbracket 0,N_{0}\right\rrbracket$, $f_{n}(x-a_{p})\leqslant f_{n}(\alpha)$ et 
-        \begin{equation}
+        \begin{equation*}
             0\leqslant\sum_{p=0}^{N_{0}}\frac{1}{2^{p}}f_{n}(x-a_{p})\leqslant\sum_{p=0}^{N_{0}}\frac{1}{2^{p}}f_{n}(\alpha)\xrightarrow[n\to+\infty]{}0.
-        \end{equation}
+        \end{equation*}
         Ainsi, il existe $N_{2}\in\N$ tel que pour tout $n\geqslant N_{2}$, pour tout $x\in[a,b]$, $\sum_{p=0}^{N_{0}}\frac{1}{2^{p}}f_{n}(x-a_{p})\leqslant\frac{\varepsilon}{2}$. Donc il existe $N\in\N$ tel que pour tout $n\geqslant N$, pour tout $x\in[a,b]$, $0\leqslant g_{n}(x)\leqslant \varepsilon$. D'où le résultat.
     \end{enumerate}
 \end{proof}
@@ -212,40 +217,42 @@
     $f_{n}$ est définie car $\frac{1}{x^{2}+n^{2}}\leqslant\frac{1}{n^{2}}$. Soit $a>0$. Sur $[-a,a]$, $\left\lvert f_{n}(x)\right\rvert\leqslant\frac{\left\lvert a\right\rvert}{n^{2}}$, terme général d'une série à termes positifs convergente. Il y a donc convergence normale sur $[-a,a]$, et $f_{n}$ est continue pour tout $n\in\N$ donc $f$ l'est aussi. Soit $g_{n}(x)=\frac{1}{x^{2}+n^{2}}$. On a $g_{n}'(x)=-\frac{2x}{\left(x^{2}+n^{2}\right)^{2}}$ et pour tout $x\in[-a,a]$, $\left\lvert g_{n}'(x)\right\rvert\leqslant\frac{2\left\lvert a\right\rvert}{n^{4}}$. Il y a à nouveau convergence normale sur $[-a,a]$ pour tout $a\in\R$ et donc $g(x)=\sum_{n=1}^{+\infty}g_{n}(x)$ est $\mathcal{C}^{1}$ et donc $f$ aussi.
 
     Sur $[-1,1]$, on peut intervertir les limites:
-    \begin{equation}
+    \begin{equation*}
         \boxed{\lim\limits_{x\to0}f(x)=\sum_{n=1}^{+\infty}\lim\limits_{x\to0}f_{n}(x)=0.}
-    \end{equation}
+    \end{equation*}
 
     Fixons $x>0$, on pose $\psi_{x}(t)=\frac{x}{x^{2}+t^{2}}$. $\psi_{x}$ est positive décroissante. Ainsi, pour tout $n\geqslant1$,
-    \begin{equation}
+    \begin{equation*}
         \int_{n}^{n+1}\psi_{x}(t)\mathrm{d}t\leqslant\psi_{x}(n)\leqslant\int_{n-1}^{n}\psi_{x}(t)\mathrm{d}t.
-    \end{equation}
+    \end{equation*}
     On a 
-    \begin{equation}
+    \begin{equation*}
         \int_{A}^{X}\frac{x\mathrm{d}t}{x^{2}+t^{2}}=\int_{A}^{X}\frac{\frac{\mathrm{d}t}{x}}{1+\left(\frac{t}{x}\right)^{2}}\xrightarrow[X\to+\infty]{}\frac{\pi}{2}-\arctan\left(\frac{A}{x}\right).
-    \end{equation}
+    \end{equation*}
 
     Ainsi, en sommant pour $n\in\N^{*}$, on a 
-    \begin{equation}
+    \begin{equation*}
         \int_{1}^{+\infty}\psi_{x}(t)\mathrm{d}t\leqslant\sum_{n=1}^{+\infty}\psi_{x}(n)\leqslant\int_{0}^{+\infty}\psi_{x}(t)\mathrm{d}t.
-    \end{equation}
+    \end{equation*}
     Donc $\lim\limits_{x\to+\infty}f(x)=\frac{\pi}{2}$.
 
     En 0, on a $f(x)=xg(x)$ avec convergence normale sur $\R$ pour $g$, $g$ continue sur $\R$ et $g(0)=\frac{\pi^{2}}{6}$. Ainsi,
-    \begin{equation}
+    \begin{equation*}
         \boxed{
             f(x)\underset{x\to0}{\sim}x\frac{\pi^{2}}{6}.
         }
-    \end{equation}
+    \end{equation*}
 \end{proof}
 
 \begin{proof}
     Les $f_{n}$ sont $M$-Lipschitziennes. Soient $x,y\in[a,b]$. On a $\left\lvert f_{n}(x)-f_{n}(y)\right\rvert\leqslant M\left\lvert x-y\right\rvert$ donc par passage à la limite, $f$ est $M$-Lipschitzienne. 
     
     Soit $\varepsilon>0$, on considère la subdivision $(a_{1},\dots,a_{N})$ de $[a,b]$ de pas $\delta$. Soit $x\in[a,b]$ et $K\in\left\llbracket0,N-1\right\rrbracket$ tel que $x\in[a_{K},a_{K+1}]$. Pour tout $n\in\N$, on a 
-    \begin{equation}
-        \left\lvert f_{n}(x)-f(x)\right\rvert\leqslant\left\lvert f_{n}(x)-f_{n}(a_{K})\right\rvert+\left\lvert f_{n}(a_{K})-f(a_{K})\right\rvert+\left\lvert f(a_{K})-f(x)\right\rvert\leqslant M\delta+\left\lvert f_{n}(a_{k})-f(a_{k})\right\rvert+M\delta.
-    \end{equation}
+    \begin{align*}
+        \left\lvert f_{n}(x)-f(x)\right\rvert
+        &\leqslant\left\lvert f_{n}(x)-f_{n}(a_{K})\right\rvert+\left\lvert f_{n}(a_{K})-f(a_{K})\right\rvert+\left\lvert f(a_{K})-f(x)\right\rvert,\\
+        &\leqslant M\delta+\left\lvert f_{n}(a_{k})-f(a_{k})\right\rvert+M\delta.
+    \end{align*}
     On s'impose $\delta\leqslant\frac{\varepsilon}{3M}$. Il existe $N_{1}\in\N$ tel que pour tout $n\geqslant N_{1}$, on a pour tout $k\in\left\llbracket0,N\right\rrbracket$, $\left\lvert f_{n}(a_{k})-f(a_{k})\right\rvert\leqslant\frac{\varepsilon}{3}$. Alors pour tout $x\in[a,b]$, pour tout $n\geqslant N_{1}$, $\left\lvert f_{n}(x)-f(x)\right\rvert\leqslant\varepsilon$.
 \end{proof}
 
@@ -255,52 +262,52 @@
 
 \begin{remark}
     $f$ n'est pas nécessairement dérivable, cf $f_{n}\colon[-1,1]\to\R$ avec $f_n(x)=\sqrt{x^{2}+\frac{1}{n}}$ converge uniformément vers $x\mapsto\left\lvert x\right\rvert$ et 
-    \begin{equation}
+    \begin{equation*}
         \left\lvert f_n'(x)\right\rvert=\left\lvert\frac{x}{\sqrt{x^{2}+\frac{1}{n}}}\right\rvert\leqslant1.
-    \end{equation}
+    \end{equation*}
 \end{remark}
 
 \begin{proof}
     Si $x=2$, on a 
-    \begin{equation}
+    \begin{equation*}
         f_{n}(2)=\frac{1}{n}\sum_{p=1}^{n}\frac{1}{\sqrt{1+\left(\frac{p}{n}\right)^{2}}}\xrightarrow[n\to+\infty]{}\int_{0}^{1}\frac{\mathrm{d}t}{\sqrt{1+t^{2}}}=\left[\ln\left(t+\sqrt{1+t^{2}}\right)\right]_{0}^{1}=\ln(2).
-    \end{equation}
+    \end{equation*}
     Si $x<2$, on a pour tout $n\geqslant1$, pour tout $p\in\left\llbracket1,n\right\rrbracket$,
-    \begin{equation}
+    \begin{equation*}
         \frac{1}{\sqrt{n^{2}+n^{x}}}\leqslant\frac{1}{\sqrt{n^{2}+p^{x}}}\leqslant\frac{1}{n}.
-    \end{equation}
+    \end{equation*}
     On somme pour obtenir
-    \begin{equation}
+    \begin{equation*}
         \frac{n}{\sqrt{n^{2}+n^{x}}}\leqslant f_{n}(x)\leqslant1
-    \end{equation}
+    \end{equation*}
     et donc 
-    \begin{equation}
+    \begin{equation*}
         \boxed{\lim\limits_{n\to+\infty}f_{n}(x)=1.}
-    \end{equation}
+    \end{equation*}
 
     De plus, soit $a<2$, pour tout $x\in]-\infty,a]$, on a 
-    \begin{equation}
+    \begin{equation*}
         0\leqslant1-f_{n}(x)\leqslant1-\frac{n}{\sqrt{n^{2}+n^{x}}}\leqslant1-\frac{n}{\sqrt{n+n^{a}}}\xrightarrow[n\to+\infty]{}0.
-    \end{equation}
+    \end{equation*}
     Donc $(f_{n})_{n\geqslant1}$ converge uniformément vers 1 sur $]-\infty,a]$.
 
     Si $x>2$, soit $\alpha\in[0,1]$, on a 
-    \begin{equation}
+    \begin{equation*}
         f_{n}(x)=\sum_{p=1}^{\left\lfloor n^{\alpha}\right\rfloor}\frac{1}{\sqrt{n^{2}+p^{x}}}+\sum_{p=\left\lfloor n^{\alpha}\right\rfloor+1}^{n}\frac{1}{\sqrt{n^{2}+p^{x}}}.
-    \end{equation}
+    \end{equation*}
     On a
-    \begin{equation}
+    \begin{equation*}
         \sum_{p=1}^{\left\lfloor n^{\alpha}\right\rfloor}\frac{1}{\sqrt{n^{2}+p^{x}}}\leqslant\frac{n^{\alpha}}{\sqrt{1+n^{2}}}\underset{n\to+\infty}{n^{\alpha-1}},
-    \end{equation}
+    \end{equation*}
     et
-    \begin{equation}
+    \begin{equation*}
         \sum_{p=\left\lfloor n^{\alpha}\right\rfloor+1}^{n}\frac{1}{\sqrt{n^{2}+p^{x}}}\leqslant\frac{n}{\sqrt{n^{2}+n^{x\alpha}}}=\frac{1}{\sqrt{1+n^{x\alpha-2}}}.
-    \end{equation}
+    \end{equation*}
 
     On choisit $\alpha$ tel que $\alpha<1$ et $x\alpha-2>0$ (possible car $x>2$). Si $a>2$, pour $\alpha=\left(1+\frac{2}{a}\right)\times\frac{1}{2}$, si $x\geqslant a$, on a $\frac{2}{x}\leqslant\frac{2}{a}<\alpha<1$ donc 
-    \begin{equation}
+    \begin{equation*}
         0\leqslant f_{n}(x)\leqslant\frac{n^{\alpha}}{\sqrt{n^{2}+1}}+\frac{1}{\sqrt{1+n^{\alpha x-2}}}\xrightarrow[n\to+\infty]{}0.
-    \end{equation}
+    \end{equation*}
     Il y a donc convergence uniforme vers 0 sur $[a,+\infty[$.
 \end{proof}
 
@@ -309,56 +316,56 @@
     \begin{enumerate}
         \item 
     Pour tout $(n,k)\in\N\times\left\llbracket0,n\right\rrbracket$,
-    \begin{equation}
+    \begin{equation*}
         \frac{1}{n^{k}}\binom{n}{k}=\frac{1}{k!}\frac{n(n-1)\dots(n-k+1)}{n\times n\times\dots\times n}\leqslant\frac{1}{k!}.
-    \end{equation}
+    \end{equation*}
 
     Ainsi,
-    \begin{align}
+    \begin{align*}
         \left\lVert\sum_{k=0}^{n}\frac{a^{k}}{k!}-f_{n}(a)\right\rVert
         &=\left\lVert\sum_{k=0}^{n}\frac{a^{k}}{k!}-\sum_{k=0}^{n}\binom{n}{k}\frac{a^{k}}{n^{k}}\right\rVert,\\
         &\leqslant\sum_{k=0}^{n}\left(\frac{1}{k!}-\binom{n}{k}\frac{1}{n^{k}}\right)\left\lVert a\right\rVert^{k},\\
         &=\sum_{k=0}^{n}\frac{\left\lVert a\right\rVert^{k}}{k!}-\left(1+\frac{\left\lVert a\right\rVert}{n}\right)^{n}\xrightarrow[n\to+\infty]{}0.
-    \end{align}
+    \end{align*}
 
     On a bien $\lim\limits_{n\to+\infty}f_{n}(a)=\exp(a)$.
 
     Soit $R\geqslant0$, pour tout $a\in\overline{B(0,R)}$,
-    \begin{align}
+    \begin{align*}
         \left\lVert\exp(a)-f_{n}(a)\right\rVert
         &\leqslant\left\lVert\sum_{k=0}^{n}\frac{a^{k}}{k!}-\sum_{k=0}^{n}\binom{n}{k}\frac{a^{k}}{n^{k}}\right\rVert+\left\lVert\sum_{k=n+1}^{+\infty}\frac{a^{k}}{k!}\right\rVert\\
         &\leqslant\sum_{k=0}^{n}\left(\frac{1}{k!}-\binom{n}{k}\frac{1}{n^{k}}\right)R^{n}\xrightarrow[n\to+\infty]{}0.
-    \end{align}
+    \end{align*}
     $(f_{n})_{n\in\N}$ converge uniformément vers $\exp(a)$ sur les compacts.
 
     \item D'après ce qui précède, $(P_{n})_{n\in\N}$ converge simplement vers $z\mapsto\frac{\e^{\i z}-\e^{-\i z}}{2\i}=\sin(z)$. Et on a convergence sur les compacts.
     
     \item On peut déjà dire que $\deg(P_{n})\leqslant2n+1$. Le coefficient en $X^{2n+1}$ de $P_{n}$ est 
-    \begin{equation}
+    \begin{equation*}
         \alpha=\frac{\left(\frac{\i}{2n+1}\right)^{2n+1}-\left(\frac{-\i}{2n+1}\right)^{2n+1}}{2\i}=\frac{1}{\left(2n+1\right)^{2n+1}}\times\frac{(-1)^{n}}{2\i}[\i-(-\i)]\neq0
-    \end{equation}
+    \end{equation*}
     et donc $\deg(P_{n})=2n+1$.
 
     Le coefficient en $X$ est $\frac{(2+1)\left(\frac{\i}{2n+1}-\left(\frac{-\i}{2n+1}\right)\right)}{2\i}=1$. 
 
     Soit $z\in\C$, on a 
-    \begin{align}
+    \begin{align*}
         P_{n}(z)=0
         &\Longleftrightarrow \left(1+\frac{\i z}{2n+1}\right)^{2n+1}=\left(1-\frac{\i z}{2n+1}\right)^{2n+1},\\
         &\Longleftrightarrow \exists k\in\left\llbracket0,2n\right\rrbracket,~ 1-\frac{\i z}{2n+1}=\left(1+\frac{\i z}{2n+1}\right)\exp\left(\frac{2\i k\pi}{2n+1}\right),\\
         &\Longleftrightarrow \exists k\in\left\llbracket0,2n\right\rrbracket,~1-\exp\left(\frac{2\i k\pi}{2n+1}\right)=\frac{\i z}{2n+1}\left(1+\exp\left(\frac{2\i k\pi}{2n+1}\right)\right),\\
         &\Longleftrightarrow \exists k\in\left\llbracket0,2n\right\rrbracket,~z=(2n+1)\times (-\i)\times \frac{(-2\i)\sin\left(\frac{k\pi}{2n+1}\right)}{2\cos\left(\frac{k\pi}{2n+1}\right)},\\
         &\Longleftrightarrow \exists k\in\left\llbracket0,2n\right\rrbracket,~=-(2n+1)\tan\left(\frac{k\pi}{2n+1}\right).
-    \end{align}
+    \end{align*}
 
     On a 
-    \begin{align}
+    \begin{align*}
         P_{n}
         &=aX\times\prod_{k=1}^{2n}\left(X+\left(2n+1\right)\tan\left(\frac{k\pi}{2n+1}\right)\right),\\
-        &=aX\prod_{k=1}^{n}\left(X+\left(2n+1\right)\tan\left(\frac{k\pi}{2n+1}\right)\right)\times\prod_{k=n+1}^{2n}\left(X+\left(2n+1\right)\tan\left(\frac{k\pi}{2n+1}\right)\right),\\
+        &=aX\prod_{k=1}^{n}\left(X+\left(2n+1\right)\tan\left(\frac{k\pi}{2n+1}\right)\right)\prod_{k=n+1}^{2n}\left(X+\left(2n+1\right)\tan\left(\frac{k\pi}{2n+1}\right)\right),\\
         &=aX\prod_{k=1}^{n}\left(X^{2}-\left(2n+1\right)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)\right),\\
         &=a'X\prod_{k=1}^{n}\left(1-\frac{X^{2}}{\left(2n+1\right)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right).
-    \end{align}
+    \end{align*}
     Comme le coefficient de $X$ vaut 1, on a $a'=1$, d'où le résultat.
 
     \item Soit $f_{n}\colon\N\to\C$ telle que $f(p)=a_{n,p}$. D'après (i), $\sum f_{n}$ converge normalement sur $\N$, et d'après (ii), on peut intervertir et $\lim\limits_{p\to+\infty}\sum_{n=0}^{+\infty}a_{n,p}=\sum_{n=0}^{+\infty}\beta_{n}$.
@@ -366,66 +373,68 @@
     \item $\tan$ est impaire, et $\tan''=2\tan(1+\tan^{2})>0$ sur $\left]0,\frac{\pi}{2}\right[$, donc $\tan$ est convexe et $\tan(t)>t$ sur $\left]0,\frac{\pi}{2}\right[$, et c'est bon par imparité.
     
     Pour tout $k\in\left\llbracket1,n\right\rrbracket$, $0\leqslant\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\leqslant\frac{x^{2}}{k^{2}\pi^{2}}$. Il existe $k_{0}\in\N$ tel que pour tout $k\geqslant k_{0}$, $\frac{x^{2}}{k^{2}\pi^{2}}\leqslant\frac{1}{2}$, alors pour tout $n\geqslant k_{0}$, pour tout $k\in\left\llbracket k_{0},n\right\rrbracket$, $1-\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\geqslant\frac{1}{2}>0$. Alors 
-    \begin{equation}
-        0\leqslant -\ln\left(\prod_{k=k_{0}}^{n}\left(1-\frac{x^{2}}{\left(2n+1\right)^{2}\tan^{2}\left(\frac{k\pi}{3n+1}\right)}\right)\right)=\sum_{k=k_{0}}^{n}-\ln\left(1-\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right).
-    \end{equation}
+    \begin{align*}
+        0&
+        \leqslant -\ln\left(\prod_{k=k_{0}}^{n}\left(1-\frac{x^{2}}{\left(2n+1\right)^{2}\tan^{2}\left(\frac{k\pi}{3n+1}\right)}\right)\right),\\
+        &=\sum_{k=k_{0}}^{n}-\ln\left(1-\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right).
+    \end{align*}
     On a 
-    \begin{equation}
+    \begin{equation*}
         0\leqslant-\ln\left(1-\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right)\leqslant-\ln\left(1-\frac{x^{2}}{k^{2}\pi^{2}}\right)=\underset{k\to+\infty}{O}\left(\frac{1}{k^{2}}\right),
-    \end{equation}
+    \end{equation*}
     terme général d'une série à termes positifs convergente.
 
     Si $g_{n}(x)=-\ln\left(\prod_{k=k_{0}}^{n}\left(1-\frac{x^{2}}{\left(2n+1\right)^{2}\tan^{2}\left(\frac{k\pi}{3n+1}\right)}\right)\right)$, alors $g_{n}(x)=\sum_{k=k_{0}}^{+\infty}a_{n,k}$ où l'on définit pour tout $k\geqslant k_{0},n\geqslant k_{0}$,
-    \begin{equation}
+    \begin{equation*}
         a_{n,k}=-\ln\left(1-\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right)
-    \end{equation}
+    \end{equation*}
     si $k\leqslant n$, et 0 sinon. On pose aussi $\alpha_{k}=-\ln\left(1-\frac{x^{2}}{k^{2}\pi^{2}}\right)$. On a bien $\left\lvert a_{n,k}\right\rvert\leqslant\alpha_{k}$ terme général d'une série à termes positifs convergente.
 
     Pour $k\geqslant k_{0}$ fixé, pour $n\geqslant k$, on a 
-    \begin{equation}
+    \begin{equation*}
         a_{n,k}\xrightarrow[n\to+\infty]{}\alpha_{k}.
-    \end{equation}
+    \end{equation*}
     On peut donc appliquer ce qui précède, et on a 
-    \begin{equation}
+    \begin{equation*}
         \lim\limits_{n\to+\infty}g_{n}(x)=\sum_{k=k_{0}}^{+\infty}\alpha_{k},
-    \end{equation}
+    \end{equation*}
     d'où
-    \begin{equation}
+    \begin{equation*}
         \lim\limits_{n\to+\infty}\prod_{k=k_{0}}\left(1-\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right)=\prod_{k=k_{0}}^{+\infty}\left(1-\frac{x^{2}}{k^{2}\pi^{2}}\right).
-    \end{equation}
+    \end{equation*}
 
     Soit $R_{n}(x)=x\prod_{k=1}^{k_{0}}\left(1-\frac{x^{2}}{(2n+1)^{2}\tan^{2}\left(\frac{k\pi}{2n+1}\right)}\right)\xrightarrow[n\to+\infty]{}x\prod_{k=1}^{k_{0}}\left(1-\frac{x^{2}}{k^{2}\pi^{2}}\right)$. Finalement, on a bien 
-    \begin{equation}
+    \begin{equation*}
         \boxed{
             \sin(x)=x\prod_{k=1}^{+\infty}\left(1-\frac{x^{2}}{k^{2}\pi^{2}}\right).
         }
-    \end{equation}
+    \end{equation*}
     \end{enumerate}
 \end{proof}
 
 \begin{remark}
     En identifiant le coefficient en $x^{3}$, on obtient 
-    \begin{equation}
+    \begin{equation*}
         -\frac{1}{6}=-\sum_{k=1}^{+\infty}\frac{1}{k^{2}\pi^{2}},
-    \end{equation}
+    \end{equation*}
     d'où 
-    \begin{equation}
+    \begin{equation*}
         \zeta(2)=\frac{\pi^{2}}{6}.
-    \end{equation}
+    \end{equation*}
 
     De même, en identifiant le coefficient en $x^{5}$, on obtient
-    \begin{equation}
+    \begin{equation*}
         \frac{1}{120}=\sum_{\substack{(k_{1},k_{2})\in(\N^{*})^{2}\\k_{1}\neq k_{2}}}\frac{1}{k_{1}^{2}k_{2}^{2}\pi^{4}}=\sum_{(k_1,k_2)\in(\N^{*})^{2}}\frac{1}{k_{1}^{2}k_{2}^{2}\pi^{4}}-\sum_{k=1}^{+\infty}\frac{1}{k^{4}\pi^{4}}=\zeta(2)^{2}-\sum_{k=1}^{+\infty}\frac{1}{k^{4}\pi^{4}}.
-    \end{equation}
+    \end{equation*}
     On trouve donc 
-    \begin{equation}
+    \begin{equation*}
         \zeta(4)=\frac{\pi^{4}}{90}.
-    \end{equation}
+    \end{equation*}
 
     De la même façon, on montre de manière générale que
-    \begin{equation}
+    \begin{equation*}
         \zeta(2p)=a_{p}\pi^{2p},
-    \end{equation}
+    \end{equation*}
     avec $a_p\in\Q$.
 \end{remark}
 
@@ -435,17 +444,17 @@
         \item Soit $\alpha\in[a,b]$. $f$ est strictement croissante sur $\left[0,\frac{1}{2}\right]$. On a $f\left(\left[0,1\right]\right)\subset\left[0,\frac{1}{2}\right]$. Pour tout $x\in\left[0,\frac{1}{2}\right]$, $f(x)\geqslant x$. $(f_{n}(x))_{n\geqslant1}$ est strictement croissante, majorée par $\frac{1}{2}$, donc converge vers $\frac{1}{2}$ seul point fixe de $f$ (continue). Ainsi $(f_{n})$ converge simplement vers $\frac{1}{2}$ sur $[a,b]$.
         
         Pour tout $n\geqslant1$,
-        \begin{equation}
+        \begin{equation*}
             \left\lvert f_{n}(x)-\frac{1}{2}\right\rvert=\frac{1}{2}-f_{n}(x)\leqslant\max\left(\frac{1}{2}-f_{n}(a),\frac{1}{2}-f_{n}(b)\right)\xrightarrow[n\to+\infty]{}0.
-        \end{equation}
+        \end{equation*}
         Donc $(f_{n})_{n\geqslant0}$ converge uniformément sur $[a,b]$.
 
         On a $f_{n}(0)=f_{n}(1)=0\neq\frac{1}{2}$, on n'a donc pas la continuité de la limite simple. Donc il ne peut y avoir convergence uniforme sur $[0,1]$ (même sur $]0,1[$).
 
         \item Soit $P=\sum_{k=0}^{n}a_{k}X^{k}\in\R[X]$. $Q_{2}$ est dense dans $\R$, donc pour tout $k\in\left\llbracket0,n\right\rrbracket$, il existe $(\alpha_{k,m})_{m\in\N}\in\Q_{2}^{\N}$ telle que $\lim\limits_{n}\alpha_{k,m}=a_{k}$. Soit $Q_{n}=\sum_{k=0}^{n}\alpha_{k,m}X^{k}\in\Q_{2}[X]$. Pour tout $x\in[a,b]$ on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert P(x)-Q(x)\right\rvert\leqslant\sum_{k=0}^{n}\left\lvert a_{k}-\alpha_{k,m}\right\rvert\left\lvert x\right\rvert^{k}\leqslant\sum_{k=0}^{n}\left\lvert a_{k}-\alpha_{k,m}\right\rvert\xrightarrow[m\to+\infty]{}0    
-        \end{equation}
+        \end{equation*}
         donc il existe $M\in\N$, si $Q=Q_{M}$, alors $\left\lVert P-Q\right\rVert_{\infty}\leqslant\varepsilon$.
 
         \item Soit $f\in\mathcal{C}^{0}\left([a,b],\R\right)$, soit $\varepsilon>0$. D'après le théorème de Weierstrass, il existe $P\in\R[X]$, tel que $\left\lVert f-P\right\rVert_{\infty,[a,b]}\leqslant\frac{\varepsilon}{3}$. Si $Q=\sum_{k=0}^{n}\frac{p_{k}}{2^{n_{k}}}X^{k}$, soit pour $m\in\N$, $Q_{m}=\sum_{k=0}^{n}p_{k}\left(f_{m}\right)^{n_{k}}X^{k}$ converge uniformément vers $Q$ sur $[a,b]$ ($n$ est fixé), et $Q_{m}\in\Z[X]$ car pour tout $n\in\N$, $f_{n}\in\Z[X]$.
@@ -459,26 +468,26 @@
     \phantom{}
     \begin{enumerate}
         \item Par croissance des taux d'accroissements (en un point fixé):
-        \begin{equation}
+        \begin{equation*}
             \frac{u_n(y)-u_n(x)}{y-x}\leqslant\frac{u_n(y)-u_n(b)}{y-b}\leqslant\frac{u_n(\beta)-u_n(b)}{\beta-b},
-        \end{equation}
+        \end{equation*}
         et de même
-        \begin{equation}
+        \begin{equation*}
             \frac{u_n(y)-u_n(x)}{y-x}\geqslant\frac{u_n(\alpha)-u_n(a)}{\alpha-a}.
-        \end{equation}
+        \end{equation*}
         Finalement, on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert\frac{u_n(x)-u_(y)}{x-y}\right\rvert\leqslant\max\left(\left\lvert\frac{u_n(\alpha)-u_n(a)}{\alpha-a}\right\rvert,\left\lvert\frac{u_n(\beta)-u_n(b)}{\beta-b}\right\rvert\right),
-        \end{equation}
+        \end{equation*}
         qui sont des suites bornées car convergent. D'où l'existence de $A$.
 
         \item Par passage à la limite (simple), $u$ est $A$-Lipschitzienne sur $[a,b]$. Soit $\varepsilon>0$. Soit $(a_{k})_{1\leqslant k\leqslant N}$ une subdivision de pas $d$ de $[a,b]$. Pour tout $x\in[a,b]$, il existe $k\in\left\llbracket1,N-1\right\rrbracket$ tel que $x\in[a_{k},a_{k+1}]$.
         Alors pour tout $n\in\N$, on a 
-        \begin{align}
+        \begin{align*}
             \left\lvert u_n(x)-u(x)\right\rvert
             &\leqslant\left\lvert u_n(x)-u_n(a_k)\right\rvert+\left\lvert u_n(a_k)-u(a_k)\right\rvert+\left\lvert u(a_k)-u(x)\right\rvert,\\
             &\leqslant2Ad+\left\lvert u_n(a_k)-u(a_k)\right\rvert.
-        \end{align}
+        \end{align*}
         On choisit $d$ tel que $2Ad\leqslant\frac{\varepsilon}{2}$. Par convergence simple, il existe $N_{0}\in\N$ tel que pour tout $n\geqslant N_{0}$, pour tout $k\in\left\llbracket1,N\right\rrbracket$, $\left\lvert u_n(a_k)-u(a_k)\right\rvert\leqslant\frac{\varepsilon}{2}$. Ainsi, pour tout $n\geqslant N_{0}$, pour tout $x\in[a,b]$, $\left\lvert u_n(x)-u(x)\right\rvert\leqslant\varepsilon$. Donc $(u_n)$ converge uniformément vers $u$ sur $[a,b]$.
     \end{enumerate}
 \end{proof}
@@ -491,12 +500,12 @@
     Soit $f\in E$ et $(f_{n})_{n\in\N}$ qui converge uniformément vers $f$. Si $\varphi$ est une fonction polynômiale, $\varphi=\sum_{k=0}^{N}\alpha_{k}X^{k}$. Pour tout $k\in\left\llbracket0,N\right\rrbracket$, $(f_{n}^{k})$ converge uniformément vers $f^{k}$ sur $[a,b]$. Par combinaison linéaire, $(\varphi\circ f_{n})_{n\in\N}$ converge uniformément vers $\varphi\circ f$ sur $[a,b]$. $\left(\left\lVert f_n\right\rVert_{\infty}\right)$ est bornée (car converge), donc il existe $A\geqslant0$ telle que pour tout $n\in\N$, $\left\lVert f_n\right\rVert_{\infty}\leqslant A$ et $\left\lVert f\right\rVert_{\infty}\leqslant A$. 
 
     Soit $\varepsilon>0$, il existe $P\in\R[X]$ telle que $\left\lVert\varphi-P\right\rVert_{\infty,[-A,A]}\leqslant\frac{\varepsilon}{3}$ d'après le théorème de Weierstrass. Ainsi, pour tout $x\in[a,b]$,
-    \begin{align}
+    \begin{align*}
         \left\lvert\left(\varphi\circ f_n\right)(x)-\left(\varphi\circ f\right)(x)\right\rvert 
         &\leqslant\left\lvert\left(\varphi\circ f_n\right)(x)-\left(P\circ f_n\right)(x)\right\rvert\\
         &\qquad+\left\lvert P\circ f_n(x)-P\circ f(x)\right\rvert+\left\lvert P\circ f(x)-\varphi\circ f(x)\right\rvert,\\
         &\leqslant2\frac{\varepsilon}{3}+\left\lVert P\circ f_n-P\circ f\right\rVert_{\infty,[a,b]}
-    \end{align}
+    \end{align*}
     et le dernier terme tend vers 0 donc est plus petit que $\frac{\varepsilon}{3}$ pour $n$ suffisamment grand. D'où le résultat.
 \end{proof}
 
@@ -510,18 +519,18 @@
         \item Pour $t\geqslant0$, on a $0\leqslant f_{n}(t)\leqslant\frac{1}{1+n^{2}}$ donc on a convergence normale sur $\R^{+}$. Pour $t<0$, $\lim\limits_{n\to+\infty}(t)=+\infty$ donc la série diverge grossièrement. Ainsi, $E=\R_{+}$.
         \item Pour tout $n\in\N$, $f_{n}$ est continue et on a convergence normale donc $f$ est continue sur $E$. Pour tout $n\geqslant1$, $\lim\limits_{t\to+\infty}(t)=0$ et $\lim\limits_{t\to+\infty}f_{0}(t)=1$. On peut intervertir par convergence normale, donc $\lim\limits_{t\to+\infty}f_{n}(t)=1$.
         \item Pour tout $n\in\N$, $f_{n}$ est $\mathcal{C}^{\infty}$ sur $E$. Soit $k\in\N$. Pour tout $t\geqslant0$ et $n\in\N$, on a 
-        \begin{equation}
+        \begin{equation*}
             f_{n}^{(k)}(t)=\frac{(-n)^{k}\e^{-nt}}{1+n^{2}}.
-        \end{equation}
+        \end{equation*}
         Soit $\alpha>0$. Pour $t\geqslant\alpha$, on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert f_{n}^{(k)}(t)\right\rvert\leqslant\frac{\e^{-n\alpha}}{1+n^{2}}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right).
-        \end{equation}
+        \end{equation*}
         Ainsi, $\sum_{n\geqslant0}f_{n}^{(k)}$ converge normalement sur $[\alpha,+\infty[$ pour tout $\alpha>0$, donc $f$ est $\mathcal{C}^{\infty}$ sur $\R_{+}^{*}$.
         On a pour tout $t>0$,
-        \begin{equation}
+        \begin{equation*}
             \boxed{f''(t)+f(t)=\sum_{n=0}^{+\infty}\e^{-nt}=\frac{1}{1-\e^{-t}}.}
-        \end{equation}
+        \end{equation*}
     \end{enumerate}
 \end{proof}
 
@@ -530,28 +539,28 @@
     \begin{enumerate}
         \item On a $u_n(0)=0$. Soit $x>0$, on a $\left\lvert u_n(x)\right\rvert=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$ donc on a bien convergence simple sur $[0,1]$.
         \item On a 
-        \begin{equation}
+        \begin{equation*}
             u_n(x)=\frac{(1-nx)\e^{-nx}}{n^{a}}.
-        \end{equation}
+        \end{equation*}
         Ainsi, $u_n$ est croissante de $0$ à $\frac{1}{n}$ et décroît de $\frac{1}{n}$ à 1, et on a $u_n(0)=0$, $u_n(1)=\frac{\e^{-n}}{a}$ et $u_n\left(\frac{1}{n}\right)=\frac{1}{\e n^{a+1}}=\left\lVert u_n\right\rVert_{\infty,[0,1]}$. On a donc convergence normale si et seulement si $a>0$.
         \item Pour $a=1$ (respectivement $a=2$), $S$ est continue par convergence normale car $u_n$ est $\mathcal{C}^{\infty}$ pour tout $n\geqslant1$. Soit $x>0$, si $g_n(x)=\frac{\e^{-nx}}{n}$ (respectivement $h_n(x)=\frac{\e^{-nx}}{n^{2}}$) et $g(x)=\frac{S(x)}{x}$ (respectivement $h(x)=\frac{S(x)}{x}$), soit $\alpha\in]0,1]$ et $x\in[\alpha,1]$, on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert g_n'(x)\right\rvert=\left\lvert\e^{-nx}\right\rvert\leqslant\e^{-n\alpha}
-        \end{equation}
+        \end{equation*}
         (respectivement
-        \begin{equation}
+        \begin{equation*}
             \left\lvert h_n'(x)\right\rvert\leqslant\left\lvert\frac{\e^{-n\alpha}}{n}\right\rvert
-        \end{equation}
+        \end{equation*}
         et $\left\lvert h_n''(x)\right\rvert\leqslant\e^{-n\alpha}$). Donc $\sum g_n'$ (respectivement $\sum h_n'$ et $\sum h_n''$) converge normalement sur $[\alpha,1]$ pour tout $\alpha\in]0,1]$ donc $g$ est $\mathcal{C}^{1}$ (respectivement $h$ est $\mathcal{C}^{2}$) sur $]0,1]$.
 
         Pour tout $x\in]0,1]$, on a 
-        \begin{equation}
+        \begin{equation*}
             g'(x)=\sum_{n=1}^{+\infty}-\e^{-nx}=\frac{-\e^{-x}}{1-\e^{-x}},
-        \end{equation}
+        \end{equation*}
         et donc (par changement de variable dans l'intégrale)
-        \begin{equation}
+        \begin{equation*}
             g(x)=g(1)+\ln\left(1-\e^{-1}\right)-\ln\left(1-\e^{-x}\right).
-        \end{equation}
+        \end{equation*}
         puis $S(x)=xg(x)$. On fait de même pour $a=2$.
     \end{enumerate}
 \end{proof}
@@ -560,40 +569,40 @@
     Si $x>0$, on a $f_{n}(x)=\frac{1}{\sqrt{n}}\times\frac{1}{+nx^{\frac{3}{2}}}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{\frac{3}{2}}}\right)$. Ainsi, le domaine de $f$ est $]0,+\infty[$.
 
     Chaque $f_n$ est continue sur $\R_{+}^{*}$. Soit $a>0$, pour $x\geqslant a$, pour $n\geqslant1$, on a 
-    \begin{equation}
+    \begin{equation*}
         0\leqslant f_{n}(x)\leqslant\frac{1}{\sqrt{n}}\times\frac{1}{1+na^{\frac{3}{2}}},
-    \end{equation}
+    \end{equation*}
     et le terme de droite est le terme général d'un série à termes positifs convergente indépendante de $x$. Donc $\sum_{n\geqslant1}f_{n}$ converge normalement ssur $[a,+\infty[$ pour tout $a>0$. Donc $f$ est continue sur $\R_{+}^{*}$.
 
     On a 
-    \begin{equation}
+    \begin{equation*}
         0\leqslant f(x)\leqslant\sum_{n=1}^{+\infty}\frac{1}{(nx)^{\frac{3}{2}}}=\frac{1}{x^{\frac{3}{2}}}\times\zeta\left(\frac{3}{2}\right),
-    \end{equation}
+    \end{equation*}
     donc $f$ est intégrable sur $[1,+\infty[$.
 
     Fixons $x>0$, soit \function{g_x}{\R_{+}^{*}}{\R}{t}{\frac{1}{\sqrt{t}}\times\frac{1}{1+tx^{\frac{3}{2}}}}
     $g$ est continue positive et décroissante. Elle est intégrable sur $\R_{+}^{*}$ car est équivalente à $\frac{1}{\sqrt{t}}$ quand $t\to0$, et est un $O\left(\frac{1}{t^{\frac{3}{2}}}\right)$ quand $t\to+\infty$. Pour tout $n\geqslant1$, on a 
-    \begin{equation}
+    \begin{equation*}
         g_{x}(n+1)\leqslant\int_{n}^{n+1}g_x(t)\mathrm{d}t\leqslant g_{x}(n)
-    \end{equation}
+    \end{equation*}
     Ainsi, en sommant, on obtient 
-    \begin{equation}
+    \begin{equation*}
         f(x)-\frac{1}{1+x^{\frac{3}{2}}}=\sum_{n=1}^{+\infty}\frac{1}{\sqrt{n+1}}\times\frac{1}{1+(n+1)x^{\frac{3}{2}}}\leqslant I(x)=\int_{1}^{+\infty}g_x(t)\mathrm{d}t\leqslant f(x).
-    \end{equation}
+    \end{equation*}
 
     Pour calculer $I(x)$, on fait les changements de variables $u=\sqrt{t}$ puis $v=ux^{\frac{3}{4}}$ pour avoir 
-    \begin{equation}
+    \begin{equation*}
         I(x)=\frac{2}{x^{\frac{3}{4}}}\int_{x^{\frac{3}{4}}}^{+\infty}\frac{\mathrm{d}v}{1+v^{2}}\underset{x\to0}{\sim}\frac{\pi}{x^{\frac{3}{4}}}.
-    \end{equation}
+    \end{equation*}
 
     Ainsi, $f(x)\underset{x\to0}{\sim}\frac{\pi}{x^{\frac{3}{4}}}$. Donc $f$ est intégrale sur $]0,1]$. Finalement, $f$ est intégrable sur $\R_{+}^{*}$.
 \end{proof}
 
 \begin{remark}
     On peut aussi former, pour $n\geqslant1$,
-    \begin{equation}
+    \begin{equation*}
         u_{n}=\int_{0}^{+\infty}\frac{\mathrm{d}x}{\sqrt{n}(1+nx^{\frac{3}{2}})}=\frac{1}{n^{\frac{7}{6}}}\int_{0}^{+\infty}\frac{\mathrm{d}u}{1+u^{\frac{3}{2}}},
-    \end{equation}
+    \end{equation*}
     en faisant le changement de variables $u=n^{\frac{2}{3}}x$. $u_n$ est alors le terme général d'une série à termes positifs convergente, et on peut intervertir les signes $\sum$ et $\int$.
 \end{remark}
 
@@ -601,50 +610,50 @@
     \phantom{}
     \begin{enumerate}
         \item Si $x<0$, on a 
-        \begin{equation}
+        \begin{equation*}
             \lim\limits_{n\to+\infty}\frac{x\e^{-nx}}{\ln(n)}=+\infty.
-        \end{equation}
+        \end{equation*}
         Si $x=0$, on a $S(0)=0$. Si $x>0$, on a $\frac{x\e^{-nx}}{\ln(n)}=\underset{n\to+\infty}{\left(\frac{1}{n^{2}}\right)}$, donc on a convergence simple sur $\R_{+}$.
 
         \item On cherche $\sup\limits_{x\geqslant0}\left\lvert f_n(x)\right\rvert$. Pour tout $x\geqslant0$, on a 
-        \begin{equation}
+        \begin{equation*}
             f_{n}'(x)=\frac{(1-nx)}{\ln(n)}\e^{-nx}.
-        \end{equation}
+        \end{equation*}
         Ainsi, le sup est atteint en $x=\frac{1}{n}$. Comme $f_{n}\left(\frac{1}{n}\right)=\frac{1}{n\e\ln(n)}$ est le terme général d'une série à termes positifs divergente (série de Bertrand), on n'a pas convergence normale sur $\R_{+}$.
 
         Soit $N\geqslant2$, $x\geqslant0$. On a 
-        \begin{align}
+        \begin{align*}
             \sum_{n=N}^{+\infty}f_{n}(x)
             &\leqslant\frac{x}{\ln(N)}\sum_{n=N}^{+\infty}\e^{-nx},\\
             &\leqslant\frac{x}{\ln(N)}\frac{\e^{-Nx}}{1-\e^{-x}},\\
             &\leqslant\frac{x\e^{-x}}{\ln(N)(1-\e^{-x})}\times\frac{\e^{x}}{\e^{x}},\\
             &\leqslant\frac{x}{\ln(N)(\e^{x}-1)}.
-        \end{align}
+        \end{align*}
 
         $x\mapsto\frac{x}{\e^{x}-1}\in\mathcal{C}^{0}\left(\R_{+}^{*}\right)$, tend vers 1 quand $x\to0$ et tend vers $0$ quand $x\to+\infty$. Donc cette fonction est bornée par $M\geqslant\e$ et 
-        \begin{equation}
+        \begin{equation*}
             \sum_{n=N}^{+\infty}f_{n}(x)\leqslant\frac{M}{\ln(N)}\xrightarrow[N\to+\infty]{}0.
-        \end{equation}
+        \end{equation*}
         On a donc convergence uniforme sur $\R_{+}$.
 
         \item On a $S(x)=x\times\sum_{n=2}^{+\infty}\frac{\e^{-nx}}{\ln(n)}=x\times\sum_{n=2}^{+\infty}g_n(x)$. $g_n$ est $\mathcal{C}^{1}$, et pour $a>0$, $x\geqslant a$ et $n\geqslant 2$, on a $g_n'(x)=-\frac{n\e^{-nx}}{\ln(n)}$ d'où $\left\lvert g_n'(x)\right\rvert\leqslant \frac{n\e^{-nx}}{\ln(n)}\leqslant\frac{n\e^{-na}}{\ln(n)}$ qui est le terme général d'une série à termes positifs convergente car $a>0$. Donc $\sum_{n=2}^{+\infty}g_{n}'$ converge normalement sur $[a,\infty[$ et $\sum_{n=2}^{+\infty}g_n$ convergen simplement sur $\R_{+}$ donc $\sum_{n\geqslant2}g_{n}$ est $\mathcal{C}^{1}$ sur $\R_{+}^{*}$.
         
         On a $\frac{S(x)-S(0)}{x-0}=\sum_{n=2}^{+\infty}g_n(x)=\tau(x)$. $\tau$ est décroissante car les $g_n$ le sont, donc $\tau(x)\xrightarrow[x\to0]{}l\in\overline{\R_{+}}$. Comme $g_{n}\geqslant0$, pour tout $N\geqslant2$ et $x>0$, on a $\sum_{n=2}^{N}g_{n}(x)\leqslant\tau(x)$. Quand $x\to0$, on a donc 
-        \begin{equation}
+        \begin{equation*}
             \sum_{n=2}^{N}\frac{1}{\ln(n)}\leqslant l,
-        \end{equation}
+        \end{equation*}
         et quand $N\to+\infty$, on a $l=+\infty$. Ainsi, $S$ n 'est pas dérivable à droite en 0.
 
         \item On a $x^{k}S(x)=\sum_{n=2}^{+\infty}\frac{x^{k+1}\e^{-nx}}{\ln(n)}=\sum_{n=2}^{+\infty}k_n(x)$. On a 
-        \begin{equation}
+        \begin{equation*}
             k_n'(x)=\frac{x^{k}\e^{-nx}}{\ln(n)}\left(k+1-nx\right),
-        \end{equation}
+        \end{equation*}
         donc le sup est atteinte en $x=\frac{k+1}{n}$. Pour tout $x\geqslant K+1$, on a $\left\lvert k_n(x)\right\rvert\leqslant\left\lvert k_n(K+1)\right\rvert\leqslant\frac{(k+1)^{k+1}\e^{-(k+1)n}}{\ln(n)}=\underset{n\to+\infty}{O}\left(\frac{1}{n^{2}}\right)$. Donc $\sum_{n\geqslant2}k_n$ converge normalement sur $[k+1,+\infty[$ et on peut intervertir les limites. Ainsi,
-        \begin{equation}
+        \begin{equation*}
             \boxed{
                 \lim\limits_{x\to+\infty}x^{k}S(x)=0.
             }
-        \end{equation}
+        \end{equation*}
     \end{enumerate}
 \end{proof}
 
@@ -653,40 +662,40 @@
     \begin{enumerate}
         \item $Q_{k}$ est $\mathcal{C}^{\infty}$, $2\pi$-périodique, paire, $0\leqslant Q_{k}(t)\leqslant c_{k}$, $Q_{k}(-\pi)=Q_{k}(\pi)=0$, $Q_{k}(0)=c_{k}$. $Q_{k}$ est décroissante sur $[0,\pi]$. Pour tout $t\in[\delta,\pi]$, $0\leqslant Q_{k}(t)\leqslant c_{k}\left(\frac{1+\cos(\delta)}{2}\right)^{k}$.
         On a $I_{k}=\int_{-\pi}^{\pi}\left(\frac{1+\cos(\delta)}{2}\right)^{k}\mathrm{d}t=4\int_{0}^{\frac{\pi}{2}}\sin^{2k}(u)\mathrm{d}u\underset{k\to+\infty}{\sim}2\sqrt{\frac{\pi}{k}}$ (via les intégrales de Wallis). Ainsi, $c_{k}$ est équivalent à $\sqrt{k\pi}$ quand $k\to+\infty$ et $\lim\limits_{k\to+\infty}c_{k}\left(\frac{1+\cos(\delta)}{2}\right)^{k}=0$. Ainsi, on a bien 
-        \begin{equation}
+        \begin{equation*}
             \boxed{
                 \lim\limits_{k\to+\infty}\sup\limits_{\delta\leqslant\left\lvert t\right\rvert\leqslant\pi}Q_{k}(t)=0.
             }
-        \end{equation}
+        \end{equation*}
 
         \item Soit $t\in\R$, 
-        \begin{align}
+        \begin{align*}
             \left\lvert P_{k}(t)-f(t)\right\rvert
             &=\frac{1}{2\pi}\left\lvert\int_{-\pi}^{\pi}f(t-s)Q_{k}(s)\mathrm{d}s-\int_{-\pi}^{\pi}f(t)Q_{k}(s)\mathrm{d}s\right\rvert,\\
             &\leqslant\frac{1}{2\pi}\int_{-\pi}^{\pi}\left\lvert f(t-s)-f(t)\right\rvert Q_{k}(s)\mathrm{d}s,
-        \end{align}
+        \end{align*}
         car $\frac{1}{2\pi}\int_{-\pi}^{\pi}Q_{k}(s)\mathrm{d}s=1$.
         $f$ est $\mathcal{C}^{0}$ sur $[0,4\pi]$ donc $f$ est uniformément continue sur $[0,4\pi]$. Soit $\varepsilon>0$, il existe $\delta_{1}>0$ tel que pour tout $(t,t')\in[0,4\pi]^{2}$, $\left\lvert t-t'\right\rvert\leqslant\delta_{1}\Rightarrow\left\lvert f(t)-f(t')\right\rvert\leqslant\varepsilon$. Alors pour tout $(t,t')\in\R^{2}$, si $\left\lvert t-t'\right\rvert\leqslant\min\left(\delta_{1},2\pi\right)$, alors $\left\lvert f(t)-f(t')\right\rvert\leqslant\varepsilon$. Donc $f$ est uniformément continue sur $\R$ et bornée sur $\R$ car continue $2\pi$-périodique.
 
         Soit $\varepsilon>0$ et $\delta>0$ ($\delta<\pi$) tel que pour tout $(t,t')\in[0,4\pi]^{2}$, $\left\lvert t-t'\right\rvert\leqslant\delta\Rightarrow\left\lvert f(t)-f(t')\right\rvert\leqslant\frac{\varepsilon}{2}$. Alors on a 
-        \begin{equation}
+        \begin{equation*}
             \left\lvert P_{k}(t)-f(t)\right\rvert\leqslant\underbrace{\frac{1}{2\pi}\int_{[-\pi,\pi]\setminus[-\delta,\delta]}2\left\lVert f\right\rVert_{\infty}Q_{k}(s)\mathrm{d}s}_{\leqslant2\left\lVert f\right\rVert_{\infty}\sup\limits_{\delta\leqslant\left\lvert t\right\rvert \leqslant\pi}Q_{k}(t)\xrightarrow[k\to+\infty]{}0}+\underbrace{\frac{1}{2\pi}\int_{-\delta}^{\delta}\frac{\varepsilon}{2}Q_{k}(s)\mathrm{d}s}_{\leqslant\frac{\varepsilon}{2}},
-        \end{equation}
+        \end{equation*}
         donc il existe $N\in\N$ tel que pour tout $k\geqslant N$, pour tout $t\in\R$, $\left\lvert P_{k}(t)-f(t)\right\rvert\leqslant\varepsilon$. Donc $P_{k}$ converge uniformément vers $f$ sur $\R$.
 
         \item Montrons que $P_{k}\in F$. On a 
-        \begin{align}
+        \begin{align*}
             P_{k}(t)
             &=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(t-s)Q_{k}(s)\mathrm{d}s,\\
             &=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(u)Q_{k}(t-u)\mathrm{d}u,\\
             &=\frac{1}{2\pi}\frac{c_{k}}{2^{k}}\int_{-\pi}^{\pi}f(u)\left(1+\cos(t-u)\right)^{k}\mathrm{d}u,\\
             &=\frac{c_{k}}{2^{k+1}\pi}\int_{-\pi}^{\pi}f(u)\sum_{m=-k}^{k}\alpha_{m}\e^{\im(t-u)}\mathrm{d}u,
-        \end{align}
+        \end{align*}
         où la dernière ligne est obtenue en développant $\cos(t-u)=\frac{\e^{\i(t-u)}+\e^{\i(u-t)}}{2}$.
         Ainsi, 
-        \begin{equation}
+        \begin{equation*}
             P_{k}(t)=\sum_{m=-k}^{k}\left(\frac{c_{k}}{2^{k+1}\pi}\alpha_{m}\int_{-\pi}^{\pi}f(u)\e^{-\i mu}\mathrm{d}u\right)\e^{\i mt}\in F.
-        \end{equation}
+        \end{equation*}
         Donc $F$ est dense dans $E$.
     \end{enumerate}
 \end{proof}
@@ -704,13 +713,17 @@
 \begin{remark}
     Soit \function{f}{[-1,1]}{\C}{x}{f(x)}
     $f$ est continue, on lui associe $g=f\circ \cos$, qui est continue $2\pi$-périodique. Ainsi, $(P_{k}\star g)_{k\in\N}$ converge uniformément vers $g$ sur $\R$ et 
-    \begin{equation}
+    \begin{equation*}
         (Q_{k}\star g)(t)=\frac{c_{k}}{2^{k+1}\pi}\int_{-\pi}^{\pi}\left(1+\cos(t-u)\right)^{k}\mathrm{d}u,
-    \end{equation}
-    qui est une fonction de $t$ parie car $g$ l'est. On a $(1+\cos(t-u))^{k}=\left(1+\cos(t)\cos(u)+\sin(t)\sin(u)\right)^{k}$. En développant, on a
-    \begin{equation}
+    \end{equation*}
+    qui est une fonction de $t$ parie car $g$ l'est. On a 
+    \begin{equation*}
+        (1+\cos(t-u))^{k}=\left(1+\cos(t)\cos(u)+\sin(t)\sin(u)\right)^{k}    
+    \end{equation*}
+    En développant, on a
+    \begin{equation*}
         (Q_{k}\star g)(t)=A_{k}(\cos(t),\sin(t))=B_{k}(\cos(t)),
-    \end{equation}
+    \end{equation*}
     où $A_{k}\in\C[X,Y]$ (polynôme à deux variables) et $B\in\C[X]$ par parité. Ainsi, $(B_{k})_{k\in\N}$ converge uniformément vers $f$ sur $[-1,1]$: on vient de redémontrer le théorème de Weierstrass.
 \end{remark}
 
@@ -726,11 +739,39 @@
 
         Donc il existe $N\in\N$ tel que $F_{N,\varepsilon}=\emptyset$ et pour tout $n\geqslant N$, $F_{n,\varepsilon}=\emptyset$. Donc pour tout $n\geqslant N$, pour tout $x\in K$, $f(x)<\varepsilon$. Donc $(f_n)_{n\in\N}$ converge uniformément sur $K$.
 
-        \item $f$ est continue sur un compact donc son maximum est atteint et $x_{n}$ existe. $(\left\lVert f_n\right\rVert_{\infty})_{n\in\N}$ est décroissante positive, donc $\left\lVert f_n\right\rVert_{\infty}\xrightarrow[n\to+\infty]{}l\geqslant0$. Soit $\varphi\colon\N\to\N$ strictement croissante telle que $x_{\varphi(n)}\xrightarrow[n\to+\infty]{}x\in K$. Si $l>0$, alors il existe $N_{0}\in\N$ tel que $f_{\varphi(N_0)}(x)\leqslant\frac{l}{2}$. Par continuité de $f_{\varphi(N_0)}$, il existe $\alpha>0$ tel que pour tout $y\in\overline{B(x,\alpha)}$, $f_{\varphi(N_0)}(y)<l$. Il existe $N_{1}\in\N$ tel que pour tout $n\geqslant N_{1}$, $x_{\varphi(n)}\in\overline{B(x,\alpha)}$ donc pour tout $n\geqslant N_{1}$, $f_{\varphi(N_0)}(x_{\varphi(n)})<l$. Pour $n=\max(N_0,N_1)$, on a 
-        \begin{equation}
+        \item $f$ est continue sur un compact donc son maximum est atteint et $x_{n}$ existe. La suite $(\left\lVert f_n\right\rVert_{\infty})_{n\in\N}$ est décroissante positive, donc $\left\lVert f_n\right\rVert_{\infty}\xrightarrow[n\to+\infty]{}l\geqslant0$. Soit $\varphi\colon\N\to\N$ strictement croissante telle que $x_{\varphi(n)}\xrightarrow[n\to+\infty]{}x\in K$. Si $l>0$, alors il existe $N_{0}\in\N$ tel que $f_{\varphi(N_0)}(x)\leqslant\frac{l}{2}$. Par continuité de $f_{\varphi(N_0)}$, il existe $\alpha>0$ tel que pour tout $y\in\overline{B(x,\alpha)}$, $f_{\varphi(N_0)}(y)<l$. Il existe $N_{1}\in\N$ tel que pour tout $n\geqslant N_{1}$, $x_{\varphi(n)}\in\overline{B(x,\alpha)}$ donc pour tout $n\geqslant N_{1}$, $f_{\varphi(N_0)}(x_{\varphi(n)})<l$. Pour $n=\max(N_0,N_1)$, on a 
+        \begin{equation*}
             l\leqslant f_{\varphi(n)}(x_{\varphi(n)})\leqslant f_{\varphi(N_{0})}(x_{\varphi(n)})<l,
-        \end{equation}
+        \end{equation*}
         ce qui est absurde. Donc $l=0$ et $(f_n)$ converge uniformément sur $K$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}
+    \phantom{}
+    \begin{enumerate}
+        \item Soit $X\in[0,1]$, soit $(u_n)_{n\in\N}$ définie par $u_0=0$ et $u_{n+1}=u_n+\frac{1}{2}(x-u_{n}^{2})$. Soit $\varphi\colon t\mapsto t+]/  1   2   (x-t^{2})$. On a $\varphi'(t)=1-t\geqslant0$ sur $[0,1]$ et $\varphi(t)=t$ si et seulement si $t=\sqrt[]{x}$. Si $t<\sqrt[]{x}$, $\varphi(t)\geqslant t$. Donc pour tout $n\in\N$, $u_n\in[0,\sqrt[]{x}]$, $(u_n)_{n\in\N}$ est croissante marorée et converge vers $\sqrt[]{x}$ donc $(f_n)_{n\in\N}$ converge simplement. On a 
+        \begin{align*}
+            0&\leqslant
+            \sqrt{f}_{n+1}(x),\\
+            &=
+            \left(\sqrt{x}-f_n(x)\right)\left(1-\frac{1}{2}\left(\sqrt{x}+f_n(x)\right)\right).
+        \end{align*}
+
+        Soit $\varepsilon>0$. Si $x\in[0,\varepsilon^{2}]$, pour tout $n\in\N$, $0\leqslant\sqrt{x}-f_n(x)\leqslant\sqrt{x}\leqslant\varepsilon$. Si $x>\varepsilon^{2}$, pour tout $n\in\N$ on a $\sqrt{x}+f_n(x)\geqslant \varepsilon$ et  par récurrence, pour tout $n\in\N$, pour tout $x\geqslant\varepsilon^{2}$, on a
+        \begin{equation*}
+            0\leqslant\sqrt{x}-f_{n+1}(x)\leqslant\left(1-\frac{1}{2}\varepsilon\right)^{n}\left(\sqrt{x}-f_0(x)\right).
+        \end{equation*}
+        Comme $\left(1-\frac{1}{2}\varepsilon\right)^{n}\xrightarrow[n\to+\infty]{}0$ et $\sqrt{x}-f_0(x)\leqslant 1$, il existe $N\in\N$ tel que pour tout $n\geqslant N$, $\left(1-\frac{1}{2}\varepsilon\right)^{n}\leqslant \varepsilon$, et $(f_n)_{n\in\N}$ converge uniformément vers $\sqrt{}$ sur $[0,1]$.
+
+        \item Par récurrence, $f_n$ est polynomiale et on pose pour tout $n\in\N$, \function{P_n}{[-1,1]}{\R}{x}{f_n(x^{2})}
+        qui converge uniformément vers $\left\lvert~\right\rvert$ sur $[-1,1]$.
+
+        \item Soit $I=[a,b]$ avec $a<b$, $\varphi$ affine par morceaux de la forme 
+        \begin{equation*}
+            \varphi(x)=\sum_{i=1}^{n}b_i\left\lvert x-a_i\right\rvert.    
+        \end{equation*}
+        $\varphi$ est limite uniforme d'une suite de polynômes d'après la question précédente. Or l'espace des fonctions affines par morceaux est dense dans $\mathcal{C}^{0}([a,b],\R)$. D'où le théorème de Weierstrass.
     \end{enumerate}
 \end{proof}
 
