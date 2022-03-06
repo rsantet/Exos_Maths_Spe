@@ -2122,4 +2122,23 @@
 		\end{pmatrix}$, on a $\im J\subset\ker(M-d\mathrm{I}_n)$. Alors $\ker(M-d\mathrm{I}_n)\neq0$ et $d\in\Sp(M)$. $X^{2}-x-d$ annule $M$ donc $d^{2}=2d$. Ainsi, $d=0$ ou $d=2$.
 	\end{enumerate}
 \end{proof}
+
+\begin{proof}
+	Si $r=n$, $C$ est inversible et $A$ et $B$ sont semblable donc $\chi_A=\chi_B$. Si $C=\begin{pmatrix}
+		I_r&0\\0&0
+	\end{pmatrix}:=J_r$, notons $A=\begin{pmatrix}
+		A_1&A_2\\A_3&A_4
+	\end{pmatrix}$ et $B=\begin{pmatrix}
+		B_1&B_2\\B_3&B_4
+	\end{pmatrix}$. Alors $CA=BC$ implique $A_1=B_1$ et $A_2=0=B_3$, donc $\chi_{A}=\chi_{A_1}\chi_{A_4}$ et $\chi_{B}=\chi_{A_1}\chi_{B_4}$. Comme $\deg\chi_{A_1}=r$, $A$ et $B$ ont bien $r$ valeurs propres communes au moins. Si $C$ est quelconque de rang $r$, alors $C$ est équivalente à $J_r$ et on se ramène au cas précédent.
+\end{proof}
+
+\begin{remark}
+	Si $C\neq0$, on a $r\geqslant 1$ et $A,B$ ont au moins une valeur propre commune. On peut le montrer directement, car par récurrence on a pour tout $k\in\N$, $CA^{k}=B^{k}C$ d'où $CP(A)=P(B)C$ pour tout $P\in\C[X]$. Notamment pour $P=\chi_{A}=(X-\lambda_1)\dots(X-\lambda_n)$, alors 
+	\begin{equation*}
+		(B-\lambda_1\mathrm{I}_n)\dots(B-\lambda_n\mathrm{I}_n)C=0,
+	\end{equation*}
+	et $C\neq0$ donc il existe $\lambda_j\in\Sp_{\C}(B)$ tel que $B-\lambda_j\mathrm{I}_n$ est non inversible. Donc $\Sp_{\C}(A)\cap\Sp_{\C}(B)\neq\emptyset$. Réciproquement, on prend $\lambda\in\Sp_{\C}(A)\cap\Sp_{\C}(B)$, il existe alors $(X,Y)\in\left(\M_{n,1}(\C)\setminus\lbrace0\rbrace\right)^{2}$ tel que $A^{\mathsf{T}}Y=\lambda Y$ et $BX=\lambda X$. Alors xi $C=XY^{\mathsf{T}}\in\M_n(\C)\emptyset\lbrace0\rbrace$, on a $CA=BC$.
+\end{remark}
+
 \end{document}
